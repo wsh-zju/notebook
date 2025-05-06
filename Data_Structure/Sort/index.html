@@ -1484,19 +1484,19 @@
 <li>朴素增量序列（ <span class="arithmatex">\(N/2,N/4,...,1\)</span> ）<ul>
 <li>最坏时间复杂度： <span class="arithmatex">\(O(N^2)\)</span></li>
 <li>最好时间复杂度： <span class="arithmatex">\(O(N\log N)\)</span></li>
-<li>平均时间复杂度： <span class="arithmatex">\(O(N^(\frac{3}{2}))\)</span></li>
+<li>平均时间复杂度： <span class="arithmatex">\(O(N^{\frac{3}{2}})\)</span></li>
 </ul>
 </li>
 <li>Hibbard增量序列（ <span class="arithmatex">\(h_k=2^k-1\)</span> ）<ul>
-<li>最坏时间复杂度： <span class="arithmatex">\(O(N^(\frac{3}{2}))\)</span></li>
+<li>最坏时间复杂度： <span class="arithmatex">\(O(N^{\frac{3}{2}})\)</span></li>
 <li>最好时间复杂度： <span class="arithmatex">\(O(N\log N)\)</span></li>
-<li>平均时间复杂度： <span class="arithmatex">\(O(N^(\frac{5}{4}))\)</span></li>
+<li>平均时间复杂度： <span class="arithmatex">\(O(N^{\frac{5}{4}})\)</span></li>
 </ul>
 </li>
 <li>Sedgewick增量序列（ <span class="arithmatex">\(1,5,19,41,109,...\)</span> ）<ul>
-<li>最坏时间复杂度： <span class="arithmatex">\(O(N^(\frac{4}{3}))\)</span></li>
+<li>最坏时间复杂度： <span class="arithmatex">\(O(N^{\frac{4}{3}})\)</span></li>
 <li>最好时间复杂度： <span class="arithmatex">\(O(N\log N)\)</span></li>
-<li>平均时间复杂度： <span class="arithmatex">\(O(N^(\frac{7}{6}))\)</span></li>
+<li>平均时间复杂度： <span class="arithmatex">\(O(N^{\frac{7}{6}})\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1621,7 +1621,7 @@
 <ul>
 <li>思路：左右两个指针，左边找比temp大的元素，右边找比temp小的元素，交换</li>
 </ul>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
@@ -1673,7 +1673,9 @@
 <a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-- Lomuto分区 <a href="../code_docu/LomutoQuickSort.c">Lomuto QuickSort.c</a></p>
+</li>
+<li>
+<p>Lomuto分区 <a href="../code_docu/LomutoQuickSort.c">Lomuto QuickSort.c</a></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -1710,14 +1712,21 @@
 <a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Notice!</p>
+<p>也可以从开头、结尾和中间的三个元素中选择一个中等的</p>
+</div>
 <h3 id="heap-sort">堆排序（heap sort）<a class="headerlink" href="#heap-sort" title="Permanent link">&para;</a></h3>
 <ul>
 <li>思路：利用最大/最小堆</li>
 <li>平均时间复杂度： <span class="arithmatex">\(O(N\log N)\)</span></li>
 <li>对于包含 <span class="arithmatex">\( N \)</span> 个不同元素的随机排列，堆排序的平均比较次数为：<br />
 [ 2N \log N - O(N \log \log N) ]  </li>
-<li>方法一：
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<li>
+<p>方法一：
+    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
@@ -1730,8 +1739,7 @@
 <a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span>
 <a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">        </span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">TmpH</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">  </span><span class="c1">//需要赋值给原来的数组</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div></li>
-</ul>
+</code></pre></div></td></tr></table></div></p>
 </li>
 <li>
 <p>方法二：
@@ -1752,9 +1760,11 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="n">PercDown</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">i</span><span class="p">);</span><span class="w"> </span>
 <a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">}</span><span class="w"> </span>
-</code></pre></div></td></tr></table></div>
-    !!! note "Notice!"
-        第二个方法中，根节点的序号为0，不满足 <span class="arithmatex">\(2i\)</span> 和 <span class="arithmatex">\(2i+1\)</span> 的关系</p>
+</code></pre></div></td></tr></table></div></p>
+<div class="admonition note">
+<p class="admonition-title">Notice!</p>
+<p>第二个方法中，根节点的序号为0，不满足 <span class="arithmatex">\(2i\)</span> 和 <span class="arithmatex">\(2i+1\)</span> 的关系</p>
+</div>
 </li>
 </ul>
 <h3 id="radix-sort">基数排序（radix sort）<a class="headerlink" href="#radix-sort" title="Permanent link">&para;</a></h3>
