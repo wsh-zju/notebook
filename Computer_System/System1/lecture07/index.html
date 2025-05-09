@@ -658,6 +658,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      - \(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1150,6 +1159,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      - \(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1221,9 +1239,9 @@
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <ul>
-<li>VM（虚拟机，Virtual Machine ）</li>
-<li>OS（操作系统，Operating System ）</li>
-<li>MM（内存管理，Memory Management ） </li>
+<li>VM（ 虚拟机，Virtual Machine ）</li>
+<li>OS（ 操作系统，Operating System ）</li>
+<li>MM（ 内存管理，Memory Management ） </li>
 </ul>
 </div>
 <ul>
@@ -1249,14 +1267,75 @@
 \]</div>
 <h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
 <ul>
-<li>结构<ul>
+<li>核心组成部分<ul>
 <li>数据通路：对数据执行操作</li>
 <li>控制单元：对数据通路、内存等进行时序控制</li>
 <li>高速缓存（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据</li>
 </ul>
 </li>
-<li>寄存器堆
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<li>
+<p>数据通路（Datapath）</p>
+<ul>
+<li>
+<p>ALU</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operation</th>
+<th style="text-align: center;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">And</td>
+</tr>
+<tr>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">Or</td>
+</tr>
+<tr>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">Add</td>
+</tr>
+<tr>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">Sub</td>
+</tr>
+<tr>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">Sit(比较)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Memory（存储器）</p>
+<ul>
+<li>指令存储器<ul>
+<li>只读</li>
+<li>输入指令地址，输出相应指令</li>
+</ul>
+</li>
+<li>数据存储器<ul>
+<li>读写</li>
+<li>由<code>MemRead</code>和<code>MemWrite</code>控制</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>register files（寄存器堆）</p>
+<ul>
+<li>由32个64 bit的寄存器组成</li>
+<li>由D触发器实现</li>
+<li>输入/输出<ul>
+<li>输入：两个5 bit的寄存器编号/一个5 bit的寄存器编号和一个64 bit的数据</li>
+<li>输出：64 bit的数据</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1295,7 +1374,98 @@
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="n">register</span><span class="p">[</span><span class="n">Wt_addr</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Wt_data</span><span class="p">;</span><span class="w">        </span><span class="c1">// write</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">end</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">endmodule</span><span class="w"> </span>
-</code></pre></div></td></tr></table></div></li>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>others：立即数生成单元</p>
+<ul>
+<li>功能：<ul>
+<li>从指令中提取立即数</li>
+<li>符号扩展</li>
+<li>位移操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>性能（performance）</li>
+<li>
+<p>相关定义</p>
+<ul>
+<li>响应时间（Latency）：任务从开始到完成的总时间（如程序运行时间）</li>
+<li>
+<p>吞吐量（Throughput）：单位时间内完成的任务量（如每秒处理的事务数）</p>
+<div class="admonition note">
+<p class="admonition-title">Problem</p>
+<ul>
+<li>替换更快的处理器：响应时间下降，吞吐量可能上升（若任务独立）</li>
+<li>增加处理器数量：吞吐量上升（并行处理），但单任务响应时间可能不变</li>
+</ul>
+</div>
+</li>
+<li>
+<p>CPU时间 = 用户CPU时间 + 系统CPU时间</p>
+</li>
+<li>时钟周期（Clock Period）：单个周期持续时间</li>
+<li>时钟频率（Clock Rate）：每秒周期数<ul>
+<li>公式</li>
+</ul>
+</li>
+<li>
+<p><span class="arithmatex">\(Performance=\frac{1}{Execution Time(执行时间)}\)</span></p>
+<ul>
+<li>
+<p>X is <span class="arithmatex">\(n\)</span> time faster than Y.</p>
+<div class="arithmatex">\[
+\frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
+\]</div>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate">- <span class="arithmatex">\(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)</span><a class="headerlink" href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>- 性能提高的方式
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>减少时钟周期数</li>
+<li>提高时钟频率</li>
+<li>硬件设计师常常需要在时钟频率和时钟周期数之间进行权衡 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CPI（每条指令的平均周期数）</p>
+<ul>
+<li>特点<ul>
+<li>由CPU硬件决定</li>
+<li>不同指令可能有不同的CPI</li>
+<li>平均CPI受指令组合的影响</li>
+</ul>
+</li>
+<li>
+<p>公式
+    <span class="arithmatex">\(CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}\)</span></p>
+</li>
+<li>
+<p>重要公式：</p>
+<ul>
+<li>
+<div class="arithmatex">\[ CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction \]</div>
+</li>
+<li>
+<div class="arithmatex">\[ CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period \]</div>
+</li>
+<li>
+<div class="arithmatex">\[ CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate} \]</div>
+</li>
+<li>当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：
+    [ Clock  Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction  Count_{i}) ]</li>
+<li>加权平均CPI的计算公式为：
+    [ CPI = \frac{Clock  Cycles}{Instruction  Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction  Count_{i}}{Instruction  Count} \right) ]</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 
