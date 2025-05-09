@@ -1215,6 +1215,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.6 最短路径问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 最短路径问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#floyd" class="md-nav__link">
+    <span class="md-ellipsis">
+      弗洛伊德算法（Floyd）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-planar" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.7 平面图（planar）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.7 平面图（planar）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 1 欧拉公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1442,6 +1490,54 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#106" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.6 最短路径问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.6 最短路径问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#floyd" class="md-nav__link">
+    <span class="md-ellipsis">
+      弗洛伊德算法（Floyd）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#107-planar" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.7 平面图（planar）
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.7 平面图（planar）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 1 欧拉公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1550,6 +1646,10 @@
 </li>
 <li>
 <p>寻找欧拉回路的方法</p>
+<ul>
+<li>找到一条回路，原图中去掉该回路</li>
+<li>在去掉回路之后的图中重复上述操作</li>
+</ul>
 <details class="note">
 <summary>Example</summary>
 <p><img alt="" src="../photo/10-7.png" /></p>
@@ -1579,6 +1679,33 @@
 <p>如果 <span class="arithmatex">\(G\)</span> 是有 <span class="arithmatex">\(n\)</span> 个顶点的简单图，其中 <span class="arithmatex">\(n \geq 3\)</span>，并且对于 <span class="arithmatex">\(G\)</span> 中每一对不相邻的顶点 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(v\)</span> 来说，都有 <span class="arithmatex">\(\text{deg}(u) + \text{deg}(v) \geq n\)</span>，则 <span class="arithmatex">\(G\)</span> 有<strong>哈密顿回路</strong></p>
 <h3 id="3_1">定理 3<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>若图 <span class="arithmatex">\(G\)</span> 有<strong>哈密顿回路</strong> ，则对于顶点集 <span class="arithmatex">\(V\)</span> 的所有非空子集 <span class="arithmatex">\(S\)</span> ，<span class="arithmatex">\(G-S\)</span> 连通分量的数量小于等于 <span class="arithmatex">\(|S|\)</span></p>
+<h2 id="106">10.6 最短路径问题<a class="headerlink" href="#106" title="Permanent link">&para;</a></h2>
+<h3 id="floyd">弗洛伊德算法（Floyd）<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>可以求出加权连通简单图中所有顶点对之间的最短路径长度</li>
+<li>不能用来构造最短通路</li>
+</ul>
+<p><img alt="" src="../photo/10-9.png" /></p>
+<h2 id="107-planar">10.7 平面图（planar）<a class="headerlink" href="#107-planar" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>定义：</p>
+<ul>
+<li>
+<p>平面图：在平面中画出一个图，边没有任何交叉</p>
+<details class="note">
+<summary>Example</summary>
+<p><img alt="" src="../photo/10-8.png" /></p>
+</details>
+</li>
+<li>
+<p>面（region）</p>
+</li>
+</ul>
+<h3 id="1_3">定理 1 欧拉公式<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
+<p>设 <span class="arithmatex">\(G\)</span> 是带 <span class="arithmatex">\(e\)</span> 条边和 <span class="arithmatex">\(v\)</span> 个顶点的连通平面简单图。设 <span class="arithmatex">\(r\)</span> 是 <span class="arithmatex">\(G\)</span> 的平面图表示中的面数。则 <span class="arithmatex">\(r = e - v + 2\)</span></p>
+</li>
+</ul>
 
 
 
