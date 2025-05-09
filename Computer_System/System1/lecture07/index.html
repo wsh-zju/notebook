@@ -656,14 +656,47 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" class="md-nav__link">
+    <nav class="md-nav" aria-label="CPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      - \(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)
+      核心组成部分
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路（Datapath）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能（performance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPI（每条指令的平均周期数）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1157,14 +1190,47 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" class="md-nav__link">
+    <nav class="md-nav" aria-label="CPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      - \(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)
+      核心组成部分
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路（Datapath）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能（performance）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpi" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPI（每条指令的平均周期数）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1266,15 +1332,13 @@
 \end{cases}
 \]</div>
 <h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
+<h3 id="_2">核心组成部分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>核心组成部分<ul>
 <li>数据通路：对数据执行操作</li>
 <li>控制单元：对数据通路、内存等进行时序控制</li>
 <li>高速缓存（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据</li>
 </ul>
-</li>
-<li>
-<p>数据通路（Datapath）</p>
+<h3 id="datapath">数据通路（Datapath）<a class="headerlink" href="#datapath" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>ALU</p>
@@ -1387,7 +1451,9 @@
 </li>
 </ul>
 </li>
-<li>性能（performance）</li>
+</ul>
+<h3 id="performance">性能（performance）<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
+<ul>
 <li>
 <p>相关定义</p>
 <ul>
@@ -1406,10 +1472,12 @@
 <p>CPU时间 = 用户CPU时间 + 系统CPU时间</p>
 </li>
 <li>时钟周期（Clock Period）：单个周期持续时间</li>
-<li>时钟频率（Clock Rate）：每秒周期数<ul>
-<li>公式</li>
+<li>时钟频率（Clock Rate）：每秒周期数</li>
 </ul>
 </li>
+<li>
+<p>公式</p>
+<ul>
 <li>
 <p><span class="arithmatex">\(Performance=\frac{1}{Execution Time(执行时间)}\)</span></p>
 <ul>
@@ -1421,10 +1489,13 @@
 </li>
 </ul>
 </li>
+<li>
+<p><span class="arithmatex">\(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)</span></p>
+</li>
 </ul>
-<h2 id="-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate">- <span class="arithmatex">\(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{\Clock Rate}\)</span><a class="headerlink" href="#-cpu-time-clock-cycles-times-clock-period-fracclock-cyclesclock-rate" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>- 性能提高的方式
-</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>性能提高的方式</p>
 <ul>
 <li>减少时钟周期数</li>
 <li>提高时钟频率</li>
@@ -1432,9 +1503,7 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>CPI（每条指令的平均周期数）</p>
+<h3 id="cpi">CPI（每条指令的平均周期数）<a class="headerlink" href="#cpi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>特点<ul>
 <li>由CPU硬件决定</li>
@@ -1443,26 +1512,22 @@
 </ul>
 </li>
 <li>
-<p>公式
-    <span class="arithmatex">\(CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}\)</span></p>
+<p>公式</p>
+<p><span class="arithmatex">\(CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}\)</span></p>
 </li>
 <li>
 <p>重要公式：</p>
 <ul>
+<li>$ CPU  Clock  Cycles = Instructions  for  a  Program \times Average  Clock  Cycles  Per  Instruction $</li>
+<li>$ CPU  Time = Instruction  Count \times CPI \times Clock  Period $</li>
+<li>$ CPU  Time = \frac{Instruction  Count \times CPI}{Clock  Rate} $</li>
 <li>
-<div class="arithmatex">\[ CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction \]</div>
+<p>当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：</p>
+<div class="arithmatex">\[ Clock \ Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction \ Count_{i}) \]</div>
 </li>
 <li>
-<div class="arithmatex">\[ CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period \]</div>
-</li>
-<li>
-<div class="arithmatex">\[ CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate} \]</div>
-</li>
-<li>当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：
-    [ Clock  Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction  Count_{i}) ]</li>
-<li>加权平均CPI的计算公式为：
-    [ CPI = \frac{Clock  Cycles}{Instruction  Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction  Count_{i}}{Instruction  Count} \right) ]</li>
-</ul>
+<p>加权平均CPI的计算公式为：</p>
+<div class="arithmatex">\[ CPI = \frac{Clock \ Cycles}{Instruction \ Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction \ Count_{i}}{Instruction \ Count} \right) \]</div>
 </li>
 </ul>
 </li>
