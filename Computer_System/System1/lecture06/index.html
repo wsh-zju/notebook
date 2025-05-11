@@ -1437,19 +1437,69 @@
 </div>
 </li>
 <li>
-<p>根据opcode判断指令类型
-| 指令类型 | 操作码（二进制） | 操作码（十六进制） | 典型指令         |
-|----------|------------------|--------------------|------------------|
-| R型      | <code>0110011</code>        | 0x33               | <code>add</code>, <code>sub</code>, <code>mul</code> |
-| I型（算术） | <code>0010011</code>      | 0x13               | <code>addi</code>, <code>slli</code>, <code>xori</code> |
-| I型（加载） | <code>0000011</code>       | 0x03               | <code>lb</code>, <code>lw</code>, <code>ld</code> |
-| I型（跳转） | <code>1100111</code>       | 0x67               | <code>jalr</code>(唯一)      |
-| S型（存储） | <code>0100011</code>       | 0x23               | <code>sb</code>, <code>sw</code>, <code>sd</code> |
-| B型（分支） | <code>1100011</code>       | 0x63               | <code>beq</code>, <code>bne</code>, <code>blt</code> |
-| U型      | <code>0110111</code>        | 0x37               | <code>lui</code>            |
-| J型      | <code>1101111</code>        | 0x6F               | <code>jal</code>            |</p>
+<p>根据opcode判断指令类型</p>
 </li>
 </ol>
+<table>
+<thead>
+<tr>
+<th>指令类型</th>
+<th>操作码（二进制）</th>
+<th>操作码（十六进制）</th>
+<th>典型指令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R型</td>
+<td><code>0110011</code></td>
+<td>0x33</td>
+<td><code>add</code>, <code>sub</code>, <code>mul</code></td>
+</tr>
+<tr>
+<td>I型（算术）</td>
+<td><code>0010011</code></td>
+<td>0x13</td>
+<td><code>addi</code>, <code>slli</code>, <code>xori</code></td>
+</tr>
+<tr>
+<td>I型（加载）</td>
+<td><code>0000011</code></td>
+<td>0x03</td>
+<td><code>lb</code>, <code>lw</code>, <code>ld</code></td>
+</tr>
+<tr>
+<td>I型（跳转）</td>
+<td><code>1100111</code></td>
+<td>0x67</td>
+<td><code>jalr</code>(唯一)</td>
+</tr>
+<tr>
+<td>S型（存储）</td>
+<td><code>0100011</code></td>
+<td>0x23</td>
+<td><code>sb</code>, <code>sw</code>, <code>sd</code></td>
+</tr>
+<tr>
+<td>B型（分支）</td>
+<td><code>1100011</code></td>
+<td>0x63</td>
+<td><code>beq</code>, <code>bne</code>, <code>blt</code></td>
+</tr>
+<tr>
+<td>U型</td>
+<td><code>0110111</code></td>
+<td>0x37</td>
+<td><code>lui</code></td>
+</tr>
+<tr>
+<td>J型</td>
+<td><code>1101111</code></td>
+<td>0x6F</td>
+<td><code>jal</code></td>
+</tr>
+</tbody>
+</table>
 <details class="note">
 <summary>RISC-V指令编码总结</summary>
 <table>
