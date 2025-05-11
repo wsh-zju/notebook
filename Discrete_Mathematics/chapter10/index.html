@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1657,7 +1657,8 @@
 </li>
 </ul>
 <h4 id="1_1">定理 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<p>含有至少2个顶点的连通多重图具有<strong>欧拉回路</strong>当且仅当它的每个顶点的度都为偶数</p>
+<p>含有至少2个顶点的连通多重图具有<strong>欧拉回路</strong>当且仅当它的每个顶点的度
+都为偶数</p>
 <h4 id="2">定理 2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
 <p>连通多重图<strong>具有欧拉通路但无欧拉回路</strong>当且仅当它恰有2个度为奇数的顶点</p>
 <h4 id="3">定理 3 有向图（没有孤立点）<a class="headerlink" href="#3" title="Permanent link">&para;</a></h4>
@@ -1672,6 +1673,7 @@
 <h3 id="1052-hamilton-path-and-circuit">10.5.2 Hamilton Path and Circuit（遍历点）<a class="headerlink" href="#1052-hamilton-path-and-circuit" title="Permanent link">&para;</a></h3>
 <ul>
 <li>带有度为1的顶点的图没有哈密顿回路</li>
+<li>对于<span class="arithmatex">\(n\)</span>个顶点的完全图，哈密顿回路的数量为<span class="arithmatex">\((n - 1)!/2\)</span></li>
 </ul>
 <h4 id="1_2">定理 1 狄拉克定理<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
 <p>如果 <span class="arithmatex">\(G\)</span> 是有 <span class="arithmatex">\(n\)</span> 个顶点的简单图，其中 <span class="arithmatex">\(n \geq 3\)</span>，并且 <span class="arithmatex">\(G\)</span> 中每个顶点的度都至少为 <span class="arithmatex">\(n/2\)</span>，则 <span class="arithmatex">\(G\)</span> 有<strong>哈密顿回路</strong></p>
@@ -1679,6 +1681,10 @@
 <p>如果 <span class="arithmatex">\(G\)</span> 是有 <span class="arithmatex">\(n\)</span> 个顶点的简单图，其中 <span class="arithmatex">\(n \geq 3\)</span>，并且对于 <span class="arithmatex">\(G\)</span> 中每一对不相邻的顶点 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(v\)</span> 来说，都有 <span class="arithmatex">\(\text{deg}(u) + \text{deg}(v) \geq n\)</span>，则 <span class="arithmatex">\(G\)</span> 有<strong>哈密顿回路</strong></p>
 <h3 id="3_1">定理 3<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>若图 <span class="arithmatex">\(G\)</span> 有<strong>哈密顿回路</strong> ，则对于顶点集 <span class="arithmatex">\(V\)</span> 的所有非空子集 <span class="arithmatex">\(S\)</span> ，<span class="arithmatex">\(G-S\)</span> 连通分量的数量小于等于 <span class="arithmatex">\(|S|\)</span></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>!!! note &quot;Notice!&quot;
+    可以用来判断一个图无哈密顿回路
+</code></pre></div></td></tr></table></div>
 <h2 id="106">10.6 最短路径问题<a class="headerlink" href="#106" title="Permanent link">&para;</a></h2>
 <h3 id="floyd">弗洛伊德算法（Floyd）<a class="headerlink" href="#floyd" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1804,10 +1810,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       

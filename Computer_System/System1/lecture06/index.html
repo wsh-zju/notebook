@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -1436,6 +1436,335 @@
 </ul>
 </div>
 </li>
+<li>
+<p>根据opcode判断指令类型
+| 指令类型 | 操作码（二进制） | 操作码（十六进制） | 典型指令         |
+|----------|------------------|--------------------|------------------|
+| R型      | <code>0110011</code>        | 0x33               | <code>add</code>, <code>sub</code>, <code>mul</code> |
+| I型（算术） | <code>0010011</code>      | 0x13               | <code>addi</code>, <code>slli</code>, <code>xori</code> |
+| I型（加载） | <code>0000011</code>       | 0x03               | <code>lb</code>, <code>lw</code>, <code>ld</code> |
+| I型（跳转） | <code>1100111</code>       | 0x67               | <code>jalr</code>(唯一)      |
+| S型（存储） | <code>0100011</code>       | 0x23               | <code>sb</code>, <code>sw</code>, <code>sd</code> |
+| B型（分支） | <code>1100011</code>       | 0x63               | <code>beq</code>, <code>bne</code>, <code>blt</code> |
+| U型      | <code>0110111</code>        | 0x37               | <code>lui</code>            |
+| J型      | <code>1101111</code>        | 0x6F               | <code>jal</code>            |</p>
+</li>
+</ol>
+<details class="note">
+<summary>RISC-V指令编码总结</summary>
+<table>
+<thead>
+<tr>
+<th>指令格式</th>
+<th>指令名称</th>
+<th>操作码（二进制）</th>
+<th>funct3（二进制）</th>
+<th>funct6/7（二进制）</th>
+<th>功能简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R - type</td>
+<td>add</td>
+<td>0110011</td>
+<td>000</td>
+<td>0000000</td>
+<td>寄存器加法</td>
+</tr>
+<tr>
+<td></td>
+<td>sub</td>
+<td>0110011</td>
+<td>000</td>
+<td>0100000</td>
+<td>寄存器减法</td>
+</tr>
+<tr>
+<td></td>
+<td>sll</td>
+<td>0110011</td>
+<td>001</td>
+<td>0000000</td>
+<td>逻辑左移</td>
+</tr>
+<tr>
+<td></td>
+<td>xor</td>
+<td>0110011</td>
+<td>100</td>
+<td>0000000</td>
+<td>按位异或</td>
+</tr>
+<tr>
+<td></td>
+<td>srl</td>
+<td>0110011</td>
+<td>101</td>
+<td>0000000</td>
+<td>逻辑右移</td>
+</tr>
+<tr>
+<td></td>
+<td>sra</td>
+<td>0110011</td>
+<td>101</td>
+<td>0000000</td>
+<td>算术右移</td>
+</tr>
+<tr>
+<td></td>
+<td>or</td>
+<td>0110011</td>
+<td>110</td>
+<td>0000000</td>
+<td>按位或</td>
+</tr>
+<tr>
+<td></td>
+<td>and</td>
+<td>0110011</td>
+<td>111</td>
+<td>0000000</td>
+<td>按位与</td>
+</tr>
+<tr>
+<td></td>
+<td>lr.d</td>
+<td>0110011</td>
+<td>011</td>
+<td>0001000</td>
+<td>加载双字并保留（特定功能 ）</td>
+</tr>
+<tr>
+<td></td>
+<td>sc.d</td>
+<td>0110011</td>
+<td>011</td>
+<td>0001100</td>
+<td>存储双字并检查（特定功能 ）</td>
+</tr>
+<tr>
+<td>I - type</td>
+<td>lb</td>
+<td>0000011</td>
+<td>000</td>
+<td>n.a.</td>
+<td>加载字节</td>
+</tr>
+<tr>
+<td></td>
+<td>lh</td>
+<td>0000011</td>
+<td>001</td>
+<td>n.a.</td>
+<td>加载半字</td>
+</tr>
+<tr>
+<td></td>
+<td>lw</td>
+<td>0000011</td>
+<td>010</td>
+<td>n.a.</td>
+<td>加载字</td>
+</tr>
+<tr>
+<td></td>
+<td>ld</td>
+<td>0000011</td>
+<td>011</td>
+<td>n.a.</td>
+<td>加载双字</td>
+</tr>
+<tr>
+<td></td>
+<td>lbu</td>
+<td>0000011</td>
+<td>100</td>
+<td>n.a.</td>
+<td>加载无符号字节</td>
+</tr>
+<tr>
+<td></td>
+<td>lhu</td>
+<td>0000011</td>
+<td>101</td>
+<td>n.a.</td>
+<td>加载无符号半字</td>
+</tr>
+<tr>
+<td></td>
+<td>lwu</td>
+<td>0000011</td>
+<td>110</td>
+<td>n.a.</td>
+<td>加载无符号字</td>
+</tr>
+<tr>
+<td></td>
+<td>addi</td>
+<td>0010011</td>
+<td>000</td>
+<td>n.a.</td>
+<td>立即数加法</td>
+</tr>
+<tr>
+<td></td>
+<td>slli</td>
+<td>0010011</td>
+<td>001</td>
+<td>000000</td>
+<td>立即数逻辑左移</td>
+</tr>
+<tr>
+<td></td>
+<td>xori</td>
+<td>0010011</td>
+<td>100</td>
+<td>n.a.</td>
+<td>立即数按位异或</td>
+</tr>
+<tr>
+<td></td>
+<td>srli</td>
+<td>0010011</td>
+<td>101</td>
+<td>000000</td>
+<td>立即数逻辑右移</td>
+</tr>
+<tr>
+<td></td>
+<td>srai</td>
+<td>0010011</td>
+<td>101</td>
+<td>010000</td>
+<td>立即数算术右移</td>
+</tr>
+<tr>
+<td></td>
+<td>ori</td>
+<td>0010011</td>
+<td>110</td>
+<td>n.a.</td>
+<td>立即数按位或</td>
+</tr>
+<tr>
+<td></td>
+<td>andi</td>
+<td>0010011</td>
+<td>111</td>
+<td>n.a.</td>
+<td>立即数按位与</td>
+</tr>
+<tr>
+<td></td>
+<td>jalr</td>
+<td>1100111</td>
+<td>000</td>
+<td>n.a.</td>
+<td>寄存器跳转并链接</td>
+</tr>
+<tr>
+<td>S - type</td>
+<td>sb</td>
+<td>0100011</td>
+<td>000</td>
+<td>n.a.</td>
+<td>存储字节</td>
+</tr>
+<tr>
+<td></td>
+<td>sh</td>
+<td>0100011</td>
+<td>001</td>
+<td>n.a.</td>
+<td>存储半字</td>
+</tr>
+<tr>
+<td></td>
+<td>sw</td>
+<td>0100011</td>
+<td>010</td>
+<td>n.a.</td>
+<td>存储字</td>
+</tr>
+<tr>
+<td></td>
+<td>sd</td>
+<td>0100011</td>
+<td>111</td>
+<td>n.a.</td>
+<td>存储双字</td>
+</tr>
+<tr>
+<td>B - type</td>
+<td>beq</td>
+<td>1100011</td>
+<td>000</td>
+<td>n.a.</td>
+<td>相等则分支</td>
+</tr>
+<tr>
+<td></td>
+<td>bne</td>
+<td>1100011</td>
+<td>001</td>
+<td>n.a.</td>
+<td>不相等则分支</td>
+</tr>
+<tr>
+<td></td>
+<td>blt</td>
+<td>1100011</td>
+<td>100</td>
+<td>n.a.</td>
+<td>小于则分支</td>
+</tr>
+<tr>
+<td></td>
+<td>bge</td>
+<td>1100011</td>
+<td>101</td>
+<td>n.a.</td>
+<td>大于等于则分支</td>
+</tr>
+<tr>
+<td></td>
+<td>bltu</td>
+<td>1100011</td>
+<td>110</td>
+<td>n.a.</td>
+<td>无符号小于则分支</td>
+</tr>
+<tr>
+<td></td>
+<td>bgeu</td>
+<td>1100011</td>
+<td>111</td>
+<td>n.a.</td>
+<td>无符号大于等于则分支</td>
+</tr>
+<tr>
+<td>U - type</td>
+<td>lui</td>
+<td>0110111</td>
+<td>n.a.</td>
+<td>n.a.</td>
+<td>加载立即数高位</td>
+</tr>
+<tr>
+<td>J - type</td>
+<td>jal</td>
+<td>1101111</td>
+<td>n.a.</td>
+<td>n.a.</td>
+<td>跳转并链接</td>
+</tr>
+</tbody>
+</table>
+</details>
+<ol>
+<li></li>
 </ol>
 <h2 id="_1">汇编语言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1563,10 +1892,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
