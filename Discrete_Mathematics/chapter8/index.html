@@ -1017,11 +1017,11 @@
           <li class="md-nav__item">
   <a href="#821" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2.1 常系数线性齐次递推关系
+      8.2.1 齐次递推关系
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="8.2.1 常系数线性齐次递推关系">
+    <nav class="md-nav" aria-label="8.2.1 齐次递推关系">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1374,11 +1374,11 @@
           <li class="md-nav__item">
   <a href="#821" class="md-nav__link">
     <span class="md-ellipsis">
-      8.2.1 常系数线性齐次递推关系
+      8.2.1 齐次递推关系
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="8.2.1 常系数线性齐次递推关系">
+    <nav class="md-nav" aria-label="8.2.1 齐次递推关系">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1637,45 +1637,76 @@
   <h1>Chapter 8 高级计数</h1>
 
 <h2 id="82">8.2 求解线性递推关系<a class="headerlink" href="#82" title="Permanent link">&para;</a></h2>
-<h3 id="821">8.2.1 常系数线性齐次递推关系<a class="headerlink" href="#821" title="Permanent link">&para;</a></h3>
+<h3 id="821">8.2.1 齐次递推关系<a class="headerlink" href="#821" title="Permanent link">&para;</a></h3>
 <h4 id="1">定理 1 有两相异实根的二阶方程<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
-<p>设 <span class="arithmatex">\( c_1 \)</span> 和 <span class="arithmatex">\( c_2 \)</span> 为实数，特征方程 <span class="arithmatex">\( r^2 - c_1 r - c_2 = 0 \)</span> 有两个相异实根 <span class="arithmatex">\( r_1 \)</span> 和 <span class="arithmatex">\( r_2 \)</span>。则递推关系<br />
-[ a_n = c_1 a_{n-1} + c_2 a_{n-2} ]<br />
-的通解为：<br />
-[ a_n = \alpha_1 r_1^n + \alpha_2 r_2^n \quad (n \geq 0) ]<br />
-其中 <span class="arithmatex">\( \alpha_1, \alpha_2 \)</span> 为常数。</p>
+<p>设 <span class="arithmatex">\( c_1 \)</span> 和 <span class="arithmatex">\( c_2 \)</span> 为实数，特征方程 <span class="arithmatex">\( r^2 - c_1 r - c_2 = 0 \)</span> 有两个相异实根 <span class="arithmatex">\( r_1 \)</span> 和 <span class="arithmatex">\( r_2 \)</span>。则递推关系</p>
+<div class="arithmatex">\[ 
+a_n = c_1 a_{n-1} + c_2 a_{n-2} 
+\]</div>
+<p>的通解为： </p>
+<div class="arithmatex">\[
+a_n = \alpha_1 r_1^n + \alpha_2 r_2^n \quad (n \geq 0) 
+\]</div>
+<p>其中 <span class="arithmatex">\( \alpha_1, \alpha_2 \)</span> 为常数。</p>
 <h4 id="2">定理 2 重根的二阶方程<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<p>设 <span class="arithmatex">\( c_1, c_2 \)</span> 为实数且 <span class="arithmatex">\( c_2 \neq 0 \)</span>，若特征方程 <span class="arithmatex">\( r^2 - c_1 r - c_2 = 0 \)</span> 有唯一根 <span class="arithmatex">\( r_0 \)</span>。则递推关系<br />
-[ a_n = c_1 a_{n-1} + c_2 a_{n-2} ]<br />
-的通解为：<br />
-[ a_n = (\alpha_1 + \alpha_2 n) r_0^n \quad (n \geq 0) ]<br />
-其中 <span class="arithmatex">\( \alpha_1, \alpha_2 \)</span> 为常数。</p>
+<p>设 <span class="arithmatex">\( c_1, c_2 \)</span> 为实数且 <span class="arithmatex">\( c_2 \neq 0 \)</span>，若特征方程 <span class="arithmatex">\( r^2 - c_1 r - c_2 = 0 \)</span> 有唯一根 <span class="arithmatex">\( r_0 \)</span>。则递推关系  </p>
+<div class="arithmatex">\[ 
+a_n = c_1 a_{n-1} + c_2 a_{n-2} 
+\]</div>
+<p>的通解为：  </p>
+<div class="arithmatex">\[ 
+a_n = (\alpha_1 + \alpha_2 n) r_0^n \quad (n \geq 0) 
+\]</div>
+<p>其中 <span class="arithmatex">\( \alpha_1, \alpha_2 \)</span> 为常数。</p>
 <h4 id="3-k">定理 3 无重根的k阶差分方程<a class="headerlink" href="#3-k" title="Permanent link">&para;</a></h4>
-<p>设 <span class="arithmatex">\( c_1, c_2, \dots, c_k \)</span> 为实数，若特征方程<br />
-[ r^k - c_1 r^{k-1} - \dots - c_k = 0 ]<br />
-有 <span class="arithmatex">\( k \)</span> 个相异根 <span class="arithmatex">\( r_1, r_2, \dots, r_k \)</span>。则递推关系<br />
-[ a_n = \sum_{i=1}^k c_i a_{n-i} ]<br />
-的通解为：<br />
-[ a_n = \sum_{i=1}^k \alpha_i r_i^n \quad (n \geq 0) ]<br />
-其中 <span class="arithmatex">\( \alpha_i \)</span> 为常数。</p>
+<p>设 <span class="arithmatex">\( c_1, c_2, \dots, c_k \)</span> 为实数，若特征方程 </p>
+<div class="arithmatex">\[ 
+r^k - c_1 r^{k-1} - \dots - c_k = 0 
+\]</div>
+<p>有 <span class="arithmatex">\( k \)</span> 个相异根 <span class="arithmatex">\( r_1, r_2, \dots, r_k \)</span>。则递推关系 </p>
+<div class="arithmatex">\[ 
+a_n = \sum_{i=1}^k c_i a_{n-i} 
+\]</div>
+<p>的通解为：  </p>
+<div class="arithmatex">\[ 
+a_n = \sum_{i=1}^k \alpha_i r_i^n \quad (n \geq 0) 
+\]</div>
+<p>其中 <span class="arithmatex">\( \alpha_i \)</span> 为常数。</p>
 <h4 id="4-k">定理 4 有重根的k阶差分方程<a class="headerlink" href="#4-k" title="Permanent link">&para;</a></h4>
-<p>设特征方程有 <span class="arithmatex">\( t \)</span> 个相异根 <span class="arithmatex">\( r_1, \dots, r_t \)</span>，其重数分别为 <span class="arithmatex">\( m_1, \dots, m_t \)</span>（满足 <span class="arithmatex">\( \sum m_i = k \)</span>）。则对应递推关系的通解为：<br />
-[ a_n = \sum_{i=1}^t \left( \sum_{j=0}^{m_i-1} \beta_{i,j} n^j \right) r_i^n ]<br />
-其中 <span class="arithmatex">\( \beta_{i,j} \)</span> 为常数。</p>
+<p>设特征方程有 <span class="arithmatex">\( t \)</span> 个相异根 <span class="arithmatex">\( r_1, \dots, r_t \)</span>，其重数分别为 <span class="arithmatex">\( m_1, \dots, m_t \)</span>（满足 <span class="arithmatex">\( \sum m_i = k \)</span>）。则对应递推关系的通解为：  </p>
+<div class="arithmatex">\[ 
+a_n = \sum_{i=1}^t \left( \sum_{j=0}^{m_i-1} \beta_{i,j} n^j \right) r_i^n 
+\]</div>
+<p>其中 <span class="arithmatex">\( \beta_{i,j} \)</span> 为常数。</p>
 <h3 id="822">8.2.2 常系数线性非齐次递推关系<a class="headerlink" href="#822" title="Permanent link">&para;</a></h3>
 <h4 id="5">定理 5 非齐次方程解的结构<a class="headerlink" href="#5" title="Permanent link">&para;</a></h4>
-<p>若 <span class="arithmatex">\( \{a_n^{(p)}\} \)</span> 是非齐次递推关系<br />
-[ a_n = \sum_{i=1}^k c_i a_{n-i} + F(n) ]<br />
-的特解，则其通解可表示为：<br />
-[ a_n = a_n^{(p)} + a_n^{(h)} ]<br />
-其中 <span class="arithmatex">\( a_n^{(h)} \)</span> 为对应齐次方程的通解。</p>
+<p>若 <span class="arithmatex">\( \{a_n^{(p)}\} \)</span> 是非齐次递推关系  </p>
+<div class="arithmatex">\[ 
+a_n = \sum_{i=1}^k c_i a_{n-i} + F(n) 
+\]</div>
+<p>的特解，则其通解可表示为：  </p>
+<div class="arithmatex">\[ 
+a_n = a_n^{(p)} + a_n^{(h)} 
+\]</div>
+<p>其中 <span class="arithmatex">\( a_n^{(h)} \)</span> 为对应齐次方程的通解。</p>
 <h4 id="6">定理 6 非齐次方程特解形式<a class="headerlink" href="#6" title="Permanent link">&para;</a></h4>
 <p>当非齐次项 <span class="arithmatex">\( F(n) = (b_t n^t + \dots + b_0)s^n \)</span> 时：<br />
-1. 若 <span class="arithmatex">\( s \)</span> 不是特征根，特解形式为：<br />
-   [ (p_t n^t + \dots + p_0)s^n ]<br />
-2. 若 <span class="arithmatex">\( s \)</span> 是 <span class="arithmatex">\( m \)</span> 重特征根，特解形式为：<br />
-   [ n^m (p_t n^t + \dots + p_0)s^n ]<br />
-其中 <span class="arithmatex">\( p_i \)</span> 为待定系数。</p>
+1. 若 <span class="arithmatex">\( s \)</span> 不是特征根，特解形式为：  </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>\[ 
+(p_t n^t + \dots + p_0)s^n 
+\]
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li>
+<p>若 <span class="arithmatex">\( s \)</span> 是 <span class="arithmatex">\( m \)</span> 重特征根，特解形式为：  </p>
+<div class="arithmatex">\[ 
+n^m (p_t n^t + \dots + p_0)s^n 
+\]</div>
+</li>
+</ol>
+<p>其中 <span class="arithmatex">\( p_i \)</span> 为待定系数。</p>
 <h2 id="83-divide-and-conquer-algorithm">8.3 Divide-and Conquer Algorithm (分而治之)<a class="headerlink" href="#83-divide-and-conquer-algorithm" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">定理 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>设<span class="arithmatex">\(f\)</span>是满足递推关系</p>
