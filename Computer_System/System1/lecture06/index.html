@@ -666,10 +666,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="RISC-V">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      寄存器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rv32i" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础整数指令集RV32I
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据opcode判断指令类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       汇编语言
     </span>
@@ -1223,10 +1265,52 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="RISC-V">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      寄存器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rv32i" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础整数指令集RV32I
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      根据opcode判断指令类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       汇编语言
     </span>
@@ -1341,15 +1425,13 @@
 <li>RISC：精简指令集</li>
 </ol>
 <h2 id="risc-v">RISC-V<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h2>
-<ol>
-<li>指令分类<ul>
+<h3 id="_1">指令分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
 <li>ALU</li>
 <li>Branchs/jumps</li>
 <li>Loads/stores</li>
 </ul>
-</li>
-<li>
-<p>寄存器</p>
+<h3 id="_2">寄存器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>整数寄存器<ul>
 <li>32个（x0~x31）</li>
@@ -1455,9 +1537,7 @@
 <summary>不同寄存器的功能</summary>
 <p><img alt="" src="../photo/6-3.png" /></p>
 </details>
-</li>
-<li>
-<p>基础整数指令集RV32I</p>
+<h3 id="rv32i">基础整数指令集RV32I<a class="headerlink" href="#rv32i" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>分类</p>
@@ -1522,22 +1602,22 @@
 </li>
 <li>
 <p>J-type</p>
-<p><table class="riscv-table">
+<p>&lt;table 
 <tr>
-    <td class="bit-number">31</td>
+    <td>31</td>
     <td colspan="18"></td>
-    <td class="bit-number">12</td>
-    <td class="bit-number">11</td>
+    <td>12</td>
+    <td>11</td>
     <td colspan="3"></td>
-    <td class="bit-number">7</td>
-    <td class="bit-number">6</td>
+    <td>7</td>
+    <td>6</td>
     <td colspan="5"></td>
-    <td class="bit-number">0</td>
+    <td>0</td>
 </tr>
 <tr>
-    <td colspan="20" class="imm-field">imm[20,10:1,11,19:12]</td>
-    <td colspan="5" class="rd-field">rd</td>
-    <td colspan="7" class="opcode-field">opcode</td>
+    <td colspan="20" >imm[20,10:1,11,19:12]</td>
+    <td colspan="5" >rd</td>
+    <td colspan="7" >opcode</td>
 </tr>
 </table></p>
 </li>
@@ -1552,11 +1632,7 @@
 <li>e.g. ADDI x0,x0,0;</li>
 </ul>
 </div>
-</li>
-<li>
-<p>根据opcode判断指令类型</p>
-</li>
-</ol>
+<h3 id="opcode">根据opcode判断指令类型<a class="headerlink" href="#opcode" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -1930,11 +2006,11 @@
 </tbody>
 </table>
 </details>
-<h2 id="_1">汇编语言<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_3">汇编语言<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>过程调用指令</p>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">//jump and link</span>
@@ -1942,11 +2018,17 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">//jump and link register</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nf">jalr</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-2. stack
-- push/pop
-- 两种寄存器
-    - temporary：由主函数负责，不需要压栈
-    - saved：由被调用函数负责，需要压栈  </p>
+</li>
+<li>
+<p>stack</p>
+<ul>
+<li>push/pop</li>
+<li>两种寄存器<ul>
+<li>temporary：由主函数负责，不需要压栈</li>
+<li>saved：由被调用函数负责，需要压栈  </li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>程序运行</p>
