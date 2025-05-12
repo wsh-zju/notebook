@@ -1569,19 +1569,103 @@
 </li>
 <li>
 <p>R-type</p>
+<p><table class="riscv-table">
+<tr>
+    <td class="riscv-table-numnodel">31</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">25</td>
+    <td class="riscv-table-numnodel">24</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">20</td>
+    <td class="riscv-table-numnodel">19</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">15</td>
+    <td class="riscv-table-numnodel">14</td>
+    <td class="riscv-table-numnode" colspan="1"></td>
+    <td class="riscv-table-numnoder">12</td>
+    <td class="riscv-table-numnodel">11</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">7</td>
+    <td class="riscv-table-numnodel">6</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+    <td colspan="7" class="riscv-table-node">funct7</td>
+    <td colspan="5" class="riscv-table-node">rs2</td>
+    <td colspan="5" class="riscv-table-node">rs1</td>
+    <td colspan="3" class="riscv-table-node">funct3</td>
+    <td colspan="5" class="riscv-table-node">rd</td>
+    <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
 <ul>
 <li>rd = rs1 op rs2</li>
 <li>没有not运算符，通过xor实现</li>
+<li>I-type</li>
 </ul>
-</li>
-<li>I-type<ul>
+<p><table class="riscv-table">
+<tr>
+    <td class="riscv-table-numnodel">31</td>
+    <td class="riscv-table-numnode" colspan="10"></td>
+    <td class="riscv-table-numnoder">20</td>
+    <td class="riscv-table-numnodel">19</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">15</td>
+    <td class="riscv-table-numnodel">14</td>
+    <td class="riscv-table-numnode" colspan="1"></td>
+    <td class="riscv-table-numnoder">12</td>
+    <td class="riscv-table-numnodel">11</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">7</td>
+    <td class="riscv-table-numnodel">6</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+    <td colspan="12" class="riscv-table-node">imm[11:0]</td>
+    <td colspan="5" class="riscv-table-node">rs1</td>
+    <td colspan="3" class="riscv-table-node">funct3</td>
+    <td colspan="5" class="riscv-table-node">rd</td>
+    <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
+<ul>
 <li>如果是 ALU 运算，则 rd = rs1 op imm</li>
 <li>立即数指令（立即数是有符号数）</li>
 <li>e.g. Load指令</li>
+<li>S-type</li>
 </ul>
-</li>
-<li>
-<p>S-type</p>
+<p><table class="riscv-table">
+<tr>
+    <td class="riscv-table-numnodel">31</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">25</td>
+    <td class="riscv-table-numnodel">24</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">20</td>
+    <td class="riscv-table-numnodel">19</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">15</td>
+    <td class="riscv-table-numnodel">14</td>
+    <td class="riscv-table-numnode" colspan="1"></td>
+    <td class="riscv-table-numnoder">12</td>
+    <td class="riscv-table-numnodel">11</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">7</td>
+    <td class="riscv-table-numnodel">6</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+    <td colspan="7" class="riscv-table-node">imm[11:5]</td>
+    <td colspan="5" class="riscv-table-node">rs2</td>
+    <td colspan="5" class="riscv-table-node">rs1</td>
+    <td colspan="3" class="riscv-table-node">funct3</td>
+    <td colspan="5" class="riscv-table-node">imm[4:0]</td>
+    <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
 <ul>
 <li>rs1 = [rs2+imm]</li>
 </ul>
@@ -1594,14 +1678,63 @@
 </div>
 </li>
 <li>
+<p>B-type</p>
+<p><table class="riscv-table">
+<tr>
+    <td class="riscv-table-numnodel">31</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">25</td>
+    <td class="riscv-table-numnodel">24</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">20</td>
+    <td class="riscv-table-numnodel">19</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">15</td>
+    <td class="riscv-table-numnodel">14</td>
+    <td class="riscv-table-numnode" colspan="1"></td>
+    <td class="riscv-table-numnoder">12</td>
+    <td class="riscv-table-numnodel">11</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">7</td>
+    <td class="riscv-table-numnodel">6</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+    <td colspan="7" class="riscv-table-node">imm[12,10:5]</td>
+    <td colspan="5" class="riscv-table-node">rs2</td>
+    <td colspan="5" class="riscv-table-node">rs1</td>
+    <td colspan="3" class="riscv-table-node">funct3</td>
+    <td colspan="5" class="riscv-table-node">imm[4:1,11]</td>
+    <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
+</li>
+<li>
 <p>U-type</p>
+<p><table class="riscv-table">
+<tr>
+    <td class="riscv-table-numnodel">31</td>
+    <td class="riscv-table-numnode" colspan="18"></td>
+    <td class="riscv-table-numnoder">12</td>
+    <td class="riscv-table-numnodel">11</td>
+    <td class="riscv-table-numnode" colspan="3"></td>
+    <td class="riscv-table-numnoder">7</td>
+    <td class="riscv-table-numnodel">6</td>
+    <td class="riscv-table-numnode" colspan="5"></td>
+    <td class="riscv-table-numnoder">0</td>
+</tr>
+<tr>
+    <td colspan="20" class="riscv-table-node">imm[31:12]</td>
+    <td colspan="5" class="riscv-table-node">rd</td>
+    <td colspan="7" class="riscv-table-node">opcode</td>
+</tr>
+</table></p>
 <ul>
 <li>LUI: load upper immediate</li>
 <li>AUIPC: add upper immediate to PC</li>
+<li>J-type</li>
 </ul>
-</li>
-<li>
-<p>J-type</p>
 <p><table class="riscv-table">
 <tr>
     <td class="riscv-table-numnodel">31</td>
@@ -1620,9 +1753,6 @@
     <td colspan="7" class="riscv-table-node">opcode</td>
 </tr>
 </table></p>
-</li>
-<li>
-<p>B-type</p>
 </li>
 </ul>
 <div class="admonition note">
