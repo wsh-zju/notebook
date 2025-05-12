@@ -700,6 +700,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cpu-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU design
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1234,6 +1243,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cpu-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      CPU design
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1469,7 +1487,7 @@
 </div>
 </li>
 <li>
-<p>CPU时间 = 用户CPU时间 + 系统CPU时间</p>
+<p>CPU时间 <strong>（用来衡量性能）</strong>  = 用户CPU时间 + 系统CPU时间</p>
 </li>
 <li>时钟周期（Clock Period）：单个周期持续时间</li>
 <li>时钟频率（Clock Rate）：每秒周期数</li>
@@ -1519,10 +1537,10 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </li>
 <li>
 <p>重要公式：</p>
+<p><span class="arithmatex">\(CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction\)</span></p>
+<p><span class="arithmatex">\(CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period\)</span></p>
+<p><span class="arithmatex">\(CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}\)</span></p>
 <ul>
-<li><span class="arithmatex">\(CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction\)</span></li>
-<li><span class="arithmatex">\(CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period\)</span></li>
-<li><span class="arithmatex">\(CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}\)</span></li>
 <li>
 <p>当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：</p>
 <div class="arithmatex">\[ Clock \ Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction \ Count_{i}) \]</div>
@@ -1534,6 +1552,7 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </ul>
 </li>
 </ul>
+<h2 id="cpu-design">CPU design<a class="headerlink" href="#cpu-design" title="Permanent link">&para;</a></h2>
 
 
 

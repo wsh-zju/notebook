@@ -1490,16 +1490,21 @@
 <li>
 <p>R-type</p>
 <ul>
+<li>rd = rs1 op rs2</li>
 <li>没有not运算符，通过xor实现</li>
 </ul>
 </li>
 <li>I-type<ul>
+<li>如果是 ALU 运算，则 rd = rs1 op imm</li>
 <li>立即数指令（立即数是有符号数）</li>
 <li>e.g. Load指令</li>
 </ul>
 </li>
 <li>
 <p>S-type</p>
+<ul>
+<li>rs1 = [rs2+imm]</li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <ul>
@@ -1515,8 +1520,30 @@
 <li>AUIPC: add upper immediate to PC</li>
 </ul>
 </li>
-<li>J-type</li>
-<li>B-type</li>
+<li>
+<p>J-type</p>
+<p><table class="riscv-table">
+<tr>
+    <td class="bit-number">31</td>
+    <td colspan="18"></td>
+    <td class="bit-number">12</td>
+    <td class="bit-number">11</td>
+    <td colspan="3"></td>
+    <td class="bit-number">7</td>
+    <td class="bit-number">6</td>
+    <td colspan="5"></td>
+    <td class="bit-number">0</td>
+</tr>
+<tr>
+    <td colspan="20" class="imm-field">imm[20,10:1,11,19:12]</td>
+    <td colspan="5" class="rd-field">rd</td>
+    <td colspan="7" class="opcode-field">opcode</td>
+</tr>
+</table></p>
+</li>
+<li>
+<p>B-type</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">NOP</p>
