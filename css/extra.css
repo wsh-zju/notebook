@@ -7,4 +7,5 @@
 /* 将 Favicon 变成圆形（部分主题生效） */
 .favicon img {
     border-radius: 50%;
+    object-fit: cover;
 }
