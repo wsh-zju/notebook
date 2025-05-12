@@ -95,6 +95,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#3" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -892,6 +897,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4 数论
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -903,6 +921,32 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 3 费马小定理
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1071,6 +1115,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 3 费马小定理
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1095,7 +1156,24 @@
 
   <h1>Chapter 4 数论</h1>
 
-
+<h3 id="3">定理 3 费马小定理<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p>如果<span class="arithmatex">\(p\)</span>为素数，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
+<div class="arithmatex">\[
+a^{p - 1}\equiv 1\pmod{p}
+\]</div>
+<p>再者，对每个整数<span class="arithmatex">\(a\)</span>都有</p>
+<div class="arithmatex">\[
+a^{p}\equiv a\pmod{p}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">欧拉函数</p>
+<p><span class="arithmatex">\(\varphi(n)\)</span>为欧拉函数，表示小于<span class="arithmatex">\(n\)</span>的与<span class="arithmatex">\(n\)</span>互质的数的个数 
+- 当<span class="arithmatex">\(n\)</span>为质数时，<span class="arithmatex">\(\varphi(n)=n - 1\)</span>，则
+    [
+    a^{\varphi(n)}\equiv 1\pmod{n}
+    ]
+- 若<span class="arithmatex">\(p\neq q\)</span>且<span class="arithmatex">\(p\)</span>，<span class="arithmatex">\(q\)</span>为质数，<span class="arithmatex">\(\varphi(pq)=(p - 1)(q - 1)\)</span> </p>
+</div>
 
 
 
