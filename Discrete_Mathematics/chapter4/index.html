@@ -1209,28 +1209,65 @@ x\equiv a_2\pmod{m_2}
 <div class="arithmatex">\[
 \cdots
 \]</div>
-<p>[
+<div class="arithmatex">\[
 x\equiv a_n\pmod{m_n}
-]
-有唯一的模<span class="arithmatex">\(m = m_1m_2\cdots m_n\)</span>的解。（即，存在一个满足<span class="arithmatex">\(0\leq x\leq m\)</span>的解<span class="arithmatex">\(x\)</span>，而所有其他的解均与此解模<span class="arithmatex">\(m\)</span>同余。）</p>
-<p><strong>证明</strong>：
-要建立这一定理，需要证明有一个解存在，而且在模<span class="arithmatex">\(m\)</span>下唯一。我们描述一个构造这个解的方法以证明解的存在，而对该解模<span class="arithmatex">\(m\)</span>唯一的证明留作练习30 。
-要构造一个满足所有方程的解，首先令
-<span class="arithmatex">\(M_k = m/m_k\)</span>，<span class="arithmatex">\(k = 1,2,\cdots,n\)</span> 。即<span class="arithmatex">\(M_k\)</span>是除<span class="arithmatex">\(m_k\)</span>以外所有模数的乘积。因为当<span class="arithmatex">\(i\neq k\)</span>时<span class="arithmatex">\(m_i\)</span>和<span class="arithmatex">\(m_k\)</span>没有大于<span class="arithmatex">\(1\)</span>的公因子，可得<span class="arithmatex">\(\gcd(m_k,M_k)=1\)</span> 。因此，由定理1可知存在整数<span class="arithmatex">\(y_k\)</span>，即<span class="arithmatex">\(M_k\)</span>模<span class="arithmatex">\(m_k\)</span>的逆，使得
-<span class="arithmatex">\(M_ky_k\equiv 1\pmod{m_k}\)</span>
-要构造一个满足所有方程的解，取和
-<span class="arithmatex">\(x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n\)</span>
-现在要证明<span class="arithmatex">\(x\)</span>是方程组的解。首先，注意到因为当<span class="arithmatex">\(j\neq k\)</span>时有<span class="arithmatex">\(M_j\equiv 0\pmod{m_k}\)</span>，在<span class="arithmatex">\(x\)</span>的求和式中除第<span class="arithmatex">\(k\)</span>项以外的各项模<span class="arithmatex">\(m_k\)</span>均同余于<span class="arithmatex">\(0\)</span>。由于<span class="arithmatex">\(M_ky_k\equiv 1\pmod{m_k}\)</span>，可看出
-<span class="arithmatex">\(x\equiv a_kM_ky_k\equiv a_k\pmod{m_k}\)</span> ，<span class="arithmatex">\(k = 1,2,\cdots,n\)</span> 。这就证明了<span class="arithmatex">\(x\)</span>同时是这<span class="arithmatex">\(n\)</span>个同余方程的解。</p>
-<p><strong>例5</strong>：要求解例4中的同余方程组，首先令<span class="arithmatex">\(m = 3\times5\times7 = 105\)</span>，<span class="arithmatex">\(M_1 = m/3 = 35\)</span>，<span class="arithmatex">\(M_2 = m/5 = 21\)</span>，<span class="arithmatex">\(M_3 = m/7 = 15\)</span> 。可以看出<span class="arithmatex">\(2\)</span>是<span class="arithmatex">\(M_1 = 35\)</span>模<span class="arithmatex">\(3\)</span>的逆，因为<span class="arithmatex">\(35\times2\equiv 2\times2\equiv 1\pmod{3}\)</span>；<span class="arithmatex">\(1\)</span>是<span class="arithmatex">\(M_2 = 21\)</span>模<span class="arithmatex">\(5\)</span>的逆，因为<span class="arithmatex">\(21\equiv 1\pmod{5}\)</span>；<span class="arithmatex">\(1\)</span>也是<span class="arithmatex">\(M_3 = 15\)</span>的模<span class="arithmatex">\(7\)</span>逆，因为<span class="arithmatex">\(15\equiv 1\pmod{7}\)</span> 。该方程组的解是那些满足下列式子的<span class="arithmatex">\(x\)</span>：
+\]</div>
+<p>有唯一的模<span class="arithmatex">\(m = m_1m_2\cdots m_n\)</span>的解。（即，存在一个满足<span class="arithmatex">\(0\leq x\leq m\)</span>的解<span class="arithmatex">\(x\)</span>，而所有其他的解均与此解模<span class="arithmatex">\(m\)</span>同余。）</p>
+<p><strong>求解方法</strong>：</p>
+<ol>
+<li>要构造一个满足所有方程的解，首先令</li>
+</ol>
+<div class="arithmatex">\[
+M_k = m/m_k，k = 1,2,\cdots,n
+\]</div>
+<ol start="2">
+<li>存在整数<span class="arithmatex">\(y_k\)</span>，使得</li>
+</ol>
+<div class="arithmatex">\[
+M_ky_k\equiv 1\pmod{m_k}
+\]</div>
+<p>求出<span class="arithmatex">\(y_k\)</span></p>
+<ol start="3">
+<li>取和</li>
+</ol>
+<div class="arithmatex">\[
+x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
+\]</div>
+<details class="note">
+<summary>同余方程组求解</summary>
+<p><strong>Question:</strong></p>
+<p>同余方程组为：</p>
+<p><span class="arithmatex">\(x\equiv 2\pmod{3}\)</span>
+<span class="arithmatex">\(x\equiv 3\pmod{5}\)</span>
+<span class="arithmatex">\(x\equiv 2\pmod{7}\)</span></p>
+<p><strong>Answer:</strong></p>
+<ol>
+<li>
+<p><strong>计算相关参数</strong>
+令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>
+<span class="arithmatex">\(M_1=\frac{m}{3}=35\)</span>
+<span class="arithmatex">\(M_2=\frac{m}{5}=21\)</span>
+<span class="arithmatex">\(M_3=\frac{m}{7}=15\)</span></p>
+</li>
+<li>
+<p><strong>求模逆元</strong>
+- 因为 <span class="arithmatex">\(35\times2\equiv2\times2\equiv1\pmod{3}\)</span>，所以 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(M_1 = 35\)</span> 模 <span class="arithmatex">\(3\)</span> 的逆，即 <span class="arithmatex">\(y_1 = 2\)</span>。
+- 因为 <span class="arithmatex">\(21\equiv1\pmod{5}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_2 = 21\)</span> 模 <span class="arithmatex">\(5\)</span> 的逆，即 <span class="arithmatex">\(y_2 = 1\)</span>。
+- 因为 <span class="arithmatex">\(15\equiv1\pmod{7}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_3 = 15\)</span> 模 <span class="arithmatex">\(7\)</span> 的逆，即 <span class="arithmatex">\(y_3 = 1\)</span>。</p>
+</li>
+<li>
+<p><strong>计算同余方程组的解</strong>
+根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。
 [
 \begin{align<em>}
-x&amp;\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\
-&amp;=2\times35\times2 + 3\times21\times1 + 2\times15\times1\
-&amp;=233\equiv 23\pmod{105}
+x&amp;\equiv 233\pmod{105}\
+&amp;\equiv 23\pmod{105}
 \end{align</em>}
-]
-从而得出<span class="arithmatex">\(23\)</span>是方程组的最小正整数解。我们的结论是<span class="arithmatex">\(23\)</span>是最小的正整数满足除以<span class="arithmatex">\(3\)</span>时余<span class="arithmatex">\(2\)</span>，除以<span class="arithmatex">\(5\)</span>时余<span class="arithmatex">\(3\)</span>，除以<span class="arithmatex">\(7\)</span>时余<span class="arithmatex">\(2\)</span>。 </p>
+]</p>
+</li>
+</ol>
+<p>所以，<span class="arithmatex">\(23\)</span> 是该同余方程组的最小正整数解 </p>
+</details>
 
 
 
