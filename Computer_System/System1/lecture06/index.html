@@ -2277,109 +2277,136 @@
 </details>
 <h2 id="_3">汇编语言<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">函数调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li>步骤</li>
-</ol>
-<ul>
-<li>将参数放置在函数能够访问的位置（寄存器/栈）</li>
-<li>跳转到函数（jal） </li>
-<li>获取函数所需的局部存储资源，按需保存寄存器</li>
-<li>执行函数</li>
-<li>将函数返回值放置在调用程序能够访问的位置，恢复任何被保存的寄存器，并释放任何局部存储资源 </li>
-<li>由于一个函数可能在程序中的多个位置被调用，需将控制权返回至调用点（ret 指令）</li>
-</ul>
-<ol start="2">
-<li>函数序言与尾声</li>
-</ol>
-<ul>
-<li>
-<p>序言（函数开始部分，为函数执行做准备）</p>
-<ul>
-<li>
-<p>若函数参数和变量过多，寄存器无法容纳，函数序言会在栈上为函数帧（frame）分配空间</p>
-<p>通过调整栈指针（sp）来实现，e.g. <code>addi sp,sp,-framesize</code> </p>
-</li>
-<li>
-<p>返回地址保存：在函数执行完后需要回到调用它的地方继续执行，因此要保存返回地址</p>
-<p>e.g. <code>sw ra,framesize - 4(sp)</code></p>
-</li>
-<li>
-<p>寄存器保存：如果函数执行过程中会使用到一些寄存器，而这些寄存器中的值在函数返回后调用者还需要使用，那么函数需要在使用这些寄存器之前将其值保存到栈上，后续函数执行完再恢复，保证不破坏调用者寄存器中的原有数据</p>
-</li>
-</ul>
-</li>
-<li>
-<p>尾声（函数执行结束时运行，恢复函数调用前的环境并返回）</p>
-<ul>
-<li>寄存器恢复：如果之前在函数序言中保存了寄存器的值到栈上，这里需要将其恢复到原来的寄存器中，确保调用者后续代码能正常运行</li>
-<li>返回地址恢复：<code>lw ra,framesize - 4(sp)</code> </li>
-<li>栈帧空间释放：<code>addi sp,sp,framesize</code> </li>
-<li>返回调用点：<code>ret</code> 指令(等价于 <code>jalr x0, 0(ra)</code>)</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li>
-<p>过程调用指令</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">//jump and link</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">jal</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">ProcedureLabel</span><span class="w">    </span><span class="c1">//返回地址保存在x1中</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">//jump and link register</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nf">jalr</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span><span class="w">         </span><span class="c1">//跳转到x1储存的返回地址，x0是为了满足指令格式需求</span>
+<p><strong>1. 核心步骤</strong>
+- <strong>传参</strong><br />
+    - 前8个参数 → <code>a0-a7</code>
+    - 超出的压栈（<code>sp</code>向低地址增长）：通过调整栈指针（sp）来实现
+        e.g. <code>addi sp,sp,-framesize</code> </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>```asm
+sd a8, -8(sp)   # 第9个参数存栈
+```
 </code></pre></div></td></tr></table></div>
+<ul>
+<li>
+<p><strong>跳转</strong>  </p>
+<ul>
+<li><code>jal ra, func</code>：跳转并保存返回地址到 <code>ra</code>（<code>x1</code>）</li>
+</ul>
 </li>
 <li>
-<p>Example</p>
+<p><strong>执行</strong>  </p>
+<ul>
+<li>使用栈空间存储局部变量和临时数据</li>
+</ul>
 </li>
-</ol>
+<li>
+<p><strong>返回调用点</strong>  </p>
+<ul>
+<li>结果存 <code>a0</code>，恢复寄存器，释放栈帧，<code>ret</code> 返回</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 函数序言（Prologue）</strong>（函数开始部分，为函数执行做准备）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nl">func:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">-16</span><span class="w">   </span><span class="c1"># 分配栈帧（假设需16字节）</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">     </span><span class="c1"># 保存返回地址</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">s0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">     </span><span class="c1"># 保存被调用者保存寄存器</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">s0</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">    </span><span class="c1"># 设置帧指针（可选）</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>作用</strong>：<br />
+- 保护 <code>ra</code> 和关键寄存器<br />
+- 建立栈帧（局部变量通过 <code>sp</code> 或 <code>s0</code> 访问）</p>
+<p><strong>3. 函数尾声（Epilogue）</strong>（函数执行结束时运行，恢复函数调用前的环境并返回）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">     </span><span class="c1"># 恢复返回地址</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nf">ld</span><span class="w">   </span><span class="no">s0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">     </span><span class="c1"># 恢复寄存器</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">    </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nf">ret</span><span class="w">                </span><span class="c1"># 返回（等价于 jalr x0, 0(ra)）</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>4. 关键规则</strong>
+- <strong>调用者保存</strong>（Caller-Saved）：<code>a0-a7</code>, <code>t0-t6</code>（若需保留，调用前压栈）<br />
+- <strong>被调用者保存</strong>（Callee-Saved）：<code>ra</code>, <code>s0-s11</code>, <code>sp</code>（函数内若使用，必须保存）  </p>
+<details class="note">
+<summary>叶子函数与非叶子函数</summary>
+<ul>
+<li>叶子函数：不调用其他任何函数的函数<ul>
+<li>无需保存返回地址<code>ra</code></li>
+</ul>
+</li>
+<li>非叶子函数：调用其他函数的函数<ul>
+<li>必须保存返回地址<code>ra</code></li>
+</ul>
+</li>
+</ul>
+</details>
+<p><strong>5. 过程调用指令</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>```asm
+//jump and link
+jal x1,ProcedureLabel    //返回地址保存在x1中
+//jump and link register
+jalr x0,0(x1)         //跳转到x1储存的返回地址，x0是为了满足指令格式需求
+```
+</code></pre></div></td></tr></table></div>
+<p><strong>6. Example</strong></p>
 <ul>
 <li>
 <p>递归求阶乘</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">fact</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">){</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">fact</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">){</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nl">fact:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">-16</span><span class="w">       </span><span class="c1"># 分配栈帧</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存ra</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存参数n</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># t0 = n-1</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="nf">bge</span><span class="w">  </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span><span class="w">      </span><span class="c1"># if n&gt;=1, goto L1</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1"># 基线条件：return 1</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nf">ret</span><span class="w">                    </span><span class="c1"># 返回</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nl">L1:</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># n = n-1</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nf">jal</span><span class="w">  </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="no">fact</span><span class="w">          </span><span class="c1"># 递归调用fact(n-1)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复原始n值</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="nf">mul</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="w">        </span><span class="c1"># return n * fact(n-1)</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复ra</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="nf">ret</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nl">fact:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">-16</span><span class="w">       </span><span class="c1"># 分配栈帧</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存ra</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存参数n</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># t0 = n-1</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="nf">bge</span><span class="w">  </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span><span class="w">      </span><span class="c1"># if n&gt;=1, goto L1</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1"># 基线条件：return 1</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nf">ret</span><span class="w">                    </span><span class="c1"># 返回</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nl">L1:</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># n = n-1</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nf">jal</span><span class="w">  </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="no">fact</span><span class="w">          </span><span class="c1"># 递归调用fact(n-1)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复原始n值</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nf">mul</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="w">        </span><span class="c1"># return n * fact(n-1)</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复ra</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="nf">ret</span>
 </code></pre></div></td></tr></table></div>
 </li>
 </ul>
