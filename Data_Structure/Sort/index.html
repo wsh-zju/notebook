@@ -839,6 +839,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bucket-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      桶排序（bucket sort）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#radix-sort" class="md-nav__link">
     <span class="md-ellipsis">
       基数排序（radix sort）
@@ -1303,6 +1312,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bucket-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      桶排序（bucket sort）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#radix-sort" class="md-nav__link">
     <span class="md-ellipsis">
       基数排序（radix sort）
@@ -1641,6 +1659,12 @@
 </code></pre></div></td></tr></table></div>
 <h3 id="_3">快速排序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
+<li>时间复杂度<ul>
+<li>最坏情况 <span class="arithmatex">\(O(N^2)\)</span></li>
+<li>最好情况 <span class="arithmatex">\(O(N\log N)\)</span></li>
+<li>平均情况 <span class="arithmatex">\(O(N\log N)\)</span></li>
+</ul>
+</li>
 <li>
 <p>Hoare分区 <a href="../code_docu/HoareQuickSort.c">Hoare QuickSort.c</a></p>
 <ul>
@@ -1794,10 +1818,17 @@
 </div>
 </li>
 </ul>
+<h3 id="bucket-sort">桶排序（bucket sort）<a class="headerlink" href="#bucket-sort" title="Permanent link">&para;</a></h3>
+<p>基数排序的基础</p>
 <h3 id="radix-sort">基数排序（radix sort）<a class="headerlink" href="#radix-sort" title="Permanent link">&para;</a></h3>
 <ul>
-<li>思路：按照个十百千……的顺序进行比较</li>
+<li>思路：按照个十百千……的顺序进行比较；在之前排序的基础上进行之后的排序</li>
 <li>时间复杂度： <span class="arithmatex">\(O(dN)\)</span> (d是数据最多的位数)</li>
+<li>分类：<ul>
+<li>Least Signification Digit (LSD)：最小位优先</li>
+<li>Most Significant Digit(MSD)：最大位优先</li>
+</ul>
+</li>
 </ul>
 
 
@@ -1897,7 +1928,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.expand", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
