@@ -672,7 +672,16 @@
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      指令分类
+      指令集分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-isa" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本 RISC - V ISA
     </span>
   </a>
   
@@ -716,6 +725,39 @@
       汇编语言
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="汇编语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数调用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序运行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1271,7 +1313,16 @@
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      指令分类
+      指令集分类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v-isa" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本 RISC - V ISA
     </span>
   </a>
   
@@ -1315,6 +1366,39 @@
       汇编语言
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="汇编语言">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      函数调用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      stack
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      程序运行
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1425,20 +1509,109 @@
 <li>RISC：精简指令集</li>
 </ol>
 <h2 id="risc-v">RISC-V<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h2>
-<h3 id="_1">指令分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_1">指令集分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>ALU</li>
-<li>Branchs/jumps</li>
-<li>Loads/stores</li>
+<li>
+<p><strong>基础指令集</strong></p>
+<ul>
+<li>
+<p><strong>I</strong>：整数指令</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">名称</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">RV32I</td>
+<td style="text-align: center;">32 位基础整数指令集，32 个寄存器</td>
+</tr>
+<tr>
+<td style="text-align: center;">RV32E</td>
+<td style="text-align: center;">32 位基础指令集，16 个寄存器，用于极低端嵌入式应用</td>
+</tr>
+<tr>
+<td style="text-align: center;">RV64I</td>
+<td style="text-align: center;">64 位基础指令集，64 位寄存器，含 64 位数据加载/存储指令</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ul>
+</li>
+<li>
+<p><strong>标准扩展</strong></p>
+<ul>
+<li><strong>M</strong>：整数乘除指令</li>
+<li><strong>A</strong>：原子指令</li>
+<li><strong>F</strong>：单精度浮点指令</li>
+<li><strong>D</strong>：双精度浮点指令</li>
+<li><strong>C</strong>：16 位压缩指令</li>
+<li><strong>G = IMAFD</strong>：整数基础指令集 + 四个标准扩展指令集</li>
+</ul>
+</li>
+<li><strong>可选扩展</strong></li>
+</ul>
+<h3 id="risc-v-isa">基本 RISC - V ISA<a class="headerlink" href="#risc-v-isa" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>地址空间变体</strong><ul>
+<li>RV32 和 RV64，含 32 位和 64 位两种</li>
+</ul>
+</li>
+<li><strong>便于教育/研究子集划分或扩展</strong><ul>
+<li>RV32IM、RV32IMA、RV32IMAFD、RV32G 等</li>
+</ul>
+</li>
+<li><strong>相关网站信息</strong>：<a href="http://www.riscv.org">www.riscv.org</a></li>
+</ul>
+<p>|M| 整数乘除指令|
+|A| 并发处理原子指令（见第 5 章）|
+|F| 32 位单精度 IEEE 浮点指令，32 个 32 位浮点寄存器及相关操作指令|
+|D| 64 位双精度浮点指令，64 位寄存器及相关操作指令|
+|Q| 四精度浮点扩展，128 位操作|
+|L| 支持 64 位和 128 位十进制浮点的 IEEE 标准指令|
+|C| 小内存嵌入式应用的指令集压缩版本，常见 RV32I 指令的 16 位版本|
+|V| 向量操作未来扩展（见第 4 章）|
+|B| 位域操作未来扩展|
+|T| 事务内存未来扩展|
+|P| 打包 SIMD 指令扩展（见第 4 章）|
+|RV128I| 128 位地址空间未来基础指令集| </p>
 <h3 id="_2">寄存器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
-<li>整数寄存器<ul>
+<li>程序计数器（PC）</li>
+<li>
+<p>浮点状态寄存器（fsr）：用于浮点舍入模式以及异常报告</p>
+<details class="note">
+<summary>fsr的功能详述</summary>
+<ol>
+<li>
+<p>浮点舍入模式控制
+   - <strong>就近舍入（Round to Nearest）</strong>：将数值舍入到最接近的可表示值。若出现中间值，例如 2.5，就会舍入到偶数，也就是 2.0。
+   - <strong>向上舍入（Round Up）</strong>：把数值朝正无穷大的方向舍入，比如 2.1 会舍入为 3.0。
+   - <strong>向下舍入（Round Down）</strong>：将数值朝负无穷大的方向舍入，例如 -2.9 会舍入为 -3.0。
+   - <strong>向零舍入（Round toward Zero）</strong>：直接截断小数部分，只保留整数部分，像 2.9 会舍入为 2.0，-2.9 会舍入为 -2.0。</p>
+</li>
+<li>
+<p>异常报告功能
+   - <strong>上溢（Overflow）</strong>：当运算结果超出了浮点数所能表示的范围，例如 1e400（假设为双精度浮点数），就会发生上溢。
+   - <strong>下溢（Underflow）</strong>：运算结果过小，无法用浮点数精确表示时，如下溢情况。
+   - <strong>除以零（Division by Zero）</strong>：当进行除法运算时，除数为零，比如 1.0 / 0.0，就会触发该异常。
+   - <strong>无效操作（Invalid Operation）</strong>：进行一些未定义的运算，例如对负数开平方，即 sqrt(-1)，会引发无效操作异常。
+   - <strong>不精确（Inexact）</strong>：运算结果无法精确表示，需要进行舍入时，就会出现不精确的情况，如 1.0 / 3.0。</p>
+</li>
+</ol>
+</details>
+</li>
+<li>
+<p>整数寄存器（32/64 bit）</p>
+<ul>
 <li>32个（x0~x31）</li>
 <li>x0只能存储0</li>
 </ul>
 </li>
-<li>浮点数寄存器<ul>
+<li>浮点数寄存器（单/双精度）<ul>
 <li>32个（f0~f31）</li>
 </ul>
 </li>
@@ -1551,7 +1724,7 @@
 <li>e.g. ld,lw,lh,sw,sd,fld...</li>
 </ul>
 </li>
-<li>Control Transfer 指令<ul>
+<li>Branch/Jump 指令<ul>
 <li>e.g. jal(跳转),jalr,beq(比较)...</li>
 </ul>
 </li>
@@ -2143,20 +2316,108 @@
 </table>
 </details>
 <h2 id="_3">汇编语言<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">函数调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
+<li>步骤</li>
+</ol>
+<ul>
+<li>将参数放置在函数能够访问的位置（寄存器/栈）</li>
+<li>跳转到函数（jal） </li>
+<li>获取函数所需的局部存储资源，按需保存寄存器</li>
+<li>执行函数</li>
+<li>将函数返回值放置在调用程序能够访问的位置，恢复任何被保存的寄存器，并释放任何局部存储资源 </li>
+<li>由于一个函数可能在程序中的多个位置被调用，需将控制权返回至调用点（ret 指令）</li>
+</ul>
+<ol start="2">
+<li>函数序言与尾声</li>
+</ol>
+<ul>
+<li>
+<p>序言（函数开始部分，为函数执行做准备）</p>
+<ul>
+<li>
+<p>若函数参数和变量过多，寄存器无法容纳，函数序言会在栈上为函数帧（frame）分配空间</p>
+<p>通过调整栈指针（sp）来实现，e.g. <code>addi sp,sp,-framesize</code> </p>
+</li>
+<li>
+<p>返回地址保存：在函数执行完后需要回到调用它的地方继续执行，因此要保存返回地址</p>
+<p>e.g. <code>sw ra,framesize - 4(sp)</code></p>
+</li>
+<li>
+<p>寄存器保存：如果函数执行过程中会使用到一些寄存器，而这些寄存器中的值在函数返回后调用者还需要使用，那么函数需要在使用这些寄存器之前将其值保存到栈上，后续函数执行完再恢复，保证不破坏调用者寄存器中的原有数据</p>
+</li>
+</ul>
+</li>
+<li>
+<p>尾声（函数执行结束时运行，恢复函数调用前的环境并返回）</p>
+<ul>
+<li>寄存器恢复：如果之前在函数序言中保存了寄存器的值到栈上，这里需要将其恢复到原来的寄存器中，确保调用者后续代码能正常运行</li>
+<li>返回地址恢复：<code>lw ra,framesize - 4(sp)</code> </li>
+<li>栈帧空间释放：<code>addi sp,sp,framesize</code> </li>
+<li>返回调用点：<code>ret</code> 指令(等价于 <code>jalr x0, 0(ra)</code>)</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
 <li>
 <p>过程调用指令</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">//jump and link</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">jal</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">ProcedureLabel</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">jal</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">ProcedureLabel</span><span class="w">    </span><span class="c1">//返回地址保存在x1中</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">//jump and link register</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nf">jalr</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nf">jalr</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span><span class="w">         </span><span class="c1">//跳转到x1储存的返回地址，x0是为了满足指令格式需求</span>
+</code></pre></div></td></tr></table></div>
+4. Example
+- 递归求阶乘</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="nf">fact</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">){</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nl">fact:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">-16</span><span class="w">       </span><span class="c1"># 分配栈帧</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存ra</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存参数n</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># t0 = n-1</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="nf">bge</span><span class="w">  </span><span class="no">t0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="no">L1</span><span class="w">      </span><span class="c1"># if n&gt;=1, goto L1</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1"># 基线条件：return 1</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="nf">ret</span><span class="w">                    </span><span class="c1"># 返回</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nl">L1:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># n = n-1</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="nf">jal</span><span class="w">  </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="no">fact</span><span class="w">          </span><span class="c1"># 递归调用fact(n-1)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复原始n值</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">    </span><span class="nf">mul</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="w">        </span><span class="c1"># return n * fact(n-1)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复ra</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">    </span><span class="nf">ret</span>
 </code></pre></div></td></tr></table></div>
 </li>
-<li>
-<p>stack</p>
+</ol>
+<h3 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
 <ul>
 <li>push/pop</li>
 <li>两种寄存器<ul>
@@ -2165,17 +2426,13 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>程序运行</p>
+<h3 id="_5">程序运行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
 <li>preprocessor(*.c-&gt;*.i):宏展开</li>
 <li>complier(*.i-&gt;*.s):生成汇编文件</li>
 <li>assembler(*.s-&gt;*.o):生成目标文件</li>
 <li>linker(*.o-&gt;*.out):生成可执行文件</li>
 </ul>
-</li>
-</ol>
 
 
 
