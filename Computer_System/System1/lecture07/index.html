@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -707,6 +707,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CPU design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1250,6 +1274,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CPU design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1553,6 +1601,201 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </li>
 </ul>
 <h2 id="cpu-design">CPU design<a class="headerlink" href="#cpu-design" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../photo/7-1.png" /></p>
+<h3 id="_3">数据通路<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>数据通路基本元素</li>
+</ol>
+<ul>
+<li>寄存器组（Registers）<ul>
+<li>32 个 64 位寄存器（x0-x31）</li>
+<li>两个读端口和一个写端口</li>
+<li>写操作由时钟边沿触发，受RegWrite信号控制</li>
+</ul>
+</li>
+<li>算术逻辑单元（ALU）<ul>
+<li>加法（Add）、减法（Sub）、与（And）、或（Or）、小于置位（Slt）等操作</li>
+<li>由ALU Op1和ALU Op0两位信号控制</li>
+<li>输入：两个操作数（来源由ALUSrc信号决定：寄存器数据或立即数）</li>
+<li>输出：结果及标志位（如 Zero）</li>
+</ul>
+</li>
+<li>存储器（Memory）<ul>
+<li>指令存储器（Instruction Memory）：只读，按地址读取指令</li>
+<li>数据存储器（Data Memory）：读写由MemRead和MemWrite信号控制，支持按地址存取数据</li>
+</ul>
+</li>
+<li>立即数生成单元（Immediate Generation Unit）<ul>
+<li>根据指令类型生成对应立即数，并进行符号扩展至 64 位</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">控制器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>控制信号</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">信号名称</th>
+<th style="text-align: center;">无效时（=0）</th>
+<th style="text-align: center;">有效时（=1）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">RegWrite</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">寄存器写入</td>
+</tr>
+<tr>
+<td style="text-align: center;">ALUScr</td>
+<td style="text-align: center;">ALU的第二个操作数来自第二个寄存器文件输出（读数据2）</td>
+<td style="text-align: center;">ALU的第二个操作数来自立即数生成器</td>
+</tr>
+<tr>
+<td style="text-align: center;">Branch（PCSrc）</td>
+<td style="text-align: center;">PC=PC+4</td>
+<td style="text-align: center;">PC跳转至分支目标地址（PC+立即数）</td>
+</tr>
+<tr>
+<td style="text-align: center;">Jump</td>
+<td style="text-align: center;">PC=PC+4或分支目标</td>
+<td style="text-align: center;">PC跳转至跳转地址</td>
+</tr>
+<tr>
+<td style="text-align: center;">MemRead</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">读取数据存储器内容</td>
+</tr>
+<tr>
+<td style="text-align: center;">MemWrite</td>
+<td style="text-align: center;">无</td>
+<td style="text-align: center;">将数据写入数据存储器</td>
+</tr>
+<tr>
+<td style="text-align: center;">MemtoReg（2位）</td>
+<td style="text-align: center;">00：写入寄存器的数据来自ALU</td>
+<td style="text-align: center;">写入寄存器的数据来自<br>01：数据存储器<br>10：PC+4<br>11：立即数生成器的输出</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>指令译码器真值表</li>
+</ul>
+<table>
+  <thead>
+    <tr>
+      <th colspan="2">输入</th>
+      <th colspan="9">输出</th>
+    </tr>
+    <tr>
+      <th>Instruction</th>
+      <th>OPCode</th>
+      <th>ALUSrcB</th>
+      <th>Memto-Reg</th>
+      <th>Reg Write</th>
+      <th>Mem Read</th>
+      <th>Mem Write</th>
+      <th>Branch</th>
+      <th>Jump</th>
+      <th>ALU Op1</th>
+      <th>ALU Op0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>R-format</td>
+      <td>0110011</td>
+      <td>0</td>
+      <td>00</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>Ld(I-Type)</td>
+      <td>0000011</td>
+      <td>1</td>
+      <td>01</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sd(S-Type)</td>
+      <td>0100011</td>
+      <td>1</td>
+      <td>X</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>beq(SB-Type)</td>
+      <td>1100111</td>
+      <td>0</td>
+      <td>X</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Jal(UJ-Type)</td>
+      <td>1101111</td>
+      <td>X</td>
+      <td>10</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>X</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Jalr</td>
+      <td>1100111</td>
+      <td>1</td>
+      <td>10</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>lui</td>
+      <td>1100111</td>
+      <td>X</td>
+      <td>11</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>X</td>
+      <td>X</td>
+  </tbody>
+</table>
 
 
 

@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.13">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -2388,8 +2388,7 @@
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
 <span class="normal"><a href="#__codelineno-5-15">15</a></span>
 <span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nl">fact:</span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nl">fact:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">-16</span><span class="w">       </span><span class="c1"># 分配栈帧</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存ra</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="nf">sd</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 保存参数n</span>
@@ -2398,15 +2397,135 @@
 <a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">zero</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w">       </span><span class="c1"># 基线条件：return 1</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nf">ret</span><span class="w">                    </span><span class="c1"># 返回</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="nl">L1:</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># n = n-1</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nf">jal</span><span class="w">  </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="no">fact</span><span class="w">          </span><span class="c1"># 递归调用fact(n-1)</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复原始n值</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nf">mul</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="w">        </span><span class="c1"># return n * fact(n-1)</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复ra</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="nl">L1:</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="mi">-1</span><span class="w">        </span><span class="c1"># n = n-1</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="nf">jal</span><span class="w">  </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="no">fact</span><span class="w">          </span><span class="c1"># 递归调用fact(n-1)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复原始n值</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="nf">mul</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="w"> </span><span class="no">t1</span><span class="p">,</span><span class="w"> </span><span class="no">a0</span><span class="w">        </span><span class="c1"># return n * fact(n-1)</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nf">ld</span><span class="w">   </span><span class="no">ra</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">(</span><span class="no">sp</span><span class="p">)</span><span class="w">         </span><span class="c1"># 恢复ra</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="nf">ret</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>switch跳转表</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">switch_eg</span><span class="p">(</span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">    </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">20</span><span class="p">:</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">21</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">19</span><span class="p">;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">22</span><span class="p">:</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">11</span><span class="p">;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">24</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="mi">26</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span>
+<span class="normal"><a href="#__codelineno-7-17">17</a></span>
+<span class="normal"><a href="#__codelineno-7-18">18</a></span>
+<span class="normal"><a href="#__codelineno-7-19">19</a></span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span>
+<span class="normal"><a href="#__codelineno-7-21">21</a></span>
+<span class="normal"><a href="#__codelineno-7-22">22</a></span>
+<span class="normal"><a href="#__codelineno-7-23">23</a></span>
+<span class="normal"><a href="#__codelineno-7-24">24</a></span>
+<span class="normal"><a href="#__codelineno-7-25">25</a></span>
+<span class="normal"><a href="#__codelineno-7-26">26</a></span>
+<span class="normal"><a href="#__codelineno-7-27">27</a></span>
+<span class="normal"><a href="#__codelineno-7-28">28</a></span>
+<span class="normal"><a href="#__codelineno-7-29">29</a></span>
+<span class="normal"><a href="#__codelineno-7-30">30</a></span>
+<span class="normal"><a href="#__codelineno-7-31">31</a></span>
+<span class="normal"><a href="#__codelineno-7-32">32</a></span>
+<span class="normal"><a href="#__codelineno-7-33">33</a></span>
+<span class="normal"><a href="#__codelineno-7-34">34</a></span>
+<span class="normal"><a href="#__codelineno-7-35">35</a></span>
+<span class="normal"><a href="#__codelineno-7-36">36</a></span>
+<span class="normal"><a href="#__codelineno-7-37">37</a></span>
+<span class="normal"><a href="#__codelineno-7-38">38</a></span>
+<span class="normal"><a href="#__codelineno-7-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">    </span><span class="na">.text</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="na">.globl</span><span class="w">  </span><span class="no">switch_eg</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="nl">switch_eg:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="nf">addi</span><span class="w">    </span><span class="no">a5</span><span class="p">,</span><span class="no">a0</span><span class="p">,-</span><span class="mi">20</span><span class="w"> </span><span class="c1"># 计算偏移量，x 的最小case值是20</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="nf">li</span><span class="w">  </span><span class="no">a4</span><span class="p">,</span><span class="mi">6</span><span class="w">   </span><span class="c1"># 跳转表的最大索引为6，共七个值</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="nf">bgtu</span><span class="w">    </span><span class="no">a5</span><span class="p">,</span><span class="no">a4</span><span class="p">,.</span><span class="no">L8</span><span class="w">  </span><span class="c1"># 如果a5&gt;6，跳转到.L8（default）</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="c1"># 无符号跳转，负数的时候也会跳转（因为无符号的时候负数是一个很大的数）</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="w">    </span><span class="nf">lla</span><span class="w"> </span><span class="no">a4</span><span class="p">,.</span><span class="no">L4</span><span class="w">      </span><span class="c1"># 取跳转表基地址</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="nf">slli</span><span class="w">    </span><span class="no">a5</span><span class="p">,</span><span class="no">a5</span><span class="p">,</span><span class="mi">2</span><span class="w">   </span><span class="c1"># 乘4</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="no">a5</span><span class="p">,</span><span class="no">a5</span><span class="p">,</span><span class="no">a4</span><span class="w">   </span><span class="c1"># 计算目标条目（储存地址偏移量）地址</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">    </span><span class="nf">lw</span><span class="w">  </span><span class="no">a5</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">a5</span><span class="p">)</span><span class="w">   </span><span class="c1"># 加载跳转表中的偏移量</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="no">a5</span><span class="p">,</span><span class="no">a5</span><span class="p">,</span><span class="no">a4</span><span class="w">   </span><span class="c1"># 计算目标地址</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="nf">jr</span><span class="w">  </span><span class="no">a5</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">    </span><span class="na">.section</span><span class="w">    </span><span class="no">.rodata</span><span class="w">  </span><span class="c1"># 只读数据段</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="na">.align</span><span class="w">  </span><span class="mi">2</span><span class="w">   </span><span class="c1"># 4字节对齐</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">    </span><span class="na">.align</span><span class="w">  </span><span class="mi">2</span><span class="w">   </span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="no">.L4</span><span class="p">:</span><span class="w">     </span><span class="c1"># 跳转表</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L7-.L4</span><span class="w">   </span><span class="c1"># 偏移量</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L6-.L4</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L5-.L4</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L8-.L4</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L3-.L4</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L8-.L4</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24"></a><span class="w">    </span><span class="na">.word</span><span class="w">   </span><span class="no">.L3-.L4</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25"></a><span class="w">    </span><span class="na">.text</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26"></a><span class="nl">.L3:</span>
+<a id="__codelineno-7-27" name="__codelineno-7-27"></a><span class="w">    </span><span class="nf">addiw</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="no">a1</span><span class="p">,-</span><span class="mi">20</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-7-29" name="__codelineno-7-29"></a><span class="nl">.L7:</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30"></a><span class="w">    </span><span class="nf">addi</span><span class="w">    </span><span class="no">a1</span><span class="p">,</span><span class="no">a1</span><span class="p">,-</span><span class="mi">5</span>
+<a id="__codelineno-7-31" name="__codelineno-7-31"></a><span class="nl">.L6:</span>
+<a id="__codelineno-7-32" name="__codelineno-7-32"></a><span class="w">    </span><span class="nf">addiw</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="no">a1</span><span class="p">,</span><span class="mi">19</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34"></a><span class="nl">.L5:</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35"></a><span class="w">    </span><span class="nf">addiw</span><span class="w">   </span><span class="no">a0</span><span class="p">,</span><span class="no">a1</span><span class="p">,</span><span class="mi">11</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37"></a><span class="nl">.L8:</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">    </span><span class="nf">li</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="mi">0</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">    </span><span class="nf">ret</span>
 </code></pre></div></td></tr></table></div>
 </li>
 </ul>
