@@ -1631,9 +1631,9 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </li>
 </ul>
 <h3 id="_4">控制器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>控制信号</li>
-</ul>
+</ol>
 <table>
 <thead>
 <tr>
@@ -1680,9 +1680,24 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </tr>
 </tbody>
 </table>
+<ol start="2">
+<li>控制信号生成</li>
+</ol>
 <ul>
-<li>指令译码器真值表</li>
+<li>主译码器（Main Decoder）<ul>
+<li>输入：7位操作码（Opcode）</li>
+<li>输出：7个控制信号和2位ALU Op信号</li>
 </ul>
+</li>
+<li>ALU 译码器（ALU Decoder）<ul>
+<li>输入：ALU Op和指令中的funct3、funct7</li>
+<li>输出：具体ALU操作</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>主指令译码器真值表</li>
+</ol>
 <table>
   <thead>
     <tr>
@@ -1784,7 +1799,7 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
     </tr>
     <tr>
       <td>lui</td>
-      <td>1100111</td>
+      <td>0110111</td>
       <td>X</td>
       <td>11</td>
       <td>1</td>
