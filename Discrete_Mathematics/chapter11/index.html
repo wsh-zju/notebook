@@ -1262,75 +1262,10 @@
 <h2 id="112">11.2 树的应用<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
 <h3 id="_1">决策树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><strong>Example:</strong>对3个不同元素进行排序的决策树</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>flowchart TD
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    root{a : b}
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>    left1{a : c}
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    right1{b : c}
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    left21{b : c}
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    left22[&lt;i&gt;c &gt; a &gt; b&lt;/i&gt;]
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    right21{a : c}
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    right22[&lt;i&gt;c &gt; b &gt; a&lt;/i&gt;]
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    left31[&lt;i&gt;a &gt; b &gt; c&lt;/i&gt;]
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    left32[&lt;i&gt;a &gt; c &gt; b&lt;/i&gt;]
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    right31[&lt;i&gt;b &gt; a &gt; c&lt;/i&gt;]
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    right32[&lt;i&gt;b &gt; c &gt; a&lt;/i&gt;]
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a>    root --&gt;|a &gt; b| left1
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    root --&gt;|a &lt; b| right1
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    left1 --&gt;|a &gt; c| left21
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a>    left1 --&gt;|a &lt; c| left22
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    right1 --&gt;|b &gt; c| right21
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    right1 --&gt;|b &lt; c| right22
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    left21 --&gt;|b &gt; c| left31
-<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    left21 --&gt;|b &lt; c| left32
-<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    right21 --&gt;|a &gt; c| right31
-<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    right21 --&gt;|a &lt; c| right32
-</code></pre></div></td></tr></table></div>
+<p><img alt="" src="../photo/11-1.png" /></p>
 <h3 id="_2">前缀码<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><strong>Example：</strong></p>
-<p>@startuml
-digraph BinaryTree {
-    rankdir=TB;
-    root -&gt; "0" [label = "0"];
-    root -&gt; "1" [label = "1"];
-    "0" -&gt; e [label = "e"];
-    "1" -&gt; n1 [label = "n1"];
-    n1 -&gt; "0" [label = "0"];
-    n1 -&gt; "1" [label = "1"];
-    "0" -&gt; a [label = "a"];
-    "1" -&gt; n2 [label = "n2"];
-    n2 -&gt; "0" [label = "0"];
-    n2 -&gt; "1" [label = "1"];
-    "0" -&gt; t [label = "t"];
-    "1" -&gt; n3 [label = "n3"];
-    n3 -&gt; "0" [label = "0"];
-    n3 -&gt; "1" [label = "1"];
-    "0" -&gt; n [label = "n"];
-    "1" -&gt; s [label = "s"];
-}
-@enduml</p>
+<p><img alt="" src="../photo/11-3.png" /></p>
 <h4 id="_3">哈夫曼编码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>步骤：<ul>
