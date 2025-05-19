@@ -18,7 +18,7 @@
         <link rel="prev" href="../lecture07/">
       
       
-        <link rel="next" href="../../../Data_Structure/Graph/">
+        <link rel="next" href="../../../Data_Structure/Tree/">
       
       
       <link rel="icon" href="../../../images/favicon_io/favicon.ico">
@@ -307,7 +307,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Data_Structure/Graph/" class="md-tabs__link">
+        <a href="../../../Data_Structure/Tree/" class="md-tabs__link">
           
   
   
@@ -735,6 +735,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能分析
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -779,6 +788,8 @@
       
         
       
+        
+      
     
     
     
@@ -814,6 +825,29 @@
             Data Structure
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data_Structure/Tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1309,6 +1343,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      性能分析
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1571,134 +1614,104 @@
 </ol>
 <ul>
 <li>以 <code>add</code> 指令为例</li>
-<li>取指：</li>
+<li>取指</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Signal</th>
-<th style="text-align: center;">Value</th>
+<th style="text-align: center;">控制信号</th>
+<th style="text-align: center;">PCWrite</th>
+<th style="text-align: center;">IorD</th>
+<th style="text-align: center;">MemRead</th>
+<th style="text-align: center;">MemWrite</th>
+<th style="text-align: center;">IRWrite</th>
+<th style="text-align: center;">PCSource</th>
+<th style="text-align: center;">ALUOp</th>
+<th style="text-align: center;">ALUSrcB</th>
+<th style="text-align: center;">ALUSrcA</th>
+<th style="text-align: center;">RegWrite</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">PCWrite</td>
+<td style="text-align: center;">值</td>
 <td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">IorD</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">MemRead</td>
 <td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">MemWrite</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">IRWrite</td>
 <td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">PCSource</td>
 <td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUOp</td>
 <td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcB</td>
 <td style="text-align: center;">01</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcA</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">RegWrite</td>
 <td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>译码：</li>
+<li>译码</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Signal</th>
-<th style="text-align: center;">Value</th>
+<th style="text-align: center;">控制信号</th>
+<th style="text-align: center;">ALUOp</th>
+<th style="text-align: center;">ALUSrcB</th>
+<th style="text-align: center;">ALUSrcA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">ALUOp</td>
+<td style="text-align: center;">值</td>
 <td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcB</td>
 <td style="text-align: center;">11</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcA</td>
 <td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>运算：</li>
+<li>运算</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Signal</th>
-<th style="text-align: center;">Value</th>
+<th style="text-align: center;">控制信号</th>
+<th style="text-align: center;">ALUOp</th>
+<th style="text-align: center;">ALUSrcB</th>
+<th style="text-align: center;">ALUSrcA</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">ALUOp</td>
+<td style="text-align: center;">值</td>
 <td style="text-align: center;">10</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcB</td>
 <td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrcA</td>
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li>写回：</li>
+<li>写回</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Signal</th>
-<th style="text-align: center;">Value</th>
+<th style="text-align: center;">控制信号</th>
+<th style="text-align: center;">MemtoReg</th>
+<th style="text-align: center;">RegWrite</th>
+<th style="text-align: center;">RegDst</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">MemtoReg</td>
+<td style="text-align: center;">值</td>
 <td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">RegWrite</td>
 <td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">RegDst</td>
 <td style="text-align: center;">1</td>
 </tr>
 </tbody>
 </table>
-<ol start="3">
+<ol>
 <li>控制器分类</li>
 </ol>
 <ul>
@@ -1720,6 +1733,15 @@
 <li>缺点：执行速度较慢（需额外周期读取微指令），效率低于硬布线控制器</li>
 </ul>
 </li>
+</ul>
+<h3 id="_4">性能分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>各指令周期数：</li>
+</ol>
+<ul>
+<li>分支/跳转指令（beq/j）：3周期</li>
+<li>R型指令（add）/存储指令（sw）：4周期</li>
+<li>加载指令（lw）：5周期</li>
 </ul>
 
 
@@ -1773,13 +1795,13 @@
         
         
           
-          <a href="../../../Data_Structure/Graph/" class="md-footer__link md-footer__link--next" aria-label="下一页: Graph">
+          <a href="../../../Data_Structure/Tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: Tree">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Graph
+                Tree
               </div>
             </div>
             <div class="md-footer__button md-icon">

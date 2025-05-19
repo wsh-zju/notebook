@@ -303,7 +303,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Data_Structure/Graph/" class="md-tabs__link">
+        <a href="../../Data_Structure/Tree/" class="md-tabs__link">
           
   
   
@@ -661,6 +661,8 @@
       
         
       
+        
+      
     
     
     
@@ -696,6 +698,29 @@
             Data Structure
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/Tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1148,6 +1173,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展：网络流
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展：网络流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      割（cut）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大流/最小割
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1258,6 +1316,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      扩展：网络流
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="扩展：网络流">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    <span class="md-ellipsis">
+      割（cut）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      最大流/最小割
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1306,6 +1397,37 @@
 <summary>Example</summary>
 <p><img alt="" src="../photo/11-2.png" /></p>
 </details>
+<h2 id="_4">扩展：网络流<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>相关定义<ul>
+<li>流图（Flowgraph）：有源点（source）和汇点（tink）的有向图</li>
+</ul>
+</li>
+</ul>
+<h3 id="cut">割（cut）<a class="headerlink" href="#cut" title="Permanent link">&para;</a></h3>
+<ol>
+<li>定义：将顶点集分成两个不相交的子集 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(T\)</span></li>
+</ol>
+<ul>
+<li>源点 <span class="arithmatex">\( s \in S \)</span>（起点属于 <span class="arithmatex">\( S \)</span>）</li>
+<li>汇点 <span class="arithmatex">\( t \in T \)</span>（终点属于 <span class="arithmatex">\( T \)</span>）</li>
+<li>表示为有序对 <span class="arithmatex">\( (S, T) \)</span>，且 <span class="arithmatex">\( S \cup T = V \)</span>，<span class="arithmatex">\( S \cap T = \emptyset \)</span></li>
+</ul>
+<ol start="2">
+<li>
+<p>割 <span class="arithmatex">\( (S, T) \)</span> 的容量：所有从 <span class="arithmatex">\(S\)</span> 到 <span class="arithmatex">\(T\)</span> 的边的容量之和</p>
+</li>
+<li>
+<p>割 <span class="arithmatex">\( (S, T) \)</span> 的流量：所有从 <span class="arithmatex">\( S \)</span> 到 <span class="arithmatex">\( T \)</span> 的边的流量减去从 <span class="arithmatex">\( T \)</span> 到 <span class="arithmatex">\( S \)</span> 的边的流量</p>
+</li>
+</ol>
+<p><strong>关键性质</strong>：</p>
+<p>对于任意可行流 <span class="arithmatex">\( f \)</span> 和任意割 <span class="arithmatex">\( (S, T) \)</span>，总有：</p>
+<div class="arithmatex">\[
+f(S, T) = |f|
+\]</div>
+<p>即<strong>割的流量等于整个网络的流量</strong>（从源点 <span class="arithmatex">\( s \)</span> 流出的总量）</p>
+<h3 id="_5">最大流/最小割<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 
 
 
