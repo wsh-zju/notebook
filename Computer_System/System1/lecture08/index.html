@@ -579,7 +579,7 @@
   
   
   <span class="md-ellipsis">
-    Instruction Set Architecture(ISA)
+    ISA
     
   </span>
   
@@ -672,14 +672,71 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="单周期与多周期CPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      单周期CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      多周期CPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#cpu_1" class="md-nav__link">
+  <a href="#cpu_3" class="md-nav__link">
     <span class="md-ellipsis">
       多周期CPU设计
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="多周期CPU设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路的新部件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令执行的阶段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1189,14 +1246,71 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="单周期与多周期CPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cpu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      单周期CPU
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      多周期CPU
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#cpu_1" class="md-nav__link">
+  <a href="#cpu_3" class="md-nav__link">
     <span class="md-ellipsis">
       多周期CPU设计
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="多周期CPU设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据通路的新部件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令执行的阶段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      控制器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1227,8 +1341,8 @@
   <h1>多周期CPU</h1>
 
 <h2 id="cpu">单周期与多周期CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
+<h3 id="cpu_1">单周期CPU<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>单周期CPU<ul>
 <li>特点：<ul>
 <li>所有指令在一个时钟周期内完成，CPI 恒为1</li>
 <li>设计简单</li>
@@ -1241,8 +1355,8 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>多周期CPU<ul>
+<h3 id="cpu_2">多周期CPU<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
+<ul>
 <li>特点：<ul>
 <li>指令执行分解为多个阶段（如取指、译码、执行等）</li>
 <li>每个阶段占用一个时钟周期，不同指令 CPI 不同（3-5 个周期），时钟周期更短</li>
@@ -1255,13 +1369,9 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h2 id="cpu_1">多周期CPU设计<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h2>
+<h2 id="cpu_3">多周期CPU设计<a class="headerlink" href="#cpu_3" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../photo/8-1.png" /></p>
-<ol>
-<li>数据通路的新部件</li>
-</ol>
+<h3 id="_1">数据通路的新部件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>临时寄存器：<ul>
 <li>IR（指令寄存器）：存储从存储器取出的指令</li>
@@ -1271,22 +1381,26 @@
 </ul>
 </li>
 </ul>
-<ol start="2">
-<li>指令执行的阶段</li>
+<h3 id="_2">指令执行的阶段<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>取指（IF）：</li>
 </ol>
 <ul>
-<li>取指（IF）：<ul>
 <li>从存储器读取指令</li>
 <li>PC=PC+4</li>
 </ul>
-</li>
-<li>译码（ID）：<ul>
+<ol start="2">
+<li>译码（ID）：</li>
+</ol>
+<ul>
 <li>指令译码</li>
 <li>读取寄存器数据</li>
 <li>计算分支目标地址（Branch/Jump）</li>
 </ul>
-</li>
-<li>执行（EX）：<ul>
+<ol start="3">
+<li>执行（EX）：</li>
+</ol>
+<ul>
 <li>根据指令类型执行</li>
 <li>e.g.<ul>
 <li>Memory-related:<code>ALUOut = A + sign - extend(IR[15 - 0])</code></li>
@@ -1296,8 +1410,10 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>访存（MEM）：<ul>
+<ol start="4">
+<li>访存（MEM）：</li>
+</ol>
+<ul>
 <li>根据指令类型执行</li>
 <li>e.g.<ul>
 <li>Memory-related:<ul>
@@ -1309,17 +1425,17 @@
 </ul>
 </li>
 </ul>
-</li>
-<li>回写（WB）：<ul>
+<ol start="5">
+<li>回写（WB）：</li>
+</ol>
+<ul>
 <li>将结果写入寄存器堆</li>
 <li>Load: <code>Reg[IR[20 - 16]] = MDR</code></li>
 </ul>
-</li>
-</ul>
-<ol start="3">
-<li>
-<p>控制器
-- 控制信号</p>
+<h3 id="_3">控制器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>控制信号</li>
+</ol>
 <ul>
 <li>
 <p>单比特信号</p>
@@ -1450,15 +1566,13 @@
 </table>
 </li>
 </ul>
-</li>
+<ol start="2">
+<li>控制器设计</li>
 </ol>
 <ul>
-<li>
-<p>控制器设计</p>
-<ul>
 <li>以 <code>add</code> 指令为例</li>
-<li>
-<p>取指：</p>
+<li>取指：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1509,9 +1623,9 @@
 </tr>
 </tbody>
 </table>
-</li>
-<li>
-<p>译码：</p>
+<ul>
+<li>译码：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1534,9 +1648,9 @@
 </tr>
 </tbody>
 </table>
-</li>
-<li>
-<p>运算：</p>
+<ul>
+<li>运算：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1559,9 +1673,9 @@
 </tr>
 </tbody>
 </table>
-</li>
-<li>
-<p>写回：</p>
+<ul>
+<li>写回：</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -1584,15 +1698,13 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
-</li>
-<li>
-<p>控制器分类</p>
+<ol start="3">
+<li>控制器分类</li>
+</ol>
 <ul>
 <li>Hardwired Controller（硬布线控制器）<ul>
-<li>原理：基于有限状态机（FSM），通过组合逻辑（如 PLA 电路）生成控制信号，每个状态对应指令执行的一个阶段</li>
 <li>适用于RISC</li>
+<li>原理：基于有限状态机（FSM），通过组合逻辑（如 PLA 电路）生成控制信号，每个状态对应指令执行的一个阶段</li>
 <li>优点：控制信号生成快</li>
 <li>缺点：ISA复杂时难以维护，需重新设计硬件逻辑</li>
 </ul>
@@ -1606,8 +1718,6 @@
 </li>
 <li>优点：设计灵活，易于修改指令集</li>
 <li>缺点：执行速度较慢（需额外周期读取微指令），效率低于硬布线控制器</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
