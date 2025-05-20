@@ -790,6 +790,8 @@
       
         
       
+        
+      
     
     
     
@@ -885,6 +887,29 @@
   
   <span class="md-ellipsis">
     Sort
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Data_Structure/Hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hash
     
   </span>
   
@@ -1416,7 +1441,7 @@
 <p><img alt="" src="../photo/8-1.png" /></p>
 <h3 id="_1">数据通路的新部件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li>临时寄存器：<ul>
+<li><strong>临时寄存器</strong><ul>
 <li>IR（指令寄存器）：存储从存储器取出的指令</li>
 <li>MDR（内存数据寄存器）：暂存从存储器读取的数据</li>
 <li>A/B 寄存器：暂存从寄存器堆读取的操作数</li>
@@ -1426,14 +1451,14 @@
 </ul>
 <h3 id="_2">指令执行的阶段<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>取指（IF）：</li>
+<li><strong>取指（IF）</strong></li>
 </ol>
 <ul>
 <li>从存储器读取指令</li>
 <li>PC=PC+4</li>
 </ul>
 <ol start="2">
-<li>译码（ID）：</li>
+<li><strong>译码（ID）</strong></li>
 </ol>
 <ul>
 <li>指令译码</li>
@@ -1441,7 +1466,7 @@
 <li>计算分支目标地址（Branch/Jump）</li>
 </ul>
 <ol start="3">
-<li>执行（EX）：</li>
+<li><strong>执行（EX）</strong></li>
 </ol>
 <ul>
 <li>根据指令类型执行</li>
@@ -1454,7 +1479,7 @@
 </li>
 </ul>
 <ol start="4">
-<li>访存（MEM）：</li>
+<li><strong>访存（MEM）</strong></li>
 </ol>
 <ul>
 <li>根据指令类型执行</li>
@@ -1469,7 +1494,7 @@
 </li>
 </ul>
 <ol start="5">
-<li>回写（WB）：</li>
+<li><strong>回写（WB）</strong></li>
 </ol>
 <ul>
 <li>将结果写入寄存器堆</li>
@@ -1477,7 +1502,7 @@
 </ul>
 <h3 id="_3">控制器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>控制信号</li>
+<li><strong>控制信号</strong></li>
 </ol>
 <ul>
 <li>
@@ -1610,7 +1635,7 @@
 </li>
 </ul>
 <ol start="2">
-<li>控制器设计</li>
+<li><strong>控制器设计</strong></li>
 </ol>
 <ul>
 <li>以 <code>add</code> 指令为例</li>
@@ -1711,8 +1736,8 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>控制器分类</li>
+<ol start="3">
+<li><strong>控制器分类</strong></li>
 </ol>
 <ul>
 <li>Hardwired Controller（硬布线控制器）<ul>
@@ -1736,7 +1761,7 @@
 </ul>
 <h3 id="_4">性能分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li>各指令周期数：</li>
+<li><strong>各指令周期数</strong></li>
 </ol>
 <ul>
 <li>分支/跳转指令（beq/j）：3周期</li>

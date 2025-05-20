@@ -12,11 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/mkdocs/theme/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Data_Structure/Hash/">
       
       
-        <link rel="prev" href="../../Discrete_Mathematics/chapter11/">
+        <link rel="prev" href="../Sort/">
       
+      
+        <link rel="next" href="../pta/">
       
       
       <link rel="icon" href="../../images/favicon_io/favicon.ico">
@@ -24,7 +26,7 @@
     
     
       
-        <title>mkdocs - Lucy Wisteria's Notebook</title>
+        <title>Hash - Lucy Wisteria's Notebook</title>
       
     
     
@@ -127,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              mkdocs
+              Hash
             
           </span>
         </div>
@@ -297,11 +299,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../Data_Structure/Tree/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Tree/" class="md-tabs__link">
           
   
   
@@ -341,11 +345,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../mkdocs/theme/" class="md-tabs__link">
         
   
   
@@ -648,8 +650,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -667,19 +671,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -692,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data Structure
@@ -706,7 +711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Tree/" class="md-nav__link">
+      <a href="../Tree/" class="md-nav__link">
         
   
   
@@ -729,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Graph/" class="md-nav__link">
+      <a href="../Graph/" class="md-nav__link">
         
   
   
@@ -752,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Sort/" class="md-nav__link">
+      <a href="../Sort/" class="md-nav__link">
         
   
   
@@ -772,10 +777,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Data_Structure/Hash/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Hash
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -786,6 +811,90 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      哈希表
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="哈希表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      相关定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      哈希函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲突解决策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="冲突解决策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separate-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      分离链接法（Separate Chaining）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      开放寻址法（Open Addressing）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -798,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/pta/" class="md-nav__link">
+      <a href="../pta/" class="md-nav__link">
         
   
   
@@ -1127,30 +1236,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    mkdocs
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../mkdocs/theme/" class="md-nav__link">
         
   
   
@@ -1161,66 +1250,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      提示框
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="提示框">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      普通提示框
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      可以折叠的提示框：
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      代码高亮
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1252,17 +1281,17 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      提示框
+      哈希表
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="提示框">
+    <nav class="md-nav" aria-label="哈希表">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      普通提示框
+      相关定义
     </span>
   </a>
   
@@ -1271,7 +1300,35 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      可以折叠的提示框：
+      哈希函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      冲突解决策略
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="冲突解决策略">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#separate-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      分离链接法（Separate Chaining）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-addressing" class="md-nav__link">
+    <span class="md-ellipsis">
+      开放寻址法（Open Addressing）
     </span>
   </a>
   
@@ -1281,13 +1338,9 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      代码高亮
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1307,7 +1360,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/mkdocs/theme.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Data_Structure/Hash.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1315,15 +1368,75 @@
   
 
 
-  <h1>mkdocs</h1>
+  <h1>Hash</h1>
 
-<h2 id="_1">提示框<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">普通提示框<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>代码如下：</p>
+<h2 id="_1">哈希表<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">相关定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
+<li>哈希函数</li>
+</ol>
+<p><span class="arithmatex">\(f(x)=x在ht[]中的位置\)</span></p>
+<ol start="2">
 <li>
-<p>提示框的配置</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<p><span class="arithmatex">\(T=x可能取值的个数\)</span> </p>
+</li>
+<li>
+<p><span class="arithmatex">\(n=ht[]中标识符的个数\)</span></p>
+</li>
+<li>
+<p>标识符密度（Identifier density）= <span class="arithmatex">\(\frac{n}{T}\)</span></p>
+</li>
+<li>
+<p>装载密度（Loading density）<span class="arithmatex">\(\lambda\)</span> = <span class="arithmatex">\(\frac{n}{sb}\)</span></p>
+</li>
+</ol>
+<p>其中<code>b</code>：哈希表中桶（bucket）的数量，这里每个 <code>ht[i]</code> 对应一个桶</p>
+<p><code>s</code>：每个桶中槽（slot）的数量（桶的容量），从 <code>[0]</code> 到 <code>[s - 1]</code> 标识槽位</p>
+<ol start="6">
+<li>
+<p>冲突（Collision）：不同键映射到同一桶</p>
+</li>
+<li>
+<p>溢出（Overflow）：桶已满无法插入新键</p>
+</li>
+</ol>
+<h3 id="_3">哈希函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>理想特性</li>
+</ol>
+<ul>
+<li>最小化冲突</li>
+<li>均匀分布：<span class="arithmatex">\(Probability(f(x) = i) = 1/b\)</span></li>
+</ul>
+<ol start="2">
+<li>常见的哈希函数</li>
+</ol>
+<ul>
+<li>整数<ul>
+<li>求余法：<span class="arithmatex">\(f(x)=x \% TableSize\)</span></li>
+<li>折叠法</li>
+<li>平方取中</li>
+<li>分析法</li>
+</ul>
+</li>
+<li>字符串<ul>
+<li>简单求和：<span class="arithmatex">\(f(x) = (\sum x[i]) \% TableSize\)</span>（易冲突）</li>
+<li>多项式哈希：<span class="arithmatex">\(f(x) = (x[0] + x[1]*27 + x[2]*27^2) \% TableSize\)</span></li>
+<li>移位优化：<span class="arithmatex">\(f(x)=(\sum x[N-i-1]*32^i) \% TableSize\)</span>（基于32的幂次，快速计算）</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">冲突解决策略<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="separate-chaining">分离链接法（Separate Chaining）<a class="headerlink" href="#separate-chaining" title="Permanent link">&para;</a></h4>
+<ul>
+<li>原理：每一个桶由一个链表表示</li>
+</ul>
+<details class="note">
+<summary>Code</summary>
+<ol>
+<li><strong>数据结构定义</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -1335,36 +1448,24 @@
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admonition</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="nt">icon</span><span class="p">:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="nt">admonition</span><span class="p">:</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="nt">note</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/tag-16</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="nt">abstract</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/checklist-16</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="nt">info</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/info-16</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="nt">tip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/squirrel-16</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">        </span><span class="nt">success</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/check-16</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="nt">question</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/question-16</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="nt">warning</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/alert-16</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="nt">failure</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/x-circle-16</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="nt">danger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/zap-16</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">        </span><span class="nt">bug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/bug-16</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="nt">example</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/beaker-16</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="nt">quote</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">octicons/quote-16</span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cm">/* 链表节点结构 */</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">  </span><span class="n">Element</span><span class="p">;</span><span class="w">  </span><span class="c1">// 存储的数据元素</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">Position</span><span class="w">     </span><span class="n">Next</span><span class="p">;</span><span class="w">     </span><span class="c1">// 指向下一个节点的指针</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">};</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="w"> </span><span class="o">*</span><span class="n">Position</span><span class="p">;</span><span class="w">  </span><span class="c1">// 节点指针类型</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="cm">/* 哈希表结构 */</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="kt">int</span><span class="w">     </span><span class="n">TableSize</span><span class="p">;</span><span class="w">    </span><span class="c1">// 哈希表大小（桶的数量）</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="n">List</span><span class="w">    </span><span class="o">*</span><span class="n">TheLists</span><span class="p">;</span><span class="w">    </span><span class="c1">// 链表头指针数组（每个元素是一个链表）</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">};</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="w"> </span><span class="o">*</span><span class="n">HashTable</span><span class="p">;</span><span class="w">  </span><span class="c1">// 哈希表指针类型</span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>内容如下：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<ol start="2">
+<li><strong>初始化哈希表</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -1374,40 +1475,56 @@
 <span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>!!! note &quot;这是 note 类型的提示框&quot; 
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    提示：更多精彩内容记得关注我啊
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>!!! success &quot;这是 success 类型的提示框&quot; 
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>    成功！
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>!!! failure &quot;这是 failure 类型的提示框&quot; 
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    失败！
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>!!! bug &quot;这是 bug 类型的提示框&quot; 
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    发现一个 bug，请尽快修复！
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">HashTable</span><span class="w"> </span><span class="nf">InitializeTable</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">TableSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="cm">/* 检查表大小是否合法 */</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">TableSize</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinTableSize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">Error</span><span class="p">(</span><span class="s">&quot;表大小太小&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="cm">/* 分配哈希表结构体 */</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">HashTbl</span><span class="p">));</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="n">FatalError</span><span class="p">(</span><span class="s">&quot;内存不足&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="cm">/* 设置表大小为质数 */</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TableSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NextPrime</span><span class="p">(</span><span class="n">TableSize</span><span class="p">);</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="cm">/* 分配链表头指针数组 */</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">List</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TableSize</span><span class="p">);</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">        </span><span class="n">FatalError</span><span class="p">(</span><span class="s">&quot;内存不足&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="cm">/* 初始化每个链表的头节点（哨兵节点） */</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TableSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">        </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">));</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">            </span><span class="n">FatalError</span><span class="p">(</span><span class="s">&quot;内存不足&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">            </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">  </span><span class="c1">// 头节点的Next初始化为空</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H</span><span class="p">;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-</li>
+<ol start="3">
+<li><strong>查找操作</strong></li>
 </ol>
-<p>显示样例如下：</p>
-<div class="admonition note">
-<p class="admonition-title">这是 note 类型的提示框</p>
-<p>提示：更多精彩内容记得关注我啊</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">这是 success 类型的提示框</p>
-<p>成功！</p>
-</div>
-<div class="admonition failure">
-<p class="admonition-title">这是 failure 类型的提示框</p>
-<p>失败！</p>
-</div>
-<div class="admonition bug">
-<p class="admonition-title">这是 bug 类型的提示框</p>
-<p>发现一个 bug，请尽快修复！</p>
-</div>
-<h3 id="_3">可以折叠的提示框：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>代码如下
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Markdown</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
@@ -1417,46 +1534,73 @@
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>??? note &quot;这是 note 类型的提示框&quot;
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    提示：更多精彩内容记得关注我啊
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    第二行
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    第三行
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    第四行
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>    第五行
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    ...
-</code></pre></div></td></tr></table></div></p>
-<p>显示样例：</p>
-<details class="note">
-<summary>这是 note 类型的提示框</summary>
-<p>提示：更多精彩内容记得关注我啊</p>
-<p>第二行</p>
-<p>第三行</p>
-<p>第四行</p>
-<p>第五行
-...</p>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">Position</span><span class="w"> </span><span class="nf">Find</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">P</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">L</span><span class="p">;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="cm">/* 计算哈希值确定桶位置 */</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="p">[</span><span class="n">Hash</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TableSize</span><span class="p">)];</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="cm">/* 遍历链表查找Key（跳过头节点） */</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">P</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">P</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">Key</span><span class="p">)</span><span class="w">  </span><span class="c1">// 需根据ElementType调整比较方式</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">        </span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">P</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">P</span><span class="p">;</span><span class="w">  </span><span class="c1">// 找到返回节点指针，未找到返回NULL</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ol start="4">
+<li><strong>插入操作</strong>
+、<code>c
+void Insert(ElementType Key, HashTable H) {
+    Position Pos, NewCell;
+    List L;
+    /* 先检查Key是否已存在 */
+    Pos = Find(Key, H);
+    if (Pos == NULL) {  // Key不存在时插入
+        /* 创建新节点 */
+        NewCell = malloc(sizeof(struct ListNode));
+        if (NewCell == NULL)
+            FatalError("内存不足");
+        /* 将新节点插入链表头部 */
+        L = H-&gt;TheLists[Hash(Key, H-&gt;TableSize)];
+        NewCell-&gt;Next = L-&gt;Next;  // 新节点指向原第一个节点
+        NewCell-&gt;Element = Key;   // 存储数据
+        L-&gt;Next = NewCell;        // 头节点指向新节点
+    }
+    // 如果Key已存在，此处不做操作（可根据需求修改）
+}</code></li>
+</ol>
 </details>
-<h2 id="_4">代码高亮<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>代码如下：
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span>
-<span class="normal"><a href="#__codelineno-3-7">7</a></span>
-<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nt">markdown_extensions</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">pymdownx.highlight</span><span class="p">:</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="nt">anchor_linenums</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.inlinehilite</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.snippets</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
-</code></pre></div></td></tr></table></div></p>
+<h4 id="open-addressing">开放寻址法（Open Addressing）<a class="headerlink" href="#open-addressing" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>原理</strong>：冲突时按探测序列（如线性、二次、双重哈希）寻找下一个空桶</p>
+</li>
+<li>
+<p><strong>常见探测方法</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong>线性探测</strong><ul>
+<li>原理：当哈希函数计算出的初始位置已被占用时，顺序检查下一个位置，直到找到空槽或遍历整个表</li>
+<li>核心公式<ul>
+<li><strong>探测函数</strong>：<span class="arithmatex">\(f(i) = i\)</span></li>
+<li><strong>位置计算</strong>：<br />
+  给定初始哈希值 <span class="arithmatex">\( h(k) \)</span>，第 <span class="arithmatex">\( i \)</span> 次探测的位置为 <span class="arithmatex">\(h(k, i) = \left( h(k) + i \right)\mod \text{TableSize}\)</span></li>
+</ul>
+</li>
+<li>线性探测的<strong>预期探测次数</strong> <span class="arithmatex">\( p \)</span><ul>
+<li><strong>插入和不成功查找</strong>：<br />
+   [
+   p = \frac{1}{2} \left( 1 + \frac{1}{(1 - \lambda)^2} \right)
+   ]</li>
+<li><strong>成功查找</strong>：<br />
+   [
+   p = \frac{1}{2} \left( 1 + \frac{1}{1 - \lambda} \right)
+   ]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -1492,7 +1636,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../../Discrete_Mathematics/chapter11/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Chapter 11 树">
+          <a href="../Sort/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Sort">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1502,11 +1646,27 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Chapter 11 树
+                Sort
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA Problems">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                PTA Problems
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
