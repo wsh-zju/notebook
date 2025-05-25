@@ -1980,9 +1980,7 @@
 </details>
 <h3 id="rv32i">基础整数指令集RV32I<a class="headerlink" href="#rv32i" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>分类</p>
-<ul>
+<li>分类<ul>
 <li>按照功能分类<ul>
 <li>ALU 指令<ul>
 <li>e.g. add,sub,addi...</li>
@@ -2008,200 +2006,349 @@
 </li>
 </ul>
 </li>
-<li>
-<p><strong>R-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">25</td>
-    <td class="riscv-table-numnodel">24</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">20</td>
-    <td class="riscv-table-numnodel">19</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">15</td>
-    <td class="riscv-table-numnodel">14</td>
-    <td class="riscv-table-numnode" colspan="1"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="7" class="riscv-table-node">funct7</td>
-    <td colspan="5" class="riscv-table-node">rs2</td>
-    <td colspan="5" class="riscv-table-node">rs1</td>
-    <td colspan="3" class="riscv-table-node">funct3</td>
-    <td colspan="5" class="riscv-table-node">rd</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-<ul>
-<li>rd = rs1 op rs2</li>
-<li>没有not运算符，通过xor实现</li>
 </ul>
-</li>
-<li>
-<p><strong>I-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="10"></td>
-    <td class="riscv-table-numnoder">20</td>
-    <td class="riscv-table-numnodel">19</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">15</td>
-    <td class="riscv-table-numnodel">14</td>
-    <td class="riscv-table-numnode" colspan="1"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="12" class="riscv-table-node">imm[11:0]</td>
-    <td colspan="5" class="riscv-table-node">rs1</td>
-    <td colspan="3" class="riscv-table-node">funct3</td>
-    <td colspan="5" class="riscv-table-node">rd</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-<ul>
-<li>如果是 ALU 运算，则 rd = rs1 op imm</li>
-<li>立即数指令（立即数是有符号数）</li>
-<li>e.g. Load指令</li>
-</ul>
-</li>
-<li>
-<p><strong>S-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">25</td>
-    <td class="riscv-table-numnodel">24</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">20</td>
-    <td class="riscv-table-numnodel">19</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">15</td>
-    <td class="riscv-table-numnodel">14</td>
-    <td class="riscv-table-numnode" colspan="1"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="7" class="riscv-table-node">imm[11:5]</td>
-    <td colspan="5" class="riscv-table-node">rs2</td>
-    <td colspan="5" class="riscv-table-node">rs1</td>
-    <td colspan="3" class="riscv-table-node">funct3</td>
-    <td colspan="5" class="riscv-table-node">imm[4:0]</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-<ul>
-<li>rs1 = [rs2+imm]</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Notice!</p>
-<ul>
-<li>RISC-V的数据存储模式为小端模式（little endian）：数据的高字节储存在高地址</li>
-<li>PowerPC使用大端模式</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>B-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">25</td>
-    <td class="riscv-table-numnodel">24</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">20</td>
-    <td class="riscv-table-numnodel">19</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">15</td>
-    <td class="riscv-table-numnodel">14</td>
-    <td class="riscv-table-numnode" colspan="1"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="7" class="riscv-table-node">imm[12,10:5]</td>
-    <td colspan="5" class="riscv-table-node">rs2</td>
-    <td colspan="5" class="riscv-table-node">rs1</td>
-    <td colspan="3" class="riscv-table-node">funct3</td>
-    <td colspan="5" class="riscv-table-node">imm[4:1,11]</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-</li>
-<li>
-<p><strong>U-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="18"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="20" class="riscv-table-node">imm[31:12]</td>
-    <td colspan="5" class="riscv-table-node">rd</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-<ul>
-<li>LUI: load upper immediate</li>
-<li>AUIPC: add upper immediate to PC</li>
-</ul>
-</li>
-<li>
-<p><strong>J-type</strong></p>
-<p><table class="riscv-table">
-<tr>
-    <td class="riscv-table-numnodel">31</td>
-    <td class="riscv-table-numnode" colspan="18"></td>
-    <td class="riscv-table-numnoder">12</td>
-    <td class="riscv-table-numnodel">11</td>
-    <td class="riscv-table-numnode" colspan="3"></td>
-    <td class="riscv-table-numnoder">7</td>
-    <td class="riscv-table-numnodel">6</td>
-    <td class="riscv-table-numnode" colspan="5"></td>
-    <td class="riscv-table-numnoder">0</td>
-</tr>
-<tr>
-    <td colspan="20" class="riscv-table-node">imm[20,10:1,11,19:12]</td>
-    <td colspan="5" class="riscv-table-node">rd</td>
-    <td colspan="7" class="riscv-table-node">opcode</td>
-</tr>
-</table></p>
-</li>
-</ul>
+<p>=== <strong>R-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;25&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;24&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;20&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;19&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;15&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;14&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;1&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;funct7&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs2&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs1&lt;/td&gt;
+    &lt;td colspan=&quot;3&quot; class=&quot;riscv-table-node&quot;&gt;funct3&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rd&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+- rd = rs1 op rs2
+- 没有not运算符，通过xor实现
+</code></pre></div></td></tr></table></div>
+<p>=== <strong>I-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;10&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;20&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;19&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;15&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;14&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;1&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;12&quot; class=&quot;riscv-table-node&quot;&gt;imm[11:0]&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs1&lt;/td&gt;
+    &lt;td colspan=&quot;3&quot; class=&quot;riscv-table-node&quot;&gt;funct3&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rd&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+- 如果是 ALU 运算，则 rd = rs1 op imm
+- 立即数指令（立即数是有符号数）
+- e.g. Load指令
+</code></pre></div></td></tr></table></div>
+<p>=== <strong>S-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;25&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;24&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;20&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;19&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;15&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;14&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;1&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;imm[11:5]&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs2&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs1&lt;/td&gt;
+    &lt;td colspan=&quot;3&quot; class=&quot;riscv-table-node&quot;&gt;funct3&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;imm[4:0]&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+- rs1 = [rs2+imm]
+
+!!! note &quot;Notice!&quot;
+    - RISC-V的数据存储模式为小端模式（little endian）：数据的高字节储存在高地址
+    - PowerPC使用大端模式
+</code></pre></div></td></tr></table></div>
+<p>=== <strong>B-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;25&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;24&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;20&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;19&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;15&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;14&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;1&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;imm[12,10:5]&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs2&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rs1&lt;/td&gt;
+    &lt;td colspan=&quot;3&quot; class=&quot;riscv-table-node&quot;&gt;funct3&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;imm[4:1,11]&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></td></tr></table></div>
+<p>=== <strong>U-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;18&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;20&quot; class=&quot;riscv-table-node&quot;&gt;imm[31:12]&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rd&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+- LUI: load upper immediate
+- AUIPC: add upper immediate to PC
+</code></pre></div></td></tr></table></div>
+<p>=== <strong>J-type</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code>&lt;table class=&quot;riscv-table&quot;&gt;
+&lt;tr&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;31&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;18&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;12&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;11&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;3&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;7&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnodel&quot;&gt;6&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnode&quot; colspan=&quot;5&quot;&gt;&lt;/td&gt;
+    &lt;td class=&quot;riscv-table-numnoder&quot;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td colspan=&quot;20&quot; class=&quot;riscv-table-node&quot;&gt;imm[20,10:1,11,19:12]&lt;/td&gt;
+    &lt;td colspan=&quot;5&quot; class=&quot;riscv-table-node&quot;&gt;rd&lt;/td&gt;
+    &lt;td colspan=&quot;7&quot; class=&quot;riscv-table-node&quot;&gt;opcode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</code></pre></div></td></tr></table></div>
 <div class="admonition note">
 <p class="admonition-title">NOP</p>
 <ul>
@@ -2329,7 +2476,7 @@
 <td>sra</td>
 <td>0110011</td>
 <td>101</td>
-<td>0000000</td>
+<td>0100000</td>
 <td>算术右移</td>
 </tr>
 <tr>
@@ -2433,7 +2580,7 @@
 <td>slli</td>
 <td>0010011</td>
 <td>001</td>
-<td>000000</td>
+<td>0000000</td>
 <td>立即数逻辑左移</td>
 </tr>
 <tr>
@@ -2449,7 +2596,7 @@
 <td>srli</td>
 <td>0010011</td>
 <td>101</td>
-<td>000000</td>
+<td>0000000</td>
 <td>立即数逻辑右移</td>
 </tr>
 <tr>
@@ -2457,7 +2604,7 @@
 <td>srai</td>
 <td>0010011</td>
 <td>101</td>
-<td>010000</td>
+<td>0100000</td>
 <td>立即数算术右移</td>
 </tr>
 <tr>
