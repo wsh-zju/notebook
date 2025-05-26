@@ -1571,6 +1571,7 @@
   <h1>Latex</h1>
 
 <h2 id="_1">希腊字母<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>以下是修正后的希腊字母与LaTeX代码对照表，修正了原表中的错误：</p>
 <table>
 <thead>
 <tr>
@@ -1616,6 +1617,96 @@
 <td><code>\zeta</code></td>
 <td><span class="arithmatex">\(\Zeta\)</span></td>
 <td><code>\Zeta</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\eta\)</span></td>
+<td><code>\eta</code></td>
+<td><span class="arithmatex">\(\Eta\)</span></td>
+<td><code>\Eta</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\theta\)</span></td>
+<td><code>\theta</code></td>
+<td><span class="arithmatex">\(\Theta\)</span></td>
+<td><code>\Theta</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\lambda\)</span></td>
+<td><code>\lambda</code></td>
+<td><span class="arithmatex">\(\Lambda\)</span></td>
+<td><code>\Lambda</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\mu\)</span></td>
+<td><code>\mu</code></td>
+<td><span class="arithmatex">\(\Mu\)</span></td>
+<td><code>\Mu</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\pi\)</span></td>
+<td><code>\pi</code></td>
+<td><span class="arithmatex">\(\Pi\)</span></td>
+<td><code>\Pi</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma\)</span></td>
+<td><code>\sigma</code></td>
+<td><span class="arithmatex">\(\Sigma\)</span></td>
+<td><code>\Sigma</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\omega\)</span></td>
+<td><code>\omega</code></td>
+<td><span class="arithmatex">\(\Omega\)</span></td>
+<td><code>\Omega</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>LaTeX 代码</th>
+<th>符号</th>
+<th>LaTeX 代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\alpha\)</span></td>
+<td><code>\alpha</code></td>
+<td><span class="arithmatex">\(A\)</span></td>
+<td><code>A</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\beta\)</span></td>
+<td><code>\beta</code></td>
+<td><span class="arithmatex">\(B\)</span></td>
+<td><code>B</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\gamma\)</span></td>
+<td><code>\gamma</code></td>
+<td><span class="arithmatex">\(\Gamma\)</span></td>
+<td><code>\Gamma</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\delta\)</span></td>
+<td><code>\delta</code></td>
+<td><span class="arithmatex">\(\Delta\)</span></td>
+<td><code>\Delta</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\epsilon\)</span></td>
+<td><code>\epsilon</code></td>
+<td><span class="arithmatex">\(E\)</span></td>
+<td><code>E</code></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\zeta\)</span></td>
+<td><code>\zeta</code></td>
+<td><span class="arithmatex">\(Z\)</span></td>
+<td><code>Z</code></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\eta\)</span></td>
@@ -1882,24 +1973,28 @@
 </table>
 <h2 id="_5">数学结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>分数</strong>: <code>\frac{分子}{分母}</code> 或 <code>\dfrac{分子}{分母}</code> (显示模式)
-   - 示例: <code>\frac{a}{b}</code> → <span class="arithmatex">\(\frac{a}{b}\)</span></p>
-</li>
-<li>
-<p><strong>上下标</strong>:
-   - 上标: <code>x^2</code> → <span class="arithmatex">\(x^2\)</span>
-   - 下标: <code>x_1</code> → <span class="arithmatex">\(x_1\)</span>
-   - 组合: <code>x^{a+b}</code> → <span class="arithmatex">\(x^{a+b}\)</span> 或 <code>x_{i,j}</code> → <span class="arithmatex">\(x_{i,j}\)</span></p>
-</li>
-<li>
-<p><strong>根号</strong>:
-   - 平方根: <code>\sqrt{x}</code> → <span class="arithmatex">\(\sqrt{x}\)</span>
-   - n次方根: <code>\sqrt[n]{x}</code> → <span class="arithmatex">\(\sqrt[n]{x}\)</span></p>
-</li>
-<li>
-<p><strong>矩阵</strong>:</p>
-</li>
+<li><strong>分数</strong>: <code>\frac{分子}{分母}</code> 或 <code>\dfrac{分子}{分母}</code> (显示模式)</li>
+</ol>
+<ul>
+<li>示例: <code>\frac{a}{b}</code> → <span class="arithmatex">\(\frac{a}{b}\)</span></li>
+</ul>
+<ol start="2">
+<li><strong>上下标</strong>:</li>
+</ol>
+<ul>
+<li>上标: <code>x^2</code> → <span class="arithmatex">\(x^2\)</span></li>
+<li>下标: <code>x_1</code> → <span class="arithmatex">\(x_1\)</span></li>
+<li>组合: <code>x^{a+b}</code> → <span class="arithmatex">\(x^{a+b}\)</span> 或 <code>x_{i,j}</code> → <span class="arithmatex">\(x_{i,j}\)</span></li>
+</ul>
+<ol start="3">
+<li><strong>根号</strong>:</li>
+</ol>
+<ul>
+<li>平方根: <code>\sqrt{x}</code> → <span class="arithmatex">\(\sqrt{x}\)</span></li>
+<li>n次方根: <code>\sqrt[n]{x}</code> → <span class="arithmatex">\(\sqrt[n]{x}\)</span></li>
+</ul>
+<ol start="4">
+<li><strong>矩阵</strong>:</li>
 </ol>
 <div class="arithmatex">\[
 \begin{matrix}

@@ -2073,8 +2073,9 @@
 </tr>
 </table></p>
 <ul>
-<li>如果是 ALU 运算，则 rd = rs1 op imm</li>
 <li>立即数指令（立即数是有符号数）</li>
+<li>如果是 ALU 运算，则 <code>rd = rs1 op imm</code></li>
+<li>如果是 Load 指令，<code>rd</code>表示目标寄存器，<code>[rs1]+imm</code>表示内存地址</li>
 <li>e.g. Load指令</li>
 </ul>
 </div>
@@ -2110,7 +2111,9 @@
 </tr>
 </table></p>
 <ul>
-<li>rs1 = [rs2+imm]</li>
+<li><code>rs1</code>：存放内存地址的基址</li>
+<li><code>rs2</code>：存放数据</li>
+<li><code>imm</code>：地址的偏移量</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
@@ -2665,9 +2668,9 @@
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nf">jalr</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">(</span><span class="no">x1</span><span class="p">)</span><span class="w">         </span><span class="c1">//跳转到x1储存的返回地址，x0是为了满足指令格式需求</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>6. Example</strong></p>
-<ul>
-<li>
-<p>递归求阶乘</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">递归求阶乘</label><label for="__tabbed_2_2">switch跳转表</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -2710,9 +2713,8 @@
 <a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="nf">addi</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="w">        </span><span class="c1"># 释放栈帧</span>
 <a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">    </span><span class="nf">ret</span>
 </code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>switch跳转表</p>
+</div>
+<div class="tabbed-block">
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -2831,8 +2833,9 @@
 <a id="__codelineno-7-38" name="__codelineno-7-38"></a><span class="w">    </span><span class="nf">li</span><span class="w">  </span><span class="no">a0</span><span class="p">,</span><span class="mi">0</span>
 <a id="__codelineno-7-39" name="__codelineno-7-39"></a><span class="w">    </span><span class="nf">ret</span>
 </code></pre></div></td></tr></table></div>
-</li>
-</ul>
+</div>
+</div>
+</div>
 <h3 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
 <ul>
 <li>push/pop</li>
