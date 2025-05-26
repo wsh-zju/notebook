@@ -1287,7 +1287,7 @@
           <li class="md-nav__item">
   <a href="#931" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.1 利用矩阵表示关系
+      9.3.1 矩阵
     </span>
   </a>
   
@@ -1296,7 +1296,7 @@
           <li class="md-nav__item">
   <a href="#932" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.2 利用图表示关系
+      9.3.2 图
     </span>
   </a>
   
@@ -1685,7 +1685,7 @@
           <li class="md-nav__item">
   <a href="#931" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.1 利用矩阵表示关系
+      9.3.1 矩阵
     </span>
   </a>
   
@@ -1694,7 +1694,7 @@
           <li class="md-nav__item">
   <a href="#932" class="md-nav__link">
     <span class="md-ellipsis">
-      9.3.2 利用图表示关系
+      9.3.2 图
     </span>
   </a>
   
@@ -1888,8 +1888,24 @@
 <td style="text-align: center;">反对称的</td>
 </tr>
 <tr>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;">partition</td>
+<td style="text-align: center;">划分</td>
+<td style="text-align: center;">partial order</td>
+<td style="text-align: center;">偏序</td>
+<td style="text-align: center;">poset</td>
+<td style="text-align: center;">偏序集</td>
+</tr>
+<tr>
+<td style="text-align: center;">total/linear order</td>
+<td style="text-align: center;">全序/线序</td>
+<td style="text-align: center;">well-ordered set</td>
+<td style="text-align: center;">良序集</td>
+<td style="text-align: center;">lexicographic order</td>
+<td style="text-align: center;">字典顺序</td>
+</tr>
+<tr>
+<td style="text-align: center;">Hasse diagram</td>
+<td style="text-align: center;">哈塞图</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -1921,15 +1937,23 @@
 <h3 id="1">定理 1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>集合 <span class="arithmatex">\(A\)</span> 上的关系 <span class="arithmatex">\(R\)</span> 是传递的，当且仅当 <span class="arithmatex">\(R^n \subseteq R\)</span>.</p>
 <h2 id="93">9.3 关系的表示<a class="headerlink" href="#93" title="Permanent link">&para;</a></h2>
-<h3 id="931">9.3.1 利用矩阵表示关系<a class="headerlink" href="#931" title="Permanent link">&para;</a></h3>
+<h3 id="931">9.3.1 矩阵<a class="headerlink" href="#931" title="Permanent link">&para;</a></h3>
+<ol>
+<li>表示方法</li>
+</ol>
 <ul>
 <li>有关系则为1，无关系则为0</li>
 <li>行表示前边的集合，列表示后边的集合</li>
+</ul>
+<ol start="2">
+<li>关系的性质</li>
+</ol>
+<ul>
 <li>矩阵对称，则关系为对称的</li>
 <li>矩阵对角线均为1，则关系为自反的</li>
 <li>矩阵关于对角线对称的元素互异或者都为0，则关系为反对称的</li>
 </ul>
-<h3 id="932">9.3.2 利用图表示关系<a class="headerlink" href="#932" title="Permanent link">&para;</a></h3>
+<h3 id="932">9.3.2 图<a class="headerlink" href="#932" title="Permanent link">&para;</a></h3>
 <ul>
 <li>自反性：所有点都有自环</li>
 <li>非自反性：所有点都无自环</li>
@@ -1940,7 +1964,7 @@
 <h2 id="94-closure">9.4 closure（关系的闭包）<a class="headerlink" href="#94-closure" title="Permanent link">&para;</a></h2>
 <ul>
 <li>定义：<ul>
-<li>闭包：集合 <span class="arithmatex">\(A\)</span> 上的关系 <span class="arithmatex">\(R\)</span> 的具有性质 <span class="arithmatex">\(P\)</span> 的闭包为集合 <span class="arithmatex">\(A\)</span> 上的包含 <span class="arithmatex">\(R\)</span> 的具有性质 <span class="arithmatex">\(P\)</span> 的关系 <span class="arithmatex">\(S\)</span></li>
+<li>闭包：集合<span class="arithmatex">\(A\)</span>上的关系<span class="arithmatex">\(R\)</span>的具有性质<span class="arithmatex">\(P\)</span>的闭包为集合<span class="arithmatex">\(A\)</span>上的包含<span class="arithmatex">\(R\)</span>的具有性质<span class="arithmatex">\(P\)</span>的关系<span class="arithmatex">\(S\)</span></li>
 </ul>
 </li>
 </ul>
@@ -1992,7 +2016,7 @@
 </li>
 </ul>
 <h3 id="961">9.6.1 字典顺序（笛卡尔积上的字典序）<a class="headerlink" href="#961" title="Permanent link">&para;</a></h3>
-<p>在两个偏序集 <span class="arithmatex">\((A_1, \leq_1)\)</span> 和 <span class="arithmatex">\((A_2, \leq_2)\)</span> 的笛卡尔积上构造一个偏序。</p>
+<p>在两个偏序集 <span class="arithmatex">\((A_1,\preceq_1)\)</span> 和 <span class="arithmatex">\((A_2,\preceq_2)\)</span> 的笛卡尔积上构造一个偏序。</p>
 <p>在 <span class="arithmatex">\(A_1 \times A_2\)</span> 上的<strong>字典顺序</strong>定义如下：</p>
 <div class="arithmatex">\[
 (a_1, a_2) &lt; (b_1, b_2) \iff 
