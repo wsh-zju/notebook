@@ -1583,13 +1583,13 @@
 <ol>
 <li>哈希函数</li>
 </ol>
-<p><span class="arithmatex">\(f(x)=x在ht[]中的位置\)</span></p>
+<p><span class="arithmatex">\(f(x)=x在ht[ ]中的位置\)</span></p>
 <ol start="2">
 <li>
 <p><span class="arithmatex">\(T=x可能取值的个数\)</span> </p>
 </li>
 <li>
-<p><span class="arithmatex">\(n=ht[]中标识符的个数\)</span></p>
+<p><span class="arithmatex">\(n=ht[ ]中标识符的个数\)</span></p>
 </li>
 <li>
 <p>标识符密度（Identifier density）= <span class="arithmatex">\(\frac{n}{T}\)</span></p>
@@ -1755,27 +1755,44 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ol start="4">
-<li><strong>插入操作</strong>
-、<code>c
-void Insert(ElementType Key, HashTable H) {
-    Position Pos, NewCell;
-    List L;
-    /* 先检查Key是否已存在 */
-    Pos = Find(Key, H);
-    if (Pos == NULL) {  // Key不存在时插入
-        /* 创建新节点 */
-        NewCell = malloc(sizeof(struct ListNode));
-        if (NewCell == NULL)
-            FatalError("内存不足");
-        /* 将新节点插入链表头部 */
-        L = H-&gt;TheLists[Hash(Key, H-&gt;TableSize)];
-        NewCell-&gt;Next = L-&gt;Next;  // 新节点指向原第一个节点
-        NewCell-&gt;Element = Key;   // 存储数据
-        L-&gt;Next = NewCell;        // 头节点指向新节点
-    }
-    // 如果Key已存在，此处不做操作（可根据需求修改）
-}</code></li>
+<li><strong>插入操作</strong></li>
 </ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">Insert</span><span class="p">(</span><span class="n">ElementType</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">HashTable</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">Pos</span><span class="p">,</span><span class="w"> </span><span class="n">NewCell</span><span class="p">;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">List</span><span class="w"> </span><span class="n">L</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="cm">/* 先检查Key是否已存在 */</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">Pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="p">);</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Key不存在时插入</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="cm">/* 创建新节点 */</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="n">NewCell</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">ListNode</span><span class="p">));</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">NewCell</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">            </span><span class="n">FatalError</span><span class="p">(</span><span class="s">&quot;内存不足&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="cm">/* 将新节点插入链表头部 */</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="n">L</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheLists</span><span class="p">[</span><span class="n">Hash</span><span class="p">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TableSize</span><span class="p">)];</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">        </span><span class="n">NewCell</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">Next</span><span class="p">;</span><span class="w">  </span><span class="c1">// 新节点指向原第一个节点</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span><span class="n">NewCell</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Key</span><span class="p">;</span><span class="w">   </span><span class="c1">// 存储数据</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="n">L</span><span class="o">-&gt;</span><span class="n">Next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NewCell</span><span class="p">;</span><span class="w">        </span><span class="c1">// 头节点指向新节点</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="c1">// 如果Key已存在，此处不做操作（可根据需求修改）</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 </details>
 <h4 id="open-addressing">开放寻址法（Open Addressing）<a class="headerlink" href="#open-addressing" title="Permanent link">&para;</a></h4>
 <ol>
@@ -1790,21 +1807,25 @@ void Insert(ElementType Key, HashTable H) {
 <li><strong>线性探测</strong><ul>
 <li>原理：当哈希函数计算出的初始位置已被占用时，顺序检查下一个位置，直到找到空槽或遍历整个表</li>
 <li>核心公式<ul>
-<li><strong>探测函数</strong>：<span class="arithmatex">\(f(i) = i\)</span></li>
+<li><strong>探测函数</strong>：<span class="arithmatex">\(f(i)=i\)</span></li>
 <li><strong>位置计算</strong>：<br />
-  给定初始哈希值 <span class="arithmatex">\( h(k) \)</span>，第 <span class="arithmatex">\( i \)</span> 次探测的位置为 <span class="arithmatex">\(h(k, i) = \left( h(k) + i \right)\mod \text{TableSize}\)</span></li>
+  给定初始哈希值 <span class="arithmatex">\(h(k)\)</span>，第 <span class="arithmatex">\(i\)</span> 次探测的位置为 <span class="arithmatex">\(h(k, i)=\left(h(k)+i\right)\mod\text{TableSize}\)</span></li>
 </ul>
 </li>
-<li>线性探测的<strong>预期探测次数</strong> <span class="arithmatex">\( p \)</span><ul>
-<li><strong>插入和不成功查找</strong>：<br />
-   [
-   p = \frac{1}{2} \left( 1 + \frac{1}{(1 - \lambda)^2} \right)
-   ]</li>
-<li><strong>成功查找</strong>：<br />
-   [
-   p = \frac{1}{2} \left( 1 + \frac{1}{1 - \lambda} \right)
-   ]</li>
+<li>
+<p>线性探测的<strong>预期探测次数</strong> <span class="arithmatex">\(p\)</span></p>
+<ul>
+<li><strong>插入和不成功查找</strong>：  </li>
 </ul>
+<p>[
+   p = \frac{1}{2} \left( 1 + \frac{1}{(1 - \lambda)^2} \right)
+   ]</p>
+<ul>
+<li><strong>成功查找</strong>：  </li>
+</ul>
+<p>[
+   p = \frac{1}{2} \left( 1 + \frac{1}{1 - \lambda} \right)
+   ]</p>
 </li>
 </ul>
 </li>
