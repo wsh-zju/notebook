@@ -1001,9 +1001,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#open-addressingnote1" class="md-nav__link">
+  <a href="#open-addressing" class="md-nav__link">
     <span class="md-ellipsis">
-      开放寻址法（Open Addressing）^note1
+      开放寻址法（Open Addressing）
     </span>
   </a>
   
@@ -1534,9 +1534,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#open-addressingnote1" class="md-nav__link">
+  <a href="#open-addressing" class="md-nav__link">
     <span class="md-ellipsis">
-      开放寻址法（Open Addressing）^note1
+      开放寻址法（Open Addressing）
     </span>
   </a>
   
@@ -1639,7 +1639,7 @@
 <ul>
 <li>原理：每一个桶由一个链表表示</li>
 </ul>
-<details class="note">
+<details class="note" open="open">
 <summary>Code</summary>
 <ol>
 <li><strong>数据结构定义</strong></li>
@@ -1794,7 +1794,7 @@
 <a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h4 id="open-addressingnote1">开放寻址法（Open Addressing）<a href="开放寻址">^note1</a><a class="headerlink" href="#open-addressingnote1" title="Permanent link">&para;</a></h4>
+<h4 id="open-addressing">开放寻址法（Open Addressing）<a class="headerlink" href="#open-addressing" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p><strong>原理</strong>：冲突时按探测序列（如线性、二次、双重哈希）寻找下一个空桶</p>
@@ -1803,7 +1803,7 @@
 <p><strong>常见探测方法</strong></p>
 </li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>线性探测</strong></label><label for="__tabbed_1_2"><strong>探测</strong></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>线性探测</strong></label><label for="__tabbed_1_2"><strong>二次探测</strong></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -1831,7 +1831,21 @@
 </li>
 </ul>
 </div>
-<div class="tabbed-block"></div>
+<div class="tabbed-block">
+<ul>
+<li>核心公式<ul>
+<li><strong>探测函数</strong>：<span class="arithmatex">\(f(i)=i^2\)</span></li>
+<li><strong>位置计算</strong>：<br />
+    给定初始哈希值<span class="arithmatex">\(h(k)\)</span>，第<span class="arithmatex">\(i\)</span>次探测的位置为<span class="arithmatex">\(h(k, i)=\left(h(k)+i^2\right)\mod\text{TableSize}\)</span></li>
+</ul>
+</li>
+<li><strong>重要定理</strong>：<ul>
+<li>如果使用二次探测，并且哈希表的大小为质数，那么当哈希表至少有一半是空的时，新元素一定可以被插入</li>
+<li><strong>特殊情况</strong>：如果哈希表的大小为形如<span class="arithmatex">\(4k+3\)</span>的质数，探测函数<span class="arithmatex">\(f(i)=\pmi^2\)</span>可探测整个表</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 </div>
 
