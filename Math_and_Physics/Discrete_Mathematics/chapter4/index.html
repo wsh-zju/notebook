@@ -2014,14 +2014,20 @@
 <li><strong>问题：</strong>求 <span class="arithmatex">\(b^n\ \text{mod}\ m\)</span></li>
 <li>
 <p><strong>伪代码</strong></p>
-<p><code>text
-   procedure modular exponentiation(b: 整数, n=(aₖ₋₁aₖ₋₂⋯a₁a₀)₂, m: 正整数)
-x := 1
-power := b mod m
-for i := 0 to k-1
-    if aᵢ = 1 then x := (x · power) mod m
-    power := (power · power) mod m
-return x{x 等于 bⁿ mod m}</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>procedure modular exponentiation(b: 整数, n=(aₖ₋₁aₖ₋₂⋯a₁a₀)₂, m: 正整数)
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>x := 1
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>power := b mod m
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>for i := 0 to k-1
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    if aᵢ = 1 then x := (x · power) mod m
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    power := (power · power) mod m
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>return x{x 等于 bⁿ mod m}
+</code></pre></div></td></tr></table></div>
 </li>
 <li>
 <p><strong>步骤：</strong></p>
@@ -2266,19 +2272,7 @@ x&amp;\equiv 233\pmod{105}\
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-      
         <script src="../../../style/js/mathjax.js"></script>
-      
-        <script src="../../../javascripts/config.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>
