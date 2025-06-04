@@ -6,7 +6,7 @@ window.MathJax = {
   },
   svg: {
     fontCache: 'global',
-    fontURL: 'https://cdn.jsdelivr.net/npm/neo-euler@0.1/fonts',  // 字体文件路径
-    font: 'Neo-Euler'  // 指定使用Neo-Euler字体
+    fontURL: 'https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts',  // 字体文件路径
+    font: 'Asana-Math'
   }
 };
