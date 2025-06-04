@@ -1407,6 +1407,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧几里得算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3_1" class="md-nav__link">
     <span class="md-ellipsis">
       定理 3 费马小定理
@@ -1914,6 +1923,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      欧几里得算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3_1" class="md-nav__link">
     <span class="md-ellipsis">
       定理 3 费马小定理
@@ -1987,23 +2005,27 @@
 <summary>模 m 算术</summary>
 <ul>
 <li>加法：<span class="arithmatex">\(a +_{m} b = (a + b)\ \text{mod}\ m\)</span></li>
-<li>乘法：<span class="arithmatex">\(a \cdot_{m} = (a \cdot b)\ \text{mod}\ m\)</span></li>
+<li>乘法：<span class="arithmatex">\(a \cdot_{m} b= (a \cdot b)\ \text{mod}\ m\)</span></li>
 <li>满足结合律、交换律、分配律</li>
 </ul>
 </details>
 <h3 id="_3">快速模指数运算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>问题：</strong>求 <span class="arithmatex">\(b^n\ \text{mod}\ m\)</span></li>
-<li><strong>伪代码</strong>
-    <code>text
+<li>
+<p><strong>伪代码</strong></p>
+<p><code>text
    procedure modular exponentiation(b: 整数, n=(aₖ₋₁aₖ₋₂⋯a₁a₀)₂, m: 正整数)
-    x := 1
-    power := b mod m
-    for i := 0 to k-1
-        if aᵢ = 1 then x := (x · power) mod m
-        power := (power · power) mod m
-    return x{x 等于 bⁿ mod m}</code></li>
-<li><strong>步骤：</strong><ul>
+x := 1
+power := b mod m
+for i := 0 to k-1
+    if aᵢ = 1 then x := (x · power) mod m
+    power := (power · power) mod m
+return x{x 等于 bⁿ mod m}</code></p>
+</li>
+<li>
+<p><strong>步骤：</strong></p>
+<ul>
 <li>现将指数 <span class="arithmatex">\(n\)</span> 写成二进制</li>
 <li>初始化最终结果 <span class="arithmatex">\(x=1\)</span> ，<span class="arithmatex">\(power=b\)</span></li>
 <li>从低位开始检查每一位 <span class="arithmatex">\(a_j\)</span><strong>（注意先后顺序）</strong><ul>
@@ -2025,7 +2047,11 @@
 </details>
 <h2 id="_4">素数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>埃拉托斯特尼筛法</strong>：用来寻找不超过一个给定整数的所有素数</li>
+<li><strong>埃拉托斯特尼筛法</strong><ul>
+<li>应用：寻找不超过一个给定整数的所有素数</li>
+<li>步骤：在小于给定整数 <span class="arithmatex">\(n\)</span> 的数中逐步删除可以被小于 <span class="arithmatex">\(\sqrt{n}\)</span> 的数整除的数</li>
+</ul>
+</li>
 <li>记号：<ul>
 <li>最小公倍数： <span class="arithmatex">\(gcd(a,b)\)</span></li>
 <li>最大公约数： <span class="arithmatex">\(lcm(a,b)\)</span></li>
@@ -2038,6 +2064,11 @@
 <p>当 <span class="arithmatex">\(x\)</span> 无限增长时，不超过 <span class="arithmatex">\(x\)</span> 的素数个数与 <span class="arithmatex">\(x/\ln x\)</span> 之比 <span class="arithmatex">\(\pi (x)\)</span> 趋近于 1 </p>
 <h3 id="3">定理 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则 <span class="arithmatex">\(ab = gcd(a,b) \cdot lcm(a,b)\)</span></p>
+<h3 id="_5">欧几里得算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>引理</strong>：已知 <span class="arithmatex">\(a=bq+r\)</span>，则 <span class="arithmatex">\(gcd(a,b) = gcd(b,r)\)</span></li>
+<li><strong>应用</strong>：寻找两个数的最大公约数</li>
+</ul>
 <h3 id="3_1">定理 3 费马小定理<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>如果<span class="arithmatex">\(p\)</span>为素数，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
 <div class="arithmatex">\[
