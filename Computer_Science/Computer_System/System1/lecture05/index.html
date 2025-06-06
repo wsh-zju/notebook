@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
@@ -94,6 +96,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -742,6 +749,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    时序逻辑电路
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -753,6 +773,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      时序电路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态存储元件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="状态存储元件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      锁存器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      触发器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1693,6 +1772,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      时序电路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态存储元件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="状态存储元件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      锁存器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      触发器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1717,7 +1846,162 @@
 
   <h1>时序逻辑电路</h1>
 
-
+<h2 id="_1">时序电路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>组成部分</li>
+</ol>
+<ul>
+<li>储存元件：锁存器/触发器</li>
+<li>组合逻辑：<ul>
+<li>输入：来自外部</li>
+<li>输出：输出到外部<ul>
+<li>Mealy型：取决于输入和当前状态</li>
+<li>Moore型：仅取决于当前状态</li>
+</ul>
+</li>
+<li>当前状态：来自储存元件</li>
+<li>状态输出：下一个状态<strong>（取决于当前状态和输入）</strong>，作为储存元件的输入</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>时序电路类型</li>
+</ol>
+<ul>
+<li>取决于存储元件观察输入信号的时刻，以及存储元件状态改变的时机</li>
+<li><strong>同步电路</strong>：仅在时序信号（时钟脉冲）的触发下观察输入并改变状态</li>
+<li><strong>异步电路</strong>：由任意时刻的输入状态及输入变化的连续时间顺序决定</li>
+</ul>
+<h2 id="_2">状态存储元件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">锁存器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</label><label for="__tabbed_1_2">(NOR) <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_3">时钟 <span class="arithmatex">\(S-R\)</span> 锁存器</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p><strong>组成</strong>：两个与非门</p>
+<p><img alt="" src="../photo/5-1.png" /></p>
+</li>
+<li>
+<p><strong>真值表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(R\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(S\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(Q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\bar{Q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">禁止</td>
+<td style="text-align: center;">禁止</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">保持不变</td>
+<td style="text-align: center;">保持不变</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="admonition error">
+<p class="admonition-title">注意</p>
+<ul>
+<li><span class="arithmatex">\(S=0,R=0\)</span> 不允许作为输入！</li>
+<li>当上一个输入为 <span class="arithmatex">\(S=0,R=0\)</span> 时，之后输入 <span class="arithmatex">\(S=1,R=1\)</span>，信号不稳定 </li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p><strong>组成</strong>：两个或非门</p>
+<p><img alt="" src="../photo/5-2.png" /></p>
+</li>
+<li>
+<p><strong>真值表</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(R\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(S\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(Q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\bar{Q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">保持不变</td>
+<td style="text-align: center;">保持不变</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">禁止</td>
+<td style="text-align: center;">禁止</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="admonition error">
+<p class="admonition-title">注意</p>
+<ul>
+<li><span class="arithmatex">\(S=1,R=1\)</span> 不允许作为输入！</li>
+<li>当上一个输入为 <span class="arithmatex">\(S=1,R=1\)</span> 时，之后输入 <span class="arithmatex">\(S=0,R=0\)</span>，信号不稳定 </li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p><strong>组成</strong>：两个与非门+一个(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</p>
+<p><img alt="" src="../photo/5-3.png" /></p>
+</li>
+<li>
+<p><strong>行为</strong></p>
+<ul>
+<li>当 <span class="arithmatex">\(C=1\)</span> 时，与(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器功能相同</li>
+<li>当 <span class="arithmatex">\(C=0\)</span> 时，</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id="_4">触发器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 
 
 
@@ -1821,13 +2105,19 @@
     
       <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../../style/js/mathjax.js"></script>
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="../../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>

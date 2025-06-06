@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
@@ -819,9 +821,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      基本介绍
     </span>
   </a>
   
@@ -837,9 +839,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Classification 分类
+      分类
     </span>
   </a>
   
@@ -861,7 +863,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       指令集分类
     </span>
@@ -870,7 +872,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       寄存器
     </span>
@@ -902,7 +904,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       汇编语言
     </span>
@@ -912,7 +914,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       函数调用
     </span>
@@ -930,7 +932,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       程序运行
     </span>
@@ -1880,9 +1882,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Introduction
+      基本介绍
     </span>
   </a>
   
@@ -1898,9 +1900,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#classification" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Classification 分类
+      分类
     </span>
   </a>
   
@@ -1922,7 +1924,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       指令集分类
     </span>
@@ -1931,7 +1933,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       寄存器
     </span>
@@ -1963,7 +1965,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       汇编语言
     </span>
@@ -1973,7 +1975,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       函数调用
     </span>
@@ -1991,7 +1993,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       程序运行
     </span>
@@ -2031,7 +2033,7 @@
   <h1>ISA</h1>
 
 <h2 id="isa">ISA<a class="headerlink" href="#isa" title="Permanent link">&para;</a></h2>
-<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<h3 id="_1">基本介绍<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Instruction=opcode+operands（操作码+操作数）</p>
@@ -2095,13 +2097,13 @@
 </ul>
 </li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Example</p>
+<details class="example">
+<summary>Example</summary>
 <p><img alt="" src="../photo/6-1.png" /></p>
-</div>
+</details>
 </li>
 </ol>
-<h3 id="classification">Classification 分类<a class="headerlink" href="#classification" title="Permanent link">&para;</a></h3>
+<h3 id="_2">分类<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>CISC：复杂指令集<ul>
 <li>代码更短</li>
@@ -2111,7 +2113,7 @@
 <li>RISC：精简指令集</li>
 </ol>
 <h2 id="risc-v">RISC-V<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h2>
-<h3 id="_1">指令集分类<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_3">指令集分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>基础指令集</strong></p>
@@ -2156,7 +2158,7 @@
 </li>
 <li><strong>可选扩展</strong></li>
 </ul>
-<h3 id="_2">寄存器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_4">寄存器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>程序计数器（PC）</li>
 <li>
@@ -2292,8 +2294,8 @@
 </details>
 <h3 id="rv32i">基础整数指令集RV32I<a class="headerlink" href="#rv32i" title="Permanent link">&para;</a></h3>
 <ul>
-<li>分类<ul>
-<li>按照功能分类<ul>
+<li><strong>分类</strong><ul>
+<li>按照<strong>功能</strong>分类<ul>
 <li>ALU 指令<ul>
 <li>e.g. add,sub,addi...</li>
 </ul>
@@ -2308,13 +2310,10 @@
 </li>
 </ul>
 </li>
-<li>
-<p>按照编码格式分类</p>
-<ul>
+<li>按照<strong>编码格式</strong>分类<ul>
 <li>R,I,S,B,U,J</li>
 <li>opcode占右边的7位，表示指令是什么类型</li>
 </ul>
-<p><img alt="" src="../photo/6-2.png" /></p>
 </li>
 </ul>
 </li>
@@ -2353,7 +2352,8 @@
 </tr>
 </table></p>
 <ul>
-<li>rd = rs1 op rs2</li>
+<li><code>rd = rs1 op rs2</code></li>
+<li>e.g. <code>add rd,rs1,rs2</code></li>
 <li>没有not运算符，通过xor实现</li>
 </ul>
 </div>
@@ -2385,10 +2385,24 @@
 </tr>
 </table></p>
 <ul>
-<li>立即数指令（立即数是有符号数）</li>
-<li>如果是 ALU 运算，则 <code>rd = rs1 op imm</code></li>
-<li>如果是 Load 指令，<code>rd</code>表示目标寄存器，<code>[rs1]+imm</code>表示内存地址</li>
-<li>e.g. Load指令</li>
+<li><code>imm</code>：<strong>有符号数</strong>，进行符号扩展</li>
+<li><strong>ALU 运算指令</strong><ul>
+<li><code>rd = rs1 op imm</code></li>
+<li>e.g. <code>addi rd,rs1,imm</code></li>
+</ul>
+</li>
+<li><strong>Load 指令</strong><ul>
+<li><code>rd</code>表示目标寄存器</li>
+<li><code>[rs1]+imm</code>表示内存地址</li>
+<li>e.g. <code>lw rd,imm(rs1)</code></li>
+</ul>
+</li>
+<li><strong>Jalr 指令</strong><ul>
+<li><code>rd</code>表示目标寄存器，存储返回地址<code>pc+4</code>（如果不需要存储返回地址，<code>rd=x0</code>）</li>
+<li><code>[rs1]+imm</code>表示跳转的内存地址</li>
+<li>e.g. <code>jalr rd,rs1,imm</code></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="tabbed-block">
@@ -2425,12 +2439,13 @@
 <ul>
 <li><code>rs1</code>：存放内存地址的基址</li>
 <li><code>rs2</code>：存放数据</li>
-<li><code>imm</code>：地址的偏移量</li>
+<li><code>imm</code>：地址的偏移量（<strong>有符号数</strong>，进行符号扩展）</li>
+<li>e.g. <code>sd rs2,imm(rs1)</code></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <ul>
-<li>RISC-V的数据存储模式为小端模式（little endian）：数据的高字节储存在高地址</li>
+<li>RISC-V的数据存储模式为<strong>小端模式</strong>（little endian）：数据的高字节储存在高地址</li>
 <li>PowerPC使用大端模式</li>
 </ul>
 </div>
@@ -2466,6 +2481,14 @@
     <td colspan="7" class="riscv-table-node">opcode</td>
 </tr>
 </table></p>
+<ul>
+<li><code>imm</code>：<ul>
+<li>跳转地址相对于当前地址的偏移量</li>
+<li><strong>有符号数</strong>，进行符号扩展</li>
+<li>第一位始终为0</li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="tabbed-block">
 <p><table class="riscv-table">
@@ -2487,8 +2510,17 @@
 </tr>
 </table></p>
 <ul>
-<li>LUI: load upper immediate</li>
-<li>AUIPC: add upper immediate to PC</li>
+<li><code>imm</code>：<strong>无符号数</strong>，左移12位，低位补0</li>
+<li><strong>LUI 指令</strong><ul>
+<li><code>rd = imm</code></li>
+<li>e.g. <code>lui rd,imm</code></li>
+</ul>
+</li>
+<li><strong>AUIPC 指令</strong><ul>
+<li><code>rd = pc + imm</code></li>
+<li>e.g. <code>auipc rd,imm</code></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="tabbed-block">
@@ -2510,10 +2542,20 @@
     <td colspan="7" class="riscv-table-node">opcode</td>
 </tr>
 </table></p>
+<ul>
+<li><code>imm</code>：<ul>
+<li>跳转地址相对于当前地址的偏移量</li>
+<li><strong>有符号数</strong>，进行符号扩展</li>
+<li>第一位始终为0</li>
+</ul>
+</li>
+<li><code>pc+imm</code>：跳转地址</li>
+<li>e.g. <code>jal rd,imm</code></li>
+</ul>
 </div>
 </div>
 </div>
-<div class="admonition note">
+<div class="admonition tip">
 <p class="admonition-title">NOP</p>
 <ul>
 <li>表示空指令，没有操作</li>
@@ -2581,321 +2623,404 @@
 </tr>
 </tbody>
 </table>
-<details class="note">
+<details class="abstract">
 <summary>RISC-V指令编码总结</summary>
+<div class="admonition tip">
+<p class="admonition-title">注意</p>
+<ul>
+<li>对于移位指令，偏移量为<ul>
+<li>RV32I：低5位</li>
+<li>RV64I：低6位</li>
+</ul>
+</li>
+<li>加粗的为RV64I增加指令</li>
+</ul>
+</div>
 <table>
 <thead>
 <tr>
-<th>指令格式</th>
-<th>指令名称</th>
-<th>操作码（二进制）</th>
-<th>funct3（二进制）</th>
-<th>funct6/7（二进制）</th>
-<th>功能简述</th>
+<th style="text-align: center;">指令格式</th>
+<th style="text-align: center;">指令名称</th>
+<th style="text-align: center;">操作码（二进制）</th>
+<th style="text-align: center;">funct3（二进制）</th>
+<th style="text-align: center;">funct6/7（二进制）</th>
+<th style="text-align: center;">功能简述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>R - type</td>
-<td>add</td>
-<td>0110011</td>
-<td>000</td>
-<td>0000000</td>
-<td>寄存器加法</td>
+<td style="text-align: center;">R - type</td>
+<td style="text-align: center;">add</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">寄存器加法</td>
 </tr>
 <tr>
-<td></td>
-<td>sub</td>
-<td>0110011</td>
-<td>000</td>
-<td>0100000</td>
-<td>寄存器减法</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sub</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">0100000</td>
+<td style="text-align: center;">寄存器减法</td>
 </tr>
 <tr>
-<td></td>
-<td>sll</td>
-<td>0110011</td>
-<td>001</td>
-<td>0000000</td>
-<td>逻辑左移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sll</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">逻辑左移</td>
 </tr>
 <tr>
-<td></td>
-<td>xor</td>
-<td>0110011</td>
-<td>100</td>
-<td>0000000</td>
-<td>按位异或</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">srl</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">逻辑右移</td>
 </tr>
 <tr>
-<td></td>
-<td>srl</td>
-<td>0110011</td>
-<td>101</td>
-<td>0000000</td>
-<td>逻辑右移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sra</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0100000</td>
+<td style="text-align: center;">算术右移</td>
 </tr>
 <tr>
-<td></td>
-<td>sra</td>
-<td>0110011</td>
-<td>101</td>
-<td>0100000</td>
-<td>算术右移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">slt</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">有符号比较<br><code>rd=(rs1&lt;rs2)</code></td>
 </tr>
 <tr>
-<td></td>
-<td>or</td>
-<td>0110011</td>
-<td>110</td>
-<td>0000000</td>
-<td>按位或</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sltu</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">无符号比较<br><code>rd=(rs1&lt;rs2)</code></td>
 </tr>
 <tr>
-<td></td>
-<td>and</td>
-<td>0110011</td>
-<td>111</td>
-<td>0000000</td>
-<td>按位与</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">xor</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">按位异或</td>
 </tr>
 <tr>
-<td></td>
-<td>lr.d</td>
-<td>0110011</td>
-<td>011</td>
-<td>0001000</td>
-<td>加载双字并保留（特定功能 ）</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">or</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">按位或</td>
 </tr>
 <tr>
-<td></td>
-<td>sc.d</td>
-<td>0110011</td>
-<td>011</td>
-<td>0001100</td>
-<td>存储双字并检查（特定功能 ）</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">and</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">按位与</td>
 </tr>
 <tr>
-<td>I - type</td>
-<td>lb</td>
-<td>0000011</td>
-<td>000</td>
-<td>n.a.</td>
-<td>加载字节</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">lr.d</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">0001000</td>
+<td style="text-align: center;">加载双字并保留（特定功能 ）</td>
 </tr>
 <tr>
-<td></td>
-<td>lh</td>
-<td>0000011</td>
-<td>001</td>
-<td>n.a.</td>
-<td>加载半字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sc.d</td>
+<td style="text-align: center;">0110011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">0001100</td>
+<td style="text-align: center;">存储双字并检查（特定功能 ）</td>
 </tr>
 <tr>
-<td></td>
-<td>lw</td>
-<td>0000011</td>
-<td>010</td>
-<td>n.a.</td>
-<td>加载字</td>
+<td style="text-align: center;">I - type</td>
+<td style="text-align: center;">lb</td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载字节</td>
 </tr>
 <tr>
-<td></td>
-<td>ld</td>
-<td>0000011</td>
-<td>011</td>
-<td>n.a.</td>
-<td>加载双字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">lh</td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载半字</td>
 </tr>
 <tr>
-<td></td>
-<td>lbu</td>
-<td>0000011</td>
-<td>100</td>
-<td>n.a.</td>
-<td>加载无符号字节</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">lw</td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载字</td>
 </tr>
 <tr>
-<td></td>
-<td>lhu</td>
-<td>0000011</td>
-<td>101</td>
-<td>n.a.</td>
-<td>加载无符号半字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>ld</strong></td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载双字</td>
 </tr>
 <tr>
-<td></td>
-<td>lwu</td>
-<td>0000011</td>
-<td>110</td>
-<td>n.a.</td>
-<td>加载无符号字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">lbu</td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载无符号字节</td>
 </tr>
 <tr>
-<td></td>
-<td>addi</td>
-<td>0010011</td>
-<td>000</td>
-<td>n.a.</td>
-<td>立即数加法</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">lhu</td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载无符号半字</td>
 </tr>
 <tr>
-<td></td>
-<td>slli</td>
-<td>0010011</td>
-<td>001</td>
-<td>0000000</td>
-<td>立即数逻辑左移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>lwu</strong></td>
+<td style="text-align: center;">0000011</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载无符号字</td>
 </tr>
 <tr>
-<td></td>
-<td>xori</td>
-<td>0010011</td>
-<td>100</td>
-<td>n.a.</td>
-<td>立即数按位异或</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">addi</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">立即数加法</td>
 </tr>
 <tr>
-<td></td>
-<td>srli</td>
-<td>0010011</td>
-<td>101</td>
-<td>0000000</td>
-<td>立即数逻辑右移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">slti</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">有符号比较</td>
 </tr>
 <tr>
-<td></td>
-<td>srai</td>
-<td>0010011</td>
-<td>101</td>
-<td>0100000</td>
-<td>立即数算术右移</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sltiu</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">无符号数比较</td>
 </tr>
 <tr>
-<td></td>
-<td>ori</td>
-<td>0010011</td>
-<td>110</td>
-<td>n.a.</td>
-<td>立即数按位或</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">xori</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">立即数按位异或</td>
 </tr>
 <tr>
-<td></td>
-<td>andi</td>
-<td>0010011</td>
-<td>111</td>
-<td>n.a.</td>
-<td>立即数按位与</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ori</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">立即数按位或</td>
 </tr>
 <tr>
-<td></td>
-<td>jalr</td>
-<td>1100111</td>
-<td>000</td>
-<td>n.a.</td>
-<td>寄存器跳转并链接</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">andi</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">立即数按位与</td>
 </tr>
 <tr>
-<td>S - type</td>
-<td>sb</td>
-<td>0100011</td>
-<td>000</td>
-<td>n.a.</td>
-<td>存储字节</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">slli</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">立即数逻辑左移</td>
 </tr>
 <tr>
-<td></td>
-<td>sh</td>
-<td>0100011</td>
-<td>001</td>
-<td>n.a.</td>
-<td>存储半字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">srli</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">立即数逻辑右移</td>
 </tr>
 <tr>
-<td></td>
-<td>sw</td>
-<td>0100011</td>
-<td>010</td>
-<td>n.a.</td>
-<td>存储字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">srai</td>
+<td style="text-align: center;">0010011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0100000</td>
+<td style="text-align: center;">立即数算术右移</td>
 </tr>
 <tr>
-<td></td>
-<td>sd</td>
-<td>0100011</td>
-<td>111</td>
-<td>n.a.</td>
-<td>存储双字</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">jalr</td>
+<td style="text-align: center;">1100111</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">寄存器跳转并链接</td>
 </tr>
 <tr>
-<td>B - type</td>
-<td>beq</td>
-<td>1100011</td>
-<td>000</td>
-<td>n.a.</td>
-<td>相等则分支</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>addiw</strong></td>
+<td style="text-align: center;">0011011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">立即数加法（32位）</td>
 </tr>
 <tr>
-<td></td>
-<td>bne</td>
-<td>1100011</td>
-<td>001</td>
-<td>n.a.</td>
-<td>不相等则分支</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>slliw</strong></td>
+<td style="text-align: center;">0011011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">立即数逻辑左移（32位）</td>
 </tr>
 <tr>
-<td></td>
-<td>blt</td>
-<td>1100011</td>
-<td>100</td>
-<td>n.a.</td>
-<td>小于则分支</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>srliw</strong></td>
+<td style="text-align: center;">0011011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0000000</td>
+<td style="text-align: center;">立即数逻辑右移（32位）</td>
 </tr>
 <tr>
-<td></td>
-<td>bge</td>
-<td>1100011</td>
-<td>101</td>
-<td>n.a.</td>
-<td>大于等于则分支</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>sraiw</strong></td>
+<td style="text-align: center;">0011011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">0100000</td>
+<td style="text-align: center;">立即数算数右移（32位）</td>
 </tr>
 <tr>
-<td></td>
-<td>bltu</td>
-<td>1100011</td>
-<td>110</td>
-<td>n.a.</td>
-<td>无符号小于则分支</td>
+<td style="text-align: center;">S - type</td>
+<td style="text-align: center;">sb</td>
+<td style="text-align: center;">0100011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">存储字节（8 bit）</td>
 </tr>
 <tr>
-<td></td>
-<td>bgeu</td>
-<td>1100011</td>
-<td>111</td>
-<td>n.a.</td>
-<td>无符号大于等于则分支</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sh</td>
+<td style="text-align: center;">0100011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">存储半字（16 bit）</td>
 </tr>
 <tr>
-<td>U - type</td>
-<td>lui</td>
-<td>0110111</td>
-<td>n.a.</td>
-<td>n.a.</td>
-<td>加载立即数高位</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">sw</td>
+<td style="text-align: center;">0100011</td>
+<td style="text-align: center;">010</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">存储字（32 bit）</td>
 </tr>
 <tr>
-<td>J - type</td>
-<td>jal</td>
-<td>1101111</td>
-<td>n.a.</td>
-<td>n.a.</td>
-<td>跳转并链接</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>sd</strong></td>
+<td style="text-align: center;">0100011</td>
+<td style="text-align: center;">011</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">存储双字（64 bit）</td>
+</tr>
+<tr>
+<td style="text-align: center;">B - type</td>
+<td style="text-align: center;">beq</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">000</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">相等则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bne</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">001</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">不相等则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">blt</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">有符号小于则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bge</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">101</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">有符号大于等于则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bltu</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">无符号小于则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">bgeu</td>
+<td style="text-align: center;">1100011</td>
+<td style="text-align: center;">111</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">无符号大于等于则分支</td>
+</tr>
+<tr>
+<td style="text-align: center;">U - type</td>
+<td style="text-align: center;">lui</td>
+<td style="text-align: center;">0110111</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">加载立即数高位</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">auipc</td>
+<td style="text-align: center;">0010111</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">pc相对地址计算</td>
+</tr>
+<tr>
+<td style="text-align: center;">J - type</td>
+<td style="text-align: center;">jal</td>
+<td style="text-align: center;">1101111</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">n.a.</td>
+<td style="text-align: center;">跳转并链接</td>
 </tr>
 </tbody>
 </table>
 </details>
-<h2 id="_3">汇编语言<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">函数调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">汇编语言<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">函数调用<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p><strong>1. 核心步骤</strong></p>
 <ul>
 <li>
@@ -3157,7 +3282,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="_5">程序运行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_7">程序运行<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>preprocessor(*.c-&gt;*.i):宏展开</li>
 <li>complier(*.i-&gt;*.s):生成汇编文件</li>
@@ -3267,13 +3392,19 @@
     
       <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../../style/js/mathjax.js"></script>
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="../../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>

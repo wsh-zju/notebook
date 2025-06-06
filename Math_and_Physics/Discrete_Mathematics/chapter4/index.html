@@ -52,6 +52,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
@@ -1424,6 +1426,21 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      求解同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="求解同余方程">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#3_1" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1949,6 +1966,21 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      求解同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="求解同余方程">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#3_1" class="md-nav__link">
     <span class="md-ellipsis">
@@ -2010,7 +2042,7 @@
 <h3 id="_2">简单定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>如果<span class="arithmatex">\(a \equiv b (\,\text{mod}\,m)\)</span>,<span class="arithmatex">\(c \equiv d (\,\text{mod}\,m)\)</span>，那么<span class="arithmatex">\(a+c \equiv b+d (\ \text{mod}\ m)\)</span>并且<span class="arithmatex">\(ac \equiv bd (\ \text{mod}\ m)\)</span></p>
+<p>如果<span class="arithmatex">\(a \equiv b\ (\,\text{mod}\,m)\)</span>,<span class="arithmatex">\(c \equiv d\ (\,\text{mod}\,m)\)</span>，那么<span class="arithmatex">\(a+c \equiv b+d\ (\ \text{mod}\ m)\)</span>并且<span class="arithmatex">\(ac \equiv bd\ (\ \text{mod}\ m)\)</span></p>
 </li>
 <li>
 <p><span class="arithmatex">\((a+b)\ \text{mod}\ m = ((a\ \text{mod}\ m)+(b\ \text{mod}\ m))\ \text{mod}\ m\)</span></p>
@@ -2096,6 +2128,7 @@
 <p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则 <span class="arithmatex">\(ab = gcd(a,b) \cdot lcm(a,b)\)</span></p>
 <h3 id="4">定理 4 贝祖定理<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
 <p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则存在整数 <span class="arithmatex">\(s\)</span> 和 <span class="arithmatex">\(t\)</span> 使得 <span class="arithmatex">\(gcd(a,b) = sa+tb\)</span></p>
+<h2 id="_6">求解同余方程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="3_1">定理 3 费马小定理<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>如果<span class="arithmatex">\(p\)</span>为素数，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
 <div class="arithmatex">\[
@@ -2155,7 +2188,7 @@ M_ky_k\equiv 1\pmod{m_k}
 <div class="arithmatex">\[
 x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
 \]</div>
-<details class="note">
+<details class="example">
 <summary>同余方程组求解</summary>
 <p><strong>Question:</strong></p>
 <p>同余方程组为：</p>
@@ -2164,30 +2197,30 @@ x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
 <span class="arithmatex">\(x\equiv 2\pmod{7}\)</span></p>
 <p><strong>Answer:</strong></p>
 <ol>
-<li>
-<p><strong>计算相关参数</strong>
-令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>
+<li><strong>计算相关参数</strong></li>
+</ol>
+<p>令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>
 <span class="arithmatex">\(M_1=\frac{m}{3}=35\)</span>
 <span class="arithmatex">\(M_2=\frac{m}{5}=21\)</span>
 <span class="arithmatex">\(M_3=\frac{m}{7}=15\)</span></p>
-</li>
-<li>
-<p><strong>求模逆元</strong>
-- 因为 <span class="arithmatex">\(35\times2\equiv2\times2\equiv1\pmod{3}\)</span>，所以 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(M_1 = 35\)</span> 模 <span class="arithmatex">\(3\)</span> 的逆，即 <span class="arithmatex">\(y_1 = 2\)</span>。
-- 因为 <span class="arithmatex">\(21\equiv1\pmod{5}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_2 = 21\)</span> 模 <span class="arithmatex">\(5\)</span> 的逆，即 <span class="arithmatex">\(y_2 = 1\)</span>。
-- 因为 <span class="arithmatex">\(15\equiv1\pmod{7}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_3 = 15\)</span> 模 <span class="arithmatex">\(7\)</span> 的逆，即 <span class="arithmatex">\(y_3 = 1\)</span>。</p>
-</li>
-<li>
-<p><strong>计算同余方程组的解</strong>
-根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。
-[
-\begin{align<em>}
-x&amp;\equiv 233\pmod{105}\
-&amp;\equiv 23\pmod{105}
-\end{align</em>}
-]</p>
-</li>
+<ol start="2">
+<li><strong>求模逆元</strong></li>
 </ol>
+<ul>
+<li>因为 <span class="arithmatex">\(35\times2\equiv2\times2\equiv1\pmod{3}\)</span>，所以 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(M_1 = 35\)</span> 模 <span class="arithmatex">\(3\)</span> 的逆，即 <span class="arithmatex">\(y_1 = 2\)</span>。</li>
+<li>因为 <span class="arithmatex">\(21\equiv1\pmod{5}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_2 = 21\)</span> 模 <span class="arithmatex">\(5\)</span> 的逆，即 <span class="arithmatex">\(y_2 = 1\)</span>。</li>
+<li>因为 <span class="arithmatex">\(15\equiv1\pmod{7}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_3 = 15\)</span> 模 <span class="arithmatex">\(7\)</span> 的逆，即 <span class="arithmatex">\(y_3 = 1\)</span>。</li>
+</ul>
+<ol start="3">
+<li><strong>计算同余方程组的解</strong></li>
+</ol>
+<p>根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。</p>
+<div class="arithmatex">\[
+\begin{align*}
+x&amp;\equiv 233\pmod{105}\\
+&amp;\equiv 23\pmod{105}
+\end{align*}
+\]</div>
 <p>所以，<span class="arithmatex">\(23\)</span> 是该同余方程组的最小正整数解 </p>
 </details>
 
@@ -2293,13 +2326,19 @@ x&amp;\equiv 233\pmod{105}\
     
       <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
-        <script src="../../../style/js/mathjax.js"></script>
+        <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
       
     
   </body>
