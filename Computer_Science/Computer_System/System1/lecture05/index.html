@@ -1873,8 +1873,15 @@
 <li><strong>异步电路</strong>：由任意时刻的输入状态及输入变化的连续时间顺序决定</li>
 </ul>
 <h2 id="_2">状态存储元件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition tips">
+<p class="admonition-title">输入信号的含义</p>
+<ul>
+<li><span class="arithmatex">\(S\)</span>：表示set输出<span class="arithmatex">\(Q\)</span>为1</li>
+<li><span class="arithmatex">\(R\)</span>：表示reset输出<span class="arithmatex">\(Q\)</span>为0</li>
+</ul>
+</div>
 <h3 id="_3">锁存器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</label><label for="__tabbed_1_2">(NOR) <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_3">时钟 <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_4">D 锁存器</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</label><label for="__tabbed_1_2">(NOR) <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_3">时钟 <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_4"><span class="arithmatex">\(D\)</span> 锁存器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ul>
@@ -1922,7 +1929,7 @@
 </table>
 </li>
 </ul>
-<div class="admonition error">
+<div class="admonition danger">
 <p class="admonition-title">注意</p>
 <ul>
 <li><span class="arithmatex">\(S=0,R=0\)</span> 不允许作为输入！</li>
@@ -1976,7 +1983,7 @@
 </table>
 </li>
 </ul>
-<div class="admonition error">
+<div class="admonition danger">
 <p class="admonition-title">注意</p>
 <ul>
 <li><span class="arithmatex">\(S=1,R=1\)</span> 不允许作为输入！</li>
@@ -2003,7 +2010,7 @@
 </div>
 <div class="tabbed-block">
 <ul>
-<li>设计思路：改进时钟 <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器<ul>
+<li>设计思路：改进时钟 <span class="arithmatex">\(S-R\)</span> 锁存器<ul>
 <li>合并两种输出保持不变的情况</li>
 <li>利用信号变化时，两个输入 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(R\)</span> 永远反相</li>
 <li>避免输入信号都为1的情况</li>
@@ -2011,7 +2018,7 @@
 </li>
 <li>
 <p><strong>组成</strong>：一个非门+一个时钟 <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</p>
-<p><img alt="" onmouseout="this.style.transform='scale(1)'" onmouseover="this.style.transform='scale(1.1)'" src="../photo/5-4.png" style="transition: all 0.3s ease;cursor: pointer;" /></p>
+<p><img alt="" src="../photo/5-4.png" style="width: 50%;display: block;margin: 20px auto" /></p>
 </li>
 <li>
 <p><strong>真值表</strong></p>
@@ -2048,13 +2055,65 @@
 </li>
 </ul>
 <details class="note">
-<summary>由传输门组成的D 锁存器</summary>
+<summary>由传输门组成的D锁存器</summary>
 <p><img alt="" src="../photo/5-5.png" style="width: 50%;display: block;margin: 20px auto" /></p>
 </details>
 </div>
 </div>
 </div>
 <h3 id="_4">触发器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="arithmatex">\(S-R\)</span> 主从触发器</label><label for="__tabbed_2_2">边沿 <span class="arithmatex">\(D\)</span> 触发器</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong><span class="arithmatex">\(S-R\)</span> Master-Slave Flip-Flop</strong></p>
+<ul>
+<li>
+<ul>
+<li>主锁存器：接受外部输入信号</li>
+<li>从锁存器：输出最终结果</li>
+</ul>
+<p><strong>组成</strong>：两个时钟 <span class="arithmatex">\(S-R\)</span> 锁存器，和一个非门</p>
+<p><img alt="" src="../photo/5-6.png" style="width: 50%;display: block;margin:20px auto;" /></p>
+</li>
+<li>
+<p><strong>工作过程</strong></p>
+<ul>
+<li><span class="arithmatex">\(C=1\)</span>：主锁存器接受外部输入；从锁存器锁定</li>
+<li><span class="arithmatex">\(C=0\)</span>：主锁存器锁定；从锁存器输出主锁存器的状态</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>可能发生<code>1s catching</code>问题<ul>
+<li>当 <span class="arithmatex">\(C=1\)</span> 期间，若输入信号发生跳变，主锁存器会错误地"捕获"这些中间变化，导致从锁存器最终输出非预期状态</li>
+</ul>
+</li>
+<li>改进方法：使用边沿触发</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><strong>Edge-Triggered D Flip-Flop</strong></p>
+<ul>
+<li><strong>组成</strong>：一个时钟 <span class="arithmatex">\(S-R\)</span> 锁存器+一个 <span class="arithmatex">\(D\)</span> 锁存器</li>
+<li>
+<p><strong>负边沿触发器</strong></p>
+<p><img alt="" src="../photo/5-7.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>当 <span class="arithmatex">\(C\)</span> 信号由1变成0（负边沿）的时候，从锁存器开放，接受主锁存器输入，从而改变输出</li>
+</ul>
+</li>
+<li>
+<p>正边沿触发器</p>
+<p><img alt="" src="../photo/5-8.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>满足 <span class="arithmatex">\(Q(t+1)=D(t)\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
 
 
