@@ -2060,7 +2060,7 @@
 <h3 id="_2">简单定理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>如果<span class="arithmatex">\(a \equiv b\ (\,\text{mod}\,m)\)</span>,<span class="arithmatex">\(c \equiv d\ (\,\text{mod}\,m)\)</span>，那么<span class="arithmatex">\(a+c \equiv b+d\ (\ \text{mod}\ m)\)</span>并且<span class="arithmatex">\(ac \equiv bd\ (\ \text{mod}\ m)\)</span></p>
+<p>如果 <span class="arithmatex">\(a \equiv b\ (\,\text{mod}\,m)\)</span>，<span class="arithmatex">\(c \equiv d\ (\,\text{mod}\,m)\)</span>，那么 <span class="arithmatex">\(a+c \equiv b+d\ (\ \text{mod}\ m)\)</span> 并且 <span class="arithmatex">\(ac \equiv bd\ (\ \text{mod}\ m)\)</span></p>
 </li>
 <li>
 <p><span class="arithmatex">\((a+b)\ \text{mod}\ m = ((a\ \text{mod}\ m)+(b\ \text{mod}\ m))\ \text{mod}\ m\)</span></p>
@@ -2162,8 +2162,8 @@
 <ol start="2">
 <li><strong>同余方程的求解方法</strong></li>
 </ol>
-<p><strong>question</strong>：已知 <span class="arithmatex">\(ax \equiv b\ (\text{mod}\ m)\)</span>，求 <span class="arithmatex">\(x\)</span></p>
-<p><strong>answer</strong>：</p>
+<p><strong>Question</strong>：已知 <span class="arithmatex">\(ax \equiv b\ (\text{mod}\ m)\)</span>，求 <span class="arithmatex">\(x\)</span></p>
+<p><strong>Answer</strong>：</p>
 <ul>
 <li>求出 <span class="arithmatex">\(\bar{a}\)</span> 满足 <span class="arithmatex">\(\bar{a}a \equiv 1\ (\text{mod}\ m)\)</span></li>
 <li>根据已知条件，<span class="arithmatex">\(\bar{a}ax \equiv \bar{a}b\ (\text{mod}\ m)\)</span></li>
@@ -2209,17 +2209,17 @@ x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
 <summary>同余方程组求解</summary>
 <p><strong>Question:</strong></p>
 <p>同余方程组为：</p>
-<div class="arithmatex">\[x\equiv 2\pmod{3}$$
-$$x\equiv 3\pmod{5}$$
-$$x\equiv 2\pmod{7}\]</div>
+<div class="arithmatex">\[x\equiv 2\pmod{3}\]</div>
+<div class="arithmatex">\[x\equiv 3\pmod{5}\]</div>
+<div class="arithmatex">\[x\equiv 2\pmod{7}\]</div>
 <p><strong>Answer:</strong></p>
 <ol>
 <li><strong>计算相关参数</strong></li>
 </ol>
-<p>令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>，则
-<span class="arithmatex">\(<span class="arithmatex">\(M_1=\frac{m}{3}=35\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(M_2=\frac{m}{5}=21\)</span>\)</span>
-$$M_3=\frac{m}{7}=15</p>
+<p>令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>，则</p>
+<div class="arithmatex">\[M_1=\frac{m}{3}=35\]</div>
+<div class="arithmatex">\[M_2=\frac{m}{5}=21\]</div>
+<div class="arithmatex">\[M_3=\frac{m}{7}=15\]</div>
 <ol start="2">
 <li><strong>求模逆元</strong></li>
 </ol>
@@ -2233,28 +2233,25 @@ $$M_3=\frac{m}{7}=15</p>
 </ol>
 <p>根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。</p>
 <div class="arithmatex">\[
-\begin{align*}
-x&amp;\equiv 233\ (\text{mod}\ 105)\\
-&amp;\equiv 23\ (\text{mod}\ 105)
-\end{align*}
+x = 233 \equiv 23\ (\text{mod}\ 105)
 \]</div>
 <p>所以，<span class="arithmatex">\(23\)</span> 是该同余方程组的最小正整数解 </p>
 </details>
 <h3 id="3_1">定理 3 费马小定理<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
-<p>如果<span class="arithmatex">\(p\)</span>为素数，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
+<p>如果<strong><span class="arithmatex">\(p\)</span>为素数</strong>，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
 <div class="arithmatex">\[
 a^{p - 1} \equiv 1\ (\text{mod}\ p)
 \]</div>
-<p>再者，对每个整数<span class="arithmatex">\(a\)</span>都有</p>
+<p>再者，对<strong>每个整数<span class="arithmatex">\(a\)</span></strong>都有</p>
 <div class="arithmatex">\[
 a^{p} \equiv a\ (\text{mod}\ p)
 \]</div>
-<div class="admonition abstract">
+<div class="admonition tip">
 <p class="admonition-title">欧拉函数</p>
-<p><span class="arithmatex">\(\varphi(n)\)</span>为欧拉函数，表示小于<span class="arithmatex">\(n\)</span>的与<span class="arithmatex">\(n\)</span>互质的数的个数 </p>
+<p><strong><span class="arithmatex">\(\varphi(n)\)</span>为欧拉函数</strong>，表示小于<span class="arithmatex">\(n\)</span>的与<span class="arithmatex">\(n\)</span>互质的数的个数 </p>
 <ul>
 <li>
-<p>当<span class="arithmatex">\(n\)</span>为质数时，<span class="arithmatex">\(\varphi(n)=n - 1\)</span>，则</p>
+<p>当<span class="arithmatex">\(n\)</span>为质数时，<span class="arithmatex">\(\varphi(n)=n - 1\)</span>，则费马小定理为</p>
 <div class="arithmatex">\[
 a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 \]</div>
@@ -2263,6 +2260,36 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 <p>若<span class="arithmatex">\(p\neq q\)</span>且<span class="arithmatex">\(p\)</span>，<span class="arithmatex">\(q\)</span>为质数，<span class="arithmatex">\(\varphi(pq)=(p - 1)(q - 1)\)</span> </p>
 </li>
 </ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">伪素数</p>
+<p>1.<strong>定义</strong></p>
+<ul>
+<li><strong>伪素数</strong>：<span class="arithmatex">\(b\)</span> 是一个正整数，如果 <span class="arithmatex">\(n\)</span> 是一个正合数并且 <span class="arithmatex">\(b^{n-1} \equiv 1\ (\text{mod}\ n)\)</span>，则称 <span class="arithmatex">\(n\)</span> 为以 <span class="arithmatex">\(b\)</span> 为基的<strong>伪素数</strong></li>
+<li><strong>卡米切尔数</strong>：正合数 <span class="arithmatex">\(n\)</span> 如果对于所有满足 <span class="arithmatex">\(gcd(b,n)=1\)</span> 的正整数 <span class="arithmatex">\(b\)</span> 都有 $b^{n-1} \equiv 1 (\text{mod} n) 成立，则称 <span class="arithmatex">\(n\)</span> 为<strong>卡米切尔数</strong></li>
+</ul>
+<ol start="2">
+<li><strong>定理</strong></li>
+</ol>
+<p>已知同余式 $2^{n-1} \equiv 1 (\text{mod} n)</p>
+<ul>
+<li>如果 <span class="arithmatex">\(n\)</span> <strong>满足</strong>该同余式，则 <span class="arithmatex">\(n\)</span> 要么是<strong>素数</strong>，要么是<strong>以2为基数的伪素数</strong></li>
+<li>如果 <span class="arithmatex">\(n\)</span> <strong>不满足</strong>该同余式，则 <span class="arithmatex">\(n\)</span> 是<strong>合数</strong></li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">原根和离散对数</p>
+<ol>
+<li><strong>定义</strong></li>
+</ol>
+<ul>
+<li><strong><span class="arithmatex">\(Z_p\)</span></strong>：对于素数 <span class="arithmatex">\(p\)</span>，表示小于 <span class="arithmatex">\(p-1\)</span> 的非负整数的和</li>
+<li><strong>原根</strong>：如果 <span class="arithmatex">\(Z_p\)</span> 中的每个元素都是 <span class="arithmatex">\(r\)</span> 的一个幂次，则称整数 <span class="arithmatex">\(r\)</span> 是模素数 <span class="arithmatex">\(p\)</span> 的一个<strong>原根</strong></li>
+<li><strong>离散对数</strong>：<span class="arithmatex">\(p\)</span> 为素数，<span class="arithmatex">\(r\)</span> 是模 <span class="arithmatex">\(p\)</span> 的原根，<span class="arithmatex">\(1 \leq a \leq p-1\)</span> 是一个整数。如果 <span class="arithmatex">\(r^e\ \text{mod}\ p = a\)</span> 并且 <span class="arithmatex">\(0 \leq e \leq p-1\)</span> ，则称 <span class="arithmatex">\(e\)</span> 为以 <span class="arithmatex">\(r\)</span> 为底 <span class="arithmatex">\(a\)</span> 模 <span class="arithmatex">\(p\)</span> 的<strong>离散对数</strong>，记作 <span class="arithmatex">\(\log_r a=e\)</span></li>
+</ul>
+<ol start="2">
+<li><strong>重要事实</strong>：每个素数 <span class="arithmatex">\(p\)</span> 都存在一个模 <span class="arithmatex">\(p\)</span> 的原根</li>
+</ol>
 </div>
 
 
