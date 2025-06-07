@@ -1442,9 +1442,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
-      定理 3 费马小定理
+      定理 1
     </span>
   </a>
   
@@ -1454,6 +1454,15 @@
   <a href="#2_1" class="md-nav__link">
     <span class="md-ellipsis">
       定理 2 中国剩余定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 3 费马小定理
     </span>
   </a>
   
@@ -1982,9 +1991,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#1_1" class="md-nav__link">
     <span class="md-ellipsis">
-      定理 3 费马小定理
+      定理 1
     </span>
   </a>
   
@@ -1994,6 +2003,15 @@
   <a href="#2_1" class="md-nav__link">
     <span class="md-ellipsis">
       定理 2 中国剩余定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      定理 3 费马小定理
     </span>
   </a>
   
@@ -2127,8 +2145,101 @@
 <h3 id="3">定理 3<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
 <p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则 <span class="arithmatex">\(ab = gcd(a,b) \cdot lcm(a,b)\)</span></p>
 <h3 id="4">定理 4 贝祖定理<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
-<p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则存在整数 <span class="arithmatex">\(s\)</span> 和 <span class="arithmatex">\(t\)</span> 使得 <span class="arithmatex">\(gcd(a,b) = sa+tb\)</span></p>
+<p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 为正整数，则存在整数 <span class="arithmatex">\(s\)</span> 和 <span class="arithmatex">\(t\)</span> （贝祖系数）使得 <span class="arithmatex">\(gcd(a,b) = sa+tb\)</span>（贝祖恒等式）</p>
 <h2 id="_6">求解同余方程<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>相关定义</strong><ul>
+<li><strong>逆</strong>：如果 <span class="arithmatex">\(\bar{a}a \equiv 1\ (\text{mod}\ m)\)</span>，则称 <span class="arithmatex">\(\bar{a}\)</span> 为 <span class="arithmatex">\(a\)</span> 模 <span class="arithmatex">\(m\)</span> 的逆</li>
+</ul>
+</li>
+</ul>
+<h3 id="1_1">定理 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>如果 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(m\)</span> 为<strong>互素</strong>的整数且 <span class="arithmatex">\(m&gt;1\)</span> 则 <span class="arithmatex">\(a\)</span> 模 <span class="arithmatex">\(m\)</span> 的逆<strong>存在</strong>；并且，这个模 <span class="arithmatex">\(m\)</span> 的逆是<strong>唯一的</strong> </p>
+<ol>
+<li><strong><span class="arithmatex">\(\bar{a}\)</span> 的求解方法</strong></li>
+</ol>
+<p>对欧几里得算法寻找 <span class="arithmatex">\(gcd(a,m)\)</span> 的步骤反向操作，找到贝祖恒等式和贝祖系数</p>
+<ol start="2">
+<li><strong>同余方程的求解方法</strong></li>
+</ol>
+<p><strong>question</strong>：已知 <span class="arithmatex">\(ax \equiv b\ (\text{mod}\ m)\)</span>，求 <span class="arithmatex">\(x\)</span></p>
+<p><strong>answer</strong>：</p>
+<ul>
+<li>求出 <span class="arithmatex">\(\bar{a}\)</span> 满足 <span class="arithmatex">\(\bar{a}a \equiv 1\ (\text{mod}\ m)\)</span></li>
+<li>根据已知条件，<span class="arithmatex">\(\bar{a}ax \equiv \bar{a}b\ (\text{mod}\ m)\)</span></li>
+<li>由<span class="arithmatex">\(\bar{a}a \equiv 1\ (\text{mod}\ m)\)</span>，得<span class="arithmatex">\(x \equiv \bar{a}b\ (\text{mod}\ m)\)</span></li>
+</ul>
+<h3 id="2_1">定理 2 中国剩余定理<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>同余方程组的求解方法</strong></p>
+<p>令<span class="arithmatex">\(m_1,m_2,\cdots,m_n\)</span>为大于<span class="arithmatex">\(1\)</span>的<strong>两两互素</strong>的正整数，而<span class="arithmatex">\(a_1,a_2,\cdots,a_n\)</span>是任意整数。则同余方程组：</p>
+<div class="arithmatex">\[
+x\equiv a_1\ (\text{mod}\ m_1)
+\]</div>
+<div class="arithmatex">\[
+x\equiv a_2\ (\text{mod}\ m_2)
+\]</div>
+<div class="arithmatex">\[
+\cdots
+\]</div>
+<div class="arithmatex">\[
+x\equiv a_n\ (\text{mod}\ m_n)
+\]</div>
+<p>有唯一的模<span class="arithmatex">\(m = m_1m_2\cdots m_n\)</span>的解。（即，存在一个满足<span class="arithmatex">\(0\leq x\leq m\)</span>的解<span class="arithmatex">\(x\)</span>，而所有其他的解均与此解模<span class="arithmatex">\(m\)</span>同余。）</p>
+<p><strong>求解方法</strong>：</p>
+<ol>
+<li>要构造一个满足所有方程的解，首先令</li>
+</ol>
+<div class="arithmatex">\[
+M_k = \frac{m}{m_k}, k = 1,2,\cdots,n
+\]</div>
+<ol start="2">
+<li>存在整数<span class="arithmatex">\(y_k\)</span>，使得</li>
+</ol>
+<div class="arithmatex">\[
+M_ky_k\equiv 1\ (\text{mod}\ m_k)
+\]</div>
+<p>求出 <span class="arithmatex">\(M_k\)</span> 模 <span class="arithmatex">\(m_k\)</span> 的逆 <span class="arithmatex">\(y_k\)</span></p>
+<ol start="3">
+<li>取和</li>
+</ol>
+<div class="arithmatex">\[
+x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
+\]</div>
+<details class="example">
+<summary>同余方程组求解</summary>
+<p><strong>Question:</strong></p>
+<p>同余方程组为：</p>
+<div class="arithmatex">\[x\equiv 2\pmod{3}$$
+$$x\equiv 3\pmod{5}$$
+$$x\equiv 2\pmod{7}\]</div>
+<p><strong>Answer:</strong></p>
+<ol>
+<li><strong>计算相关参数</strong></li>
+</ol>
+<p>令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>，则
+<span class="arithmatex">\(<span class="arithmatex">\(M_1=\frac{m}{3}=35\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(M_2=\frac{m}{5}=21\)</span>\)</span>
+$$M_3=\frac{m}{7}=15</p>
+<ol start="2">
+<li><strong>求模逆元</strong></li>
+</ol>
+<ul>
+<li>因为 <span class="arithmatex">\(35\times2\equiv2\times2\equiv1\pmod{3}\)</span>，所以 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(M_1 = 35\)</span> 模 <span class="arithmatex">\(3\)</span> 的逆，即 <span class="arithmatex">\(y_1 = 2\)</span>。</li>
+<li>因为 <span class="arithmatex">\(21\equiv1\pmod{5}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_2 = 21\)</span> 模 <span class="arithmatex">\(5\)</span> 的逆，即 <span class="arithmatex">\(y_2 = 1\)</span>。</li>
+<li>因为 <span class="arithmatex">\(15\equiv1\pmod{7}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_3 = 15\)</span> 模 <span class="arithmatex">\(7\)</span> 的逆，即 <span class="arithmatex">\(y_3 = 1\)</span>。</li>
+</ul>
+<ol start="3">
+<li><strong>计算同余方程组的解</strong></li>
+</ol>
+<p>根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。</p>
+<div class="arithmatex">\[
+\begin{align*}
+x&amp;\equiv 233\ (\text{mod}\ 105)\\
+&amp;\equiv 23\ (\text{mod}\ 105)
+\end{align*}
+\]</div>
+<p>所以，<span class="arithmatex">\(23\)</span> 是该同余方程组的最小正整数解 </p>
+</details>
 <h3 id="3_1">定理 3 费马小定理<a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h3>
 <p>如果<span class="arithmatex">\(p\)</span>为素数，<span class="arithmatex">\(a\)</span>是一个不能被<span class="arithmatex">\(p\)</span>整除的整数，则</p>
 <div class="arithmatex">\[
@@ -2153,76 +2264,6 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 </li>
 </ul>
 </div>
-<h3 id="2_1">定理 2 中国剩余定理<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<p>令<span class="arithmatex">\(m_1,m_2,\cdots,m_n\)</span>为大于<span class="arithmatex">\(1\)</span>的<strong>两两互素</strong>的正整数，而<span class="arithmatex">\(a_1,a_2,\cdots,a_n\)</span>是任意整数。则同余方程组：</p>
-<div class="arithmatex">\[
-x\equiv a_1\pmod{m_1}
-\]</div>
-<div class="arithmatex">\[
-x\equiv a_2\pmod{m_2}
-\]</div>
-<div class="arithmatex">\[
-\cdots
-\]</div>
-<div class="arithmatex">\[
-x\equiv a_n\pmod{m_n}
-\]</div>
-<p>有唯一的模<span class="arithmatex">\(m = m_1m_2\cdots m_n\)</span>的解。（即，存在一个满足<span class="arithmatex">\(0\leq x\leq m\)</span>的解<span class="arithmatex">\(x\)</span>，而所有其他的解均与此解模<span class="arithmatex">\(m\)</span>同余。）</p>
-<p><strong>求解方法</strong>：</p>
-<ol>
-<li>要构造一个满足所有方程的解，首先令</li>
-</ol>
-<div class="arithmatex">\[
-M_k = m/m_k，k = 1,2,\cdots,n
-\]</div>
-<ol start="2">
-<li>存在整数<span class="arithmatex">\(y_k\)</span>，使得</li>
-</ol>
-<div class="arithmatex">\[
-M_ky_k\equiv 1\pmod{m_k}
-\]</div>
-<p>求出<span class="arithmatex">\(y_k\)</span></p>
-<ol start="3">
-<li>取和</li>
-</ol>
-<div class="arithmatex">\[
-x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
-\]</div>
-<details class="example">
-<summary>同余方程组求解</summary>
-<p><strong>Question:</strong></p>
-<p>同余方程组为：</p>
-<p><span class="arithmatex">\(x\equiv 2\pmod{3}\)</span>
-<span class="arithmatex">\(x\equiv 3\pmod{5}\)</span>
-<span class="arithmatex">\(x\equiv 2\pmod{7}\)</span></p>
-<p><strong>Answer:</strong></p>
-<ol>
-<li><strong>计算相关参数</strong></li>
-</ol>
-<p>令 <span class="arithmatex">\(m = 3\times5\times7=105\)</span>
-<span class="arithmatex">\(M_1=\frac{m}{3}=35\)</span>
-<span class="arithmatex">\(M_2=\frac{m}{5}=21\)</span>
-<span class="arithmatex">\(M_3=\frac{m}{7}=15\)</span></p>
-<ol start="2">
-<li><strong>求模逆元</strong></li>
-</ol>
-<ul>
-<li>因为 <span class="arithmatex">\(35\times2\equiv2\times2\equiv1\pmod{3}\)</span>，所以 <span class="arithmatex">\(2\)</span> 是 <span class="arithmatex">\(M_1 = 35\)</span> 模 <span class="arithmatex">\(3\)</span> 的逆，即 <span class="arithmatex">\(y_1 = 2\)</span>。</li>
-<li>因为 <span class="arithmatex">\(21\equiv1\pmod{5}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_2 = 21\)</span> 模 <span class="arithmatex">\(5\)</span> 的逆，即 <span class="arithmatex">\(y_2 = 1\)</span>。</li>
-<li>因为 <span class="arithmatex">\(15\equiv1\pmod{7}\)</span>，所以 <span class="arithmatex">\(1\)</span> 是 <span class="arithmatex">\(M_3 = 15\)</span> 模 <span class="arithmatex">\(7\)</span> 的逆，即 <span class="arithmatex">\(y_3 = 1\)</span>。</li>
-</ul>
-<ol start="3">
-<li><strong>计算同余方程组的解</strong></li>
-</ol>
-<p>根据公式 <span class="arithmatex">\(x\equiv a_1M_1y_1 + a_2M_2y_2 + a_3M_3y_3\pmod{m}\)</span>，其中 <span class="arithmatex">\(a_1 = 2\)</span>，<span class="arithmatex">\(a_2 = 3\)</span>，<span class="arithmatex">\(a_3 = 2\)</span>。</p>
-<div class="arithmatex">\[
-\begin{align*}
-x&amp;\equiv 233\pmod{105}\\
-&amp;\equiv 23\pmod{105}
-\end{align*}
-\]</div>
-<p>所以，<span class="arithmatex">\(23\)</span> 是该同余方程组的最小正整数解 </p>
-</details>
 
 
 
