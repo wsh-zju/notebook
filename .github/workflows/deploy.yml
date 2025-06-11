@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: |
+          python -m pip install --upgrade pip
+          pip install mkdocs
+          pip install mkdocs-material
+          pip install mkdocs-material-extensions
+          pip install mkdocs-heti-plugin
+          pip install mkdocs-git-revision-date-plugin
+          pip install mkdocs-macros-plugin
+          pip install mkdocs-mermaid2-plugin
+          pip install mkdocs-markdownextradata-plugin
+      - name: Install TuringPlugins
+        run: |
+            git clone https://github.com/ZJU-Turing/TuringPlugins.git
+            cd TuringPlugins
+            pip install -e .
+            cd ..
+      - run: mkdocs gh-deploy --force
+      - name: List deployed files
+        run: |
+          git clone --branch gh-pages https://github.com/${{ github.repository }}.git gh-pages
+          cd gh-pages
+          tree -L 3 
+      - run: mkdocs build
