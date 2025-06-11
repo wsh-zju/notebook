@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 48 48" preserveAspectRatio="xMidYMid meet">
- <g fill="#ffffff">
-  <path d="M0 24 l0 -24 24 0 24 0 0 24 0 24 -24 0 -24 0 0 -24z"/>
- </g>
- <g fill="#bd0707">
-  <path d="M13.7 40.3 c-1 -0.2 -2.2 -1.6 -2.8 -2.9 -1.2 -3.3 -1.2 -23.6 0.1 -26.8 0.9 -2.4 1.4 -2.6 7.8 -2.6 l6.8 0 5.9 6 6 6.1 0 8.9 c0 6 -0.4 9.3 -1.3 10.2 -1.3 1.3 -18.8 2.2 -22.5 1.1z m20.1 -9.9 l0.3 -7.1 -4.6 -0.6 c-5.8 -0.6 -6.6 -1.4 -7.2 -7.1 -0.6 -4.6 -0.6 -4.6 -4.4 -4.6 l-3.9 0 0 12.8 c0 7.1 0.3 13.2 0.7 13.6 0.4 0.4 4.8 0.5 9.8 0.4 l9 -0.3 0.3 -7.1z m-1.8 -11.2 c0 -0.5 -1.3 -2.1 -3 -3.7 l-3 -2.9 0 3 c0 1.7 0.3 3.4 0.7 3.7 0.9 1 5.3 0.9 5.3 -0.1z"/>
-  <path d="M17 31 c0 -2.3 0.4 -3 2 -3 1.1 0 2 0.6 2 1.3 0 0.7 -0.9 2 -2 3 -1.9 1.6 -2 1.6 -2 -1.3z"/>
-  <path d="M22 31 c0 -2.3 0.4 -3 2 -3 2.5 0 3.6 2.5 2 4.5 -2.1 2.5 -4 1.8 -4 -1.5z m3.5 0 c0 -0.7 -0.6 -1.5 -1.2 -1.7 -0.8 -0.3 -1.3 0.4 -1.3 1.7 0 1.3 0.5 2 1.3 1.8 0.6 -0.3 1.2 -1.1 1.2 -1.8z"/>
-  <path d="M28.1 31.3 c-0.1 -2.8 0.2 -3.3 2.2 -3.2 2.1 0 2.1 0.1 0.2 0.9 -1.3 0.6 -1.5 0.9 -0.5 0.9 1 0.1 1.1 0.4 0.4 0.9 -0.6 0.4 -1.4 1.4 -1.7 2.2 -0.3 0.8 -0.6 0 -0.6 -1.7z"/>
- </g>
- <g fill="#de8282">
- </g>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<title>pdf</title>
+	<defs>
+		<image  width="82" height="100" id="img1" href="data:image/png;base64,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"/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="9" y="0"/>
 </svg>
