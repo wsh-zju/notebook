@@ -4,7 +4,7 @@
 ### 数学分析
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="/docs/style/images/pdf.png" style="height: 3em;"></div>
+<div class="file-icon"><img src="../style/images/pdf.png" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）II（H）笔记</div>
 <div class="file-meta">2025-6-10 / 107 pages</div>
