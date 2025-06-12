@@ -2168,10 +2168,45 @@
 </ul>
 </li>
 </ul>
-<details class="note">
-<summary>应用</summary>
-<p><img alt="" src="../photo/6-1.png" /></p>
-<p><img alt="" src="../photo/6-2.png" /></p>
+<details class="example">
+<summary>应用示例</summary>
+<p><strong>Question 1：</strong>证明对每个整数 <span class="arithmatex">\( n \)</span>，存在一个数是 <span class="arithmatex">\( n \)</span> 的倍数且在它的十进制表示中只出现 0 和 1 。  </p>
+<p><strong>Proof：</strong> </p>
+<ol>
+<li><strong>构造数列</strong>：  </li>
+</ol>
+<p>考虑 <span class="arithmatex">\( n+1 \)</span> 个整数：<span class="arithmatex">\( 1, 11, 111, \ldots, \underbrace{11\ldots1}_{n+1 \text{个1}} \)</span>。  </p>
+<p>每个整数除以 <span class="arithmatex">\( n \)</span> 时，可能的余数为 <span class="arithmatex">\( 0, 1, \ldots, n-1 \)</span>（共 <span class="arithmatex">\( n \)</span> 种）。  </p>
+<ol start="2">
+<li><strong>鸽巢原理</strong>：  </li>
+</ol>
+<p>因为数列有 <span class="arithmatex">\( n+1 \)</span> 项，至少两项 <span class="arithmatex">\( a \)</span> 和 <span class="arithmatex">\( b \)</span>（假设 <span class="arithmatex">\( a &gt; b \)</span>）除以 <span class="arithmatex">\( n \)</span> 的余数相同。  </p>
+<p><span class="arithmatex">\( a - b \)</span> 的十进制表示由连续的 1 和末尾的 0 组成（例如 <span class="arithmatex">\( 1111 - 11 = 1100 \)</span>），且 <span class="arithmatex">\( a - b \equiv 0 \pmod{n} \)</span>。  </p>
+<p>因此，<span class="arithmatex">\( a - b \)</span> 是满足条件的数。  </p>
+<hr />
+<p><strong>Question 2：</strong>在 30 天的一个月里，某棒球队一天至少打一场比赛，但至多打 45 场。<strong>证明</strong>一定有连续的若干天内恰好打了 14 场。  </p>
+<p><strong>Proof：</strong> </p>
+<ol>
+<li><strong>定义累加序列</strong>：  </li>
+</ol>
+<p>设 <span class="arithmatex">\( a_j \)</span> 为前 <span class="arithmatex">\( j \)</span> 天的总比赛场数，<span class="arithmatex">\( 1 \leq j \leq 30 \)</span>。  </p>
+<p>序列 <span class="arithmatex">\( a_1, a_2, \ldots, a_{30} \)</span> 是严格递增的，且 <span class="arithmatex">\( 1 \leq a_j \leq 45 \)</span>。  </p>
+<ol start="2">
+<li><strong>构造扩展序列</strong>：  </li>
+</ol>
+<p>定义 <span class="arithmatex">\( b_j = a_j + 14 \)</span>，则 <span class="arithmatex">\( b_1, b_2, \ldots, b_{30} \)</span> 也是严格递增的，且 <span class="arithmatex">\( 15 \leq b_j \leq 59 \)</span>。  </p>
+<ol start="3">
+<li><strong>合并序列</strong>：  </li>
+</ol>
+<p>合并后的序列 <span class="arithmatex">\( a_1, \ldots, a_{30}, b_1, \ldots, b_{30} \)</span> 共 60 个数，取值范围为 <span class="arithmatex">\( 1 \)</span> 到 <span class="arithmatex">\( 59 \)</span>。 </p>
+<ol start="4">
+<li><strong>鸽巢原理应用</strong>：  </li>
+</ol>
+<p>60 个数放入 59 个可能的取值中，必存在 <span class="arithmatex">\( a_i = b_j = a_j + 14 \)</span>。</p>
+<ol start="5">
+<li><strong>结论</strong>：  </li>
+</ol>
+<p>从第 <span class="arithmatex">\( j+1 \)</span> 天到第 <span class="arithmatex">\( i \)</span> 天，比赛场数为 <span class="arithmatex">\( a_i - a_j = 14 \)</span>。  </p>
 </details>
 <h2 id="_3">二项式定理<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">定理 1 帕斯卡恒等式<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
@@ -2189,9 +2224,24 @@
 <div class="arithmatex">\[
 \binom{n+1}{r+1} = \sum_{j=r}^{n} \binom{j}{r}
 \]</div>
-<details class="note">
-<summary>证明</summary>
-<p><img alt="" src="../photo/6-3.png" /></p>
+<details class="tip">
+<summary>解释</summary>
+<ol>
+<li><strong>左式</strong>：  </li>
+</ol>
+<p><span class="arithmatex">\(\binom{n+1}{r+1}\)</span> 表示从长度为 <span class="arithmatex">\(n+1\)</span> 的比特串中选出 <span class="arithmatex">\(r+1\)</span> 个位置置为 1 的方案数。  </p>
+<ol start="2">
+<li><strong>右式</strong>：  </li>
+</ol>
+<p>通过<strong>最后一个 1 的位置</strong>分类计数：  </p>
+<ul>
+<li>
+<p>设最后一个 1 出现在第 <span class="arithmatex">\(k+1\)</span> 位（其中 <span class="arithmatex">\(r \leq k \leq n\)</span>），则前 <span class="arithmatex">\(k\)</span> 位需恰好有 <span class="arithmatex">\(r\)</span> 个 1。  </p>
+</li>
+<li>
+<p>此类情况对应的方案数为 <span class="arithmatex">\(\binom{k}{r}\)</span>。  </p>
+</li>
+</ul>
 </details>
 <h3 id="1_2">推论 1<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\( n \)</span> 是非负整数，那么  </p>
@@ -2203,14 +2253,19 @@
 <div class="arithmatex">\[
 \binom{2n}{n} = \sum_{k=0}^{n} \binom{n}{k}^2
 \]</div>
+<div class="admonition tip">
+<p class="admonition-title">证明</p>
+<p>利用<strong>范德蒙德恒等式</strong>：<span class="arithmatex">\(m=n=r\)</span></p>
+</div>
 <h2 id="_4">排列与组合的推广<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1_3">定理 1 允许重复的组合<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h3>
-<p><span class="arithmatex">\( n \)</span> 个元素的集合中允许重复的 <span class="arithmatex">\( r \)</span> 组合有 <span class="arithmatex">\( C(n+r-1, r) = C(n+r-1, n-1) \)</span> 个。</p>
+<p><span class="arithmatex">\( n \)</span> 种元素的集合中允许重复的 <span class="arithmatex">\( r \)</span> 组合有 <span class="arithmatex">\( C(n+r-1, r) = C(n+r-1, n-1) \)</span> 个。</p>
 <p><strong>注：</strong>用来求从 <span class="arithmatex">\(n\)</span> 种元素的集合中选择 <span class="arithmatex">\(r\)</span> 个元素的方法数</p>
-<details class="note">
-<summary>证明</summary>
-<p><img alt="" src="../photo/6-4.png" /></p>
-</details>
+<div class="admonition tip">
+<p class="admonition-title">解释</p>
+<p><span class="arithmatex">\(n\)</span> 种元素的集合可以用 <span class="arithmatex">\(n-1\)</span> 个分割线表示；<span class="arithmatex">\(r\)</span> 个元素用 <span class="arithmatex">\(r\)</span> 个*表示。</p>
+<p>可以看作在 <span class="arithmatex">\(n+r-1\)</span> 个位置中选择 <span class="arithmatex">\(n-1\)</span> 个位置放分割线。</p>
+</div>
 <h3 id="2_3">定理 2 允许重复的排列<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
 <p><span class="arithmatex">\( n \)</span> 个元素的集合中允许重复的 <span class="arithmatex">\( r \)</span> 排列数是 <span class="arithmatex">\(n^r\)</span> 。</p>
 <h3 id="_5">应用 把物体放入盒子<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -2228,14 +2283,20 @@
 <ol start="3">
 <li><strong>可辨别的物体与不可辨别的盒子</strong></li>
 </ol>
-<p>将 <span class="arithmatex">\( n \)</span> 个不可辨别的物体放入 <span class="arithmatex">\( k \)</span> 个可辨别的盒子的方法数等于：</p>
+<ul>
+<li>可以枚举</li>
+<li>
+<p>利用斯特林数
+    将 <span class="arithmatex">\( n \)</span> 个不可辨别的物体放入 <span class="arithmatex">\( k \)</span> 个可辨别的盒子的方法数等于：</p>
 <div class="arithmatex">\[ 
 \sum_{j=1}^{k} S(n,j) = \sum_{j=1}^{k} \frac{1}{j!} \sum_{i=0}^{j-1} (-1)^i \binom{j}{i} (j-i)^n 
 \]</div>
+</li>
+</ul>
 <div class="admonition abstract">
 <p class="admonition-title">第二类斯特林数</p>
 <p><strong>第二类斯特林数 <span class="arithmatex">\( S(n, j) \)</span></strong></p>
-<p>表示将 <span class="arithmatex">\( n \)</span> 个可辨别的物体放入 <span class="arithmatex">\( j \)</span> 个不可辨别的盒子的方式数（不允许空盒）</p>
+<p>表示将 <span class="arithmatex">\( n \)</span> 个可辨别的物体放入 <span class="arithmatex">\( j \)</span> 个不可辨别的盒子的方式数<strong>（不允许空盒）</strong></p>
 </div>
 <ol start="4">
 <li><strong>不可辨别的物体与不可辨别的盒子</strong></li>
@@ -2249,7 +2310,7 @@
 <ol start="2">
 <li><strong>生成组合</strong></li>
 </ol>
-<p>e.g. 已知集合<span class="arithmatex">\({1,2,3,4,5,6}\)</span>，<span class="arithmatex">\({1,2,5,6}\)</span>后面下一个最大的4组合为<span class="arithmatex">\({1,3,4,5}\)</span></p>
+<p>e.g. 已知集合<code>{1,2,3,4,5,6}</code>，<code>1,2,5,6</code>后面下一个最大的4组合为<code>1,3,4,5</code></p>
 <h2 id="_7">扩展：斯特林数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 
 
