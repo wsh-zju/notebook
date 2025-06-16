@@ -6,7 +6,7 @@
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
-<div class="file-title">数学分析 I（H）笔记</div>
+<div class="file-title">数学分析（甲）I（H）笔记</div>
 <div class="file-meta">2025-6-10 / 107 pages</div>
 </div>
 <a class="down-button" target="_blank" href="files/数学分析1.pdf" markdown="1">:fontawesome-solid-download: Download</a>
