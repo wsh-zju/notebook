@@ -2318,6 +2318,7 @@
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="_1">求解线性递推关系<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">齐次递推关系<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h4 id="1">定理 1 有两相异实根的二阶方程<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
@@ -2384,6 +2385,7 @@ a_n = a_n^{(p)} + a_n^{(h)}
 n^m (p_t n^t + \dots + p_0)s^n 
 \]</div>
 <p>其中 <span class="arithmatex">\( p_i \)</span> 为待定系数。</p>
+<hr />
 <h2 id="_4">分而治之算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">定理 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
 <p>设<span class="arithmatex">\(f\)</span>是满足递推关系</p>
@@ -2417,6 +2419,7 @@ O(n^d \log n) &amp; a = b^d \\
 O(n^{\log_b a}) &amp; a &gt; b^d
 \end{cases}
 \]</div>
+<hr />
 <h2 id="_5">生成函数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="1_2">定义 1 普通生成函数<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
 <p>实数序列<span class="arithmatex">\(a_0, a_1, \cdots, a_k, \cdots\)</span>的生成函数是无穷级数：</p>
@@ -2537,7 +2540,53 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
 </ul>
 <details class="example">
 <summary>Example</summary>
-<p><img alt="" src="../photo/8-1.png" /></p>
+<p><strong>Question:</strong></p>
+<p>设一个有效的码字是一个包含偶数个0的十进制数字串，令 <span class="arithmatex">\(a_n\)</span> 表示n位有效码字的个数，满足递推关系 <span class="arithmatex">\(a_n = 8a_{n-1} + 10^{n-1}\)</span> ，且初始条件为 <span class="arithmatex">\(a_1 = 9\)</span> 。
+使用<strong>生成函数</strong>求<span class="arithmatex">\(a_n\)</span>的显式公式。  </p>
+<p><strong>Answer:</strong></p>
+<ol>
+<li><strong>扩充序列与初始条件</strong>  </li>
+</ol>
+<p>为简化推导，设 <span class="arithmatex">\(a_0 = 1\)</span>（对应空串，视为有效码字），满足递推关系。</p>
+<ol start="2">
+<li><strong>构建生成函数与递推变换</strong>  </li>
+</ol>
+<p>设生成函数<span class="arithmatex">\(G(x) = \sum_{n=0}^{\infty} a_n x^n\)</span></p>
+<p>递推式两边乘以 <span class="arithmatex">\(x^n\)</span> 并对 <span class="arithmatex">\(n \geq 1\)</span> 求和：  </p>
+<div class="arithmatex">\[
+\begin{aligned}
+G(x) - 1 &amp;= \sum_{n=1}^{\infty} a_n x^n = \sum_{n=1}^{\infty} (8a_{n-1}x^n + 10^{n-1}x^n) \\
+&amp;= 8\sum_{n=1}^{\infty} a_{n-1}x^n + \sum_{n=1}^{\infty} 10^{n-1}x^n \\
+&amp;= 8x\sum_{n=1}^{\infty} a_{n-1}x^{n-1} + x\sum_{n=1}^{\infty} 10^{n-1}x^{n-1} \\
+&amp;= 8x\sum_{n=0}^{\infty} a_n x^n + x\sum_{n=0}^{\infty} 10^n x^n \\
+&amp;= 8xG(x) + \frac{x}{1-10x}
+\end{aligned}
+\]</div>
+<ol start="3">
+<li><strong>求解生成函数并分解</strong>  </li>
+</ol>
+<p>整理方程得到 </p>
+<div class="arithmatex">\[
+G(x) = \frac{1-9x}{(1-8x)(1-10x)}
+\]</div>
+<p>分解为：  </p>
+<div class="arithmatex">\[
+G(x) = \frac{1}{2}\left(\frac{1}{1-8x} + \frac{1}{1-10x}\right)
+\]</div>
+<ol start="4">
+<li><strong>展开生成函数并提取系数</strong>  </li>
+</ol>
+<p>对每个分式应用等比级数展开：  </p>
+<div class="arithmatex">\[
+\begin{aligned}
+G(x) &amp;= \frac{1}{2}\left(\sum_{n=0}^{\infty} 8^n x^n + \sum_{n=0}^{\infty} 10^n x^n\right) \\
+&amp;= \sum_{n=0}^{\infty} \frac{1}{2}(8^n + 10^n)x^n
+\end{aligned}
+\]</div>
+<p>因此，n位有效码字的个数为：  </p>
+<div class="arithmatex">\[
+a_n = \frac{1}{2}(8^n + 10^n)
+\]</div>
 </details>
 </li>
 <li>
@@ -2593,7 +2642,31 @@ G(x) = \left( \frac{x^2}{1 - x} \right) \cdot (x^2 + x^3) \cdot \left( \frac{x^2
 <p><strong>证明恒等式</strong></p>
 <details class="example">
 <summary>Example</summary>
-<p><img alt="" src="../photo/8-2.png" /></p>
+<p><strong>Question:</strong>
+证明 <span class="arithmatex">\(\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}\)</span>  </p>
+<p><strong>Proof:</strong></p>
+<ol>
+<li><strong>二项式定理</strong>  </li>
+</ol>
+<p>由二项式定理，<span class="arithmatex">\((1+x)^{2n}\)</span>的展开式为：  </p>
+<div class="arithmatex">\[
+(1+x)^{2n} = \sum_{m=0}^{2n} \binom{2n}{m}x^m
+\]</div>
+<p>其中<span class="arithmatex">\(x^n\)</span>项的系数为<span class="arithmatex">\(\binom{2n}{n}\)</span>。  </p>
+<ol start="2">
+<li><strong>生成函数平方展开</strong>  </li>
+</ol>
+<div class="arithmatex">\[
+(1+x)^{2n} = \left[(1+x)^n\right]^2 = \left[\sum_{k=0}^{n} \binom{n}{k}x^k\right]^2
+\]</div>
+<p>则<span class="arithmatex">\(x^n\)</span>项的系数为：  </p>
+<div class="arithmatex">\[
+\sum_{k=0}^{n} \binom{n}{k}\binom{n}{n-k} = \sum_{k=0}^{n} \binom{n}{k}^2
+\]</div>
+<p>左右两式相等，则证得：</p>
+<div class="arithmatex">\[
+\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}
+\]</div>
 </details>
 </li>
 </ol>
@@ -2615,7 +2688,7 @@ G(x) = \left( \frac{x^2}{1 - x} \right) \cdot (x^2 + x^3) \cdot \left( \frac{x^2
 <h4 id="1_4">定理 1 映上函数的个数<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h4>
 <p>设 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 是正整数，满足 <span class="arithmatex">\(m \geq n\)</span>。那么存在</p>
 <div class="arithmatex">\[
-n^m - C(n, 1)(n-1)^m + C(n, 2)(n-2)^m - \cdots + (-1)^{n-1}C(n, n-1) \cdot 1^n
+n^m - C(n, 1)(n-1)^m + C(n, 2)(n-2)^m - \cdots + (-1)^{n-1}C(n, n-1) \cdot 1^m
 \]</div>
 <p>个从 <span class="arithmatex">\(m\)</span> 元素集合到 <span class="arithmatex">\(n\)</span> 元素集合的映上函数</p>
 <h4 id="2_4">定理 2 错位排列<a class="headerlink" href="#2_4" title="Permanent link">&para;</a></h4>
