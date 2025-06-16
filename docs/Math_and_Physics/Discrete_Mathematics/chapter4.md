@@ -6,6 +6,8 @@
 |linear congruence|线性同余方程|pseudoprime|伪素数|primitive root|原根|
 |logarithm|对数|encryption|加密|decryption|解密|
 |Euclidean|欧几里得|Bezout|贝祖|Eratosthenes|埃拉托斯特尼|
+
+---
 ## 整除与模
 - 定义：
     - 商：$q = a\ \text{div}\ d$
@@ -50,6 +52,7 @@
 ??? example "Example"
     ![](photo/4-1.png)
 
+---
 ## 素数
 - **埃拉托斯特尼筛法**
     - 应用：寻找不超过一个给定整数的所有素数
@@ -75,6 +78,7 @@
 ### 定理 4 贝祖定理
 如果 $a$ 和 $b$ 为正整数，则存在整数 $s$ 和 $t$ （贝祖系数）使得 $gcd(a,b) = sa+tb$（贝祖恒等式）
 
+---
 ## 求解同余方程
 - **相关定义**
     - **逆**：如果 $\bar{a}a \equiv 1\ (\text{mod}\ m)$，则称 $\bar{a}$ 为 $a$ 模 $m$ 的逆
@@ -235,6 +239,7 @@ $$
        - **满足条件**：$2\leq a < m, 0\leq c < m, 0\leq x_0 < m$
        - **递归函数**：$x_{n+1} = (ax_n+c)\ \mod\ m$
 
+---
 ## 密码学
 ### RSA 密码系统
 1. **加密**

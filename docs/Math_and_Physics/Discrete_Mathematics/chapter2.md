@@ -8,6 +8,7 @@
 |domain|定义与|codomain|陪域|range|值域|
 |progession|级数|matrix|矩阵||||
 
+---
 ## 集合
 - **相关定义**
     - 基数：集合的个数
@@ -21,6 +22,7 @@
 
     - 真值集：使命题成立的所有元素组成的集合
 
+---
 ## 集合运算
 - **对称集**
     
@@ -28,6 +30,7 @@
     A \oplus B = (A \setminus B) \cup (B \setminus A)
     \]
 
+---
 ## 序列求和
 ### 常用求和公式
 | 和 | 闭形式 | 和 | 闭形式 |
@@ -36,6 +39,7 @@
 | $\sum\limits_{k=1}^n k$ | $\frac{n(n+1)}{2}$ | $\sum\limits_{k=0}^\infty x^k$ $(\vert{x}\vert<1)$ | $\frac{1}{1-x}$ |
 | $\sum\limits_{k=1}^n k^2$ | $\frac{n(n+1)(2n+1)}{6}$ | $\sum\limits_{k=1}^\infty kx^{k-1}$ $(\vert{x}\vert<1)$ | $\frac{1}{(1-x)^2}$ |
 
+---
 ## 可数集与不可数集
 1. **相关定义**
 

@@ -2,6 +2,8 @@
 |English|Chinese|English|Chinese|English|Chinese|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |algorithm|算法|paradigm|范型|greedy|贪婪的|
+
+---
 ## 算法
 - 贪婪算法
 
@@ -10,9 +12,11 @@
 
 - 蛮力算法
 - 停机问题
+
+---
 ## 函数的增长
-1. $f = O(g(x))$:$|f(x)| \leq C|g(x)|$
+1. $f(x) = O(g(x))$:$|f(x)| \leq C|g(x)|$
 
-2. $f = \Omega(g(x))$:$|f(x)| \geq C|g(x)|$
+2. $f(x) = \Omega(g(x))$:$|f(x)| \geq C|g(x)|$
 
-3. $f = \Theta(g(x))$:$f = O(g(x))$ 且 $f = \Omega(g(x))$
+3. $f(x) = \Theta(g(x))$:$f(x) = O(g(x))$ 且 $f(x) = \Omega(g(x))$

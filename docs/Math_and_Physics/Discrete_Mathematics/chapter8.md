@@ -4,6 +4,8 @@
 |English|Chinese|English|Chinese|English|Chinese|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |divide-and-conquer Algorithm |分而治之算法|generating function|生成函数|inclusion-enclusion|容斥|
+|recurrence|递推|homogeneous|齐次的|derangement|错位排列|
+
 
 ---
 ## 求解线性递推关系
@@ -227,7 +229,8 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
     ??? example "Example"
         **Question:**
         
-        设一个有效的码字是一个包含偶数个0的十进制数字串，令 $a_n$ 表示n位有效码字的个数，满足递推关系 $a_n = 8a_{n-1} + 10^{n-1}$ ，且初始条件为 $a_1 = 9$ 。
+        设一个有效的码字是一个包含偶数个0的十进制数字串，$a_n$表示n位有效码字的个数，满足递推关系$a_n = 8a_{n-1} + 10^{n-1}$，且初始条件为$a_1 = 9$。
+        
         使用**生成函数**求$a_n$的显式公式。  
 
         **Answer:**
@@ -254,16 +257,10 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
 
         3. **求解生成函数并分解**  
         
-        整理方程得到 
+        整理方程并分解 
         
         $$
-        G(x) = \frac{1-9x}{(1-8x)(1-10x)}
-        $$
-
-        分解为：  
-        
-        $$
-        G(x) = \frac{1}{2}\left(\frac{1}{1-8x} + \frac{1}{1-10x}\right)
+        G(x) = \frac{1-9x}{(1-8x)(1-10x)} = \frac{1}{2}\left(\frac{1}{1-8x} + \frac{1}{1-10x}\right)
         $$
 
         4. **展开生成函数并提取系数**  
@@ -404,4 +401,5 @@ $n$ 元素集合的错位排列数是
 D_n = n! \left[ 1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + \cdots + (-1)^n \frac{1}{n!} \right]
 \]
 
+---
 ## 扩展：Catalan数

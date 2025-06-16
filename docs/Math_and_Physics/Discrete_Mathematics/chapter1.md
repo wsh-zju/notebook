@@ -10,6 +10,7 @@
 |converse|逆命题|contrapositive|逆否命题|inverse|反命题|
 |tautology|永真式|contradiction|矛盾式|contingency|可能式|
 
+---
 ## 命题逻辑
 1.**常见逻辑操作符**
 
@@ -72,6 +73,7 @@
  
 - 翻译English为逻辑命题
 
+---
 ## 命题等价式
 1. **命题的分类**
   
@@ -208,6 +210,7 @@
     - 最小项（minterm）：文字的合取，得到析取范式，找真值表中的T
     - 最大项（maxterm）：文字的析取，得到合取范式，找真值表中的F
     
+---
 ## 谓词和量词
 1. **量词**
 
@@ -240,6 +243,7 @@
 
     (8) \(\exists x(P(x) \rightarrow A) \equiv \forall xP(x) \rightarrow A\)
 
+---
 ## 推理规则
 ### 命题的推理规则
 

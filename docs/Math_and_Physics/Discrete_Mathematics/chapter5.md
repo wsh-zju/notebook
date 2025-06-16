@@ -4,6 +4,7 @@
 |sequence|序列|geometric progression|几何序列|arithmetric progression|等差序列|
 |induction|归纳法|iteration|迭代|recursive|递归|
 
+---
 ## 归纳法
 ### 数学归纳法
 
