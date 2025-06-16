@@ -41,6 +41,9 @@
 <a class="down-button" target="_blank" href="files/线性代数2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
 
+!!! tip "Tips"
+    线性代数 II (H)的笔记基本都在课本上，此处笔记之提供扩展部分和总结部分。
+    
 ### 普通物理学
 
 <div class="card file-block" markdown="1">
