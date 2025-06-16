@@ -2263,7 +2263,7 @@
 <p><strong>注：</strong>用来求从 <span class="arithmatex">\(n\)</span> 种元素的集合中选择 <span class="arithmatex">\(r\)</span> 个元素的方法数</p>
 <div class="admonition tip">
 <p class="admonition-title">解释</p>
-<p><span class="arithmatex">\(n\)</span> 种元素的集合可以用 <span class="arithmatex">\(n-1\)</span> 个分割线表示；<span class="arithmatex">\(r\)</span> 个元素用 <span class="arithmatex">\(r\)</span> 个*表示。</p>
+<p><span class="arithmatex">\(n\)</span> 种元素的集合可以用 <span class="arithmatex">\(n-1\)</span> 个分割线表示；<span class="arithmatex">\(r\)</span> 个元素用 <span class="arithmatex">\(r\)</span> 个 * 表示。</p>
 <p>可以看作在 <span class="arithmatex">\(n+r-1\)</span> 个位置中选择 <span class="arithmatex">\(n-1\)</span> 个位置放分割线。</p>
 </div>
 <h3 id="2_3">定理 2 允许重复的排列<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h3>
@@ -2286,8 +2286,8 @@
 <ul>
 <li>可以枚举</li>
 <li>
-<p>利用斯特林数
-    将 <span class="arithmatex">\( n \)</span> 个不可辨别的物体放入 <span class="arithmatex">\( k \)</span> 个可辨别的盒子的方法数等于：</p>
+<p>利用斯特林数</p>
+<p>将 <span class="arithmatex">\( n \)</span> 个不可辨别的物体放入 <span class="arithmatex">\( k \)</span> 个可辨别的盒子的方法数等于：</p>
 <div class="arithmatex">\[ 
 \sum_{j=1}^{k} S(n,j) = \sum_{j=1}^{k} \frac{1}{j!} \sum_{i=0}^{j-1} (-1)^i \binom{j}{i} (j-i)^n 
 \]</div>
