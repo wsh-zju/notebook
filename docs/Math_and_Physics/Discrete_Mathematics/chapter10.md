@@ -34,21 +34,22 @@
 
 3. **特殊的简单图**
 
+
 - **完全图** $K_n$
   
     ![](photo/10-2.png)
 
 - **圈图** $C_n$
   
-    ![](photo/10-3.png)
+    ![](photo/10-3.png){style="width:80%;display: block;margin: 20px auto"}
 
 - **轮图** $W_n$
   
-    ![](photo/10-4.png)
+    ![](photo/10-4.png){style="width:80%;display: block;margin: 20px auto"}
 
 - **$n$ 立方体图** $Q_n$
 
-    ![](photo/10-5.png)
+    ![](photo/10-5.png){style="width:60%;display: block;margin: 20px auto"}
 
 ### 定理 霍尔婚姻定理
 **完全匹配的充分必要条件**
