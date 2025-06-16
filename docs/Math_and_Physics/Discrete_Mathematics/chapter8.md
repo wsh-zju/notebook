@@ -5,6 +5,7 @@
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |divide-and-conquer Algorithm |分而治之算法|generating function|生成函数|inclusion-enclusion|容斥|
 
+---
 ## 求解线性递推关系
 ### 齐次递推关系
 #### 定理 1 有两相异实根的二阶方程  
@@ -101,6 +102,8 @@ n^m (p_t n^t + \dots + p_0)s^n
 
 其中 \( p_i \) 为待定系数。
 
+--- 
+
 ## 分而治之算法
 ### 定理 1 
 设\(f\)是满足递推关系
@@ -145,6 +148,7 @@ O(n^{\log_b a}) & a > b^d
 \end{cases}
 \] 
 
+---
 ## 生成函数
 ### 定义 1 普通生成函数
 实数序列\(a_0, a_1, \cdots, a_k, \cdots\)的生成函数是无穷级数：
@@ -221,7 +225,63 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
         - 根据生成函数的幂级数形式得到 $a_n$ 的显式公式
    
     ??? example "Example"
-        ![](photo/8-1.png)
+        **Question:**
+        
+        设一个有效的码字是一个包含偶数个0的十进制数字串，令 $a_n$ 表示n位有效码字的个数，满足递推关系 $a_n = 8a_{n-1} + 10^{n-1}$ ，且初始条件为 $a_1 = 9$ 。
+        使用**生成函数**求$a_n$的显式公式。  
+
+        **Answer:**
+        
+        1. **扩充序列与初始条件**  
+        
+        为简化推导，设 $a_0 = 1$（对应空串，视为有效码字），满足递推关系。
+
+        2. **构建生成函数与递推变换**  
+        
+        设生成函数$G(x) = \sum_{n=0}^{\infty} a_n x^n$
+        
+        递推式两边乘以 $x^n$ 并对 $n \geq 1$ 求和：  
+        
+        $$
+        \begin{aligned}
+        G(x) - 1 &= \sum_{n=1}^{\infty} a_n x^n = \sum_{n=1}^{\infty} (8a_{n-1}x^n + 10^{n-1}x^n) \\
+        &= 8\sum_{n=1}^{\infty} a_{n-1}x^n + \sum_{n=1}^{\infty} 10^{n-1}x^n \\
+        &= 8x\sum_{n=1}^{\infty} a_{n-1}x^{n-1} + x\sum_{n=1}^{\infty} 10^{n-1}x^{n-1} \\
+        &= 8x\sum_{n=0}^{\infty} a_n x^n + x\sum_{n=0}^{\infty} 10^n x^n \\
+        &= 8xG(x) + \frac{x}{1-10x}
+        \end{aligned}
+        $$ 
+
+        3. **求解生成函数并分解**  
+        
+        整理方程得到 
+        
+        $$
+        G(x) = \frac{1-9x}{(1-8x)(1-10x)}
+        $$
+
+        分解为：  
+        
+        $$
+        G(x) = \frac{1}{2}\left(\frac{1}{1-8x} + \frac{1}{1-10x}\right)
+        $$
+
+        4. **展开生成函数并提取系数**  
+        
+        对每个分式应用等比级数展开：  
+        
+        $$
+        \begin{aligned}
+        G(x) &= \frac{1}{2}\left(\sum_{n=0}^{\infty} 8^n x^n + \sum_{n=0}^{\infty} 10^n x^n\right) \\
+        &= \sum_{n=0}^{\infty} \frac{1}{2}(8^n + 10^n)x^n
+        \end{aligned}
+        $$  
+        
+        因此，n位有效码字的个数为：  
+        
+        $$
+        a_n = \frac{1}{2}(8^n + 10^n)
+        $$
         
 2. **计数问题**
     - **步骤**
@@ -277,7 +337,38 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
 3. **证明恒等式**
   
     ??? example "Example"
-        ![](photo/8-2.png)
+        **Question:**
+        证明 $\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$  
+
+        **Proof:**
+
+        1. **二项式定理**  
+        
+        由二项式定理，$(1+x)^{2n}$的展开式为：  
+       
+        $$
+        (1+x)^{2n} = \sum_{m=0}^{2n} \binom{2n}{m}x^m
+        $$  
+        
+        其中$x^n$项的系数为$\binom{2n}{n}$。  
+
+        2. **生成函数平方展开**  
+         
+        $$
+        (1+x)^{2n} = \left[(1+x)^n\right]^2 = \left[\sum_{k=0}^{n} \binom{n}{k}x^k\right]^2
+        $$  
+        
+        则$x^n$项的系数为：  
+        
+        $$
+        \sum_{k=0}^{n} \binom{n}{k}\binom{n}{n-k} = \sum_{k=0}^{n} \binom{n}{k}^2
+        $$  
+
+        左右两式相等，则证得：
+
+        $$
+        \sum_{k=0}^{n} \binom{n}{k}^2 = \binom{2n}{n}
+        $$
 
 ---
 ## 容斥原理
@@ -301,7 +392,7 @@ f(x) + g(x) = \sum_{k = 0}^{\infty} (a_k + b_k)x^k \text{ 和 } f(x)g(x) = \sum_
 设 $m$ 和 $n$ 是正整数，满足 $m \geq n$。那么存在
 
 \[
-n^m - C(n, 1)(n-1)^m + C(n, 2)(n-2)^m - \cdots + (-1)^{n-1}C(n, n-1) \cdot 1^n
+n^m - C(n, 1)(n-1)^m + C(n, 2)(n-2)^m - \cdots + (-1)^{n-1}C(n, n-1) \cdot 1^m
 \]
 
 个从 $m$ 元素集合到 $n$ 元素集合的映上函数

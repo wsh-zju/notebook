@@ -3,12 +3,13 @@
 
 |English|Chinese|English|Chinese|English|Chinese|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|permutations|排列|combinations|组合|||
-
+|permutations|排列|combinations|组合|enumeration|枚举|
+|binomial coefficient|二项式系数|triangle|三角形|Pigeonhole Principle|鸽巢原理|
+|generalized|广义的|Pascal's identity|帕斯卡恒等式|||
 ## 鸽巢原理
 
 ### 定理 1 鸽巢原理
-**狄利克雷抽屉原理（Pigeonhole Principle）**
+**狄利克雷抽屉原理**
 
 如果 \(k + 1\) 个或更多的物体放入 \(k\) 个盒子，那么至少有一个盒子包含了2个或更多的物体。
 
@@ -188,3 +189,5 @@
 e.g. 已知集合`{1,2,3,4,5,6}`，`1,2,5,6`后面下一个最大的4组合为`1,3,4,5`
 
 ## 扩展：斯特林数
+
+
