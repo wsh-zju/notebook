@@ -15,7 +15,7 @@
 ### 前缀码
 **Example：**
 
-![](photo/11-2.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/11-2.png){style="width:30%;display: block;margin: 20px auto"}
 
 
 #### 哈夫曼编码

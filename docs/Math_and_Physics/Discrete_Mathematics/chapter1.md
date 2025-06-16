@@ -193,11 +193,10 @@
 
     - **合取范式**（the conjunctive normal form(CNF)）
   
-  !!! tip "Tips"
+!!! tip "Tips"
+    只有文字和只有子句的命题既是合取范式，又是析取范式！
 
-      只有文字和只有子句的命题既是合取范式，又是析取范式！
-
-      e.g. $p, p\land \negq$
+    e.g. $p, p\land \negq$
 
 - **相关定义**
     - **文字**（literal）：一个变量或者其否定
