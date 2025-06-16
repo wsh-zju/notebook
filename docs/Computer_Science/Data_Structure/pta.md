@@ -608,7 +608,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
     **Answer:** C
 
     **Analysis:** 可以根据二叉树分析
-    > d-heap : d叉树
+
 4. If a binary search tree of $N$ nodes is complete, which one of the following statements is `FALSE`?
 
     A. the average search time for all nodes is $O(\log N)$
@@ -711,6 +711,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
             return root;
         }
         ```
+
 ### 四、编程题
 **File Transfer** ( 不在此赘述 )
 
@@ -1255,6 +1256,3 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 - 给定一个哈希表的最终状态（包含部分空位置），要求还原原始的插入序列
 - 哈希表使用线性探测解决冲突
 - 且在插入时若存在多个可选数字，优先选择最小的
-
-```c
-```
