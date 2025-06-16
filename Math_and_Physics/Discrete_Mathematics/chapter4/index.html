@@ -2221,7 +2221,31 @@
 </ul>
 <details class="example">
 <summary>Example</summary>
-<p><img alt="" src="../photo/4-1.png" /></p>
+<p><strong>Question:</strong>计算 <span class="arithmatex">\(3^{44} \mod 645\)</span>  </p>
+<p><strong>Answer:</strong></p>
+<ol>
+<li><strong>初始设置</strong>：</li>
+</ol>
+<p><span class="arithmatex">\(x=1\)</span>，<span class="arithmatex">\(\text{power}=3 \mod 645=3\)</span>，指数44的二进制展开为<code>10101100</code></p>
+<ol start="2">
+<li><strong>逐次运算</strong>：  </li>
+</ol>
+<ul>
+<li><span class="arithmatex">\(i=0\)</span>：<span class="arithmatex">\(a_0=0\)</span>，<span class="arithmatex">\(\text{power}=3^2\mod645=9\)</span>，<span class="arithmatex">\(x=1\)</span>  </li>
+<li><span class="arithmatex">\(i=1\)</span>：<span class="arithmatex">\(a_1=0\)</span>，<span class="arithmatex">\(\text{power}=9^2\mod645=81\)</span>，<span class="arithmatex">\(x=1\)</span>  </li>
+<li><span class="arithmatex">\(i=2\)</span>：<span class="arithmatex">\(a_2=1\)</span>，<span class="arithmatex">\(x=1×81\mod645=81\)</span>，<span class="arithmatex">\(\text{power}=81^2\mod645=111\)</span></li>
+<li><span class="arithmatex">\(i=3\)</span>：<span class="arithmatex">\(a_3=0\)</span>，<span class="arithmatex">\(\text{power}=111^2\mod645=66\)</span>，<span class="arithmatex">\(x=81\)</span></li>
+<li><span class="arithmatex">\(i=4\)</span>：<span class="arithmatex">\(a_4=0\)</span>，<span class="arithmatex">\(\text{power}=66^2\mod645=486\)</span>，<span class="arithmatex">\(x=81\)</span></li>
+<li><span class="arithmatex">\(i=5\)</span>：<span class="arithmatex">\(a_5=0\)</span>，<span class="arithmatex">\(\text{power}=486^2\mod645=126\)</span>，<span class="arithmatex">\(x=81\)</span></li>
+<li><span class="arithmatex">\(i=6\)</span>：<span class="arithmatex">\(a_6=0\)</span>，<span class="arithmatex">\(\text{power}=126^2\mod645=396\)</span>，<span class="arithmatex">\(x=81\)</span></li>
+<li><span class="arithmatex">\(i=7\)</span>：<span class="arithmatex">\(a_7=1\)</span>，<span class="arithmatex">\(x=81×396\mod645=471\)</span>，<span class="arithmatex">\(\text{power}=396^2\mod645=81\)</span></li>
+<li><span class="arithmatex">\(i=8\)</span>：<span class="arithmatex">\(a_8=0\)</span>，<span class="arithmatex">\(\text{power}=81^2\mod645=111\)</span>，<span class="arithmatex">\(x=471\)</span></li>
+<li><span class="arithmatex">\(i=9\)</span>：<span class="arithmatex">\(a_9=1\)</span>，<span class="arithmatex">\(x=471×111\mod645=36\)</span>  </li>
+</ul>
+<ol start="3">
+<li><strong>结果</strong>：</li>
+</ol>
+<p><span class="arithmatex">\(3^{44} \mod 645=36\)</span>  </p>
 </details>
 <hr />
 <h2 id="_4">素数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -2315,9 +2339,9 @@ x = a_1M_1y_1 + a_2M_2y_2+\cdots+a_nM_ny_n
 <summary>同余方程组求解</summary>
 <p><strong>Question:</strong></p>
 <p>同余方程组为：</p>
-<div class="arithmatex">\[x\equiv 2\pmod{3}\]</div>
-<div class="arithmatex">\[x\equiv 3\pmod{5}\]</div>
-<div class="arithmatex">\[x\equiv 2\pmod{7}\]</div>
+<div class="arithmatex">\[x\equiv 2\pmod{3}\\
+x\equiv 3\pmod{5}\\
+x\equiv 2\pmod{7}\]</div>
 <p><strong>Answer:</strong></p>
 <ol>
 <li><strong>计算相关参数</strong></li>
@@ -2404,15 +2428,15 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 </details>
 <details class="abstract">
 <summary>伪随机数产生方法</summary>
-</details>
 <ul>
 <li><strong>线性同余法</strong><ul>
 <li><strong>四个关键整数</strong>：模数 <span class="arithmatex">\(m\)</span>，倍数 <span class="arithmatex">\(a\)</span>，增量 <span class="arithmatex">\(c\)</span>，种子 <span class="arithmatex">\(x_0\)</span></li>
 <li><strong>满足条件</strong>：<span class="arithmatex">\(2\leq a &lt; m, 0\leq c &lt; m, 0\leq x_0 &lt; m\)</span></li>
-<li><strong>递归函数</strong>：<span class="arithmatex">\(x_{n+1} = (ax_n+c)\ \mod\ m\)</span></li>
+<li><strong>递归函数</strong>：<span class="arithmatex">\(x_{n+1} = (ax_n+c) \mod m\)</span></li>
 </ul>
 </li>
 </ul>
+</details>
 <hr />
 <h2 id="_7">密码学<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="rsa">RSA 密码系统<a class="headerlink" href="#rsa" title="Permanent link">&para;</a></h3>
@@ -2422,7 +2446,7 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 <ul>
 <li>已知加密密钥 <span class="arithmatex">\((n,e)\)</span>，满足 <span class="arithmatex">\(n = pq, gcd(p,q)=1, e\)</span> 与 <span class="arithmatex">\((p-1)(q-1)\)</span> 互素</li>
 <li>将明文消息 <span class="arithmatex">\(M\)</span> 翻译成整数序列 <span class="arithmatex">\(m_1, m_2, \cdots, m_k\)</span></li>
-<li>则密文 <span class="arithmatex">\(C = M^e\ \mod\ n\)</span></li>
+<li>则密文 <span class="arithmatex">\(C = M^e \mod n\)</span></li>
 </ul>
 <details class="example">
 <summary>Example</summary>
@@ -2433,7 +2457,7 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 <p>翻译成等价的数字：<code>1819 1415</code></p>
 </li>
 <li>
-<p>利用公式 <span class="arithmatex">\(C = M^e\ \mod\ n\)</span> 和快速模指数运算，加密后的消息为<code>2081 2182</code></p>
+<p>利用公式 <span class="arithmatex">\(C = M^e \mod n\)</span> 和快速模指数运算，加密后的消息为<code>2081 2182</code></p>
 </li>
 </ol>
 </details>
@@ -2443,7 +2467,7 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 <ul>
 <li>已知解密密钥 <span class="arithmatex">\(d\)</span>，满足 <span class="arithmatex">\(ed \equiv 1\ (\mod\ (p-1)(q-1))\)</span></li>
 <li>已知加密密钥 <span class="arithmatex">\((n,e)\)</span>，满足 <span class="arithmatex">\(n = pq, gcd(p,q)=1, e\)</span> 与 <span class="arithmatex">\((p-1)(q-1)\)</span> 互素</li>
-<li>则明文消息 <span class="arithmatex">\(M = C^d\ \mod\ pq\)</span></li>
+<li>则明文消息 <span class="arithmatex">\(M = C^d \mod pq\)</span></li>
 </ul>
 <details class="example">
 <summary>Example</summary>
@@ -2454,7 +2478,7 @@ a^{\varphi(n)}\equiv 1\ (\text{mod}\ n)
 <p>求出解密密钥 <span class="arithmatex">\(d=937\)</span></p>
 </li>
 <li>
-<p>利用公式 <span class="arithmatex">\(M = C^d\ \mod\ pq\)</span> 和快速模指数运算，解密后的消息为<code>0704 1115</code></p>
+<p>利用公式 <span class="arithmatex">\(M = C^d \mod pq\)</span> 和快速模指数运算，解密后的消息为<code>0704 1115</code></p>
 </li>
 <li>
 <p>换成对应的英文字母为<code>HELP</code></p>
