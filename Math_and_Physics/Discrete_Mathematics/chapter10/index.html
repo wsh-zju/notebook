@@ -2485,6 +2485,12 @@
 <h2 id="_3">连通性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="1">定理 1 顶点之间的通路数<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <p>设 <span class="arithmatex">\(G\)</span> 是一个图，该图的邻接矩阵为 <span class="arithmatex">\(A\)</span>，顶点顺序为 <span class="arithmatex">\(v_1, v_2, \cdots, v_n\)</span>。从<span class="arithmatex">\(v_i\)</span>到<span class="arithmatex">\(v_j\)</span>长度为<span class="arithmatex">\(r\)</span>的不同通路的数目等于<span class="arithmatex">\(A^r\)</span>的第<span class="arithmatex">\((i, j)\)</span>项，其中<span class="arithmatex">\(r\)</span>是正整数</p>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li>如果一个图是弱连通的，并且每个顶点的出度等于入度，则该图一定是强连通的</li>
+</ol>
+</div>
 <hr />
 <h2 id="_4">欧拉通路与哈密顿通路<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">欧拉回路和欧拉通路（遍历边）<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -2617,16 +2623,15 @@
 <ol>
 <li><span class="arithmatex">\(\chi(K_n) = n\)</span></li>
 <li><span class="arithmatex">\(\chi(K_{m,n}) = 2\)</span></li>
-<li>
-<div class="arithmatex">\[
-    \chi(C_n) = 
-    \begin{cases} 
-    2, &amp; \text{当 } n \text{ 为正偶数且 } n \geq 4 \text{ 时} \\
-    3, &amp; \text{当 } n \text{ 为正奇数且 } n \geq 3 \text{ 时}
-    \end{cases}
-    \]</div>
-</li>
+<li></li>
 </ol>
+<div class="arithmatex">\[
+\chi(C_n) = 
+\begin{cases} 
+2, &amp; \text{当 } n \text{ 为正偶数且 } n \geq 4 \text{ 时} \\
+3, &amp; \text{当 } n \text{ 为正奇数且 } n \geq 3 \text{ 时}
+\end{cases}
+\]</div>
 
 
 
