@@ -49,7 +49,7 @@
 
 - **$n$ 立方体图** $Q_n$
 
-    ![](photo/10-5.png){style="width:60%;display: block;margin: 20px auto"}
+    ![](photo/10-5.png){style="width:70%;display: block;margin: 20px auto"}
 
 ### 定理 霍尔婚姻定理
 **完全匹配的充分必要条件**

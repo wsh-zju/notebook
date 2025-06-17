@@ -36,7 +36,7 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">线性代数 II（H）笔记</div>
-<div class="file-meta">2025-6-10 / 107 pages</div>
+<div class="file-meta">2025-6-16 / 17 pages</div>
 </div>
 <a class="down-button" target="_blank" href="files/线性代数2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
