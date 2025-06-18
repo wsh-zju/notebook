@@ -1988,6 +1988,18 @@
 <li>异或：<span class="arithmatex">\(\oplus\)</span>（XOR）</li>
 <li>
 <p>蕴含：<span class="arithmatex">\(\rightarrow\)</span>（IF-THEN）</p>
+<ul>
+<li>只有p为T，q为F时，<span class="arithmatex">\(p\rightarrow q\)</span>为F；其余情况为T</li>
+<li>
+<p>推广的条件陈述：</p>
+<ul>
+<li>逆（converse）：<span class="arithmatex">\(q\rightarrow p\)</span></li>
+<li>逆否（contrapositive）：<span class="arithmatex">\(\neg q\rightarrow \neg p\)</span></li>
+<li>反（inverse）：<span class="arithmatex">\(\neg p\rightarrow \neg q\)</span></li>
+<li>逆否=原命题，逆=反命题</li>
+</ul>
+</li>
+</ul>
 <details class="abstract">
 <summary>不同的English表达</summary>
 <ul>
@@ -2004,18 +2016,6 @@
 <li>q is necessary for p （必要的）</li>
 </ul>
 </details>
-<ul>
-<li>只有p为T，q为F时，<span class="arithmatex">\(p\rightarrow q\)</span>为F；其余情况为T</li>
-<li>
-<p>推广的条件陈述：</p>
-<ul>
-<li>逆（converse）：<span class="arithmatex">\(q\rightarrow p\)</span></li>
-<li>逆否（contrapositive）：<span class="arithmatex">\(\neg q\rightarrow \neg p\)</span></li>
-<li>反（inverse）：<span class="arithmatex">\(\neg p\rightarrow \neg q\)</span></li>
-<li>逆否=原命题，逆=反命题</li>
-</ul>
-</li>
-</ul>
 </li>
 <li>
 <p>双向蕴含：<span class="arithmatex">\(\leftrightarrow\)</span> （IF AND ONLY IF）</p>
@@ -2045,7 +2045,7 @@
 </li>
 </ul>
 </details>
-<ol start="3">
+<ol start="2">
 <li><strong>运算顺序</strong></li>
 </ol>
 <table>
@@ -2154,7 +2154,7 @@
 <ol start="11">
 <li>更多等价关系</li>
 </ol>
-<div class="arithmatex">\[p \to q \equiv \neg p \lor q\]</div>
+<p><strong><span class="arithmatex">(<span class="arithmatex">\(p \to q \equiv \neg p \lor q\)</span>\)</span></strong>  </p>
 <div class="arithmatex">\[p \to q \equiv \neg q \to \neg p\]</div>
 <div class="arithmatex">\[p \lor q \equiv \neg p \to q\]</div>
 <div class="arithmatex">\[p \land q \equiv \neg (p \to \neg q)\]</div>
@@ -2165,7 +2165,7 @@
 <div class="arithmatex">\[(p \to r) \lor (q \to r) \equiv (p \land q) \to r\]</div>
 <div class="arithmatex">\[p \leftrightarrow q \equiv (p \to q) \land (q \to p)\]</div>
 <div class="arithmatex">\[p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q\]</div>
-<div class="arithmatex">\[p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)\]</div>
+<p>**<span class="arithmatex">\(<span class="arithmatex">\(p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)\)</span>\)</span> ** </p>
 <div class="arithmatex">\[\neg (p \leftrightarrow q) \equiv p \leftrightarrow \neg q\]</div>
 </details>
 <ol start="3">
@@ -2265,8 +2265,8 @@
 <p>(4) <span class="arithmatex">\(\exists xP(x) \land A \equiv \exists x(P(x) \land A)\)</span></p>
 <p>(5) <span class="arithmatex">\(\forall x(A \rightarrow P(x)) \equiv A \rightarrow \forall xP(x)\)</span></p>
 <p>(6) <span class="arithmatex">\(\exists x(A \rightarrow P(x)) \equiv A \rightarrow \exists xP(x)\)</span></p>
-<p>(7) <span class="arithmatex">\(\forall x(P(x) \rightarrow A) \equiv \exists xP(x) \rightarrow A\)</span></p>
-<p>(8) <span class="arithmatex">\(\exists x(P(x) \rightarrow A) \equiv \forall xP(x) \rightarrow A\)</span></p>
+<p><strong>(7) <span class="arithmatex">\(\forall x(P(x) \rightarrow A) \equiv \exists xP(x) \rightarrow A\)</span></strong></p>
+<p><strong>(8) <span class="arithmatex">\(\exists x(P(x) \rightarrow A) \equiv \forall xP(x) \rightarrow A\)</span></strong></p>
 </details>
 <hr />
 <h2 id="_4">推理规则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
