@@ -2,7 +2,7 @@
 
 ## 计算机架构
 
-<table>
+<table style="width:100%; border-collapse: collapse; border: 1px solid black;">
     <tr>
         <td rowspan="4">软件层</td>
         <td>应用程序</td>

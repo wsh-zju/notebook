@@ -1,6 +1,7 @@
 ## 计算机体系结构
 - 计算机体系结构
     
+    ```table
     |Computer Architecture|
     |:--:|
     |problem|
@@ -12,6 +13,7 @@
     |logic|
     |circuits|
     |electrons|
+    ```
 
 !!! note "Notice!"
     - VM（ 虚拟机，Virtual Machine ）
