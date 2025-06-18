@@ -5,7 +5,7 @@
 |onto/surjection|满射|one-to-one correspondence/bijection|双射|one-to-one/injection|单射|
 |power set|幂集|union|并集|intersection|交集|
 |difference|差集|complement|补集|symmetric difference|对称集|
-|domain|定义与|codomain|陪域|range|值域|
+|domain|定义域|codomain|陪域|range|值域|
 |progession|级数|matrix|矩阵||||
 
 ---

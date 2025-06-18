@@ -19,6 +19,13 @@
 - 析取：$\lor$（OR）
 - 异或：$\oplus$（XOR）
 - 蕴含：$\rightarrow$（IF-THEN）
+    - 只有p为T，q为F时，$p\rightarrow q$为F；其余情况为T
+    - 推广的条件陈述：
+      
+        - 逆（converse）：$q\rightarrow p$
+        - 逆否（contrapositive）：$\neg q\rightarrow \neg p$
+        - 反（inverse）：$\neg p\rightarrow \neg q$
+        - 逆否=原命题，逆=反命题
 
     ??? abstract "不同的English表达"
         - if p,then q
@@ -32,14 +39,6 @@
         - p is sufficient for q （充分的）
         - q follows from p 
         - q is necessary for p （必要的）
-
-    - 只有p为T，q为F时，$p\rightarrow q$为F；其余情况为T
-    - 推广的条件陈述：
-      
-        - 逆（converse）：$q\rightarrow p$
-        - 逆否（contrapositive）：$\neg q\rightarrow \neg p$
-        - 反（inverse）：$\neg p\rightarrow \neg q$
-        - 逆否=原命题，逆=反命题
 
 - 双向蕴含：$\leftrightarrow$ （IF AND ONLY IF）
     
@@ -59,7 +58,7 @@
         - $\neg p=p|p$
 
 
-3. **运算顺序**
+2. **运算顺序**
 
 | Operator | Precedence |
 |:--:|:--:|
@@ -146,7 +145,7 @@
     
     11. 更多等价关系
         
-    $$p \to q \equiv \neg p \lor q$$  
+    **$$p \to q \equiv \neg p \lor q$$**  
     
     $$p \to q \equiv \neg q \to \neg p$$  
     
@@ -168,7 +167,7 @@
 
     $$p \leftrightarrow q \equiv \neg p \leftrightarrow \neg q$$  
 
-    $$p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)$$  
+    **$$p \leftrightarrow q \equiv (p \land q) \lor (\neg p \land \neg q)$$ ** 
 
     $$\neg (p \leftrightarrow q) \equiv p \leftrightarrow \neg q$$
 
@@ -238,9 +237,9 @@
 
     (6) \(\exists x(A \rightarrow P(x)) \equiv A \rightarrow \exists xP(x)\)
 
-    (7) \(\forall x(P(x) \rightarrow A) \equiv \exists xP(x) \rightarrow A\)
+    **(7) \(\forall x(P(x) \rightarrow A) \equiv \exists xP(x) \rightarrow A\)**
 
-    (8) \(\exists x(P(x) \rightarrow A) \equiv \forall xP(x) \rightarrow A\)
+    **(8) \(\exists x(P(x) \rightarrow A) \equiv \forall xP(x) \rightarrow A\)**
 
 ---
 ## 推理规则
