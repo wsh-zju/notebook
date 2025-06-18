@@ -2088,11 +2088,44 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 <ol start="4">
 <li><strong>浮点数类型</strong></li>
 </ol>
-<p>|数字类型|+0/-0|非规格化数|规格化数|+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span>|NaN|
-|:--:|:--:|:--:|:--:|:--:|
-|<strong>阶码Exp</strong>|全0|全0|非全0/非全1|全1|全1|
-|<strong>尾数Frac</strong>|全0|非0|均可|全0|非0|
-|<strong>表示范围</strong>|+0/-0|<span class="arithmatex">\(-2^{-126}\)</span><sub><span class="arithmatex">\(2^{-126}\)</span>(不包括0)|<span class="arithmatex">\(-2^{127}\)</span></sub><span class="arithmatex">\(-2^{-126}\)</span>，<span class="arithmatex">\(2^{-126}\)</span>~<span class="arithmatex">\(2^{127}\)</span>|+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span>|NaN|</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">数字类型</th>
+<th style="text-align: center;">+0/-0</th>
+<th style="text-align: center;">非规格化数</th>
+<th style="text-align: center;">规格化数</th>
+<th style="text-align: center;">+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span></th>
+<th style="text-align: center;">NaN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>阶码Exp</strong></td>
+<td style="text-align: center;">全0</td>
+<td style="text-align: center;">全0</td>
+<td style="text-align: center;">非全0/非全1</td>
+<td style="text-align: center;">全1</td>
+<td style="text-align: center;">全1</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>尾数Frac</strong></td>
+<td style="text-align: center;">全0</td>
+<td style="text-align: center;">非0</td>
+<td style="text-align: center;">均可</td>
+<td style="text-align: center;">全0</td>
+<td style="text-align: center;">非0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>表示范围</strong></td>
+<td style="text-align: center;">+0/-0</td>
+<td style="text-align: center;"><span class="arithmatex">\(-2^{-126}\)</span>~<span class="arithmatex">\(2^{-126}\)</span>(不包括0)</td>
+<td style="text-align: center;"><span class="arithmatex">\(-2^{127}\)</span><sub><span class="arithmatex">\(-2^{-126}\)</span>，<span class="arithmatex">\(2^{-126}\)</span></sub><span class="arithmatex">\(2^{127}\)</span></td>
+<td style="text-align: center;">+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span></td>
+<td style="text-align: center;">NaN</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition abstract">
 <p class="admonition-title">舍入(Rounding)</p>
 <ol>
@@ -2113,11 +2146,44 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 <ul>
 <li>特征：相邻格雷码只有一位不同</li>
 </ul>
-<p>|:--:|:--:|:--:|:--:|:--:|:--:|
-|<strong>格雷码</strong>|0000|0100|0101|0111|0110|
-|<strong>十进制</strong>|0|1|2|3|4|
-|<strong>格雷码</strong>|0010|0011|0001|1001|1000|
-|<strong>十进制</strong>|5|6|7|8|9|</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>格雷码</strong></th>
+<th style="text-align: center;">0000</th>
+<th style="text-align: center;">0100</th>
+<th style="text-align: center;">0101</th>
+<th style="text-align: center;">0111</th>
+<th style="text-align: center;">0110</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>十进制</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>格雷码</strong></td>
+<td style="text-align: center;">0010</td>
+<td style="text-align: center;">0011</td>
+<td style="text-align: center;">0001</td>
+<td style="text-align: center;">1001</td>
+<td style="text-align: center;">1000</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>十进制</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">9</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
 <p><strong>余3码</strong></p>
@@ -2129,14 +2195,14 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 <h3 id="_4">非数值数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li>ASCII码（7 bits）和Unicode（16 bits）</li>
-<li>汉子的表示：输入码、内码、字型码</li>
+<li>汉字的表示：输入码、内码、字型码</li>
 </ol>
 <hr />
 <h2 id="_5">数据的宽度和存储<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>主存容量单位</strong></li>
 </ol>
-<p>bit <span class="arithmatex">\(\xrightarrow{8}\)</span> byte <span class="arithmatex">\(\xrightarrow{2^10}\)</span> KB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> MB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> GB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> TB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> PB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> EB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> ZB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> YB</p>
+<p>bit <span class="arithmatex">\(\xrightarrow{8}\)</span> byte <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> KB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> MB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> GB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> TB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> PB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> EB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> ZB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> YB</p>
 <ol start="2">
 <li><strong>频率和线宽单位</strong></li>
 </ol>
@@ -2145,10 +2211,33 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 <li><strong>数据存储和排列顺序</strong></li>
 </ol>
 <p>e.g. 存储0x0123 4567</p>
-<p>|:--:|:--:|:--:|:--:|:--:|
-|地址|0x100|0x101|0x102|0x103|
-|大端序|01|23|45|67|
-|小端序|67|45|23|01|</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">地址</th>
+<th style="text-align: center;">0x100</th>
+<th style="text-align: center;">0x101</th>
+<th style="text-align: center;">0x102</th>
+<th style="text-align: center;">0x103</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">大端序</td>
+<td style="text-align: center;">01</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">67</td>
+</tr>
+<tr>
+<td style="text-align: center;">小端序</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">45</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">01</td>
+</tr>
+</tbody>
+</table>
 
 
 
