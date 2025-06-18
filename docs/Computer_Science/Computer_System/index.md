@@ -18,8 +18,6 @@
     </tr>
     <tr>
         <td rowspan="5">硬件层</td>
-    </tr>
-    <tr>
         <td>计算机组成(微架构)</td>
     </tr>
     <tr>
