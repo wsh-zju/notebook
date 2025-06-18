@@ -732,13 +732,40 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制的二进制表示（BCD码）
+    </span>
+  </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      非数值数据
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据的宽度和存储
+    </span>
+  </a>
   
 </li>
       
@@ -1843,13 +1870,40 @@
   
 </li>
         
-      </ul>
-    </nav>
+          <li class="md-nav__item">
+  <a href="#bcd" class="md-nav__link">
+    <span class="md-ellipsis">
+      十进制的二进制表示（BCD码）
+    </span>
+  </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      非数值数据
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据的宽度和存储
+    </span>
+  </a>
   
 </li>
       
@@ -1881,29 +1935,29 @@
 
 <h2 id="_1">进制之间的转换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li>R进制 <span class="arithmatex">\(\to\)</span> 10进制：展开即可</li>
-<li>10进制 <span class="arithmatex">\(\to\)</span> R进制</li>
+<li><strong>R进制 <span class="arithmatex">\(\to\)</span> 10进制</strong>：展开即可</li>
+<li><strong>10进制 <span class="arithmatex">\(\to\)</span> R进制</strong></li>
 </ol>
 <ul>
 <li>整数：除基取余，从下至上</li>
 <li>小数：称基取整，从上至下</li>
 </ul>
 <ol start="3">
-<li>2进制 <span class="arithmatex">\(\to\)</span> 8/16进制：每3/4个一组转换为8/16进制（反之同理）</li>
-<li>8进制 <span class="arithmatex">\(\to\)</span> 16进制：通过2进制进行转换</li>
+<li><strong>2进制 <span class="arithmatex">\(\to\)</span> 8/16进制</strong>：每3/4个一组转换为8/16进制（反之同理）</li>
+<li><strong>8进制 <span class="arithmatex">\(\to\)</span> 16进制</strong>：通过2进制进行转换</li>
 </ol>
 <h2 id="_2">数据表示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">数值数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <h4 id="fixed-point">定点数（Fixed-point）<a class="headerlink" href="#fixed-point" title="Permanent link">&para;</a></h4>
 <ol>
-<li>n位机器码的表示范围</li>
+<li><strong>n位机器码的表示范围</strong></li>
 </ol>
 <ul>
 <li>无符号数：<span class="arithmatex">\(0 \leqslant x \leqslant 2^n-1\)</span></li>
 <li>有符号数：<strong>取决于编码方法</strong></li>
 </ul>
 <ol start="2">
-<li>编码方法</li>
+<li><strong>编码方法</strong></li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">原码</label><label for="__tabbed_1_2">反码</label><label for="__tabbed_1_3">补码</label><label for="__tabbed_1_4">移码</label></div>
 <div class="tabbed-content">
@@ -1957,15 +2011,15 @@
 </div>
 </div>
 <ol start="3">
-<li>符号扩展</li>
+<li><strong>符号扩展</strong></li>
 </ol>
 <ul>
-<li>扩展（expanding）<ul>
+<li><strong>扩展</strong>（expanding）<ul>
 <li>有符号：符号扩展</li>
 <li>无符号：补0</li>
 </ul>
 </li>
-<li>截断（truncating）<ul>
+<li><strong>截断</strong>（truncating）<ul>
 <li>直接去掉高位</li>
 <li>只有较小的数不会改变初始值</li>
 </ul>
@@ -1973,28 +2027,28 @@
 </ul>
 <h4 id="floating-point">浮点数（floating-point）<a class="headerlink" href="#floating-point" title="Permanent link">&para;</a></h4>
 <ol>
-<li>分类</li>
+<li><strong>分类</strong></li>
 </ol>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;"></th>
 <th style="text-align: center;">符号位s</th>
-<th style="text-align: center;">阶码exp</th>
-<th style="text-align: center;">尾数frac</th>
-<th style="text-align: center;">Bias</th>
+<th style="text-align: center;">阶码Exp</th>
+<th style="text-align: center;">尾数Frac</th>
+<th style="text-align: center;">偏移量Bias</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">单精度</td>
+<td style="text-align: center;"><strong>单精度</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">8</td>
 <td style="text-align: center;">23</td>
 <td style="text-align: center;">127</td>
 </tr>
 <tr>
-<td style="text-align: center;">双精度</td>
+<td style="text-align: center;"><strong>双精度</strong></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">11</td>
 <td style="text-align: center;">52</td>
@@ -2002,6 +2056,99 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Notice!</p>
+<p>阶码是<strong>无符号数</strong>！</p>
+</div>
+<ol start="2">
+<li><strong>指数范围</strong></li>
+</ol>
+<p>对于<strong>规格化数</strong>：-126～127（0000 0001～1111 1110）</p>
+<div class="admonition note">
+<p class="admonition-title">Notice!</p>
+<p><strong>0000 0000</strong>和<strong>1111 1111</strong>被保留，用于其他浮点数类型的表示。</p>
+</div>
+<ol start="3">
+<li><strong>计算公式</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>规格化数</strong></p>
+<div class="arithmatex">\[
+x = (-1)^s \times (1+Frac) \times 2^{Exp-Bias}
+\]</div>
+</li>
+<li>
+<p><strong>非规格化数</strong></p>
+<div class="arithmatex">\[
+x = (-1)^s \times Frac \times 2^{1-Bias}
+\]</div>
+</li>
+</ul>
+<ol start="4">
+<li><strong>浮点数类型</strong></li>
+</ol>
+<p>|数字类型|+0/-0|非规格化数|规格化数|+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span>|NaN|
+|:--:|:--:|:--:|:--:|:--:|
+|<strong>阶码Exp</strong>|全0|全0|非全0/非全1|全1|全1|
+|<strong>尾数Frac</strong>|全0|非0|均可|全0|非0|
+|<strong>表示范围</strong>|+0/-0|<span class="arithmatex">\(-2^{-126}\)</span><sub><span class="arithmatex">\(2^{-126}\)</span>(不包括0)|<span class="arithmatex">\(-2^{127}\)</span></sub><span class="arithmatex">\(-2^{-126}\)</span>，<span class="arithmatex">\(2^{-126}\)</span>~<span class="arithmatex">\(2^{127}\)</span>|+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span>|NaN|</p>
+<div class="admonition abstract">
+<p class="admonition-title">舍入(Rounding)</p>
+<ol>
+<li>大于一半，向上舍入</li>
+<li>小于一半，向下舍入</li>
+<li>等于一半，向偶数舍入</li>
+</ol>
+<p>e.g. 7.89500 <span class="arithmatex">\(\to\)</span> 7.90 , 7.88500 <span class="arithmatex">\(\to\)</span> 7.88</p>
+</div>
+<h4 id="bcd">十进制的二进制表示（BCD码）<a class="headerlink" href="#bcd" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>有权BCD码</strong>：8421码（分别对应每一位的权值）</li>
+<li><strong>无权BCD码</strong>：</li>
+</ol>
+<ul>
+<li>
+<p><strong>格雷码</strong></p>
+<ul>
+<li>特征：相邻格雷码只有一位不同</li>
+</ul>
+<p>|:--:|:--:|:--:|:--:|:--:|:--:|
+|<strong>格雷码</strong>|0000|0100|0101|0111|0110|
+|<strong>十进制</strong>|0|1|2|3|4|
+|<strong>格雷码</strong>|0010|0011|0001|1001|1000|
+|<strong>十进制</strong>|5|6|7|8|9|</p>
+</li>
+<li>
+<p><strong>余3码</strong></p>
+<ul>
+<li>在8421码的基础上加3得到</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">非数值数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>ASCII码（7 bits）和Unicode（16 bits）</li>
+<li>汉子的表示：输入码、内码、字型码</li>
+</ol>
+<hr />
+<h2 id="_5">数据的宽度和存储<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>主存容量单位</strong></li>
+</ol>
+<p>bit <span class="arithmatex">\(\xrightarrow{8}\)</span> byte <span class="arithmatex">\(\xrightarrow{2^10}\)</span> KB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> MB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> GB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> TB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> PB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> EB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> ZB <span class="arithmatex">\(\xrightarrow{2^10}\)</span> YB</p>
+<ol start="2">
+<li><strong>频率和线宽单位</strong></li>
+</ol>
+<p>b/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> kb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Mb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Gb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Tb/s</p>
+<ol start="3">
+<li><strong>数据存储和排列顺序</strong></li>
+</ol>
+<p>e.g. 存储0x0123 4567</p>
+<p>|:--:|:--:|:--:|:--:|:--:|
+|地址|0x100|0x101|0x102|0x103|
+|大端序|01|23|45|67|
+|小端序|67|45|23|01|</p>
 
 
 
