@@ -108,7 +108,6 @@ markdown_extensions:
   - toc:
       toc_depth: 6  # 标题层级深度，按需设 1 - 6
       autonumber: true  # 开启标题自动编号
-      anchor_class: header-anchor  # 锚点样式（可选）
       permalink: true  # 是否显示永久链接锚点（可选）
   - abbr
   - meta
