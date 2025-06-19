@@ -106,9 +106,8 @@ theme:
 
 markdown_extensions:
   - toc:
-      toc_depth: 6  # 标题层级深度，按需设 1 - 6
-      autonumber: true  # 开启标题自动编号
-      permalink: true  # 是否显示永久链接锚点（可选）
+      permalink: true
+      toc_depth: 4
   - abbr
   - meta
   - def_list

@@ -95,10 +95,11 @@
     **$S-R$ Master-Slave Flip-Flop**
 
     - **组成**：两个时钟 $S-R$ 锁存器，和一个非门
+        
+        ![](photo/5-6.png){ style="width: 50%;display: block;margin:20px auto;"}
+        
         - 主锁存器：接受外部输入信号
         - 从锁存器：输出最终结果
-
-        ![](photo/5-6.png){ style="width: 50%;display: block;margin:20px auto;"}
 
     - **工作过程**
         - $C=1$：主锁存器接受外部输入；从锁存器锁定
