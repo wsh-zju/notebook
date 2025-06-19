@@ -1,7 +1,7 @@
 ## 加法器
 ### 单比特加法器
 #### 半加器
-**Half Adder（1 bit）**
+Half Adder
 
 1. **真值表**
 
@@ -21,11 +21,11 @@ $$F = A \oplus B$$
 
 3. **电路图**
 
-![](photo/4-1.png){style="width:30%;display: block;margin: 20px auto"}
+![](photo/4-1.png){style="width:40%;display: block;margin: 20px auto"}
 
 ---
 #### 全加器
-**Full Adder（1 bit）**
+Full Adder
 
 1. **真值表**
 
@@ -49,7 +49,7 @@ $$F = A \oplus B \oplus C_{in}$$
 
 3. **电路图**
 
-![](photo/4-2.png){style="width:30%;display: block;margin: 20px auto"}
+![](photo/4-2.png){style="width:40%;display: block;margin: 20px auto"}
 
 !!! note "Note"
     也可以利用两个半加器组成一个全加器。
@@ -58,7 +58,7 @@ $$F = A \oplus B \oplus C_{in}$$
 
 ### 多比特加法器
 #### 行波进位加法器
-**Ripple-Carry Adder(RCA)**
+Ripple-Carry Adder(RCA)
 
 1. **组成**：串联多个`1 bit`加法器
 
@@ -291,6 +291,9 @@ $$A - B = A + \bar{B} +1$$
 - `Divisor`右移1位  
 - `Quotient`左移1位  
 
+!!! tip "Tips"
+    其余方法不再赘述（好像没考过😁）
+    
 ---
 ### 有符号除法
 
