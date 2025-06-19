@@ -273,3 +273,21 @@ $$A - B = A + \bar{B} +1$$
 
 ---
 ## 除法器
+### 无符号除法
+#### 方法 1
+
+1. **数据长度**：
+
+- `Divisor`:64 bits（初始高32位为除数，低32位为0）  
+- `Dividend + Remainder`:64 bits（初始高32位为0，低32位为被除数）  
+- `Quotient`:32 bits  
+- `ALU`:64 bits  
+
+2. **计算步骤**：
+
+- 判断`Remainder - Divisor`  
+    - 负：`Remainder`不变，`Quotient[0] = 0`  
+    - 非负：`Remainder = Remainder - Divisor`，`Quotient[0] = 1`  
+- `Divisor`右移1位  
+- `Quotient`左移1位  
+
