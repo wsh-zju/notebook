@@ -21,7 +21,7 @@ $$F = A \oplus B$$
 
 3. **电路图**
 
-![](photo/4-1.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/4-1.png){style="width:30%;display: block;margin: 20px auto"}
 
 ---
 #### 全加器
@@ -49,12 +49,12 @@ $$F = A \oplus B \oplus C_{in}$$
 
 3. **电路图**
 
-![](photo/4-2.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/4-2.png){style="width:30%;display: block;margin: 20px auto"}
 
 !!! note "Note"
     也可以利用两个半加器组成一个全加器。
 
-    ![](photo/4-3.png)
+    ![](photo/4-3.png){style="width:80%;display: block;margin: 20px auto"}
 
 ### 多比特加法器
 #### 行波进位加法器
@@ -83,7 +83,7 @@ $$F = A \oplus B \oplus C_{in}$$
 
 3. **电路图**
 
-![](photo/4-5.png){style="width:30%;display: block;margin: 20px auto"}
+![](photo/4-5.png){style="width:20%;display: block;margin: 20px auto"}
 
 ---
 ## 减法器
@@ -101,7 +101,7 @@ $$A - B = A + \bar{B} +1$$
 ### 加减法器
 1. **电路图**
 
-![](photo/4-6.png){style="width:60%;display: block;margin: 20px auto"}
+![](photo/4-6.png){style="width:50%;display: block;margin: 20px auto"}
 
 2. **原理**
 
@@ -161,7 +161,7 @@ $$A - B = A + \bar{B} +1$$
     **e.g.** 0010 × 0110 (2 × 6)
 
     | 序号 | 操作  | Multiplier | Multiplicand   | Product       |
-    |:--:|:--|:--:|:--:|:--:|
+    |:--:|:--|:--:|:--:|:-------:|
     | 0 | 初始值  | 0110 |  0000 0010  | 0000 0000     |
     | 1    | 1: multiplier[0]=0 → 无操作       | 0110       | 0000 0010      | 0000 0000     |
     |      | 2: multiplier右移/multiplicand左移| 011        | 0000 0100      | 0000 0000     |
@@ -194,15 +194,15 @@ $$A - B = A + \bar{B} +1$$
     **e.g.** 0010 × 0110 (2 × 6)
 
     | 序号 | 操作  | Multiplier | Multiplicand   | Product       |
-    |:--:|:--|:--:|:--:|:--:|
+    |:--:|:--|:--:|:--:|:------:|
     | 0    | 初始值      | 0110       | 0010         | 0000 ****|
     | 1    | 1: multiplier[0]=0 → 无操作       | 0110       | 0010         | 0000 **** |
-    |      | 2: multiplier/product右移         | *011        | 0010         | 0000 0***     |
-    | 2    | 1: multiplier[0]=1 → product的高位 += multiplicand  | *011        | 0010         | 0010 0***     |
+    |      | 2: multiplier/product右移         | *011        | 0010         | 0000 0**\*     |
+    | 2    | 1: multiplier[0]=1 → product的高位 += multiplicand  | *011        | 0010         | 0010 0**\*     |
     |      | 2: multiplier/product右移            | **01         | 0010         | 0001 00**    |
     | 3    | 1: multiplier[0]=1 → product的高位 += multiplicand  | **01         | 0010         | 0011 00**    |
-    |      | 2:multiplier/product右移                 | ***0          | 0010         | 0001 100*   |
-    | 4    | 1: multiplier[0]=0 → 无操作       | ***0          | 0010         | 0001           | 100*****   |
+    |      | 2:multiplier/product右移                 | **\*0          | 0010         | 0001 100*   |
+    | 4    | 1: multiplier[0]=0 → 无操作       | **\*0          | 0010         | 0001           | 100*****   |
     |      | 2: multiplier/product右移               | ****          | 0010         | 0000 1100 |
 
     **Product**：0000 1100 (12)
@@ -224,8 +224,8 @@ $$A - B = A + \bar{B} +1$$
 ??? example "Example"
     **e.g.** 0010 × 0110 (2 × 6)
 
-    | 序号 | 操作  | Multiplier | Multiplicand   | Product$\Vert$Multiplier       |
-    |:--:|:--|:--:|:--:|:--:|
+    | 序号 | 操作  | Multiplier | Multiplicand   | Product$\|$Multiplier       |
+    |:--:|:--|:--:|:--:|:----:|
     |        0          | 初始值    | 0110    | 0010     | 0000 0110  |  
     |        1          | 1:multiplier[0]=0 → 无操作         | 0110               | 0010                   | 0000 0110                                |  
     |                   | 2: product + multiplier整体右移 | *011          | 0010                   | 0000 0011                                |  
@@ -260,14 +260,14 @@ $$A - B = A + \bar{B} +1$$
     | 序号 | 操作                            | Multiplicand | Product$\Vert$Multiplier |  
     |:----:|:--------------------------------------|:------------:|:------------------------:|  
     | 0    | 初始值（附加位=0）                    | 0010         | 0000 1101 0              |  
-    | 1    | 10 → Product高位 -= Multiplicand      | 0010         | 1110 1101 0              |  
-    |      | `Product`算术右移1位                           |              | 1111 0110 1              |  
-    | 2    | 01 → Product高位 += Multiplicand      | 0010         | 0001 0110 1              |  
-    |      | `Product`算术右移1位                           |              | 0000 1011 0              |  
-    | 3    | 10 → Product高位 -= Multiplicand      | 0010         | 1110 1011 0              |  
-    |      | `Product`算术右移1位                           |              | 1111 0101 1              |  
-    | 4    | 11 → 无操作                           | 0010         | 1111 0101 1              |  
-    |      | `Product`算术右移1位                           |              | 1111 1010 1              |  
+    | 1    | 1:10 → Product高位 -= Multiplicand      | 0010         | 1110 1101 0              |  
+    |      | 2:`Product`算术右移1位                           |              | 1111 0110 1              |  
+    | 2    | 1:01 → Product高位 += Multiplicand      | 0010         | 0001 0110 1              |  
+    |      | 2:`Product`算术右移1位                           |              | 0000 1011 0              |  
+    | 3    | 1:10 → Product高位 -= Multiplicand      | 0010         | 1110 1011 0              |  
+    |      | 2:`Product`算术右移1位                           |              | 1111 0101 1              |  
+    | 4    | 1:11 → 无操作                           | 0010         | 1111 0101 1              |  
+    |      | 2:`Product`算术右移1位                           |              | 1111 1010 1              |  
 
     **Product**：1111 1010 (-6的补码表示)  
 
