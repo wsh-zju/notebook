@@ -715,18 +715,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed-point" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      定点数（Fixed-point）
+      定点数
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#floating-point" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点数（floating-point）
+      浮点数
     </span>
   </a>
   
@@ -747,7 +747,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       非数值数据
     </span>
@@ -761,7 +761,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       数据的宽度和存储
     </span>
@@ -1853,18 +1853,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixed-point" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      定点数（Fixed-point）
+      定点数
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#floating-point" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      浮点数（floating-point）
+      浮点数
     </span>
   </a>
   
@@ -1885,7 +1885,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       非数值数据
     </span>
@@ -1899,7 +1899,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       数据的宽度和存储
     </span>
@@ -1948,7 +1948,7 @@
 </ol>
 <h2 id="_2">数据表示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="_3">数值数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="fixed-point">定点数（Fixed-point）<a class="headerlink" href="#fixed-point" title="Permanent link">&para;</a></h4>
+<h4 id="_4">定点数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>n位机器码的表示范围</strong></li>
 </ol>
@@ -2025,7 +2025,8 @@
 </ul>
 </li>
 </ul>
-<h4 id="floating-point">浮点数（floating-point）<a class="headerlink" href="#floating-point" title="Permanent link">&para;</a></h4>
+<hr />
+<h4 id="_5">浮点数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>分类</strong></li>
 </ol>
@@ -2061,12 +2062,32 @@
 <p>阶码是<strong>无符号数</strong>！</p>
 </div>
 <ol start="2">
-<li><strong>指数范围</strong></li>
+<li><strong>表示范围</strong></li>
 </ol>
-<p>对于<strong>规格化数</strong>：-126～127（0000 0001～1111 1110）</p>
+<ul>
+<li>
+<p><strong>规格化数</strong></p>
+<ul>
+<li>
+<p>指数范围：-126～127（0000 0001～1111 1110）</p>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <p><strong>0000 0000</strong>和<strong>1111 1111</strong>被保留，用于其他浮点数类型的表示。</p>
+</div>
+</li>
+<li>
+<p>表示范围：<span class="arithmatex">\(1.0 \times 2{-126} ～ (2-2^{-23}) \times 2^{127}\)</span>（负数同理）</p>
+</li>
+<li><strong>非规格化数</strong></li>
+<li>指数范围：恒等于-126</li>
+<li>表示范围：<span class="arithmatex">\(2^{-23} \times 2{-126} ～ (1-2^{-23}) \times 2^{-126}\)</span>（负数同理）</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>0.111...1（23个1）= <span class="arithmatex">\(1-2^{-23}\)</span></p>
+<p>0.000...01（22个0）= <span class="arithmatex">\(2^{-23}\)</span></p>
 </div>
 <ol start="3">
 <li><strong>计算公式</strong></li>
@@ -2116,14 +2137,6 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 <td style="text-align: center;">全0</td>
 <td style="text-align: center;">非0</td>
 </tr>
-<tr>
-<td style="text-align: center;"><strong>表示范围</strong></td>
-<td style="text-align: center;">+0/-0</td>
-<td style="text-align: center;"><span class="arithmatex">\(-2^{-126}\)</span>~<span class="arithmatex">\(2^{-126}\)</span>(不包括0)</td>
-<td style="text-align: center;"><span class="arithmatex">\(-2^{127}\)</span><sub><span class="arithmatex">\(-2^{-126}\)</span>，<span class="arithmatex">\(2^{-126}\)</span></sub><span class="arithmatex">\(2^{127}\)</span></td>
-<td style="text-align: center;">+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span></td>
-<td style="text-align: center;">NaN</td>
-</tr>
 </tbody>
 </table>
 <div class="admonition abstract">
@@ -2168,11 +2181,11 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 </tr>
 <tr>
 <td style="text-align: center;"><strong>格雷码</strong></td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0011</td>
-<td style="text-align: center;">0001</td>
-<td style="text-align: center;">1001</td>
-<td style="text-align: center;">1000</td>
+<td style="text-align: center;"><strong>0010</strong></td>
+<td style="text-align: center;"><strong>0011</strong></td>
+<td style="text-align: center;"><strong>0001</strong></td>
+<td style="text-align: center;"><strong>1001</strong></td>
+<td style="text-align: center;"><strong>1000</strong></td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>十进制</strong></td>
@@ -2192,13 +2205,13 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 </ul>
 </li>
 </ul>
-<h3 id="_4">非数值数据<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_6">非数值数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
 <li>ASCII码（7 bits）和Unicode（16 bits）</li>
 <li>汉字的表示：输入码、内码、字型码</li>
 </ol>
 <hr />
-<h2 id="_5">数据的宽度和存储<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_7">数据的宽度和存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>主存容量单位</strong></li>
 </ol>
@@ -2223,14 +2236,14 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">大端序</td>
+<td style="text-align: center;"><strong>大端序</strong></td>
 <td style="text-align: center;">01</td>
 <td style="text-align: center;">23</td>
 <td style="text-align: center;">45</td>
 <td style="text-align: center;">67</td>
 </tr>
 <tr>
-<td style="text-align: center;">小端序</td>
+<td style="text-align: center;"><strong>小端序</strong></td>
 <td style="text-align: center;">67</td>
 <td style="text-align: center;">45</td>
 <td style="text-align: center;">23</td>
