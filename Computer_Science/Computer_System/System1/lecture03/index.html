@@ -1855,9 +1855,9 @@
 <li><strong>工作原理</strong></li>
 </ol>
 <ul>
-<li>将<span class="arithmatex">\(n\)</span>位输入转换为<span class="arithmatex">\(2^n\)</span>位输出</li>
+<li>将 <span class="arithmatex">\(n\)</span> 位输入转换为 <span class="arithmatex">\(2^n\)</span> 位输出</li>
 <li>输入二进制编码，由对应的十进制数字端口输出</li>
-<li>可以加入使能（EN）信号：EN=1表示译码器工作</li>
+<li>可以加入使能（EN）信号：<code>EN=1</code>表示译码器工作</li>
 </ul>
 <ol start="2">
 <li><strong>真值表</strong></li>
@@ -2005,7 +2005,7 @@
 <ol start="4">
 <li><strong>电路元件符号</strong></li>
 </ol>
-<p><img alt="" src="../photo/3-2.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../photo/3-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
 <ol start="5">
 <li><strong>应用</strong>：加法器、七段数码管</li>
 </ol>
@@ -2015,7 +2015,7 @@
 <li><strong>工作原理</strong></li>
 </ol>
 <ul>
-<li>将<span class="arithmatex">\(2^n\)</span>位输入转换为<span class="arithmatex">\(n\)</span>位输出</li>
+<li>将 <span class="arithmatex">\(2^n\)</span> 位输入转换为 <span class="arithmatex">\(n\)</span> 位输出</li>
 <li>由对应的十进制数字端口输入，输出二进制编码</li>
 </ul>
 <ol start="2">
@@ -2047,22 +2047,9 @@
 <td style="text-align: center;"><span class="arithmatex">\(I_5\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(I_6\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(I_7\)</span></td>
-<td style="text-align: center;">$</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">O_2$</td>
+<td style="text-align: center;"><span class="arithmatex">\(O_2\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(O_1\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(O_0\)</span></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;"><strong>1</strong></td>
@@ -2173,14 +2160,14 @@
 <ol start="3">
 <li><strong>电路元件符号</strong></li>
 </ol>
-<p><img alt="" src="../photo/3-4.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../photo/3-4.png" style="width:30%;display: block;margin: 20px auto" /></p>
 <hr />
 <h3 id="multiplexer">多路选择器(Multiplexer)<a class="headerlink" href="#multiplexer" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>工作原理</strong></li>
 </ol>
 <ul>
-<li>利用Decoder将n个控制信号转换为对应端口的控制信号</li>
+<li>利用<code>Decoder</code>将 <span class="arithmatex">\(n\)</span> 个控制信号转换为对应端口的控制信号</li>
 <li>控制m个输入的其中一个输出</li>
 </ul>
 <ol start="2">
@@ -2196,36 +2183,36 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><span class="arithmatex">\(S_0\)</span></td>
 <td style="text-align: center;"><span class="arithmatex">\(S_1\)</span></td>
-<td style="text-align: center;"><span class="arithmatex">\(F\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(S_0\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(Y\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">A</td>
+<td style="text-align: center;"><span class="arithmatex">\(I_0\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">B</td>
+<td style="text-align: center;"><span class="arithmatex">\(I_1\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">C</td>
+<td style="text-align: center;"><span class="arithmatex">\(I_2\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">D</td>
+<td style="text-align: center;"><span class="arithmatex">\(I_3\)</span></td>
 </tr>
 </tbody>
 </table>
 <ol start="3">
 <li><strong>组合逻辑电路</strong></li>
 </ol>
-<p><img alt="" src="../photo/3-5.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../photo/3-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>可以将与门替换为三态门或传输门。</p>
@@ -2233,7 +2220,7 @@
 <ol start="4">
 <li><strong>电路元件符号</strong></li>
 </ol>
-<p><img alt="" src="../photo/3-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../photo/3-3.png" style="width:30%;display: block;margin: 20px auto" /></p>
 <ol start="5">
 <li><strong>应用</strong>：利用多个多路选择器进行位扩展，1位加法器（和<code>case</code>语法的实现思路类似）</li>
 </ol>
@@ -2241,8 +2228,8 @@
 <p class="admonition-title">Tips</p>
 <p><strong>可以实现任何一个逻辑函数的方法：</strong></p>
 <ol>
-<li>Decoder + OR Gates：Decoder每个输出端口代表一个最小项</li>
-<li>多路选择器：将输入信号固定为常量（0或1）或变量，通过控制信号控制输出的端口</li>
+<li><strong>Decoder + OR Gates</strong>：Decoder每个输出端口代表一个最小项</li>
+<li><strong>多路选择器</strong>：将输入信号固定为常量（0或1）或变量，通过控制信号控制输出的端口</li>
 </ol>
 </div>
 
