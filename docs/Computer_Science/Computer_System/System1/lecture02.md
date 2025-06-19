@@ -13,14 +13,14 @@
 |逻辑门|XOR(异或)|XNOR(同或)|
 |:--:|:--:|:--:|
 |**运算**|$A \oplus B = A\bar{B}+\bar{A}B$|$\bar{A \oplus B} = AB+\bar{A}\bar{B}$|
-|**电路符号**|![](photo/2-1.png)|![](photo/2-2.png)|
+|**电路符号**|![](photo/2-1.png){style="width:60%;display: block;margin: 20px auto"}|![](photo/2-2.png){style="width:60%;display: block;margin: 20px auto"}|
 
-!!! abstract "其余电路元件"
+??? abstract "其余电路元件"
     1. **三态缓冲器**（3-state Buffer）
 
     - **电路符号**
 
-        ![](photo/2-3.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/2-3.png){style="width:30%;display: block;margin: 20px auto"}
 
     - **真值表**
 
@@ -34,7 +34,7 @@
 
     - **电路符号**
 
-        ![](photo/2-4.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/2-4.png){style="width:30%;display: block;margin: 20px auto"}
 
     - **真值表**
 
@@ -91,8 +91,9 @@
 - **卡诺图规则**
     - 每个圈的大小必须是**2的幂次**
     - 允许跨边界圈选
-    - 仅当能帮助简化表达式时，才圈选“无关项（X）”
+    - 仅当能帮助简化表达式时，才圈选“无关项(X)”
 
+--- 
 ## 成本
 
 1. **分类**
