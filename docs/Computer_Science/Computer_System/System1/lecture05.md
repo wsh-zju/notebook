@@ -124,5 +124,5 @@
 
         - 满足 $Q(t+1)=D(t)$
 
-!!! abstract "状态存储元件的电路符号"
+??? abstract "状态存储元件的电路符号"
     ![](photo/5-9.png){style="width:60%;display: block;margin: 20px auto"}
