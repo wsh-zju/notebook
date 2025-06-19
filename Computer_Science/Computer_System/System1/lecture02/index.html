@@ -97,6 +97,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -665,6 +670,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    数字逻辑基础
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -676,6 +694,50 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑操作和逻辑门
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      成本
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1698,6 +1760,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑操作和逻辑门
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      逻辑函数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      成本
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1722,7 +1819,239 @@
 
   <h1>数字逻辑基础</h1>
 
-
+<h2 id="_1">逻辑操作和逻辑门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>操作运算符</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">操作</th>
+<th style="text-align: center;">AND</th>
+<th style="text-align: center;">OR</th>
+<th style="text-align: center;">NOT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>运算符</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(X·Y\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(X+Y\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bar{X}/X'/~X\)</span></td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>逻辑门</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p>只记录较容易遗忘的，其余不再赘述！</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">逻辑门</th>
+<th style="text-align: center;">XOR(异或)</th>
+<th style="text-align: center;">XNOR(同或)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>运算</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(A \oplus B = A\bar{B}+\bar{A}B\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\bar{A \oplus B} = AB+\bar{A}\bar{B}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>电路符号</strong></td>
+<td style="text-align: center;"><img alt="" src="../photo/2-1.png" /></td>
+<td style="text-align: center;"><img alt="" src="../photo/2-2.png" /></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">其余电路元件</p>
+<ol>
+<li><strong>三态缓冲器</strong>（3-state Buffer）</li>
+</ol>
+<ul>
+<li>
+<p><strong>电路符号</strong></p>
+<p><img alt="" src="../photo/2-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>真值表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">EN</th>
+<th style="text-align: center;">IN</th>
+<th style="text-align: center;">OUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Hi-Z</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ol start="2">
+<li><strong>传输门</strong>（Transimission Gate）</li>
+</ol>
+<ul>
+<li>
+<p><strong>电路符号</strong></p>
+<p><img alt="" src="../photo/2-4.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>真值表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">IN</th>
+<th style="text-align: center;">OUT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">Hi-Z</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p><code>Hi-Z</code>表示<strong>高阻态</strong>（相当于开关断开）</p>
+</div>
+</div>
+<hr />
+<h2 id="_2">逻辑函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>常用公式</strong></li>
+</ol>
+<ul>
+<li><strong>分配律</strong>  <ul>
+<li><span class="arithmatex">\( X \cdot (Y + Z) = X \cdot Y + X \cdot Z \)</span>  </li>
+<li><span class="arithmatex">\( X + Y \cdot Z = (X + Y) \cdot (X + Z) \)</span>  </li>
+</ul>
+</li>
+<li><strong>吸收律</strong>  <ul>
+<li><span class="arithmatex">\( X + X \cdot Y = X \)</span>  </li>
+<li><span class="arithmatex">\( X \cdot (X + Y) = X \)</span>  </li>
+</ul>
+</li>
+<li><strong>冗余律</strong>  <ul>
+<li><span class="arithmatex">\( X \cdot Y + X \cdot \overline{Y} = X \)</span>  </li>
+<li><span class="arithmatex">\( (X + Y) \cdot (X + \overline{Y}) = X \)</span>  </li>
+<li><span class="arithmatex">\( X \cdot Y + \overline{X} \cdot Z + Y \cdot Z = X \cdot Y + \overline{X} \cdot Z \)</span>  </li>
+<li><span class="arithmatex">\( (X + Y) \cdot (\overline{X} + Z) \cdot (Y + Z) = (X + Y) \cdot (\overline{X} + Z) \)</span>  </li>
+</ul>
+</li>
+<li><strong>幂等律</strong>  <ul>
+<li><span class="arithmatex">\( X + X + \ldots + X = X \)</span>  </li>
+<li><span class="arithmatex">\( X \cdot X \cdot \ldots \cdot X = X \)</span>  </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>对偶式</strong></li>
+</ol>
+<ul>
+<li>交换<code>+</code>与<code>·</code>、<code>0</code>与<code>1</code>得到对偶表达式</li>
+<li>证明对偶式相当于证明原式</li>
+</ul>
+<ol start="3">
+<li><strong>表示</strong></li>
+</ol>
+<ul>
+<li><strong>最小项</strong>（Minterm）：积之和<strong>（SOP）</strong>，e.g. <span class="arithmatex">\(F = \sum m(1,2,4)\)</span></li>
+<li><strong>最大项</strong>（Maxterm）：和之积<strong>（POS）</strong>，e.g. <span class="arithmatex">\(F = \prod M(0,3)\)</span></li>
+</ul>
+<ol start="4">
+<li><strong>化简（卡诺图）</strong></li>
+</ol>
+<ul>
+<li><strong>相关定义</strong><ul>
+<li><strong>蕴含项</strong>（Implicant）<ul>
+<li>由文字（变量或其补）组成的乘积项</li>
+<li>代表卡诺图中任意一个由相邻1组成的矩形区域（无论大小）</li>
+</ul>
+</li>
+<li><strong>质蕴含项</strong>（Prime Implicant）<ul>
+<li>代表卡诺图中无法进一步扩大的蕴涵项（即覆盖最多相邻1的最大矩形）</li>
+</ul>
+</li>
+<li><strong>实质蕴含项</strong>（Essential Prime Implicant）<ul>
+<li>唯一覆盖某个最小项的质蕴涵项</li>
+<li>若删除它，该最小项将无法被其他质蕴涵项覆盖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>卡诺图规则</strong><ul>
+<li>每个圈的大小必须是<strong>2的幂次</strong></li>
+<li>允许跨边界圈选</li>
+<li>仅当能帮助简化表达式时，才圈选“无关项（X）”</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">成本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>分类</strong></li>
+</ol>
+<ul>
+<li><strong>文字成本（L）</strong>：<ul>
+<li>布尔表达式中变量及其补码的出现总次数</li>
+<li>e.g. <span class="arithmatex">\(F = BD + ABC + A\bar{C}D\)</span> 的 L=2+3+3=8</li>
+</ul>
+</li>
+<li><strong>门输入成本（G）</strong>：<ul>
+<li>电路图中所有逻辑门的输入引脚总数（不计反相器）</li>
+<li>e.g. <span class="arithmatex">\(F = BD + ABC + A\bar{C}D\)</span> 的 G=L+3=11</li>
+</ul>
+</li>
+<li><strong>含反相器的门输入成本（GN）</strong>：<ul>
+<li>GN = G + 反相器输入数</li>
+<li>e.g. <span class="arithmatex">\(F = BD + ABC + A\bar{C}D\)</span> 的 GN=G+1=12</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>优化原则</strong></li>
+</ol>
+<ul>
+<li>成本优先：选择<code>G/GN</code>最小的实现方案</li>
+<li>平衡策略：多级电路可能比两级电路更节省门输入（但增加延迟）</li>
+<li>终止条件：当连续优化无法进一步降低成本时停止</li>
+</ul>
 
 
 
