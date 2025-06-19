@@ -158,6 +158,9 @@ plugins:
       #extra_skipped_class:
         #- arithmatex
   - macros
+  - markdown-enhancer:
+      heading autonumber: true  # 开启标题自动编号
+
 
 
 extra_css:
