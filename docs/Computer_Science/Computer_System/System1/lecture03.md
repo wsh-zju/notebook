@@ -4,7 +4,7 @@
 
 - 将$n$位输入转换为$2^n$位输出
 - 输入二进制编码，由对应的十进制数字端口输出
-- 可以加入使能（EN）信号：EN=1表示译码器工作
+- 可以加入使能（EN）信号：`EN=1`表示译码器工作
 
 2. **真值表**
 
@@ -26,7 +26,7 @@
 
 4. **电路元件符号**
 
-![](photo/3-2.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/3-2.png){style="width:30%;display: block;margin: 20px auto"}
 
 5. **应用**：加法器、七段数码管
 
@@ -42,8 +42,7 @@
 
 | Input |||||||| Output |||
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $I_0$ | $I_1$ | $I_2$ | $I_3$ | $I_4$ | $I_5$ | $I_6$ | $I_7$ | $
-O_2$ | $O_1$ | $O_0$ |
+| $I_0$ | $I_1$ | $I_2$ | $I_3$ | $I_4$ | $I_5$ | $I_6$ | $I_7$ | $O_2$ | $O_1$ | $O_0$ |
 | **1** | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 0 | **1** | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
 | 0 | 0 | **1** | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
@@ -56,7 +55,7 @@ O_2$ | $O_1$ | $O_0$ |
 
 3. **电路元件符号**
 
-![](photo/3-4.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/3-4.png){style="width:30%;display: block;margin: 20px auto"}
 
 ---
 ### 多路选择器(Multiplexer)
@@ -69,16 +68,16 @@ O_2$ | $O_1$ | $O_0$ |
 
 | Input || Output |
 |:--:|:--:|:--:|
-| $S_0$ | $S_1$ | $F$ |
-| 0 | 0 | A|
-| 0 | 1 |B|
-| 1 | 0 |C|
-| 1 | 1 | D |
+| $S_1$ | $S_0$ | $Y$ |
+| 0 | 0 | $I_0$|
+| 0 | 1 |$I_1$|
+| 1 | 0 |$I_2$|
+| 1 | 1 | $I_3$|
 
 
 3. **组合逻辑电路**
 
-![](photo/3-5.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/3-5.png){style="width:60%;display: block;margin: 20px auto"}
 
 !!! note "Note"
     可以将与门替换为三态门或传输门。
@@ -86,7 +85,7 @@ O_2$ | $O_1$ | $O_0$ |
 
 4. **电路元件符号**
 
-![](photo/3-3.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/3-3.png){style="width:30%;display: block;margin: 20px auto"}
 
 5. **应用**：利用多个多路选择器进行位扩展，1位加法器（和`case`语法的实现思路类似）
 
@@ -94,5 +93,5 @@ O_2$ | $O_1$ | $O_0$ |
 !!! tip "Tips"
     **可以实现任何一个逻辑函数的方法：**
 
-    1. Decoder + OR Gates：Decoder每个输出端口代表一个最小项
-    2. 多路选择器：将输入信号固定为常量（0或1）或变量，通过控制信号控制输出的端口
+    1. **Decoder + OR Gates**：Decoder每个输出端口代表一个最小项
+    2. **多路选择器**：将输入信号固定为常量（0或1）或变量，通过控制信号控制输出的端口

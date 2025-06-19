@@ -12,7 +12,7 @@
 
 |逻辑门|XOR(异或)|XNOR(同或)|
 |:--:|:--:|:--:|
-|**运算**|$A \oplus B = A\bar{B}+\bar{A}B$|$\bar{A \oplus B} = AB+\bar{A}\bar{B}$|
+|**运算**|$A \oplus B = A\bar{B}+\bar{A}B$|$\overline{A \oplus B} = AB+\bar{A}\bar{B}$|
 |**电路符号**|![](photo/2-1.png){style="width:60%;display: block;margin: 20px auto"}|![](photo/2-2.png){style="width:60%;display: block;margin: 20px auto"}|
 
 ??? abstract "其余电路元件"
@@ -34,7 +34,7 @@
 
     - **电路符号**
 
-        ![](photo/2-4.png){style="width:30%;display: block;margin: 20px auto"}
+        ![](photo/2-4.png){style="width:25%;display: block;margin: 20px auto"}
 
     - **真值表**
 

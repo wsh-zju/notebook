@@ -62,7 +62,7 @@
 | $\grave{a}$      | `\grave{a}`      |$\dot{a}$        | `\dot{a}`        |
 | $\bar{a}$        | `\bar{a}`        |$\vec{a}$        | `\vec{a}`        |
 | $\breve{a}$      | `\breve{a}`      |$\widehat{A}$    | `\widehat{A}`    |
-
+|$\overline{AB}$|`\overline{AB}`|||
 ## 括号和定界符
 
 | 符号 | LaTeX 代码 | 符号 | LaTeX 代码 |
