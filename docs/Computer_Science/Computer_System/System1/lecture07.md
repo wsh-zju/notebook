@@ -1,7 +1,6 @@
 ## 计算机体系结构
 - 计算机体系结构
     
-    ```table
     |Computer Architecture|
     |:--:|
     |problem|
@@ -13,7 +12,7 @@
     |logic|
     |circuits|
     |electrons|
-    ```
+
 
 !!! note "Notice!"
     - VM（ 虚拟机，Virtual Machine ）
@@ -192,14 +191,14 @@
 | 信号名称 | 无效时（=0）| 有效时（=1） |
 |:--:|:--:|:--:|
 | RegWrite | 无 | 寄存器写入 |
-| ALUScr | ALU的第二个操作数来自第二个寄存器文件输出（读数据2） | ALU的第二个操作数来自立即数生成器 |
+| ALUSrc | ALU的第二个操作数来自第二个寄存器文件输出（读数据2） | ALU的第二个操作数来自立即数生成器 |
 | Branch（PCSrc） | PC=PC+4 | PC跳转至分支目标地址（PC+立即数） |
 | Jump | PC=PC+4或分支目标 | PC跳转至跳转地址 |
 | MemRead | 无 | 读取数据存储器内容 |
 | MemWrite | 无 | 将数据写入数据存储器 |
 | MemtoReg（2位） | 00：写入寄存器的数据来自ALU | 写入寄存器的数据来自<br>01：数据存储器<br>10：PC+4<br>11：立即数生成器的输出 | 
 
-1. 控制信号生成
+2. 控制信号生成
 
 - 主译码器（Main Decoder）
     - 输入：7位操作码（Opcode）
