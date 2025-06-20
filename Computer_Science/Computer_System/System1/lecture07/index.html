@@ -1952,9 +1952,9 @@
   <h1>CPU</h1>
 
 <h2 id="_1">计算机体系结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
+<ol>
 <li>
-<p>计算机体系结构</p>
+<p><strong>计算机体系结构</strong></p>
 <table>
 <thead>
 <tr>
@@ -1992,7 +1992,7 @@
 </tbody>
 </table>
 </li>
-</ul>
+</ol>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <ul>
@@ -2001,9 +2001,9 @@
 <li>MM（ 内存管理，Memory Management ） </li>
 </ul>
 </div>
-<ul>
-<li>冯诺伊曼架构</li>
-</ul>
+<ol start="2">
+<li><strong>冯诺伊曼架构</strong></li>
+</ol>
 <div class="arithmatex">\[
 \text{Computer}
 \begin{cases}
@@ -2022,17 +2022,18 @@
     \text{I/O interface}
 \end{cases}
 \]</div>
+<hr />
 <h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
 <h3 id="_2">核心组成部分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>数据通路：对数据执行操作</li>
-<li>控制单元：对数据通路、内存等进行时序控制</li>
-<li>高速缓存（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据</li>
-</ul>
+<ol>
+<li><strong>数据通路</strong>：对数据执行操作</li>
+<li><strong>控制单元</strong>：对数据通路、内存等进行时序控制</li>
+<li><strong>高速缓存</strong>（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据</li>
+</ol>
 <h3 id="datapath">数据通路（Datapath）<a class="headerlink" href="#datapath" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>
-<p>ALU</p>
+<p><strong>ALU</strong></p>
 <table>
 <thead>
 <tr>
@@ -2065,7 +2066,7 @@
 </table>
 </li>
 <li>
-<p>Memory（存储器）</p>
+<p><strong>Memory（存储器）</strong></p>
 <ul>
 <li>指令存储器<ul>
 <li>只读</li>
@@ -2080,7 +2081,7 @@
 </ul>
 </li>
 <li>
-<p>register files（寄存器堆）</p>
+<p><strong>register files</strong>（寄存器堆）</p>
 <ul>
 <li>由32个64 bit的寄存器组成</li>
 <li>由D触发器实现</li>
@@ -2132,7 +2133,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>others：立即数生成单元</p>
+<p><strong>others：立即数生成单元</strong></p>
 <ul>
 <li>功能：<ul>
 <li>从指令中提取立即数</li>
@@ -2142,11 +2143,12 @@
 </li>
 </ul>
 </li>
-</ul>
+</ol>
+<hr />
 <h3 id="performance">性能（performance）<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>
-<p>相关定义</p>
+<p><strong>相关定义</strong></p>
 <ul>
 <li>响应时间（Latency）：任务从开始到完成的总时间（如程序运行时间）</li>
 <li>
@@ -2167,100 +2169,99 @@
 </ul>
 </li>
 <li>
-<p>公式</p>
-<ul>
-<li>
-<p><span class="arithmatex">\(Performance=\frac{1}{Execution Time(执行时间)}\)</span></p>
-<ul>
-<li>
-<p>X is <span class="arithmatex">\(n\)</span> time faster than Y.</p>
-<div class="arithmatex">\[
-\frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
-\]</div>
+<p><strong>公式</strong></p>
 </li>
-</ul>
-</li>
-<li>
-<p><span class="arithmatex">\(CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}\)</span></p>
-</li>
-</ul>
-</li>
-<li>
-<p>性能提高的方式</p>
-<ul>
+</ol>
+<div class="arithmatex">\[Performance=\frac{1}{Execution Time(执行时间)}\]</div>
+<div class="arithmatex">\[CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}\]</div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>- X is $n$ time faster than Y.
+
+    $$
+    \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
+    $$
+</code></pre></div></td></tr></table></div>
+<ol start="3">
+<li><strong>性能提高的方式</strong><ul>
 <li>减少时钟周期数</li>
 <li>提高时钟频率</li>
 <li>硬件设计师常常需要在时钟频率和时钟周期数之间进行权衡 </li>
 </ul>
 </li>
-</ul>
+</ol>
+<hr />
 <h3 id="cpi">CPI（每条指令的平均周期数）<a class="headerlink" href="#cpi" title="Permanent link">&para;</a></h3>
-<ul>
-<li>特点<ul>
+<ol>
+<li><strong>特点</strong><ul>
 <li>由CPU硬件决定</li>
 <li>不同指令可能有不同的CPI</li>
 <li>平均CPI受指令组合的影响</li>
 </ul>
 </li>
-<li>
-<p>公式</p>
+<li><strong>公式</strong></li>
+</ol>
 <div class="arithmatex">\[
 CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 \]</div>
-</li>
+<ol start="3">
 <li>
-<p>重要公式：</p>
-<p><span class="arithmatex">\(CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction\)</span></p>
-<p><span class="arithmatex">\(CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period\)</span></p>
-<p><span class="arithmatex">\(CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}\)</span></p>
+<p><strong>重要公式：</strong></p>
+<div class="arithmatex">\[CPU \ Clock \ Cycles = Instruction \ Count \times Average \ Clock \ Cycles \ Per \ Instruction\]</div>
+<div class="arithmatex">\[CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period\]</div>
+<div class="arithmatex">\[CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}\]</div>
 <ul>
 <li>
-<p>当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：</p>
+<p>当<strong>不同指令类别执行所需的时钟周期数不同</strong>时，总时钟周期数（Clock Cycles）的计算方法为：</p>
 <div class="arithmatex">\[ Clock \ Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction \ Count_{i}) \]</div>
 </li>
 <li>
-<p>加权平均CPI的计算公式为：</p>
+<p><strong>加权平均CPI</strong>的计算公式为：</p>
 <div class="arithmatex">\[ CPI = \frac{Clock \ Cycles}{Instruction \ Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction \ Count_{i}}{Instruction \ Count} \right) \]</div>
 </li>
 </ul>
 </li>
-</ul>
+</ol>
+<hr />
 <h2 id="cpu-design">CPU design<a class="headerlink" href="#cpu-design" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../photo/7-1.png" /></p>
 <h3 id="_3">数据通路<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>数据通路基本元素</li>
+<li><strong>数据通路基本元素</strong></li>
 </ol>
 <ul>
-<li>寄存器组（Registers）<ul>
+<li><strong>寄存器组（Registers）</strong><ul>
 <li>32 个 64 位寄存器（x0-x31）</li>
 <li>两个读端口和一个写端口</li>
 <li>写操作由时钟边沿触发，受RegWrite信号控制</li>
 </ul>
 </li>
-<li>算术逻辑单元（ALU）<ul>
+<li><strong>算术逻辑单元（ALU）</strong><ul>
 <li>加法（Add）、减法（Sub）、与（And）、或（Or）、小于置位（Slt）等操作</li>
 <li>由ALU Op1和ALU Op0两位信号控制</li>
 <li>输入：两个操作数（来源由ALUSrc信号决定：寄存器数据或立即数）</li>
 <li>输出：结果及标志位（如 Zero）</li>
 </ul>
 </li>
-<li>存储器（Memory）<ul>
-<li>指令存储器（Instruction Memory）：只读，按地址读取指令</li>
-<li>数据存储器（Data Memory）：读写由MemRead和MemWrite信号控制，支持按地址存取数据</li>
+<li><strong>存储器（Memory）</strong><ul>
+<li><strong>指令存储器（Instruction Memory）</strong>：只读，按地址读取指令</li>
+<li><strong>数据存储器（Data Memory）</strong>：读写由MemRead和MemWrite信号控制，支持按地址存取数据</li>
 </ul>
 </li>
-<li>立即数生成单元（Immediate Generation Unit）<ul>
+<li><strong>立即数生成单元（Immediate Generation Unit）</strong><ul>
 <li>根据指令类型生成对应立即数，并进行符号扩展至 64 位</li>
 </ul>
 </li>
 </ul>
+<hr />
 <h3 id="_4">控制器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li>控制信号</li>
+<li><strong>控制信号</strong></li>
 </ol>
 <ul>
-<li>ALU op</li>
+<li><strong>ALU op</strong></li>
 </ul>
 <table>
 <thead>
@@ -2335,22 +2336,22 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 </tbody>
 </table>
 <ol start="2">
-<li>控制信号生成</li>
+<li><strong>控制信号生成</strong></li>
 </ol>
 <ul>
-<li>主译码器（Main Decoder）<ul>
+<li><strong>主译码器（Main Decoder）</strong><ul>
 <li>输入：7位操作码（Opcode）</li>
 <li>输出：7个控制信号和2位ALU Op信号</li>
 </ul>
 </li>
-<li>ALU 译码器（ALU Decoder）<ul>
+<li><strong>ALU 译码器（ALU Decoder）</strong><ul>
 <li>输入：ALU Op和指令中的funct3、funct7</li>
 <li>输出：具体ALU操作</li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li>主指令译码器真值表</li>
+<li><strong>主指令译码器真值表</strong></li>
 </ol>
 <table>
   <thead>

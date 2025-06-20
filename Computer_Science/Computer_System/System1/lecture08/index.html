@@ -1935,37 +1935,38 @@
 
 <h2 id="cpu">单周期与多周期CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
 <h3 id="cpu_1">单周期CPU<a class="headerlink" href="#cpu_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li>特点：<ul>
+<ol>
+<li><strong>特点：</strong><ul>
 <li>所有指令在一个时钟周期内完成，CPI 恒为1</li>
 <li>设计简单</li>
 </ul>
 </li>
-<li>局限性：<ul>
+<li><strong>局限性：</strong><ul>
 <li>时钟周期受最长指令（如加载指令 lw）限制</li>
 <li>硬件资源利用率低（需两个加法器 / ALU 和两个存储器）</li>
 <li>无法优化不同指令的执行效率</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="cpu_2">多周期CPU<a class="headerlink" href="#cpu_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>特点：<ul>
+<ol>
+<li><strong>特点：</strong><ul>
 <li>指令执行分解为多个阶段（如取指、译码、执行等）</li>
 <li>每个阶段占用一个时钟周期，不同指令 CPI 不同（3-5 个周期），时钟周期更短</li>
 <li>可复用硬件资源（如仅需一个 ALU 和存储器）</li>
 </ul>
 </li>
-<li>局限性：<ul>
+<li><strong>局限性</strong>：<ul>
 <li>需多次承担时序控制开销</li>
 <li>控制器设计复杂</li>
 </ul>
 </li>
-</ul>
+</ol>
+<hr />
 <h2 id="cpu_3">多周期CPU设计<a class="headerlink" href="#cpu_3" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../photo/8-1.png" /></p>
 <h3 id="_1">数据通路的新部件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li><strong>临时寄存器</strong><ul>
 <li>IR（指令寄存器）：存储从存储器取出的指令</li>
 <li>MDR（内存数据寄存器）：暂存从存储器读取的数据</li>
@@ -1973,7 +1974,7 @@
 <li>ALUout：暂存 ALU 运算结果</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="_2">指令执行的阶段<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>取指（IF）</strong></li>
@@ -2025,13 +2026,14 @@
 <li>将结果写入寄存器堆</li>
 <li>Load: <code>Reg[IR[20 - 16]] = MDR</code></li>
 </ul>
+<hr />
 <h3 id="_3">控制器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>控制信号</strong></li>
 </ol>
 <ul>
 <li>
-<p>单比特信号</p>
+<p><strong>单比特信号</strong></p>
 <table>
 <thead>
 <tr>
@@ -2095,7 +2097,7 @@
 </table>
 </li>
 <li>
-<p>双比特信号</p>
+<p><strong>双比特信号</strong></p>
 <table>
 <thead>
 <tr>
@@ -2164,7 +2166,7 @@
 </ol>
 <ul>
 <li>以 <code>add</code> 指令为例</li>
-<li>取指</li>
+<li><strong>取指</strong></li>
 </ul>
 <table>
 <thead>
@@ -2199,7 +2201,7 @@
 </tbody>
 </table>
 <ul>
-<li>译码</li>
+<li><strong>译码</strong></li>
 </ul>
 <table>
 <thead>
@@ -2220,7 +2222,7 @@
 </tbody>
 </table>
 <ul>
-<li>运算</li>
+<li><strong>运算</strong></li>
 </ul>
 <table>
 <thead>
@@ -2241,7 +2243,7 @@
 </tbody>
 </table>
 <ul>
-<li>写回</li>
+<li><strong>写回</strong></li>
 </ul>
 <table>
 <thead>
@@ -2265,14 +2267,14 @@
 <li><strong>控制器分类</strong></li>
 </ol>
 <ul>
-<li>Hardwired Controller（硬布线控制器）<ul>
+<li><strong>Hardwired Controller（硬布线控制器）</strong><ul>
 <li>适用于RISC</li>
 <li>原理：基于有限状态机（FSM），通过组合逻辑（如 PLA 电路）生成控制信号，每个状态对应指令执行的一个阶段</li>
 <li>优点：控制信号生成快</li>
 <li>缺点：ISA复杂时难以维护，需重新设计硬件逻辑</li>
 </ul>
 </li>
-<li>Micro-program Controller（微程序控制器）<ul>
+<li><strong>Micro-program Controller（微程序控制器）</strong><ul>
 <li>适用于CISC</li>
 <li>原理：<ul>
 <li>将指令分解为微指令序列，存储于控制存储器（CS），每条微指令对应一个微操作（如寄存器写、ALU 运算）</li>
@@ -2284,6 +2286,7 @@
 </ul>
 </li>
 </ul>
+<hr />
 <h3 id="_4">性能分析<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>各指令周期数</strong></li>
