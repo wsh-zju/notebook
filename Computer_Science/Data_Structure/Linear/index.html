@@ -1897,27 +1897,23 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">多项式</label><label for="__tabbed_2_2">多重表</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><strong>实现方式：</strong>
-1. <strong>数组</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>```c
-typedef struct{
-    int CoeffArray[MaxDegree+1];  //系数数组，下标为指数
-    int HighPower;                // 最高指数
-}*Polynomial;
-```
-
-- 优点：加法、乘法操作直观，直接通过下标访问系数
-- 缺点：稀疏多项式会浪费大量数组空间
+<p><strong>实现方式：</strong></p>
+<ol>
+<li>
+<p><strong>数组</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">CoeffArray</span><span class="p">[</span><span class="n">MaxDegree</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w">  </span><span class="c1">//系数数组，下标为指数</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">HighPower</span><span class="p">;</span><span class="w">                </span><span class="c1">// 最高指数</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span><span class="o">*</span><span class="n">Polynomial</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
-<ol start="2">
+<ul>
+<li>优点：加法、乘法操作直观，直接通过下标访问系数</li>
+<li>缺点：稀疏多项式会浪费大量数组空间</li>
+</ul>
+</li>
 <li>
 <p><strong>链表</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
@@ -1944,6 +1940,7 @@ typedef struct{
 <ul>
 <li>问题情境：管理40000名学生与2500门课程的选课关系</li>
 <li>
+<p><strong>实现方式</strong></p>
 <ul>
 <li>
 <p><strong>二维数组</strong></p>
@@ -1957,10 +1954,9 @@ typedef struct{
 </li>
 </ul>
 </li>
-</ul>
-<p><strong>实现方式</strong></p>
-<ul>
-<li><strong>双向链表</strong></li>
+<li>
+<p><strong>双向链表</strong></p>
+</li>
 </ul>
 </li>
 </ul>
