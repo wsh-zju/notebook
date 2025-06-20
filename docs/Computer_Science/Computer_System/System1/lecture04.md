@@ -64,7 +64,7 @@ Ripple-Carry Adder(RCA)
 
 2. **电路图** 
 
-![](photo/4-4.png){style="width:60%;display: block;margin: 20px auto"}
+![](photo/4-4.png){style="width:70%;display: block;margin: 20px auto"}
 
 3. **缺点**：运算速度慢
 
@@ -101,7 +101,7 @@ $$A - B = A + \bar{B} +1$$
 ### 加减法器
 1. **电路图**
 
-![](photo/4-6.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/4-6.png){style="width:60%;display: block;margin: 20px auto"}
 
 2. **原理**
 

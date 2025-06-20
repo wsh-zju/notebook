@@ -1,6 +1,6 @@
 ## 计算机体系结构
-- 计算机体系结构
-    
+1. **计算机体系结构**
+
     |Computer Architecture|
     |:--:|
     |problem|
@@ -19,7 +19,7 @@
     - OS（ 操作系统，Operating System ）
     - MM（ 内存管理，Memory Management ） 
 
-- 冯诺伊曼架构
+2. **冯诺伊曼架构**
 
 \[
 \text{Computer}
@@ -40,13 +40,14 @@
 \end{cases}
 \]
 
+---
 ## CPU
 ### 核心组成部分
-- 数据通路：对数据执行操作
-- 控制单元：对数据通路、内存等进行时序控制
-- 高速缓存（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据
+1. **数据通路**：对数据执行操作
+2. **控制单元**：对数据通路、内存等进行时序控制
+3. **高速缓存**（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据
 ### 数据通路（Datapath）
-- ALU
+1. **ALU**
 
     |Operation|Function|
     |:--:|:--:|
@@ -56,14 +57,14 @@
     |110|Sub|
     |111|Sit(比较)|
 
-- Memory（存储器）
+2. **Memory（存储器）**
     - 指令存储器
         - 只读
         - 输入指令地址，输出相应指令
     - 数据存储器
         - 读写
         - 由`MemRead`和`MemWrite`控制
-- register files（寄存器堆）
+3. **register files**（寄存器堆）
     - 由32个64 bit的寄存器组成
     - 由D触发器实现
     - 输入/输出
@@ -93,14 +94,15 @@
     endmodule 
     ```
 
-- others：立即数生成单元
+4. **others：立即数生成单元**
     - 功能：
         - 从指令中提取立即数
         - 符号扩展
         - 位移操作
 
+--- 
 ### 性能（performance）
-- 相关定义
+1. **相关定义**
     - 响应时间（Latency）：任务从开始到完成的总时间（如程序运行时间）
     - 吞吐量（Throughput）：单位时间内完成的任务量（如每秒处理的事务数）
 
@@ -112,74 +114,78 @@
     - 时钟周期（Clock Period）：单个周期持续时间
     - 时钟频率（Clock Rate）：每秒周期数
 
-- 公式
-    - $Performance=\frac{1}{Execution Time(执行时间)}$
+2. **公式**
 
-        - X is $n$ time faster than Y.
+$$Performance=\frac{1}{Execution Time(执行时间)}$$
 
-            $$
-            \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
-            $$
+$$CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}$$
 
-    - $CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}$
+    - X is $n$ time faster than Y.
 
-- 性能提高的方式
+        $$
+        \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
+        $$
+
+
+3. **性能提高的方式**
     - 减少时钟周期数
     - 提高时钟频率
     - 硬件设计师常常需要在时钟频率和时钟周期数之间进行权衡 
 
+--- 
 ### CPI（每条指令的平均周期数）
-- 特点
+1. **特点**
     - 由CPU硬件决定
     - 不同指令可能有不同的CPI
     - 平均CPI受指令组合的影响
-- 公式
+2. **公式**
     
-    $$
-    CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
-    $$
+$$
+CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
+$$
 
-- 重要公式：
+3. **重要公式：**
     
-    $CPU \ Clock \ Cycles = Instructions \ for \ a \ Program \times Average \ Clock \ Cycles \ Per \ Instruction$
+    $$CPU \ Clock \ Cycles = Instruction \ Count \times Average \ Clock \ Cycles \ Per \ Instruction$$
     
-    $CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period$
+    $$CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period$$
     
-    $CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}$
+    $$CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}$$
     
-    - 当不同指令类别执行所需的时钟周期数不同时，总时钟周期数（Clock Cycles）的计算方法为：
+    - 当**不同指令类别执行所需的时钟周期数不同**时，总时钟周期数（Clock Cycles）的计算方法为：
         
         \[ Clock \ Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction \ Count_{i}) \]
 
-    - 加权平均CPI的计算公式为：
+    - **加权平均CPI**的计算公式为：
         
         \[ CPI = \frac{Clock \ Cycles}{Instruction \ Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction \ Count_{i}}{Instruction \ Count} \right) \]
 
+---
 ## CPU design
 ![](photo/7-1.png)
 ### 数据通路
-1. 数据通路基本元素
+1. **数据通路基本元素**
 
-- 寄存器组（Registers）
+- **寄存器组（Registers）**
     - 32 个 64 位寄存器（x0-x31）
     - 两个读端口和一个写端口
     - 写操作由时钟边沿触发，受RegWrite信号控制
-- 算术逻辑单元（ALU）
+- **算术逻辑单元（ALU）**
     - 加法（Add）、减法（Sub）、与（And）、或（Or）、小于置位（Slt）等操作
     - 由ALU Op1和ALU Op0两位信号控制
     - 输入：两个操作数（来源由ALUSrc信号决定：寄存器数据或立即数）
     - 输出：结果及标志位（如 Zero）
-- 存储器（Memory）
-    - 指令存储器（Instruction Memory）：只读，按地址读取指令
-    - 数据存储器（Data Memory）：读写由MemRead和MemWrite信号控制，支持按地址存取数据
-- 立即数生成单元（Immediate Generation Unit）
+- **存储器（Memory）**
+    - **指令存储器（Instruction Memory）**：只读，按地址读取指令
+    - **数据存储器（Data Memory）**：读写由MemRead和MemWrite信号控制，支持按地址存取数据
+- **立即数生成单元（Immediate Generation Unit）**
     - 根据指令类型生成对应立即数，并进行符号扩展至 64 位
 
-
+---
 ### 控制器
-1. 控制信号
+1. **控制信号**
 
-- ALU op
+- **ALU op**
 
 |指令|ALU op|
 |:--:|:--:|
@@ -198,16 +204,16 @@
 | MemWrite | 无 | 将数据写入数据存储器 |
 | MemtoReg（2位） | 00：写入寄存器的数据来自ALU | 写入寄存器的数据来自<br>01：数据存储器<br>10：PC+4<br>11：立即数生成器的输出 | 
 
-2. 控制信号生成
+2. **控制信号生成**
 
-- 主译码器（Main Decoder）
+- **主译码器（Main Decoder）**
     - 输入：7位操作码（Opcode）
     - 输出：7个控制信号和2位ALU Op信号
-- ALU 译码器（ALU Decoder）
+- **ALU 译码器（ALU Decoder）**
     - 输入：ALU Op和指令中的funct3、funct7
-    -  输出：具体ALU操作
+    - 输出：具体ALU操作
 
-3. 主指令译码器真值表
+3. **主指令译码器真值表**
 
 <table>
   <thead>
