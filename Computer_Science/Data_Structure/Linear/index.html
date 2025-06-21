@@ -1834,21 +1834,21 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">数组</label><label for="__tabbed_1_2">单向链表</label><label for="__tabbed_1_3">双向循环链表</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul>
-<li>缺点：<ul>
+<ol>
+<li><strong>缺点：</strong><ul>
 <li>需要预估数组最大容量</li>
 <li>插入和删除元素的时间复杂度为<span class="arithmatex">\(O(N)\)</span></li>
 </ul>
 </li>
-<li>优点：<ul>
+<li><strong>优点：</strong><ul>
 <li>查找任何数据的时间复杂度均为<span class="arithmatex">\(O(1)\)</span></li>
 </ul>
 </li>
-</ul>
+</ol>
 </div>
 <div class="tabbed-block">
-<ul>
-<li>初始化
+<ol>
+<li><strong>初始化</strong>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -1861,21 +1861,21 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">};</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list_ptr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>插入：时间复杂度为<span class="arithmatex">\(O(1)\)</span>
+<li><strong>插入：</strong>时间复杂度为<span class="arithmatex">\(O(1)\)</span>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div></li>
-<li>删除：时间复杂度为<span class="arithmatex">\(O(1)\)</span>
+<li><strong>删除：</strong>时间复杂度为<span class="arithmatex">\(O(1)\)</span>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">free</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div></li>
-</ul>
+</ol>
 </div>
 <div class="tabbed-block">
-<ul>
-<li>初始化
+<ol>
+<li><strong>初始化</strong>
     <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -1888,8 +1888,8 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">       </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">rlink</span><span class="p">;</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div></li>
-<li><code>ptr = ptr-&gt;llink-&gt;rlink = ptr-&gt;rlink-&gt;llink</code></li>
-</ul>
+<li>满足<code>ptr = ptr-&gt;llink-&gt;rlink = ptr-&gt;rlink-&gt;llink</code></li>
+</ol>
 </div>
 </div>
 </div>
@@ -1937,10 +1937,9 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<ul>
-<li>问题情境：管理40000名学生与2500门课程的选课关系</li>
+<ol>
+<li><strong>问题情境</strong>：管理40000名学生与2500门课程的选课关系</li>
 <li>
-<p><strong>实现方式</strong></p>
 <ul>
 <li>
 <p><strong>二维数组</strong></p>
@@ -1954,12 +1953,13 @@
 </li>
 </ul>
 </li>
-<li>
-<p><strong>双向链表</strong></p>
-</li>
+</ul>
+<p><strong>实现方式</strong></p>
+<ul>
+<li><strong>双向链表</strong></li>
 </ul>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
