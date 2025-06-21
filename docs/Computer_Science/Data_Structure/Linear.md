@@ -2,14 +2,14 @@
 ## 线性表 List
 ### 实现方式
 === "数组"
-    - 缺点：
+    1. **缺点：**
         - 需要预估数组最大容量
         - 插入和删除元素的时间复杂度为$O(N)$
-    - 优点：
+    2. **优点：**
         - 查找任何数据的时间复杂度均为$O(1)$
 
 === "单向链表"
-    - 初始化
+    1. **初始化**
         ```c
         typedef struct list_node *list_ptr;
         typedef struct list_node{
@@ -18,19 +18,19 @@
         };
         list_ptr ptr;
         ```
-    - 插入：时间复杂度为$O(1)$
+    2. **插入：**时间复杂度为$O(1)$
         ```c
         temp->next=node->next;
         node->next=temp;
         ```
-    - 删除：时间复杂度为$O(1)$
+    3. **删除：**时间复杂度为$O(1)$
         ```c
         pre->next=node->next;
         free(node);
         ```
 
 === "双向循环链表"
-    - 初始化
+    1. **初始化**
         ```c
         typedef struct node *node_ptr;
         typedef struct node{
@@ -39,7 +39,7 @@
                node_ptr rlink;
         };
         ```
-    - `ptr = ptr->llink->rlink = ptr->rlink->llink`
+    2. 满足`ptr = ptr->llink->rlink = ptr->rlink->llink`
 
 ### 应用
 === "多项式"
@@ -72,9 +72,8 @@
             - 处理稀疏多项式更高效，避免无效计算
 
 === "多重表"
-    - 问题情境：管理40000名学生与2500门课程的选课关系
-    - **实现方式**
-        
+    1. **问题情境**：管理40000名学生与2500门课程的选课关系
+    2. **实现方式**
         - **二维数组**
             
             ```c
