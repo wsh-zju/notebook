@@ -28,6 +28,7 @@ nav:
       - Linear Structure : Computer_Science/Data_Structure/Linear.md
       - Tree : Computer_Science/Data_Structure/Tree.md
       - Heap : Computer_Science/Data_Structure/Heap.md
+      - 不相交集ADT : Computer_Science/Data_Structure/ADT.md
       - Graph : Computer_Science/Data_Structure/Graph.md
       - Sort : Computer_Science/Data_Structure/Sort.md
       - Hash : Computer_Science/Data_Structure/Hash.md

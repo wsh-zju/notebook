@@ -1,6 +1,105 @@
 !!! note "Notice!"
     以下代码均为伪代码！
 
+## 相关定义
+1. **图**
+    - 图=边+点
+    - **分类**：有向图、无向图
+
+    !!! tip "Tips"
+        1. 自循环不被允许
+        2. 两点之间多条边不被考虑
+
+2. **完全图**：边的数量最多
+3. **路径长度**：边的个数
+4. **简单路径**：所有点互异，但是第一个和最后一个可能相同
+5. **环**：第一个点与最后一个相同
+6. **连通的：**无向图每一个顶点到每个其他顶点都存在一条路径
+    - **强连通的**：有向图满足上述性质
+    - **弱连通的**：有向图（不是强连通）去掉方向后的图是连通的
+7. **DAG**：有向无环图
+8. **度（degree）**：
+    - 无向图：一个点与它连接的边的个数
+    - 有向图：`in-degree`、`out-degree`
+
+## 图的表示
+### 二维数组
+**邻接矩阵**
+
+- 对于每条边`(u,v)`，`A[u][v]=1`；不存在该边，则`A[u][v]=0`
+- 如果边有一个权，则等于该权
+
+### 链表
+1. **邻接表**：表示当前节点指向的节点
+
+![](photo/9-8.png){style="width:60%;display: block;margin: 20px auto"}
+
+2. **逆邻接表**：表示指向当前节点的节点
+3. **十字链表**：正邻接表和逆邻接表的整合
+
+![](photo/9-9.png){style="width:80%;display: block;margin: 20px auto"}
+
+## 拓扑排序
+**定义**：对有向无环图(DAG)顶点的排序
+
+### 排序方法
+
+#### 方法一：简单实现
+1. **时间复杂度**：$O(N^2)$
+2. **步骤**：
+  - 找到任意入度为0的顶点`v`
+  - 将`v`加入排序结果
+  - 移除`v`的所有出边(邻接顶点入度减1)
+  - 重复直到所有顶点排序或**检测到环**
+
+```c
+void Topsort(Graph G) {
+    int Counter;
+    Vertex V, W;
+    
+    for(Counter = 0; Counter < NumVertex; Counter++) {
+        V = FindNewVertexOfIndegreeZero();
+        if(V == NotAVertex) {
+            Error("Graph has a cycle");
+            break;
+        }
+        TopNum[V] = Counter;
+        for each W adjacent to V
+            Indegree[W]--;
+    }
+}
+```
+
+### 方法二：队列优化
+1. **时间复杂度**：$O(|V|+|E|)$
+2. **优化**：建立一个队列，存储当前入度为0的点，如果在排序的过程中入度减为0，则送入队列
+
+```c
+void Topsort(Graph G) {
+    Queue Q;
+    int Counter = 0;
+    Vertex V, W;
+    
+    Q = CreateQueue(NumVertex);
+    MakeEmpty(Q);
+    for each vertex V
+        if(Indegree[V] == 0)
+            Enqueue(V, Q);
+    
+    while(!IsEmpty(Q)) {
+        V = Dequeue(Q);
+        TopNum[V] = ++Counter;
+        for each W adjacent to V
+            if(--Indegree[W] == 0)
+                Enqueue(W, Q);
+    }
+    
+    if(Counter != NumVertex)
+        Error("Graph has a cycle");
+    DisposeQueue(Q);
+}
+```
+
 
 ## 最短路径算法
 ### 无权最短路径
@@ -213,7 +312,7 @@ void DFS(Graph G){
     - **割点**：删除其之后图不再连通
     - **双连通子图**
 
-        ![](photo/9-7.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/9-7.png){style="width:60%;display: block;margin: 20px auto"}
 
 2. **利用DFS寻找割点**
     - 先将图整理为树，添加剩余的边为回边
