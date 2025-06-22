@@ -49,7 +49,7 @@
 
     Which algorithm is the fastest for problem size 200?
 
-    **Answer:** A
+    **Answer:** D
 
     **Analysis:** 根据时间复杂度得到数据增多到200时，运行时间增多的倍数
 
@@ -82,15 +82,15 @@
     
     **Analysis:** 
     
-    P1:进行多次迭代，$k$次迭代后得到$T(N)=T(\frac{N}{3^k})+k$，当$\frac{N}{3^k}=1$，即$k=\log_3 n$，$T(N)=T(1)+\log_3 n=O(\log n)$
+    P1:进行多次迭代，$k$次迭代后得到$T(N)=T(\frac{N}{3^k})+k$，当$\frac{N}{3^k}=1$，即$k=\log_3 N$，$T(N)=T(1)+\log_3 N=O(\log N)$
 
     P2:进行多次迭代，$k$次迭代后得到
     $$
     T(N)=3^kT(\frac{N}{3^k})+\sum_{i=0}^{k-1}{3^i}
     $$
-    当$\frac{N}{3^k}=1$，即$k=\log_3 n$ 
+    当$\frac{N}{3^k}=1$，即$k=\log_3 N$ 
     $$
-    T(N)=NT(1)+\frac{N-1}{2}=O(\log n)
+    T(N)=NT(1)+\frac{N-1}{2}=O(N)
     $$
 
 ## HW2 : linear list
@@ -323,13 +323,9 @@ For each pop sequence, print in one line "YES" if it is indeed a possible pop se
 
 2. \* **Among the following threaded binary trees (the threads are represented by dotted curves), which one is the postorder threaded tree **(后序线索二叉树)**?**
 
-    A.![](photo/HW4-1.png)    
-
-    B.![](photo/HW4-2.png)
-
-    C.![](photo/HW4-3.png)
-
-    D.![](photo/HW4-4.png)
+    |A|B|C|D|
+    |:--:|:--:|:--:|:--:|
+    |![](photo/HW4-1.png)|![](photo/HW4-2.png)|![](photo/HW4-3.png)|![](photo/HW4-4.png)|
 
     **Answer:** B
 

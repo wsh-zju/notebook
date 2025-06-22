@@ -65,7 +65,7 @@ ElementType DeleteMin(PriorityQueue H) {
 
 从最后一个**非叶节点**（`H->Size/2`）开始向前执行`PercolateDown`  
 
-## 三、复杂度分析
+#### 复杂度分析
 | 操作       | 时间复杂度 | 空间复杂度 |
 |:--:|:--:|:--:|
 | Insert     | O(log n)   | O(1)       |
