@@ -3255,7 +3255,7 @@
 </tbody>
 </table>
 <p>Which algorithm is the fastest for problem size 200?</p>
-<p><strong>Answer:</strong> A</p>
+<p><strong>Answer:</strong> D</p>
 <p><strong>Analysis:</strong> 根据时间复杂度得到数据增多到200时，运行时间增多的倍数</p>
 </li>
 <li>
@@ -3279,14 +3279,14 @@
 <p>D. <span class="arithmatex">\(O(\log N)\)</span> for P1,<span class="arithmatex">\(O(N\log N)\)</span> for P2</p>
 <p><strong>Answer:</strong> B</p>
 <p><strong>Analysis:</strong> </p>
-<p>P1:进行多次迭代，<span class="arithmatex">\(k\)</span>次迭代后得到<span class="arithmatex">\(T(N)=T(\frac{N}{3^k})+k\)</span>，当<span class="arithmatex">\(\frac{N}{3^k}=1\)</span>，即<span class="arithmatex">\(k=\log_3 n\)</span>，<span class="arithmatex">\(T(N)=T(1)+\log_3 n=O(\log n)\)</span></p>
+<p>P1:进行多次迭代，<span class="arithmatex">\(k\)</span>次迭代后得到<span class="arithmatex">\(T(N)=T(\frac{N}{3^k})+k\)</span>，当<span class="arithmatex">\(\frac{N}{3^k}=1\)</span>，即<span class="arithmatex">\(k=\log_3 N\)</span>，<span class="arithmatex">\(T(N)=T(1)+\log_3 N=O(\log N)\)</span></p>
 <p>P2:进行多次迭代，<span class="arithmatex">\(k\)</span>次迭代后得到
 $$
 T(N)=3^kT(\frac{N}{3^k})+\sum_{i=0}^{k-1}{3^i}
 $$
-当<span class="arithmatex">\(\frac{N}{3^k}=1\)</span>，即<span class="arithmatex">\(k=\log_3 n\)</span> 
+当<span class="arithmatex">\(\frac{N}{3^k}=1\)</span>，即<span class="arithmatex">\(k=\log_3 N\)</span> 
 $$
-T(N)=NT(1)+\frac{N-1}{2}=O(\log n)
+T(N)=NT(1)+\frac{N-1}{2}=O(N)
 $$</p>
 </li>
 </ol>
@@ -3579,10 +3579,24 @@ NO
 </li>
 <li>
 <p>* <strong>Among the following threaded binary trees (the threads are represented by dotted curves), which one is the postorder threaded tree </strong>(后序线索二叉树)<strong>?</strong></p>
-<p>A.<img alt="" src="../photo/HW4-1.png" />    </p>
-<p>B.<img alt="" src="../photo/HW4-2.png" /></p>
-<p>C.<img alt="" src="../photo/HW4-3.png" /></p>
-<p>D.<img alt="" src="../photo/HW4-4.png" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">A</th>
+<th style="text-align: center;">B</th>
+<th style="text-align: center;">C</th>
+<th style="text-align: center;">D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="" src="../photo/HW4-1.png" /></td>
+<td style="text-align: center;"><img alt="" src="../photo/HW4-2.png" /></td>
+<td style="text-align: center;"><img alt="" src="../photo/HW4-3.png" /></td>
+<td style="text-align: center;"><img alt="" src="../photo/HW4-4.png" /></td>
+</tr>
+</tbody>
+</table>
 <p><strong>Answer:</strong> B</p>
 <details class="abstract">
 <summary>后序线索二叉树</summary>
