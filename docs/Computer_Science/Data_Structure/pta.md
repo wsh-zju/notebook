@@ -376,7 +376,7 @@ For each pop sequence, print in one line "YES" if it is indeed a possible pop se
 #### ZigZagging on a tree
 Suppose that all the keys in a binary tree are distinct positive integers.  A unique binary tree can be determined by a given pair of postorder and inorder traversal sequences.  And it is a simple standard routine to print the numbers in level-order.  However, if you think the problem is too simple, then you are too naive.  This time you are supposed to print the numbers in "zigzagging order" -- that is, starting from the root, print the numbers level-by-level, alternating between left to right and right to left.  For example, for the following tree you must output: 1 11 5 8 17 12 20 15.
 
-![](photo/HW4-zag.png)
+![](photo/HW4-zag.png){style="width:30%;display: block;margin: 20px auto"}
 
 **Input Specification:**
 
@@ -510,19 +510,25 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
     **Answer:** C
 
+    **Analysis:**如果节点有两个子节点，通常用其前驱（左子树的最大值）或后继（右子树的最小值）替换它
+
 2. \* **Among the following binary trees, which one can possibly be the decision tree (二分查找的判定树)(the external nodes are excluded) for binary search?**
    
-    A.![](photo/HW5-1.png) 
-
-    B.![](photo/HW5-2.png)
-
-    C.![](photo/HW5-3.png)
-
-    D.![](photo/HW5-4.png)
+    |A|B|C|D|
+    |:--:|:--:|:--:|:--:|
+    |![](photo/HW5-1.png)|![](photo/HW5-2.png)|![](photo/HW5-3.png)|![](photo/HW5-4.png)|
 
     **Answer:** A
     
-    **Analysis:** B选项4、5相加除二向上取整，7、8相加除二向下取整，矛盾。C选项，3、4相加除二向上取整，6、7相加除二向下取整，矛盾。D选项，1、10相加除二向下取整，6、7相加除二向上取整，矛盾。A符合折半查找规则，正确。
+    **Analysis:** 
+    
+    B选项4、5相加除二向上取整，7、8相加除二向下取整，矛盾。
+    
+    C选项，3、4相加除二向上取整，6、7相加除二向下取整，矛盾。
+    
+    D选项，1、10相加除二向下取整，6、7相加除二向上取整，矛盾。
+    
+    A符合折半查找规则，正确。
     
     ??? abstract "二分查找判定树" 
 
@@ -624,16 +630,13 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 
 ??? abstract "Percolate Up and Down" 
+    1. **Percolate Up**
 
-    Percolate Up and Down
-
-     - Percolate Up
-
-         当向堆中**插入**一个新元素时，新元素被添加到堆的末尾（数组的最后一个位置），此时可能会破坏堆的性质，需要通过上浮操作将新元素移动到合适的位置，以恢复堆的性质
+        当向堆中**插入**一个新元素时，新元素被添加到堆的末尾（数组的最后一个位置），此时可能会破坏堆的性质，需要通过上浮操作将新元素移动到合适的位置，以恢复堆的性质
      
-     - Percolate Down
+    2. **Percolate Down**
          
-         当从堆中**删除**根节点（最大堆中的最大值或最小堆中的最小值）时，通常将堆的最后一个元素移动到根节点的位置，此时可能会破坏堆的性质，需要通过下沉操作将新的根节点移动到合适的位置，以恢复堆的性质
+        当从堆中**删除**根节点（最大堆中的最大值或最小堆中的最小值）时，通常将堆的最后一个元素移动到根节点的位置，此时可能会破坏堆的性质，需要通过下沉操作将新的根节点移动到合适的位置，以恢复堆的性质
 
 ### 四、函数题
 **Complete Binary Search Tree**
@@ -662,7 +665,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
     **Answer:** F
     
-    **Analysis:** Union by size:树的高度为$O(\log n)$，树的高度满足公式：
+    **Analysis:** `Union by size`:树的高度为$O(\log n)$，树的高度满足公式：
     $$
     height(T) \leq \lfloor \log_2 n \rfloor +1
     $$
@@ -806,108 +809,19 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 内容：判断是否是哈密顿回路（指一条经过图中每个顶点恰好一次，并且最终回到起始顶点的路径）
 
-## Mid Term
-
-!!! note "Notice!"
-    均为考试中错误的题目，需认真对待！！！
-
-### 一、判断题
-
-1. If a tree is created by union-by-size with $n$ nodes, then each element can have its set name changed at most $\log n$ times.
-   
-   **Answer:** T
-
-2. Linear list is a data structure that represents many-to-1 relations.
-
-    **Answer:** F
-
-    **Analysis:** 线性表中的元素是一对一的线性关系，即每个元素都有唯一的前驱和后继。多对一关系常见于树形结构等。
-
-### 二、单选题
-
-1. There are 8 leaf nodes on the sixth level of a complete binary tree.  Suppose that the root is on the first level, then how many nodes does the complete binary tree have at most?
-
-    A.39
-
-    B.52
-
-    C.79
-
-    D.111
-
-    **Answer:** D
-
-    **Analysis:** 前六层全满，1+2+4+8+16+32+64-16=111
-
-2. Which of the following statements is `FALSE`?
-
-    A.A directed acyclic gragh **(有向无环图)** must be a tree.
-
-    B.There must be no topological order in a directed graph with a cycle.
-
-    C.Topological sorting method can be used to check if there is a cycle in a given directed graph.
-
-    D.Partial order **(偏序关系)**is a precedence relation which is both transitive and irreflexive.
-
-    **Answer:** A
-
-    **Analysis:** A：有向无环图（DAG）不一定是树。树要求每个节点（除根节点外）有且仅有一个入边，而有向无环图只要求没有环，节点入边情况更为灵活，比如可以存在多个节点没有入边等情况
-
-    ??? abstract "偏序关系"
-        - 定义：偏序关系（Partial Order Relation）是集合论中的一个重要概念，用于描述集合中元素之间的顺序关系，是在一个集合上定义的一种二元关系，通常用符号$≤$表示
-        - 满足自反性，反对称性，传递性
-
-### 三、程序填空题
-
-!!! note "Notice!"
-    - 一定要输对变量的名称！！！
-    - 注意下一道题中传入函数的数组如何表示！
-
-1. Build Tree from Inorder and Preorder Traversals
-
-    The function BuildTree is to build and return a binary tree from its inorder and preorder traversal sequences.
-
-    The tree structure is defined as the following:
-        ```c
-        typedef struct Node *PtrToNode;
-        struct Node{
-            int Data;
-            PtrToNode Left, Right;
-        };
-        typedef PtrToNode Tree;
-        ```
-     Please fill in the blanks.
-        ```c
-        Tree BuildTree( int in[], int pre[], int N ){ 
-            //in[] stores the inorder traversal sequence 
-            //and pre[] stores the preorder traversal sequence
-            //N is the number of nodes in the tree
-            Tree T;
-            int i;
-            if (!N) {
-                return NULL;
-            }
-            T = (Tree)malloc(sizeof(struct Node));
-            T->Data = _pre[0]_;
-            for (i=0; i<N; i++)
-                if (in[i]==T->Data) break;
-            T->Left = BuildTree(_in,pre+1,i_);
-            T->Right = BuildTree(_in+i+1,pre+i+1,N-i-1_);
-            return T;
-        }  
-        ```
 
 ## HW9 : Shortest Path Algorithms
 ### 一、判断题
 1. Let $P$ be the shortest path from $S$ to $T$. If the weight of every edge in the graph is incremented by 2, $P$ will still be the shortest path from $S$ to $T$.
 
-   **Answer:** F
-   **Analysis:** 还与经过的边的个数有关，边的个数较多时可能不是最短路径  
+    **Answer:** F
+    
+    **Analysis:** 还与经过的边的个数有关，边的个数较多时可能不是最短路径  
 
 ### 二、单选题
 1. Use Dijkstra algorithm to find the shortest paths from 1 to every other vertices.  In which order that the destinations must be obtained?
 
-    ![](photo/HW9-1.png)
+    ![](photo/HW9-1.png){style="width:60%;display: block;margin: 20px auto"}
 
     A. 2, 5, 3, 4, 6, 7
 
@@ -922,7 +836,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 ## HW10 : Network Flow & Minimum Spanning Tree
 ### 一、单选题
-1. The minimum spanning tree of any weighted graph ____
+1. The minimum spanning tree of any weighted graph ____.
 
     A.must be unique
 
@@ -938,7 +852,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 2. The maximum flow in the network of the given Figure is:
     
-    ![](photo/HW10-1.png)
+    ![](photo/HW10-1.png){style="width:60%;display: block;margin: 20px auto"}
 
     A.104
 
@@ -1206,6 +1120,9 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 
     **Analysis:** 稳定排序算法要求相等元素的相对顺序在排序前后保持不变
 
+    !!! tip "Tips"
+        选择排序，快速排序和堆排序也是不稳定的。
+
 ## HW13 ：Sort2
 ### 一、判断题
 1. **During the sorting, processing every element which is not yet at its final position is called a "run". To sort a list of integers using quick sort,  it may reduce the total number of recursions by processing the small partion first in each run.**
@@ -1252,3 +1169,96 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 - 给定一个哈希表的最终状态（包含部分空位置），要求还原原始的插入序列
 - 哈希表使用线性探测解决冲突
 - 且在插入时若存在多个可选数字，优先选择最小的
+
+## Mid Term
+
+!!! note "Notice!"
+    均为考试中错误的题目，需认真对待！！！
+
+### 一、判断题
+
+1. If a tree is created by union-by-size with $n$ nodes, then each element can have its set name changed at most $\log n$ times.
+   
+    **Answer:** T
+
+2. Linear list is a data structure that represents many-to-1 relations.
+
+    **Answer:** F
+
+    **Analysis:** 线性表中的元素是一对一的线性关系，即每个元素都有唯一的前驱和后继。多对一关系常见于树形结构等。
+
+### 二、单选题
+
+1. There are 8 leaf nodes on the sixth level of a complete binary tree.  Suppose that the root is on the first level, then how many nodes does the complete binary tree have at most?
+
+    A.39
+
+    B.52
+
+    C.79
+
+    D.111
+
+    **Answer:** D
+
+    **Analysis:** 前六层全满，1+2+4+8+16+32+64-16=111
+
+2. Which of the following statements is `FALSE`?
+
+    A.A directed acyclic gragh **(有向无环图)** must be a tree.
+
+    B.There must be no topological order in a directed graph with a cycle.
+
+    C.Topological sorting method can be used to check if there is a cycle in a given directed graph.
+
+    D.Partial order **(偏序关系)**is a precedence relation which is both transitive and irreflexive.
+
+    **Answer:** A
+
+    **Analysis:** A：有向无环图（DAG）不一定是树。树要求每个节点（除根节点外）有且仅有一个入边，而有向无环图只要求没有环，节点入边情况更为灵活，比如可以存在多个节点没有入边等情况
+
+    ??? abstract "偏序关系"
+        **偏序关系（Partial Order Relation）**
+        
+        - 定义：集合论中的一个重要概念，用于描述集合中元素之间的顺序关系，是在一个集合上定义的一种二元关系，通常用符号$≤$表示
+        - 满足自反性，反对称性，传递性
+
+### 三、程序填空题
+
+!!! note "Notice!"
+    - 一定要输对变量的名称！！！
+    - 注意下一道题中传入函数的数组如何表示！
+
+1. **Build Tree from Inorder and Preorder Traversals**
+
+    The function BuildTree is to build and return a binary tree from its inorder and preorder traversal sequences.
+
+    The tree structure is defined as the following:
+        ```c
+        typedef struct Node *PtrToNode;
+        struct Node{
+            int Data;
+            PtrToNode Left, Right;
+        };
+        typedef PtrToNode Tree;
+        ```
+     Please fill in the blanks.
+        ```c
+        Tree BuildTree( int in[], int pre[], int N ){ 
+            //in[] stores the inorder traversal sequence 
+            //and pre[] stores the preorder traversal sequence
+            //N is the number of nodes in the tree
+            Tree T;
+            int i;
+            if (!N) {
+                return NULL;
+            }
+            T = (Tree)malloc(sizeof(struct Node));
+            T->Data = _pre[0]_;
+            for (i=0; i<N; i++)
+                if (in[i]==T->Data) break;
+            T->Left = BuildTree(_in,pre+1,i_);
+            T->Right = BuildTree(_in+i+1,pre+i+1,N-i-1_);
+            return T;
+        }  
+        ```
