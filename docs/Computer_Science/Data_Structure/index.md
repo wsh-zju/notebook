@@ -11,10 +11,9 @@
 1. 时间、空间复杂性$(\Omega / \Theta / O)$及等级
 
 2. 数据结构
-
-- 线性数据结构（堆栈、队列）；树；图
-- 物理表示方式：数组、链表
-  
+   - 线性数据结构（堆栈、队列）；树；图
+   - 物理表示方式：数组、链表
+     
 ### 复习基本框架
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/word.svg" style="height: 3em;"></div>

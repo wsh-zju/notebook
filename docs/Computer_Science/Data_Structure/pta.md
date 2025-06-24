@@ -93,6 +93,7 @@
     T(N)=NT(1)+\frac{N-1}{2}=O(N)
     $$
 
+---
 ## HW2 : linear list
 ### 一、判断题
 1. \* **For a sequentially stored linear list of length $N$, the time complexities for deleting the first element and inserting the last element are $O(1)$ and $O(N)$, respectively.**
@@ -207,6 +208,8 @@ The function `Reverse` is supposed to return the reverse linked list of `L`, wit
         return L;
     }
     ```
+
+---
 ## HW3 : stack
 ### 一、判断题
 1. Push 5 characters `ooops` onto a stack.  In how many different ways that we can pop these characters and still obtain `ooops`?
@@ -298,6 +301,8 @@ For each pop sequence, print in one line "YES" if it is indeed a possible pop se
         }
     }
     ```
+
+---
 ## HW4 : tree
 ### 一、判断题
 1. There exists a binary tree with 2016 nodes in total, and with 16 nodes having only one child.
@@ -479,6 +484,8 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
         printf("\n");
     }
     ```
+
+---
 ## HW5 : binary search tree
 ### 一、判断题
 1. In a binary search tree, the keys on the same level from left to right must be in sorted (non-decreasing) order.
@@ -538,6 +545,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
          - 树的形态要符合二分查找过程中对区间不断划分的逻辑
 
+---
 ## HW6 : complete binary tree & min/max-heap
 ### 一、判断题
 1. If a complete binary tree with 137 nodes is stored in an array (root at position 1), then the nodes at positions 128 and 137 are at the same level.
@@ -659,6 +667,8 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
         }
     }
     ```
+
+---
 ## HW7 : ADT ( disjoint set )
 ### 一、判断题
 1. In Union/Find algorithm, if Unions are done by size, the depth of any node must be no more than $\frac{N}{2}$, but not $O(\log N)$. 
@@ -716,6 +726,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 内容：利用ADT判断两台计算机之间是否可以传输数据
 
+---
 ## HW8 : graph
 ### 一、判断题
 1. \* **In a connected graph, the number of edges must be greater than the number of vertices minus **(减)** 1.**
@@ -809,7 +820,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
 内容：判断是否是哈密顿回路（指一条经过图中每个顶点恰好一次，并且最终回到起始顶点的路径）
 
-
+---
 ## HW9 : Shortest Path Algorithms
 ### 一、判断题
 1. Let $P$ be the shortest path from $S$ to $T$. If the weight of every edge in the graph is incremented by 2, $P$ will still be the shortest path from $S$ to $T$.
@@ -833,7 +844,7 @@ For each test case, print the zigzagging sequence of the tree in a line.  All th
 
     **Answer:** B
 
-
+---
 ## HW10 : Network Flow & Minimum Spanning Tree
 ### 一、单选题
 1. The minimum spanning tree of any weighted graph ____.
@@ -979,6 +990,7 @@ int main() {
 
 [点击查看C语言代码](code_docu/HW10-1.c)
 
+---
 ## HW11 : DFS
 ### 一、判断题
 1. For a graph, if each vertex has an even degree or only two vertexes have odd degree, we can find a cycle that visits every edge exactly once.
@@ -1108,6 +1120,7 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 }
 ```
 
+---
 ## HW12 : Sort1
 ### 一、判断题
 1. Shell sort is stable.
@@ -1123,6 +1136,7 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
     !!! tip "Tips"
         选择排序，快速排序和堆排序也是不稳定的。
 
+---
 ## HW13 ：Sort2
 ### 一、判断题
 1. **During the sorting, processing every element which is not yet at its final position is called a "run". To sort a list of integers using quick sort,  it may reduce the total number of recursions by processing the small partion first in each run.**
@@ -1150,6 +1164,7 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 
     **Analysis:** 第一次排序，第一次的基准到达最终位置；第二次排序，第二次的两个基准到达最终位置。最终一共有三个到达最终位置（注：如果第一次基准在最前或最后，则只有两个到达最终位置）
 
+---
 ## HW14 : Hash1
 ### 一、单选题
 1. Which of the following statements about HASH is true?
@@ -1170,6 +1185,7 @@ void StronglyConnectedComponents(Graph G, void (*visit)(Vertex V)) {
 - 哈希表使用线性探测解决冲突
 - 且在插入时若存在多个可选数字，优先选择最小的
 
+---
 ## Mid Term
 
 !!! note "Notice!"
