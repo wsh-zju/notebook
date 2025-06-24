@@ -2149,7 +2149,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1"><strong>线性探测</strong></label><label for="__tabbed_1_2"><strong>二次探测</strong></label><label for="__tabbed_1_3"><strong>双哈希</strong></label><label for="__tabbed_1_4"><strong>再哈希</strong></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ul>
+<ol>
 <li><strong>原理</strong>：当哈希函数计算出的初始位置已被占用时，顺序检查下一个位置，直到找到空槽或遍历整个表</li>
 <li><strong>核心公式</strong><ul>
 <li><strong>探测函数</strong>：<span class="arithmatex">\(f(i)=i\)</span></li>
@@ -2172,10 +2172,10 @@
    p = \frac{1}{2} \left( 1 + \frac{1}{1 - \lambda} \right)
    $$</p>
 </li>
-</ul>
+</ol>
 </div>
 <div class="tabbed-block">
-<ul>
+<ol>
 <li><strong>核心公式</strong><ul>
 <li><strong>探测函数</strong>：<span class="arithmatex">\(f(i)=i^2\)</span></li>
 <li><strong>位置计算</strong>：<br />
@@ -2187,17 +2187,17 @@
 <li><strong>特殊情况</strong>：如果哈希表的大小为形如<span class="arithmatex">\(4k+3\)</span>的质数，探测函数<span class="arithmatex">\(f(i)=\pm i^2\)</span>可探测整个表</li>
 </ul>
 </li>
-</ul>
+</ol>
 </div>
 <div class="tabbed-block">
-<ul>
+<ol>
 <li><strong>原理</strong>：使用两个哈希函数，其中第一个用来计算初始哈希值</li>
 <li><strong>探测函数</strong>：<span class="arithmatex">\(f(i)=i \times hash_2(x)\)</span></li>
 <li>常用的<strong>第二个哈希函数</strong>：<span class="arithmatex">\(hash_2(x)=R-(x\%R), 其中R是小于哈希表大小的质数\)</span></li>
-</ul>
+</ol>
 </div>
 <div class="tabbed-block">
-<ul>
+<ol>
 <li>触发再哈希的<strong>时机</strong><ul>
 <li>哈希表半满时</li>
 <li>插入操作失败时</li>
@@ -2210,7 +2210,7 @@
 <li>使用新哈希函数重新插入到新哈希表</li>
 </ul>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
