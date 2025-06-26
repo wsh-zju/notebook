@@ -11,7 +11,10 @@ nav:
   - Home: 
     - index.md
   - Computer Science :
-    - Computer System :
+    - 编程语言 :
+      - Python :
+        - 基础语法 : Computer_Science/Python/foundation.md
+    - 计算机系统 :
       - Computer_Science/Computer_System/index.md
       - System I : 
         - Computer_Science/Computer_System/System1/index.md
@@ -23,7 +26,7 @@ nav:
         - ISA : Computer_Science/Computer_System/System1/lecture06.md
         - CPU : Computer_Science/Computer_System/System1/lecture07.md
         - 多周期CPU : Computer_Science/Computer_System/System1/lecture08.md
-    - Data Structure :
+    - 数据结构 :
       - Computer_Science/Data_Structure/index.md
       - Linear Structure : Computer_Science/Data_Structure/Linear.md
       - Tree : Computer_Science/Data_Structure/Tree.md
@@ -35,7 +38,7 @@ nav:
       - PTA Problems : Computer_Science/Data_Structure/pta.md
   - Math and Physics : 
     - Math_and_Physics/index.md
-    - Discrete Mathematics :
+    - 离散数学理论基础 :
       - Math_and_Physics/Discrete_Mathematics/index.md
       - 逻辑与证明: Math_and_Physics/Discrete_Mathematics/chapter1.md
       - 基本结构: Math_and_Physics/Discrete_Mathematics/chapter2.md
@@ -47,6 +50,8 @@ nav:
       - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
       - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
       - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
+  - AI :
+    - 大模型 : AI/
   - Tools :
     - tool/index.md
     - mkdocs : 
