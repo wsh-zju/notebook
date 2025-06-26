@@ -684,18 +684,75 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      程序书写规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序书写规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       标识符规则
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       注释
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多行语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      模块导入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2025,18 +2082,75 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      程序书写规则
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="程序书写规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       标识符规则
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       注释
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      多行语句
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      语法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="语法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      输入与输出
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      模块导入
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2066,7 +2180,15 @@
 
   <h1>基础语法</h1>
 
-<h2 id="_1">标识符规则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">程序书写规则<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li>使用缩进来表示代码块，同一个代码块的语句必须包含<strong>相同的缩进空格数</strong>！</li>
+<li>在同一行中使用多条语句，语句之间使用分号<code>;</code>分割</li>
+</ol>
+</div>
+<h3 id="_2">标识符规则<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>基本规则与C语言相同</li>
 <li><code>Python3</code>允许使用<code>Unicode</code><strong>字符</strong>为标识符，可以用<strong>中文</strong>作为变量名，<strong>非</strong><code>ASCII</code><strong>标识符</strong>也是允许的</li>
@@ -2078,15 +2200,71 @@
 <ol start="3">
 <li><strong>保留字（关键字）</strong>不能用作任何标识符，如<code>if</code>、<code>for</code>、<code>class</code>等不能作为标识符</li>
 </ol>
-<h2 id="_2">注释<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">注释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>单行注释</strong>：以<code>#</code>开头</li>
 <li><strong>多行注释</strong>：<ul>
 <li>在每一行开头使用<code>#</code></li>
-<li>用<code>'''...'''</code>或<code>"""..."""</code>包裹</li>
+<li>用<code>'''</code>或<code>"""</code>包裹</li>
 </ul>
 </li>
 </ol>
+<h3 id="_4">多行语句<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>普通多行语句</strong>：使用反斜杠<code>\</code>来实现多行语句</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">total</span> <span class="o">=</span> <span class="n">item_one</span> <span class="o">+</span> \
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>        <span class="n">item_two</span> <span class="o">+</span> \
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>        <span class="n">item_three</span>
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li>在<code>[]</code>、<code>{}</code>、或<code>()</code>中的多行语句，不需要使用反斜杠<code>\</code></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">total</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;item_one&#39;</span><span class="p">,</span> <span class="s1">&#39;item_two&#39;</span><span class="p">,</span> <span class="s1">&#39;item_three&#39;</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>        <span class="s1">&#39;item_four&#39;</span><span class="p">,</span> <span class="s1">&#39;item_five&#39;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_5">语法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">输入与输出<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>输入</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入：&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li><strong>输出</strong></li>
+</ol>
+<p><code>print</code>默认输出是<strong>换行的</strong>，如果要实现<strong>不换行</strong>需要在变量末尾加上<code>end=""</code></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                <span class="c1"># 换行输出</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span> <span class="n">x</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span> <span class="p">)</span>     <span class="c1"># 不换行输出(输出以空格结尾)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_7">模块导入<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>将<strong>整个模块</strong>导入：<code>import module</code></li>
+<li>从某个模块中导入<strong>某个</strong>函数：<code>from module import function</code></li>
+<li>从某个模块中导入<strong>多个</strong>函数：<code>from module import func1, func2, func3</code></li>
+<li>将某个模块中的<strong>全部函数</strong>导入：<code>from module import *</code></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">区别</p>
+<ol>
+<li>导入<strong>整个模块</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>  <span class="c1"># 需要添加sys.</span>
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li>导入<strong>部分成员</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span><span class="p">,</span><span class="n">path</span>  <span class="c1">#  导入特定的成员</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="c1"># 因为已经导入path成员，所以此处引用时不需要加sys.</span>
+</code></pre></div></td></tr></table></div>
+</div>
 
 
 
