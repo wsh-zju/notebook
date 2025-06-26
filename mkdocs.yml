@@ -13,7 +13,7 @@ nav:
   - Computer Science :
     - 编程语言 :
       - Python :
-        - 基础语法 : Computer_Science/Python/foundation.md
+        - 基础语法 : Computer_Science/Language/Python/foundation.md
     - 计算机系统 :
       - Computer_Science/Computer_System/index.md
       - System I : 
