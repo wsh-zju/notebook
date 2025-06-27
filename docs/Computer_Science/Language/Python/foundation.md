@@ -35,6 +35,7 @@ total = ['item_one', 'item_two', 'item_three',
         'item_four', 'item_five']
 ```
 
+---
 ## 语法
 ### 输入与输出
 1. **输入**
@@ -52,6 +53,15 @@ print(x)                # 换行输出
 print( x, end=" " )     # 不换行输出(输出以空格结尾)
 ```
 
+### 变量赋值
+1. `python`中的变量**不需要声明**：每个变量在使用前**都必须赋值**，变量赋值以后该变量**才会被创建**
+2. **允许同时为多个变量赋值**
+
+```python
+a = b = c = 1               # 从后向前赋值，三个变量被赋予相同的数值
+a, b, c = 1, 2, "runoob"    # a=1, b=2, c="runoob"
+```
+
 ### 模块导入
 1. 将**整个模块**导入：`import module`
 2. 从某个模块中导入**某个**函数：`from module import function`
@@ -63,12 +73,47 @@ print( x, end=" " )     # 不换行输出(输出以空格结尾)
 
     ```python
     import sys
-    print(sys.path)  # 需要添加sys.
+    print(sys.path)     # 需要添加sys.
     ```
 
     2. 导入**部分成员**
 
     ```python
-    from sys import argv,path  #  导入特定的成员
-    print(path) # 因为已经导入path成员，所以此处引用时不需要加sys.
+    from sys import argv,path   # 导入特定的成员
+    print(path)                 # 因为已经导入path成员，所以此处引用时不需要加sys.
     ```
+
+---
+## 数据类型
+!!! tip "Tips"
+    在 Python 中，变量没有类型，所说的"类型"是变量**所指的内存中对象的类型**
+    
+**分类**：
+
+- **不可变数据**：Number（数字）、String（字符串）、Tuple（元组）
+- **可变数据**：List（列表）、Dictionary（字典）、Set（集合）
+
+
+### 数字（Number）
+1. `python3`支持的数字类型：`int`、`float`、`bool`、`complex`（复数）
+
+!!! note "Notice!"
+    1. `python3`中的`int`表示长整型，没有`long int`
+    2. **查询变量所指的对象类型**的方法
+
+    - `type(x)`：输出对应的数据类型
+    - `isinstance(x,int)`：如果`x`的数据类型为`int`，则输出`True`；反之输出`False`
+  
+??? abstract "del语句"
+    ```python
+    del x               # 删除单个变量
+    del a, b, c         # 删除多个变量
+
+    # 删除容器中的元素
+    lst = [10, 20, 30]
+    del lst[1]          # 删除索引1的元素：lst变为[10, 30]
+    d = {"key1": 1, "key2": 2}
+    del d["key1"]       # 删除键"key1"：d变为{"key2": 2}
+    ```
+
+

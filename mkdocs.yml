@@ -12,6 +12,9 @@ nav:
     - index.md
   - Computer Science :
     - 编程语言 :
+      - C 语言 :
+        - 指针 : Computer_Science/Language/C/pointer.md
+        - 递归与迭代 : Computer_Science/Language/C/recursion.md
       - Python :
         - 基础语法 : Computer_Science/Language/Python/foundation.md
     - 计算机系统 :
@@ -50,8 +53,6 @@ nav:
       - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
       - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
       - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
-  - AI :
-    - 大模型 : AI/
   - Tools :
     - tool/index.md
     - mkdocs : 
