@@ -680,6 +680,15 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      指针
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       数组与指针
     </span>
   </a>
@@ -688,7 +697,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       函数
     </span>
@@ -697,7 +706,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       指针数组和数组指针
     </span>
@@ -711,7 +720,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       字符串与指针
     </span>
@@ -721,7 +730,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       字符串定义
     </span>
@@ -730,7 +739,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       字符串函数
     </span>
@@ -2106,6 +2115,15 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
+      指针
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       数组与指针
     </span>
   </a>
@@ -2114,7 +2132,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       函数
     </span>
@@ -2123,7 +2141,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       指针数组和数组指针
     </span>
@@ -2137,7 +2155,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       字符串与指针
     </span>
@@ -2147,7 +2165,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       字符串定义
     </span>
@@ -2156,7 +2174,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       字符串函数
     </span>
@@ -2195,8 +2213,18 @@
 
   <h1>指针</h1>
 
-<h2 id="_1">数组与指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li><code>a</code>为指针，<code>a[i] ＝ *(a+i)</code></li>
+<li><code>*p++</code>: <code>++</code>和<code>*</code>的优先级相同，<strong>从右向左</strong>运算</li>
+<li>⽆论指向什么类型，所有的指针的<strong>⼤⼩都⼀样</strong>，因为都是地址</li>
+<li>但是指向不同类型数据的指针不能直接互相赋值的 ，为了避免⽤错指针</li>
+</ol>
+</div>
+<h2 id="_2">数组与指针<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>函数原型/声明</strong></li>
 </ol>
@@ -2235,7 +2263,7 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1">// 二维数组</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[][</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_3">指针数组和数组指针<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">指针数组和数组指针<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>指针数组</strong>：储存指针</li>
 </ol>
@@ -2261,21 +2289,21 @@
 <li>用变量定义数组长度时，不能同时初始化</li>
 </ol>
 </div>
-<h2 id="_4">字符串与指针<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">字符串与指针<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Notice!</p>
 <p><code>&amp;</code>运算符不能用于没有地址的变量。</p>
 <p><strong>e.g.</strong> <code>&amp;(a+b)</code> <code>&amp;(a++)</code> <code>&amp;(++a)</code>均不正确</p>
 </div>
-<h3 id="_5">字符串定义<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">字符串定义<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>定义</strong>：字符串是以空字符（'\0'）结尾的 char 类型数组。</li>
 </ol>
 <div class="admonition abstract">
 <p class="admonition-title">字符与字符串</p>
 <ul>
-<li>双引号：字符串</li>
-<li>单引号：单个字符</li>
+<li><strong>双引号</strong>：字符串</li>
+<li><strong>单引号</strong>：单个字符</li>
 <li>e.g. <code>'x'</code> 是一个字符；<code>"x"</code> 是一个字符串（实际上由两个字符<code>'x'</code>、 <code>'\0'</code> 组成）</li>
 </ul>
 </div>
@@ -2305,16 +2333,16 @@
 <a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;string&quot;</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>数组定义</strong>：这个字符串在这⾥，作为本地变量空间⾃动被回收</li>
-<li><strong>指针定义</strong>:这个字符串不知道在哪⾥，需要动态分配空间，可作为函数参数传递</li>
+<li><strong>数组定义</strong>: 这个字符串在这⾥，作为本地变量空间⾃动被回收</li>
+<li><strong>指针定义</strong>: 这个字符串不知道在哪⾥，需要动态分配空间，可作为函数参数传递</li>
 </ul>
-<h3 id="_6">字符串函数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_7">字符串函数<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="admonition abstract">
 <p class="admonition-title">单字符的输入和输出</p>
-<ul>
+<ol>
 <li><code>getchar()</code>: 读取但不存储输入；包括<code>'\n'</code></li>
 <li><code>putchar(char a)</code>: 返回写了几个字符，返回<code>EOF(-1)</code>表示写失败</li>
-</ul>
+</ol>
 </div>
 <p><strong>头文件</strong>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
@@ -2329,7 +2357,7 @@
 <ol start="2">
 <li><code>gets(str)</code> </li>
 </ol>
-<p>读取<strong>整行输入</strong>，直至换行符**（不读入换行符）</p>
+<p>读取<strong>整行输入</strong>，直至换行符<strong>（不读入换行符）</strong></p>
 <div class="admonition bug">
 <p class="admonition-title">Error</p>
 <p>无法限制输入长度，容易导致缓冲区溢出，所以用 <code>fgets()</code> 代替</p>
@@ -2340,7 +2368,8 @@
 <ul>
 <li>会<strong>读入并且存储换行符</strong>（如果空间足够）</li>
 <li>最后一个参数是要读入的文件（如果读入从键盘输入的数据，则以 <code>stdin</code> 作为参数）</li>
-<li>与 <code>fputs()</code> 配合使用；如果读到文件结尾则返回 <code>NULL</code></li>
+<li>与 <code>fputs()</code> 配合使用</li>
+<li>如果读到文件结尾则返回 <code>NULL</code></li>
 </ul>
 <ol start="4">
 <li><code>gets_s(str, sizeof(str))</code> </li>
@@ -2352,8 +2381,12 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="nf">strlen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>计算<strong>包括空格和标点符号</strong>在内的字符数</p>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p><code>\0</code>标志字符串的结束，但不是字符串的⼀部，计算字符串长度时不包含末尾的<code>\0</code>.</p>
+</div>
 <div class="admonition abstract">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">sizeof与strlen</p>
 <p>(1) 区分 <code>sizeof</code> <strong>运算符</strong>：<code>char a[10] = "string."; sizeof(a)=10; strlen(a)=7;</code></p>
 <p>(2)<code>sizeof</code> 与 <code>strlen()</code> 返回值均对应 <code>%zd</code></p>
 </div>
@@ -2445,6 +2478,29 @@
 </div>
 </div>
 </div>
+<details class="abstract">
+<summary>处理换行符的方法</summary>
+<p><strong>(1) 替换换行符为字符串结束符</strong><br />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">words</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div></p>
+<p><strong>(2) 丢弃输入缓冲区中的多余字符</strong><br />
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div></p>
+</details>
+<details class="abstract">
+<summary>字符串的修改</summary>
+<ol>
+<li>当指针<strong>直接指向字符串常量</strong>时，字符串常量通常存储在<strong>只读数据段</strong>，<strong>不能</strong>通过指针去修改字符串常量的内容（否则会导致运行时错误，如<strong>段错误</strong>）</li>
+</ol>
+<p>e.g.  <code>char* s = "Hello, world!";</code></p>
+<p><code>s</code>实际上是<code>const char* s</code>，不能对<code>s</code>所指的字符串做写⼊和修改（即不能之后写<code>s[0]='H';</code>）</p>
+<ol start="2">
+<li>对于<strong>指向动态分配内存</strong>的指针字符串，其存储的字符串在动态分配的<strong>堆空间</strong>中，<strong>可以</strong>根据实际情况进行修改（只要操作合法且在分配的内存范围内）</li>
+<li>如果需要修改字符串，应该⽤<strong>数组</strong>：<code>char s[] = "Hello, world!";</code></li>
+</ol>
+</details>
 
 
 
