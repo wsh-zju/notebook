@@ -17,6 +17,8 @@ nav:
         - Computer_Science/Language/C/index.md
         - 指针 : Computer_Science/Language/C/pointer.md
         - 递归与迭代 : Computer_Science/Language/C/recursion.md
+        - 程序结构 : Computer_Science/Language/C/structure.md
+        - 常用知识汇总 : Computer_Science/Language/C/accumulate.md
       - Python :
         - Computer_Science/Language/Python/index.md
         - 基础语法 : Computer_Science/Language/Python/foundation.md
