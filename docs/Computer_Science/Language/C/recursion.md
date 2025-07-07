@@ -1,12 +1,12 @@
 ## 递归
 1. **递归基础**
 
-- **Base Case**：⾄少存在⼀种情况，不再进⼀步递归就可以直接得到结果
-- **Make Progress**：每⼀次递归都是向着base case前进
-- **Always Believe**：始终相信递归是可⾏的
-- **Compound Interest Rule**：不要在不同的递归调⽤中做相同的计算
+- `Base Case`：⾄少存在⼀种情况，不再进⼀步递归就可以直接得到结果
+- `Make Progress`：每⼀次递归都是向着`base case`前进
+- `Always Believe`：始终相信递归是可⾏的
+- `Compound Interest Rule`：不要在不同的递归调⽤中做相同的计算
 
-2. **分类**
+1. **分类**
 
 - **线性递归**：每⼀次递进只调⽤⼀次⾃⼰；**e.g.** 阶乘
 - **树状递归**：每⼀次递进要调⽤两次或者多次⾃⼰；**e.g.** 斐波那契数列
