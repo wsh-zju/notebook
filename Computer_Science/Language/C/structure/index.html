@@ -18,7 +18,7 @@
         <link rel="prev" href="../recursion/">
       
       
-        <link rel="next" href="../accumulate/">
+        <link rel="next" href="../file/">
       
       
       <link rel="icon" href="../../../../style/images/favicon_io/favicon.ico">
@@ -586,6 +586,8 @@
       
         
       
+        
+      
     
     
     
@@ -758,7 +760,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      预定义的宏：
+      预定义的宏
     </span>
   </a>
   
@@ -842,6 +844,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    文件底层操作
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2229,7 +2254,7 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      预定义的宏：
+      预定义的宏
     </span>
   </a>
   
@@ -2407,10 +2432,10 @@
 </code></pre></div></td></tr></table></div></li>
 </ol>
 </div>
-<ol>
+<ol start="6">
 <li><code>#error "my bad"</code></li>
 </ol>
-<h3 id="_4">预定义的宏：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">预定义的宏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><code>__LINE__</code>：表示所处的行号</li>
 <li><code>__FILE__</code>：文件名</li>
@@ -2421,18 +2446,20 @@
 <h2 id="_5">变量的储存类型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="_6">存储类型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>静态存储</strong>：<ul>
+<li><strong>静态存储</strong>：</li>
+</ol>
+<ul>
 <li><strong>变量类型</strong>：静态变量</li>
-<li><strong>特点</strong>：在程序<strong>编译</strong>时就已经分配好内存空间，该变量一直占有<strong>固有</strong>的内存空间，<strong>程序结束后</strong>才释放该部分内存空间</li>
-</ul>
+<li>
+<p><strong>特点</strong>：在程序<strong>编译</strong>时就已经分配好内存空间，该变量一直占有<strong>固有</strong>的内存空间，<strong>程序结束后</strong>才释放该部分内存空间
+2. <strong>动态存储</strong>：</p>
 </li>
-<li><strong>动态存储</strong>：<ul>
-<li><strong>变量类型</strong>：局部变量</li>
+<li>
+<p><strong>变量类型</strong>：局部变量</p>
+</li>
 <li><strong>特点</strong>：在程序运行过程中，只有当<strong>变量所在的函数被调用时</strong>，该变量才会被分配内存空间，当<strong>被调函数调用结束</strong>时，该变量内存空间就会被释放，值就会消失</li>
 <li>动态存储区：堆</li>
 </ul>
-</li>
-</ol>
 <h3 id="_7">变量声明类型<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>自动变量声明</strong> <code>auto</code></li>
@@ -2595,7 +2622,7 @@
 <a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="k">$(</span>OBJS<span class="k">)</span><span class="w"> </span><span class="nb">test</span>
 </code></pre></div></td></tr></table></div>
 <ol>
-<li><code>Makefile</code>变量：</li>
+<li><code>Makefile</code><strong>变量</strong>：</li>
 </ol>
 <ul>
 <li><code>$^</code>: 表示上面的所有被依赖文件</li>
@@ -2741,13 +2768,13 @@
         
         
           
-          <a href="../accumulate/" class="md-footer__link md-footer__link--next" aria-label="下一页: 常用知识汇总">
+          <a href="../file/" class="md-footer__link md-footer__link--next" aria-label="下一页: 文件底层操作">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                常用知识汇总
+                文件底层操作
               </div>
             </div>
             <div class="md-footer__button md-icon">
