@@ -26,7 +26,7 @@ typedef struct list{
 !!! abstract "Note"
     `#pragma once`也可以起到相同的保护作⽤，但是不是所有的编译器都⽀持。
 
-??? abstract """与<>的区别"""
+??? abstract """与<>的区别"
     1. `""`：先在当前目录中寻找，找不到再跳到指定目录
     2. `<>`：只在编译器指定的目录中寻找
     

@@ -1,10 +1,13 @@
 ## 常见函数
 ### 绝对值函数
 1. `<stdlib.h>`
+
 - `abs()` : int
 - `labs()` : long int
 - `llabs()` : long long int
+
 2. `<math.h>`
+
 - `fabs()` : double
 
 ### 字符串和整数之间的转换
@@ -13,8 +16,7 @@
 
 ```c
 char str2[]= "0x12";
-long int num2= strtol(str2, NULL, 0);
-//base=0代表自动判断进制
+long int num2= strtol(str2, NULL, 0);      //base=0代表自动判断进制
 printf("转换后的值: %ld\n", num2);
 sprintf(str2, "%lo", num2);
 printf("转换后的字符串: %s\n", str2);
@@ -93,7 +95,7 @@ free(arr);
 
 ## 运算符
 | 优先级 | 运算符 | 结合规律   |
-|:--:|:--:|:--:|
+|:--:|:--|:--:|
 | 1      | `[]` `()` <br> `.`(结构体访问成员点方式) `->`(结构体访问成员箭头方式) | 从左向右   |
 | 2      | `++` `--` `sizeof` <br> `*`(指针解引用) `&`(取地址) `+/-`(正负号) <br> `~`(按位取反) `!` | **从右向左**   |
 | 3      | 强制类型转换                                          | **从右向左**   |
