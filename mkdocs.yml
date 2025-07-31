@@ -123,16 +123,16 @@ theme:
 
 markdown_extensions:
   - toc:
-      permalink: true
-      toc_depth: 4
-  - abbr
+      permalink: true      # 目录标题添加锚点
+      toc_depth: 4         # 目录显示到4级标题
+  - abbr                   # 支持缩写
   - meta
   - def_list
   - attr_list
   - md_in_html
   - sane_lists
-  - admonition
-  - pymdownx.keys
+  - admonition             # 支持警告/提示块(!!!/???)
+  - pymdownx.keys          # 按键
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.critic

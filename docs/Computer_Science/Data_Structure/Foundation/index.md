@@ -19,7 +19,7 @@
      
 ### 复习基本框架
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../../style/images/word.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../../style/images/word.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数据结构复习总结</div>
 <div class="file-meta">2025-6-22 / 2 pages</div>
