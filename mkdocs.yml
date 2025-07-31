@@ -133,8 +133,8 @@ markdown_extensions:
   - sane_lists
   - admonition             # 支持警告/提示块(!!!/???)
   - pymdownx.keys          # 按键
-  - pymdownx.mark
-  - pymdownx.tilde
+  - pymdownx.mark          # 高亮（==高亮==）
+  - pymdownx.tilde         # 支持删除线/下标（~~删除线~~/^^下标^^）
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.tabbed:
@@ -152,8 +152,8 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
-      linenums: true # 显示行号
-      auto_title: true # 显示编程语言名称
+      linenums: true      # 显示行号
+      auto_title: true    # 显示编程语言名称
   - pymdownx.arithmatex:
       generic: true
   
