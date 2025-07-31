@@ -12,25 +12,25 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Tree/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Foundation/">
       
       
-        <link rel="prev" href="../Linear/">
+        <link rel="prev" href="../../Computer_System/System1/lecture08/">
       
       
-        <link rel="next" href="../Heap/">
+        <link rel="next" href="Linear/">
       
       
       <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Tree - Lucy Wisteria's Notebook</title>
+        <title>数据结构基础 - Lucy Wisteria's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tree
+              数据结构基础
             
           </span>
         </div>
@@ -221,7 +221,7 @@
         <a href="https://github.com/wsh-zju/notebook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     wsh-zju/notebook
@@ -379,7 +379,7 @@
       <a href="https://github.com/wsh-zju/notebook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     wsh-zju/notebook
@@ -1214,6 +1214,55 @@
     
       
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    数据结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
           
         
       
@@ -1244,11 +1293,11 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   
@@ -1261,14 +1310,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_1">
             <span class="md-nav__icon md-icon"></span>
             数据结构基础
           </label>
@@ -1283,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Linear/" class="md-nav__link">
+      <a href="Linear/" class="md-nav__link">
         
   
   
@@ -1303,30 +1352,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Tree
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="Tree/" class="md-nav__link">
         
   
   
@@ -1337,66 +1366,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      树
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="树">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#traversal" class="md-nav__link">
-    <span class="md-ellipsis">
-      树的遍历（traversal）
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      完全二叉树
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      线索二叉树
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1409,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Heap/" class="md-nav__link">
+      <a href="Heap/" class="md-nav__link">
         
   
   
@@ -1432,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADT/" class="md-nav__link">
+      <a href="ADT/" class="md-nav__link">
         
   
   
@@ -1455,7 +1424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Graph/" class="md-nav__link">
+      <a href="Graph/" class="md-nav__link">
         
   
   
@@ -1478,7 +1447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Sort/" class="md-nav__link">
+      <a href="Sort/" class="md-nav__link">
         
   
   
@@ -1501,7 +1470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Hash/" class="md-nav__link">
+      <a href="Hash/" class="md-nav__link">
         
   
   
@@ -1524,7 +1493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pta/" class="md-nav__link">
+      <a href="pta/" class="md-nav__link">
         
   
   
@@ -1535,6 +1504,73 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Advanced/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    高级数据结构
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            高级数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2170,6 +2206,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2178,28 +2216,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#data-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      树
+      Data Structure
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="树">
+    <nav class="md-nav" aria-label="Data Structure">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#traversal" class="md-nav__link">
-    <span class="md-ellipsis">
-      树的遍历（traversal）
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      完全二叉树
+      主要内容
     </span>
   </a>
   
@@ -2208,7 +2237,16 @@
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      线索二叉树
+      基本概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      复习基本框架
     </span>
   </a>
   
@@ -2235,7 +2273,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Tree.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Foundation/index.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2243,85 +2281,42 @@
   
 
 
-  <h1>Tree</h1>
-
-<h2 id="_1">树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>节点与边的关系</strong></li>
-</ol>
-<p><span class="arithmatex">\(n_x\)</span>：下标 <span class="arithmatex">\(x\)</span> 表示有 <span class="arithmatex">\(x\)</span> 个子节点</p>
-<p><strong>公式</strong>：<span class="arithmatex">\(\sum in_i = \sum n_i - 1\)</span> ，其中 <span class="arithmatex">\(\sum in_i\)</span> 表示边数，<span class="arithmatex">\(\sum n_i\)</span> 表示总节点个数</p>
-<h3 id="traversal">树的遍历（traversal）<a class="headerlink" href="#traversal" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>    1
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>   / \
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  2   3
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a> / \ / \
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>4  5 6  7
-</code></pre></div></td></tr></table></div>
-<ol>
-<li><strong>中序遍历（inorder）</strong><ul>
-<li>顺序：左→根→右</li>
-<li>e.g. <span class="arithmatex">\(4 \to 2 \to 5 \to 1 \to 6 \to 3 \to 7\)</span></li>
-</ul>
-</li>
-<li><strong>先序遍历（preorder）</strong><ul>
-<li>顺序：根→左→右</li>
-<li>e.g. <span class="arithmatex">\(1 \to 2 \to 4 \to 5 \to 3 \to 6 \to 7\)</span></li>
-</ul>
-</li>
-<li><strong>后序遍历（postorder）</strong><ul>
-<li>顺序：左→右→根</li>
-<li>e.g. <span class="arithmatex">\(4 \to 5 \to 2 \to 6 \to 7 \to 3 \to 1\)</span> </li>
-</ul>
-</li>
-<li><strong>层序遍历（level - order）</strong><ul>
-<li>逐层遍历</li>
-<li>e.g. <span class="arithmatex">\(1 \to 2 \to 3 \to 4 \to 5 \to 6 \to 7\)</span> </li>
-</ul>
-</li>
-</ol>
-<h3 id="_2">完全二叉树<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>对于第 <span class="arithmatex">\(i\)</span> 个节点</strong><ul>
-<li>左子节点：<span class="arithmatex">\(2i\)</span></li>
-<li>右子节点：<span class="arithmatex">\(2i+1\)</span></li>
-<li>父节点：<span class="arithmatex">\(i/2\)</span>(整除)</li>
-</ul>
-</li>
-</ul>
-<h3 id="_3">线索二叉树<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><strong>threaded binary trees</strong></p>
-<ol>
-<li><strong>定义</strong>：每个节点 = <code>data</code>+<code>left</code>+<code>right</code>+<strong><code>ltag</code>+<code>rtag</code>（标志位）</strong></li>
-<li><strong><code>ltag</code></strong><ul>
-<li>ltag=0：left指向该节点的左子节点</li>
-<li>ltag=1：left指向相应遍历下的<strong>前驱</strong>节点</li>
-</ul>
-</li>
-<li><strong><code>rtag</code></strong><ul>
-<li>rtag=0：right指向该节点的右子节点</li>
-<li>rtag=1：right指向相应遍历下的<strong>后继</strong>节点</li>
-</ul>
-</li>
-</ol>
-<details class="example">
-<summary>Example</summary>
-<p>HW4 二、单选题 2</p>
-</details>
+<h1 id="_1">数据结构基础<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="data-structure">Data Structure<a class="headerlink" href="#data-structure" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<p class="admonition-title">Tips</p>
+<p>本部分内容基本完结（已考完<strong>(｡･ω･｡)ﾉ</strong>，虽然感觉很难……）</p>
+</div>
+<h3 id="_2">主要内容<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>已知前序遍历和后序遍历无法得出二叉树</p>
+<p>三大类数据结构</p>
 </li>
 <li>
-<p>n个数据进入堆栈，弹出的顺序等于n个节点组成的二叉树的个数</p>
+<p>两大类问题</p>
 </li>
 </ol>
+<h3 id="_3">基本概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>时间、空间复杂性<span class="arithmatex">\((\Omega / \Theta / O)\)</span>及等级</p>
+</li>
+<li>
+<p>数据结构</p>
+<ul>
+<li>线性数据结构（堆栈、队列）；树；图</li>
+<li>物理表示方式：数组、链表</li>
+</ul>
+</li>
+</ol>
+<h3 id="_4">复习基本框架<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="card file-block">
+<div class="file-icon"><img src="../../style/images/word.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">数据结构复习总结</div>
+<div class="file-meta">2025-6-22 / 2 pages</div>
+</div>
+<p><a class="down-button" target="_blank" href="files/数据结构复习.doc" markdown="1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M256 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v210.7l-41.4-41.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l96 96c12.5 12.5 32.8 12.5 45.3 0l96-96c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 242.7zM64 320c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64v-32c0-35.3-28.7-64-64-64h-46.9l-56.6 56.6c-31.2 31.2-81.9 31.2-113.1 0L110.9 320zm304 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg></span> Download</a></p>
 </div>
 
 
@@ -2358,7 +2353,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Linear/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Linear Structure">
+          <a href="../../Computer_System/System1/lecture08/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 多周期CPU">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2368,20 +2363,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Linear Structure
+                多周期CPU
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Heap/" class="md-footer__link md-footer__link--next" aria-label="下一页: Heap">
+          <a href="Linear/" class="md-footer__link md-footer__link--next" aria-label="下一页: Linear Structure">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Heap
+                Linear Structure
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2398,7 +2393,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 ～ (｡･ω･｡)ﾉ LucyWisteria
+      Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
     </div>
   
   
@@ -2424,7 +2419,7 @@
       <script id="__config" type="application/json">{"base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
