@@ -5,7 +5,7 @@ repo_name: wsh-zju/notebook
 site_url: https://wsh-zju.github.io/notebook/
 repo_url: https://github.com/wsh-zju/notebook
 edit_uri: tree/main/docs
-copyright: Copyright &copy; 2024 ～ (｡･ω･｡)ﾉ LucyWisteria
+copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
 
 nav:
   - Home: 
@@ -36,16 +36,19 @@ nav:
         - ISA : Computer_Science/Computer_System/System1/lecture06.md
         - CPU : Computer_Science/Computer_System/System1/lecture07.md
         - 多周期CPU : Computer_Science/Computer_System/System1/lecture08.md
-    - 数据结构基础 :
-      - Computer_Science/Data_Structure/index.md
-      - Linear Structure : Computer_Science/Data_Structure/Linear.md
-      - Tree : Computer_Science/Data_Structure/Tree.md
-      - Heap : Computer_Science/Data_Structure/Heap.md
-      - 不相交集ADT : Computer_Science/Data_Structure/ADT.md
-      - Graph : Computer_Science/Data_Structure/Graph.md
-      - Sort : Computer_Science/Data_Structure/Sort.md
-      - Hash : Computer_Science/Data_Structure/Hash.md
-      - PTA Problems : Computer_Science/Data_Structure/pta.md
+    - 数据结构 :
+      - 数据结构基础 :
+        - Computer_Science/Data_Structure/Foundation/index.md
+        - Linear Structure : Computer_Science/Data_Structure/Foundation/Linear.md
+        - Tree : Computer_Science/Data_Structure/Foundation/Tree.md
+        - Heap : Computer_Science/Data_Structure/Foundation/Heap.md
+        - 不相交集ADT : Computer_Science/Data_Structure/Foundation/ADT.md
+        - Graph : Computer_Science/Data_Structure/Foundation/Graph.md
+        - Sort : Computer_Science/Data_Structure/Foundation/Sort.md
+        - Hash : Computer_Science/Data_Structure/Foundation/Hash.md
+        - PTA Problems : Computer_Science/Data_Structure/Foundation/pta.md
+      - 高级数据结构 :
+        - Computer_Science/Data_Structure/Advanced/index.md 
   - Math and Physics : 
     - Math_and_Physics/index.md
     - 离散数学理论基础 :
