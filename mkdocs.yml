@@ -49,6 +49,7 @@ nav:
         - PTA Problems : Computer_Science/Data_Structure/Foundation/pta.md
       - 高级数据结构 :
         - Computer_Science/Data_Structure/Advanced/index.md 
+        - Tree : Computer_Science/Data_Structure/Advanced/tree.md
   - Math and Physics : 
     - Math_and_Physics/index.md
     - 离散数学理论基础 :
