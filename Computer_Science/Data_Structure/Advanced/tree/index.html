@@ -1630,7 +1630,7 @@
         <li class="md-nav__item">
   <a href="#bst" class="md-nav__link">
     <span class="md-ellipsis">
-      BST 二叉搜索树
+      二叉搜索树 BST
     </span>
   </a>
   
@@ -1639,11 +1639,11 @@
         <li class="md-nav__item">
   <a href="#avl" class="md-nav__link">
     <span class="md-ellipsis">
-      AVL 平衡二叉树
+      平衡二叉树 AVL
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AVL 平衡二叉树">
+    <nav class="md-nav" aria-label="平衡二叉树 AVL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2341,7 +2341,7 @@
         <li class="md-nav__item">
   <a href="#bst" class="md-nav__link">
     <span class="md-ellipsis">
-      BST 二叉搜索树
+      二叉搜索树 BST
     </span>
   </a>
   
@@ -2350,11 +2350,11 @@
         <li class="md-nav__item">
   <a href="#avl" class="md-nav__link">
     <span class="md-ellipsis">
-      AVL 平衡二叉树
+      平衡二叉树 AVL
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="AVL 平衡二叉树">
+    <nav class="md-nav" aria-label="平衡二叉树 AVL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2421,7 +2421,7 @@
 
   <h1>Tree</h1>
 
-<h2 id="bst">BST 二叉搜索树<a class="headerlink" href="#bst" title="Permanent link">&para;</a></h2>
+<h2 id="bst">二叉搜索树 BST<a class="headerlink" href="#bst" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>条件</strong>：任何节点的左子树 &lt; 根节点 &lt; 右子树</li>
 <li><strong>性质</strong>：中序遍历一定是从小到大</li>
@@ -2443,7 +2443,7 @@
 </ol>
 </details>
 <hr />
-<h2 id="avl">AVL 平衡二叉树<a class="headerlink" href="#avl" title="Permanent link">&para;</a></h2>
+<h2 id="avl">平衡二叉树 AVL<a class="headerlink" href="#avl" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p><strong>平衡因子</strong>：节点的左子树高度 - 右子树高度</p>
@@ -2579,7 +2579,9 @@
 <p><strong>没有孩子</strong>：</p>
 <ul>
 <li><strong>红节点</strong>：直接删除</li>
-<li><strong>黑节点</strong>：删除后变为<strong>双黑节点</strong>，相对于双黑节点进行调整<ul>
+<li>
+<p><strong>黑节点</strong>：删除后变为<strong>双黑节点</strong>，相对于双黑节点进行调整</p>
+<ul>
 <li>
 <p><strong>兄弟节点为黑色</strong>：</p>
 <ul>
@@ -2626,10 +2628,12 @@
 </div>
 </li>
 <li>
-<p><strong>兄弟节点没有红孩子</strong>：兄弟变红，双黑上移，遇到红节点/根节点变为单黑；若仍存在双黑，则相对于双黑节点继续调整
-        - <strong>兄弟节点为红色</strong>：<code>s</code>和<code>p</code>变色，<code>p</code>朝双黑节点旋转，保持双黑继续调整</p>
+<p><strong>兄弟节点没有红孩子</strong>：兄弟变红，双黑上移，遇到红节点/根节点变为单黑；若仍存在双黑，则相对于双黑节点继续调整</p>
 </li>
 </ul>
+</li>
+<li>
+<p><strong>兄弟节点为红色</strong>：<code>s</code>和<code>p</code>变色，<code>p</code>朝双黑节点旋转，保持双黑继续调整</p>
 </li>
 </ul>
 </li>
