@@ -2580,9 +2580,13 @@
 <ul>
 <li><strong>红节点</strong>：直接删除</li>
 <li><strong>黑节点</strong>：删除后变为<strong>双黑节点</strong>，相对于双黑节点进行调整<ul>
-<li><strong>兄弟节点为黑色</strong>：<ul>
+<li>
+<p><strong>兄弟节点为黑色</strong>：</p>
+<ul>
 <li>
 <p><strong>兄弟节点至少有一个红孩子</strong>：判断<code>p</code>（父亲节点）、<code>s</code>（兄弟节点）、<code>r</code>（红孩子）三个节点的形态，进行变色，并且旋转，结束后双黑变单黑           </p>
+<div class="admonition abstract">
+<p class="admonition-title">形态种类</p>
 <table>
 <thead>
 <tr>
@@ -2617,20 +2621,13 @@
 <td style="text-align: left;"><code>r</code>变为<code>p</code>，<code>p</code>变黑</td>
 <td style="text-align: left;">先<code>s</code>右旋后<code>p</code>左旋</td>
 </tr>
-<tr>
-<td style="text-align: center;">- <strong>兄弟节点没有红孩子</strong>：兄弟变红，双黑上移，遇到红节点/根节点变为单黑；若仍存在双黑，则相对于双黑节点继续调整</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">- <strong>兄弟节点为红色</strong>：<code>s</code>和<code>p</code>变色，<code>p</code>朝双黑节点旋转，保持双黑继续调整</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
 </tbody>
 </table>
+</div>
+</li>
+<li>
+<p><strong>兄弟节点没有红孩子</strong>：兄弟变红，双黑上移，遇到红节点/根节点变为单黑；若仍存在双黑，则相对于双黑节点继续调整
+        - <strong>兄弟节点为红色</strong>：<code>s</code>和<code>p</code>变色，<code>p</code>朝双黑节点旋转，保持双黑继续调整</p>
 </li>
 </ul>
 </li>
