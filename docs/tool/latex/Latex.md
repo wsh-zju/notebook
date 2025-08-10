@@ -55,6 +55,7 @@
 | $\mapsto$ | `\mapsto` | $\rightharpoonup$ | `\rightharpoonup` |
 
 ## 标注符号
+
 | 符号 | LaTeX 代码 | 符号 | LaTeX 代码 |
 |:--:|:--:|:--:|:--:|
 | $\hat{a}$        | `\hat{a}`        | $\widetilde{A}$  | `\widetilde{A}`  |
@@ -63,6 +64,7 @@
 | $\bar{a}$        | `\bar{a}`        |$\vec{a}$        | `\vec{a}`        |
 | $\breve{a}$      | `\breve{a}`      |$\widehat{A}$    | `\widehat{A}`    |
 |$\overline{AB}$|`\overline{AB}`|||
+
 ## 括号和定界符
 
 | 符号 | LaTeX 代码 | 符号 | LaTeX 代码 |
@@ -145,22 +147,16 @@ x & \text{如果 } x \geq 0 \\
 4. 编号公式: `\begin{equation}...\end{equation}`
 
 ## 其他常用符号
-| 符号 | LaTeX 代码 | 名称 |
-|:--:|:--:|:--:|
-| $\aleph$    | `\aleph`   | 阿列夫数 |
-| $\hbar$    | `\hbar`    | 约化普朗克常数 |
-| $\Im$    | `\Im`      | 虚部 |
-| $\Re$    | `\Re`      | 实部 |
-| $\prime$    | `\prime`   | 素数符号 |
-| $\emptyset$    | `\emptyset` | 空集 |
-| $\forall$    | `\forall`  | 全称量词 |
-| $\exists$    | `\exists`  | 存在量词 |
-| $\neg$    | `\neg`     | 逻辑非 |
-| $\oplus$    | `\oplus`   | 异或 |
-| $\otimes$    | `\otimes`  | 张量积 |
-| $\odot$    | `\odot`    | 点积 |
-| $\therefore$    | `\therefore` | 所以 |
-| $\because$    | `\because` | 因为 |
+
+| 符号 | LaTeX 代码 | 名称 |符号 | LaTeX 代码 | 名称 |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| $\aleph$    | `\aleph`   | 阿列夫数 | $\hbar$    | `\hbar`    | 约化普朗克常数 |
+| $\Im$    | `\Im`      | 虚部 | $\Re$    | `\Re`      | 实部 |
+| $\prime$    | `\prime`   | 素数符号 | $\emptyset$    | `\emptyset` | 空集 |
+| $\forall$    | `\forall`  | 全称量词 | $\exists$    | `\exists`  | 存在量词 |
+| $\neg$    | `\neg`     | 逻辑非 | $\oplus$    | `\oplus`   | 异或 |
+| $\otimes$    | `\otimes`  | 张量积 | $\odot$    | `\odot`    | 点积 |
+| $\therefore$    | `\therefore` | 所以 | $\because$    | `\because` | 因为 |
 
 
 

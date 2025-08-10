@@ -14,9 +14,3 @@
     此文档仅供本人做笔记！不允许复制粘贴！
 
 
-<iframe 
-  src="https://chat.deepseek.com" 
-  width="100%" 
-  height="600px"
-  frameborder="0"
-></iframe>
