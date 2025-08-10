@@ -1684,6 +1684,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2395,6 +2419,30 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      基本操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2566,17 +2614,13 @@
 <ol start="2">
 <li><strong>删除</strong></li>
 </ol>
-<ul>
-<li>
-<p><strong>只有左孩子/只有右孩子</strong>：直接代替被删除的节点，然后变黑</p>
+<p>（1）<strong>只有左孩子/只有右孩子</strong>：直接代替被删除的节点，然后变黑</p>
 <div class="admonition tip">
 <p class="admonition-title">Notices</p>
 <p>该情况下被删除节点只有可能是<strong>黑色的</strong>！并且不可能是只有左子树/右子树！</p>
 <p>如果节点是红色的或者只有左子树/右子树，则破坏了黑路同的性质。</p>
 </div>
-</li>
-<li>
-<p><strong>没有孩子</strong>：</p>
+<p>（2）<strong>没有孩子</strong>：</p>
 <ul>
 <li><strong>红节点</strong>：直接删除</li>
 <li>
@@ -2637,6 +2681,40 @@
 </li>
 </ul>
 </li>
+</ul>
+<hr />
+<h2 id="b">B树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/1-2.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>特点</strong>：</li>
+</ol>
+<p>（1）<strong>平衡</strong>：所有的叶节点在同一层
+（2）<strong>有序</strong>：节点内的数据有序；满足二叉搜索树的大小顺序。
+（3）<strong>多路</strong>：对于<span class="arithmatex">\(m\)</span>阶B树</p>
+<ul>
+<li><strong>最多</strong>：<span class="arithmatex">\(m\)</span>个分支，<span class="arithmatex">\(m-1\)</span>个数据</li>
+<li><strong>最少</strong>：<ul>
+<li>根节点：2个分支，1个数据</li>
+<li>非根节点：<span class="arithmatex">\(\lceil m/2 \rceil\)</span>个分支，<span class="arithmatex">\(\lceil m/2 \rceil-1\)</span>个数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="_4">基本操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>插入</strong>：先查找到插入的位置进行插入</li>
+</ol>
+<ul>
+<li>如果没有<strong>上溢出</strong>，则无需调整</li>
+<li>如果上溢出，则中间元素<span class="arithmatex">\(\lceil m/2 \rceil\)</span>上移，两边分裂，直至没有上溢出</li>
+</ul>
+<p>2.<strong>删除</strong>：</p>
+<p>（1）<strong>非叶子节点</strong>：用该节点的直接前驱/后继替换</p>
+<p>（2）<strong>叶节点</strong>：</p>
+<ul>
+<li>如果没有<strong>下溢出</strong>，则无需调整</li>
+<li>如果下溢出<ul>
+<li>兄弟够借：借一个数据（父节点下移，兄节点上移）</li>
+<li>兄弟不够借：合并（父节点下移，然后合并）</li>
 </ul>
 </li>
 </ul>
