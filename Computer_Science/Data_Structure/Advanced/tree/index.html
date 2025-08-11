@@ -1708,6 +1708,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      B+树
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2443,6 +2452,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      B+树
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2689,7 +2707,7 @@
 <li><strong>特点</strong>：</li>
 </ol>
 <p>（1）<strong>平衡</strong>：所有的叶节点在同一层<br/>
-（2）<strong>有序</strong>：节点内的数据有序；满足二叉搜索树的大小顺序。<br/>
+（2）<strong>有序</strong>：节点内的数据有序；满足二叉搜索树的大小顺序<br/>
 （3）<strong>多路</strong>：对于<span class="arithmatex">\(m\)</span>阶B树</p>
 <ul>
 <li><strong>最多</strong>：<span class="arithmatex">\(m\)</span>个分支，<span class="arithmatex">\(m-1\)</span>个数据</li>
@@ -2707,9 +2725,11 @@
 <li>如果没有<strong>上溢出</strong>，则无需调整</li>
 <li>如果上溢出，则中间元素<span class="arithmatex">\(\lceil m/2 \rceil\)</span>上移，两边分裂，直至没有上溢出</li>
 </ul>
-<p>2.<strong>删除</strong>：</p>
-<p>（1）<strong>非叶子节点</strong>：用该节点的直接前驱/后继替换</p>
-<p>（2）<strong>叶节点</strong>：</p>
+<ol start="2">
+<li><strong>删除</strong>：</li>
+</ol>
+<p>（1）<strong>非叶子节点</strong>：用该节点的直接前驱/后继替换<br/>
+（2）<strong>叶节点</strong>：</p>
 <ul>
 <li>如果没有<strong>下溢出</strong>，则无需调整</li>
 <li>如果下溢出<ul>
@@ -2718,6 +2738,40 @@
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="b_1">B+树<a class="headerlink" href="#b_1" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../images/1-3.png" style="width:100%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>特点</strong></li>
+</ol>
+<p>（1）所有元素都在叶节点层按顺序排列<br/>
+（2）所有叶节点通过指针相连，形成一个链表<br/>
+（3）非叶子节点由其子节点的最大值构成</p>
+<ol start="2">
+<li><strong>对比</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">B树</th>
+<th style="text-align: left;">B+树</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">所有结点都有关键字及直接指向对应记录的指针</td>
+<td style="text-align: left;">叶结点包含全部关键字及指向相应记录的指针，非叶结点仅作索引</td>
+</tr>
+<tr>
+<td style="text-align: left;">m个分支对应m-1个关键字</td>
+<td style="text-align: left;">m个分支对应m个关键字</td>
+</tr>
+<tr>
+<td style="text-align: left;">支持随机查找，但不支持顺序查找</td>
+<td style="text-align: left;">兼顾顺序查找和随机查找</td>
+</tr>
+</tbody>
+</table>
 
 
 
