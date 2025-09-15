@@ -184,7 +184,7 @@ extra_css:
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts/asana-math.css
   - style/css/tasklist.css
-  - style/css/1.css
+  - style/css/custom.css
   - style/css/card.css
   - style/css/flink.css
   - style/css/changelog_extra.css
