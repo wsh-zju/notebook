@@ -49,45 +49,86 @@
   font-size: inherit;
 }
 
+/*深蓝色主题*/
+/*
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        #2c3e50; 
+  --md-primary-bg-color:        #ffffff; 
+  --md-typeset-a-color:         #3498db; 
+  --md-accent-fg-color:         #e74c3c; 
 
+  --md-default-bg-color:        #ffffff; 
+  --md-default-fg-color:        #34495e; 
+  --md-default-fg-color--light: #7f8c8d; 
+
+  --md-code-bg-color:           #f8f9fa; 
+  --md-code-fg-color:           #37474f; 
+
+  --md-footer-bg-color:         #2c3e50; 
+  --md-footer-bg-color--dark:   #1a2530; 
+  --md-footer-fg-color:         #ffffff; 
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #1a2530; 
+  --md-primary-bg-color:        #ecf0f1; 
+
+  --md-default-bg-color:        #121a24; 
+  --md-default-fg-color:        #d6dbdb; 
+  --md-default-fg-color--light: #a0a7a7; 
+
+  --md-typeset-a-color:         #5dade2; 
+  --md-accent-fg-color:         #e74c3c; 
+
+  --md-code-bg-color:           #1c2833; 
+  --md-code-fg-color:           #d6dbdb; 
+
+  --md-footer-bg-color:         #1a2530; 
+  --md-footer-bg-color--dark:   #141d26; 
+  --md-footer-fg-color:         #ecf0f1; 
+}
+*/
+
+/***** 森林绿配色方案 *****/
 [data-md-color-scheme="default"] {
   /* 亮色模式 */
-  --md-primary-fg-color:        #2c3e50; /* 深蓝导航栏 */
-  --md-primary-bg-color:        #ffffff; /* 导航栏文字白色 */
-  --md-typeset-a-color:         #3498db; /* 链接色-亮蓝色 */
-  --md-accent-fg-color:         #e74c3c; /* 强调色-红色 (用于按钮、悬停) */
+  --md-primary-fg-color:        #27ae60; /* 导航栏-森林绿 */
+  --md-primary-bg-color:        #ffffff;
+  --md-typeset-a-color:         #2ecc71; /* 链接色-鲜绿色 */
+  --md-accent-fg-color:         #e67e22; /* 强调色-橙色 */
 
-  --md-default-bg-color:        #ffffff; /* 页面背景白色 */
-  --md-default-fg-color:        #34495e; /* 主文字色-深灰蓝 */
-  --md-default-fg-color--light: #7f8c8d; /* 次要文字色-灰色 */
+  --md-default-bg-color:        #fcfdf8; /* 页面背景-极浅的米白 */
+  --md-default-fg-color:        #2c3e50;
+  --md-default-fg-color--light: #7f8c8d;
 
-  --md-code-bg-color:           #f8f9fa; /* 代码块背景-浅灰 */
-  --md-code-fg-color:           #37474f; /* 代码文字色 */
+  --md-code-bg-color:           #edf7f1; /* 代码块背景-极浅绿 */
+  --md-code-fg-color:           #27ae60;
 
-  --md-footer-bg-color:         #2c3e50; /* 页脚背景-同导航栏 */
-  --md-footer-bg-color--dark:   #1a2530; /* 深色页脚 */
-  --md-footer-fg-color:         #ffffff; /* 页脚文字白色 */
+  --md-footer-bg-color:         #27ae60;
+  --md-footer-bg-color--dark:   #219653;
+  --md-footer-fg-color:         #ffffff;
 }
 
 [data-md-color-scheme="slate"] {
   /* 暗色模式 */
-  --md-primary-fg-color:        #1a2530; /* 更深蓝导航栏 */
-  --md-primary-bg-color:        #ecf0f1; /* 导航栏文字浅灰 */
+  --md-primary-fg-color:        #1e8449; /* 更深一点的绿 */
+  --md-primary-bg-color:        #ecf0f1;
 
-  --md-default-bg-color:        #121a24; /* 页面背景-深蓝黑 */
-  --md-default-fg-color:        #d6dbdb; /* 主文字色-浅灰 */
-  --md-default-fg-color--light: #a0a7a7; /* 次要文字色-中灰 */
+  --md-default-bg-color:        #0d1f12; /* 页面背景-深绿黑 */
+  --md-default-fg-color:        #d0d9d4; /* 文字-浅青灰 */
+  --md-default-fg-color--light: #a0a7a7;
 
-  --md-typeset-a-color:         #5dade2; /* 链接色-柔和的蓝色 */
-  --md-accent-fg-color:         #e74c3c; /* 强调色-红色 */
+  --md-typeset-a-color:         #58d68d; /* 链接色-亮绿色 */
+  --md-accent-fg-color:         #f39c12; /* 强调色-琥珀色 */
 
-  --md-code-bg-color:           #1c2833; /* 代码块背景-深蓝 */
-  --md-code-fg-color:           #d6dbdb; /* 代码文字色-浅灰 */
+  --md-code-bg-color:           #172c1e; /* 代码块背景-深绿 */
+  --md-code-fg-color:           #58d68d;
 
-  --md-footer-bg-color:         #1a2530; /* 页脚背景 */
-  --md-footer-bg-color--dark:   #141d26; /* 更深页脚 */
-  --md-footer-fg-color:         #ecf0f1; /* 页脚文字浅灰 */
+  --md-footer-bg-color:         #1e8449;
+  --md-footer-bg-color--dark:   #196f3d;
+  --md-footer-fg-color:         #ecf0f1;
 }
+
 input.md-search__input {
   background-color: #fff;
 }
