@@ -89,44 +89,44 @@
 }
 */
 
-/***** 森林绿配色方案 *****/
+/***** 石墨紫配色方案 *****/
 [data-md-color-scheme="default"] {
   /* 亮色模式 */
-  --md-primary-fg-color:        #27ae60; /* 导航栏-森林绿 */
+  --md-primary-fg-color:        #6c5ce7; /* 导航栏-电紫色 */
   --md-primary-bg-color:        #ffffff;
-  --md-typeset-a-color:         #2ecc71; /* 链接色-鲜绿色 */
-  --md-accent-fg-color:         #e67e22; /* 强调色-橙色 */
+  --md-typeset-a-color:         #a29bfe; /* 链接色-淡紫色 */
+  --md-accent-fg-color:         #fd79a8; /* 强调色-粉色 */
 
-  --md-default-bg-color:        #fcfdf8; /* 页面背景-极浅的米白 */
-  --md-default-fg-color:        #2c3e50;
-  --md-default-fg-color--light: #7f8c8d;
+  --md-default-bg-color:        #f8f9fa;
+  --md-default-fg-color:        #2d3436;
+  --md-default-fg-color--light: #636e72;
 
-  --md-code-bg-color:           #edf7f1; /* 代码块背景-极浅绿 */
-  --md-code-fg-color:           #27ae60;
+  --md-code-bg-color:           #f3eefc; /* 代码块背景-极浅紫 */
+  --md-code-fg-color:           #6c5ce7;
 
-  --md-footer-bg-color:         #27ae60;
-  --md-footer-bg-color--dark:   #219653;
+  --md-footer-bg-color:         #6c5ce7;
+  --md-footer-bg-color--dark:   #5649c5;
   --md-footer-fg-color:         #ffffff;
 }
 
 [data-md-color-scheme="slate"] {
   /* 暗色模式 */
-  --md-primary-fg-color:        #1e8449; /* 更深一点的绿 */
-  --md-primary-bg-color:        #ecf0f1;
+  --md-primary-fg-color:        #4834d4; /* 深蓝紫色 */
+  --md-primary-bg-color:        #dfe6e9;
 
-  --md-default-bg-color:        #0d1f12; /* 页面背景-深绿黑 */
-  --md-default-fg-color:        #d0d9d4; /* 文字-浅青灰 */
+  --md-default-bg-color:        #15121f; /* 页面背景-深紫黑 */
+  --md-default-fg-color:        #d6d4e6; /* 文字-浅紫灰 */
   --md-default-fg-color--light: #a0a7a7;
 
-  --md-typeset-a-color:         #58d68d; /* 链接色-亮绿色 */
-  --md-accent-fg-color:         #f39c12; /* 强调色-琥珀色 */
+  --md-typeset-a-color:         #8981ec; /* 链接色-薰衣草紫 */
+  --md-accent-fg-color:         #ff9ff3; /* 强调色-亮粉色 */
 
-  --md-code-bg-color:           #172c1e; /* 代码块背景-深绿 */
-  --md-code-fg-color:           #58d68d;
+  --md-code-bg-color:           #1d1930; /* 代码块背景-深紫 */
+  --md-code-fg-color:           #8981ec;
 
-  --md-footer-bg-color:         #1e8449;
-  --md-footer-bg-color--dark:   #196f3d;
-  --md-footer-fg-color:         #ecf0f1;
+  --md-footer-bg-color:         #4834d4;
+  --md-footer-bg-color--dark:   #3a29b2;
+  --md-footer-fg-color:         #dfe6e9;
 }
 
 input.md-search__input {
