@@ -82,7 +82,7 @@
 
 2. **摊还时间界**（amortized time bound）：连续操作的平均最坏情况
 
-- 最坏情况界（worst-case bound）$\gep$ 摊还界（amortized bound）$\gep$ 平均情况界（average-case bound）
+- 最坏情况界（worst-case bound）$\geq$ 摊还界（amortized bound）$\geq$ 平均情况界（average-case bound）
 
 3. **方法**
 
@@ -120,6 +120,7 @@
         \[
         \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i
         \]
+
         \[
         \Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
         \]
@@ -156,6 +157,7 @@
         \[
         \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)+1) - \text{sizeof}(S) = 1
         \]
+
         \[
         \Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 + 1 = 2
         \]
@@ -165,6 +167,7 @@
         \[
         \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-1) - \text{sizeof}(S) = -1
         \]
+
         \[
         \Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 - 1 = 0
         \]
@@ -174,6 +177,7 @@
         \[
         \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-k') - \text{sizeof}(S) = -k'
         \]
+
         \[
         \Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = k' - k' = 0
         \]
