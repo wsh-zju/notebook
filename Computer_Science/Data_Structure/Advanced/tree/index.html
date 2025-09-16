@@ -2736,7 +2736,7 @@
 </li>
 </ol>
 <ul>
-<li>最坏情况界（worst-case bound）<span class="arithmatex">\(\gep\)</span> 摊还界（amortized bound）<span class="arithmatex">\(\gep\)</span> 平均情况界（average-case bound）</li>
+<li>最坏情况界（worst-case bound）<span class="arithmatex">\(\geq\)</span> 摊还界（amortized bound）<span class="arithmatex">\(\geq\)</span> 平均情况界（average-case bound）</li>
 </ul>
 <ol start="3">
 <li><strong>方法</strong></li>
@@ -2775,12 +2775,12 @@
 <li><code>MultiPop</code>: 每弹出一个元素使用1单位信用（因为实际成本为 <span class="arithmatex">\(k'\)</span>，但摊还成本为0）。</li>
 </ul>
 <p>由于栈大小 <span class="arithmatex">\( \text{sizeof}(S) \geq 0 \)</span>，因此总信用始终非负。</p>
-<p>[
-\sum_{i=1}^n \hat{c}<em i="1">i = O(n) \geq \sum</em>^n c_i
-]
-[
+<div class="arithmatex">\[
+\sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i
+\]</div>
+<div class="arithmatex">\[
 \Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
-]</p>
+\]</div>
 </details>
 </div>
 <div class="tabbed-block">
@@ -2818,30 +2818,30 @@
 <ol>
 <li><strong>Push操作：</strong></li>
 </ol>
-<p>[
+<div class="arithmatex">\[
 \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)+1) - \text{sizeof}(S) = 1
-]
-[
-\Rightarrow \hat{c}<em i-1="i-1">i = c_i + \Phi(D_i) - \Phi(D</em>) = 1 + 1 = 2
-]</p>
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 + 1 = 2
+\]</div>
 <ol start="2">
 <li><strong>Pop操作：</strong></li>
 </ol>
-<p>[
+<div class="arithmatex">\[
 \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-1) - \text{sizeof}(S) = -1
-]
-[
-\Rightarrow \hat{c}<em i-1="i-1">i = c_i + \Phi(D_i) - \Phi(D</em>) = 1 - 1 = 0
-]</p>
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 - 1 = 0
+\]</div>
 <ol start="3">
 <li><strong>MultiPop操作：</strong> 设实际弹出 <span class="arithmatex">\( k' = \min(\text{sizeof}(S), k) \)</span> 个元素</li>
 </ol>
-<p>[
+<div class="arithmatex">\[
 \Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-k') - \text{sizeof}(S) = -k'
-]
-[
-\Rightarrow \hat{c}<em i-1="i-1">i = c_i + \Phi(D_i) - \Phi(D</em>) = k' - k' = 0
-]</p>
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = k' - k' = 0
+\]</div>
 <p>因此，总摊还成本 <span class="arithmatex">\( \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i \)</span>，摊还时间为 <span class="arithmatex">\( O(1) \)</span>。</p>
 </details>
 </div>
