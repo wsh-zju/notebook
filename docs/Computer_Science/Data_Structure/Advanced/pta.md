@@ -7,4 +7,4 @@
 
     **Answer:**D
 
-    **Analysis:** 使用[ AVL 树的最小节点数递推公式](tree.md## 平衡二叉树 AVL)
+    **Analysis:** 使用[ AVL 树的最小节点数递推公式](tree.md##平衡二叉树 AVL)
