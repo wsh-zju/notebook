@@ -937,6 +937,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -986,80 +1000,8 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer_System/System1/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    System I
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            System I
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture01/" class="md-nav__link">
+      <a href="../../../Computer_System/data/" class="md-nav__link">
         
   
   
@@ -1082,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture02/" class="md-nav__link">
+      <a href="../../../Computer_System/logic/" class="md-nav__link">
         
   
   
@@ -1105,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture03/" class="md-nav__link">
+      <a href="../../../Computer_System/combine/" class="md-nav__link">
         
   
   
@@ -1128,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture04/" class="md-nav__link">
+      <a href="../../../Computer_System/ALU/" class="md-nav__link">
         
   
   
@@ -1151,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture05/" class="md-nav__link">
+      <a href="../../../Computer_System/sequence/" class="md-nav__link">
         
   
   
@@ -1174,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture06/" class="md-nav__link">
+      <a href="../../../Computer_System/ISA/" class="md-nav__link">
         
   
   
@@ -1197,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture07/" class="md-nav__link">
+      <a href="../../../Computer_System/CPU/" class="md-nav__link">
         
   
   
@@ -1220,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture08/" class="md-nav__link">
+      <a href="../../../Computer_System/MultiCPU/" class="md-nav__link">
         
   
   
@@ -1231,14 +1173,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -2443,6 +2377,14 @@
 <p>A. 13   B. 17   C. 20    D. 33</p>
 <p><strong>Answer:</strong>D</p>
 <p><strong>Analysis:</strong> 使用<a href="../tree/##平衡二叉树AVL"> AVL 树的最小节点数递推公式</a></p>
+</li>
+<li>
+<p>* Consider the following buffer management problem. Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to  be moved into the new buffer so it costs <span class="arithmatex">\(k+1\)</span> to make this insertion, where <span class="arithmatex">\(k\)</span> is the number of old items. Clearly, if there are <span class="arithmatex">\(N\)</span> items, the worst-case cost for one insertion can be <span class="arithmatex">\(Ω(N)\)</span>.  To show that the average cost is <span class="arithmatex">\(O(1)\)</span>, let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the N items are placed. Which of the following potential functions works?</p>
+<p>A. The number of items currently in the buffer</p>
+<p>B. The opposite number of items currently in the buffer</p>
+<p>C. The number of available blocks currently in the buffer</p>
+<p>D. The opposite number of available blocks in the buffer</p>
+<p><strong>Answer:</strong>D</p>
 </li>
 </ol>
 

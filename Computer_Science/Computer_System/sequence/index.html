@@ -12,28 +12,28 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/System1/lecture01/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/sequence/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../ALU/">
       
       
-        <link rel="next" href="../lecture02/">
+        <link rel="next" href="../ISA/">
       
       
-      <link rel="icon" href="../../../../style/images/favicon_io/favicon.ico">
+      <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>数据编码 - Lucy Wisteria's Notebook</title>
+        <title>时序逻辑电路 - Lucy Wisteria's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.e53b48f4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.e53b48f4.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -60,19 +60,19 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts/asana-math.css">
     
-      <link rel="stylesheet" href="../../../../style/css/tasklist.css">
+      <link rel="stylesheet" href="../../../style/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../style/css/custom.css">
+      <link rel="stylesheet" href="../../../style/css/custom.css">
     
-      <link rel="stylesheet" href="../../../../style/css/card.css">
+      <link rel="stylesheet" href="../../../style/css/card.css">
     
-      <link rel="stylesheet" href="../../../../style/css/flink.css">
+      <link rel="stylesheet" href="../../../style/css/flink.css">
     
-      <link rel="stylesheet" href="../../../../style/css/changelog_extra.css">
+      <link rel="stylesheet" href="../../../style/css/changelog_extra.css">
     
-      <link rel="stylesheet" href="../../../../style/css/extra.css">
+      <link rel="stylesheet" href="../../../style/css/extra.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -112,9 +112,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              数据编码
+              时序逻辑电路
             
           </span>
         </div>
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../Language/" class="md-tabs__link">
+        <a href="../../Language/" class="md-tabs__link">
           
   
   
@@ -309,7 +309,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Math_and_Physics/" class="md-tabs__link">
+        <a href="../../../Math_and_Physics/" class="md-tabs__link">
           
   
   
@@ -331,7 +331,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../tool/" class="md-tabs__link">
+        <a href="../../../tool/" class="md-tabs__link">
           
   
   
@@ -367,9 +367,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     Lucy Wisteria's Notebook
@@ -417,7 +417,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -535,7 +535,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/" class="md-nav__link ">
+            <a href="../../Language/" class="md-nav__link ">
               
   
   
@@ -601,7 +601,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/C/" class="md-nav__link ">
+            <a href="../../Language/C/" class="md-nav__link ">
               
   
   
@@ -636,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/pointer/" class="md-nav__link">
+      <a href="../../Language/C/pointer/" class="md-nav__link">
         
   
   
@@ -659,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/recursion/" class="md-nav__link">
+      <a href="../../Language/C/recursion/" class="md-nav__link">
         
   
   
@@ -682,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/structure/" class="md-nav__link">
+      <a href="../../Language/C/structure/" class="md-nav__link">
         
   
   
@@ -705,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/file/" class="md-nav__link">
+      <a href="../../Language/C/file/" class="md-nav__link">
         
   
   
@@ -728,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/accumulate/" class="md-nav__link">
+      <a href="../../Language/C/accumulate/" class="md-nav__link">
         
   
   
@@ -786,7 +786,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/Python/" class="md-nav__link ">
+            <a href="../../Language/Python/" class="md-nav__link ">
               
   
   
@@ -821,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/foundation/" class="md-nav__link">
+      <a href="../../Language/Python/foundation/" class="md-nav__link">
         
   
   
@@ -844,7 +844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/data/" class="md-nav__link">
+      <a href="../../Language/Python/data/" class="md-nav__link">
         
   
   
@@ -867,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/accumulate/" class="md-nav__link">
+      <a href="../../Language/Python/accumulate/" class="md-nav__link">
         
   
   
@@ -898,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Css/" class="md-nav__link">
+      <a href="../../Language/Css/" class="md-nav__link">
         
   
   
@@ -939,6 +939,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -954,7 +968,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -986,104 +1000,10 @@
                 
   
   
-    
   
   
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    System I
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            System I
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    数据编码
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
         
   
   
@@ -1094,108 +1014,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      进制之间的转换
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据表示
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="数据表示">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      数值数据
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="数值数据">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      定点数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      浮点数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bcd" class="md-nav__link">
-    <span class="md-ellipsis">
-      十进制的二进制表示（BCD码）
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      非数值数据
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据的宽度和存储
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1208,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture02/" class="md-nav__link">
+      <a href="../logic/" class="md-nav__link">
         
   
   
@@ -1231,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture03/" class="md-nav__link">
+      <a href="../combine/" class="md-nav__link">
         
   
   
@@ -1254,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture04/" class="md-nav__link">
+      <a href="../ALU/" class="md-nav__link">
         
   
   
@@ -1274,10 +1092,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lecture05/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    时序逻辑电路
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1288,6 +1126,66 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      时序电路
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      状态存储元件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="状态存储元件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      锁存器
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      触发器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1300,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture06/" class="md-nav__link">
+      <a href="../ISA/" class="md-nav__link">
         
   
   
@@ -1323,7 +1221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture07/" class="md-nav__link">
+      <a href="../CPU/" class="md-nav__link">
         
   
   
@@ -1346,7 +1244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../lecture08/" class="md-nav__link">
+      <a href="../MultiCPU/" class="md-nav__link">
         
   
   
@@ -1357,14 +1255,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1469,7 +1359,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data_Structure/Foundation/" class="md-nav__link ">
+            <a href="../../Data_Structure/Foundation/" class="md-nav__link ">
               
   
   
@@ -1504,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Linear/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Linear/" class="md-nav__link">
         
   
   
@@ -1527,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Tree/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Tree/" class="md-nav__link">
         
   
   
@@ -1550,7 +1440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Heap/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Heap/" class="md-nav__link">
         
   
   
@@ -1573,7 +1463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/ADT/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/ADT/" class="md-nav__link">
         
   
   
@@ -1596,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Graph/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Graph/" class="md-nav__link">
         
   
   
@@ -1619,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Sort/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Sort/" class="md-nav__link">
         
   
   
@@ -1642,7 +1532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Hash/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Hash/" class="md-nav__link">
         
   
   
@@ -1665,7 +1555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/pta/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/pta/" class="md-nav__link">
         
   
   
@@ -1721,7 +1611,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data_Structure/Advanced/" class="md-nav__link ">
+            <a href="../../Data_Structure/Advanced/" class="md-nav__link ">
               
   
   
@@ -1756,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Advanced/tree/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/tree/" class="md-nav__link">
         
   
   
@@ -1779,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Advanced/pta/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/pta/" class="md-nav__link">
         
   
   
@@ -1848,7 +1738,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Math_and_Physics/" class="md-nav__link ">
+            <a href="../../../Math_and_Physics/" class="md-nav__link ">
               
   
   
@@ -1924,7 +1814,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
+            <a href="../../../Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
               
   
   
@@ -1959,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
         
   
   
@@ -1982,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
         
   
   
@@ -2005,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
         
   
   
@@ -2028,7 +1918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
         
   
   
@@ -2051,7 +1941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
         
   
   
@@ -2074,7 +1964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
         
   
   
@@ -2097,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
         
   
   
@@ -2120,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
         
   
   
@@ -2143,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
         
   
   
@@ -2166,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
         
   
   
@@ -2229,7 +2119,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../tool/" class="md-nav__link ">
+            <a href="../../../tool/" class="md-nav__link ">
               
   
   
@@ -2309,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tool/mkdocs/theme/" class="md-nav__link">
+      <a href="../../../tool/mkdocs/theme/" class="md-nav__link">
         
   
   
@@ -2385,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tool/latex/Latex/" class="md-nav__link">
+      <a href="../../../tool/latex/Latex/" class="md-nav__link">
         
   
   
@@ -2443,7 +2333,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      进制之间的转换
+      时序电路
     </span>
   </a>
   
@@ -2452,45 +2342,26 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      数据表示
+      状态存储元件
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数据表示">
+    <nav class="md-nav" aria-label="状态存储元件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      数值数据
+      锁存器
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="数值数据">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      定点数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      浮点数
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bcd" class="md-nav__link">
-    <span class="md-ellipsis">
-      十进制的二进制表示（BCD码）
+      触发器
     </span>
   </a>
   
@@ -2498,29 +2369,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      非数值数据
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      数据的宽度和存储
-    </span>
-  </a>
   
 </li>
       
@@ -2540,7 +2388,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/System1/lecture01.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/sequence.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2548,332 +2396,281 @@
   
 
 
-  <h1>数据编码</h1>
+  <h1>时序逻辑电路</h1>
 
-<h2 id="_1">进制之间的转换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">时序电路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>R进制 <span class="arithmatex">\(\to\)</span> 10进制</strong>：展开即可</li>
-<li><strong>10进制 <span class="arithmatex">\(\to\)</span> R进制</strong></li>
+<li><strong>组成部分</strong></li>
 </ol>
 <ul>
-<li>整数：除基取余，从下至上</li>
-<li>小数：称基取整，从上至下</li>
+<li><strong>储存元件</strong>：锁存器/触发器</li>
+<li><strong>组合逻辑</strong>：<ul>
+<li>输入：来自外部</li>
+<li>输出：输出到外部<ul>
+<li>Mealy型：取决于输入和当前状态</li>
+<li>Moore型：仅取决于当前状态</li>
 </ul>
-<ol start="3">
-<li><strong>2进制 <span class="arithmatex">\(\to\)</span> 8/16进制</strong>：每3/4个一组转换为8/16进制（反之同理）</li>
-<li><strong>8进制 <span class="arithmatex">\(\to\)</span> 16进制</strong>：通过2进制进行转换</li>
-</ol>
-<h2 id="_2">数据表示<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3">数值数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h4 id="_4">定点数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>n位机器码的表示范围</strong></li>
-</ol>
-<ul>
-<li>无符号数：<span class="arithmatex">\(0 \leqslant x \leqslant 2^n-1\)</span></li>
-<li>有符号数：<strong>取决于编码方法</strong></li>
+</li>
+<li>当前状态：来自储存元件</li>
+<li>状态输出：下一个状态<strong>（取决于当前状态和输入）</strong>，作为储存元件的输入</li>
+</ul>
+</li>
 </ul>
 <ol start="2">
-<li><strong>编码方法</strong></li>
+<li><strong>时序电路类型</strong></li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">原码</label><label for="__tabbed_1_2">反码</label><label for="__tabbed_1_3">补码</label><label for="__tabbed_1_4">移码</label></div>
+<ul>
+<li>取决于存储元件观察输入信号的时刻，以及存储元件状态改变的时机</li>
+<li><strong>同步电路</strong>：仅在时序信号（时钟脉冲）的触发下观察输入并改变状态</li>
+<li><strong>异步电路</strong>：由任意时刻的输入状态及输入变化的连续时间顺序决定</li>
+</ul>
+<hr />
+<h2 id="_2">状态存储元件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">输入信号的含义</p>
+<ul>
+<li><span class="arithmatex">\(S\)</span>：表示set输出<span class="arithmatex">\(Q\)</span>为1</li>
+<li><span class="arithmatex">\(R\)</span>：表示reset输出<span class="arithmatex">\(Q\)</span>为0</li>
+</ul>
+</div>
+<h3 id="_3">锁存器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</label><label for="__tabbed_1_2">(NOR) <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_3">时钟 <span class="arithmatex">\(S-R\)</span> 锁存器</label><label for="__tabbed_1_4"><span class="arithmatex">\(D\)</span> 锁存器</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><strong>sign-and-magnitude</strong></p>
 <ul>
-<li>正数-&gt;负数：只改变符号位<ul>
-<li>e.g. 3:0000 0011 ; -3:1000 0011</li>
-</ul>
+<li>
+<p><strong>组成</strong>：两个与非门</p>
+<p><img alt="" src="../photo/5-1.png" style="width: 50%;display: block;margin: 20px auto" /></p>
 </li>
-<li><strong>8 bit表示的范围</strong>：-127（1111 1111）～127（0111 1111）</li>
-<li>缺点：有两种表示0的方法<ul>
-<li>+0:0000 0000</li>
-<li>-0:1000 0000</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p><strong>1's complement</strong></p>
-<ul>
-<li>对于基<span class="arithmatex">\(r\)</span>，<span class="arithmatex">\(n\)</span>位数<span class="arithmatex">\(N\)</span>的反码为<span class="arithmatex">\((r^n-1)-N\)</span></li>
-<li>当<span class="arithmatex">\(r=2\)</span>，负数即为对正数每一位取反；正数保持不变<ul>
-<li><strong>8 bit表示的范围</strong>：-127（1000 0000）～127（0111 1111）</li>
-</ul>
-</li>
-<li>缺点：有两种表示0的方法<ul>
-<li>+0:0000 0000</li>
-<li>-0:1111 1111</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p><strong>2's complement</strong></p>
-<ul>
-<li>对于基<span class="arithmatex">\(r\)</span>，<span class="arithmatex">\(n\)</span>位数<span class="arithmatex">\(N\)</span>的反码为<span class="arithmatex">\(r^n-N\)</span></li>
-<li>当<span class="arithmatex">\(r=2\)</span>，负数即为对正数取反加一；正数保持不变<ul>
-<li><strong>8 bit表示的范围</strong>：-128（1000 0000）～127（0111 1111）</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p><strong>Frameshift code</strong></p>
-<ul>
-<li>定义：在真值的基础上加上一个固定的偏移量（Bias），使得指数部分可以用无符号整数表示</li>
-<li>应用：用于表示浮点数的指数部分</li>
-</ul>
-</div>
-</div>
-</div>
-<ol start="3">
-<li><strong>符号扩展</strong></li>
-</ol>
-<ul>
-<li><strong>扩展</strong>（expanding）<ul>
-<li>有符号：符号扩展</li>
-<li>无符号：补0</li>
-</ul>
-</li>
-<li><strong>截断</strong>（truncating）<ul>
-<li>直接去掉高位</li>
-<li>只有较小的数不会改变初始值</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h4 id="_5">浮点数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>分类</strong></li>
-</ol>
+<li>
+<p><strong>真值表</strong>：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">符号位s</th>
-<th style="text-align: center;">阶码Exp</th>
-<th style="text-align: center;">尾数Frac</th>
-<th style="text-align: center;">偏移量Bias</th>
+<th style="text-align: center;"><span class="arithmatex">\(R\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(S\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(Q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\bar{Q}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><strong>单精度</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">禁止</td>
+<td style="text-align: center;">禁止</td>
+</tr>
+<tr>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">23</td>
-<td style="text-align: center;">127</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>双精度</strong></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">52</td>
-<td style="text-align: center;">1023</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Notice!</p>
-<p>阶码是<strong>无符号数</strong>！</p>
-</div>
-<ol start="2">
-<li><strong>表示范围</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>规格化数</strong></p>
-<ul>
-<li>
-<p>指数范围：-126～127（0000 0001～1111 1110）</p>
-<div class="admonition note">
-<p class="admonition-title">Notice!</p>
-<p><strong>0000 0000</strong>和<strong>1111 1111</strong>被保留，用于其他浮点数类型的表示。</p>
-</div>
-</li>
-<li>
-<p>表示范围：<span class="arithmatex">\(1.0 \times 2^{-126} ～ (2-2^{-23}) \times 2^{127}\)</span>（负数同理）</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>非规格化数</strong></p>
-<ul>
-<li>指数范围：恒等于-126</li>
-<li>表示范围：<span class="arithmatex">\(2^{-23} \times 2^{-126} ～ (1-2^{-23}) \times 2^{-126}\)</span>（负数同理）</li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>0.111...1（23个1）= <span class="arithmatex">\(1-2^{-23}\)</span></p>
-<p>0.000...01（22个0）= <span class="arithmatex">\(2^{-23}\)</span></p>
-</div>
-<ol start="3">
-<li><strong>计算公式</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>规格化数</strong></p>
-<div class="arithmatex">\[
-x = (-1)^s \times (1+Frac) \times 2^{Exp-Bias}
-\]</div>
-</li>
-<li>
-<p><strong>非规格化数</strong></p>
-<div class="arithmatex">\[
-x = (-1)^s \times Frac \times 2^{1-Bias}
-\]</div>
-</li>
-</ul>
-<ol start="4">
-<li><strong>浮点数类型</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">数字类型</th>
-<th style="text-align: center;">+0/-0</th>
-<th style="text-align: center;">非规格化数</th>
-<th style="text-align: center;">规格化数</th>
-<th style="text-align: center;">+<span class="arithmatex">\(\infty\)</span>/-<span class="arithmatex">\(\infty\)</span></th>
-<th style="text-align: center;">NaN</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>阶码Exp</strong></td>
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">非全0/非全1</td>
-<td style="text-align: center;">全1</td>
-<td style="text-align: center;">全1</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>尾数Frac</strong></td>
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">非0</td>
-<td style="text-align: center;">均可</td>
-<td style="text-align: center;">全0</td>
-<td style="text-align: center;">非0</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition abstract">
-<p class="admonition-title">舍入(Rounding)</p>
-<ol>
-<li>大于一半，向上舍入</li>
-<li>小于一半，向下舍入</li>
-<li>等于一半，向偶数舍入</li>
-</ol>
-<p>e.g. 7.89500 <span class="arithmatex">\(\to\)</span> 7.90 , 7.88500 <span class="arithmatex">\(\to\)</span> 7.88</p>
-</div>
-<hr />
-<h4 id="bcd">十进制的二进制表示（BCD码）<a class="headerlink" href="#bcd" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>有权BCD码</strong>：8421码（分别对应每一位的权值）</li>
-<li><strong>无权BCD码</strong>：</li>
-</ol>
-<ul>
-<li>
-<p><strong>格雷码</strong></p>
-<ul>
-<li>特征：相邻格雷码只有一位不同</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"><strong>格雷码</strong></th>
-<th style="text-align: center;">0000</th>
-<th style="text-align: center;">0100</th>
-<th style="text-align: center;">0101</th>
-<th style="text-align: center;">0111</th>
-<th style="text-align: center;">0110</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>十进制</strong></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>格雷码</strong></td>
-<td style="text-align: center;"><strong>0010</strong></td>
-<td style="text-align: center;"><strong>0011</strong></td>
-<td style="text-align: center;"><strong>0001</strong></td>
-<td style="text-align: center;"><strong>1001</strong></td>
-<td style="text-align: center;"><strong>1000</strong></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>十进制</strong></td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">8</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">保持不变</td>
+<td style="text-align: center;">保持不变</td>
 </tr>
 </tbody>
 </table>
 </li>
-<li>
-<p><strong>余3码</strong></p>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">注意</p>
 <ul>
-<li>在8421码的基础上加3得到</li>
+<li><span class="arithmatex">\(S=0,R=0\)</span> 不允许作为输入！</li>
+<li>当上一个输入为 <span class="arithmatex">\(S=0,R=0\)</span> 时，之后输入 <span class="arithmatex">\(S=1,R=1\)</span>，信号不稳定 </li>
 </ul>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p><strong>组成</strong>：两个或非门</p>
+<p><img alt="" src="../photo/5-2.png" style="width: 50%;display: block;margin: 20px auto" /></p>
 </li>
-</ul>
-<hr />
-<h3 id="_6">非数值数据<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<ol>
-<li>ASCII码（7 bits）和Unicode（16 bits）</li>
-<li>汉字的表示：输入码、内码、字型码</li>
-</ol>
-<hr />
-<h2 id="_7">数据的宽度和存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>主存容量单位</strong></li>
-</ol>
-<p>bit <span class="arithmatex">\(\xrightarrow{8}\)</span> byte <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> KB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> MB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> GB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> TB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> PB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> EB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> ZB <span class="arithmatex">\(\xrightarrow{2^{10}}\)</span> YB</p>
-<ol start="2">
-<li><strong>频率和线宽单位</strong></li>
-</ol>
-<p>b/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> kb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Mb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Gb/s <span class="arithmatex">\(\xrightarrow{10^3}\)</span> Tb/s</p>
-<ol start="3">
-<li><strong>数据存储和排列顺序</strong></li>
-</ol>
-<p>e.g. 存储0x0123 4567</p>
+<li>
+<p><strong>真值表</strong>：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">地址</th>
-<th style="text-align: center;">0x100</th>
-<th style="text-align: center;">0x101</th>
-<th style="text-align: center;">0x102</th>
-<th style="text-align: center;">0x103</th>
+<th style="text-align: center;"><span class="arithmatex">\(R\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(S\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(Q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\bar{Q}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><strong>大端序</strong></td>
-<td style="text-align: center;">01</td>
-<td style="text-align: center;">23</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">67</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">保持不变</td>
+<td style="text-align: center;">保持不变</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>小端序</strong></td>
-<td style="text-align: center;">67</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">23</td>
-<td style="text-align: center;">01</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">禁止</td>
+<td style="text-align: center;">禁止</td>
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">注意</p>
+<ul>
+<li><span class="arithmatex">\(S=1,R=1\)</span> 不允许作为输入！</li>
+<li>当上一个输入为 <span class="arithmatex">\(S=1,R=1\)</span> 时，之后输入 <span class="arithmatex">\(S=0,R=0\)</span>，信号不稳定 </li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>设计思路：在(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器的基础上加一个控制信号</li>
+<li>
+<p><strong>组成</strong>：两个与非门+一个(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</p>
+<p><img alt="" src="../photo/5-3.png" style="width: 50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>行为</strong></p>
+<ul>
+<li><span class="arithmatex">\(C\)</span> 相当于控制信号或者信号</li>
+<li>当 <span class="arithmatex">\(C=1\)</span> 时，与(NAND) <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器功能相同</li>
+<li>当 <span class="arithmatex">\(C=0\)</span> 时，输出状态保持不变</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>设计思路：改进时钟 <span class="arithmatex">\(S-R\)</span> 锁存器<ul>
+<li>合并两种输出保持不变的情况</li>
+<li>利用信号变化时，两个输入 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(R\)</span> 永远反相</li>
+<li>避免输入信号都为1的情况</li>
+</ul>
+</li>
+<li>
+<p><strong>组成</strong>：一个非门+一个时钟 <span class="arithmatex">\(\bar{S}-\bar{R}\)</span> 锁存器</p>
+<p><img alt="" src="../photo/5-4.png" style="width: 50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>真值表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(C\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(D\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(Q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\bar{Q}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">保持不变</td>
+<td style="text-align: center;">保持不变</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<details class="note">
+<summary>由传输门组成的D锁存器</summary>
+<p><img alt="" src="../photo/5-5.png" style="width: 50%;display: block;margin: 20px auto" /></p>
+</details>
+</div>
+</div>
+</div>
+<h3 id="_4">触发器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="arithmatex">\(S-R\)</span> 主从触发器</label><label for="__tabbed_2_2">边沿 <span class="arithmatex">\(D\)</span> 触发器</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong><span class="arithmatex">\(S-R\)</span> Master-Slave Flip-Flop</strong></p>
+<ul>
+<li>
+<p><strong>组成</strong>：两个时钟 <span class="arithmatex">\(S-R\)</span> 锁存器，和一个非门</p>
+<p><img alt="" src="../photo/5-6.png" style="width: 50%;display: block;margin:20px auto;" /></p>
+<ul>
+<li>主锁存器：接受外部输入信号</li>
+<li>从锁存器：输出最终结果</li>
+</ul>
+</li>
+<li>
+<p><strong>工作过程</strong></p>
+<ul>
+<li><span class="arithmatex">\(C=1\)</span>：主锁存器接受外部输入；从锁存器锁定</li>
+<li><span class="arithmatex">\(C=0\)</span>：主锁存器锁定；从锁存器输出主锁存器的状态</li>
+</ul>
+</li>
+<li><strong>缺点</strong><ul>
+<li>可能发生<code>1s catching</code>问题<ul>
+<li>当 <span class="arithmatex">\(C=1\)</span> 期间，若输入信号发生跳变，主锁存器会错误地"捕获"这些中间变化，导致从锁存器最终输出非预期状态</li>
+</ul>
+</li>
+<li>改进方法：使用边沿触发</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><strong>Edge-Triggered D Flip-Flop</strong></p>
+<ul>
+<li><strong>组成</strong>：一个时钟 <span class="arithmatex">\(S-R\)</span> 锁存器+一个 <span class="arithmatex">\(D\)</span> 锁存器</li>
+<li>
+<p><strong>负边沿触发器</strong></p>
+<p><img alt="" src="../photo/5-7.png" style="width:45%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>当 <span class="arithmatex">\(C\)</span> 信号由1变成0（负边沿）的时候，从锁存器开放，接受主锁存器输入，从而改变输出</li>
+</ul>
+</li>
+<li>
+<p><strong>正边沿触发器</strong></p>
+<p><img alt="" src="../photo/5-8.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>满足 <span class="arithmatex">\(Q(t+1)=D(t)\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<details class="abstract">
+<summary>状态存储元件的电路符号</summary>
+<p><img alt="" src="../photo/5-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
 
 
 
@@ -2909,7 +2706,7 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 计算机系统 I">
+          <a href="../ALU/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 运算单元">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2919,20 +2716,20 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
                 上一页
               </span>
               <div class="md-ellipsis">
-                计算机系统 I
+                运算单元
               </div>
             </div>
           </a>
         
         
           
-          <a href="../lecture02/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数字逻辑基础">
+          <a href="../ISA/" class="md-footer__link md-footer__link--next" aria-label="下一页: ISA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数字逻辑基础
+                ISA
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2972,18 +2769,18 @@ x = (-1)^s \times Frac \times 2^{1-Bias}
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
-        <script src="../../../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../../javascripts/config.js"></script>
+        <script src="../../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

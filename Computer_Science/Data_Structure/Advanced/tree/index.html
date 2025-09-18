@@ -937,6 +937,20 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -986,80 +1000,8 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer_System/System1/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    System I
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_2">
-            <span class="md-nav__icon md-icon"></span>
-            System I
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture01/" class="md-nav__link">
+      <a href="../../../Computer_System/data/" class="md-nav__link">
         
   
   
@@ -1082,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture02/" class="md-nav__link">
+      <a href="../../../Computer_System/logic/" class="md-nav__link">
         
   
   
@@ -1105,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture03/" class="md-nav__link">
+      <a href="../../../Computer_System/combine/" class="md-nav__link">
         
   
   
@@ -1128,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture04/" class="md-nav__link">
+      <a href="../../../Computer_System/ALU/" class="md-nav__link">
         
   
   
@@ -1151,7 +1093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture05/" class="md-nav__link">
+      <a href="../../../Computer_System/sequence/" class="md-nav__link">
         
   
   
@@ -1174,7 +1116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture06/" class="md-nav__link">
+      <a href="../../../Computer_System/ISA/" class="md-nav__link">
         
   
   
@@ -1197,7 +1139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture07/" class="md-nav__link">
+      <a href="../../../Computer_System/CPU/" class="md-nav__link">
         
   
   
@@ -1220,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/System1/lecture08/" class="md-nav__link">
+      <a href="../../../Computer_System/MultiCPU/" class="md-nav__link">
         
   
   
@@ -1231,14 +1173,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -2722,9 +2656,9 @@
 <ol start="4">
 <li><strong>删除</strong>：</li>
 </ol>
-<p>（1）访问<code>X</code>节点，将其旋转到根节点<br/>
-（2）删除<code>X</code>节点<br/>
-（3）访问左子树的最大节点，将其旋转到左子树的根节点，此时左子树的根节点没有右孩子（因为是左子树的最大值）<br/>
+<p>（1）<strong>访问</strong><code>X</code>节点，将其<strong>旋转</strong>到根节点<br/>
+（2）<strong>删除</strong><code>X</code>节点<br/>
+（3）访问左子树的<strong>最大节点</strong>，将其旋转到左子树的根节点，此时左子树的根节点没有右孩子（因为是左子树的最大值）<br/>
 （4）右子树作为左子树的右孩子</p>
 <h2 id="_2"><span style="color: #8B0000;">摊还分析</span><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2735,9 +2669,7 @@
 <p><strong>摊还时间界</strong>（amortized time bound）：连续操作的平均最坏情况</p>
 </li>
 </ol>
-<ul>
-<li>最坏情况界（worst-case bound）<span class="arithmatex">\(\geq\)</span> 摊还界（amortized bound）<span class="arithmatex">\(\geq\)</span> 平均情况界（average-case bound）</li>
-</ul>
+<p>最坏情况界（worst-case bound）<span class="arithmatex">\(\geq\)</span> 摊还界（amortized bound）<span class="arithmatex">\(\geq\)</span> 平均情况界（average-case bound）</p>
 <ol start="3">
 <li><strong>方法</strong></li>
 </ol>
@@ -2766,9 +2698,7 @@
 <p><strong>支持MultiPop的栈</strong></p>
 <p><strong>实际成本</strong> <span class="arithmatex">\( c_i \)</span>：<code>Push</code> 为 1；<code>Pop</code> 为 1；<code>MultiPop 为</code> <span class="arithmatex">\( \min(\text{sizeof}(S), k) \)</span></p>
 <p><strong>摊还成本</strong> <span class="arithmatex">\( \hat{c}_i \)</span>：<code>Push</code> 为 2；<code>Pop</code> 为 0；<code>MultiPop</code> 为 0</p>
-<ol>
-<li>信用分配：</li>
-</ol>
+<p><strong>信用分配：</strong></p>
 <ul>
 <li><code>Push</code>: +1（支付1单位实际成本，并留存1单位信用）；</li>
 <li><code>Pop</code>: -1（使用1单位信用支付实际成本）；</li>
