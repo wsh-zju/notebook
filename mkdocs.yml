@@ -28,16 +28,14 @@ nav:
       - CSS : Computer_Science/Language/Css.md
     - 计算机系统 :
       - Computer_Science/Computer_System/index.md
-      - System I : 
-        - Computer_Science/Computer_System/System1/index.md
-        - 数据编码 : Computer_Science/Computer_System/System1/lecture01.md
-        - 数字逻辑基础 : Computer_Science/Computer_System/System1/lecture02.md
-        - 组合逻辑电路 : Computer_Science/Computer_System/System1/lecture03.md
-        - 运算单元 : Computer_Science/Computer_System/System1/lecture04.md
-        - 时序逻辑电路 : Computer_Science/Computer_System/System1/lecture05.md
-        - ISA : Computer_Science/Computer_System/System1/lecture06.md
-        - CPU : Computer_Science/Computer_System/System1/lecture07.md
-        - 多周期CPU : Computer_Science/Computer_System/System1/lecture08.md
+      - 数据编码 : Computer_Science/Computer_System/data.md
+      - 数字逻辑基础 : Computer_Science/Computer_System/logic.md
+      - 组合逻辑电路 : Computer_Science/Computer_System/combine.md
+      - 运算单元 : Computer_Science/Computer_System/ALU.md
+      - 时序逻辑电路 : Computer_Science/Computer_System/sequence.md
+      - ISA : Computer_Science/Computer_System/ISA.md
+      - CPU : Computer_Science/Computer_System/CPU.md
+      - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
     - 数据结构 :
       - 数据结构基础 :
         - Computer_Science/Data_Structure/Foundation/index.md

@@ -41,12 +41,55 @@
     ??? example "Example"
         ![](photo/6-1.png)
 
+
+
 ---
-### 分类
-1. CISC：复杂指令集
-    - 代码更短
-    - 编译更简单
-2. RISC：精简指令集
+### ISA 分类
+
+1. **栈结构ISA**
+
+```asm
+# C=A+B
+push A
+push B
+add
+pop C
+```
+
+2. **累加器结构ISA**
+
+```asm
+# C=A+B
+load A     # load A into accumulator
+add B       
+store C   
+```
+
+3. **寄存器结构ISA**
+
+- **寄存器-存储器架构**：任何指令都可以访问存储器，e.g. x86
+    
+    ```asm
+    # C=A+B
+    load R1, A
+    add R3, R1, B
+    store R3, C
+    ```
+- **Load-Store架构（寄存器-寄存器架构）**：只有`load`和`store`指令可以访问寄存器，e.g. **RISC-V**
+    
+    ```asm
+    # C=A+B
+    load R1, A
+    load R2, B
+    add R3, R1, R2
+    store R3, C
+    ```
+
+!!! abstract "ISA 分类"
+    1. CISC：复杂指令集
+        - 代码更短
+        - 编译更简单
+    2. RISC：精简指令集
 
 
 ---
