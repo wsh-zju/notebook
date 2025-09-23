@@ -1727,7 +1727,16 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      基本操作
+      插入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除
     </span>
   </a>
   
@@ -1749,7 +1758,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       基本操作
     </span>
@@ -2512,7 +2521,16 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      基本操作
+      插入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除
     </span>
   </a>
   
@@ -2534,7 +2552,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       基本操作
     </span>
@@ -2835,64 +2853,96 @@
 </ol>
 <ul>
 <li><strong>前提</strong>：二叉搜索树</li>
-<li>根节点和叶子节点<code>NULL</code>都为黑色</li>
-<li>不存在连续的两个红色节点</li>
+<li>根节点和<strong>叶子节点<code>NULL</code></strong>都为黑色</li>
+<li><strong>不存在</strong>连续的两个红色节点：红节点的子节点一定是黑色的</li>
 <li>任一节点到<strong>其所在的子树上的</strong>叶子节点的所有路径上，黑色节点的个数相同</li>
 </ul>
+<div class="admonition abtract">
+<p class="admonition-title">定义</p>
+<ol>
+<li><strong>内部节点</strong>：黑色的非<code>NULL</code>的节点</li>
+<li><strong>外部节点</strong>：<code>NULL</code>的黑色叶子节点</li>
+</ol>
+</div>
 <ol start="2">
-<li><strong>性质</strong>：</li>
+<li><strong>性质</strong>：最长路径不会超过最短路径的两倍（任一节点的左右子树高度相差不超过两倍）</li>
 </ol>
 <ul>
-<li>最长路径不会超过最短路径的两倍（任一节点的左右子树高度相差不超过两倍）<ul>
 <li><strong>最短路径</strong>：只有黑色节点</li>
-<li><strong>最长路径</strong>：红黑相间的路径</li>
+<li><strong>最长路径</strong>：红黑相间的路径（红色节点的个数不会超过黑色节点的路径）</li>
+</ul>
+<ol start="3">
+<li><strong>黑高</strong>：</li>
+</ol>
+<ul>
+<li><strong>定义</strong>：从结点<code>x</code>（不包括<code>x</code>）到任一个叶结点的任意简单路径上的<strong>黑色结点个数</strong>，记为<span class="arithmatex">\(bh(x)\)</span></li>
+<li><strong>定理</strong><ul>
+<li>树的黑高<span class="arithmatex">\(bh(Tree) = bh(root)\)</span></li>
+<li>一棵有<span class="arithmatex">\(N\)</span>个内部结点的红黑树的高度至多为<span class="arithmatex">\(2\log(N+1)\)</span>，至少为<span class="arithmatex">\(\log(N+1)\)</span></li>
 </ul>
 </li>
 </ul>
-<h3 id="_4">基本操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_4">插入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>插入</strong></li>
+<li>插入操作与二叉搜索树一致</li>
+<li>插入的节点<strong>默认为红色</strong>：</li>
 </ol>
 <ul>
-<li>插入操作与二叉搜索树一致</li>
-<li>插入的节点默认为红色：<ul>
 <li>一般不会破坏红黑树的任何一个条件</li>
 <li>只可能破坏<strong>根叶黑</strong>和<strong>不红红</strong></li>
 </ul>
-</li>
-<li><strong>调整</strong>：<ul>
-<li><strong>插入节点为根节点</strong>：直接变为黑色</li>
-<li><strong>插入节点的叔叔为红色</strong>：插入节点的叔叔、父亲和爷爷都变色，之后让爷爷变插入节点，再次调整</li>
-<li><strong>插入节点的叔叔为黑色</strong><ul>
-<li>判断失衡类型（LL、RR、LR、RL），进行相应的旋转操作</li>
-<li>将最后一步旋转操作的旋转中心和旋转点变色</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><strong>删除</strong></li>
+<ol start="3">
+<li><strong>调整</strong>：</li>
 </ol>
-<p>（1）<strong>只有左孩子/只有右孩子</strong>：直接代替被删除的节点，然后变黑</p>
+<ul>
+<li><strong>插入节点为根节点</strong>：直接变为黑色</li>
+<li><strong>插入节点的叔叔为红色</strong>：<ul>
+<li>插入节点的叔叔、父亲和爷爷都变色</li>
+<li>之后让爷爷变插入节点，再次调整</li>
+</ul>
+</li>
+<li><strong>插入节点的叔叔为黑色</strong><ul>
+<li>case 2：左子节点（父亲）左旋</li>
+<li>case 3：父亲与爷爷交换颜色，爷爷节点右旋</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../images/1-4.png" /></p>
+<ol start="4">
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(h) = O(\ln N)\)</span></li>
+</ol>
+<h3 id="_5">删除<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>只有左孩子/只有右孩子</strong>：直接代替被删除的节点，然后变黑</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Notices</p>
 <p>该情况下被删除节点只有可能是<strong>黑色的</strong>！并且不可能是只有左子树/右子树！</p>
 <p>如果节点是红色的或者只有左子树/右子树，则破坏了黑路同的性质。</p>
 </div>
-<p>（2）<strong>没有孩子</strong>：</p>
-<ul>
-<li><strong>红节点</strong>：直接删除</li>
-<li>
-<p><strong>黑节点</strong>：删除后变为<strong>双黑节点</strong>，相对于双黑节点进行调整</p>
+<ol start="2">
+<li><strong>没有孩子</strong>：</li>
+</ol>
+<p>（1）<strong>红节点</strong>：直接删除</p>
+<p>（2）<strong>黑节点</strong>：删除后变为<strong>双黑节点</strong>，相对于双黑节点进行调整</p>
 <ul>
 <li>
 <p><strong>兄弟节点为黑色</strong>：</p>
 <ul>
 <li>
-<p><strong>兄弟节点至少有一个红孩子</strong>：判断<code>p</code>（父亲节点）、<code>s</code>（兄弟节点）、<code>r</code>（红孩子）三个节点的形态，进行变色，并且旋转，结束后双黑变单黑           </p>
-<div class="admonition abstract">
-<p class="admonition-title">形态种类</p>
+<p><strong>兄弟节点没有红孩子</strong>：</p>
+<ul>
+<li>兄弟变红，双黑上移，遇到<strong>红节点/根节点</strong>变为单黑</li>
+<li>若仍存在双黑，则相对于双黑节点继续调整</li>
+</ul>
+<p><img alt="" src="../images/1-6.png" /></p>
+</li>
+<li>
+<p><strong>兄弟节点至少有一个红孩子</strong>：</p>
+<p><img alt="" src="../images/1-7.png" />       </p>
+<details class="abstract">
+<summary>方法二</summary>
+<p>判断<strong><code>p</code>（父亲节点）、<code>s</code>（兄弟节点）、<code>r</code>（红孩子）</strong>三个节点的形态，进行变色，并且旋转，结束后双黑变单黑</p>
 <table>
 <thead>
 <tr>
@@ -2929,18 +2979,27 @@
 </tr>
 </tbody>
 </table>
-</div>
-</li>
-<li>
-<p><strong>兄弟节点没有红孩子</strong>：兄弟变红，双黑上移，遇到红节点/根节点变为单黑；若仍存在双黑，则相对于双黑节点继续调整</p>
+</details>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>兄弟节点为红色</strong>：<code>s</code>和<code>p</code>变色，<code>p</code>朝双黑节点旋转，保持双黑继续调整</p>
+<p><strong>兄弟节点为红色</strong>：</p>
+<ul>
+<li><code>s</code>和<code>p</code>变色，</li>
+<li><code>p</code>朝<strong>双黑节点</strong>旋转</li>
+<li>保持双黑继续调整</li>
+</ul>
+<p><img alt="" src="../images/1-5.png" /></p>
 </li>
 </ul>
-</li>
+<ol>
+<li><strong>有两个孩子</strong>：</li>
+</ol>
+<ul>
+<li><strong>后继/前驱</strong>节点替换被删除的节点</li>
+<li>被删除的节点<strong>颜色不变</strong></li>
+<li>相当于删除<strong>后继/前驱</strong>节点</li>
 </ul>
 <hr />
 <h2 id="b">B树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
@@ -2959,7 +3018,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="_5">基本操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_6">基本操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>插入</strong>：先查找到插入的位置进行插入</li>
 </ol>
