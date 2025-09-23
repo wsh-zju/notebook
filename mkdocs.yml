@@ -24,6 +24,7 @@ nav:
         - Computer_Science/Language/Python/index.md
         - 基础语法 : Computer_Science/Language/Python/foundation.md
         - 数据类型 : Computer_Science/Language/Python/data.md
+        - 进阶语法 : Computer_Science/Language/Python/advance.md
         - 常用知识汇总 : Computer_Science/Language/Python/accumulate.md
       - CSS : Computer_Science/Language/Css.md
     - 计算机系统 :
@@ -36,7 +37,7 @@ nav:
       - ISA : Computer_Science/Computer_System/ISA.md
       - CPU : Computer_Science/Computer_System/CPU.md
       - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
-      - 流水线 :: Computer_Science/Computer_System/pipeline.md
+      - 流水线 : Computer_Science/Computer_System/pipeline.md
     - 数据结构 :
       - 数据结构基础 :
         - Computer_Science/Data_Structure/Foundation/index.md
