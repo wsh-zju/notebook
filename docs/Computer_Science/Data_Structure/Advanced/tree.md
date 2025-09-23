@@ -277,7 +277,7 @@
     - `p`朝**双黑节点**旋转
     - 保持双黑继续调整
 
-    ![](images/1-5.png){style="width:30%;display: block;margin: 20px auto"}
+    ![](images/1-5.png){style="width:60%;display: block;margin: 20px auto"}
 
 3. **有两个孩子**：
 
