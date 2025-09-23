@@ -62,23 +62,10 @@ a = b = c = 1               # 从后向前赋值，三个变量被赋予相同�
 a, b, c = 1, 2, "runoob"    # a=1, b=2, c="runoob"
 ```
 
-### 模块导入
-1. 将**整个模块**导入：`import module`
-2. 从某个模块中导入**某个**函数：`from module import function`
-3. 从某个模块中导入**多个**函数：`from module import func1, func2, func3`
-4. 将某个模块中的**全部函数**导入：`from module import *`
 
-!!! abstract "区别"
-    1. 导入**整个模块**
 
-    ```python
-    import sys
-    print(sys.path)     # 需要添加sys.
-    ```
+!!! abstract "else 语句"
+    与 `if` 一样， `while` 和 `for` 循环后面也可以跟着 `else` 语句。
 
-    2. 导入**部分成员**
-
-    ```python
-    from sys import argv,path   # 导入特定的成员
-    print(path)                 # 因为已经导入path成员，所以此处引用时不需要加sys.
-    ```
+    - 当循环正常结束时，循环条件不满足， `else` 被执行；    
+    - 当循环被 `break` 结束时，循环条件仍然满足， `else` 不执行。
