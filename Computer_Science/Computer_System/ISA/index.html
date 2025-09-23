@@ -771,6 +771,8 @@
       
         
       
+        
+      
     
     
     
@@ -867,6 +869,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Language/Python/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    进阶语法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Language/Python/accumulate/" class="md-nav__link">
         
   
@@ -935,6 +960,8 @@
       
         
           
+        
+      
         
       
         
@@ -1343,6 +1370,29 @@
   
   <span class="md-ellipsis">
     多周期CPU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流水线
     
   </span>
   
@@ -2658,9 +2708,13 @@
 </ol>
 <hr />
 <h3 id="isa_1">ISA 分类<a class="headerlink" href="#isa_1" title="Permanent link">&para;</a></h3>
+<p>基于内部存储的类型。</p>
 <ol>
 <li><strong>栈结构ISA</strong></li>
 </ol>
+<ul>
+<li>隐式操作数：在栈顶</li>
+</ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -2674,6 +2728,11 @@
 <ol start="2">
 <li><strong>累加器结构ISA</strong></li>
 </ol>
+<ul>
+<li>隐式操作数：在累加器中</li>
+<li>显式操作数：内存地址</li>
+<li>结果写入累加器</li>
+</ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -2683,11 +2742,12 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="no">store</span><span class="w"> </span><span class="no">C</span><span class="w">   </span>
 </code></pre></div></td></tr></table></div>
 <ol start="3">
-<li><strong>寄存器结构ISA</strong></li>
+<li><strong>通用目的寄存器结构（GPR）</strong></li>
 </ol>
 <ul>
+<li>显式操作数：寄存器、内存地址</li>
 <li>
-<p><strong>寄存器-存储器架构</strong>：任何指令都可以访问存储器，e.g. x86</p>
+<p><strong>寄存器-存储器架构</strong>：任何指令都可以访问内存，e.g. x86</p>
 <p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -2696,7 +2756,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">add</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">B</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nf">store</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">C</span>
 </code></pre></div></td></tr></table></div>
-- <strong>Load-Store架构（寄存器-寄存器架构）</strong>：只有<code>load</code>和<code>store</code>指令可以访问寄存器，e.g. <strong>RISC-V</strong></p>
+- <strong>Load-Store架构（寄存器-寄存器架构）</strong>：只有<code>load</code>和<code>store</code>指令可以访问内存，e.g. <strong>RISC-V</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -2710,18 +2770,21 @@
 </li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title">ISA 分类</p>
+<p class="admonition-title">ISA 分类（设计思路）</p>
 <ol>
-<li>CISC：复杂指令集<ul>
+<li>CISC：复杂指令集，e.g. x86<ul>
 <li>代码更短</li>
 <li>编译更简单</li>
 </ul>
 </li>
-<li>RISC：精简指令集</li>
+<li>RISC：精简指令集，e.g. RISC-V、ARM</li>
 </ol>
 </div>
 <hr />
 <h2 id="risc-v">RISC-V<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>操作数</strong>：寄存器操作数、立即数操作数、内存操作数</li>
+</ol>
 <h3 id="_2">指令集分类<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li>

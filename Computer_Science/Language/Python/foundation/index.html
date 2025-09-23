@@ -775,6 +775,8 @@
       
         
       
+        
+      
     
     
     
@@ -940,15 +942,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      模块导入
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -976,6 +969,29 @@
   
   <span class="md-ellipsis">
     数据类型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    进阶语法
     
   </span>
   
@@ -1059,6 +1075,8 @@
       
         
           
+        
+      
         
       
         
@@ -1294,6 +1312,29 @@
   
   <span class="md-ellipsis">
     多周期CPU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    流水线
     
   </span>
   
@@ -2444,15 +2485,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      模块导入
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2555,29 +2587,13 @@
 <span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>               <span class="c1"># 从后向前赋值，三个变量被赋予相同的数值</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;runoob&quot;</span>    <span class="c1"># a=1, b=2, c=&quot;runoob&quot;</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_8">模块导入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<ol>
-<li>将<strong>整个模块</strong>导入：<code>import module</code></li>
-<li>从某个模块中导入<strong>某个</strong>函数：<code>from module import function</code></li>
-<li>从某个模块中导入<strong>多个</strong>函数：<code>from module import func1, func2, func3</code></li>
-<li>将某个模块中的<strong>全部函数</strong>导入：<code>from module import *</code></li>
-</ol>
 <div class="admonition abstract">
-<p class="admonition-title">区别</p>
-<ol>
-<li>导入<strong>整个模块</strong></li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>     <span class="c1"># 需要添加sys.</span>
-</code></pre></div></td></tr></table></div>
-<ol start="2">
-<li>导入<strong>部分成员</strong></li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">sys</span><span class="w"> </span><span class="kn">import</span> <span class="n">argv</span><span class="p">,</span><span class="n">path</span>   <span class="c1"># 导入特定的成员</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                 <span class="c1"># 因为已经导入path成员，所以此处引用时不需要加sys.</span>
-</code></pre></div></td></tr></table></div>
+<p class="admonition-title">else 语句</p>
+<p>与 <code>if</code> 一样， <code>while</code> 和 <code>for</code> 循环后面也可以跟着 <code>else</code> 语句。</p>
+<ul>
+<li>当循环正常结束时，循环条件不满足， <code>else</code> 被执行；    </li>
+<li>当循环被 <code>break</code> 结束时，循环条件仍然满足， <code>else</code> 不执行。</li>
+</ul>
 </div>
 
 
