@@ -37,7 +37,7 @@ nav:
       - ISA : Computer_Science/Computer_System/ISA.md
       - CPU : Computer_Science/Computer_System/CPU.md
       - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
-      - 流水线 : Computer_Science/Computer_System/pipeline.md
+      - 流水线CPU : Computer_Science/Computer_System/pipeline.md
     - 数据结构 :
       - 数据结构基础 :
         - Computer_Science/Data_Structure/Foundation/index.md
