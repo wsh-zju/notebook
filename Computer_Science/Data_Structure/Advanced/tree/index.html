@@ -1217,7 +1217,7 @@
   
   
   <span class="md-ellipsis">
-    流水线
+    流水线CPU
     
   </span>
   
@@ -3005,6 +3005,10 @@
 </li>
 <li>
 <p><strong>兄弟节点至少有一个红孩子</strong>：</p>
+<ul>
+<li>case 3：近侄与兄弟交换颜色，兄弟节点右旋，转换为case 4</li>
+<li>case 4：父亲与兄弟交换颜色，远侄变黑，父亲左旋</li>
+</ul>
 <p><img alt="" src="../images/1-7.png" style="width:60%;display: block;margin: 20px auto" />     </p>
 <details class="abstract">
 <summary>方法二</summary>
@@ -3059,7 +3063,7 @@
 <p><img alt="" src="../images/1-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </li>
 </ul>
-<ol start="3">
+<ol>
 <li><strong>有两个孩子</strong>：</li>
 </ol>
 <ul>

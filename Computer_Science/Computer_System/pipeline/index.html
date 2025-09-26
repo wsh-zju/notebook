@@ -26,7 +26,7 @@
     
     
       
-        <title>流水线 - Lucy Wisteria's Notebook</title>
+        <title>流水线CPU - Lucy Wisteria's Notebook</title>
       
     
     
@@ -97,6 +97,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -126,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              流水线
+              流水线CPU
             
           </span>
         </div>
@@ -1216,17 +1221,89 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    流水线CPU
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    流水线
+    流水线CPU
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      流水线
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流水线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令执行阶段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISC-V 流水线设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      流水线性能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2297,6 +2374,56 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      流水线
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="流水线">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      指令执行阶段
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risc-v" class="md-nav__link">
+    <span class="md-ellipsis">
+      RISC-V 流水线设计
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      流水线性能
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2319,9 +2446,107 @@
   
 
 
-  <h1>流水线</h1>
+  <h1>流水线CPU</h1>
 
-
+<h2 id="_1">流水线<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>特点</strong></li>
+</ol>
+<ul>
+<li>流水线将一个处理过程划分为多个子过程，每个子过程由专门的功能单元来实现</li>
+<li>流水线中<strong>各个阶段的处理时间应尽可能相等</strong>，否则会导致流水线阻塞甚至中断；其中耗时最长的阶段会成为整个流水线的瓶颈</li>
+<li>流水线的每个功能部件都必须配备一个<strong>缓冲寄存器（锁存器）</strong>，这种寄存器被称为<strong>流水线寄存器</strong> （传递相邻两个阶段之间的数据，确保后续阶段能正确使用这些数据，同时将各阶段的处理操作相互隔离）</li>
+</ul>
+<ol start="2">
+<li><strong>分类</strong></li>
+</ol>
+<ul>
+<li><strong>单功能流水线</strong>：只能用来执行一种指令</li>
+<li>
+<p><strong>多功能流水线</strong>：可以执行多种指令</p>
+<ul>
+<li><strong>静态流水线</strong>：在同一个时间槽内，只能执行相同种类的指令</li>
+<li><strong>动态流水线</strong>：在同一个时间槽内，可以执行不同种类的指令</li>
+</ul>
+<p><img alt="" src="../photo/9-1.png" /></p>
+</li>
+</ul>
+<h3 id="_2">指令执行阶段<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>IF</strong>：内存取指</li>
+<li><strong>ID</strong>：译码 &amp; 读取寄存器</li>
+<li><strong>EX</strong>：执行指令 or 计算地址</li>
+<li><strong>MEM</strong>：访问内存</li>
+<li><strong>WB</strong>：写回寄存器</li>
+</ol>
+<h3 id="risc-v">RISC-V 流水线设计<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../photo/9-2.png" /></p>
+<ol>
+<li><strong>寄存器设计</strong></li>
+</ol>
+<ul>
+<li><strong>IF 取指</strong>：<ul>
+<li><strong>IF/ID.IR</strong>：指令寄存器，保存当前指令</li>
+<li><strong>IF/ID.NPC</strong>：保存下一条指令地址</li>
+</ul>
+</li>
+<li><strong>ID 译码</strong>：<ul>
+<li><strong>ID/EX.A/B</strong>：保存寄存器操作数</li>
+<li><strong>ID/EX.Imm</strong>：保存生成的立即数</li>
+<li><strong>ID/EX.NPC</strong>：传递下一条指令地址（来自<strong>IF/ID.NPC</strong>）</li>
+<li><strong>ID/EX.IR</strong>：传递指令（来自<strong>ID/ID.IR</strong>）</li>
+</ul>
+</li>
+<li><strong>EX 执行</strong>：<ul>
+<li><strong>EX/MEM.IR</strong>：传递指令（来自<strong>ID/EX.IR</strong>）</li>
+<li><strong>EX/MEM.B</strong>：传递寄存器操作数</li>
+<li><strong>EX/MEM.ALUOutput</strong>：保存计算结果</li>
+<li><strong>EX/MEM.cond</strong>：保存比较结果（1/0）</li>
+</ul>
+</li>
+<li><strong>MEM 读写</strong>：<ul>
+<li><strong>MEM/WB.IR</strong>：传递指令（来自<strong>EX/MEM.IR</strong>）</li>
+<li><strong>MEM/WB.ALUOutput</strong>：传递计算结果</li>
+<li><strong>MEM/WB.LMD</strong>：保存读出的Memory数据</li>
+</ul>
+</li>
+<li><strong>WB 写回</strong></li>
+</ul>
+<ol start="2">
+<li><strong>数据通路</strong></li>
+</ol>
+<p><img alt="" src="../photo/9-3.png" /></p>
+<h3 id="_3">流水线性能<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>吞吐量 TP</strong>：每秒钟处理的指令数</li>
+</ol>
+<div class="arithmatex">\[
+TP = \frac{n}{T} = \frac{n}{m\Delta t_0 + (n-1)\Delta t_0}
+\]</div>
+<p>其中 <span class="arithmatex">\(m\)</span> 为流水线阶段个数</p>
+<p>吞吐量存在最大值 <span class="arithmatex">\(TP &lt; TP_{max}\)</span> ：当 <span class="arithmatex">\(n &gt;&gt; m\)</span> 时，<span class="arithmatex">\(TP ≈ TP_{max} = \frac{1}{\Delta t_0}\)</span></p>
+<ol start="2">
+<li><strong>加速比 Sp</strong>：</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
+&amp;= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0} \\
+&amp;= \frac{n \times m}{m+n-1} \\
+&amp;&gt; 1
+\end{aligned}
+\]</div>
+<p>当 <span class="arithmatex">\(n &gt;&gt; m\)</span> 时，<span class="arithmatex">\(Sp ≈ m\)</span></p>
+<ol start="3">
+<li><strong>效率 <span class="arithmatex">\(\eta\)</span></strong>：</li>
+</ol>
+<div class="arithmatex">\[
+\begin{aligned}
+\eta &amp;= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0 \times m} \\
+&amp;= \frac{n}{m+n-1}
+\end{aligned}
+\]</div>
+<p>当 <span class="arithmatex">\(n &gt;&gt; m\)</span> 时，<span class="arithmatex">\(\eta ≈ 1\)</span></p>
 
 
 
