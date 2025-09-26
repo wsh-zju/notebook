@@ -261,7 +261,6 @@
     - **兄弟节点至少有一个红孩子**：
         - case 3：近侄与兄弟交换颜色，兄弟节点右旋，转换为case 4
         - case 4：父亲与兄弟交换颜色，远侄变黑，父亲左旋
-
         ![](images/1-7.png){style="width:60%;display: block;margin: 20px auto"}     
         
         ??? abstract "方法二"
@@ -279,9 +278,9 @@
     - `p`朝**双黑节点**旋转
     - 保持双黑继续调整
 
-    ![](images/1-5.png){style="width:60%;display: block;margin: 20px auto"}
+    ![](images/1-5.png){style="width:40%;display: block;margin: 20px auto"}
 
-1. **有两个孩子**：
+3. **有两个孩子**：
 
 - **后继/前驱**节点替换被删除的节点
 - 被删除的节点**颜色不变**
