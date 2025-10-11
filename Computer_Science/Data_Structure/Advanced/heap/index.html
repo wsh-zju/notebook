@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Language/C/recursion/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Advanced/heap/">
       
       
-        <link rel="prev" href="../pointer/">
+        <link rel="prev" href="../tree/">
       
       
-        <link rel="next" href="../structure/">
+        <link rel="next" href="../pta/">
       
       
       <link rel="icon" href="../../../../style/images/favicon_io/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>递归与迭代 - Lucy Wisteria's Notebook</title>
+        <title>Heap - Lucy Wisteria's Notebook</title>
       
     
     
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              递归与迭代
+              Heap
             
           </span>
         </div>
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../../Language/" class="md-tabs__link">
           
   
   
@@ -505,8 +505,6 @@
                 
   
   
-    
-  
   
   
     
@@ -529,15 +527,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../Language/" class="md-nav__link ">
               
   
   
@@ -556,7 +554,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             编程语言
@@ -569,8 +567,6 @@
                 
   
   
-    
-  
   
   
     
@@ -597,15 +593,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../Language/C/" class="md-nav__link ">
               
   
   
@@ -624,7 +620,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1_2">
             <span class="md-nav__icon md-icon"></span>
             C 语言
@@ -640,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pointer/" class="md-nav__link">
+      <a href="../../../Language/C/pointer/" class="md-nav__link">
         
   
   
@@ -660,30 +656,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    递归与迭代
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../Language/C/recursion/" class="md-nav__link">
         
   
   
@@ -694,66 +670,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      递归
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      尾递归
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      常见示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
-    <span class="md-ellipsis">
-      迭代vs递归
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../structure/" class="md-nav__link">
+      <a href="../../../Language/C/structure/" class="md-nav__link">
         
   
   
@@ -789,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../file/" class="md-nav__link">
+      <a href="../../../Language/C/file/" class="md-nav__link">
         
   
   
@@ -812,7 +728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../accumulate/" class="md-nav__link">
+      <a href="../../../Language/C/accumulate/" class="md-nav__link">
         
   
   
@@ -872,7 +788,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Python/" class="md-nav__link ">
+            <a href="../../../Language/Python/" class="md-nav__link ">
               
   
   
@@ -907,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/foundation/" class="md-nav__link">
+      <a href="../../../Language/Python/foundation/" class="md-nav__link">
         
   
   
@@ -930,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/data/" class="md-nav__link">
+      <a href="../../../Language/Python/data/" class="md-nav__link">
         
   
   
@@ -953,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/advance/" class="md-nav__link">
+      <a href="../../../Language/Python/advance/" class="md-nav__link">
         
   
   
@@ -976,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Python/accumulate/" class="md-nav__link">
+      <a href="../../../Language/Python/accumulate/" class="md-nav__link">
         
   
   
@@ -1007,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Css/" class="md-nav__link">
+      <a href="../../../Language/Css/" class="md-nav__link">
         
   
   
@@ -1324,8 +1240,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1340,11 +1258,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1360,7 +1278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             数据结构
@@ -1411,7 +1329,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data_Structure/Foundation/" class="md-nav__link ">
+            <a href="../../Foundation/" class="md-nav__link ">
               
   
   
@@ -1446,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Linear/" class="md-nav__link">
+      <a href="../../Foundation/Linear/" class="md-nav__link">
         
   
   
@@ -1469,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Tree/" class="md-nav__link">
+      <a href="../../Foundation/Tree/" class="md-nav__link">
         
   
   
@@ -1492,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Heap/" class="md-nav__link">
+      <a href="../../Foundation/Heap/" class="md-nav__link">
         
   
   
@@ -1515,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/ADT/" class="md-nav__link">
+      <a href="../../Foundation/ADT/" class="md-nav__link">
         
   
   
@@ -1538,7 +1456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Graph/" class="md-nav__link">
+      <a href="../../Foundation/Graph/" class="md-nav__link">
         
   
   
@@ -1561,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Sort/" class="md-nav__link">
+      <a href="../../Foundation/Sort/" class="md-nav__link">
         
   
   
@@ -1584,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/Hash/" class="md-nav__link">
+      <a href="../../Foundation/Hash/" class="md-nav__link">
         
   
   
@@ -1607,7 +1525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Foundation/pta/" class="md-nav__link">
+      <a href="../../Foundation/pta/" class="md-nav__link">
         
   
   
@@ -1635,6 +1553,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1657,15 +1577,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Data_Structure/Advanced/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1684,7 +1604,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             高级数据结构
@@ -1700,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Advanced/tree/" class="md-nav__link">
+      <a href="../tree/" class="md-nav__link">
         
   
   
@@ -1720,10 +1640,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../Data_Structure/Advanced/heap/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Heap
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1734,6 +1674,42 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      左倾堆
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      斜堆
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1746,7 +1722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Data_Structure/Advanced/pta/" class="md-nav__link">
+      <a href="../pta/" class="md-nav__link">
         
   
   
@@ -2410,40 +2386,16 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      递归
+      左倾堆
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      尾递归
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      常见示例
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vs" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      迭代vs递归
+      斜堆
     </span>
   </a>
   
@@ -2465,7 +2417,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Language/C/recursion.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Advanced/heap.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2473,173 +2425,149 @@
   
 
 
-  <h1>递归与迭代</h1>
+  <h1>Heap</h1>
 
-<h2 id="_1">递归<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">左倾堆<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>递归基础</strong></li>
+<li><strong>目标</strong>：加快合并速度</li>
+<li><strong>定义</strong>：</li>
 </ol>
 <ul>
-<li><code>Base Case</code>：⾄少存在⼀种情况，不再进⼀步递归就可以直接得到结果</li>
-<li><code>Make Progress</code>：每⼀次递归都是向着<code>base case</code>前进</li>
-<li><code>Always Believe</code>：始终相信递归是可⾏的</li>
-<li><code>Compound Interest Rule</code>：不要在不同的递归调⽤中做相同的计算</li>
+<li><strong>空路径长度 <span class="arithmatex">\(Npl(X)\)</span></strong>：任意节点<span class="arithmatex">\(X\)</span>的空路径长度<span class="arithmatex">\(Npl(X)\)</span>是<span class="arithmatex">\(X\)</span>到不具有两个子节点的节点的最短路径长度，并且定义 <span class="arithmatex">\(Npl(NULL) = –1\)</span></li>
 </ul>
-<ol>
-<li><strong>分类</strong></li>
-</ol>
-<ul>
-<li><strong>线性递归</strong>：每⼀次递进只调⽤⼀次⾃⼰；<strong>e.g.</strong> 阶乘</li>
-<li><strong>树状递归</strong>：每⼀次递进要调⽤两次或者多次⾃⼰；<strong>e.g.</strong> 斐波那契数列</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Notice!</p>
-<p>树状递归通常存在⼤量的重复计算,<strong>记忆</strong>是消除重复计算的主要⼿段</p>
-</div>
-<h3 id="_2">尾递归<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>定义</strong>：递进时不对递进调⽤返回的值再做任何计算，直接返回</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">return</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">%</span><span class="n">y</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>尾递归是<strong>伪递归</strong>，因为递进的时候做了计算，⽽回归的时候没有做计算</p>
-</li>
-<li>所有的尾递归都可以在代码形式上机械地被<strong>优化为⾮递归的形态</strong>：<ul>
-<li>整个函数⽤<code>while (1)</code>包起来</li>
-<li><code>base case</code>改成<code>if ... break</code></li>
-<li>递进改成对相应的变量赋值</li>
-</ul>
-</li>
-</ol>
-<h3 id="_3">常见示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Euclid算法（求最大公约数）</label><label for="__tabbed_1_2">汉诺塔问题</label><label for="__tabbed_1_3">加速幂计算</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">y</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="o">%</span><span class="n">y</span><span class="p">);</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p><strong>问题叙述</strong>：在⼀根柱⼦上从下往上按照⼤⼩顺序摞着64⽚⻩⾦圆盘，把圆盘从下⾯开始按⼤⼩顺序重新摆放在另⼀根柱⼦上。并且规定，在⼩圆盘上不能放⼤圆盘，在三根柱⼦之间⼀次只能移动⼀个圆盘</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">hanoi</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">aux</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span><span class="c1">// 以target为辅助柱</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;move %dfrom %cto %c</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">);</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">aux</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">,</span><span class="w"> </span><span class="n">source</span><span class="p">);</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="p">{</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="o">=</span><span class="w"> </span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">t</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<h2 id="vs">迭代vs递归<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>简单地可以认为⽤<strong>循环</strong>实现的是<strong>迭代</strong>算法</p>
-</div>
-<ol>
-<li><strong>区别</strong></li>
-</ol>
-<ul>
-<li><strong>迭代算法</strong>：<ul>
-<li>从问题最⼩的状态开始，展开到最⼤的状态</li>
-<li>e.g. <code>n! = 1 * 2 * 3 … * n</code></li>
-</ul>
-</li>
-<li><strong>递归算法</strong>：<ul>
-<li>从问题最⼤的状态开始，分解到最⼩的状态（base case）</li>
-<li>e.g. <code>n! = n * (n-1)! = n * (n-1) * (n-2) … * 1</code></li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><strong>绝⼤部分递归算法</strong>都可以被改造成<strong>迭代算法</strong></li>
-</ol>
-<p><strong>机械的⽅法</strong>：将结果作为⼀个参数，在递进的过程中计算并传递进下⼀轮递进，从⽽把递归改造成<strong>尾递归</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// 递归：</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">){</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">// 迭代：</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">factorial_it</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">){</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">f</span><span class="p">;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">factorial_it</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">,</span><span class="w"> </span><span class="n">f</span><span class="o">*</span><span class="n">n</span><span class="p">);</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
+<div class="arithmatex">\[
+Npl(X) = min { Npl(C) + 1 | C 是 X 的所有子节点 }
+\]</div>
 <ol start="3">
-<li><strong>性能分析（递归）</strong></li>
+<li><strong>左式堆性质</strong>：</li>
 </ol>
 <ul>
-<li><code>Pros</code>：<ul>
-<li>⼀旦被优化，性能还不错</li>
-<li>代码更简短</li>
-<li>易于理解：递归代码更有描述性，⽐迭代代码更接近问题本身</li>
+<li>有序特性：与标准堆相同（通常指最小堆或最大堆的性质）</li>
+<li>结构特性：二叉树，但不是平衡的 </li>
+<li><strong>重要性质</strong>：对于堆中的每个节点 <span class="arithmatex">\(X\)</span>，其<strong>左子节点</strong>的空路径长度<strong>至少大于或等于</strong>其<strong>右子节点</strong>的空路径长度</li>
+<li><strong>定理</strong>：一棵在右路径上有 <span class="arithmatex">\(r\)</span> 个节点的左式树，其总节点数至少为 <span class="arithmatex">\(2^r - 1\)</span></li>
 </ul>
+<ol start="4">
+<li><strong>节点结构</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">TreeNode</span><span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">     </span><span class="n">Element</span><span class="p">;</span><span class="w">      </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">PriorityQueue</span><span class="w">   </span><span class="n">Left</span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">PriorityQueue</span><span class="w">   </span><span class="n">Right</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kt">int</span><span class="w">             </span><span class="n">Npl</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<ol start="5">
+<li><strong>合并操作</strong>（插入操作可以看作是合并操作的一个特例）</li>
+</ol>
+<ul>
+<li>递归地合并 <code>H1-&gt;Right</code> 和 <code>H2</code>（<strong>根节点值小的树的右节点为根节点大的树的根节点</strong>）</li>
+<li>将合并结果挂接为 <code>H1</code> 的新右子树</li>
+<li>如果<strong>左子节点的 <code>Npl</code> &lt; 右子节点的 <code>Npl</code></strong>，交换 <code>H1</code> 的左右子节点，以维持左式堆性质</li>
+</ul>
+<ol start="6">
+<li><strong>合并代码</strong>：时间复杂度为 <span class="arithmatex">\(O(\log N)\)</span></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">PriorityQueue</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">);</span><span class="w">   </span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">H2</span><span class="p">,</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="k">static</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="nf">Merge1</span><span class="p">(</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">{</span><span class="w"> </span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="cm">/* single node */</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="cm">/* H1-&gt;Right is already NULL and H1-&gt;Npl is already 0*/</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="p">,</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">);</span><span class="w">     </span><span class="cm">/* Step 1 &amp; 2 */</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Left</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">            </span><span class="n">SwapChildren</span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="w"> </span><span class="p">);</span><span class="w">                 </span><span class="cm">/* Step 3 */</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">Right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="cm">/* 更新 Npl */</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end else */</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p><strong>原始堆</strong>的合并操作的时间复杂度为 <span class="arithmatex">\(O(m \log n)\)</span></p>
+<p>其中 <span class="arithmatex">\(m\)</span> 是较小堆的大小，<span class="arithmatex">\(n\)</span> 是较大堆的大小</p>
+</div>
+<ol start="7">
+<li><strong>DeleteMin</strong>：时间复杂度为 <span class="arithmatex">\(O(\log N)\)</span></li>
+</ol>
+<ul>
+<li>删除根节点</li>
+<li>合并左子树和右子树</li>
+</ul>
+<h2 id="_2">斜堆<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>目标</strong>：任何 <span class="arithmatex">\(M\)</span> 个连续作最多需要 <span class="arithmatex">\(O(M \log N)\)</span> 时间</p>
 </li>
-<li><code>Cons</code>：<ul>
-<li>递归深度受到线程运⾏栈⼤⼩限制不能太深</li>
-<li>占⽤内存较多</li>
-</ul>
+<li>
+<p><strong>斜堆</strong>：左倾堆的简化版本</p>
 </li>
-<li><strong>建议</strong>：⽤递归计算的思路思考问题，代码实现后，转成迭代实现</li>
+<li><strong>合并操作</strong>：总是交换合并路径上每个节点的左右子节点（<strong>不需要维护空路径长度</strong>）</li>
+</ol>
+<ul>
+<li>交换<strong>根节点值小</strong>的树的左右子节点</li>
+<li>根节点值大的树作为根节点值小的树的<strong>左子节点</strong></li>
+<li>继续递归地合并左子树和右子树</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li>
+<p>斜堆的合并操作<strong>不需要保证左倾</strong>的特性！</p>
+</li>
+<li>
+<p><strong>斜堆的优点</strong></p>
+</li>
+</ol>
+<ul>
+<li>斜堆的合并操作不需要额外的空间来维护路径长度</li>
+<li>也不需要测试来确定何时交换子项</li>
+</ul>
+</div>
+<ol start="4">
+<li><strong>轻重节点</strong></li>
+</ol>
+<ul>
+<li><strong>重节点</strong>：其右子树的后代节点数目至少占其的总后代节点数目的一半（左轻右重）</li>
+<li><strong>轻节点</strong>：其右子树的后代节点数目少于其的总后代节点数目的一半（左重右轻）</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>唯一可以更改重/轻状态的节点是最初处于正确路径上的节点!</p>
+</div>
 
 
 
@@ -2675,7 +2603,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../pointer/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 指针">
+          <a href="../tree/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Tree">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2685,20 +2613,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                指针
+                Tree
               </div>
             </div>
           </a>
         
         
           
-          <a href="../structure/" class="md-footer__link md-footer__link--next" aria-label="下一页: 程序结构">
+          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA Problems">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                程序结构
+                PTA Problems
               </div>
             </div>
             <div class="md-footer__button md-icon">
