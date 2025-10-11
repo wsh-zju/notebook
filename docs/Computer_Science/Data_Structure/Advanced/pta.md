@@ -24,3 +24,6 @@
     D. The opposite number of available blocks in the buffer
 
     **Answer:**D
+
+## HW4
+单选题2-2

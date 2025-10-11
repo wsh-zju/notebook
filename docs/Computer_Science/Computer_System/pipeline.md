@@ -1,4 +1,4 @@
-## 流水线
+# 流水线
 1. **特点**
 
 - 流水线将一个处理过程划分为多个子过程，每个子过程由专门的功能单元来实现
@@ -14,8 +14,8 @@
 
     ![](photo/9-1.png){style="width:60%;display: block;margin: 20px auto"}
     
-
-### 指令执行阶段
+---
+## 指令执行阶段
 
 1. **IF**：内存取指
 2. **ID**：译码 & 读取寄存器
@@ -23,68 +23,112 @@
 4. **MEM**：访问内存
 5. **WB**：写回寄存器
 
-### RISC-V 流水线设计
+---
+## RISC-V 流水线设计
 
 ![](photo/9-2.png)
 
-1. **寄存器设计**
+### 寄存器设计
 
-- **IF 取指**：
-    - **IF/ID.IR**：指令寄存器，保存当前指令
-    - **IF/ID.NPC**：保存下一条指令地址
-- **ID 译码**：
-    - **ID/EX.A/B**：保存寄存器操作数
-    - **ID/EX.Imm**：保存生成的立即数
-    - **ID/EX.NPC**：传递下一条指令地址（来自**IF/ID.NPC**）
-    - **ID/EX.IR**：传递指令（来自**ID/ID.IR**）
-- **EX 执行**：
-    - **EX/MEM.IR**：传递指令（来自**ID/EX.IR**）
-    - **EX/MEM.B**：传递寄存器操作数
-    - **EX/MEM.ALUOutput**：保存计算结果
-    - **EX/MEM.cond**：保存比较结果（1/0）
-- **MEM 读写**：
-    - **MEM/WB.IR**：传递指令（来自**EX/MEM.IR**）
-    - **MEM/WB.ALUOutput**：传递计算结果
-    - **MEM/WB.LMD**：保存读出的Memory数据
-- **WB 写回**
+1. **IF 取指**：
 
-2. **数据通路**
+- **IF/ID.IR**：指令寄存器，保存当前指令
+- **IF/ID.NPC**：保存下一条指令地址
+
+2. **ID 译码**：
+
+- **ID/EX.A/B**：保存寄存器操作数
+- **ID/EX.Imm**：保存生成的立即数
+- **ID/EX.NPC**：传递下一条指令地址（来自**IF/ID.NPC**）
+- **ID/EX.IR**：传递指令（来自**ID/ID.IR**）
+
+3. **EX 执行**：
+
+- **EX/MEM.IR**：传递指令（来自**ID/EX.IR**）
+- **EX/MEM.B**：传递寄存器操作数
+- **EX/MEM.ALUOutput**：保存计算结果
+- **EX/MEM.cond**：保存比较结果（1/0）
+
+4. **MEM 读写**：
+
+- **MEM/WB.IR**：传递指令（来自**EX/MEM.IR**）
+- **MEM/WB.ALUOutput**：传递计算结果
+- **MEM/WB.LMD**：保存读出的Memory数据
+
+5. **WB 写回**
+
+### 数据通路
 
 ![](photo/9-3.png)
 
-
-### 流水线性能
+### 控制信号
+![](photo/9-6.png)
+---
+## 流水线性能
 1. **吞吐量 TP**：每秒钟处理的指令数
 
-$$
-TP = \frac{n}{T} = \frac{n}{m\Delta t_0 + (n-1)\Delta t_0}
-$$
+    $$
+    TP = \frac{n}{T} = \frac{n}{m\Delta t_0 + (n-1)\Delta t_0}
+    $$
 
-其中 $m$ 为流水线阶段个数
+    其中 $m$ 为流水线阶段个数
 
-吞吐量存在最大值 $TP < TP_{max}$ ：当 $n >> m$ 时，$TP ≈ TP_{max} = \frac{1}{\Delta t_0}$
+    吞吐量存在最大值 $TP < TP_{max}$ ：当 $n >> m$ 时，$TP ≈ TP_{max} = \frac{1}{\Delta t_0}$
 
 2. **加速比 Sp**：
 
-$$
-\begin{aligned}
-Sp &= \frac{非流水线执行时间}{流水线执行时间} \\
-&= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0} \\
-&= \frac{n \times m}{m+n-1} \\
-&> 1
-\end{aligned}
-$$
+    $$
+    \begin{aligned}
+    Sp &= \frac{非流水线执行时间}{流水线执行时间} \\
+    &= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0} \\
+    &= \frac{n \times m}{m+n-1} \\
+    &> 1
+    \end{aligned}
+    $$
 
-当 $n >> m$ 时，$Sp ≈ m$
+    当 $n >> m$ 时，$Sp ≈ m$
+
+    !!! abstract "理想状况"
+        最理想的加速比等于流水线的阶段数，但是并不是阶段数越多越好
 
 3. **效率 $\eta$**：
 
 
-$$
-\begin{aligned}
-\eta &= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0 \times m} \\
-&= \frac{n}{m+n-1}
-\end{aligned}
-$$
+    $$
+    \begin{aligned}
+    \eta &= \frac{n \times m \times \Delta t_0}{(m+n-1)\Delta t_0 \times m} \\
+    &= \frac{n}{m+n-1}
+    \end{aligned}
+    $$
 
-当 $n >> m$ 时，$\eta ≈ 1$
+    当 $n >> m$ 时，$\eta ≈ 1$
+
+    ![](photo/9-4.png){style="width:40%;display: block;margin: 20px auto"}
+
+---
+## 流水线冲突
+1. **结构冲突**：当前指令需要访问的资源被占用
+
+- **解决方法**：
+    - 增加硬件资源
+    - `stall`暂停一些指令：改成 NOP `addi x0, x0, 0` 指令
+
+2. **数据冲突**：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写
+
+- e.g. `add x1, x2, x3` 指令需要等待 `x2` 寄存器写入完成，才能开始执行 
+- **解决方法**：
+    - `stall`暂停一些指令，直至上一条指令完成数据读写
+    - `forwarding`数据前递：添加额外硬件，直接从内部资源提前获取缺失的数据，避免流水线停顿
+    - **重排代码**，避免流水线停顿
+    
+    !!! note "Notices"
+        `forwarding`不能避免所有的流水线停顿，例如上一条指令为`load`指令
+
+        ![](photo/9-5.png)
+
+3. **控制冲突**：执行流的控制依赖于上一条指令的执行结果
+
+- e.g. 条件分支指令（下一条指令不能立即执行）
+- **解决方法**：
+    - `stall`：性能不佳
+    - 预测
