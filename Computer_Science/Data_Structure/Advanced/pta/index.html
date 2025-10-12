@@ -2498,28 +2498,15 @@
 </li>
 <li>
 <p>* Consider the following buffer management problem. </p>
-</li>
-</ol>
 <p>Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to  be moved into the new buffer so it costs <span class="arithmatex">\(k+1\)</span> to make this insertion, where <span class="arithmatex">\(k\)</span> is the number of old items. Clearly, if there are <span class="arithmatex">\(N\)</span> items, the worst-case cost for one insertion can be <span class="arithmatex">\(Ω(N)\)</span>. </p>
 <p>To show that the average cost is <span class="arithmatex">\(O(1)\)</span>, let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the N items are placed. Which of the following potential functions works?</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>A. The number of items currently in the buffer
-
-B. The opposite number of items currently in the buffer
-
-C. The number of available blocks currently in the buffer
-
-D. The opposite number of available blocks in the buffer
-
-**Answer:**D
-</code></pre></div></td></tr></table></div>
+<p>A. The number of items currently in the buffer</p>
+<p>B. The opposite number of items currently in the buffer</p>
+<p>C. The number of available blocks currently in the buffer</p>
+<p>D. The opposite number of available blocks in the buffer</p>
+<p><strong>Answer:</strong>D</p>
+</li>
+</ol>
 <h2 id="hw4">HW4<a class="headerlink" href="#hw4" title="Permanent link">&para;</a></h2>
 <p>单选题2-2</p>
 
@@ -2626,8 +2613,6 @@ D. The opposite number of available blocks in the buffer
       <script src="../../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../../../../style/js/katex.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
       
