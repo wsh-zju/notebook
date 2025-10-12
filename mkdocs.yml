@@ -201,7 +201,7 @@ extra_javascript:
   - style/js/katex.js
   #- style/js/mathjax.js
   #- javascripts/mathjax.js #Latex支持
-  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  #- https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
   #- javascripts/config.js
