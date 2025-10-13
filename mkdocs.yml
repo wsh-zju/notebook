@@ -198,7 +198,7 @@ extra_css:
 extra_javascript:
   #- https://cdn.tonycrane.cc/utils/katex.min.js
   #- https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-  #- style/js/katex.js
+  - style/js/katex.js
   #- style/js/mathjax.js
   #- javascripts/mathjax.js #Latex支持
   #- https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
