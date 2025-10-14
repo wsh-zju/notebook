@@ -138,10 +138,21 @@
         padding: 0px 0px;
         margin-left: 4px;
     }
+    .exercise-tag {
+        border: 1px solid #c63fb2;
+        color: #c63fb2;
+        border-radius: 0.9em;
+        font-size: 0.9em;
+        padding: 0px 8px;
+        margin-left: 4px;
+    }
     .note-tag::before {
         content: none;
     }
     .lab-tag::before {
+        content: none;
+    }
+    .exercise-tag::before {
         content: none;
     }
 }
