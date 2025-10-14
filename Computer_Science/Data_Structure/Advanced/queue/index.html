@@ -2680,8 +2680,14 @@
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<p><strong>步骤</strong>：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并</p>
+<ol>
+<li><strong>步骤</strong>：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并</li>
+</ol>
 <p><img alt="" src="../images/3-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<ol start="2">
+<li><strong>时间复杂度</strong>：如果<strong>最小的不存在的</strong>二项树是 <span class="arithmatex">\(B_i\)</span> ，则 <span class="arithmatex">\(T_p = const · (i+1)\)</span> </li>
+<li>在一个初始为空的二项队列上执行 <span class="arithmatex">\(N\)</span> 次插入操作将花费 <span class="arithmatex">\(O(N)\)</span> 的最坏情况时间，因此<strong>平均时间是常数</strong></li>
+</ol>
 </div>
 <div class="tabbed-block">
 <ol>
@@ -2693,7 +2699,7 @@
 <li>删除其根节点，其子树形成一个新的二项队列，<strong>时间复杂度</strong>：<span class="arithmatex">\(O(\log N)\)</span></li>
 <li>将原队列与新队列合并，<strong>时间复杂度</strong>：<span class="arithmatex">\(O(\log N)\)</span></li>
 </ul>
-<ol start="2">
+<ol>
 <li><strong>时间复杂度</strong>： <span class="arithmatex">\(O(\log N)\)</span></li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -2731,8 +2737,8 @@
 <span class="normal"><a href="#__codelineno-3-33">33</a></span>
 <span class="normal"><a href="#__codelineno-3-34">34</a></span>
 <span class="normal"><a href="#__codelineno-3-35">35</a></span>
-<span class="normal"><a href="#__codelineno-3-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">ElementType</span><span class="w">  </span><span class="nf">DeleteMin</span><span class="p">(</span><span class="w"> </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span><span class="w">   </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">DeletedQueue</span><span class="p">;</span><span class="w"> </span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">ElementType</span><span class="w">  </span><span class="nf">DeleteMin</span><span class="p">(</span><span class="w"> </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">){</span><span class="w">   </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">DeletedQueue</span><span class="p">;</span><span class="w"> </span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">DeletedTree</span><span class="p">,</span><span class="w"> </span><span class="n">OldRoot</span><span class="p">;</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">MinItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Infinity</span><span class="p">;</span><span class="w">  </span>
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">MinTree</span><span class="p">;</span><span class="w"> </span>
