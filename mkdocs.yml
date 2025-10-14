@@ -182,8 +182,6 @@ plugins:
       #extra_skipped_class:
         #- arithmatex
   - macros
-  - rss:
-      enabled: !ENV [FULL, false]
   - glightbox:
       width: 80%
   - encryptcontent:  # now just for one page, need to be improved
