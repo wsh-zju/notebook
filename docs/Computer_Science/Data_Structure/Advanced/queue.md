@@ -113,9 +113,13 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
     ```
 
 === "Insert"
-    **步骤**：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并
+    1. **步骤**：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并
 
     ![](images/3-2.png){style="width:80%;display: block;margin: 20px auto"}
+
+    2. **时间复杂度**：如果**最小的不存在的**二项树是 $B_i$ ，则 $T_p = const · (i+1)$ 
+    3. 在一个初始为空的二项队列上执行 $N$ 次插入操作将花费 $O(N)$ 的最坏情况时间，因此**平均时间是常数**
+
 
 === "DeleteMin"
     1. **步骤**：
@@ -125,11 +129,11 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
     - 删除其根节点，其子树形成一个新的二项队列，**时间复杂度**：$O(\log N)$
     - 将原队列与新队列合并，**时间复杂度**：$O(\log N)$
 
-    2. **时间复杂度**： $O(\log N)$
+    1. **时间复杂度**： $O(\log N)$
 
     ```c
-    ElementType  DeleteMin( BinQueue H )
-    {	BinQueue DeletedQueue; 
+    ElementType  DeleteMin( BinQueue H ){	
+        BinQueue DeletedQueue; 
         Position DeletedTree, OldRoot;
         ElementType MinItem = Infinity;  
         int i, j, MinTree; 
