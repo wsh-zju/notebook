@@ -1334,7 +1334,7 @@
   
   
   <span class="md-ellipsis">
-    数据结构基础
+    FDS
     
   </span>
   
@@ -1351,7 +1351,7 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3_1">
             <span class="md-nav__icon md-icon"></span>
-            数据结构基础
+            FDS
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1572,6 +1572,8 @@
       
         
       
+        
+      
     
     
     
@@ -1592,7 +1594,7 @@
   
   
   <span class="md-ellipsis">
-    高级数据结构
+    ADS
     
   </span>
   
@@ -1609,7 +1611,7 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
-            高级数据结构
+            ADS
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1712,6 +1714,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../queue.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    队列
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2455,11 +2480,8 @@
 <h2 id="_1">左倾堆<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>目标</strong>：加快合并速度</li>
-<li><strong>定义</strong>：</li>
-</ol>
-<ul>
 <li><strong>空路径长度 <span class="arithmatex">\(Npl(X)\)</span></strong>：任意节点<span class="arithmatex">\(X\)</span>的空路径长度<span class="arithmatex">\(Npl(X)\)</span>是<span class="arithmatex">\(X\)</span>到不具有两个子节点的节点的最短路径长度，并且定义 <span class="arithmatex">\(Npl(NULL) = –1\)</span></li>
-</ul>
+</ol>
 <div class="arithmatex">\[
 Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}
 \]</div>
@@ -2469,7 +2491,7 @@ Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}
 <ul>
 <li>有序特性：与标准堆相同（通常指最小堆或最大堆的性质）</li>
 <li>结构特性：二叉树，但不是平衡的 </li>
-<li><strong>重要性质</strong>：对于堆中的每个节点 <span class="arithmatex">\(X\)</span>，其<strong>左子节点</strong>的空路径长度<strong>至少大于或等于</strong>其<strong>右子节点</strong>的空路径长度</li>
+<li><strong>重要性质</strong>：对于堆中的每个节点 <span class="arithmatex">\(X\)</span> ，其<strong>左子节点</strong>的空路径长度<strong>至少大于或等于</strong>其<strong>右子节点</strong>的空路径长度</li>
 <li><strong>定理</strong>：一棵在右路径上有 <span class="arithmatex">\(r\)</span> 个节点的左式树，其总节点数至少为 <span class="arithmatex">\(2^r - 1\)</span></li>
 </ul>
 <ol start="4">
