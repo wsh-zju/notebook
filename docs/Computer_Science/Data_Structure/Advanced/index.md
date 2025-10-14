@@ -1,8 +1,14 @@
 # 高级数据结构与算法分析
 ## Advanced Data Structures
 
-### 高级数据结构
-包括 AVL 树、Splay 树、红黑树、B+ 树、倒排索引、左式堆、斜堆和二项堆等
+{{ BEGIN_TOC }}
+- 高级数据结构
+    - 树——AVL 树、Splay 树、红黑树、B+ 树、摊还分析[note]:tree.md
+    - 堆——左倾堆、斜堆[note]:heap.md
+    - 队列——二项队列[note]:queue.md
+- 算法分析
+    - 倒排索引[note]:algorithm.md
+- 练习
+    - PTA Problems[exercise]:pta.md
+{{ END_TOC }}
 
-### 算法分析
-包括摊还分析、回溯、分治、动态规划、贪心、NP 问题、近似算法、局部搜索、随机算法、并行算法和外部排序等
