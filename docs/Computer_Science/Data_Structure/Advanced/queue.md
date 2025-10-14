@@ -1,13 +1,10 @@
 ## 二项队列
-1. **目标**
+1. **目标**：为了寻找一种能实现高效插入（理想情况下是常数平均时间）的优先队列结构。
 
-某些堆结构（如左式堆、斜堆）的**单次**插入操作时间复杂度为 $O(\log N)$，这在需要频繁插入的场景下可能不够高效。
+- 某些堆结构（如左式堆、斜堆）的**单次**插入操作时间复杂度为 $O(\log N)$，在需要频繁插入的场景下可能不够高效
+- 二叉堆的 $N$ 次**连续插入**的摊还总时间复杂度为 $O(N)$ ，意味着**平均每次**插入的成本是 $O(1)$（常数时间）
 
-二叉堆的 $N$ 次**连续插入**的摊还总时间复杂度为 $O(N)$ ，这意味着**平均每次**插入的成本是 $O(1)$（常数时间）。
-
-为了寻找一种能实现高效插入（理想情况下是常数平均时间）的优先队列结构。
-
-2. **结构**: 二项队列**不是一棵堆序树**，而是一个由堆序树组成的集合，称为**森林**。每一棵堆序树都是一棵**二项树**
+2. **结构**：二项队列**不是一棵堆序树**，而是一个由堆序树组成的集合，称为**森林**。每一棵堆序树都是一棵**二项树**
 
 - 高度为 $0$ 的二项树是一个**单节点树**
 - 高度为 $k$ 的**二项树** $B_{k}$ ，是通过将一棵二项树 $B_{k–1}$ 连接到另一棵二项树 $B_{k–1}$ 的根上构成的
@@ -27,10 +24,12 @@
     **Solution**：已知 $13 = 1101_2$ ，因此优先队列包含 $B_0,B_2,B_3$
 
 
-4. **二项树实现**
+### 二项树实现
+
+1. **结构**
 
 - **“左孩子-右兄弟”表示法**将一个节点的所有儿子组织成一个链表：`DeleteMin(Q)`时可以**线性地**获得所有子树
-- 子树**按照树的高度从大到小排列**
+- 子树**按照树的高度从大到小排列**：`Merge`时不用遍历所有的子树
 
 ```c
 typedef struct BinNode *Position;
@@ -51,7 +50,21 @@ struct Collection    // 二项队列结构
 } ;
 ```
 
-5. **操作**
+2. **合并**
+
+```c
+BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 */
+    if ( T1->Element > T2->Element ) /* attach the larger one to the smaller one */
+        return CombineTrees( T2, T1 );
+    /* insert T2 to the front of the children list of T1 */
+    T2->NextSibling = T1->LeftChild;
+    T1->LeftChild = T2;
+    return T1;
+}
+```
+
+
+### 操作
 
 === "FindMin"
     1. **步骤**： 遍历所有树的根节点 ($\lceil \log N \rceil$ 个)，找到最小值
@@ -64,6 +77,40 @@ struct Collection    // 二项队列结构
     1. **步骤**：将相同高度的树进行合并，类似于二进制加法
     2. **时间复杂度**： $O(\log N)$
     3. **先决条件**：二项树必须按照高度顺序排列
+
+    ```c
+    BinQueue Merge( BinQueue H1, BinQueue H2 ){	
+        BinTree T1, T2, Carry = NULL; 	
+        int i, j;
+        if ( H1->CurrentSize + H2-> CurrentSize > Capacity )  ErrorMessage();  // 检查容量
+        H1->CurrentSize += H2-> CurrentSize;   // 更新大小
+        for ( i=0, j=1; j<= H1->CurrentSize; i++, j*=2 ) {  
+            //i：遍历所有高度；j：检查当前高度的树的节点数是否超过要求
+            T1 = H1->TheTrees[i]; T2 = H2->TheTrees[i]; /*current trees */
+            switch( 4*!!Carry + 2*!!T2 + !!T1 ) { 
+                /*
+                !!Carry：进位是否存在（1=存在，0=不存在）
+                !!T2：H2在当前高度的树是否存在
+                !!T1：H1在当前高度的树是否存在
+                */
+                case 0: /* 000 */
+                case 1: /* 001 */  break;	
+                case 2: /* 010 */  H1->TheTrees[i] = T2; H2->TheTrees[i] = NULL; break;
+                case 4: /* 100 */  H1->TheTrees[i] = Carry; Carry = NULL; break;
+                case 3: /* 011 */  Carry = CombineTrees( T1, T2 );
+                                H1->TheTrees[i] = H2->TheTrees[i] = NULL; break;
+                case 5: /* 101 */  Carry = CombineTrees( T1, Carry );
+                                H1->TheTrees[i] = NULL; break;
+                case 6: /* 110 */  Carry = CombineTrees( T2, Carry );
+                                H2->TheTrees[i] = NULL; break;
+                case 7: /* 111 */  H1->TheTrees[i] = Carry; 
+                                Carry = CombineTrees( T1, T2 ); 
+                                H2->TheTrees[i] = NULL; break;
+            } 
+        }
+        return H1;
+    }
+    ```
 
 === "Insert"
     **步骤**：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并
@@ -79,3 +126,42 @@ struct Collection    // 二项队列结构
     - 将原队列与新队列合并，**时间复杂度**：$O(\log N)$
 
     2. **时间复杂度**： $O(\log N)$
+
+    ```c
+    ElementType  DeleteMin( BinQueue H )
+    {	BinQueue DeletedQueue; 
+        Position DeletedTree, OldRoot;
+        ElementType MinItem = Infinity;  
+        int i, j, MinTree; 
+        if ( IsEmpty( H ) ){  
+            PrintErrorMessage();  
+            return –Infinity; 
+        }
+        //1. 找到最小的树
+        for ( i = 0; i < MaxTrees; i++) {  
+            if( H->TheTrees[i] && H->TheTrees[i]->Element < MinItem ) { 
+                MinItem = H->TheTrees[i]->Element;  
+                MinTree = i;    
+            }
+        } 
+        DeletedTree = H->TheTrees[ MinTree ]; 
+        //2. 删除最小的树 
+        H->TheTrees[ MinTree ] = NULL;
+        //3.1 删除最小树的根节点
+        OldRoot = DeletedTree; 
+        DeletedTree = DeletedTree->LeftChild;   
+        free(OldRoot);
+        //3.2 形成新的二项队列 H”
+        DeletedQueue = Initialize(); 
+        DeletedQueue->CurrentSize = ( 1<<MinTree ) – 1;  /* 2MinTree – 1 */
+        for ( j = MinTree – 1; j >= 0; j – – ) {  
+            DeletedQueue->TheTrees[j] = DeletedTree;
+            DeletedTree = DeletedTree->NextSibling;
+            DeletedQueue->TheTrees[j]->NextSibling = NULL;
+        } 
+        H->CurrentSize  – = DeletedQueue->CurrentSize + 1;
+        //4. 合并 H 和 H”
+        H = Merge( H, DeletedQueue ); 
+        return MinItem;
+    }
+    ```
