@@ -198,6 +198,8 @@ extra_css:
   - style/css/changelog_extra.css
   - style/css/toc_extra.css
   - style/css/svg_extra.css
+  - style/css/counter.css
+  
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
