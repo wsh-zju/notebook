@@ -187,10 +187,7 @@ plugins:
         mkdocs-encrypted-toc: [nav, class]
 
 plugins:
-  - search
-  - custom_plugins:
-      modules:
-        - plugins.toc
+  - plugins/toc.py
 
 extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css
