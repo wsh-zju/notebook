@@ -186,6 +186,12 @@ plugins:
       encrypted_something:
         mkdocs-encrypted-toc: [nav, class]
 
+plugins:
+  - search
+  - custom_plugins:
+      modules:
+        - plugins.toc
+
 extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
@@ -199,7 +205,7 @@ extra_css:
   - style/css/toc_extra.css
   - style/css/svg_extra.css
   - style/css/counter.css
-  
+
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
