@@ -25,7 +25,8 @@ jobs:
           pip install mkdocs-macros-plugin
           pip install mkdocs-mermaid2-plugin
           pip install mkdocs-markdownextradata-plugin
-          pip install pymdown-extensions 
+          pip install pymdown-extensions
+          pip install mkdocs-encryptcontent 
       - name: Install TuringPlugins
         run: |
             git clone https://github.com/ZJU-Turing/TuringPlugins.git
