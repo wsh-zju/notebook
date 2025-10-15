@@ -187,6 +187,7 @@ plugins:
         mkdocs-encrypted-toc: [nav, class]
 
 plugins:
+  - search
   - plugins/toc.py
 
 extra_css:
