@@ -1,14 +1,39 @@
 # 高级数据结构与算法分析
 ## Advanced Data Structures
 
-{{ BEGIN_TOC }}
-- 高级数据结构:
-    - 树——AVL 树、Splay 树、红黑树、B+ 树、摊还分析[note]:tree
-    - 堆——左倾堆、斜堆[note]:heap
-    - 队列——二项队列[note]:queue
-- 算法分析:
-    - 倒排索引[note]:algorithm
-- 练习:
-    - PTA Problems[exercise]:pta
-{{ END_TOC }}
-
+<div class="index-item-wrapper">
+  <div class="title-wrapper">
+    <span>课程内容</span>
+    <button>▼</button>
+  </div>
+  <div class="content-item-wrapper">
+    <ul>
+      <li>
+        <div class="item-status">●</div>
+        <div class="item-primary">
+          <a href="#高级数据结构">高级数据结构</a>
+        </div>
+        <div class="item-main-content">树——AVL 树、Splay 树、红黑树、B+ 树、摊还分析</div>
+        <div class="item-metadata">
+          <span class="note-tag"></span>
+        </div>
+        <div class="item-actions">
+          <span>阅读</span>
+        </div>
+      </li>
+      <li>
+        <div class="item-status">●</div>
+        <div class="item-primary">
+          <a href="#练习">练习</a>
+        </div>
+        <div class="item-main-content">PTA Problems</div>
+        <div class="item-metadata">
+          <span class="exercise-tag"></span>
+        </div>
+        <div class="item-actions">
+          <span>练习</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
