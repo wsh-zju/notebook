@@ -1,5 +1,5 @@
 :root {
-  --md-text-font:  "LXGW WenKai Screen","JetBrains Mono"; 
+  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
   --md-code-font: "JetBrains Mono";
 }
 
@@ -26,11 +26,11 @@
 }
 
 .md-typeset h1, .md-typeset h2 {
-  font-weight: 700 !important;
+  font-weight: 600;
 }
 
 .md-typeset h3 {
-  font-weight: 650 !important;
+  font-weight: 500;
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
@@ -42,7 +42,7 @@
 }
 
 .md-typeset h3 {
-  font-weight: 650 !important;
+  font-weight: 600;
 }
 
 .md-typeset code:not(pre code) {
@@ -276,15 +276,11 @@ input#mkdocs-content-password {
 .hr-before-source-file:not(:has(+ aside)) {
   display: none;
 }
-/*logo圆角*/
+
 .reveal .slide-logo,
 .md-header__button.md-logo img,
 .md-logo img,
 .md-nav__button.md-logo img {
     border-radius: 50%;
     overflow: hidden;
-}
-/*字体*/
-body {
-    font-family: "LXGW WenKai Screen", sans-serif;
 }
