@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+  --md-text-font: "JetBrains Mono", "LXGW WenKai"; 
   --md-code-font: "JetBrains Mono";
 }
 
@@ -276,11 +276,15 @@ input#mkdocs-content-password {
 .hr-before-source-file:not(:has(+ aside)) {
   display: none;
 }
-
+/*logo圆角*/
 .reveal .slide-logo,
 .md-header__button.md-logo img,
 .md-logo img,
 .md-nav__button.md-logo img {
     border-radius: 50%;
     overflow: hidden;
+}
+/*字体*/
+body {
+    font-family: "LXGW WenKai", sans-serif;
 }
