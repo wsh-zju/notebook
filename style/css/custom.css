@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+  --md-text-font:  "LXGW WenKai Screen","JetBrains Mono"; 
   --md-code-font: "JetBrains Mono";
 }
 
@@ -38,7 +38,7 @@
 }
 
 .md-typeset {
-  font-size: .64rem;
+  font-size: .7rem;
 }
 
 .md-typeset h3 {
