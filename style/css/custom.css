@@ -277,7 +277,10 @@ input#mkdocs-content-password {
   display: none;
 }
 
-.reveal.slide-logo {
-  border-radius: 50% !important;
-  background-color: #efefef !important; /* 可选：设置背景色 */
+.reveal .slide-logo,
+.md-header__button.md-logo img,
+.md-logo img,
+.md-nav__button.md-logo img {
+    border-radius: 50%;
+    overflow: hidden;
 }
