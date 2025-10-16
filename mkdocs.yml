@@ -182,12 +182,8 @@ plugins:
       #extra_skipped_class:
         #- arithmatex
   - macros
-  - encryptcontent:  
-      encrypted_something:
-        mkdocs-encrypted-toc: [nav, class]
 
-hooks:
-  - hooks/toc.py
+
 
 extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css
