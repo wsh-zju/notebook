@@ -2726,66 +2726,147 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <h2 id="_4">流水线冲突<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">结构冲突<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>结构冲突</strong>：当前指令需要访问的资源被占用</li>
+<li>
+<p><strong>定义</strong>：当前指令需要访问的资源被占用</p>
+</li>
+<li>
+<p><strong>解决方法</strong>：</p>
+</li>
 </ol>
 <ul>
-<li><strong>解决方法</strong>：<ul>
-<li>增加硬件资源</li>
-<li><code>stall</code>暂停一些指令：改成 NOP <code>addi x0, x0, 0</code> 指令</li>
-</ul>
-</li>
+<li>增加硬件资源：<strong>e.g.</strong> 采用独立的指令缓存和数据缓存</li>
+<li><code>stall</code>暂停一些指令：改成 <strong>NOP</strong> <code>addi x0, x0, 0</code> 指令</li>
 </ul>
 <h3 id="_6">数据冲突<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>定义</strong>：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写；e.g. <code>add x1, x2, x3</code> 指令需要等待 <code>x2</code> 寄存器写入完成，才能开始执行 </li>
-<li><strong>两种情况</strong><ul>
-<li><strong>Load</strong>：<code>ID/EX.rs1 == MEM/WB.rd</code> || <code>ID/EX.rs2 == MEM/WB.rd</code> </li>
-<li><strong>ALU</strong>：<code>ID/EX.rs1 == EX/MEM.rd</code> || <code>ID/EX.rs2 == EX/MEM.rd</code></li>
-</ul>
+<li>
+<p><strong>定义</strong>：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写</p>
+<p><strong>e.g.</strong> <code>add x1, x2, x3</code> 指令需要等待 <code>x2</code> 寄存器写入完成，才能开始执行 </p>
 </li>
-<li><strong>解决方法</strong>：<ul>
-<li><code>stall</code>暂停一些指令，直至上一条指令完成数据读写</li>
-<li><code>forwarding</code>数据前递：添加额外硬件，直接从内部资源提前获取缺失的数据，避免流水线停顿</li>
-<li><strong>重排代码</strong>，避免流水线停顿</li>
-<li><strong>EX &amp; MEM</strong>
-路径+控制信号+生成代码</li>
-</ul>
+<li>
+<p><strong>解决方法</strong>：</p>
 </li>
 </ol>
 <ul>
-<li>
-<p><strong>双重数据冲突</strong></p>
+<li><code>stall</code><strong>暂停</strong>一些指令，直至上一条指令完成数据读写</li>
+<li><code>forwarding</code><strong>数据前递</strong>：<strong>添加额外硬件</strong>，直接从内部资源提前获取缺失的数据，避免流水线停顿</li>
+<li><strong>重排代码</strong>，避免流水线停顿</li>
+</ul>
+<ol start="3">
+<li><strong><code>Forwarding</code></strong></li>
+</ol>
+<p><img alt="" src="photo/9-7.png" style="width:100%;display: block;margin: 20px auto" /></p>
 <ul>
-<li>e.g.</li>
-<li>优先选择<code>EX</code>的<code>forwarding</code></li>
+<li><strong>Load</strong>：MEM Hazard<ul>
+<li><code>ID/EX.rs1 == MEM/WB.rd</code> || <code>ID/EX.rs2 == MEM/WB.rd</code> : <code>ForwardA/B = 01</code></li>
+<li><code>MEM/WB.rd != 0</code> &amp; <code>MEM/WB.RegWrite == 1</code></li>
 </ul>
 </li>
 <li>
-<p>load-use时需要暂停</p>
+<p><strong>R-type</strong>：EX Hazard</p>
 <ul>
-<li>产生情况</li>
-<li>解决方法<ul>
-<li>nop</li>
-<li>阻止更新+置0</li>
+<li><code>ID/EX.rs1 == EX/MEM.rd</code> || <code>ID/EX.rs2 == EX/MEM.rd</code> : <code>ForwardA/B = 10</code></li>
+<li><code>EX/MEM.rd != 0</code> &amp; <code>EX/MEM.RegWrite == 1</code></li>
 </ul>
 </li>
+<li>
+<p><strong>控制信号</strong>：</p>
+<ul>
+<li><code>ForwardA</code>：表示 <code>rs1</code> 的数据来源</li>
+<li><code>ForwardB</code>：表示 <code>rs2</code> 的数据来源</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">控制信号取值</th>
+<th style="text-align: left;">数据来源</th>
+<th style="text-align: left;">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ForwardA/B = 00</strong></td>
+<td style="text-align: left;">ID/EX</td>
+<td style="text-align: left;">No forwarding</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ForwardA/B = 10</strong></td>
+<td style="text-align: left;">EX/MEM</td>
+<td style="text-align: left;">Forwarding with data hazard in EX/MEM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ForwardA/B = 01</strong></td>
+<td style="text-align: left;">MEM/WB</td>
+<td style="text-align: left;">Forwarding with data hazard in MEM/WB</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ol start="4">
+<li><strong>双重数据冲突</strong></li>
+</ol>
+<ul>
+<li>
+<p>e.g.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># 既存在 EX Hazard ，也存在 MEM Hazard</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x2</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nf">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x3</span><span class="w">      </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="no">add</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="no">x1</span><span class="p">,</span><span class="no">x4</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>优先选择 <code>EX</code> 的 <code>forwarding</code> ：在 <code>MEM</code> 的 <code>Forwatding</code> 控制信号的生成需要满足<strong>不符合 <code>EX</code> 的 <code>forwarding</code> 条件</strong></p>
+</li>
+</ul>
+<ol start="5">
+<li><strong><code>load-use</code> 数据冲突</strong></li>
+</ol>
+<p><img alt="" src="../image-1.png" style="width:100%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>产生情况</strong>：发生在 <code>load</code> 指令后<strong>立即使用</strong>该数据的指令之间</li>
+<li><strong>问题</strong>：无法通过单一前递解决，需要暂停并且插入气泡</li>
+<li><strong>添加硬件</strong>：冲突侦查单元</li>
+<li><strong>条件</strong>：<code>ID/EX.MemRead &amp;&amp; ((ID/EX. Rd = IF/ID. Rs1) || (ID/EX. Rd = IF/ID. Rs2))</code></li>
+<li><strong>解决方法</strong><ul>
+<li>插入 <code>nop</code> 指令：<code>ID/EX</code> 置0；<code>EX</code>, <code>MEM</code> and <code>WB</code> do <code>nop</code></li>
+<li>阻止 <code>PC</code> 和 <code>IF/ID</code> 更新</li>
 </ul>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Notices</p>
-<p><code>forwarding</code>不能避免所有的流水线停顿，例如上一条指令为<code>load</code>指令</p>
-<p><img alt="" src="../photo/9-5.png" /></p>
+<ol>
+<li><code>forwarding</code>不能避免所有的流水线停顿，例如上一条指令为<code>load</code>指令</li>
+</ol>
+<p><img alt="" src="../photo/9-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol start="2">
+<li><code>stall</code>会降低性能；编译器可以组织代码来避免冲突和停顿</li>
+</ol>
 </div>
 <h3 id="_7">控制冲突<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>定义</strong>：执行流的控制依赖于上一条指令的执行结果；e.g. 条件分支指令（下一条指令不能立即执行）</li>
-<li><strong>解决方法</strong>：<ul>
+<li>
+<p><strong>定义</strong>：执行流的控制依赖于上一条指令的执行结果</p>
+<p><strong>e.g.</strong> 条件分支指令（下一条指令不能立即执行）等到<code>MEM</code>阶段才知道分支结果，会导致<strong>3个时钟周期</strong>的停顿</p>
+</li>
+<li>
+<p><strong>解决方法</strong>：</p>
+</li>
+</ol>
+<ul>
 <li><code>stall</code>：性能不佳</li>
 <li>预测</li>
 </ul>
-</li>
+<ol start="3">
+<li><strong>减少停顿的方法</strong></li>
 </ol>
+<ul>
+<li>在流水线早期，比较寄存器并且计算目标地址（在<code>ID</code>阶段添加硬件）</li>
+</ul>
 <hr />
 <h2 id="risc-v">RISC-V 流水线设计<a class="headerlink" href="#risc-v" title="Permanent link">&para;</a></h2>
 <p><img alt="" src="../photo/9-2.png" /></p>
