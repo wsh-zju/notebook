@@ -288,3 +288,8 @@ input#mkdocs-content-password {
 body {
     font-family: "LXGW WenKai", sans-serif;
 }
+/*加粗*/
+.index-item-wrapper .title-wrapper span {
+    font-weight: 700;
+    font-size: 1.1em;
+}
