@@ -13,14 +13,9 @@ h4 {
 h5 {
   counter-reset: h6;
 }
-h1::before {
-  counter-increment: h1;
-  content: counter(h1);
-  margin-right: 0.8rem;
-}
 h2::before {
   counter-increment: h2;
-  content: counter(h1) "." counter(h2);
+  content: counter(h2);
   margin-right: 0.8rem;
 }
 h3::before {
