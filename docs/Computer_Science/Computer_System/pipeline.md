@@ -125,7 +125,7 @@
 
 5. **`load-use` 数据冲突**
 
-![](image-1.png){style="width:100%;display: block;margin: 20px auto"}
+![](photo/9-8.png){style="width:100%;display: block;margin: 20px auto"}
 
 - **产生情况**：发生在 `load` 指令后**立即使用**该数据的指令之间
 - **问题**：无法通过单一前递解决，需要暂停并且插入气泡
