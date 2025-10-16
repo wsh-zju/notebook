@@ -277,7 +277,7 @@ input#mkdocs-content-password {
   display: none;
 }
 
-.reveal .slide-logo {
-  border-radius: 50%;
-  background-color: #efefef; /* 可选：设置背景色 */
+.reveal.slide-logo {
+  border-radius: 50% !important;
+  background-color: #efefef !important; /* 可选：设置背景色 */
 }
