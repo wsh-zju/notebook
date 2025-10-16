@@ -1,0 +1,49 @@
+/* 霞鹜文楷字体定义 - 根据你实际的文件 */
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Light.ttf') format('truetype');
+    font-weight: 300;  /* Light */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Regular.ttf') format('truetype');
+    font-weight: 400;  /* Regular - 正常 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 500;  /* Medium - 中等 */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 600;  /* Semi Bold - 使用 Medium */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 700;  /* Bold - 使用 Medium 作为粗体 */
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 等宽字体版本（可选） */
+@font-face {
+    font-family: 'LXGW WenKai Mono';
+    src: url('../fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
