@@ -64,7 +64,48 @@
 
     当 $n >> m$ 时，$\eta ≈ 1$
 
-    ![](photo/9-4.png){style="width:40%;display: block;margin: 20px auto"}
+    ![](photo/9-4.png){style="width:60%;display: block;margin: 20px auto"}
+
+---
+## RISC-V 流水线设计
+
+![](photo/9-2.png)
+
+### 寄存器设计
+
+1. **IF 取指**：
+
+- **IF/ID.IR**：指令寄存器，保存当前指令
+- **IF/ID.NPC**：保存下一条指令地址
+
+2. **ID 译码**：
+
+- **ID/EX.A/B**：保存寄存器操作数
+- **ID/EX.Imm**：保存生成的立即数
+- **ID/EX.NPC**：传递下一条指令地址（来自**IF/ID.NPC**）
+- **ID/EX.IR**：传递指令（来自**ID/ID.IR**）
+
+3. **EX 执行**：
+
+- **EX/MEM.IR**：传递指令（来自**ID/EX.IR**）
+- **EX/MEM.B**：传递寄存器操作数
+- **EX/MEM.ALUOutput**：保存计算结果
+- **EX/MEM.cond**：保存比较结果（1/0）
+
+4. **MEM 读写**：
+
+- **MEM/WB.IR**：传递指令（来自**EX/MEM.IR**）
+- **MEM/WB.ALUOutput**：传递计算结果
+- **MEM/WB.LMD**：保存读出的Memory数据
+
+5. **WB 写回**
+
+### 数据通路
+
+![](photo/9-3.png)
+
+### 控制信号
+![](photo/9-6.png)
 
 ---
 ## 流水线冲突
@@ -156,43 +197,3 @@
 
 - 在流水线早期，比较寄存器并且计算目标地址（在`ID`阶段添加硬件）
 
----
-## RISC-V 流水线设计
-
-![](photo/9-2.png)
-
-### 寄存器设计
-
-1. **IF 取指**：
-
-- **IF/ID.IR**：指令寄存器，保存当前指令
-- **IF/ID.NPC**：保存下一条指令地址
-
-2. **ID 译码**：
-
-- **ID/EX.A/B**：保存寄存器操作数
-- **ID/EX.Imm**：保存生成的立即数
-- **ID/EX.NPC**：传递下一条指令地址（来自**IF/ID.NPC**）
-- **ID/EX.IR**：传递指令（来自**ID/ID.IR**）
-
-3. **EX 执行**：
-
-- **EX/MEM.IR**：传递指令（来自**ID/EX.IR**）
-- **EX/MEM.B**：传递寄存器操作数
-- **EX/MEM.ALUOutput**：保存计算结果
-- **EX/MEM.cond**：保存比较结果（1/0）
-
-4. **MEM 读写**：
-
-- **MEM/WB.IR**：传递指令（来自**EX/MEM.IR**）
-- **MEM/WB.ALUOutput**：传递计算结果
-- **MEM/WB.LMD**：保存读出的Memory数据
-
-5. **WB 写回**
-
-### 数据通路
-
-![](photo/9-3.png)
-
-### 控制信号
-![](photo/9-6.png)
