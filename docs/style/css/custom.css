@@ -1,6 +1,10 @@
+/* 导入字体 */
+@import url('fonts.css');
+
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
-  --md-code-font: "JetBrains Mono";
+    /* 设置霞鹜文楷为主要字体 */
+    --md-text-font: "LXGW WenKai", "Microsoft YaHei", sans-serif; 
+    --md-code-font: "JetBrains Mono", "LXGW WenKai Mono", monospace;
 }
 
 
@@ -25,25 +29,107 @@
   }
 }
 
-.md-typeset h1, .md-typeset h2 {
-  font-weight: 700 !important;
+
+/* 全局应用霞鹜文楷 - 常规字重 */
+body {
+    font-family: "LXGW WenKai", sans-serif;
+    font-weight: 400;
 }
 
-.md-typeset h3 {
-  font-weight: 650 !important;
+/* 一级标题 - 使用 Medium 作为粗体 */
+.md-typeset h1 {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 700 !important;  /* 映射到 Medium.ttf */
+    font-size: 1.8rem;
 }
+
+/* 二级标题 - 使用 Medium 作为粗体 */
+.md-typeset h2 {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 700 !important;  /* 映射到 Medium.ttf */
+    font-size: 1.5rem;
+}
+
+/* 三级标题 - 使用 Medium */
+.md-typeset h3 {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 600 !important;  /* 映射到 Medium.ttf */
+    font-size: 1.3rem;
+}
+
+/* 四级标题 - 使用 Medium */
+.md-typeset h4 {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 500 !important;  /* 直接使用 Medium */
+    font-size: 1.1rem;
+}
+
+/* 五级六级标题 */
+.md-typeset h5,
+.md-typeset h6 {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* 手动加粗的内容 - 使用 Medium 作为粗体 */
+.md-typeset strong,
+.md-typeset b {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 700 !important;  /* 映射到 Medium.ttf */
+}
+
+/* 目录标题使用 Medium 作为粗体 */
+.index-item-wrapper .title-wrapper span {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 700 !important;  /* 映射到 Medium.ttf */
+    font-size: 1.1em;
+}
+
+/* 导航栏 */
+.md-header,
+.md-tabs {
+    font-family: "LXGW WenKai", sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* 侧边栏 */
+.md-nav {
+    font-family: "LXGW WenKai", sans-serif !important;
+}
+
+/* 页脚 */
+.md-footer {
+    font-family: "LXGW WenKai", sans-serif !important;
+}
+
+/* 代码块保持等宽字体 */
+.md-typeset code:not(pre code) {
+    font-family: "JetBrains Mono", "LXGW WenKai Mono", monospace !important;
+    font-weight: 400 !important;
+}
+
+.md-typeset pre code {
+    font-family: "JetBrains Mono", "LXGW WenKai Mono", monospace !important;
+    font-weight: 400 !important;
+}
+
+/* 轻量级文本类 */
+.light-text {
+    font-family: "LXGW WenKai", sans-serif;
+    font-weight: 300 !important;  /* 使用 Light.ttf */
+}
+
+/* 中等加粗文本类 */
+.medium-text {
+    font-family: "LXGW WenKai", sans-serif;
+    font-weight: 500 !important;  /* 使用 Medium.ttf */
+}
+
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
   letter-spacing: 0;
 }
 
-.md-typeset {
-  font-size: .7rem;
-}
-
-.md-typeset h3 {
-  font-weight: 650 !important;
-}
 
 .md-typeset code:not(pre code) {
   font-size: inherit;
@@ -286,5 +372,5 @@ input#mkdocs-content-password {
 }
 /*字体*/
 body {
-    font-family: "LXGW WenKai Screen", sans-serif;
+    font-family: "LXGW WenKai", sans-serif;
 }
