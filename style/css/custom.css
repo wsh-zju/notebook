@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai"; 
+  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
   --md-code-font: "JetBrains Mono";
 }
 
@@ -286,5 +286,5 @@ input#mkdocs-content-password {
 }
 /*字体*/
 body {
-    font-family: "LXGW WenKai", sans-serif;
+    font-family: "LXGW WenKai Screen", sans-serif;
 }
