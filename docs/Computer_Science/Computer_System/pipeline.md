@@ -69,45 +69,92 @@
 ---
 ## 流水线冲突
 ### 结构冲突
-1. **结构冲突**：当前指令需要访问的资源被占用
+1. **定义**：当前指令需要访问的资源被占用
 
-- **解决方法**：
-    - 增加硬件资源
-    - `stall`暂停一些指令：改成 NOP `addi x0, x0, 0` 指令
+2. **解决方法**：
+
+- 增加硬件资源：**e.g.** 采用独立的指令缓存和数据缓存
+- `stall`暂停一些指令：改成 **NOP** `addi x0, x0, 0` 指令
 
 ### 数据冲突
-1. **定义**：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写；e.g. `add x1, x2, x3` 指令需要等待 `x2` 寄存器写入完成，才能开始执行 
-2. **两种情况**
-    - **Load**：`ID/EX.rs1 == MEM/WB.rd` || `ID/EX.rs2 == MEM/WB.rd` 
-    - **ALU**：`ID/EX.rs1 == EX/MEM.rd` || `ID/EX.rs2 == EX/MEM.rd`
-3. **解决方法**：
-    - `stall`暂停一些指令，直至上一条指令完成数据读写
-    - `forwarding`数据前递：添加额外硬件，直接从内部资源提前获取缺失的数据，避免流水线停顿
-    - **重排代码**，避免流水线停顿
-- **EX & MEM**
-路径+控制信号+生成代码
+1. **定义**：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写
 
-- **双重数据冲突**
-    - e.g.
-    - 优先选择`EX`的`forwarding`
+    **e.g.** `add x1, x2, x3` 指令需要等待 `x2` 寄存器写入完成，才能开始执行 
 
-- load-use时需要暂停
-    - 产生情况
-    - 解决方法
-        - nop
-        - 阻止更新+置0
+2. **解决方法**：
+
+- `stall`**暂停**一些指令，直至上一条指令完成数据读写
+- `forwarding`**数据前递**：**添加额外硬件**，直接从内部资源提前获取缺失的数据，避免流水线停顿
+- **重排代码**，避免流水线停顿
+
+3. **`Forwarding`**
+
+![](photo/9-7.png){style="width:100%;display: block;margin: 20px auto"}
+
+- **Load**：MEM Hazard
+    - `ID/EX.rs1 == MEM/WB.rd` || `ID/EX.rs2 == MEM/WB.rd` : `ForwardA/B = 01`
+    - `MEM/WB.rd != 0` & `MEM/WB.RegWrite == 1`
+- **R-type**：EX Hazard
+    - `ID/EX.rs1 == EX/MEM.rd` || `ID/EX.rs2 == EX/MEM.rd` : `ForwardA/B = 10`
+    - `EX/MEM.rd != 0` & `EX/MEM.RegWrite == 1`
+
+- **控制信号**：
+    - `ForwardA`：表示 `rs1` 的数据来源
+    - `ForwardB`：表示 `rs2` 的数据来源
+
+    | 控制信号取值| 数据来源| 解释|
+    |:--|:--|:--|
+    | **ForwardA/B = 00** | ID/EX     | No forwarding                 |
+    | **ForwardA/B = 10** | EX/MEM    | Forwarding with data hazard in EX/MEM |
+    | **ForwardA/B = 01** | MEM/WB    | Forwarding with data hazard in MEM/WB |
+
+
+4. **双重数据冲突**
+    
+- e.g.
+
+    ```asm
+    # 既存在 EX Hazard ，也存在 MEM Hazard
+    add x1,x1,x2
+    add x1,x1,x3      
+    add x1,x1,x4
+    ```
+
+- 优先选择 `EX` 的 `forwarding` ：在 `MEM` 的 `Forwatding` 控制信号的生成需要满足**不符合 `EX` 的 `forwarding` 条件**
+
+
+5. **`load-use` 数据冲突**
+
+![](image-1.png){style="width:100%;display: block;margin: 20px auto"}
+
+- **产生情况**：发生在 `load` 指令后**立即使用**该数据的指令之间
+- **问题**：无法通过单一前递解决，需要暂停并且插入气泡
+- **添加硬件**：冲突侦查单元
+- **条件**：`ID/EX.MemRead && ((ID/EX. Rd = IF/ID. Rs1) || (ID/EX. Rd = IF/ID. Rs2))`
+- **解决方法**
+    - 插入 `nop` 指令：`ID/EX` 置0；`EX`, `MEM` and `WB` do `nop`
+    - 阻止 `PC` 和 `IF/ID` 更新
 
 !!! note "Notices"
-    `forwarding`不能避免所有的流水线停顿，例如上一条指令为`load`指令
+    1. `forwarding`不能避免所有的流水线停顿，例如上一条指令为`load`指令
 
-    ![](photo/9-5.png)
+    ![](photo/9-5.png){style="width:60%;display: block;margin: 20px auto"}
+
+    2. `stall`会降低性能；编译器可以组织代码来避免冲突和停顿
 
 ### 控制冲突
-1. **定义**：执行流的控制依赖于上一条指令的执行结果；e.g. 条件分支指令（下一条指令不能立即执行）
-2. **解决方法**：
-    - `stall`：性能不佳
-    - 预测
+1. **定义**：执行流的控制依赖于上一条指令的执行结果
 
+    **e.g.** 条件分支指令（下一条指令不能立即执行）等到`MEM`阶段才知道分支结果，会导致**3个时钟周期**的停顿
+
+2. **解决方法**：
+    
+- `stall`：性能不佳
+- 预测
+
+3. **减少停顿的方法**
+
+- 在流水线早期，比较寄存器并且计算目标地址（在`ID`阶段添加硬件）
 
 ---
 ## RISC-V 流水线设计
