@@ -63,7 +63,8 @@
 | $\grave{a}$      | `\grave{a}`      |$\dot{a}$        | `\dot{a}`        |
 | $\bar{a}$        | `\bar{a}`        |$\vec{a}$        | `\vec{a}`        |
 | $\breve{a}$      | `\breve{a}`      |$\widehat{A}$    | `\widehat{A}`    |
-|$\overline{AB}$|`\overline{AB}`|||
+|$\overline{AB}$|`\overline{AB}`      |$\vec{a}$        |`\vec{a}`         |  
+|$\overrightarrow{AB}$ |`\overrightarrow{AB}`|$\overleftarrow{AB}$|`\overleftarrow{AB}`| 
 
 ## 括号和定界符
 
@@ -157,6 +158,6 @@ x & \text{如果 } x \geq 0 \\
 | $\neg$    | `\neg`     | 逻辑非 | $\oplus$    | `\oplus`   | 异或 |
 | $\otimes$    | `\otimes`  | 张量积 | $\odot$    | `\odot`    | 点积 |
 | $\therefore$    | `\therefore` | 所以 | $\because$    | `\because` | 因为 |
-
+|$\tau$|`\tau`|力矩||||
 
 
