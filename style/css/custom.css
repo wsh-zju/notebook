@@ -276,7 +276,7 @@ input#mkdocs-content-password {
 .hr-before-source-file:not(:has(+ aside)) {
   display: none;
 }
-
+/*logo圆角*/
 .reveal .slide-logo,
 .md-header__button.md-logo img,
 .md-logo img,
