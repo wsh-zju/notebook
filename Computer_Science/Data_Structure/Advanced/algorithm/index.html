@@ -1753,6 +1753,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      回溯算法
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2439,6 +2448,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      回溯算法
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2524,6 +2542,190 @@
 </ul>
 </li>
 <li><strong>信息</strong>检索性能评估：答案集的相关性</li>
+</ul>
+<h2 id="_2">回溯算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>思路</strong>：通过系统地生成和检查部分候选解，并在确定该部分解不可能导向最终正确解时，提前放弃该分支（即剪枝），从而减少需要检查的候选解数量</li>
+<li><strong>代码模版</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">Backtracking</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="p">){</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">Found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 已找到解 (x_1, …, x_N) */</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="c1">// 遍历当前步骤的所有可能选择</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">each</span><span class="w"> </span><span class="n">x_i</span><span class="w"> </span><span class="err">∈</span><span class="w"> </span><span class="n">S_i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="cm">/* 检查是否满足约束条件 R */</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Check</span><span class="p">((</span><span class="n">x_1</span><span class="p">,</span><span class="w"> </span><span class="err">…</span><span class="p">,</span><span class="w"> </span><span class="n">x_i</span><span class="p">),</span><span class="w"> </span><span class="n">R</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 剪枝：提前排除无效路径 */</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="n">Count</span><span class="w"> </span><span class="n">x_i</span><span class="w"> </span><span class="n">in</span><span class="p">;</span><span class="w"> </span><span class="c1">// 选择 x_i</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">            </span><span class="n">Found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Backtracking</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 递归处理下一步</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Found</span><span class="p">)</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">                </span><span class="n">Undo</span><span class="p">(</span><span class="n">j</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 回溯：恢复到之前的状态 (x_1, …, x_{i-1}) */</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Found</span><span class="p">)</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w"> </span><span class="c1">// 如果已找到解，提前结束</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Found</span><span class="p">;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ol start="3">
+<li><strong>典型例题</strong>：</li>
+</ol>
+<ul>
+<li><strong>八皇后问题</strong>：在8×8棋盘上放置8个皇后，使得它们互不攻击（即不在同一行、列、对角线或反对角线）</li>
+<li><strong>收费公路重建问题</strong><ul>
+<li><strong>问题</strong>：给定 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对之间的距离集合 <span class="arithmatex">\( D \)</span>，重建点在 <span class="arithmatex">\( x \)</span> 轴上的原始坐标序列 <span class="arithmatex">\( x_1 &lt; x_2 &lt; ... &lt; x_N \)</span>（已知 <span class="arithmatex">\( x_1 = 0 \)</span>）</li>
+<li><strong>算法思路</strong>：<ul>
+<li>由距离个数确定点的数量 <span class="arithmatex">\( N \)</span></li>
+<li>最大距离即为 <span class="arithmatex">\( x_N - x_1 \)</span>，则 <span class="arithmatex">\( x_N = \max(D) \)</span></li>
+<li>递归地尝试将<strong>剩余的最大距离</strong>放置在当前解集的<strong>最右端</strong> <span class="arithmatex">\( X[\text{right}] \)</span> 或<strong>最左端</strong> <span class="arithmatex">\( X[\text{left}] \)</span></li>
+<li>每次放置后，检查新产生的距离是否都在剩余距离集合 <span class="arithmatex">\( D \)</span> 中，并更新 <span class="arithmatex">\( D \)</span></li>
+<li>如果某条路径失败，则<strong>回溯</strong>，撤销该步的距离放置，恢复距离集合 <span class="arithmatex">\( D \)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>代码</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">bool</span><span class="w"> </span><span class="nf">Reconstruct</span><span class="p">(</span><span class="n">DistType</span><span class="w"> </span><span class="n">X</span><span class="p">[],</span><span class="w"> </span><span class="n">DistSet</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="p">){</span><span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="cm">/* X[1]...X[left-1] 和 X[right+1]...X[N] 已经确定 */</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">Found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w">    </span><span class="c1">//返回值：是否找到完整的解</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Is_Empty</span><span class="p">(</span><span class="n">D</span><span class="p">))</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"> </span><span class="cm">/* 问题已解决 */</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">D_max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Find_Max</span><span class="p">(</span><span class="n">D</span><span class="p">);</span><span class="w"> </span><span class="c1">// 找出当前最大距离</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="cm">/* 选项1: 将最大距离放在右侧 X[right] = D_max */</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="cm">/* 检查 |D_max-X[i]| 是否都在距离集合 D 中，对于所有已确定的 X[i] */</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="n">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Check</span><span class="p">(</span><span class="n">D_max</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 如果满足约束条件，则返回 true；反之，剪枝 */</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 添加 X[right] 并更新距离集合 D */</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="n">X</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D_max</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">left</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span><span class="c1">// 删除新点与左侧已确定点之间的距离</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span><span class="c1">// 删除新点与右侧已确定点之间的距离</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="c1">// 递归处理剩余部分</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="n">Found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Reconstruct</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 如果此路径不行，撤销操作 */</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">            </span><span class="c1">// 恢复被删除的距离</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">left</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="cm">/* 完成选项1的检查 */</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* 如果选项1不行 */</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">        </span><span class="cm">/* 选项2: 将最大距离放在左侧 X[left] = X[N] - D_max */</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="w">        </span><span class="n">OK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Check</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">D_max</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="w">            </span><span class="n">X</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">X</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">D_max</span><span class="p">;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="w">            </span><span class="c1">// 删除新点与左侧已确定点之间的距离</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">left</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">            </span><span class="c1">// 删除新点与右侧已确定点之间的距离</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Delete</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">            </span><span class="c1">// 递归处理剩余部分</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">            </span><span class="n">Found</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Reconstruct</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">Found</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="w">                </span><span class="c1">// 恢复被删除的距离</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">left</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">Insert</span><span class="p">(</span><span class="o">|</span><span class="n">X</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">|</span><span class="p">,</span><span class="n">D</span><span class="p">);</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="w">        </span><span class="cm">/* 完成选项2的检查 */</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* 完成所有选项的检查 */</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Found</span><span class="p">;</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>关键策略</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>最小最大策略</strong>：</p>
+<ul>
+<li>通过递归地模拟双方的最佳走法，最终选择对己方最有利的路径</li>
+<li>e.g. 井字棋：人类玩家试图最小化局面的价值，而计算机则试图最大化它</li>
+<li>
+<p>为了量化一个局面的“好坏”，需要一个<strong>评估函数</strong> <span class="arithmatex">\( f(P) \)</span></p>
+<div class="arithmatex">\[ f(P) = W_{\text{Computer}} - W_{\text{Human}} \]</div>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p><img alt="" src="../images/4-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<p><span class="arithmatex">\( W_{\text{Computer}} \)</span>：计算机在当前位置 <strong>所有可能获胜的路径</strong> 数量</p>
+<p><span class="arithmatex">\( W_{\text{Human}} \)</span>：人类在当前位置 <strong>所有可能获胜的路径</strong> 数量</p>
+<ol>
+<li><span class="arithmatex">\( f(P) \)</span> 值越大，说明计算机的潜在优势越大，局面越好</li>
+<li><span class="arithmatex">\( f(P) \)</span> 值为正，表示计算机占优</li>
+<li><span class="arithmatex">\( f(P) \)</span> 值为负，表示人类占优</li>
+<li><span class="arithmatex">\( f(P) = 0 \)</span>，表示双方势均力敌</li>
+</ol>
+</div>
+</li>
+</ul>
+</li>
+<li>
+<p>* <strong>Alpha-Beta 剪枝</strong>：对最小最大策略的优化，旨在<strong>减少需要搜索的节点数</strong></p>
+<ul>
+<li><strong>α 剪枝</strong>：在<strong>Max层</strong>，如果发现一个节点的值已经小于父节点已知的α值（当前路径已确保的最小收益），则可以剪掉该节点的剩余分支</li>
+<li><strong>β 剪枝</strong>：在<strong>Min层</strong>，如果发现一个节点的值已经大于父节点已知的β值（当前路径对手已确保的最大损失），则可以剪掉该节点的剩余分支</li>
+<li>采用<strong>深度优先</strong>的策略进行搜索</li>
+</ul>
+</li>
 </ul>
 
 
