@@ -220,7 +220,7 @@
         - 存储当前指令上之前一次或多次的跳转结果，作为预测时的依据
     - **1-bit 预测器**
 
-        ![](photo/9-10.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/9-10.png){style="width:60%;display: block;margin: 20px auto"}
 
         !!! error "不足"
             **对循环末尾不友好**：一个循环分支在结束时会导致**连续两次的预测错误**
@@ -232,9 +232,9 @@
         - 需要**两次连续的误预测**才会改变预测方向
         - **优势**：容忍一次异常行为
 
-        ![](photo/9-12.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/9-12.png){style="width:60%;display: block;margin: 20px auto"}
 
-        ![](photo/9-11.png){style="width:50%;display: block;margin: 20px auto"}
+        ![](photo/9-11.png){style="width:60%;display: block;margin: 20px auto"}
 
 - **高级分支预测技术**
     - **分支目标缓冲**（BTB）：一个缓存，索引是PC，内容是预测的目标地址
@@ -254,14 +254,14 @@
 
 2. **预约表**：用于描述一个任务在流水线中各段占用情况的表格
     
-![](photo/9-13.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/9-13.png){style="width:60%;display: block;margin: 20px auto"}
 
 3. **调度方法流程**：初始冲突向量 → 冲突向量 → 状态转移图 → 循环队列 → 计算最小平均间隔
 
 ![](photo/9-14.png){style="width:60%;display: block;margin: 20px auto"}
 
 - **初始冲突向量**
-    - **禁止集**：元素为两条指令产生冲突相隔的时钟周期  `F={1,5,6,9}`
+    - **禁止集**：元素为两条指令产生冲突相隔的时钟周期  `F={1,5,6,8}`
     - **初始冲突向量**：禁止集转化，从右到左排列  `C_0=(10110001)`
 - **冲突向量**
     - 不断更新当前指令的冲突向量
@@ -271,10 +271,11 @@
         - 所有指令的冲突向量**按位或**，得到新的CCV
         - 重复上述操作直至**CCV形成循环**，则找到一个调度方案（不止一个） `{2,2,7}`
 
-        ![](photo/9-15.png){style="width:60%;display: block;margin: 20px auto"}
+        ![](photo/9-15.png){style="width:70%;display: block;margin: 20px auto"}
+
 - **状态转移图**
     
-    ![](photo/9-16.png){style="width:40%;display: block;margin: 20px auto"}
+    ![](photo/9-16.png){style="width:50%;display: block;margin: 20px auto"}
 
 - **寻找最优调度方案**：求解最小平均间隔（直接对调度方案求平均）
 
