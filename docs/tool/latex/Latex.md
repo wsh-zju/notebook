@@ -140,6 +140,16 @@ x & \text{如果 } x \geq 0 \\
 \end{cases}
 ```
 
+6. **积分符号**：
+
+|积分类型|符号|Latex| 积分类型|符号|Latex|
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 定积分 | $\int_a^b f(x)dx$ | `\int_a^b f(x)dx` | 不定积分 | $\int f(x)dx$ | `\int f(x)dx` |
+| 二重积分 | $\iint\limits_{D} f(x,y)dxdy$ | `\iint\limits_{D} f(x,y)dxdy` | 三重积分 | $\iiint\limits_{V} f(x,y,z)dxdydz$ | `\iiint\limits_{V} f(x,y,z)dxdydz` |
+| 曲线积分 | $\int_C f(x,y)ds$ | `\int_C f(x,y)ds` | 曲面积分 | $\iint_S f(x,y,z)dS$ | `\iint_S f(x,y,z)dS` |
+| 环路积分 | $\oint_C \vec{F} \cdot d\vec{r}$ | `\oint_C \vec{F} \cdot d\vec{r}` | 闭合曲面积分 | $\oiint_S \vec{F} \cdot d\vec{S}$ | `\oiint_S \vec{F} \cdot d\vec{S}` |
+| 傅里叶积分 | $\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x\xi}dx$ | `\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x\xi}dx` | 卷积积分 | $(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau$ | `(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau` |
+
 ## 常用数学环境
 
 1. 行内公式: `$...$` 或 `\(...\)`
