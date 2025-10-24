@@ -38,6 +38,7 @@
 | $\infty$    | `\infty`   | $\partial$    | `\partial` |
 | $\nabla$    | `\nabla`   | $\sqrt{x}$    | `\sqrt{x}`  |
 | $\int$    | `\int`     | $\iint$    | `\iint`    |
+|$\oint_\limits{S}$|`\oint_\limits{S}`| $\oiint$    | `\oiint`    |
 | $\sum$    | `\sum`     | $\prod$    | `\prod`    |
 | $\cap$    | `\cap`     | $\cup$    | `\cup`     |
 | $\in$    | `\in`      | $\notin$    | `\notin`   |
@@ -140,15 +141,6 @@ x & \text{如果 } x \geq 0 \\
 \end{cases}
 ```
 
-6. **积分符号**：
-
-|积分类型|符号|Latex| 积分类型|符号|Latex|
-|:--:|:--:|:--:|:--:|:--:|:--:|
-| 定积分 | $\int_a^b f(x)dx$ | `\int_a^b f(x)dx` | 不定积分 | $\int f(x)dx$ | `\int f(x)dx` |
-| 二重积分 | $\iint\limits_{D} f(x,y)dxdy$ | `\iint\limits_{D} f(x,y)dxdy` | 三重积分 | $\iiint\limits_{V} f(x,y,z)dxdydz$ | `\iiint\limits_{V} f(x,y,z)dxdydz` |
-| 曲线积分 | $\int_C f(x,y)ds$ | `\int_C f(x,y)ds` | 曲面积分 | $\iint_S f(x,y,z)dS$ | `\iint_S f(x,y,z)dS` |
-| 环路积分 | $\oint_C \vec{F} \cdot d\vec{r}$ | `\oint_C \vec{F} \cdot d\vec{r}` | 闭合曲面积分 | $\oiint_S \vec{F} \cdot d\vec{S}$ | `\oiint_S \vec{F} \cdot d\vec{S}` |
-| 傅里叶积分 | $\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x\xi}dx$ | `\hat{f}(\xi) = \int_{-\infty}^{\infty} f(x)e^{-2\pi i x\xi}dx` | 卷积积分 | $(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau$ | `(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t-\tau)d\tau` |
 
 ## 常用数学环境
 
@@ -168,6 +160,6 @@ x & \text{如果 } x \geq 0 \\
 | $\neg$    | `\neg`     | 逻辑非 | $\oplus$    | `\oplus`   | 异或 |
 | $\otimes$    | `\otimes`  | 张量积 | $\odot$    | `\odot`    | 点积 |
 | $\therefore$    | `\therefore` | 所以 | $\because$    | `\because` | 因为 |
-|$\tau$|`\tau`|力矩||||
+|$\tau$|`\tau`|力矩|$\rho$|`\rho`|密度|
 
 
