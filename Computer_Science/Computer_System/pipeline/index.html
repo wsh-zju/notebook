@@ -1412,12 +1412,13 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      关键技术
+      静态多发射
     </span>
   </a>
   
@@ -1426,16 +1427,7 @@
           <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
-      多发射处理器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      静态多发射
+      动态多发射
     </span>
   </a>
   
@@ -1443,6 +1435,38 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      多发射处理器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      异常与中断
+    </span>
+  </a>
   
 </li>
       
@@ -2745,12 +2769,13 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
-      关键技术
+      静态多发射
     </span>
   </a>
   
@@ -2759,16 +2784,7 @@
           <li class="md-nav__item">
   <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
-      多发射处理器
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      静态多发射
+      动态多发射
     </span>
   </a>
   
@@ -2776,6 +2792,38 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键技术
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      多发射处理器
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      异常与中断
+    </span>
+  </a>
   
 </li>
       
@@ -3187,25 +3235,68 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 </ul>
 <hr />
 <h2 id="_13">多指令发射<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
-<p><strong>作用</strong>：提高指令并行性（ILP）</p>
-<h3 id="_14">分类<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>静态多发射</strong></li>
+<li>
+<p><strong>作用</strong>：提高指令并行性（ILP）</p>
+</li>
+<li>
+<p><strong>局限性</strong>：主要受到以下三个方面的影响</p>
+</li>
 </ol>
 <ul>
-<li><strong>编译器</strong>将需要同时发射的指令分组</li>
-<li>将它们打包成“发射槽”</li>
-<li>编译器<strong>检测并避免冲突</strong></li>
+<li>程序中固有的指令级并行性</li>
+<li>硬件实现的难度</li>
+<li>超标量和超长指令字处理器固有的技术限制</li>
 </ul>
-<ol start="2">
-<li><strong>动态多发射</strong></li>
+<h3 id="_14">分类<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<h4 id="_15">静态多发射<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>利用<strong>超标量处理器</strong>/<strong>超长指令处理器</strong>，指令<strong>按序</strong>流出，<strong>流出时</strong>进行冲突检测</p>
+</li>
+<li>
+<p><strong>指令调度</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong>编译器</strong>将需要同时发射的指令分组，将它们打包成“发射槽”</li>
+<li>编译器<strong>检测并避免冲突</strong>，必要时用空操作指令填充</li>
+</ul>
+<ol start="3">
+<li><strong>冲突检测</strong></li>
+</ol>
+<ul>
+<li>第一阶段：<strong>在流出包中</strong>进行冲突检测，并初步选择可以流出的指令</li>
+<li>第二阶段：检查所选指令与<strong>正在执行的指令</strong>是否冲突</li>
+</ul>
+<ol start="4">
+<li>
+<p><strong>硬件修改</strong>：增加取指和译码带宽，增加功能单元，增加前递路径</p>
+</li>
+<li>
+<p><strong>冲突缓解</strong>：循环展开</p>
+</li>
+</ol>
+<h4 id="_16">动态多发射<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<ol>
+<li>利用<strong>超标量处理器</strong></li>
+<li><strong>指令调度</strong></li>
 </ol>
 <ul>
 <li><strong>CPU</strong>检查指令流并<strong>选择</strong>每个周期要发射的指令</li>
 <li><strong>编译器</strong>可以通过<strong>重新排序指令</strong>来提供帮助</li>
 <li>CPU在运行时使用<strong>先进技术</strong>解决冲突</li>
+<li>允许CPU<strong>乱序</strong>执行指令以避免停顿，但按顺序将结果提交到寄存器</li>
 </ul>
-<h3 id="_15">关键技术<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<ol start="3">
+<li><strong>需要动态调度的原因</strong></li>
+</ol>
+<ul>
+<li>并非所有停顿都是可预测的</li>
+<li>无法总是围绕分支进行调度，因为分支结果是动态确定的</li>
+<li>同一指令集架构的不同实现具有不同的延迟和冲突</li>
+</ul>
+<h3 id="_17">关键技术<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>推测执行</strong></li>
 </ol>
@@ -3236,7 +3327,42 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 </ul>
 </li>
 </ul>
-<h3 id="_16">多发射处理器<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<details class="example">
+<summary>循环展开例题</summary>
+<p><strong>Problem:</strong></p>
+<p><img alt="" src="../photo/9-19.png" /></p>
+<p><strong>循环展开:</strong></p>
+<p><img alt="" src="../photo/9-20.png" /></p>
+</details>
+<ol start="3">
+<li><strong>寄存器重命名</strong></li>
+</ol>
+<ul>
+<li><strong>保留站和重排序缓冲区</strong>有效提供寄存器重命名功能</li>
+<li>当指令发射到保留站时：<ul>
+<li>如果操作数在寄存器文件或重排序缓冲区中<strong>可用</strong>，则被复制到保留站，不再需要保留在寄存器中，可以被覆盖</li>
+<li>如果操作数尚<strong>不可用</strong>，则将由功能单元提供给保留站，可能不需要更新寄存器</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>加载推测</strong></li>
+</ol>
+<ul>
+<li>预测分支并继续发射指令：在分支结果确定前不提交指令</li>
+<li><strong>加载推测</strong><ul>
+<li>避免加载和缓存未命中的延迟：<ul>
+<li>预测有效地址</li>
+<li>预测加载值</li>
+<li>在完成未完成的存储操作前进行加载</li>
+<li>将存储的值旁路到加载单元</li>
+</ul>
+</li>
+<li>在推测被清除前不提交加载操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="_18">多发射处理器<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>超标量处理器</strong></li>
 </ol>
@@ -3252,8 +3378,18 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <ul>
 <li><strong>特点</strong>：每个时钟周期发射的指令数量是<strong>固定的</strong>（4-16条），构成一条长指令/指令包</li>
 <li>在指令包中，指令间的并行性通过<strong>指令</strong>显式表达</li>
-<li><strong>指令调度</strong>：通过<strong>编译器</strong>进行静态调度</li>
+<li><strong>指令调度</strong>：只能通过<strong>编译器</strong>进行静态调度</li>
 <li><strong>应用</strong>：已成功应用于数字信号处理和多媒体应用</li>
+<li><strong>问题</strong><ul>
+<li>程序代码长度增加：<ul>
+<li>需要大量<strong>循环展开</strong>来提高并行性</li>
+<li>指令字中的操作槽无法始终被填满</li>
+<li><strong>解决方案</strong>：共享立即数字段的命令，或采用指令压缩存储，在解码时传输到<code>Cache</code>或进行扩展</li>
+</ul>
+</li>
+<li>机器代码不兼容</li>
+</ul>
+</li>
 </ul>
 <ol start="3">
 <li><strong>超流水线处理器</strong></li>
@@ -3267,27 +3403,33 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <li><strong>对比</strong></li>
 </ol>
 <p><img alt="" src="../photo/9-18.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<h3 id="_17">静态多发射<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="_19">异常与中断<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>利用<strong>超标量处理器</strong>，指令<strong>按序</strong>流出，<strong>流出时</strong>进行冲突检测</p>
-</li>
-<li>
-<p><strong>冲突检测</strong></p>
-</li>
+<li><strong>定义</strong>：需要改变控制流的"意外"事件（不同的指令集架构对这些术语的使用有所不同）</li>
 </ol>
 <ul>
-<li>第一阶段：<strong>在流出包中</strong>进行冲突检测，并初步选择可以流出的指令</li>
-<li>第二阶段：检查所选指令与<strong>正在执行的指令</strong>是否冲突</li>
+<li><strong>异常</strong>：来自CPU内部 <strong>e.g.</strong> 未定义操作码、系统调用等</li>
+<li><strong>中断</strong>：来自外部I/O控制器</li>
+<li>在不牺牲性能的情况下处理它们十分困难</li>
+</ul>
+<ol start="2">
+<li><strong>异常处理</strong></li>
+</ol>
+<ul>
+<li>保存出错/被中断指令的<strong>PC</strong>：在 <code>RISC-V</code> 中为监督模式异常程序计数器（<strong>SEPC</strong>）</li>
+<li>保存问题出现的<strong>原因</strong>：在 <code>RISC-V</code> 中为监督模式异常原因寄存器（<strong>SCAUSE</strong>）</li>
+<li>跳转到<strong>处理程序</strong></li>
 </ul>
 <ol start="3">
-<li>
-<p><strong>硬件修改</strong>：增加取指和译码带宽，增加功能单元，增加前递路径</p>
-</li>
-<li>
-<p><strong>冲突缓解</strong>：循环展开</p>
-</li>
+<li><strong>处理程序的操作</strong></li>
 </ol>
+<ul>
+<li>读取原因（<strong>SCAUSE</strong>），并跳转到相关的处理程序</li>
+<li>确定需要采取的操作</li>
+<li>如果可<strong>重新启动</strong>：采取纠正措施，使用<strong>SEPC</strong>返回到程序</li>
+<li><strong>否则</strong>：终止程序，使用<strong>SEPC、SCAUSE</strong>等报告错误</li>
+</ul>
 
 
 
