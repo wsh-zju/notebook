@@ -179,7 +179,7 @@ bool Backtracking(int j){
     - **跨越分割线的解法**：
         - 利用**δ - strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
 
-            ![](images/5-1.png){style="width:40%;display: block;margin: 20px auto"}
+            ![](images/5-1s.png){style="width:30%;display: block;margin: 20px auto"}
             
         - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
 
@@ -218,7 +218,9 @@ bool Backtracking(int j){
 
 
     ??? example "例题"
-        1. 
+        ![](images/5-2.png){style="width:80%;display: block;margin: 20px auto"}
+
+        ![](images/5-3.png){style="width:80%;display: block;margin: 20px auto"}
 
 - **主定理法**：对于 \[ T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \]（其中 \( a \geq 1, \, b > 1, \) 且 \( p \geq 0 \)）
 
