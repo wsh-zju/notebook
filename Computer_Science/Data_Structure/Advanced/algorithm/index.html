@@ -1762,6 +1762,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      分而治之
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2457,6 +2466,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      分而治之
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2543,6 +2561,7 @@
 </li>
 <li><strong>信息</strong>检索性能评估：答案集的相关性</li>
 </ul>
+<hr />
 <h2 id="_2">回溯算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>思路</strong>：通过系统地生成和检查部分候选解，并在确定该部分解不可能导向最终正确解时，提前放弃该分支（即剪枝），从而减少需要检查的候选解数量</li>
@@ -2721,10 +2740,136 @@
 <li>
 <p>* <strong>Alpha-Beta 剪枝</strong>：对最小最大策略的优化，旨在<strong>减少需要搜索的节点数</strong></p>
 <ul>
-<li><strong>α 剪枝</strong>：在<strong>Max层</strong>，如果发现一个节点的值已经小于父节点已知的α值（当前路径已确保的最小收益），则可以剪掉该节点的剩余分支</li>
-<li><strong>β 剪枝</strong>：在<strong>Min层</strong>，如果发现一个节点的值已经大于父节点已知的β值（当前路径对手已确保的最大损失），则可以剪掉该节点的剩余分支</li>
+<li><strong><span class="arithmatex">\(α\)</span> 剪枝</strong>：在<strong>Max层</strong>，如果发现一个节点的值已经小于父节点已知的<span class="arithmatex">\(α\)</span>值（当前路径已确保的最小收益），则可以剪掉该节点的剩余分支</li>
+<li><strong><span class="arithmatex">\(β\)</span> 剪枝</strong>：在<strong>Min层</strong>，如果发现一个节点的值已经大于父节点已知的<span class="arithmatex">\(β\)</span>值（当前路径对手已确保的最大损失），则可以剪掉该节点的剩余分支</li>
 <li>采用<strong>深度优先</strong>的策略进行搜索</li>
 </ul>
+</li>
+</ul>
+<hr />
+<h2 id="_3">分而治之<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>通用递归式</strong> </li>
+</ol>
+<div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
+<p>其中 <span class="arithmatex">\(f(N)\)</span> 代表将子问题的解合并成原问题</p>
+<details class="abstract">
+<summary>常见解</summary>
+<p><span class="arithmatex">\( T(N) = 2T(N/2) + cN = O(N\log N) \)</span>
+<span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
+</details>
+<ol start="2">
+<li><strong>解决案例</strong></li>
+</ol>
+<ul>
+<li>最大子序列和: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
+<li>树的遍历: 时间复杂度 <span class="arithmatex">\(O(N)\)</span></li>
+<li>归并排序和快速排序: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
+</ul>
+<ol start="3">
+<li><strong>最近点对问题</strong></li>
+</ol>
+<ul>
+<li><strong>问题</strong>：给定平面上的 <span class="arithmatex">\(N\)</span> 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）</li>
+<li><strong>简单穷举搜索法</strong>：检查 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对（时间复杂度 <span class="arithmatex">\( T = O(N^2) \)</span>）</li>
+<li><strong>分而治之</strong>：按 <span class="arithmatex">\(x\)</span> 坐标排序并进行<strong>划分</strong>，分成左半部分、右半部分以及<strong>跨越分割线</strong>的三部分解来<strong>递归求解</strong><ul>
+<li>
+<p><strong>跨越分割线的解法</strong>：</p>
+<ul>
+<li>
+<p>利用<strong>δ - strip</strong>求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</p>
+<p><img alt="" src="images/5-1s.png" style="width:30%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p>如果带状区域内的点数为 <span class="arithmatex">\( O(\sqrt{N}) \)</span>，使用遍历，时间复杂度为 <span class="arithmatex">\( O(N) \)</span></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>最坏情况：带状区域内的点数为 <span class="arithmatex">\( N \)</span>，遍历并不高效，采取优化策略</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cm">/* points are all in the strip */</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="cm">/* and sorted by y coordinates */</span><span class="w">  </span><span class="c1">// 关键：已按y坐标排序</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist_y</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span><span class="w">  </span><span class="c1">// 先比较y坐标距离</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">                 </span><span class="c1">// 如果y方向已超过δ，直接跳出内循环</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">            </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>对于任意点 <span class="arithmatex">\( p_i \)</span>，最多只需要考虑7个点（这些点与 <span class="arithmatex">\( p_i \)</span> 的距离小于 <span class="arithmatex">\(δ\)</span>），从而时间复杂度 [ f(N) = O(N) ]</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>递归式求解方法</strong></li>
+</ol>
+<div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
+<ul>
+<li><strong>假设前提</strong><ul>
+<li><span class="arithmatex">\(N = b^k\)</span></li>
+<li>当 <span class="arithmatex">\(n\)</span> 足够小时，<span class="arithmatex">\(T(n) = \Theta(1)\)</span></li>
+</ul>
+</li>
+<li><strong>代入法</strong>：猜测解的形式，并用数学归纳法证明</li>
+<li>
+<p><strong>递归树法</strong>：通过画递归树直观理解递归过程</p>
+<details class="example">
+<summary>例题</summary>
+<p><img alt="" src="../images/5-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../images/5-3.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</details>
+</li>
+<li>
+<p><strong>主定理法</strong>：对于 [ T(N) = a \, T(N / b) + \Theta (N^k \log^p N) ]（其中 <span class="arithmatex">\( a \geq 1, \, b &gt; 1, \)</span> 且 <span class="arithmatex">\( p \geq 0 \)</span>）</p>
+<div class="arithmatex">\[
+T(N) =
+\begin{cases} 
+O(N^{\log_b a}) &amp; \text{若 } a &gt; b^k \\ 
+O(N^k \log^{p+1} N) &amp; \text{若 } a = b^k \\ 
+O(N^k \log^p N) &amp; \text{若 } a &lt; b^k 
+\end{cases}
+\]</div>
+<details class="abstract">
+<summary>主定理的几个形式</summary>
+<ul>
+<li>
+<p><strong>原定理</strong>：令 <span class="arithmatex">\( a \geq 1 \)</span> 和 <span class="arithmatex">\( b &gt; 1 \)</span> 为常数，<span class="arithmatex">\( f(N) \)</span> 是一个函数，<span class="arithmatex">\( T(N) \)</span> 是在非负整数上由以下递归式定义：</p>
+<div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
+<ul>
+<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = O(N^{\log_b a - \epsilon}) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
+<li>如果对某个 <span class="arithmatex">\( k \geq 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Theta(N^{\log_b a} \log^k N) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a} \log^{k+1} N) \)</span></li>
+<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Omega(N^{\log_b a + \epsilon}) \)</span>，<strong>并且</strong>满足 <span class="arithmatex">\( af(N/b) \leq cf(N) \)</span>（对于某个 <span class="arithmatex">\( c &lt; 1 \)</span> 和所有足够大的 <span class="arithmatex">\( N \)</span>），那么 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>简单形式</strong>：对于递归式 <span class="arithmatex">\( T(N) = aT(N/b) + f(N) \)</span></p>
+<ul>
+<li>如果对于某个常数 <span class="arithmatex">\( k &lt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
+<li>如果对于某个常数 <span class="arithmatex">\( K &gt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = Kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
+<li>如果 <span class="arithmatex">\( af(N/b) = f(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)\log_b N) \)</span></li>
+</ul>
+</li>
+<li><strong>最终可用形式</strong>：见正文</li>
+</ul>
+</details>
 </li>
 </ul>
 
