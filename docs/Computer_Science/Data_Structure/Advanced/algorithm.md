@@ -163,6 +163,7 @@ bool Backtracking(int j){
 
 ??? abstract "常见解"
     \( T(N) = 2T(N/2) + cN = O(N\log N) \)
+
     \(T(N) = 2T(N/2) + cN^2 = O(N^2) \)
 
 2. **解决案例**
@@ -179,7 +180,7 @@ bool Backtracking(int j){
     - **跨越分割线的解法**：
         - 利用**δ - strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
 
-            ![](images/5-1s.png){style="width:30%;display: block;margin: 20px auto"}
+            ![](images/5-1.png){style="width:30%;display: block;margin: 20px auto"}
             
         - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
 
@@ -203,7 +204,7 @@ bool Backtracking(int j){
                         δ = Dist(P_i, P_j);
             ```
         
-        - 对于任意点 \( p_i \)，最多只需要考虑7个点（这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \[ f(N) = O(N) \]
+        - 对于任意点 \( p_i \) ，最多只需要考虑7个点（因为这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \( f(N) = O(N) \)
 
 
 4. **递归式求解方法**
@@ -222,7 +223,7 @@ bool Backtracking(int j){
 
         ![](images/5-3.png){style="width:80%;display: block;margin: 20px auto"}
 
-- **主定理法**：对于 \[ T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \]（其中 \( a \geq 1, \, b > 1, \) 且 \( p \geq 0 \)）
+- **主定理法**：对于 \( T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \)（其中 \( a \geq 1, \, b > 1, \) 且 \( p \geq 0 \)）
 
     \[
     T(N) =
