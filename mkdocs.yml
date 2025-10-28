@@ -184,7 +184,6 @@ plugins:
   - macros
 
 
-
 extra_css:
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://cdn.tonycrane.cc/utils/katex.min.css
