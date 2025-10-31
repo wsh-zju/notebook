@@ -984,6 +984,8 @@
       
         
       
+        
+      
     
     
     
@@ -1224,6 +1226,29 @@
   
   <span class="md-ellipsis">
     流水线CPU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    操作系统
     
   </span>
   
@@ -2755,8 +2780,8 @@
 <p>其中 <span class="arithmatex">\(f(N)\)</span> 代表将子问题的解合并成原问题</p>
 <details class="abstract">
 <summary>常见解</summary>
-<p><span class="arithmatex">\( T(N) = 2T(N/2) + cN = O(N\log N) \)</span>
-<span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
+<p><span class="arithmatex">\( T(N) = 2T(N/2) + cN = O(N\log N) \)</span></p>
+<p><span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
 </details>
 <ol start="2">
 <li><strong>解决案例</strong></li>
@@ -2778,7 +2803,7 @@
 <ul>
 <li>
 <p>利用<strong>δ - strip</strong>求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</p>
-<p><img alt="" src="images/5-1s.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../images/5-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
 </li>
 <li>
 <p>如果带状区域内的点数为 <span class="arithmatex">\( O(\sqrt{N}) \)</span>，使用遍历，时间复杂度为 <span class="arithmatex">\( O(N) \)</span></p>
@@ -2811,7 +2836,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>对于任意点 <span class="arithmatex">\( p_i \)</span>，最多只需要考虑7个点（这些点与 <span class="arithmatex">\( p_i \)</span> 的距离小于 <span class="arithmatex">\(δ\)</span>），从而时间复杂度 [ f(N) = O(N) ]</p>
+<p>对于任意点 <span class="arithmatex">\( p_i \)</span> ，最多只需要考虑7个点（因为这些点与 <span class="arithmatex">\( p_i \)</span> 的距离小于 <span class="arithmatex">\(δ\)</span>），从而时间复杂度 <span class="arithmatex">\( f(N) = O(N) \)</span></p>
 </li>
 </ul>
 </li>
@@ -2838,7 +2863,7 @@
 </details>
 </li>
 <li>
-<p><strong>主定理法</strong>：对于 [ T(N) = a \, T(N / b) + \Theta (N^k \log^p N) ]（其中 <span class="arithmatex">\( a \geq 1, \, b &gt; 1, \)</span> 且 <span class="arithmatex">\( p \geq 0 \)</span>）</p>
+<p><strong>主定理法</strong>：对于 <span class="arithmatex">\( T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \)</span>（其中 <span class="arithmatex">\( a \geq 1, \, b &gt; 1, \)</span> 且 <span class="arithmatex">\( p \geq 0 \)</span>）</p>
 <div class="arithmatex">\[
 T(N) =
 \begin{cases} 
