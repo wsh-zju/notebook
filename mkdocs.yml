@@ -38,6 +38,7 @@ nav:
       - CPU : Computer_Science/Computer_System/CPU.md
       - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
       - 流水线CPU : Computer_Science/Computer_System/pipeline.md
+      - 操作系统 : Computer_Science/Computer_System/OS.md
     - 数据结构 :
       - FDS :
         - Computer_Science/Data_Structure/Foundation/index.md
