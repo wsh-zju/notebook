@@ -247,3 +247,101 @@ bool Backtracking(int j){
             - 如果对于某个常数 \( K > 1 \)，有 \( af(N/b) = Kf(N) \)，则 \( T(N) = \Theta(N^{\log_b a}) \)
             - 如果 \( af(N/b) = f(N) \)，则 \( T(N) = \Theta(f(N)\log_b N) \)
         - **最终可用形式**：见正文
+
+---
+## 动态规划 DP
+!!! tip "Tips"
+    需要大量做题！！！
+
+1. **基本思路**：仅解决一次子问题，并保存子问题的解，避免重复计算
+2. **设计算法的步骤**
+
+- 明白问题的最优解和子问题最优解的关系
+- 列出最优解的递推式
+- 选择计算顺序，计算最优解
+- 重新构建解决方案
+
+3.  **斐波那契数列**（时间复杂度：\( O(N) \)）
+   
+- **问题根源**：冗余计算呈爆炸式增长
+- **解决方案**：记录**最近计算的两个值**以避免递归调用（记忆化搜索）
+
+```c
+// 斐波那契数列
+int Fibonacci ( int N ) {
+    int i, Last, NextToLast, Answer;
+    if ( N <= 1 ) return 1;
+    Last = NextToLast = 1;    /* F(0) = F(1) = 1 */
+    for ( i = 2; i <= N; i++ ) {
+        Answer = Last + NextToLast;   /* F(i) = F(i-1) + F(i-2) */
+        NextToLast = Last; Last = Answer;  /* 更新 F(i-1) 和 F(i-2) */
+    }  /* end-for */
+    return Answer;
+}
+```
+
+3. **矩阵链乘法排序**
+
+- 时间复杂度：三层嵌套循环\( O(N^3) \)）
+- 空间复杂度：二维DP表 \( O(N^2) \)
+- 一个问题的最优答案利用子问题的最优答案得到
+
+```c
+void OptMatrix(const long r[], int N, TwoDimArray M) {
+    int i, j, k, L;
+    long ThisM;
+    // 初始化：单个矩阵的乘法代价为0
+    for(i = 1; i <= N; i++) 
+        M[i][i] = 0;
+    // 按链长度递增计算
+    for(k = 1; k < N; k++) {           // k = 链长度-1
+        for(i = 1; i <= N - k; i++) {  // 所有起始位置
+            j = i + k;
+            M[i][j] = Infinity;
+            // 尝试所有可能的划分点
+            for(L = i; L < j; L++) {
+                ThisM = M[i][L] + M[L+1][j] + r[i-1]*r[L]*r[j];
+                if(ThisM < M[i][j])
+                    M[i][j] = ThisM;
+            }
+        }
+    }
+}
+```
+
+!!! abtract "note"
+    ![alt text](images/5-4.png)
+
+
+4. **最优二叉搜索树 OBST**
+
+- 时间复杂度：\( O(N^3) \)）
+
+!!! abtract "note"
+    ![alt text](images/5-6.png)
+
+??? abstract "example"
+    ![alt text](images/5-5.png)
+
+5. **所有节点对最短路径**：对于从i到j的路径，考虑新引入的顶点k：
+
+- 不经过k：保持原最短路径
+- 经过k：路径分解为 i→k 和 k→j
+- 时间复杂度：\( O(N^3) \)）
+  
+```c
+void AllPairs(TwoDimArray A, TwoDimArray D, int N) {
+    int i, j, k;
+    // 初始化：复制邻接矩阵
+    for (i = 0; i < N; i++)
+        for (j = 0; j < N; j++)
+            D[i][j] = A[i][j];
+    // 动态规划核心：逐步引入中间顶点k
+    for (k = 0; k < N; k++)
+        for (i = 0; i < N; i++)
+            for (j = 0; j < N; j++)
+                if (D[i][k] + D[k][j] < D[i][j])
+                    D[i][j] = D[i][k] + D[k][j];
+}
+```
+
