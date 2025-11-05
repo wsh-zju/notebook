@@ -280,7 +280,8 @@ int Fibonacci ( int N ) {
 }
 ```
 
-3. **矩阵链乘法排序**
+
+4. **矩阵链乘法排序**
 
 - 时间复杂度：三层嵌套循环\( O(N^3) \)）
 - 空间复杂度：二维DP表 \( O(N^2) \)
@@ -310,20 +311,20 @@ void OptMatrix(const long r[], int N, TwoDimArray M) {
 ```
 
 !!! abtract "note"
-    ![alt text](images/5-4.png)
+    ![alt text](images/5-4.png){style="width:60%;display: block;margin: 20px auto"}
 
 
-4. **最优二叉搜索树 OBST**
+5. **最优二叉搜索树 OBST**
 
 - 时间复杂度：\( O(N^3) \)）
 
 !!! abtract "note"
-    ![alt text](images/5-6.png)
+    ![alt text](images/5-6.png){style="width:50%;display: block;margin: 20px auto"}
 
 ??? abstract "example"
     ![alt text](images/5-5.png)
 
-5. **所有节点对最短路径**：对于从i到j的路径，考虑新引入的顶点k：
+6. **所有节点对最短路径**：对于从i到j的路径，考虑新引入的顶点k：
 
 - 不经过k：保持原最短路径
 - 经过k：路径分解为 i→k 和 k→j
