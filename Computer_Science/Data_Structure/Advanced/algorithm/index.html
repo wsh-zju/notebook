@@ -2571,7 +2571,7 @@
 <li>摊还分析的目标是：把这些“偶尔昂贵”的操作成本，平均摊到多次操作中去，得出<strong>更合理的平均性能指标</strong></li>
 </ul>
 <ol start="2">
-<li><strong>摊还时间界</strong>（amortized time bound）：连续操作的<strong>平均最坏</strong>情况</li>
+<li><strong>摊还时间界</strong>（amortized time bound）：连续操作的<strong>平均最坏</strong>情况（总时间复杂度的上界）</li>
 </ol>
 <ul>
 <li>最坏情况界 <span class="arithmatex">\(\geq\)</span> 摊还界 <span class="arithmatex">\(\geq\)</span> 平均情况界 </li>
@@ -2618,7 +2618,7 @@
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>定义</strong>：<span class="arithmatex">\( \Phi(D_i) \)</span> 是数据结构在状态 <span class="arithmatex">\( D_i \)</span> 下的<strong>势能函数</strong></li>
+<li><strong>定义</strong>：<span class="arithmatex">\( \Phi(D_i) \)</span> 是数据结构在状态 <span class="arithmatex">\( D_i \)</span> 下（执行第 <span class="arithmatex">\(i\)</span> 次操作后）的<strong>势能函数</strong></li>
 </ol>
 <div class="admonition abstract">
 <p class="admonition-title">Notices</p>
@@ -2645,9 +2645,10 @@
 <p><span class="arithmatex">\( D_i \)</span> = 第 <span class="arithmatex">\( i \)</span> 次操作后的栈状态</p>
 </li>
 <li>
-<p>势能函数：<span class="arithmatex">\( \Phi(D_i) = \)</span> 栈 <span class="arithmatex">\( D_i \)</span> 中的对象数量。显然，<span class="arithmatex">\( \Phi(D_i) \geq 0 = \Phi(D_0) \)</span>。</p>
+<p>势能函数：<span class="arithmatex">\( \Phi(D_i) = \)</span> 栈 <span class="arithmatex">\( D_i \)</span> 中的对象数量，显然，<span class="arithmatex">\( \Phi(D_i) \geq \Phi(D_0) =0\)</span></p>
 </li>
 </ul>
+<p><strong>计算摊还成本：</strong></p>
 <ol>
 <li><strong>Push操作：</strong></li>
 </ol>
