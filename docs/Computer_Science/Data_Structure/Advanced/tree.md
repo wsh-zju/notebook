@@ -227,6 +227,8 @@ T_{\text{Find}}(M, N) = O(\log N)
 
 - **注意：** M 的最佳选择是3（2-3 tree）或4（2-3-4 tree）
 
+![](images/1-9.png)
+
 ### 基本操作
 1. **插入**：先查找到插入的位置进行插入
 
@@ -263,7 +265,7 @@ T_{\text{Find}}(M, N) = O(\log N)
     ---
 
     **B+树**
-    
+
     ![](images/1-3.png){style="width:100%;display: block;margin: 20px auto"}
 
     1. **特点**
