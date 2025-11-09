@@ -1772,7 +1772,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      倒排索引
+      摊还分析
     </span>
   </a>
   
@@ -1781,7 +1781,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      回溯算法
+      倒排索引
     </span>
   </a>
   
@@ -1789,6 +1789,15 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      回溯算法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       分而治之
     </span>
@@ -2485,7 +2494,7 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      倒排索引
+      摊还分析
     </span>
   </a>
   
@@ -2494,7 +2503,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      回溯算法
+      倒排索引
     </span>
   </a>
   
@@ -2502,6 +2511,15 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      回溯算法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       分而治之
     </span>
@@ -2544,7 +2562,127 @@
 
   <h1>算法</h1>
 
-<h2 id="_1">倒排索引<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1"><span style="color: #8B0000;">摊还分析</span><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>目标</strong>：任意连续的 <span class="arithmatex">\(M\)</span> 次操作最多需要 <span class="arithmatex">\(O(M \log N)\)</span> 时间（其中 <span class="arithmatex">\(N\)</span> 是数据规模）</li>
+</ol>
+<ul>
+<li>有些数据结构的某些操作，单次执行可能很耗时，但这种耗时操作不会经常发生</li>
+<li>摊还分析的目标是：把这些“偶尔昂贵”的操作成本，平均摊到多次操作中去，得出<strong>更合理的平均性能指标</strong></li>
+</ul>
+<ol start="2">
+<li><strong>摊还时间界</strong>（amortized time bound）：连续操作的<strong>平均最坏</strong>情况</li>
+</ol>
+<p>最坏情况界 <span class="arithmatex">\(\geq\)</span> 摊还界 <span class="arithmatex">\(\geq\)</span> 平均情况界 </p>
+<ol start="3">
+<li><strong>方法</strong></li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">聚合分析</label><label for="__tabbed_1_2">会计方法</label><label for="__tabbed_1_3">势能方法</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>对于任意 <span class="arithmatex">\(n\)</span>，一个包含 <span class="arithmatex">\(n\)</span> 次操作的序列总共需要的最坏情况时间为 <span class="arithmatex">\(T(n)\)</span>。因此，在最坏情况下，每次操作的平均成本（即摊还成本）为 <span class="arithmatex">\(T(n)/n\)</span></p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>核心思想：</strong>  </li>
+</ol>
+<ul>
+<li>为每个操作分配一个<strong>摊还成本</strong><span class="arithmatex">\( \hat{c}_i \)</span>，它可能高于或低于其<strong>实际成本</strong><span class="arithmatex">\( c_i \)</span></li>
+<li>当一个操作的<span class="arithmatex">\( \hat{c}_i \)</span>超过其<span class="arithmatex">\( c_i \)</span> 时，我们将差额作为<strong>信用（credit）</strong>分配给数据结构中的特定对象</li>
+<li>这些信用可以用于<strong>支付</strong>后续那些摊还成本低于实际成本的操作</li>
+</ul>
+<ol start="2">
+<li><strong>注意：</strong> 对于所有 <span class="arithmatex">\( n \)</span> 次操作的序列，我们必须满足<strong>总摊还成本不低于总实际成本</strong></li>
+</ol>
+<div class="arithmatex">\[
+\sum_{i=1}^n \hat{c}_i \geq \sum_{i=1}^n c_i）
+\]</div>
+<details class="example">
+<summary>Example</summary>
+<p><strong>支持MultiPop的栈</strong></p>
+<p><strong>实际成本</strong> <span class="arithmatex">\( c_i \)</span>：<code>Push</code> 为 1；<code>Pop</code> 为 1；<code>MultiPop 为</code> <span class="arithmatex">\( \min(\text{sizeof}(S), k) \)</span></p>
+<p><strong>摊还成本</strong> <span class="arithmatex">\( \hat{c}_i \)</span>：<code>Push</code> 为 2；<code>Pop</code> 为 0；<code>MultiPop</code> 为 0</p>
+<p><strong>信用分配：</strong></p>
+<ul>
+<li><code>Push</code>: +1（支付1单位实际成本，并留存1单位信用）；</li>
+<li><code>Pop</code>: -1（使用1单位信用支付实际成本）；</li>
+<li><code>MultiPop</code>: 每弹出一个元素使用1单位信用（因为实际成本为 <span class="arithmatex">\(k'\)</span>，但摊还成本为0）。</li>
+</ul>
+<p>由于栈大小 <span class="arithmatex">\( \text{sizeof}(S) \geq 0 \)</span>，因此总信用始终非负。</p>
+<div class="arithmatex">\[
+\sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
+\]</div>
+</details>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>定义</strong>：<span class="arithmatex">\( \Phi(D_i) \)</span> 是数据结构在状态 <span class="arithmatex">\( D_i \)</span> 下的<strong>势能函数</strong></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">Notices</p>
+<p>通常，一个好的势能函数应在操作序列开始时取最小值（即 <strong><span class="arithmatex">\( \Phi(D_0) \)</span> 最小</strong>）</p>
+</div>
+<ol start="2">
+<li><strong>公式</strong>：</li>
+</ol>
+<div class="arithmatex">\[
+\hat{c}_i - c_i = \text{Credit}_i = \Phi(D_i) - \Phi(D_{i-1})
+\]</div>
+<div class="arithmatex">\[
+\sum_{i=1}^n \hat{c}_i = \sum_{i=1}^n \left( c_i + \Phi(D_i) - \Phi(D_{i-1}) \right) = \left( \sum_{i=1}^n c_i \right) + \Phi(D_n) - \Phi(D_0)
+\]</div>
+<div class="admonition abstract">
+<p class="admonition-title">Notices</p>
+<p>由于 <span class="arithmatex">\( \Phi(D_n) - \Phi(D_0) \geq 0 \)</span>，因此<strong>总摊还成本不低于总实际成本</strong> </p>
+</div>
+<details class="example">
+<summary>Example</summary>
+<p><strong>定义：</strong></p>
+<ul>
+<li>
+<p><span class="arithmatex">\( D_i \)</span> = 第 <span class="arithmatex">\( i \)</span> 次操作后的栈状态</p>
+</li>
+<li>
+<p>势能函数：<span class="arithmatex">\( \Phi(D_i) = \)</span> 栈 <span class="arithmatex">\( D_i \)</span> 中的对象数量。显然，<span class="arithmatex">\( \Phi(D_i) \geq 0 = \Phi(D_0) \)</span>。</p>
+</li>
+</ul>
+<ol>
+<li><strong>Push操作：</strong></li>
+</ol>
+<div class="arithmatex">\[
+\Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)+1) - \text{sizeof}(S) = 1
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 + 1 = 2
+\]</div>
+<ol start="2">
+<li><strong>Pop操作：</strong></li>
+</ol>
+<div class="arithmatex">\[
+\Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-1) - \text{sizeof}(S) = -1
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = 1 - 1 = 0
+\]</div>
+<ol start="3">
+<li><strong>MultiPop操作：</strong> 设实际弹出 <span class="arithmatex">\( k' = \min(\text{sizeof}(S), k) \)</span> 个元素</li>
+</ol>
+<div class="arithmatex">\[
+\Phi(D_i) - \Phi(D_{i-1}) = (\text{sizeof}(S)-k') - \text{sizeof}(S) = -k'
+\]</div>
+<div class="arithmatex">\[
+\Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = k' - k' = 0
+\]</div>
+<p>因此，总摊还成本 <span class="arithmatex">\( \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i \)</span>，摊还时间为 <span class="arithmatex">\( O(1) \)</span>。</p>
+</details>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="_2">倒排索引<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>组成</strong></li>
 </ol>
@@ -2605,7 +2743,7 @@
 <li><strong>信息</strong>检索性能评估：答案集的相关性</li>
 </ul>
 <hr />
-<h2 id="_2">回溯算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">回溯算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>思路</strong>：通过系统地生成和检查部分候选解，并在确定该部分解不可能导向最终正确解时，提前放弃该分支（即剪枝），从而减少需要检查的候选解数量</li>
 <li><strong>代码模版</strong></li>
@@ -2790,7 +2928,7 @@
 </li>
 </ul>
 <hr />
-<h2 id="_3">分而治之<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">分而治之<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>通用递归式</strong> </li>
 </ol>
@@ -2964,7 +3102,7 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <li><strong>矩阵链乘法排序</strong></li>
 </ol>
 <ul>
-<li>时间复杂度：三层嵌套循环<span class="arithmatex">\( O(N^3) \)</span>）</li>
+<li>时间复杂度：三层嵌套循环<span class="arithmatex">\( O(N^3) \)</span></li>
 <li>空间复杂度：二维DP表 <span class="arithmatex">\( O(N^2) \)</span></li>
 <li>一个问题的最优答案利用子问题的最优答案得到</li>
 </ul>
