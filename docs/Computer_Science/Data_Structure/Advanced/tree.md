@@ -174,6 +174,7 @@
     - **兄弟节点至少有一个红孩子**：
         - case 3：近侄与兄弟交换颜色，兄弟节点右旋，转换为case 4
         - case 4：父亲与兄弟交换颜色，远侄变黑，父亲左旋
+        
         ![](images/1-7.png){style="width:60%;display: block;margin: 20px auto"}     
         
 ??? abstract "方法二"
