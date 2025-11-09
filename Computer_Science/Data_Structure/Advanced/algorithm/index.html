@@ -2735,8 +2735,66 @@
 <li><strong>关键技术</strong></li>
 </ol>
 <ul>
-<li><strong>词典数据结构</strong>：哈希表、搜索树</li>
-<li><strong>大规模数据处理</strong>：分区索引（词项分区索引、文档分区索引）</li>
+<li>
+<p><strong>词典数据结构</strong>：哈希表、搜索树</p>
+<div class="admonition abstract">
+<p class="admonition-title"><strong>Pros &amp; Cons</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Hashing（哈希）</strong></th>
+<th style="text-align: left;"><strong>Search Trees（搜索树，如 B+ 树、Trie）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>查找速度</strong></td>
+<td style="text-align: left;">平均 O(1)，非常快</td>
+<td style="text-align: left;">O(log n)，较快但略慢于哈希</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>是否有序</strong></td>
+<td style="text-align: left;">无序，不支持范围或前缀查询</td>
+<td style="text-align: left;">有序，可支持排序、范围查找、前缀匹配</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>内存利用率</strong></td>
+<td style="text-align: left;">可能浪费空间（哈希桶未满）</td>
+<td style="text-align: left;">节点结构紧凑，空间利用率较高</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>插入/删除</strong></td>
+<td style="text-align: left;">操作简单，速度快</td>
+<td style="text-align: left;">需要维护树的平衡，稍慢</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>扩展性</strong></td>
+<td style="text-align: left;">当数据量增大时可能需要重哈希（rehash）</td>
+<td style="text-align: left;">可随数据量增长自然扩展</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>实现复杂度</strong></td>
+<td style="text-align: left;">简单</td>
+<td style="text-align: left;">相对复杂（尤其是平衡树、Trie）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>适用场景</strong></td>
+<td style="text-align: left;">精确匹配查询</td>
+<td style="text-align: left;">排序查询、前缀查询、范围检索</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>总体评价</strong></td>
+<td style="text-align: left;">哈希速度快但功能有限</td>
+<td style="text-align: left;">搜索树功能丰富但开销稍大</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>
+<p><strong>大规模数据处理</strong>：分区索引（词项分区索引、文档分区索引）</p>
+</li>
 <li><strong>动态索引</strong>：更新现有词项或添加新词项、添加辅助索引（用于临时存储新文档）</li>
 </ul>
 <ol start="6">
