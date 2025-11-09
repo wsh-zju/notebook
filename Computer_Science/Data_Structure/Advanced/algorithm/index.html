@@ -2573,7 +2573,9 @@
 <ol start="2">
 <li><strong>摊还时间界</strong>（amortized time bound）：连续操作的<strong>平均最坏</strong>情况</li>
 </ol>
-<p>最坏情况界 <span class="arithmatex">\(\geq\)</span> 摊还界 <span class="arithmatex">\(\geq\)</span> 平均情况界 </p>
+<ul>
+<li>最坏情况界 <span class="arithmatex">\(\geq\)</span> 摊还界 <span class="arithmatex">\(\geq\)</span> 平均情况界 </li>
+</ul>
 <ol start="3">
 <li><strong>方法</strong></li>
 </ol>
@@ -2587,15 +2589,15 @@
 <li><strong>核心思想：</strong>  </li>
 </ol>
 <ul>
-<li>为每个操作分配一个<strong>摊还成本</strong><span class="arithmatex">\( \hat{c}_i \)</span>，它可能高于或低于其<strong>实际成本</strong><span class="arithmatex">\( c_i \)</span></li>
-<li>当一个操作的<span class="arithmatex">\( \hat{c}_i \)</span>超过其<span class="arithmatex">\( c_i \)</span> 时，我们将差额作为<strong>信用（credit）</strong>分配给数据结构中的特定对象</li>
+<li>为每个操作分配一个<strong>摊还成本</strong> <span class="arithmatex">\( \hat{c}_i \)</span>，它可能高于或低于其<strong>实际成本</strong> <span class="arithmatex">\( c_i \)</span></li>
+<li>当一个操作的 <span class="arithmatex">\( \hat{c}_i \)</span> 超过其 <span class="arithmatex">\( c_i \)</span> 时，我们将差额作为<strong>信用（credit）</strong>分配给数据结构中的特定对象</li>
 <li>这些信用可以用于<strong>支付</strong>后续那些摊还成本低于实际成本的操作</li>
 </ul>
 <ol start="2">
 <li><strong>注意：</strong> 对于所有 <span class="arithmatex">\( n \)</span> 次操作的序列，我们必须满足<strong>总摊还成本不低于总实际成本</strong></li>
 </ol>
 <div class="arithmatex">\[
-\sum_{i=1}^n \hat{c}_i \geq \sum_{i=1}^n c_i）
+\sum_{i=1}^n \hat{c}_i \geq \sum_{i=1}^n c_i
 \]</div>
 <details class="example">
 <summary>Example</summary>
@@ -2610,10 +2612,7 @@
 </ul>
 <p>由于栈大小 <span class="arithmatex">\( \text{sizeof}(S) \geq 0 \)</span>，因此总信用始终非负。</p>
 <div class="arithmatex">\[
-\sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i
-\]</div>
-<div class="arithmatex">\[
-\Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
+\sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i  \Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
 \]</div>
 </details>
 </div>
