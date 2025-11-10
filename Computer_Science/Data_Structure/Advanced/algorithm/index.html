@@ -3220,7 +3220,7 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <ol>
 <li><span class="arithmatex">\(b_n\)</span>：表示 <span class="arithmatex">\(n\)</span> 个矩阵相乘的不同计算路径的个数，<strong>e.g.</strong> <span class="arithmatex">\(b_1 = 1, b_2 = 1, b_3 = 2, b_4 = 5\)</span></li>
 <li><span class="arithmatex">\(M_i\)</span>：<span class="arithmatex">\(r_{i-1} \times r_i\)</span> 的矩阵</li>
-<li><span class="arithmatex">\(M_{ij} = M_i ... M_j\)</span></li>
+<li><span class="arithmatex">\(M_{ij} = M_i \cdots M_j\)</span></li>
 <li><span class="arithmatex">\(m_{ij}\)</span>：表示矩阵 <span class="arithmatex">\(M_{ij}\)</span> 的<strong>最优</strong>计算代价</li>
 </ol>
 </div>
@@ -3240,7 +3240,7 @@ b_n = O(\frac{4^n}{n \sqrt{n}})
 <div class="arithmatex">\[
 m_{ij} = \begin{cases}
 0 &amp; i=j \\
-\min_{i&lt;l&lt;j} {m_{il} + m_{l+1}_{j} + r_i-1  r_l  r_j} &amp; i&lt;j
+\min_{i&lt;l&lt;j} {m_{il} + m_{l+1,j} + r_i-1  r_l  r_j} &amp; i&lt;j
 \end{cases}
 \]</div>
 </li>
@@ -3295,12 +3295,41 @@ m_{ij} = \begin{cases}
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span>）</li>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span></li>
+<li><strong>问题</strong>：</li>
 </ol>
-<div class="admonition abtract">
-<p class="admonition-title">note</p>
-<p><img alt="alt text" src="../images/5-6.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>已知</strong>：<span class="arithmatex">\(N\)</span> 个单词，字典序为 <span class="arithmatex">\(w_1 \leq w_2 \leq \cdots \leq w_n\)</span>，<span class="arithmatex">\(p_i\)</span> 为单词 <span class="arithmatex">\(w_i\)</span> 的概率</li>
+<li>
+<p><strong>检索代价的计算公式</strong></p>
+<div class="arithmatex">\[
+T(N)=\sum_{i=1}^N p_1(1+d_i)
+\]</div>
+</li>
+<li>
+<p><strong>目标</strong>：找到令搜索代价最小的检索次序</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>解答</strong>：</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+<ol>
+<li><span class="arithmatex">\(T_{ij}\)</span>：表示 <span class="arithmatex">\(w_i\)</span> 到 <span class="arithmatex">\(w_j\)</span> 组成的OBST</li>
+<li><span class="arithmatex">\(c_{ij}\)</span>：表示 <span class="arithmatex">\(T_{ij}\)</span> 的代价</li>
+<li><span class="arithmatex">\(r_{ij}\)</span>：表示 <span class="arithmatex">\(T_{ij}\)</span> 的根节点</li>
+<li><span class="arithmatex">\(w_{ij} = \sum_{k=i}^j p_k\)</span>：表示 <span class="arithmatex">\(T_{ij}\)</span> 的权重</li>
+</ol>
 </div>
+<ul>
+<li>
+<p><strong><span class="arithmatex">\(c_{ij}\)</span> 的递归式</strong></p>
+<div class="arithmatex">\[
+c_{ij} = \min_{i&lt;k&lt;j} {c_{i,k-1} + c_{k+1,j} + w_{ij} }
+\]</div>
+</li>
+</ul>
 <details class="abstract">
 <summary>example</summary>
 <p><img alt="alt text" src="../images/5-5.png" /></p>
@@ -3314,7 +3343,7 @@ m_{ij} = \begin{cases}
 <li>不经过k：保持原最短路径</li>
 <li>经过k：路径分解为 i→k 和 k→j</li>
 </ul>
-<ol start="2">
+<ol>
 <li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span>）</li>
 </ol>
 <details class="info">
