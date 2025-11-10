@@ -227,7 +227,7 @@ bool Backtracking(int j){
         - 每次放置后，检查新产生的距离是否都在剩余距离集合 \( D \) 中，并更新 \( D \)
         - 如果某条路径失败，则**回溯**，撤销该步的距离放置，恢复距离集合 \( D \)
     
-    ??? abstract "代码"
+    ??? abstract "代码"  
         ```c
         bool Reconstruct(DistType X[], DistSet D, int N, int left, int right){ 
             /* X[1]...X[left-1] 和 X[right+1]...X[N] 已经确定 */
@@ -320,42 +320,41 @@ bool Backtracking(int j){
 - 树的遍历: 时间复杂度 \(O(N)\)
 - 归并排序和快速排序: 时间复杂度 \(O(N \log N)\)
 
-3. **最近点对问题**
+??? example "最近点对问题"
+    1. **问题**：给定平面上的 $N$ 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）
+    2. **简单穷举搜索法**：检查 \( N(N-1)/2 \) 个点对（时间复杂度 \( T = O(N^2) \)）
+    3. **分而治之**：按 $x$ 坐标排序并进行**划分**，分成左半部分、右半部分以及**跨越分割线**的三部分解来**递归求解**
+        - **跨越分割线的解法**：
+            - 利用**δ-strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
 
-- **问题**：给定平面上的 $N$ 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）
-- **简单穷举搜索法**：检查 \( N(N-1)/2 \) 个点对（时间复杂度 \( T = O(N^2) \)）
-- **分而治之**：按 $x$ 坐标排序并进行**划分**，分成左半部分、右半部分以及**跨越分割线**的三部分解来**递归求解**
-    - **跨越分割线的解法**：
-        - 利用**δ - strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
+                ![](images/5-1.png){style="width:30%;display: block;margin: 20px auto"}
+               
+            - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
 
-            ![](images/5-1.png){style="width:30%;display: block;margin: 20px auto"}
-            
-        - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
+                ```c
+                for (i=0; i<NumPointsInStrip; i++)
+                for (j=i+1; j<NumPointsInStrip; j++)
+                    if (Dist(P_i, P_j) < δ)
+                    δ = Dist(P_i, P_j);
+                ```
 
-            ```c
-            for (i=0; i<NumPointsInStrip; i++)
-            for (j=i+1; j<NumPointsInStrip; j++)
-                if (Dist(P_i, P_j) < δ)
-                δ = Dist(P_i, P_j);
-            ```
+            - 最坏情况：带状区域内的点数为 \( N \)，遍历并不高效，采取优化策略
 
-        - 最坏情况：带状区域内的点数为 \( N \)，遍历并不高效，采取优化策略
-
-            ```c
-            /* points are all in the strip */
-            /* and sorted by y coordinates */  // 关键：已按y坐标排序
-            for (i = 0; i < NumPointsInStrip; i++)
-                for (j = i + 1; j < NumPointsInStrip; j++)
-                    if (Dist_y(P_i, P_j) > δ)  // 先比较y坐标距离
-                        break;                 // 如果y方向已超过δ，直接跳出内循环
-                    else if (Dist(P_i, P_j) < δ)
-                        δ = Dist(P_i, P_j);
-            ```
-        
-        - 对于任意点 \( p_i \) ，最多只需要考虑7个点（因为这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \( f(N) = O(N) \)
+                ```c
+                /* points are all in the strip */
+                /* and sorted by y coordinates */  // 关键：已按y坐标排序
+                for (i = 0; i < NumPointsInStrip; i++)
+                    for (j = i + 1; j < NumPointsInStrip; j++)
+                        if (Dist_y(P_i, P_j) > δ)  // 先比较y坐标距离
+                            break;                 // 如果y方向已超过δ，直接跳出内循环
+                        else if (Dist(P_i, P_j) < δ)
+                            δ = Dist(P_i, P_j);
+                ```
+           
+            - 对于任意点 \( p_i \) ，最多只需要考虑7个点（因为这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \( f(N) = O(N) \)
 
 
-4. **递归式求解方法**
+3. **递归式求解方法**
 
 \[ T(N) = a \, T(N/b) + f(N) \]
 
@@ -366,7 +365,7 @@ bool Backtracking(int j){
 - **递归树法**：通过画递归树直观理解递归过程
 
 
-    ??? example "例题"
+    ??? example "递归树例题"
         ![](images/5-2.png){style="width:80%;display: block;margin: 20px auto"}
 
         ![](images/5-3.png){style="width:80%;display: block;margin: 20px auto"}
@@ -409,88 +408,124 @@ bool Backtracking(int j){
 - 选择计算顺序，计算最优解
 - 重新构建解决方案
 
-3.  **斐波那契数列**（时间复杂度：\( O(N) \)）
-   
-- **问题根源**：冗余计算呈爆炸式增长
-- **解决方案**：记录**最近计算的两个值**以避免递归调用（记忆化搜索）
+3. **常见问题**
+ 
+=== "**斐波那契数列**"
+    1. **时间复杂度**：\( O(N) \)
+    2. **问题根源**：冗余计算呈爆炸式增长
+    3. **解决方案**：记录**最近计算的两个值**以避免递归调用（**记忆化搜索**）
 
-```c
-// 斐波那契数列
-int Fibonacci ( int N ) {
-    int i, Last, NextToLast, Answer;
-    if ( N <= 1 ) return 1;
-    Last = NextToLast = 1;    /* F(0) = F(1) = 1 */
-    for ( i = 2; i <= N; i++ ) {
-        Answer = Last + NextToLast;   /* F(i) = F(i-1) + F(i-2) */
-        NextToLast = Last; Last = Answer;  /* 更新 F(i-1) 和 F(i-2) */
-    }  /* end-for */
-    return Answer;
-}
-```
+    ??? info "code"
+        ```c
+        // 斐波那契数列
+        int Fibonacci ( int N ) {
+            int i, Last, NextToLast, Answer;
+            if ( N <= 1 ) return 1;
+            Last = NextToLast = 1;    /* F(0) = F(1) = 1 */
+            for ( i = 2; i <= N; i++ ) {
+                Answer = Last + NextToLast;   /* F(i) = F(i-1) + F(i-2) */
+                NextToLast = Last; Last = Answer;  /* 更新 F(i-1) 和 F(i-2) */
+            }  /* end-for */
+            return Answer;
+        }
+        ```
+
+=== "**矩阵链乘法排序**"
+    1. **时间复杂度**：三层嵌套循环\( O(N^3) \)
+    2. **空间复杂度**：二维DP表 \( O(N^2) \)
+    3. **思路**：一个问题的最优答案利用子问题的最优答案得到
+    4. **解答**：
+
+    !!! abstract "已知"
+        对于矩阵乘法 $A_{m \times n} \times B_{n \times p} = C_{n \times p}$ ，时间复杂度为 $m \times p \times n$
+
+    !!! note "定义"
+        1. $b_n$：表示 $n$ 个矩阵相乘的不同计算路径的个数，**e.g.** $b_1 = 1, b_2 = 1, b_3 = 2, b_4 = 5$
+        2. $M_i$：$r_{i-1} \times r_i$ 的矩阵
+        3. $M_{ij} = M_i ... M_j$
+        4. $m_{ij}$：表示矩阵 $M_{ij}$ 的**最优**计算代价
+
+    - **$b_n$ 的递推式**
+
+        $$
+        b_n = \sum_{i=0}^{n} b_i b_{n-i} 
+        $$
+
+        **解得**
+
+        $$
+        b_n = O(\frac{4^n}{n \sqrt{n}})
+        $$
+    
+    - **$m_{ij}$ 的递推式**
+        
+        $$
+        m_{ij} = \begin{cases}
+        0 & i=j \\
+        \min_{i<l<j} {m_{il} + m_{l+1}_{j} + r_i-1 \times r_l \times r_j} & i<j
+        \end{cases}
+        $$
 
 
-4. **矩阵链乘法排序**
-
-- 时间复杂度：三层嵌套循环\( O(N^3) \)
-- 空间复杂度：二维DP表 \( O(N^2) \)
-- 一个问题的最优答案利用子问题的最优答案得到
-
-```c
-void OptMatrix(const long r[], int N, TwoDimArray M) {
-    int i, j, k, L;
-    long ThisM;
-    // 初始化：单个矩阵的乘法代价为0
-    for(i = 1; i <= N; i++) 
-        M[i][i] = 0;
-    // 按链长度递增计算
-    for(k = 1; k < N; k++) {           // k = 链长度-1
-        for(i = 1; i <= N - k; i++) {  // 所有起始位置
-            j = i + k;
-            M[i][j] = Infinity;
-            // 尝试所有可能的划分点
-            for(L = i; L < j; L++) {
-                ThisM = M[i][L] + M[L+1][j] + r[i-1]*r[L]*r[j];
-                if(ThisM < M[i][j])
-                    M[i][j] = ThisM;
+    ??? info "code"
+        ```c
+        void OptMatrix(const long r[], int N, TwoDimArray M) {
+            int i, j, k, L;
+            long ThisM;
+            // 初始化：单个矩阵的乘法代价为0
+            for(i = 1; i <= N; i++) 
+                M[i][i] = 0;
+            // 按链长度递增计算
+            for(k = 1; k < N; k++) {           // k = 链长度-1
+                for(i = 1; i <= N - k; i++) {  // 所有起始位置
+                    j = i + k;
+                    M[i][j] = Infinity;
+                    // 尝试所有可能的划分点
+                    for(L = i; L < j; L++) {
+                        ThisM = M[i][L] + M[L+1][j] + r[i-1]*r[L]*r[j];
+                        if(ThisM < M[i][j])
+                            M[i][j] = ThisM;
+                    }
+                }
             }
         }
-    }
-}
-```
+        ```
 
-!!! abtract "note"
-    ![alt text](images/5-4.png){style="width:60%;display: block;margin: 20px auto"}
+    ??? abtract "note"
+        ![alt text](images/5-4.png){style="width:60%;display: block;margin: 20px auto"}
 
 
-5. **最优二叉搜索树 OBST**
+=== "**最优二叉搜索树 OBST**"
+    1. **时间复杂度**：\( O(N^3) \)）
 
-- 时间复杂度：\( O(N^3) \)）
+    !!! abtract "note"
+        ![alt text](images/5-6.png){style="width:50%;display: block;margin: 20px auto"}
 
-!!! abtract "note"
-    ![alt text](images/5-6.png){style="width:50%;display: block;margin: 20px auto"}
+    ??? abstract "example"
+        ![alt text](images/5-5.png)
 
-??? abstract "example"
-    ![alt text](images/5-5.png)
+=== "**所有节点对最短路径**"
+    1. **思路**：对于从i到j的路径，考虑新引入的顶点k：
 
-6. **所有节点对最短路径**：对于从i到j的路径，考虑新引入的顶点k：
-
-- 不经过k：保持原最短路径
-- 经过k：路径分解为 i→k 和 k→j
-- 时间复杂度：\( O(N^3) \)）
+    - 不经过k：保持原最短路径
+    - 经过k：路径分解为 i→k 和 k→j
+    
+    2. **时间复杂度**：\( O(N^3) \)）
   
-```c
-void AllPairs(TwoDimArray A, TwoDimArray D, int N) {
-    int i, j, k;
-    // 初始化：复制邻接矩阵
-    for (i = 0; i < N; i++)
-        for (j = 0; j < N; j++)
-            D[i][j] = A[i][j];
-    // 动态规划核心：逐步引入中间顶点k
-    for (k = 0; k < N; k++)
-        for (i = 0; i < N; i++)
-            for (j = 0; j < N; j++)
-                if (D[i][k] + D[k][j] < D[i][j])
-                    D[i][j] = D[i][k] + D[k][j];
-}
-```
+    ??? info "code"
+        ```c
+        void AllPairs(TwoDimArray A, TwoDimArray D, int N) {
+            int i, j, k;
+            // 初始化：复制邻接矩阵
+            for (i = 0; i < N; i++)
+                for (j = 0; j < N; j++)
+                    D[i][j] = A[i][j];
+            // 动态规划核心：逐步引入中间顶点k
+            for (k = 0; k < N; k++)
+                for (i = 0; i < N; i++)
+                    for (j = 0; j < N; j++)
+                        if (D[i][k] + D[k][j] < D[i][j])
+                            D[i][j] = D[i][k] + D[k][j];
+        }
+        ```
 
