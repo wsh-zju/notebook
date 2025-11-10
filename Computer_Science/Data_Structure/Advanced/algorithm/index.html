@@ -3043,20 +3043,21 @@
 <li>树的遍历: 时间复杂度 <span class="arithmatex">\(O(N)\)</span></li>
 <li>归并排序和快速排序: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
 </ul>
-<ol start="3">
-<li><strong>最近点对问题</strong></li>
-</ol>
-<ul>
+<details class="example">
+<summary>最近点对问题</summary>
+<ol>
 <li><strong>问题</strong>：给定平面上的 <span class="arithmatex">\(N\)</span> 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）</li>
 <li><strong>简单穷举搜索法</strong>：检查 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对（时间复杂度 <span class="arithmatex">\( T = O(N^2) \)</span>）</li>
 <li><strong>分而治之</strong>：按 <span class="arithmatex">\(x\)</span> 坐标排序并进行<strong>划分</strong>，分成左半部分、右半部分以及<strong>跨越分割线</strong>的三部分解来<strong>递归求解</strong><ul>
 <li>
-<p><strong>跨越分割线的解法</strong>：</p>
 <ul>
 <li>
-<p>利用<strong>δ - strip</strong>求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</p>
+<p>利用<strong>δ-strip</strong>求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</p>
 <p><img alt="" src="../images/5-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
 </li>
+</ul>
+<p><strong>跨越分割线的解法</strong>：</p>
+<ul>
 <li>
 <p>如果带状区域内的点数为 <span class="arithmatex">\( O(\sqrt{N}) \)</span>，使用遍历，时间复杂度为 <span class="arithmatex">\( O(N) \)</span></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -3094,8 +3095,9 @@
 </li>
 </ul>
 </li>
-</ul>
-<ol start="4">
+</ol>
+</details>
+<ol start="3">
 <li><strong>递归式求解方法</strong></li>
 </ol>
 <div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
@@ -3109,7 +3111,7 @@
 <li>
 <p><strong>递归树法</strong>：通过画递归树直观理解递归过程</p>
 <details class="example">
-<summary>例题</summary>
+<summary>递归树例题</summary>
 <p><img alt="" src="../images/5-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
 <p><img alt="" src="../images/5-3.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
@@ -3166,12 +3168,18 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <li>重新构建解决方案</li>
 </ul>
 <ol start="3">
-<li><strong>斐波那契数列</strong>（时间复杂度：<span class="arithmatex">\( O(N) \)</span>）</li>
+<li><strong>常见问题</strong></li>
 </ol>
-<ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><strong>斐波那契数列</strong></label><label for="__tabbed_2_2"><strong>矩阵链乘法排序</strong></label><label for="__tabbed_2_3"><strong>最优二叉搜索树 OBST</strong></label><label for="__tabbed_2_4"><strong>所有节点对最短路径</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N) \)</span></li>
 <li><strong>问题根源</strong>：冗余计算呈爆炸式增长</li>
-<li><strong>解决方案</strong>：记录<strong>最近计算的两个值</strong>以避免递归调用（记忆化搜索）</li>
-</ul>
+<li><strong>解决方案</strong>：记录<strong>最近计算的两个值</strong>以避免递归调用（<strong>记忆化搜索</strong>）</li>
+</ol>
+<details class="info">
+<summary>code</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -3194,14 +3202,51 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Answer</span><span class="p">;</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<ol start="4">
-<li><strong>矩阵链乘法排序</strong></li>
+</details>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>时间复杂度</strong>：三层嵌套循环<span class="arithmatex">\( O(N^3) \)</span></li>
+<li><strong>空间复杂度</strong>：二维DP表 <span class="arithmatex">\( O(N^2) \)</span></li>
+<li><strong>思路</strong>：一个问题的最优答案利用子问题的最优答案得到</li>
+<li><strong>解答</strong>：</li>
 </ol>
+<div class="admonition abstract">
+<p class="admonition-title">已知</p>
+<p>对于矩阵乘法 <span class="arithmatex">\(A_{m \times n} \times B_{n \times p} = C_{n \times p}\)</span> ，时间复杂度为 <span class="arithmatex">\(m \times p \times n\)</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定义</p>
+<ol>
+<li><span class="arithmatex">\(b_n\)</span>：表示 <span class="arithmatex">\(n\)</span> 个矩阵相乘的不同计算路径的个数，<strong>e.g.</strong> <span class="arithmatex">\(b_1 = 1, b_2 = 1, b_3 = 2, b_4 = 5\)</span></li>
+<li><span class="arithmatex">\(M_i\)</span>：<span class="arithmatex">\(r_{i-1} \times r_i\)</span> 的矩阵</li>
+<li><span class="arithmatex">\(M_{ij} = M_i ... M_j\)</span></li>
+<li><span class="arithmatex">\(m_{ij}\)</span>：表示矩阵 <span class="arithmatex">\(M_{ij}\)</span> 的<strong>最优</strong>计算代价</li>
+</ol>
+</div>
 <ul>
-<li>时间复杂度：三层嵌套循环<span class="arithmatex">\( O(N^3) \)</span></li>
-<li>空间复杂度：二维DP表 <span class="arithmatex">\( O(N^2) \)</span></li>
-<li>一个问题的最优答案利用子问题的最优答案得到</li>
+<li>
+<p><strong><span class="arithmatex">\(b_n\)</span> 的递推式</strong></p>
+<div class="arithmatex">\[
+b_n = \sum_{i=0}^{n} b_i b_{n-i} 
+\]</div>
+<p><strong>解得</strong></p>
+<div class="arithmatex">\[
+b_n = O(\frac{4^n}{n \sqrt{n}})
+\]</div>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(m_{ij}\)</span> 的递推式</strong></p>
+<div class="arithmatex">\[
+m_{ij} = \begin{cases}
+0 &amp; i=j \\
+\min_{i&lt;l&lt;j} {m_{il} + m_{l+1}_{j} + r_i-1 \times r_l \times r_j} &amp; i&lt;j
+\end{cases}
+\]</div>
+</li>
 </ul>
+<details class="info">
+<summary>code</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -3242,16 +3287,16 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <a id="__codelineno-6-19" name="__codelineno-6-19"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<div class="admonition abtract">
-<p class="admonition-title">note</p>
+</details>
+<details class="abtract">
+<summary>note</summary>
 <p><img alt="alt text" src="../images/5-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
 </div>
-<ol start="5">
-<li><strong>最优二叉搜索树 OBST</strong></li>
+<div class="tabbed-block">
+<ol>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span>）</li>
 </ol>
-<ul>
-<li>时间复杂度：<span class="arithmatex">\( O(N^3) \)</span>）</li>
-</ul>
 <div class="admonition abtract">
 <p class="admonition-title">note</p>
 <p><img alt="alt text" src="../images/5-6.png" style="width:50%;display: block;margin: 20px auto" /></p>
@@ -3260,14 +3305,20 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <summary>example</summary>
 <p><img alt="alt text" src="../images/5-5.png" /></p>
 </details>
-<ol start="6">
-<li><strong>所有节点对最短路径</strong>：对于从i到j的路径，考虑新引入的顶点k：</li>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>思路</strong>：对于从i到j的路径，考虑新引入的顶点k：</li>
 </ol>
 <ul>
 <li>不经过k：保持原最短路径</li>
 <li>经过k：路径分解为 i→k 和 k→j</li>
-<li>时间复杂度：<span class="arithmatex">\( O(N^3) \)</span>）</li>
 </ul>
+<ol start="2">
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span>）</li>
+</ol>
+<details class="info">
+<summary>code</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -3294,6 +3345,10 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">                    </span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">D</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
 <a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+</details>
+</div>
+</div>
+</div>
 
 
 
