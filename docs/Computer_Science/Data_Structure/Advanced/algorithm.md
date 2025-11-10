@@ -448,13 +448,7 @@ bool Backtracking(int j){
     - **$b_n$ 的递推式**
 
         $$
-        b_n = \sum_{i=0}^{n} b_i b_{n-i} 
-        $$
-
-        **解得**
-
-        $$
-        b_n = O(\frac{4^n}{n \sqrt{n}})
+        b_n = \sum_{i=0}^{n} b_i b_{n-i} \Rightarrow b_n = O(\frac{4^n}{n \sqrt{n}})
         $$
     
     - **$m_{ij}$ 的递推式**
