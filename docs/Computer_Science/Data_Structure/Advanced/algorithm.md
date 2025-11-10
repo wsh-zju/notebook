@@ -442,7 +442,7 @@ bool Backtracking(int j){
     !!! note "定义"
         1. $b_n$：表示 $n$ 个矩阵相乘的不同计算路径的个数，**e.g.** $b_1 = 1, b_2 = 1, b_3 = 2, b_4 = 5$
         2. $M_i$：$r_{i-1} \times r_i$ 的矩阵
-        3. $M_{ij} = M_i ... M_j$
+        3. $M_{ij} = M_i \cdots M_j$
         4. $m_{ij}$：表示矩阵 $M_{ij}$ 的**最优**计算代价
 
     - **$b_n$ 的递推式**
@@ -462,7 +462,7 @@ bool Backtracking(int j){
         $$
         m_{ij} = \begin{cases}
         0 & i=j \\
-        \min_{i<l<j} {m_{il} + m_{l+1}_{j} + r_i-1  r_l  r_j} & i<j
+        \min_{i<l<j} {m_{il} + m_{l+1,j} + r_i-1  r_l  r_j} & i<j
         \end{cases}
         $$
 
@@ -496,10 +496,31 @@ bool Backtracking(int j){
 
 
 === "**最优二叉搜索树 OBST**"
-    1. **时间复杂度**：\( O(N^3) \)）
+    1. **时间复杂度**：\( O(N^3) \)
+    2. **问题**：
+    
+    - **已知**：$N$ 个单词，字典序为 $w_1 \leq w_2 \leq \cdots \leq w_n$，$p_i$ 为单词 $w_i$ 的概率
+    - **检索代价的计算公式**
+        
+        $$
+        T(N)=\sum_{i=1}^N p_1(1+d_i)
+        $$
 
-    !!! abtract "note"
-        ![alt text](images/5-6.png){style="width:50%;display: block;margin: 20px auto"}
+    - **目标**：找到令搜索代价最小的检索次序
+
+    3. **解答**：
+
+    !!! note "定义"
+        1. $T_{ij}$：表示 $w_i$ 到 $w_j$ 组成的OBST
+        2. $c_{ij}$：表示 $T_{ij}$ 的代价
+        3. $r_{ij}$：表示 $T_{ij}$ 的根节点
+        4. $w_{ij} = \sum_{k=i}^j p_k$：表示 $T_{ij}$ 的权重
+
+    - **$c_{ij}$ 的递归式**
+
+        $$
+        c_{ij} = \min_{i<k<j} {c_{i,k-1} + c_{k+1,j} + w_{ij} }
+        $$
 
     ??? abstract "example"
         ![alt text](images/5-5.png)
@@ -510,7 +531,7 @@ bool Backtracking(int j){
     - 不经过k：保持原最短路径
     - 经过k：路径分解为 i→k 和 k→j
     
-    2. **时间复杂度**：\( O(N^3) \)）
+    1. **时间复杂度**：\( O(N^3) \)）
   
     ??? info "code"
         ```c
