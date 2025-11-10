@@ -150,8 +150,8 @@ Write the inverted index to disk;
 
 - **词典数据结构**：哈希表、搜索树
 
-    !!! abstract "**Pros & Cons**"
-        |  | **Hashing（哈希）** | **Search Trees（搜索树，如 B+ 树、Trie）** |
+    ??? abstract "**Pros & Cons**"
+        |  | **Hashing** | **Search Trees** |
         |:--|:--|:-----|
         | **查找速度** | 平均 O(1)，非常快 | O(log n)，较快但略慢于哈希 |
         | **是否有序** | 无序，不支持范围或前缀查询 | 有序，可支持排序、范围查找、前缀匹配 |

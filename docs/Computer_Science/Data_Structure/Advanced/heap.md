@@ -1,6 +1,6 @@
 ## 左倾堆
-1. **目标**：加快合并速度
-2. **空路径长度 $Npl(X)$**：任意节点$X$的空路径长度$Npl(X)$是$X$到不具有两个子节点的节点的最短路径长度，并且定义 $Npl(NULL) = –1$
+1. **目标**：加快原本为 $O(N)$ 的合并速度
+2. **空路径长度 $Npl(X)$**：任意节点 $X$ 的空路径长度 $Npl(X)$ 是 $X$ 到不具有两个子节点的节点的最短路径长度，并且定义 $Npl(NULL) = –1$
 
 $$
 Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}
@@ -27,25 +27,28 @@ struct TreeNode
 
 5. **合并操作**（插入操作可以看作是合并操作的一个特例）
 
-- 递归地合并 `H1->Right` 和 `H2`（**根节点值小的树的右节点为根节点大的树的根节点**）
-- 将合并结果挂接为 `H1` 的新右子树
-- 如果**左子节点的 `Npl` < 右子节点的 `Npl`**，交换 `H1` 的左右子节点，以维持左式堆性质
+- **递归版**
+    - 递归地合并 `H1->Right` 和 `H2`（**根节点值小的树的根节点作为新的根节点，继续递归的合并另一个树和其右子树**）
+    - 将合并结果挂接为 `H1` 的新右子树
+    - 如果**左子节点的 `Npl` < 右子节点的 `Npl`**，交换 `H1` 的左右子节点，以维持左式堆性质
+    - 更新 `H1` 的 `Npl`
+- **迭代版**
+    - 不改变左子树的情况下，**排序并记录**右子树的路径
+    - 从栈顶开始，把上一步合并后的结果挂接到当前节点的右子树，并更新 `Npl`
+    - 重复上述步骤，直到栈为空（相当于递归返回）
 
-6. **合并代码**：时间复杂度为 $O(\log N)$
+6. **合并代码**（递归版）：时间复杂度为 $O(\log N)$
 
 ```c
-PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 )
-{ 
+PriorityQueue Merge( PriorityQueue H1, PriorityQueue H2 ){ 
     if ( H1 == NULL )   return H2;	
     if ( H2 == NULL )   return H1;	
     if ( H1->Element < H2->Element )  return Merge1( H1, H2 );   
     else return Merge1( H2, H1 );
 }
-static PriorityQueue Merge1( PriorityQueue H1, PriorityQueue H2 )
-{ 
+static PriorityQueue Merge1( PriorityQueue H1, PriorityQueue H2 ){ 
     if ( H1->Left == NULL ) {	/* single node */
-        H1->Left = H2;	
-        /* H1->Right is already NULL and H1->Npl is already 0*/
+        H1->Left = H2;	/* H1->Right is already NULL and H1->Npl is already 0*/
     } else {
         H1->Right = Merge( H1->Right, H2 );     /* Step 1 & 2 */
         if ( H1->Left->Npl < H1->Right->Npl )
@@ -66,6 +69,7 @@ static PriorityQueue Merge1( PriorityQueue H1, PriorityQueue H2 )
 - 删除根节点
 - 合并左子树和右子树
 
+---
 
 ## 斜堆
 1. **目标**：任何 $M$ 个连续作最多需要 $O(M \log N)$ 时间
@@ -81,9 +85,11 @@ static PriorityQueue Merge1( PriorityQueue H1, PriorityQueue H2 )
     1. 斜堆的合并操作**不需要保证左倾**的特性！
 
     2. **斜堆的优点**
-    
-    - 斜堆的合并操作不需要额外的空间来维护路径长度
-    - 也不需要测试来确定何时交换子项
+       - 斜堆的合并操作不需要额外的空间来维护路径长度
+       - 也不需要测试来确定何时交换子项
+
+??? example "Example"
+    ![](images/2-1.png)
 
 4. **轻重节点**
 
