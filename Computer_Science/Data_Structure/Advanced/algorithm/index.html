@@ -3036,6 +3036,60 @@
 <p><span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
 </details>
 <ol start="2">
+<li><strong>递归式求解方法</strong></li>
+</ol>
+<div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
+<ul>
+<li><strong>假设前提</strong><ul>
+<li><span class="arithmatex">\(N = b^k\)</span></li>
+<li>当 <span class="arithmatex">\(n\)</span> 足够小时，<span class="arithmatex">\(T(n) = \Theta(1)\)</span></li>
+</ul>
+</li>
+<li><strong>代入法</strong>：猜测解的形式，并用数学归纳法证明</li>
+<li>
+<p><strong>递归树法</strong>：通过画递归树直观理解递归过程</p>
+<details class="example">
+<summary>递归树例题</summary>
+<p><img alt="" src="../images/5-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../images/5-3.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</details>
+</li>
+<li>
+<p><strong>主定理法</strong>：对于 <span class="arithmatex">\( T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \)</span>（其中 <span class="arithmatex">\( a \geq 1, \, b &gt; 1, \)</span> 且 <span class="arithmatex">\( p \geq 0 \)</span>）</p>
+<div class="arithmatex">\[
+T(N) =
+\begin{cases} 
+O(N^{\log_b a}) &amp; \text{若 } a &gt; b^k \\ 
+O(N^k \log^{p+1} N) &amp; \text{若 } a = b^k \\ 
+O(N^k \log^p N) &amp; \text{若 } a &lt; b^k 
+\end{cases}
+\]</div>
+<details class="abstract">
+<summary>主定理的几个形式</summary>
+<ul>
+<li>
+<p><strong>原定理</strong>：令 <span class="arithmatex">\( a \geq 1 \)</span> 和 <span class="arithmatex">\( b &gt; 1 \)</span> 为常数，<span class="arithmatex">\( f(N) \)</span> 是一个函数，<span class="arithmatex">\( T(N) \)</span> 是在非负整数上由以下递归式定义：</p>
+<div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
+<ul>
+<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = O(N^{\log_b a - \epsilon}) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
+<li>如果对某个 <span class="arithmatex">\( k \geq 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Theta(N^{\log_b a} \log^k N) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a} \log^{k+1} N) \)</span></li>
+<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Omega(N^{\log_b a + \epsilon}) \)</span>，<strong>并且</strong>满足 <span class="arithmatex">\( af(N/b) \leq cf(N) \)</span>（对于某个 <span class="arithmatex">\( c &lt; 1 \)</span> 和所有足够大的 <span class="arithmatex">\( N \)</span>），那么 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>简单形式</strong>：对于递归式 <span class="arithmatex">\( T(N) = aT(N/b) + f(N) \)</span></p>
+<ul>
+<li>如果对于某个常数 <span class="arithmatex">\( k &lt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
+<li>如果对于某个常数 <span class="arithmatex">\( K &gt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = Kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
+<li>如果 <span class="arithmatex">\( af(N/b) = f(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)\log_b N) \)</span></li>
+</ul>
+</li>
+<li><strong>最终可用形式</strong>：见正文</li>
+</ul>
+</details>
+</li>
+</ul>
+<ol start="3">
 <li><strong>解决案例</strong></li>
 </ol>
 <ul>
@@ -3097,60 +3151,6 @@
 </li>
 </ol>
 </details>
-<ol start="3">
-<li><strong>递归式求解方法</strong></li>
-</ol>
-<div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
-<ul>
-<li><strong>假设前提</strong><ul>
-<li><span class="arithmatex">\(N = b^k\)</span></li>
-<li>当 <span class="arithmatex">\(n\)</span> 足够小时，<span class="arithmatex">\(T(n) = \Theta(1)\)</span></li>
-</ul>
-</li>
-<li><strong>代入法</strong>：猜测解的形式，并用数学归纳法证明</li>
-<li>
-<p><strong>递归树法</strong>：通过画递归树直观理解递归过程</p>
-<details class="example">
-<summary>递归树例题</summary>
-<p><img alt="" src="../images/5-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
-<p><img alt="" src="../images/5-3.png" style="width:80%;display: block;margin: 20px auto" /></p>
-</details>
-</li>
-<li>
-<p><strong>主定理法</strong>：对于 <span class="arithmatex">\( T(N) = a \, T(N / b) + \Theta (N^k \log^p N) \)</span>（其中 <span class="arithmatex">\( a \geq 1, \, b &gt; 1, \)</span> 且 <span class="arithmatex">\( p \geq 0 \)</span>）</p>
-<div class="arithmatex">\[
-T(N) =
-\begin{cases} 
-O(N^{\log_b a}) &amp; \text{若 } a &gt; b^k \\ 
-O(N^k \log^{p+1} N) &amp; \text{若 } a = b^k \\ 
-O(N^k \log^p N) &amp; \text{若 } a &lt; b^k 
-\end{cases}
-\]</div>
-<details class="abstract">
-<summary>主定理的几个形式</summary>
-<ul>
-<li>
-<p><strong>原定理</strong>：令 <span class="arithmatex">\( a \geq 1 \)</span> 和 <span class="arithmatex">\( b &gt; 1 \)</span> 为常数，<span class="arithmatex">\( f(N) \)</span> 是一个函数，<span class="arithmatex">\( T(N) \)</span> 是在非负整数上由以下递归式定义：</p>
-<div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
-<ul>
-<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = O(N^{\log_b a - \epsilon}) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
-<li>如果对某个 <span class="arithmatex">\( k \geq 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Theta(N^{\log_b a} \log^k N) \)</span>，那么 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a} \log^{k+1} N) \)</span></li>
-<li>如果对某常数 <span class="arithmatex">\( \epsilon &gt; 0 \)</span>，有 <span class="arithmatex">\( f(N) = \Omega(N^{\log_b a + \epsilon}) \)</span>，<strong>并且</strong>满足 <span class="arithmatex">\( af(N/b) \leq cf(N) \)</span>（对于某个 <span class="arithmatex">\( c &lt; 1 \)</span> 和所有足够大的 <span class="arithmatex">\( N \)</span>），那么 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
-</ul>
-</li>
-<li>
-<p><strong>简单形式</strong>：对于递归式 <span class="arithmatex">\( T(N) = aT(N/b) + f(N) \)</span></p>
-<ul>
-<li>如果对于某个常数 <span class="arithmatex">\( k &lt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)) \)</span></li>
-<li>如果对于某个常数 <span class="arithmatex">\( K &gt; 1 \)</span>，有 <span class="arithmatex">\( af(N/b) = Kf(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(N^{\log_b a}) \)</span></li>
-<li>如果 <span class="arithmatex">\( af(N/b) = f(N) \)</span>，则 <span class="arithmatex">\( T(N) = \Theta(f(N)\log_b N) \)</span></li>
-</ul>
-</li>
-<li><strong>最终可用形式</strong>：见正文</li>
-</ul>
-</details>
-</li>
-</ul>
 <hr />
 <h2 id="dp">动态规划 DP<a class="headerlink" href="#dp" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
@@ -3168,7 +3168,7 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <li>重新构建解决方案</li>
 </ul>
 <ol start="3">
-<li><strong>常见问题</strong></li>
+<li><strong>经典问题</strong></li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><strong>斐波那契数列</strong></label><label for="__tabbed_2_2"><strong>矩阵链乘法排序</strong></label><label for="__tabbed_2_3"><strong>最优二叉搜索树 OBST</strong></label><label for="__tabbed_2_4"><strong>所有节点对最短路径</strong></label></div>
 <div class="tabbed-content">
@@ -3236,7 +3236,7 @@ b_n = \sum_{i=0}^{n} b_i b_{n-i} \Rightarrow b_n = O(\frac{4^n}{n \sqrt{n}})
 <div class="arithmatex">\[
 m_{ij} = \begin{cases}
 0 &amp; i=j \\
-\min_{i&lt;l&lt;j} {m_{il} + m_{l+1,j} + r_i-1  r_l  r_j} &amp; i&lt;j
+\min_{i&lt;l&lt;j} \{m_{il} + m_{l+1,j} + r_{i-1}  r_l  r_j\} &amp; i&lt;j
 \end{cases}
 \]</div>
 </li>
@@ -3295,11 +3295,11 @@ m_{ij} = \begin{cases}
 <li><strong>问题</strong>：</li>
 </ol>
 <ul>
-<li><strong>已知</strong>：<span class="arithmatex">\(N\)</span> 个单词，字典序为 <span class="arithmatex">\(w_1 \leq w_2 \leq \cdots \leq w_n\)</span>，<span class="arithmatex">\(p_i\)</span> 为单词 <span class="arithmatex">\(w_i\)</span> 的概率</li>
+<li><strong>已知</strong>：<span class="arithmatex">\(N\)</span> 个单词，字典序为 <span class="arithmatex">\(w_1 \leq w_2 \leq \cdots \leq w_N\)</span>，<span class="arithmatex">\(p_i\)</span> 为单词 <span class="arithmatex">\(w_i\)</span> 的概率</li>
 <li>
 <p><strong>检索代价的计算公式</strong></p>
 <div class="arithmatex">\[
-T(N)=\sum_{i=1}^N p_1(1+d_i)
+T(N)=\sum_{i=1}^N p_i(1+d_i)
 \]</div>
 </li>
 <li>
@@ -3322,7 +3322,7 @@ T(N)=\sum_{i=1}^N p_1(1+d_i)
 <li>
 <p><strong><span class="arithmatex">\(c_{ij}\)</span> 的递归式</strong></p>
 <div class="arithmatex">\[
-c_{ij} = \min_{i&lt;k&lt;j} {c_{i,k-1} + c_{k+1,j} + w_{ij} }
+c_{ij} = \min_{i&lt;k&lt;j} \{c_{i,k-1} + c_{k+1,j} + w_{ij} \}
 \]</div>
 </li>
 </ul>
@@ -3337,9 +3337,9 @@ c_{ij} = \min_{i&lt;k&lt;j} {c_{i,k-1} + c_{k+1,j} + w_{ij} }
 </ol>
 <ul>
 <li>不经过k：保持原最短路径</li>
-<li>经过k：路径分解为 i→k 和 k→j</li>
+<li>经过k：路径分解为 <span class="arithmatex">\(i→k\)</span> 和 <span class="arithmatex">\(k→j\)</span></li>
 </ul>
-<ol>
+<ol start="2">
 <li><strong>时间复杂度</strong>：<span class="arithmatex">\( O(N^3) \)</span>）</li>
 </ol>
 <details class="info">
