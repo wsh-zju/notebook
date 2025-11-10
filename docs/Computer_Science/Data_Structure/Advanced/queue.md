@@ -1,10 +1,10 @@
 ## 二项队列
-1. **目标**：为了寻找一种能实现高效插入（理想情况下是常数平均时间）的优先队列结构。
+1. **目标**：为了寻找一种能实现**高效插入**（理想情况下是常数平均时间）的优先队列结构。
 
 - 某些堆结构（如左式堆、斜堆）的**单次**插入操作时间复杂度为 $O(\log N)$，在需要频繁插入的场景下可能不够高效
 - 二叉堆的 $N$ 次**连续插入**的摊还总时间复杂度为 $O(N)$ ，意味着**平均每次**插入的成本是 $O(1)$（常数时间）
 
-2. **结构**：二项队列**不是一棵堆序树**，而是一个由堆序树组成的集合，称为**森林**。每一棵堆序树都是一棵**二项树**
+2. **结构**：二项队列**不是一棵堆序树**（树的根节点是最小值），而是一个由堆序树组成的集合，称为**森林**；每一棵堆序树都是一棵**二项树**
 
 - 高度为 $0$ 的二项树是一个**单节点树**
 - 高度为 $k$ 的**二项树** $B_{k}$ ，是通过将一棵二项树 $B_{k–1}$ 连接到另一棵二项树 $B_{k–1}$ 的根上构成的
@@ -23,6 +23,8 @@
 
     **Solution**：已知 $13 = 1101_2$ ，因此优先队列包含 $B_0,B_2,B_3$
 
+    ![](images/3-3.png)
+
 
 ### 二项树实现
 
@@ -36,15 +38,13 @@ typedef struct BinNode *Position;
 typedef struct Collection *BinQueue;
 typedef struct BinNode *BinTree;  
 
-struct BinNode   // 二项树结点结构
-{ 
+struct BinNode {  // 二项树结点结构
     ElementType	    Element;
     Position	    LeftChild;
     Position 	    NextSibling;
 } ;
 
-struct Collection    // 二项队列结构
-{ 
+struct Collection {   // 二项队列结构
     int	    	CurrentSize;  /* total number of nodes */
     BinTree	    TheTrees[ MaxTrees ];
 } ;
@@ -129,7 +129,7 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
     - 删除其根节点，其子树形成一个新的二项队列，**时间复杂度**：$O(\log N)$
     - 将原队列与新队列合并，**时间复杂度**：$O(\log N)$
 
-    1. **时间复杂度**： $O(\log N)$
+    2. **时间复杂度**： $O(\log N)$
 
     ```c
     ElementType  DeleteMin( BinQueue H ){	

@@ -226,8 +226,8 @@ bool Backtracking(int j){
         - 递归地尝试将**剩余的最大距离**放置在当前解集的**最右端** \( X[\text{right}] \) 或**最左端** \( X[\text{left}] \)
         - 每次放置后，检查新产生的距离是否都在剩余距离集合 \( D \) 中，并更新 \( D \)
         - 如果某条路径失败，则**回溯**，撤销该步的距离放置，恢复距离集合 \( D \)
-    - **代码**
-
+    
+    ??? abstract "代码"
         ```c
         bool Reconstruct(DistType X[], DistSet D, int N, int left, int right){ 
             /* X[1]...X[left-1] 和 X[right+1]...X[N] 已经确定 */
