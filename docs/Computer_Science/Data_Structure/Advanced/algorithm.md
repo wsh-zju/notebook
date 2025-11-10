@@ -456,7 +456,7 @@ bool Backtracking(int j){
         $$
         m_{ij} = \begin{cases}
         0 & i=j \\
-        \min_{i<l<j} {m_{il} + m_{l+1,j} + r_i-1  r_l  r_j} & i<j
+        \min_{i<l<j} \{m_{il} + m_{l+1,j} + r_{i-1}  r_l  r_j\} & i<j
         \end{cases}
         $$
 
@@ -493,7 +493,7 @@ bool Backtracking(int j){
     1. **时间复杂度**：\( O(N^3) \)
     2. **问题**：
     
-    - **已知**：$N$ 个单词，字典序为 $w_1 \leq w_2 \leq \cdots \leq w_n$，$p_i$ 为单词 $w_i$ 的概率
+    - **已知**：$N$ 个单词，字典序为 $w_1 \leq w_2 \leq \cdots \leq w_N$，$p_i$ 为单词 $w_i$ 的概率
     - **检索代价的计算公式**
         
         $$
@@ -513,7 +513,7 @@ bool Backtracking(int j){
     - **$c_{ij}$ 的递归式**
 
         $$
-        c_{ij} = \min_{i<k<j} {c_{i,k-1} + c_{k+1,j} + w_{ij} }
+        c_{ij} = \min_{i<k<j} \{c_{i,k-1} + c_{k+1,j} + w_{ij} \}
         $$
 
     ??? abstract "example"
@@ -523,9 +523,9 @@ bool Backtracking(int j){
     1. **思路**：对于从i到j的路径，考虑新引入的顶点k：
 
     - 不经过k：保持原最短路径
-    - 经过k：路径分解为 i→k 和 k→j
+    - 经过k：路径分解为 $i→k$ 和 $k→j$
     
-    1. **时间复杂度**：\( O(N^3) \)）
+    2. **时间复杂度**：\( O(N^3) \)）
   
     ??? info "code"
         ```c
