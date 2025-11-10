@@ -2540,14 +2540,14 @@
 
 <h2 id="_1">二项队列<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>目标</strong>：为了寻找一种能实现高效插入（理想情况下是常数平均时间）的优先队列结构。</li>
+<li><strong>目标</strong>：为了寻找一种能实现<strong>高效插入</strong>（理想情况下是常数平均时间）的优先队列结构。</li>
 </ol>
 <ul>
 <li>某些堆结构（如左式堆、斜堆）的<strong>单次</strong>插入操作时间复杂度为 <span class="arithmatex">\(O(\log N)\)</span>，在需要频繁插入的场景下可能不够高效</li>
 <li>二叉堆的 <span class="arithmatex">\(N\)</span> 次<strong>连续插入</strong>的摊还总时间复杂度为 <span class="arithmatex">\(O(N)\)</span> ，意味着<strong>平均每次</strong>插入的成本是 <span class="arithmatex">\(O(1)\)</span>（常数时间）</li>
 </ul>
 <ol start="2">
-<li><strong>结构</strong>：二项队列<strong>不是一棵堆序树</strong>，而是一个由堆序树组成的集合，称为<strong>森林</strong>。每一棵堆序树都是一棵<strong>二项树</strong></li>
+<li><strong>结构</strong>：二项队列<strong>不是一棵堆序树</strong>（树的根节点是最小值），而是一个由堆序树组成的集合，称为<strong>森林</strong>；每一棵堆序树都是一棵<strong>二项树</strong></li>
 </ol>
 <ul>
 <li>高度为 <span class="arithmatex">\(0\)</span> 的二项树是一个<strong>单节点树</strong></li>
@@ -2570,6 +2570,7 @@
 <p class="admonition-title">Example</p>
 <p><strong>Problem</strong>：用一个二项树的集合来表示一个大小为13的优先队列</p>
 <p><strong>Solution</strong>：已知 <span class="arithmatex">\(13 = 1101_2\)</span> ，因此优先队列包含 <span class="arithmatex">\(B_0,B_2,B_3\)</span></p>
+<p><img alt="" src="../images/3-3.png" /></p>
 </div>
 <h3 id="_2">二项树实现<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2592,24 +2593,20 @@
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
 <span class="normal"><a href="#__codelineno-0-12">12</a></span>
 <span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="o">*</span><span class="n">Position</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="o">*</span><span class="n">Position</span><span class="p">;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Collection</span><span class="w"> </span><span class="o">*</span><span class="n">BinQueue</span><span class="p">;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="o">*</span><span class="n">BinTree</span><span class="p">;</span><span class="w">  </span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w">   </span><span class="c1">// 二项树结点结构</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">     </span><span class="n">Element</span><span class="p">;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">LeftChild</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">NextSibling</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Collection</span><span class="w">    </span><span class="c1">// 二项队列结构</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">{</span><span class="w"> </span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">CurrentSize</span><span class="p">;</span><span class="w">  </span><span class="cm">/* total number of nodes */</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="n">BinTree</span><span class="w">     </span><span class="n">TheTrees</span><span class="p">[</span><span class="w"> </span><span class="n">MaxTrees</span><span class="w"> </span><span class="p">];</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 二项树结点结构</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="n">ElementType</span><span class="w">     </span><span class="n">Element</span><span class="p">;</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">LeftChild</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">Position</span><span class="w">        </span><span class="n">NextSibling</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">struct</span><span class="w"> </span><span class="nc">Collection</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 二项队列结构</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="kt">int</span><span class="w">         </span><span class="n">CurrentSize</span><span class="p">;</span><span class="w">  </span><span class="cm">/* total number of nodes */</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">BinTree</span><span class="w">     </span><span class="n">TheTrees</span><span class="p">[</span><span class="w"> </span><span class="n">MaxTrees</span><span class="w"> </span><span class="p">];</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">}</span><span class="w"> </span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <ol start="2">
 <li><strong>合并</strong></li>
@@ -2730,7 +2727,7 @@
 <li>删除其根节点，其子树形成一个新的二项队列，<strong>时间复杂度</strong>：<span class="arithmatex">\(O(\log N)\)</span></li>
 <li>将原队列与新队列合并，<strong>时间复杂度</strong>：<span class="arithmatex">\(O(\log N)\)</span></li>
 </ul>
-<ol>
+<ol start="2">
 <li><strong>时间复杂度</strong>： <span class="arithmatex">\(O(\log N)\)</span></li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>

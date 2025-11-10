@@ -2883,7 +2883,9 @@
 </ol>
 <ul>
 <li><strong>八皇后问题</strong>：在8×8棋盘上放置8个皇后，使得它们互不攻击（即不在同一行、列、对角线或反对角线）</li>
-<li><strong>收费公路重建问题</strong><ul>
+<li>
+<p><strong>收费公路重建问题</strong></p>
+<ul>
 <li><strong>问题</strong>：给定 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对之间的距离集合 <span class="arithmatex">\( D \)</span>，重建点在 <span class="arithmatex">\( x \)</span> 轴上的原始坐标序列 <span class="arithmatex">\( x_1 &lt; x_2 &lt; ... &lt; x_N \)</span>（已知 <span class="arithmatex">\( x_1 = 0 \)</span>）</li>
 <li><strong>算法思路</strong>：<ul>
 <li>由距离个数确定点的数量 <span class="arithmatex">\( N \)</span></li>
@@ -2893,8 +2895,9 @@
 <li>如果某条路径失败，则<strong>回溯</strong>，撤销该步的距离放置，恢复距离集合 <span class="arithmatex">\( D \)</span></li>
 </ul>
 </li>
-<li>
-<p><strong>代码</strong></p>
+</ul>
+<details class="abstract">
+<summary>代码</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -2981,8 +2984,7 @@
 <a id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Found</span><span class="p">;</span>
 <a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-</li>
-</ul>
+</details>
 </li>
 </ul>
 <ol start="4">
