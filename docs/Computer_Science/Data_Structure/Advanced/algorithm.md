@@ -462,7 +462,7 @@ bool Backtracking(int j){
         $$
         m_{ij} = \begin{cases}
         0 & i=j \\
-        \min_{i<l<j} {m_{il} + m_{l+1}_{j} + r_i-1 \times r_l \times r_j} & i<j
+        \min_{i<l<j} {m_{il} + m_{l+1}_{j} + r_i-1  r_l  r_j} & i<j
         \end{cases}
         $$
 
