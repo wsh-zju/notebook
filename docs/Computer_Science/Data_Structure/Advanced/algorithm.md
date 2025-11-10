@@ -314,47 +314,7 @@ bool Backtracking(int j){
 
     \(T(N) = 2T(N/2) + cN^2 = O(N^2) \)
 
-2. **解决案例**
-
-- 最大子序列和: 时间复杂度 \(O(N \log N)\)
-- 树的遍历: 时间复杂度 \(O(N)\)
-- 归并排序和快速排序: 时间复杂度 \(O(N \log N)\)
-
-??? example "最近点对问题"
-    1. **问题**：给定平面上的 $N$ 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）
-    2. **简单穷举搜索法**：检查 \( N(N-1)/2 \) 个点对（时间复杂度 \( T = O(N^2) \)）
-    3. **分而治之**：按 $x$ 坐标排序并进行**划分**，分成左半部分、右半部分以及**跨越分割线**的三部分解来**递归求解**
-        - **跨越分割线的解法**：
-            - 利用**δ-strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
-
-                ![](images/5-1.png){style="width:30%;display: block;margin: 20px auto"}
-               
-            - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
-
-                ```c
-                for (i=0; i<NumPointsInStrip; i++)
-                for (j=i+1; j<NumPointsInStrip; j++)
-                    if (Dist(P_i, P_j) < δ)
-                    δ = Dist(P_i, P_j);
-                ```
-
-            - 最坏情况：带状区域内的点数为 \( N \)，遍历并不高效，采取优化策略
-
-                ```c
-                /* points are all in the strip */
-                /* and sorted by y coordinates */  // 关键：已按y坐标排序
-                for (i = 0; i < NumPointsInStrip; i++)
-                    for (j = i + 1; j < NumPointsInStrip; j++)
-                        if (Dist_y(P_i, P_j) > δ)  // 先比较y坐标距离
-                            break;                 // 如果y方向已超过δ，直接跳出内循环
-                        else if (Dist(P_i, P_j) < δ)
-                            δ = Dist(P_i, P_j);
-                ```
-           
-            - 对于任意点 \( p_i \) ，最多只需要考虑7个点（因为这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \( f(N) = O(N) \)
-
-
-3. **递归式求解方法**
+2. **递归式求解方法**
 
 \[ T(N) = a \, T(N/b) + f(N) \]
 
@@ -394,6 +354,46 @@ bool Backtracking(int j){
             - 如果对于某个常数 \( K > 1 \)，有 \( af(N/b) = Kf(N) \)，则 \( T(N) = \Theta(N^{\log_b a}) \)
             - 如果 \( af(N/b) = f(N) \)，则 \( T(N) = \Theta(f(N)\log_b N) \)
         - **最终可用形式**：见正文
+
+3. **解决案例**
+
+- 最大子序列和: 时间复杂度 \(O(N \log N)\)
+- 树的遍历: 时间复杂度 \(O(N)\)
+- 归并排序和快速排序: 时间复杂度 \(O(N \log N)\)
+
+??? example "最近点对问题"
+    1. **问题**：给定平面上的 $N$ 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）
+    2. **简单穷举搜索法**：检查 \( N(N-1)/2 \) 个点对（时间复杂度 \( T = O(N^2) \)）
+    3. **分而治之**：按 $x$ 坐标排序并进行**划分**，分成左半部分、右半部分以及**跨越分割线**的三部分解来**递归求解**
+        - **跨越分割线的解法**：
+            - 利用**δ-strip**求解：找到左半部分和右半部分中最短的一段距离，记为 $\delta$ ，在 $(x-\delta, x+\delta)$ 的范围内寻找即可
+
+                ![](images/5-1.png){style="width:30%;display: block;margin: 20px auto"}
+               
+            - 如果带状区域内的点数为 \( O(\sqrt{N}) \)，使用遍历，时间复杂度为 \( O(N) \)
+
+                ```c
+                for (i=0; i<NumPointsInStrip; i++)
+                for (j=i+1; j<NumPointsInStrip; j++)
+                    if (Dist(P_i, P_j) < δ)
+                    δ = Dist(P_i, P_j);
+                ```
+
+            - 最坏情况：带状区域内的点数为 \( N \)，遍历并不高效，采取优化策略
+
+                ```c
+                /* points are all in the strip */
+                /* and sorted by y coordinates */  // 关键：已按y坐标排序
+                for (i = 0; i < NumPointsInStrip; i++)
+                    for (j = i + 1; j < NumPointsInStrip; j++)
+                        if (Dist_y(P_i, P_j) > δ)  // 先比较y坐标距离
+                            break;                 // 如果y方向已超过δ，直接跳出内循环
+                        else if (Dist(P_i, P_j) < δ)
+                            δ = Dist(P_i, P_j);
+                ```
+           
+            - 对于任意点 \( p_i \) ，最多只需要考虑7个点（因为这些点与 \( p_i \) 的距离小于 $δ$），从而时间复杂度 \( f(N) = O(N) \)
+
 
 ---
 ## 动态规划 DP
