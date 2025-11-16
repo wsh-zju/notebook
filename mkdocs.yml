@@ -55,7 +55,12 @@ nav:
         - 树 : Computer_Science/Data_Structure/Advanced/tree.md
         - 堆 : Computer_Science/Data_Structure/Advanced/heap.md
         - 队列 : Computer_Science/Data_Structure/Advanced/queue.md
-        - 算法 : Computer_Science/Data_Structure/Advanced/algorithm.md
+        - 摊还分析 : Computer_Science/Data_Structure/Advanced/amort.md
+        - 倒排索引 : Computer_Science/Data_Structure/Advanced/inv.md
+        - 回溯算法 : Computer_Science/Data_Structure/Advanced/back.
+        - 分而治之 : Computer_Science/Data_Structure/Advanced/divide.md
+        - 动态规划 : Computer_Science/Data_Structure/Advanced/DP.md
+        - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
   - Math and Physics : 
     - Math_and_Physics/index.md
