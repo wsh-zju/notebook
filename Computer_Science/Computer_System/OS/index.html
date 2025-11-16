@@ -1511,6 +1511,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链接器与加载器
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2925,6 +2947,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        系统服务
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        链接器与加载器
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3141,7 +3185,7 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
@@ -3152,18 +3196,18 @@
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-0-10">10</a></span>
 <span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>// 使用标准I/O库
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>#include &lt;stdio.h&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>int main(){
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    printf(&quot;Hello, world!\n&quot;);
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    return 0;
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>}
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>// 使用底层系统调用
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>#include &lt;unistd.h&gt;
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>int main(){
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    write(1, &quot;Hello, world!\n&quot;, 14);
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    return 0;
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>}
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// 使用标准I/O库</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">// 使用底层系统调用</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li><code>printf</code>是<code>write</code>系统调用的包装器</li>
@@ -3228,9 +3272,6 @@
 <th style="text-align: left;"><strong>进程控制</strong></th>
 <th style="text-align: left;"><strong>文件管理</strong></th>
 <th style="text-align: left;"><strong>设备管理</strong></th>
-<th style="text-align: left;"><strong>信息维护</strong></th>
-<th style="text-align: left;"><strong>通信</strong></th>
-<th style="text-align: left;"><strong>保护</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -3238,15 +3279,156 @@
 <td style="text-align: left;">1. 创建/终止进程<br>2. 加载/执行<br>3. 获取/设置进程属性<br>4. 等待时间、等待/通知事件<br>5. 分配/释放/出错时转储内存<br>6. 调试器：调试错误/单步执行<br>7. 锁：管理进程间共享数据的访问</td>
 <td style="text-align: left;">1. 创建/删除文件<br>2. 打开/关闭文件<br>3. 读/写/重定位文件<br>4. 获取和设置文件属性</td>
 <td style="text-align: left;">1. 请求/释放设备<br>2. 读取、写入、重定位<br>3. 获取和设置设备属性<br>4. 逻辑连接/断开设备</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>信息维护</strong></td>
+<td style="text-align: left;"><strong>通信</strong></td>
+<td style="text-align: left;"><strong>保护</strong></td>
+</tr>
+<tr>
 <td style="text-align: left;">1. 获取/设置时间或日期<br>2.获取/设置系统数据<br>3.获取和设置进程、文件或设备属性</td>
 <td style="text-align: left;">1. 创建/删除通信连接<br>2. <strong>消息传递模式</strong>：在主机名或进程名之间发送和接收；从客户端到服务器<br>3. <strong>共享内存模式</strong>：创建内存区并获取访问权限</td>
 <td style="text-align: left;">1. 控制对资源的访问<br>2. 获取和设置权限<br>3. 允许和拒绝用户访问</td>
 </tr>
 </tbody>
 </table>
-<p>系统服务</p>
-<p>链接器与加载器</p>
-<p>为何应用程序依赖于特定操作系统</p>
+<div class="admonition abstract">
+<p class="admonition-title">为何应用程序依赖于特定操作系统</p>
+<ol>
+<li><strong>核心原因</strong>：不同操作系统的<strong>系统调用接口和可执行文件格式</strong>不兼容</li>
+<li><strong>跨平台策略</strong>：</li>
+</ol>
+<ul>
+<li>解释型语言：依赖跨平台的解释器</li>
+<li>虚拟机语言：依赖跨平台的虚拟机</li>
+<li>源代码移植：使用标准语言编写，但在每个目标平台重新编译</li>
+</ul>
+</div>
+<h3 id="_7">系统服务<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>定义</strong>：也称为<strong>系统程序</strong>，为程序开发和执行提供了便利环境</li>
+<li><strong>分类</strong></li>
+</ol>
+<ul>
+<li><strong>文件操作</strong>：创建、删除、复制、重命名、打印、转储、列出及文件目录的通常操作</li>
+<li><strong>文件修改</strong><ul>
+<li>用于创建和修改文件的<strong>文本编辑器</strong></li>
+<li>用于搜索文件内容或执行文本转换的<strong>特殊命令</strong></li>
+</ul>
+</li>
+<li><strong>状态信息</strong>（有时存储在文件中）<ul>
+<li>一些<strong>向系统询问信息</strong>——日期、时间、可用内存量、磁盘空间、用户数量</li>
+<li>其他<strong>提供详细的性能、日志记录和调试信息</strong></li>
+<li>通常这些程序<strong>格式化输出</strong>并将其打印到终端或其他输出设备</li>
+<li><strong>特殊机制</strong>：一些系统（Windows）使用<strong>注册表</strong>来集中存储和检索配置信息</li>
+</ul>
+</li>
+<li><strong>编程语言支持</strong>：有时提供编译器、汇编器、调试器和解释器</li>
+<li><strong>程序加载与执行</strong>：加载器和链接器<ul>
+<li><strong>包括</strong>：绝对加载程序、可重定位加载程序、链接编辑器和覆盖加载程序，用于高级语言和机器语言的调试系统</li>
+</ul>
+</li>
+<li><strong>通信</strong>：提供在进程、用户和计算机系统之间<strong>创建虚拟连接</strong>的机制<ul>
+<li>允许用户相互发送消息到屏幕</li>
+<li>浏览网页、发送电子邮件消息、远程登录</li>
+<li>从一台机器传输文件到另一台机器</li>
+</ul>
+</li>
+<li><strong>后台服务</strong><ul>
+<li>也称为服务、子系统、守护进程</li>
+<li>在系统启动时<strong>自动启动</strong>（有些用于系统启动，然后终止；有些从系统启动到关闭一直运行）</li>
+<li>提供如磁盘检查、进程调度、错误记录、打印等服务</li>
+<li>在<strong>用户上下文</strong>中运行，而不是内核上下文（意味着其崩溃了通常不会导致整个系统崩溃）</li>
+</ul>
+</li>
+<li><strong>应用程序</strong><ul>
+<li><strong>与系统无关</strong>，由用户运行，通常不视为操作系统的一部分</li>
+<li>通过命令行、鼠标点击、手指点击<strong>启动</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">链接器与加载器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><img alt="" src="../photo/10-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>作用</strong></li>
+</ol>
+<ul>
+<li><strong>编译器</strong>：将高级语言翻译成机器代码，生成<strong>目标文件</strong><code>main.o</code></li>
+<li><strong>链接器</strong>：将多个<strong>目标文件和库</strong>打包成一个<strong>可执行文件</strong><code>main</code></li>
+<li><strong>加载器</strong>：将可执行文件从磁盘读入<strong>内存</strong>，并创建一个可以执行的进程</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p>现代通用系统不将库链接到可执行文件中，而是<strong>动态链接库</strong>（在 Windows 中为 DLL）在需要时加载，所有使用相同版本相同库的程序<strong>共享该库</strong>（只加载一次）</p>
+</div>
+<ol start="2">
+<li><strong><code>ELF 文件格式</code></strong></li>
+</ol>
+<ul>
+<li><strong>定义</strong>：<strong>可执行</strong>与可链接格式<code>main</code></li>
+<li>
+<p><strong>组成</strong> </p>
+<ul>
+<li>程序头表和节头表</li>
+<li><code>.text</code>: 代码</li>
+<li><code>.rodata</code>: 已初始化的只读数据 <strong>e.g.</strong> 静态常量</li>
+<li><code>.data</code>: 已初始化的<strong>全局变量和静态变量</strong></li>
+<li><code>.bss</code>: 未初始化的全局变量和静态变量（这个段在文件中<strong>不占实际空间</strong>，只是在程序加载时分配相应大小的内存并初始化为0）</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">note</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">   </span><span class="c1">//在栈中，因为不是静态变量和全局变量</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</li>
+<li>
+<p><code>readelf -S a.out</code>：查看 <code>ELF</code> 文件的所有段</p>
+</li>
+<li><code>objdump -d a.out</code>：反汇编 <code>.text</code> 段，查看机器指令</li>
+</ul>
+<ol start="3">
+<li>
+<p><a href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/pipeline/#_24">链接</a></p>
+</li>
+<li>
+<p><strong><code>ELF</code>文件运行</strong></p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>静态链接</strong>：不需要<code>loader</code>来加载库</p>
+<p><img alt="" src="../photo/10-4.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>动态链接</strong>：需要<code>loader</code>来加载库</p>
+<p><img alt="" src="../photo/10-5.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+<ol>
+<li><strong><a href="https://wsh-zju.github.io/notebook/Computer_Science/Language/C/structure/#_10">进程的内存布局</a></strong>（从低地址到高地址）</li>
+</ol>
+<ul>
+<li><strong>文本段</strong>（Text Segment）：<code>.text</code> <strong>只读</strong></li>
+<li><strong>数据段</strong>（Data Segment）：<code>.data</code>+<code>.bss</code></li>
+<li><strong>堆</strong>（Heap）：用于动态内存分配（如<code>malloc</code>），向高地址增长</li>
+<li><strong>内存映射段</strong>（Memory Mapping Segment）：映射了动态共享库以及用户创建的内存映射文件</li>
+<li><strong>栈</strong>（Stack）：用于函数调用，存放局部变量等，向低地址增长</li>
+<li><strong>内核空间</strong>（Kernel Space）：为内核保留，用户程序无法直接访问</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">note</p>
+<ol>
+<li>设置 ELF 文件映射：内核</li>
+<li>设置栈和堆：内核</li>
+<li>设置库：加载器</li>
+</ol>
+</div>
 <p>操作系统的设计与实现</p>
 <p>操作系统结构</p>
 <p>构建与启动操作系统</p>

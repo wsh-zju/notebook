@@ -4148,18 +4148,33 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 </ol>
 <ul>
 <li><strong>静态链接</strong>：在程序运行前，将所有需要的库代码<strong>复制</strong>到最终的可执行文件中<ul>
-<li><strong>优点</strong>：程序独立性强，分发简单</li>
-<li><strong>缺点</strong>：可执行文件体积大，库更新需要重新链接所有程序</li>
+<li>静态链接的<code>ELF</code>没有<code>.interp</code>节</li>
 </ul>
 </li>
 <li><strong>动态链接</strong>：<ul>
 <li>在可执行文件中只记录它需要哪些共享库</li>
 <li>在程序<strong>加载时</strong>或<strong>运行时</strong>，再由操作系统的动态链接器将所需的库代码加载到内存并完成地址解析</li>
-<li><strong>优点</strong>：显著减小可执行文件体积；节省内存（多个程序可共享同一份库代码）；库更新无需重新链接程序</li>
-<li><strong>缺点</strong>：增加了程序启动的轻微开销；存在<code>DLL Hell</code>依赖风险</li>
+<li>动态链接的<code>ELF</code>有<code>.interp</code>节：指定<strong>动态加载器</strong>的路径</li>
 </ul>
 </li>
 </ul>
+<details class="abstract">
+<summary>优缺点</summary>
+<ol>
+<li><strong>静态链接</strong></li>
+</ol>
+<ul>
+<li><strong>优点</strong>：程序独立性强，分发简单；<strong>可移植性较好</strong>，对环境的依赖小</li>
+<li><strong>缺点</strong>：可执行文件<strong>体积大</strong>，库更新需要重新链接所有程序</li>
+</ul>
+<ol start="2">
+<li><strong>动态链接</strong></li>
+</ol>
+<ul>
+<li><strong>优点</strong>：显著减小可执行文件体积；节省内存（多个程序可共享同一份库代码）；库更新无需重新链接程序</li>
+<li><strong>缺点</strong>：增加了程序启动的轻微开销；存在<code>DLL Hell</code>依赖风险；可移植性较差</li>
+</ul>
+</details>
 <h4 id="_25"><strong>加载</strong><a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
