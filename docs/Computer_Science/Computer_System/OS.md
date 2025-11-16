@@ -167,7 +167,7 @@
     1. **寄存器传递**：最简单（但是某些情况下参数可能多于寄存器）
     2. **内存块/表传递**：参数存储在内存中的一个块/表中，并将块的地址作为参数在寄存器中传递 **e.g.**`Linux`、`Solaris`
 
-    ![](photo/10-2.png)
+    ![](photo/10-2.png){style="width:40%;display: block;margin: 20px auto"}
     
     3. **栈传递**：参数由程序放置或push到stack上，并由操作系统从栈中pop
     4. 后两种方法不限制传递参数的数量和长度
@@ -188,7 +188,7 @@
 |:---|:---|:---|
 |1. 创建/终止进程<br>2. 加载/执行<br>3. 获取/设置进程属性<br>4. 等待时间、等待/通知事件<br>5. 分配/释放/出错时转储内存<br>6. 调试器：调试错误/单步执行<br>7. 锁：管理进程间共享数据的访问|1. 创建/删除文件<br>2. 打开/关闭文件<br>3. 读/写/重定位文件<br>4. 获取和设置文件属性|1. 请求/释放设备<br>2. 读取、写入、重定位<br>3. 获取和设置设备属性<br>4. 逻辑连接/断开设备|
 |**信息维护**|**通信**|**保护**|
-|1. 获取/设置时间或日期<br>2.获取/设置系统数据<br>3.获取和设置进程、文件或设备属性|1. 创建/删除通信连接<br>2. **消息传递模式**：在主机名或进程名之间发送和接收；从客户端到服务器<br>3. **共享内存模式**：创建内存区并获取访问权限|1. 控制对资源的访问<br>2. 获取和设置权限<br>3. 允许和拒绝用户访问|
+|1. 获取/设置时间或日期<br>2.获取/设置系统数据<br>3.获取和设置进程、文件或设备属性|1. 创建/删除通信连接<br>2. **消息传递模式**：<br>在主机名或进程名之间发送和接收；<br>从客户端到服务器<br>3. **共享内存模式**：创建内存区并获取访问权限|1. 控制对资源的访问<br>2. 获取和设置权限<br>3. 允许和拒绝用户访问|
 
 
 !!! abstract "为何应用程序依赖于特定操作系统"
@@ -230,7 +230,7 @@
     - 通过命令行、鼠标点击、手指点击**启动**
 
 ### 链接器与加载器
-![](photo/10-3.png){style="width:50%;display: block;margin: 20px auto"}
+![](photo/10-3.png){style="width:40%;display: block;margin: 20px auto"}
 
 1. **作用**
 
@@ -262,19 +262,19 @@
 - `readelf -S a.out`：查看 `ELF` 文件的所有段
 - `objdump -d a.out`：反汇编 `.text` 段，查看机器指令
 
-3. [链接](https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/pipeline/#_24)
+3. **[链接类型](https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/pipeline/#_24)**
 
 4. **`ELF`文件运行**
 
 - **静态链接**：不需要`loader`来加载库
     
-    ![](photo/10-4.png){style="width:80%;display: block;margin: 20px auto"}
+    ![](photo/10-4.png){style="width:60%;display: block;margin: 20px auto"}
 
 - **动态链接**：需要`loader`来加载库
 
-    ![](photo/10-5.png){style="width:80%;display: block;margin: 20px auto"}
+    ![](photo/10-5.png){style="width:60%;display: block;margin: 20px auto"}
 
-1. **[进程的内存布局](https://wsh-zju.github.io/notebook/Computer_Science/Language/C/structure/#_10)**（从低地址到高地址）
+5. **[进程的内存布局](https://wsh-zju.github.io/notebook/Computer_Science/Language/C/structure/#_10)**（从低地址到高地址）
 
 - **文本段**（Text Segment）：`.text` **只读**
 - **数据段**（Data Segment）：`.data`+`.bss`
