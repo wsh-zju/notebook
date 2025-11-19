@@ -1533,6 +1533,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 设计与实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OS 结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建与启动 OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 调试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        栈
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3149,6 +3260,117 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#os" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 设计与实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OS 结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        构建与启动 OS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#os_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OS 调试
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        栈
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3480,7 +3702,7 @@
 </ol>
 <ul>
 <li>解释型语言：依赖跨平台的解释器</li>
-<li>虚拟机语言：依赖跨平台的虚拟机</li>
+<li>虚拟机语言：依赖跨平台的虚拟机 <strong>e.g.</strong> Java(JVM)</li>
 <li>源代码移植：使用标准语言编写，但在每个目标平台重新编译</li>
 </ul>
 </div>
@@ -3542,7 +3764,7 @@
 <p>现代通用系统不将库链接到可执行文件中，而是<strong>动态链接库</strong>（在 Windows 中为 DLL）在需要时加载，所有使用相同版本相同库的程序<strong>共享该库</strong>（只加载一次）</p>
 </div>
 <ol start="2">
-<li><strong><code>ELF 文件格式</code></strong></li>
+<li><strong><code>ELF</code> 文件格式</strong></li>
 </ol>
 <ul>
 <li><strong>定义</strong>：<strong>可执行</strong>与可链接格式<code>main</code></li>
@@ -3604,16 +3826,205 @@
 <div class="admonition abstract">
 <p class="admonition-title">note</p>
 <ol>
-<li>设置 ELF 文件映射：内核</li>
+<li>设置 <code>ELF</code> 文件映射：内核</li>
 <li>设置栈和堆：内核</li>
 <li>设置库：加载器</li>
 </ol>
 </div>
-<p>操作系统的设计与实现</p>
-<p>操作系统结构</p>
-<p>构建与启动操作系统</p>
-<p>操作系统调试</p>
-<p>man,</p>
+<h3 id="os">OS 设计与实现<a class="headerlink" href="#os" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>核心原则</strong>：策略（做什么）与机制（如何做）分离</li>
+<li><strong>实现</strong>：通常是多种语言的混合</li>
+</ol>
+<ul>
+<li><strong>最低层次</strong>：汇编语言</li>
+<li><strong>主体部分</strong>：C语言</li>
+<li><strong>系统程序</strong>：C语言、C++, 以及脚本语言（如PERL、Python、Shell脚本）</li>
+</ul>
+<h3 id="os_1">OS 结构<a class="headerlink" href="#os_1" title="Permanent link">&para;</a></h3>
+<h4 id="_9">构建方式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>简单结构</strong>：<code>MS-DOS</code></p>
+</li>
+<li>
+<p><strong>单体系统</strong>：如 Unix, Linux</p>
+</li>
+</ol>
+<ul>
+<li><strong>原始 Unix 组成</strong>（可分离）<ul>
+<li>系统程序</li>
+<li>内核：<ul>
+<li>包含系统调用接口之下、物理硬件之上的一切</li>
+<li>提供文件系统、CPU 调度、内存管理和其他操作系统功能</li>
+<li>大量功能<strong>集中于一个层次</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>传统 Unix</strong>：仍未完全分层</p>
+<details class="info">
+<summary>传统 Unix 结构</summary>
+<p><img alt="alt text" src="../photo/10-9.png" /></p>
+</details>
+</li>
+<li>
+<p><strong>Linux 系统结构</strong>：<strong>本质是单体系统</strong>，但支持<strong>可加载内核模块</strong> (<code>LKMs</code>)，增加了灵活性</p>
+<p><img alt="" src="../photo/10-10.png" style="width:30%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">模块化</p>
+<ol>
+<li>许多现代操作系统实现了<strong>可加载内核模块</strong> (LKMs)</li>
+<li><strong>特点</strong><ul>
+<li>使用面向对象方法</li>
+<li>每个核心组件是分离的</li>
+<li>每个组件通过已知接口相互通信</li>
+<li>每个都可以根据需要在内核中加载</li>
+</ul>
+</li>
+<li>与分层类似，但更灵活</li>
+<li><strong>e.g.</strong> <code>Linux</code>、<code>Solaris</code>等</li>
+</ol>
+</div>
+<ol start="3">
+<li><strong>分层系统</strong>：基于抽象层次</li>
+</ol>
+<p><img alt="" src="../photo/10-7.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>操作系统被划分为若干层，每一层构建在较低层之上</li>
+<li>最底层（0）是硬件；最高层（N）是用户界面</li>
+<li>通过模块化选择各层，使得每一层<strong>仅使用更低层级</strong>的函数（操作）和服务</li>
+</ul>
+<ol start="4">
+<li><strong>微内核</strong></li>
+</ol>
+<p><img alt="" src="../photo/10-6.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>设计思想</strong>：将尽可能多的功能从内核移入用户空间</li>
+<li><strong>实例</strong>：<code>Mach</code>（<code>Mac OS X</code> 的 <code>Darwin</code> 内核部分基于它）</li>
+<li><strong>通信方式</strong>：用户模块间通过<strong>消息传递</strong>进行通信</li>
+<li><strong>缺点</strong>：开销比较大，效率比较低，因为用户空间和内核空间之间需要消息传递</li>
+<li><strong>优点</strong>：更模块化，容易扩展和移植到新架构，容易开发和维护，更稳定可靠和安全</li>
+</ul>
+<ol start="5">
+<li><strong>混合内核</strong>：大多数现代OS并非纯粹模型，而是混合系统，以兼顾<strong>性能、安全、可用性</strong></li>
+</ol>
+<h4 id="os_2">常见OS<a class="headerlink" href="#os_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Linux &amp; Solaris</strong>：主要是<strong>单体内核</strong>（位于内核地址空间），同时兼具<strong>模块化</strong>以支持功能动态加载</li>
+<li><strong>Windows</strong>：主要是<strong>单体内核</strong>，同时为不同子系统个性化地使用<strong>微内核</strong></li>
+<li><strong>macOS &amp; iOS</strong>：混合+分层</li>
+</ol>
+<p><img alt="" src="../photo/10-8.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>上层</strong>：丰富的用户体验（Aqua UI）和框架（Cocoa）</li>
+<li><strong>内核层</strong>（Darwin）：混合体，包含 <code>Mach</code> 微内核、<code>BSD Unix</code> 部分、<code>I/O</code> 工具包和动态可加载的内核扩展</li>
+</ul>
+<ol start="4">
+<li><strong>Android</strong>：</li>
+</ol>
+<p><img alt="alt text" src="../photo/10-11.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>栈</strong>：与 <code>iOS</code> 相似</li>
+<li>基于 <code>Linux</code> 内核但是加以修改：<ul>
+<li>提供进程、内存、设备驱动管理</li>
+<li>增加了电源管理</li>
+</ul>
+</li>
+<li><strong>运行时环境</strong>：核心库集+ <code>Dalvik</code> 虚拟机</li>
+<li><strong>应用开发</strong>：<code>Java</code> + <code>Android API</code></li>
+<li><strong>库</strong>：<code>Web</code> 浏览器 (<code>webkit</code>)、数据库 (<code>SQLite</code>)、多媒体等框架以及更小的 <code>libc</code></li>
+</ul>
+<ol start="5">
+<li><strong>openEuler</strong>：<code>EulerOS</code> 是一个基于 <code>Linux</code> 的服务器操作系统，主要维护者是华为</li>
+</ol>
+<h3 id="os_3">构建与启动 OS<a class="headerlink" href="#os_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>构建 Build</strong></li>
+</ol>
+<ul>
+<li>编写操作系统源代码</li>
+<li>为将要运行的系统配置操作系统</li>
+<li>编译操作系统</li>
+<li>安装操作系统</li>
+<li>启动计算机及其新的操作系统</li>
+</ul>
+<details class="abstract">
+<summary>构建与启动 Linux</summary>
+<ol>
+<li>下载 <a href="http://www.kernel.org">Linux 源代码</a></li>
+<li>通过 <code>make menuconfig</code> 配置内核</li>
+<li>使用 <code>make</code> 编译内核</li>
+</ol>
+<ul>
+<li>生成 <code>vmlinuz</code> （即内核映像）</li>
+<li>通过 <code>make modules</code> 编译内核模块</li>
+<li>通过 <code>make modules_install 将内核模块安装到</code>vmlinuz`</li>
+<li>通过 <code>make install</code> 在系统上安装新内核</li>
+</ul>
+</details>
+<ol start="2">
+<li><strong>启动 Boot</strong></li>
+</ol>
+<ul>
+<li>当系统<strong>加电初始化</strong>时，执行从一个<strong>固定</strong>的内存位置开始</li>
+<li>
+<p>引导加载程序<strong>加载内核</strong></p>
+<div class="admonition info">
+<p class="admonition-title">引导加载程序</p>
+<ol>
+<li><strong>作用</strong>：用于定位内核，将其加载到内存，并启动它</li>
+<li><strong>常见引导加载程序</strong>：<code>GRUB</code>（允许从多个磁盘、版本、内核选项中选择内核）</li>
+<li>引导加载程序通常允许<strong>各种启动状态</strong>，例如单用户模式</li>
+</ol>
+</div>
+</li>
+<li>
+<p>内核加载后，系统开始运行</p>
+</li>
+</ul>
+<h3 id="os_4">OS 调试<a class="headerlink" href="#os_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>调试方法</strong></li>
+</ol>
+<ul>
+<li><strong>日志文件</strong>：OS生成，包含错误信息</li>
+<li><strong>核心转储文件</strong>：应用程序崩溃时生成，捕获进程内存状态</li>
+<li><strong>崩溃转储文件</strong>：OS崩溃时生成，捕获内核内存状态</li>
+<li><strong>性能调优</strong>：优化系统性能<ul>
+<li><strong>跟踪列表</strong>：记录活动序列以供分析</li>
+<li><strong>性能分析</strong>：周期性采样指令指针，以发现统计趋势</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>跟踪工具</strong></li>
+</ol>
+<ul>
+<li><code>strace</code>：跟踪进程调用的系统调用</li>
+<li><code>gdb</code>：源代码级调试器</li>
+<li><code>perf</code>：<code>Linux</code> 性能工具集</li>
+<li><code>tcpdump</code>：收集网络数据包</li>
+</ul>
+<hr />
+<h2 id="_10">进程<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="_11">概念<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>组成</strong>：代码、程序计数器、堆、栈</p>
+</li>
+<li>
+<p><strong>内存空间</strong></p>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
+<h3 id="_12">栈<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>man, </p>
 
 
 
