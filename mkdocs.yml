@@ -57,10 +57,11 @@ nav:
         - 队列 : Computer_Science/Data_Structure/Advanced/queue.md
         - 摊还分析 : Computer_Science/Data_Structure/Advanced/amort.md
         - 倒排索引 : Computer_Science/Data_Structure/Advanced/inv.md
-        - 回溯算法 : Computer_Science/Data_Structure/Advanced/back.
+        - 回溯算法 : Computer_Science/Data_Structure/Advanced/back.md
         - 分而治之 : Computer_Science/Data_Structure/Advanced/divide.md
         - 动态规划 : Computer_Science/Data_Structure/Advanced/DP.md
         - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
+        - NP 完全性 : Computer_Science/Data_Structure/Advanced/NP.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
   - Math and Physics : 
     - Math_and_Physics/index.md
