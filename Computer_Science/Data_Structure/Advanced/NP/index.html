@@ -1083,6 +1083,8 @@
       
         
       
+        
+      
     
     
     
@@ -1402,6 +1404,34 @@
     
   
     操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程
   
 
     
@@ -3149,8 +3179,8 @@
 <li><strong>证明</strong></li>
 </ol>
 <ul>
-<li>假设存在一个可以检测无限循环的程序，并且确保可以检测自己</li>
-</ul>
+<li>
+<p>假设存在一个可以检测无限循环的程序，并且确保可以检测自己</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -3159,8 +3189,10 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">infinite_loop</span><span class="p">();</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p>无法判断 <code>Loop(Loop)</code> 是终止还是循环</p>
 <ul>
-<li>无法判断 <code>Loop(Loop)</code> 是终止还是循环<ul>
 <li>若判定 <code>Loop</code> 会无限循环 → 打印 <code>YES</code> → 实际停止 → 与判定<strong>矛盾</strong></li>
 <li>若判定 <code>Loop</code> 会停止 → 进入 <code>infinite loop</code> → 实际不会停止 → 与判定<strong>矛盾</strong></li>
 </ul>
@@ -3192,20 +3224,35 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Notices</p>
-<p>即使使用非确定性图灵机，不可判定问题仍然不可判定</p>
+<p>即使使用非确定性图灵机，<strong>不可判定问题仍然不可判定</strong></p>
 </div>
 <h3 id="np_1">NP 完全性<a class="headerlink" href="#np_1" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>定义</strong></li>
 </ol>
 <ul>
-<li><strong>P</strong>：问题本身可以在多项式时间内<strong>被直接解决</strong></li>
-<li><strong>NP</strong>：问题的解可以在多项式时间内<strong>被验证</strong></li>
+<li><strong>P</strong>：在<strong>确定性</strong>图灵机上在多项式时间内<strong>被直接解决</strong></li>
+<li><strong>NP</strong>：问题的解可以在<strong>确定性图灵机</strong>上在多项式时间内<strong>被验证</strong></li>
+<li><strong>co-NP</strong>：问题的<strong>补问题属于 NP</strong></li>
+<li><strong>NP-Hard</strong>：所有问题Q，使得NP中的每一个问题都可以多项式时间归约到Q</li>
+<li><strong>NP-Complete</strong>：<ul>
+<li>一个问题Q既是 <strong>NP-Hard</strong> ，又属于 <strong>NP</strong></li>
+<li>是NP中<strong>最难</strong>的问题子集</li>
 </ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Notices</p>
+<ol>
+<li><strong>NP-Hard</strong> 问题不一定在 <strong>NP</strong> 中</li>
+<li>所有 NP 问题都可以在<strong>非确定性图灵机</strong>上在多项式时间内<strong>解决</strong>，与定义不矛盾</li>
+<li>已知 <span class="arithmatex">\(P \subseteq NP\)</span></li>
+</ol>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>Problem</strong>: 哈密顿回路问题
-<strong>Answer</strong>: 给定一条回路，只需要验证该回路是否包含了所有顶点即可，这一验证过程可以在多项式时间内完成，因此该问题属于 NP</p>
+<p><strong>Problem</strong>: 哈密顿回路问题</p>
+<p><strong>Answer</strong>: 给定一条回路，只需要验证该回路是否包含了所有顶点即可，这一验证过程可以在多项式时间内完成，因此该问题属于 NP</p>
 <div class="admonition warning">
 <p class="admonition-title">Notices</p>
 <p><strong>并非所有可判定问题都属于 NP</strong></p>
@@ -3213,18 +3260,13 @@
 </div>
 </div>
 <ol start="2">
-<li>
-<p><strong>NP 完全性问题</strong>：被认为是NP问题中最难的一类</p>
-</li>
-<li>
-<p><strong>性质</strong></p>
-</li>
+<li><strong>性质</strong></li>
 </ol>
 <ul>
 <li>一个问题若是NP完全问题，那么NP中的任意问题都可以在多项式时间内归约到该问题</li>
 <li>如果有一个NP完全问题能够在多项式时间内被解决，那么<strong>所有NP问题都能在多项式时间内解决</strong></li>
 </ul>
-<ol start="4">
+<ol>
 <li><strong>多项式归约定理</strong>：若对任意输入 <span class="arithmatex">\(α\)</span> 属于问题 <span class="arithmatex">\(A\)</span>，能找到一个多项式时间算法将其转换为问题 <span class="arithmatex">\(B\)</span> 的输入 <span class="arithmatex">\(β\)</span>，即：</li>
 </ol>
 <ul>
@@ -3246,7 +3288,7 @@
 </details>
 <p><img alt="" src="../images/6-3.png" style="width:70%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="5">
+<ol start="4">
 <li><strong>证明问题是 NP-Complete 的标准步骤</strong></li>
 </ol>
 <ul>
@@ -3278,8 +3320,28 @@
 <li>所有可能字符串集合 <span class="arithmatex">\(\Sigma^*\)</span></li>
 <li>语言 <span class="arithmatex">\(L\)</span> 的补集 <span class="arithmatex">\(\Sigma^* - L\)</span></li>
 <li>语言的连接 <span class="arithmatex">\(L = \{x_1x_2 | x_1 \in L_1, x_2 \in L_2\}\)</span></li>
+<li>语言的闭包 <span class="arithmatex">\(L^* = \{\epsilon\} \cup L \cup L^2 \cup L^3 \cup \cdots\)</span></li>
 </ul>
 </details>
+<ol start="4">
+<li><strong>归约</strong></li>
+</ol>
+<ul>
+<li><strong>如果</strong>存在一个<strong>多项式时间可计算</strong>的函数 <span class="arithmatex">\(f: \{0,1\}^* \rightarrow \{0,1\}\)</span> ，使得对于所有 <span class="arithmatex">\(x \in \{0,1\}\)</span> ，<span class="arithmatex">\(x \in L_1\)</span> 当且仅当 <span class="arithmatex">\(f(x) \in L_2\)</span>，则称语言 <span class="arithmatex">\(L_1\)</span> 可<strong>多项式时间归约到</strong>语言 <span class="arithmatex">\(L_2\)</span>，记作 <span class="arithmatex">\(L_1 \leq_p L_2\)</span></li>
+<li>其中 <span class="arithmatex">\(f\)</span> 称为<strong>归约函数</strong>，计算 <span class="arithmatex">\(f\)</span> 的多项式时间算法 <span class="arithmatex">\(F\)</span> 称为<strong>归约算法</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">定理</p>
+<p>如果 <span class="arithmatex">\(L_1 \leq_p L_2\)</span> ，并且 <span class="arithmatex">\(L_2 \in NP\)</span> ，那么 <span class="arithmatex">\(L_1 \in NP\)</span></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">NP完全的证明</p>
+<p>一个语言 <span class="arithmatex">\(L \subseteq \{0,1\}^*\)</span> 是NP完全的，如果</p>
+<ol>
+<li><span class="arithmatex">\(L \in NP\)</span></li>
+<li>对于每个 <span class="arithmatex">\(L' \in NP\)</span> ，有 <span class="arithmatex">\(L' \leq_p L\)</span></li>
+</ol>
+</div>
 
 
 

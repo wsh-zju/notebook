@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/ALU/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/process/">
       
       
-        <link rel="prev" href="../combine/">
+        <link rel="prev" href="../OS/">
       
       
-        <link rel="next" href="../sequence/">
+        <link rel="next" href="../../Data_Structure/Foundation/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>运算单元 - Lucy Wisteria's Notebook</title>
+        <title>进程 - Lucy Wisteria's Notebook</title>
       
     
     
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              运算单元
+              进程
             
           </span>
         </div>
@@ -1227,35 +1227,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    运算单元
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ALU/" class="md-nav__link">
         
   
   
@@ -1271,320 +1246,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        加法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="加法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        单比特加法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="单比特加法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        半加器
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        全加器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        多比特加法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="多比特加法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行波进位加法器
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        超前进位加法器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        减法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="减法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号数减法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        加减法器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ALU
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ALU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        移位操作
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        乘法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="乘法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号乘法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="无符号乘法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分离存储（方法1）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分离存储（方法2）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        合并存储
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        有符号乘法
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        除法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="除法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号除法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="无符号除法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        方法 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        有符号除法
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1762,10 +1423,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../process/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1781,6 +1467,102 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程控制块 PCB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程状态
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程状态">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程创建
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程终止
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3312,50 +3094,56 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        加法器
+        进程
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="加法器">
+    <nav class="md-nav" aria-label="进程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        单比特加法器
+        概念
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="单比特加法器">
-      <ul class="md-nav__list">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程控制块 PCB
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        半加器
+        进程状态
       
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="进程状态">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        全加器
+        进程创建
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3363,30 +3151,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        多比特加法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="多比特加法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        行波进位加法器
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        超前进位加法器
+        进程终止
       
     </span>
   </a>
@@ -3395,207 +3160,6 @@
         
       </ul>
     </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        减法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="减法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号数减法
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        加减法器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ALU
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="ALU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        移位操作
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        乘法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="乘法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号乘法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="无符号乘法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分离存储（方法1）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分离存储（方法2）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        合并存储
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        有符号乘法
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        除法器
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="除法器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        无符号除法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="无符号除法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        方法 1
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        有符号除法
-      
-    </span>
-  </a>
   
 </li>
         
@@ -3621,7 +3185,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/ALU.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/process.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3629,691 +3193,443 @@
   
 
 
-  <h1>运算单元</h1>
+  <h1>进程</h1>
 
-<h2 id="_1">加法器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">单比特加法器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="_3">半加器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>Half Adder</p>
+<h2 id="_1">进程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>真值表</strong></li>
+<li><strong>进程</strong></li>
 </ol>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Input</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Output</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong><span class="arithmatex">\(A\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(B\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(F\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(C\)</span></strong></td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
+<ul>
+<li>进行<strong>资源分配和保护</strong>的单位</li>
+<li>是执行中的程序（程序是被动实体，当<strong>被加载到内存</strong>中时成为一个进程）</li>
+</ul>
 <ol start="2">
-<li><strong>逻辑函数</strong></li>
+<li><strong>组成</strong></li>
 </ol>
-<div class="arithmatex">\[C_{out} = AB\]</div>
-<div class="arithmatex">\[F = A \oplus B\]</div>
+<ul>
+<li><strong>代码</strong>（文本段）：最初存储在磁盘上的<strong>可执行文件</strong>中</li>
+<li><strong>数据段</strong>：全局变量（<code>x86</code>: <code>.data</code>+<code>.bss</code>）</li>
+<li><strong>程序计数器</strong>：指向要执行的下一条指令</li>
+<li><strong>处理器寄存器的内容</strong></li>
+<li><strong>堆</strong>：用于动态分配的内存（<code>malloc</code>、<code>new</code>...）</li>
+<li><strong>栈</strong></li>
+</ul>
 <ol start="3">
-<li><strong>电路图</strong></li>
+<li><strong>内存空间</strong></li>
 </ol>
-<p><img alt="" src="../photo/4-1.png" style="width:40%;display: block;margin: 20px auto" /></p>
-<hr />
-<h4 id="_4">全加器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>Full Adder</p>
-<ol>
-<li><strong>真值表</strong></li>
-</ol>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Input</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Output</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong><span class="arithmatex">\(A\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(B\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(C_{in}\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(F\)</span></strong></td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(C_{out}\)</span></strong></td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">1</td>
-</tr>
-</tbody>
-</table>
-<ol start="2">
-<li><strong>逻辑函数</strong></li>
-</ol>
-<div class="arithmatex">\[C_{out} = AB + (A \oplus B)C_{in}\]</div>
-<div class="arithmatex">\[F = A \oplus B \oplus C_{in}\]</div>
-<ol start="3">
-<li><strong>电路图</strong></li>
-</ol>
-<p><img alt="" src="../photo/4-2.png" style="width:40%;display: block;margin: 20px auto" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>也可以利用两个半加器组成一个全加器。</p>
-<p><img alt="" src="../photo/4-3.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/11-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<div class="admonition example">
+<p class="admonition-title">C语言程序的内存布局</p>
+<p><img alt="alt text" src="../photo/11-3.png" /></p>
 </div>
-<h3 id="_5">多比特加法器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<h4 id="_6">行波进位加法器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>Ripple-Carry Adder(RCA)</p>
-<ol>
-<li>
-<p><strong>组成</strong>：串联多个<code>1 bit</code>加法器</p>
-</li>
-<li>
-<p><strong>电路图</strong> </p>
-</li>
-</ol>
-<p><img alt="" src="../photo/4-4.png" style="width:70%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>缺点</strong>：运算速度慢</li>
-</ol>
-<hr />
-<h4 id="_7">超前进位加法器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<p><strong>Carry-Lookahead Adder(CLA)</strong></p>
-<ol>
-<li>
-<p><strong>原理</strong>：提前计算进位</p>
-</li>
-<li>
-<p><strong>逻辑函数</strong></p>
-</li>
+<ol start="4">
+<li><strong>栈</strong></li>
 </ol>
 <ul>
-<li><span class="arithmatex">\(P_i = A_i \oplus B_i\)</span>：<span class="arithmatex">\(P_i = 1\)</span> 表示 <span class="arithmatex">\(A_i\)</span> 和 <span class="arithmatex">\(B_i\)</span> 其中有一个为<code>1</code></li>
-<li><span class="arithmatex">\(Q_i = A_iB_i\)</span>：<span class="arithmatex">\(Q_i = 1\)</span> 表示 <span class="arithmatex">\(A_i\)</span> 和 <span class="arithmatex">\(B_i\)</span> 均为<code>1</code></li>
-<li><span class="arithmatex">\(S_i = P_i \oplus C_i\)</span></li>
-<li><span class="arithmatex">\(C_{i+1} = G_i + P_iC_i\)</span></li>
-</ul>
-<ol start="3">
-<li><strong>电路图</strong></li>
-</ol>
-<p><img alt="" src="../photo/4-5.png" style="width:20%;display: block;margin: 20px auto" /></p>
-<hr />
-<h2 id="_8">减法器<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<h3 id="_9">无符号数减法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>公式</strong></li>
-</ol>
-<div class="arithmatex">\[A - B = A + \bar{B} +1\]</div>
-<ol start="2">
-<li><strong>结果修正</strong></li>
-</ol>
-<ul>
-<li>进位为<code>1</code>：表示结果正确</li>
-<li>进位为<code>0</code>：结果为负数，取反加一得到正确结果</li>
-</ul>
-<hr />
-<h3 id="_10">加减法器<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>电路图</strong></li>
-</ol>
-<p><img alt="" src="../photo/4-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol start="2">
-<li><strong>原理</strong></li>
-</ol>
-<ul>
-<li>通过控制信号 <span class="arithmatex">\(S\)</span> 来控制加减法<ul>
-<li><span class="arithmatex">\(S = 0\)</span>：加法</li>
-<li><span class="arithmatex">\(S = 1\)</span>：减法</li>
-</ul>
-</li>
+<li><strong>运行时栈</strong>（runtime stack）：可以进行压栈和出栈操作的栈</li>
 <li>
-<p><strong>公式</strong>：</p>
-<div class="arithmatex">\[A + (B \oplus C_0 ...(n位)) + C\]</div>
-</li>
-</ul>
-<hr />
-<h2 id="alu">ALU<a class="headerlink" href="#alu" title="Permanent link">&para;</a></h2>
-<p><strong>原理</strong>：</p>
-<ul>
-<li>通过选择信号选择需要进行的运算</li>
-<li>利用多路选择器实现</li>
-</ul>
-<h3 id="_11">移位操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><strong>活动记录/栈帧</strong>：栈中的项，包含函数/方法调用和返回所需的所有“簿记”信息</p>
+<div class="admonition abstract">
+<p class="admonition-title">栈帧内容</p>
 <ol>
-<li><strong>逻辑移位</strong></li>
+<li>函数运行所需的“状态”：</li>
 </ol>
 <ul>
-<li><span class="arithmatex">\(A&lt;&lt;N = A \times 2^N\)</span></li>
-<li>移位后补<code>0</code></li>
+<li>调用者传递给它的参数</li>
+<li>局部变量</li>
+<li>返回地址：函数返回后应执行的下一条指令的地址</li>
+<li>返回值</li>
 </ul>
 <ol start="2">
-<li><strong>算术移位</strong></li>
+<li>在调用函数前，调用者需要保存其寄存器的状态</li>
 </ol>
-<ul>
-<li><span class="arithmatex">\(A&gt;&gt;&gt;N = A \div 2^N\)</span></li>
-<li>移位后，高位补符号位，低位补<code>0</code></li>
+</div>
+</li>
+<li>
+<p>栈用于管理程序中连续的<strong>函数/方法调用</strong>，栈向下增长</p>
+</li>
+<li>栈的管理完全由<strong>编译器</strong>负责</li>
 </ul>
-<ol start="3">
-<li><strong>循环移位</strong></li>
-</ol>
-<ul>
-<li><code>11001 ROR 2 = 01110</code></li>
-<li><code>11001 ROL 2 = 00111</code></li>
-</ul>
+<div class="admonition info">
+<p class="admonition-title">同一程序的两个进程</p>
+<p><img alt="alt text" src="../photo/11-4.png" /></p>
+</div>
 <details class="abstract">
-<summary>移位器电路图</summary>
-<p><img alt="" src="../photo/4-7.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<summary>多任务</summary>
+<p><img alt="alt text" src="../photo/11-5.png" /></p>
 </details>
 <hr />
-<h2 id="_12">乘法器<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<h3 id="_13">无符号乘法<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<h4 id="1">分离存储（方法1）<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<h3 id="pcb">进程控制块 PCB<a class="headerlink" href="#pcb" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>数据长度</strong>：</li>
+<li><strong>定义</strong>：与每个进程关联的信息，又被称为任务控制块</li>
 </ol>
-<ul>
-<li><code>Multiplier</code>:32 bits  </li>
-<li><code>Multiplicand</code>:64 bits  </li>
-<li><code>Product</code>:64 bits</li>
-<li><code>ALU</code>:64 bits</li>
-</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>每个进程<strong>有且仅有一个</strong>PCB（在新进程创建时分配一个PCB，在进程终止时释放PCB）</li>
+<li><strong><code>Linux</code>进程表示</strong>：<code>task_struct</code>结构体，其中包含了进程的所有信息</li>
+</ol>
+</div>
 <ol start="2">
-<li><strong>计算步骤</strong>：</li>
+<li><strong>包含信息</strong></li>
 </ol>
 <ul>
-<li>若<code>multiplier[0]=1</code>，则<code>product = product + multiplicand</code>  </li>
-<li><code>multiplier</code>右移1位  </li>
-<li><code>multiplicand</code>左移1位  </li>
+<li><strong>进程状态</strong>：运行、等待等</li>
+<li><strong>程序计数器</strong>：下一条要执行指令的位置</li>
+<li><strong>CPU 寄存器</strong>：所有进程中心寄存器的内容</li>
+<li><strong>CPU 调度信息</strong>：优先级、调度队列指针</li>
+<li><strong>内存管理信息</strong>：分配给进程的内存</li>
+<li><strong>记账信息</strong>：使用的 CPU 时间、自启动以来经过的时钟时间、时间限制</li>
+<li><strong>I/O 状态信息</strong>：分配给进程的 I/O 设备、打开文件列表</li>
 </ul>
-<details class="example">
-<summary>Example</summary>
-<p><strong>e.g.</strong> 0010 × 0110 (2 × 6)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">序号</th>
-<th style="text-align: left;">操作</th>
-<th style="text-align: center;">Multiplier</th>
-<th style="text-align: center;">Multiplicand</th>
-<th style="text-align: center;">Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">初始值</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0000 0010</td>
-<td style="text-align: center;">0000 0000</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">1: multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0000 0010</td>
-<td style="text-align: center;">0000 0000</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier右移/multiplicand左移</td>
-<td style="text-align: center;">011</td>
-<td style="text-align: center;">0000 0100</td>
-<td style="text-align: center;">0000 0000</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">1: multiplier[0]=1 → product + multiplicand</td>
-<td style="text-align: center;">011</td>
-<td style="text-align: center;">0000 0100</td>
-<td style="text-align: center;">0000 0100</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier右移/multiplicand左移</td>
-<td style="text-align: center;">01</td>
-<td style="text-align: center;">0000 1000</td>
-<td style="text-align: center;">0000 0100</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">1: multiplier[0]=1 → product + multiplicand</td>
-<td style="text-align: center;">01</td>
-<td style="text-align: center;">0000 1000</td>
-<td style="text-align: center;">0000 1100</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier右移/multiplicand左移</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0001 0000</td>
-<td style="text-align: center;">0000 1100</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">1: multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0001 0000</td>
-<td style="text-align: center;">0000 1100</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier右移/multiplicand左移</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">0010 0000</td>
-<td style="text-align: center;">-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Product</strong>：0000 1100 (12)</p>
-</details>
 <hr />
-<h4 id="2">分离存储（方法2）<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<h3 id="_3">进程状态<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>数据长度</strong>：</li>
+<li><strong>状态类型</strong></li>
 </ol>
 <ul>
-<li><code>Multiplier</code>:32 bits  </li>
-<li><code>Multiplicand</code>:32 bits  </li>
-<li><code>Product</code>:64 bits</li>
-<li><code>ALU</code>:32 bits</li>
+<li><strong>新建 New</strong>：进程正在被创建</li>
+<li><strong>运行 Running</strong>：指令正在被执行</li>
+<li><strong>等待 Waiting</strong>：进程正在等待某些事件发生</li>
+<li><strong>就绪 Ready</strong>：进程等待被分配给处理器</li>
+<li><strong>终止 Terminated</strong>：进程已完成执行</li>
 </ul>
 <ol start="2">
-<li><strong>计算步骤</strong>：</li>
+<li><strong>状态转换</strong></li>
+</ol>
+<p><img alt="" src="../photo/11-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<h4 id="_4">进程创建<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<ol>
+<li>一个进程（<strong>父进程</strong>）可以创建一个新的进程（<strong>子进程</strong>），得到的树为<strong>进程树</strong></li>
+<li>每个进程有一个<strong>进程标识码</strong><code>pid</code>（<code>ppid</code>指父进程的<code>pid</code>）</li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">子进程与父进程</p>
+<ol>
+<li>父进程可以向子进程<strong>传递输入</strong></li>
+<li>创建子进程后，父进程可以继续执行，或者等待子进程完成</li>
+<li>子进程可以是父进程的克隆（即拥有地址空间的副本），或者一个全新的程序</li>
+<li>子进程可以继承/共享父进程的某些资源，或者拥有全新的资源</li>
+</ol>
+</div>
+<ol start="3">
+<li><strong><code>fork()</code>系统调用</strong>（Linux/UNIX）</li>
 </ol>
 <ul>
-<li>若<code>multiplier[0]=1</code>，则<code>product的高位 += multiplicand</code> </li>
-<li><code>product</code>右移1位  </li>
-<li><code>multiplier</code>右移1位  </li>
+<li><strong>作用</strong>：创建一个新进程</li>
+<li><strong>返回值</strong>：向父进程返回子进程的<code>pid</code>，向子进程返回<code>0</code></li>
 </ul>
-<details class="example">
-<summary>Example</summary>
-<p><strong>e.g.</strong> 0010 × 0110 (2 × 6)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">序号</th>
-<th style="text-align: left;">操作</th>
-<th style="text-align: center;">Multiplier</th>
-<th style="text-align: center;">Multiplicand</th>
-<th style="text-align: center;">Product</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">初始值</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 ****</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">1: multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 ****</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier/product右移</td>
-<td style="text-align: center;">*011</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 0***</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">1: multiplier[0]=1 → product的高位 += multiplicand</td>
-<td style="text-align: center;">*011</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0010 0***</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier/product右移</td>
-<td style="text-align: center;">**01</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 00**</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">1: multiplier[0]=1 → product的高位 += multiplicand</td>
-<td style="text-align: center;">**01</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0011 00**</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2:multiplier/product右移</td>
-<td style="text-align: center;">***0</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 100*</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">1: multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">***0</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: multiplier/product右移</td>
-<td style="text-align: center;">****</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 1100</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Product</strong>：0000 1100 (12)</p>
+<div class="admonition abstract">
+<p class="admonition-title">Note</p>
+<p>可以使用 <code>getpid()</code> 和 <code>getppid()</code> 获取当前进程的<code>pid</code>和<code>ppid</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">示例代码</p>
+<ol>
+<li><strong>创建一个子进程</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">      </span><span class="c1">// fork失败</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Error: can’t fork()</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork()&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">// 父进程代码块</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I am parent and my child has pid %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">pid</span><span class="p">);</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">            </span><span class="c1">// 子进程代码块</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I am child, and my pid is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getpid</span><span class="p">());</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>I am parent and my child has pid 65702
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>I am child, and my pid is 65702
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li><strong>内存关系</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">// 父进程</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w">          </span><span class="c1">// 父进程睡眠10秒</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="s">&quot;a = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">);</span><span class="w"> </span><span class="c1">// 打印 a = 12</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">                </span><span class="c1">// 子进程</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">             </span><span class="c1">// 子进程修改自己的a副本，变为15</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Output:</strong> <code>a = 12</code></p>
+<ol start="3">
+<li><strong><code>hello</code>的个数</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">pid1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w">    </span><span class="c1">// 2个进程</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">pid2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span><span class="w">    </span><span class="c1">// 4个进程</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Output:</strong> 六个<code>hello</code></p>
+<ol start="4">
+<li><strong>进程的个数</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span>
+<span class="normal"><a href="#__codelineno-4-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">arg</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="n">fork</span><span class="p">();</span><span class="w">         </span><span class="c1">// 2个进程</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fork</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 4个进程</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="n">fork</span><span class="p">();</span><span class="w">     </span><span class="c1">// 6个进程（父进程返回非0，生成两个新进程；子进程返回0，不生成新进程）</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="n">fork</span><span class="p">();</span><span class="w">         </span><span class="c1">// 12个进程</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">// total = 12</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<details class="info">
+<summary>Pros and Cons</summary>
+<ol>
+<li><strong>Pros</strong></li>
+</ol>
+<ul>
+<li>简洁：<code>Windows CreateProcess</code> 需要提供10个参数，<code>fork</code> 不需要参数</li>
+<li>分工：<code>fork</code> 搭建骨架，<code>exec</code> 赋予灵魂</li>
+<li>联系：保持进程与进程之间的关系</li>
+</ul>
+<ol start="2">
+<li><strong>Cons</strong></li>
+</ol>
+<ul>
+<li>复杂：需要两个系统调用</li>
+<li>性能差</li>
+<li>安全性问题</li>
+</ul>
+<ol start="3">
+<li><code>Clone</code> 系统调用：<code>fork</code> + <code>exec</code> </li>
+</ol>
 </details>
-<hr />
-<h4 id="_14">合并存储<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<ol start="4">
+<li><strong><code>exec*()</code>系列系统调用</strong>（Linux/UNIX）</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fork</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">              </span><span class="c1">// 子进程</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">argv</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/tmp/&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">};</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span><span class="w">     </span><span class="c1">// 替换为ls程序</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="c1">// 如果execv成功，后面的代码不会执行</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="n">exit</span><span class="p">();</span><span class="w">                     </span><span class="c1">// 如果execv失败，则退出子进程</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="p">}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c1">// 父进程继续执行</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="alt text" src="../photo/11-6.png" /></p>
+<ul>
+<li><strong>作用</strong>：在<code>fork()</code>之后调用，用新程序<strong>替换</strong>进程的内存空间</li>
+<li><strong>C语言函数</strong>：有<code>execl</code>、<code>execle</code>、<code>execlp</code>、<code>execv</code>、<code>execve</code>、<code>execvp</code>，是<code>execve</code>系统调用的<strong>用户空间包装器</strong></li>
+<li><strong>参数</strong>：指定可执行文件的路径、命令行参数、环境变量</li>
+<li><strong>返回</strong>：如果<code>exec()</code>调用成功，不会返回（因为原程序已被替换）；只有<strong>出错</strong>时才会返回</li>
+</ul>
+<details class="info">
+<summary><code>exec</code>函数族</summary>
+<p><strong>函数的名字字母揭示了区别</strong></p>
 <ol>
-<li><strong>数据长度</strong>：</li>
+<li><code>l</code>：参数以<strong>列表</strong>形式传递</li>
+<li><code>v</code>：参数以<strong>向量/数组</strong>形式传递</li>
+<li><code>p</code>：可以使用<strong>程序名</strong>而非完整路径</li>
+<li><code>e</code>：可以传递一个<strong>自定义的环境变量数组</strong>给新程序</li>
 </ol>
-<ul>
-<li><code>multiplicand</code>:32 bits</li>
-<li><code>product + multiplier</code>:64 bits  </li>
-<li><code>ALU</code>:32 bits</li>
-</ul>
-<ol start="2">
-<li><strong>计算步骤</strong>：</li>
-</ol>
-<ul>
-<li>若<code>multiplier[0]=1</code>，则<code>product的高位 += multiplicand</code> </li>
-<li>将 <code>product + multiplier</code> 整体右移1位  </li>
-</ul>
-<details class="example">
-<summary>Example</summary>
-<p><strong>e.g.</strong> 0010 × 0110 (2 × 6)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">序号</th>
-<th style="text-align: left;">操作</th>
-<th style="text-align: center;">Multiplier</th>
-<th style="text-align: center;">Multiplicand</th>
-<th style="text-align: center;">Product<span class="arithmatex">\(\|\)</span>Multiplier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">初始值</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 0110</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">1:multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">0110</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 0110</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: product + multiplier整体右移</td>
-<td style="text-align: center;">*011</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 0011</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">1: multiplier[0]=1 → product的高位 += multiplicand</td>
-<td style="text-align: center;">*011</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0010 0011</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: product + multiplier整体右移</td>
-<td style="text-align: center;">**01</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 0001</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">1:multiplier[0]=1 → product的高位 += multiplicand</td>
-<td style="text-align: center;">**01</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0011 0001</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: product + multiplier整体右移</td>
-<td style="text-align: center;">***0</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 1000</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">1: multiplier[0]=0 → 无操作</td>
-<td style="text-align: center;">***0</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 1000</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2: product + multiplier整体右移</td>
-<td style="text-align: center;">****</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 1100</td>
-</tr>
-</tbody>
-</table>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">execl</span><span class="p">(</span><span class="s">&quot;/bin/ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"> </span><span class="c1">// 最后一个参数必须是 NULL</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-l&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-a&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">};</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">execv</span><span class="p">(</span><span class="s">&quot;/bin/ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">);</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">execlp</span><span class="p">(</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-l&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"> </span><span class="c1">// 不需要写 &quot;/bin/ls&quot;，系统会在 PATH 环境变量指定的目录中搜索该程序</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">envp</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;USER=custom_user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PATH=/usr/bin&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">};</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">execle</span><span class="p">(</span><span class="s">&quot;/bin/myprogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;myprogram&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">envp</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
 </details>
-<hr />
-<h3 id="_15">有符号乘法<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
-<p><strong>Booth算法（合并存储）</strong></p>
+<div class="admonition success">
+<p class="admonition-title">进程创建的流程</p>
 <ol>
-<li><strong>数据长度</strong>：</li>
+<li><code>fork()</code>系统调用创建新进程</li>
+<li><code>exec()</code>用新程序替换进程的内存空间</li>
+<li>父进程调用<code>wait()</code>等待子进程终止</li>
+</ol>
+</div>
+<h4 id="_5">进程终止<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong><code>exit()</code></strong></li>
 </ol>
 <ul>
-<li><code>Multiplicand</code>:32 bits  </li>
-<li><code>Product + Multiplier</code>:65 bits（加一位附加位：开始时为<code>0</code>）</li>
-<li><code>ALU</code>:32 bits  </li>
+<li>使用该系统调用，进程可以<strong>自行终止</strong></li>
+<li>此调用接受一个整数作为参数，称为进程的<strong>退出/返回/错误代码</strong></li>
+<li>操作系统会回收进程的所有资源（物理和虚拟内存、打开文件、I/O缓冲区等）</li>
+<li><strong>一个进程可以通过信号和 <code>kill()</code> 系统调用终止另一个进程</strong></li>
 </ul>
 <ol start="2">
-<li><strong>计算步骤</strong>：</li>
+<li><code>wait()</code> &amp; <code>waitpid()</code></li>
 </ol>
 <ul>
-<li>检查最后两位（<code>Multiplier[0]</code>和附加位）：  </li>
-<li><code>10</code> → <code>Product高位 -= Multiplicand</code>  </li>
-<li><code>01</code> → <code>Product高位 += Multiplicand</code>  </li>
-<li><code>00</code>/<code>11</code> → 无操作  </li>
-<li><code>Product</code>整体右移1位（补符号位）  </li>
-</ul>
-<details class="example">
-<summary>Example</summary>
-<p><strong>e.g.</strong> 0010 × 1101 (2 × -3)  </p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">序号</th>
-<th style="text-align: left;">操作</th>
-<th style="text-align: center;">Multiplicand</th>
-<th style="text-align: center;">Product<span class="arithmatex">\(\Vert\)</span>Multiplier</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">初始值（附加位=0）</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0000 1101 0</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">1:10 → Product高位 -= Multiplicand</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">1110 1101 0</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2:<code>Product</code>算术右移1位</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1111 0110 1</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">1:01 → Product高位 += Multiplicand</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">0001 0110 1</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2:<code>Product</code>算术右移1位</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">0000 1011 0</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">1:10 → Product高位 -= Multiplicand</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">1110 1011 0</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2:<code>Product</code>算术右移1位</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1111 0101 1</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">1:11 → 无操作</td>
-<td style="text-align: center;">0010</td>
-<td style="text-align: center;">1111 0101 1</td>
-</tr>
-<tr>
-<td style="text-align: center;"></td>
-<td style="text-align: left;">2:<code>Product</code>算术右移1位</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">1111 1010 1</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Product</strong>：1111 1010 (-6的补码表示)  </p>
-</details>
-<hr />
-<h2 id="_16">除法器<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
-<h3 id="_17">无符号除法<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
-<h4 id="1_1">方法 1<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>数据长度</strong>：</li>
-</ol>
-<ul>
-<li><code>Divisor</code>:64 bits（初始高32位为除数，低32位为0）  </li>
-<li><code>Dividend + Remainder</code>:64 bits（初始高32位为0，低32位为被除数）  </li>
-<li><code>Quotient</code>:32 bits  </li>
-<li><code>ALU</code>:64 bits  </li>
-</ul>
-<ol start="2">
-<li><strong>计算步骤</strong>：</li>
-</ol>
-<ul>
-<li>判断<code>Remainder - Divisor</code>  <ul>
-<li>负：<code>Remainder</code>不变，<code>Quotient[0] = 0</code>  </li>
-<li>非负：<code>Remainder = Remainder - Divisor</code>，<code>Quotient[0] = 1</code>  </li>
+<li><code>wait()</code><ul>
+<li>阻塞父进程，直到<strong>任意子进程结束</strong></li>
+<li><strong>返回</strong>已终止子进程的<code>pid</code>和退出代码</li>
 </ul>
 </li>
-<li><code>Divisor</code>右移1位  </li>
-<li><code>Quotient</code>左移1位  </li>
+<li><code>waitpid()</code><ul>
+<li>阻塞直到<strong>一个特定的子进程结束</strong></li>
+<li>可以使用<code>WNOHANG</code>选项使其成为<strong>非阻塞调用</strong></li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>信号</strong></li>
+</ol>
+<ul>
+<li><strong>信号</strong>：<strong>软件中断</strong>，是进程必须处理的<strong>异步事件</strong></li>
+<li><strong>用途</strong>：进程同步、通信等</li>
+<li><strong>产生原因</strong>：<ul>
+<li>在命令行按 <code>^C</code> 向正在运行的命令发送 <code>SIGINT</code> 信号</li>
+<li>段错误发送 <code>SIGSEGV</code> 信号</li>
+<li>进程使用 <code>kill()</code> 发送 <code>SIGKILL</code> 信号给另一个进程</li>
+</ul>
+</li>
+<li>使用 <code>kill -l</code> 命令可以列出所有信号</li>
+<li>每个信号在进程中引起<strong>默认行为</strong> <strong>e.g.</strong> <code>SIGINT</code> 信号导致进程终止</li>
+<li><strong>信号处理</strong><ul>
+<li>大多数信号可以<strong>被忽略或由用户提供的处理函数捕获</strong></li>
+<li><code>SIGKILL</code>和<code>SIGSTOP</code>不能被忽略或捕获（出于安全考虑）</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title"><code>signal()</code> 系统调用</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">SIG_IGN</span><span class="p">);</span><span class="w"> </span><span class="c1">// 忽略SIGINT信号</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">SIG_DFL</span><span class="p">);</span><span class="w"> </span><span class="c1">// 恢复默认行为</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">my_handler</span><span class="p">);</span><span class="w"> </span><span class="c1">// 使用自定义处理函数</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1">// 处理函数原型: void my_handler(int sig) { ... }</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">示例代码</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;signal.h&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">void</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="s">&quot;I don&#39;t want to die!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span><span class="w"> </span><span class="c1">// 捕获SIGINT信号</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 无限循环</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="c1">// 运行此程序后，按Ctrl-C不会终止程序，而是打印 &quot;I don&#39;t want to die!&quot;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="c1">// 终止：kill pid</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Output:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>lucy@LucyhandeMacBook-Pro<span class="w"> </span>C<span class="o">(</span>vscode<span class="o">)</span><span class="w"> </span>%<span class="w"> </span>./1
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>^CI<span class="w"> </span>don<span class="s1">&#39;t want to die!</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="s1">^CI don&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>^CI<span class="w"> </span>don<span class="err">&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
+</code></pre></div></td></tr></table></div>
+</div>
+<ol start="4">
+<li><strong>僵尸进程</strong> <code>Zombie</code></li>
+</ol>
+<ul>
+<li><strong>定义</strong>：子进程终止后，在未被父进程“收割”前，处于一种“未死”的僵尸状态</li>
+<li><strong>存在原因</strong>：父进程可能还需要调用<code>wait()</code>或者其变体来获取子进程的退出代码</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
-<p>其余方法不再赘述（好像没考过🤭）</p>
+<ol>
+<li>哪些资源不能由子进程释放？<strong>PCB</strong></li>
+<li>僵尸进程不是真正的活动进程，<strong>不消耗CPU资源</strong></li>
+<li>但它消耗一个内存槽位：如果僵尸进程过多，可能会耗尽系统资源，导致<code>fork()</code>失败</li>
+</ol>
 </div>
-<hr />
-<h3 id="_18">有符号除法<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">Tips</p>
-<p>只能将符号拿出来单独讨论，不再赘述！</p>
+<ul>
+<li><strong>查看进程信息</strong>：<code>ps xao pid,ppid,comm,state | grep a.out</code></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">如何避免僵尸进程</p>
+<ol>
+<li>僵尸进程会一直存在，直到<strong>其父进程调用<code>wait()</code>，或者其父进程死亡</strong></li>
+<li><strong>处理方法</strong>：使用<code>SIGCHLD</code>信号处理程序</li>
+</ol>
+<ul>
+<li>当子进程<strong>退出时</strong>，会向父进程发送<code>SIGCHLD</code>信号</li>
+<li>父进程可以为<code>SIGCHLD</code>安装一个<strong>处理程序</strong>，在该处理程序中调用<code>wait()</code>来回收子进程</li>
+</ul>
 </div>
+<ol start="5">
+<li><strong>孤儿进程</strong> <code>Orphan</code></li>
+</ol>
+<ul>
+<li><strong>定义</strong>：父进程已死亡的进程</li>
+<li>在这种情况下，孤儿<strong>被<code>pid</code>为<code>1</code>的进程“收养”</strong>（<code>Linux</code>的<code>init</code>、<code>systemd</code>/<code>MacOSX</code>的<code>launchd</code>）</li>
+<li>被<code>init</code>收养的孤儿进程终止时，<code>init</code>会调用<code>wait()</code>回收它，因此<strong>孤儿进程不会变成僵尸</strong></li>
+<li><strong>技巧</strong>：创建一个<strong>完全独立于父进程</strong>的进程<ul>
+<li>创建“孙子”进程</li>
+<li>立即终止其父进程（子进程）</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -4349,7 +3665,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../combine/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 组合逻辑电路">
+          <a href="../OS/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 操作系统">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4359,20 +3675,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                组合逻辑电路
+                操作系统
               </div>
             </div>
           </a>
         
         
           
-          <a href="../sequence/" class="md-footer__link md-footer__link--next" aria-label="下一页: 时序逻辑电路">
+          <a href="../../Data_Structure/Foundation/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构基础">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                时序逻辑电路
+                数据结构基础
               </div>
             </div>
             <div class="md-footer__button md-icon">
