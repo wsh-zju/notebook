@@ -1485,26 +1485,14 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        进程
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="进程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         概念
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pcb" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1514,9 +1502,9 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程状态
@@ -1528,7 +1516,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程创建
@@ -1539,18 +1527,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程终止
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3094,26 +3077,14 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        进程
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="进程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         概念
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#pcb" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3123,9 +3094,9 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程状态
@@ -3137,7 +3108,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程创建
@@ -3148,18 +3119,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
         进程终止
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3195,8 +3161,7 @@
 
   <h1>进程</h1>
 
-<h2 id="_1">进程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">概念<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>进程</strong></li>
 </ol>
@@ -3219,10 +3184,10 @@
 <li><strong>内存空间</strong></li>
 </ol>
 <p><img alt="alt text" src="../photo/11-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
-<div class="admonition example">
-<p class="admonition-title">C语言程序的内存布局</p>
+<details class="example">
+<summary>C语言程序的内存布局</summary>
 <p><img alt="alt text" src="../photo/11-3.png" /></p>
-</div>
+</details>
 <ol start="4">
 <li><strong>栈</strong></li>
 </ol>
@@ -3251,16 +3216,16 @@
 </li>
 <li>栈的管理完全由<strong>编译器</strong>负责</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">同一程序的两个进程</p>
-<p><img alt="alt text" src="../photo/11-4.png" /></p>
-</div>
+<details class="info">
+<summary>同一程序的两个进程</summary>
+<p><img alt="alt text" src="../photo/11-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
 <details class="abstract">
 <summary>多任务</summary>
 <p><img alt="alt text" src="../photo/11-5.png" /></p>
 </details>
 <hr />
-<h3 id="pcb">进程控制块 PCB<a class="headerlink" href="#pcb" title="Permanent link">&para;</a></h3>
+<h2 id="pcb">进程控制块 PCB<a class="headerlink" href="#pcb" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>定义</strong>：与每个进程关联的信息，又被称为任务控制块</li>
 </ol>
@@ -3284,7 +3249,7 @@
 <li><strong>I/O 状态信息</strong>：分配给进程的 I/O 设备、打开文件列表</li>
 </ul>
 <hr />
-<h3 id="_3">进程状态<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_2">进程状态<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>状态类型</strong></li>
 </ol>
@@ -3299,7 +3264,7 @@
 <li><strong>状态转换</strong></li>
 </ol>
 <p><img alt="" src="../photo/11-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
-<h4 id="_4">进程创建<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h3 id="_3">进程创建<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>一个进程（<strong>父进程</strong>）可以创建一个新的进程（<strong>子进程</strong>），得到的树为<strong>进程树</strong></li>
 <li>每个进程有一个<strong>进程标识码</strong><code>pid</code>（<code>ppid</code>指父进程的<code>pid</code>）</li>
@@ -3324,8 +3289,8 @@
 <p class="admonition-title">Note</p>
 <p>可以使用 <code>getpid()</code> 和 <code>getppid()</code> 获取当前进程的<code>pid</code>和<code>ppid</code></p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">示例代码</p>
+<details class="example">
+<summary>示例代码</summary>
 <ol>
 <li><strong>创建一个子进程</strong></li>
 </ol>
@@ -3413,7 +3378,7 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="p">}</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">// total = 12</span>
 </code></pre></div></td></tr></table></div>
-</div>
+</details>
 <details class="info">
 <summary>Pros and Cons</summary>
 <ol>
@@ -3461,7 +3426,7 @@
 <li><strong>返回</strong>：如果<code>exec()</code>调用成功，不会返回（因为原程序已被替换）；只有<strong>出错</strong>时才会返回</li>
 </ul>
 <details class="info">
-<summary><code>exec</code>函数族</summary>
+<summary>exec 函数族</summary>
 <p><strong>函数的名字字母揭示了区别</strong></p>
 <ol>
 <li><code>l</code>：参数以<strong>列表</strong>形式传递</li>
@@ -3496,7 +3461,7 @@
 <li>父进程调用<code>wait()</code>等待子进程终止</li>
 </ol>
 </div>
-<h4 id="_5">进程终止<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="_4">进程终止<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong><code>exit()</code></strong></li>
 </ol>
@@ -3542,7 +3507,7 @@
 </li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title"><code>signal()</code> 系统调用</p>
+<p class="admonition-title">signal() 系统调用</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
@@ -3552,8 +3517,8 @@
 <a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1">// 处理函数原型: void my_handler(int sig) { ... }</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">示例代码</p>
+<details class="example">
+<summary>示例代码</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -3571,7 +3536,7 @@
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="s">&quot;I don&#39;t want to die!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="k">return</span><span class="p">;</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span><span class="w"> </span><span class="c1">// 捕获SIGINT信号</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 无限循环</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="p">}</span>
@@ -3587,7 +3552,7 @@
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="s1">^CI don&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>^CI<span class="w"> </span>don<span class="err">&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
 </code></pre></div></td></tr></table></div>
-</div>
+</details>
 <ol start="4">
 <li><strong>僵尸进程</strong> <code>Zombie</code></li>
 </ol>
