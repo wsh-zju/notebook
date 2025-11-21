@@ -1,6 +1,6 @@
-## 进程
 
-### 概念
+
+## 概念
 
 1. **进程**
 
@@ -21,7 +21,7 @@
 
 ![alt text](photo/11-2.png){style="width:30%;display: block;margin: 20px auto"}
 
-!!! example "C语言程序的内存布局"
+??? example "C语言程序的内存布局"
     ![alt text](photo/11-3.png)
 
 4. **栈**
@@ -42,14 +42,14 @@
 - 栈用于管理程序中连续的**函数/方法调用**，栈向下增长
 - 栈的管理完全由**编译器**负责
 
-!!! info "同一程序的两个进程"
-    ![alt text](photo/11-4.png)
+??? info "同一程序的两个进程"
+    ![alt text](photo/11-4.png){style="width:60%;display: block;margin: 20px auto"}
 
 ??? abstract "多任务"
     ![alt text](photo/11-5.png)
 
 ---
-### 进程控制块 PCB
+## 进程控制块 PCB
 
 1. **定义**：与每个进程关联的信息，又被称为任务控制块
 
@@ -68,7 +68,7 @@
 - **I/O 状态信息**：分配给进程的 I/O 设备、打开文件列表
 
 ---
-### 进程状态
+## 进程状态
 
 1. **状态类型**
 
@@ -82,7 +82,7 @@
 
 ![](photo/11-1.png){style="width:80%;display: block;margin: 20px auto"}
 
-#### 进程创建
+### 进程创建
 
 1. 一个进程（**父进程**）可以创建一个新的进程（**子进程**），得到的树为**进程树**
 2. 每个进程有一个**进程标识码**`pid`（`ppid`指父进程的`pid`）
@@ -101,7 +101,7 @@
 !!! abstract "Note"
     可以使用 `getpid()` 和 `getppid()` 获取当前进程的`pid`和`ppid`
 
-!!! example "示例代码"
+??? example "示例代码"
     1. **创建一个子进程**
     
     ```c
@@ -201,7 +201,7 @@ if (fork() == 0) {              // 子进程
 - **参数**：指定可执行文件的路径、命令行参数、环境变量
 - **返回**：如果`exec()`调用成功，不会返回（因为原程序已被替换）；只有**出错**时才会返回
 
-??? info "`exec`函数族"
+??? info "exec 函数族"
     **函数的名字字母揭示了区别**
 
     1. `l`：参数以**列表**形式传递
@@ -226,7 +226,7 @@ if (fork() == 0) {              // 子进程
     2. `exec()`用新程序替换进程的内存空间
     3. 父进程调用`wait()`等待子进程终止
 
-#### 进程终止
+### 进程终止
 
 1. **`exit()`**
 
@@ -258,7 +258,7 @@ if (fork() == 0) {              // 子进程
     - 大多数信号可以**被忽略或由用户提供的处理函数捕获**
     - `SIGKILL`和`SIGSTOP`不能被忽略或捕获（出于安全考虑）
 
-!!! abstract "`signal()` 系统调用"
+!!! abstract "signal() 系统调用"
     ```c
     signal(SIGINT, SIG_IGN); // 忽略SIGINT信号
     signal(SIGINT, SIG_DFL); // 恢复默认行为
@@ -266,7 +266,7 @@ if (fork() == 0) {              // 子进程
     // 处理函数原型: void my_handler(int sig) { ... }
     ```
 
-!!! example "示例代码"
+??? example "示例代码"
     ```c
     #include <signal.h>
     #include <stdio.h>
@@ -274,7 +274,7 @@ if (fork() == 0) {              // 子进程
         fprintf(stdout,"I don't want to die!\n");
         return;
     }
-    main() {
+    int main() {
         signal(SIGINT, handler); // 捕获SIGINT信号
         while(1); // 无限循环
     }

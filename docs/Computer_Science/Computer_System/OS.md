@@ -393,7 +393,7 @@
 
     - 生成 `vmlinuz` （即内核映像）
     - 通过 `make modules` 编译内核模块
-    - 通过 `make modules_install 将内核模块安装到 `vmlinuz`
+    - 通过 `make modules_install` 将内核模块安装到 `vmlinuz`
     - 通过 `make install` 在系统上安装新内核
 
 2. **启动 Boot**
@@ -426,12 +426,3 @@
 - `gdb`：源代码级调试器
 - `perf`：`Linux` 性能工具集
 - `tcpdump`：收集网络数据包
-
-
-
-
-
-
-
-
-man, 
