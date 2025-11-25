@@ -1085,6 +1085,8 @@
       
         
       
+        
+      
     
     
     
@@ -1432,6 +1434,34 @@
     
   
     进程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验
   
 
     
@@ -1861,6 +1891,8 @@
       
         
       
+        
+      
     
     
     
@@ -2066,6 +2098,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -2108,6 +2142,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2116,18 +2152,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        回溯算法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="回溯算法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2137,8 +2161,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2146,11 +2170,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2261,7 +2280,35 @@
   <span class="md-ellipsis">
     
   
-    NP 完全性
+    NP完全性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    近似算法
   
 
     
@@ -3046,6 +3093,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3054,18 +3103,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        回溯算法
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="回溯算法">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3075,8 +3112,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3084,11 +3121,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3117,9 +3149,7 @@
   
 
 
-  <h1>回溯算法</h1>
-
-<h2 id="_1">回溯算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="_1">回溯算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ol>
 <li><strong>思路</strong>：通过系统地生成和检查部分候选解，并在确定该部分解不可能导向最终正确解时，提前放弃该分支（即剪枝），从而减少需要检查的候选解数量</li>
 <li><strong>代码模版</strong></li>
@@ -3160,7 +3190,8 @@
 <a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Found</span><span class="p">;</span>
 <a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_2">典型例题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="_2">典型例题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>八皇后问题</strong>：在8×8棋盘上放置8个皇后，使得它们互不攻击（即不在同一行、列、对角线或反对角线）</li>
 <li><strong>收费公路重建问题</strong></li>
@@ -3262,7 +3293,8 @@
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="w">   </span><span class="k">return</span><span class="w"> </span><span class="n">Found</span><span class="p">;</span>
 <a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="_3">关键策略<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="_3">关键策略<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>最小最大策略</strong>：</li>
 </ol>

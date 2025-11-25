@@ -1085,6 +1085,8 @@
       
         
       
+        
+      
     
     
     
@@ -1432,6 +1434,34 @@
     
   
     进程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验
   
 
     
@@ -1861,6 +1891,8 @@
       
         
       
+        
+      
     
     
     
@@ -2094,6 +2126,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -2136,6 +2170,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2144,18 +2180,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分而治之
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="分而治之">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2165,8 +2189,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2176,8 +2200,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2185,11 +2209,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2272,7 +2291,35 @@
   <span class="md-ellipsis">
     
   
-    NP 完全性
+    NP完全性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    近似算法
   
 
     
@@ -3057,6 +3104,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3065,18 +3114,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        分而治之
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="分而治之">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3086,8 +3123,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3097,8 +3134,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3106,11 +3143,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3139,15 +3171,14 @@
   
 
 
-  <h1>分而治之</h1>
-
-<h2 id="_1">分而治之<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h1 id="_1">分而治之<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p><strong>解决案例</strong>：</p>
 <ul>
 <li>最大子序列和: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
 <li>树的遍历: 时间复杂度 <span class="arithmatex">\(O(N)\)</span></li>
 <li>归并排序和快速排序: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
 </ul>
+<hr />
 <h3 id="_2">通用递归式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
 <p>其中 <span class="arithmatex">\(f(N)\)</span> 代表将子问题的解合并成原问题</p>
@@ -3156,7 +3187,8 @@
 <p><span class="arithmatex">\( T(N) = 2T(N/2) + cN = O(N\log N) \)</span></p>
 <p><span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
 </details>
-<h3 id="_3">递归式求解方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="_3">递归式求解方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
 <ol>
 <li><strong>假设前提</strong><ul>
@@ -3208,7 +3240,8 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <li><strong>最终可用形式</strong>：见正文</li>
 </ul>
 </details>
-<h3 id="_4">最近点对问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<hr />
+<h2 id="_4">最近点对问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>问题</strong>：给定平面上的 <span class="arithmatex">\(N\)</span> 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）</li>
 <li><strong>简单穷举搜索法</strong>：检查 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对（时间复杂度 <span class="arithmatex">\( T = O(N^2) \)</span>）</li>
