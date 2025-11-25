@@ -3248,15 +3248,23 @@
 <div class="arithmatex">\[
 \max\left(\frac{C}{C^{*}},\frac{C^{*}}{C}\right) \leq \rho(n)
 \]</div>
-<p>则该算法具有近似比 <span class="arithmatex">\(\rho(n)\)</span>
-- 如果一个算法达到了 <span class="arithmatex">\(\rho(n)\)</span> 的近似比，我们称其为 <strong><span class="arithmatex">\(\rho(n)\)</span>-近似算法</strong>
-- <strong>近似方案</strong>：一种近似算法
-- <strong>定义</strong>：
-    - <strong>输入</strong>：问题实例和一个参数 <span class="arithmatex">\(\epsilon &gt; 0\)</span> 
-    - 使得对于任何固定的 <span class="arithmatex">\(\epsilon\)</span>，该方案都是 <strong><span class="arithmatex">\((1+\epsilon)\)</span>-近似算法</strong>
-- <strong>分类</strong>：
-    - <strong>多项式时间近似方案（PTAS）</strong>：对于任何固定的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，该方案在其输入实例的规模 <span class="arithmatex">\(n\)</span> 的<strong>多项式时间</strong>内运行 <strong>e.g.</strong> <span class="arithmatex">\(O(n^{2/\epsilon})\)</span>
-    - <strong>完全多项式时间近似方案（FPTAS）</strong>：运行时间关于 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(1/ε\)</span> 都是多项式时间  <strong>e.g.</strong> <span class="arithmatex">\(O((1/\epsilon)^2 n^3)\)</span></p>
+<p>则该算法具有近似比 <span class="arithmatex">\(\rho(n)\)</span></p>
+</li>
+<li>
+<p>如果一个算法达到了 <span class="arithmatex">\(\rho(n)\)</span> 的近似比，我们称其为 <strong><span class="arithmatex">\(\rho(n)\)</span>-近似算法</strong></p>
+</li>
+<li><strong>近似方案</strong>：一种近似算法<ul>
+<li><strong>定义</strong>：<ul>
+<li><strong>输入</strong>：问题实例和一个参数 <span class="arithmatex">\(\epsilon &gt; 0\)</span> </li>
+<li>使得对于任何固定的 <span class="arithmatex">\(\epsilon\)</span>，该方案都是 <strong><span class="arithmatex">\((1+\epsilon)\)</span>-近似算法</strong></li>
+</ul>
+</li>
+<li><strong>分类</strong>：<ul>
+<li><strong>多项式时间近似方案（PTAS）</strong>：对于任何固定的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，该方案在其输入实例的规模 <span class="arithmatex">\(n\)</span> 的<strong>多项式时间</strong>内运行 <strong>e.g.</strong> <span class="arithmatex">\(O(n^{2/\epsilon})\)</span></li>
+<li><strong>完全多项式时间近似方案（FPTAS）</strong>：运行时间关于 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(1/ε\)</span> 都是多项式时间  <strong>e.g.</strong> <span class="arithmatex">\(O((1/\epsilon)^2 n^3)\)</span></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="_2">近似装箱问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -3305,10 +3313,12 @@
 <p><strong>即证</strong>：如果<code>Next Fit</code>生成了 <span class="arithmatex">\( 2M \)</span>（或 <span class="arithmatex">\( 2M+1 \)</span>）个箱子，那么最优解必须至少生成 <span class="arithmatex">\( M+1 \)</span> 个箱子</p>
 <p>设 <span class="arithmatex">\( S(B_i) \)</span> 为第 <span class="arithmatex">\( i \)</span> 个箱子中物品的大小之和。那么必须有：</p>
 <div class="arithmatex">\[
+\begin{aligned}
 S(B_1) + S(B_2) &gt; 1 \\
 S(B_3) + S(B_4) &gt; 1 \\
 \cdots\cdots\cdots \\
 S(B_{2M-1}) + S(B_{2M}) &gt; 1
+\end{aligned}
 \]</div>
 <p><strong>最优解至少需要 <span class="arithmatex">\(\lceil\)</span> 所有物品总大小 / 1 <span class="arithmatex">\(\rceil\)</span> 个箱子</strong></p>
 <div class="arithmatex">\[
@@ -3363,9 +3373,11 @@ S(B_{2M-1}) + S(B_{2M}) &gt; 1
 <div class="admonition example">
 <p class="admonition-title">Example 1</p>
 <div class="arithmatex">\[
+\begin{aligned}
 S_i = \{1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, \\
 1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, \\
 1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε\}
+\end{aligned}
 \]</div>
 <p>其中 <span class="arithmatex">\(\epsilon = 0.001\)</span></p>
 <ol>
@@ -3387,7 +3399,7 @@ S_i=\{0.4,0.4,0.6,0.6\}
 <ul>
 <li><strong>定义</strong>：在给出答案之前<strong>查看整个物品列表</strong></li>
 <li><strong>麻烦制造者</strong>：大尺寸物品</li>
-<li><strong><code>First/Best Fit Decreasing</code>算法</strong>:将物品按大小<strong>非递增序列</strong>排序，然后使用<strong><code>First/Best Fit</code></strong>算法</li>
+<li><strong><code>First/Best Fit Decreasing</code>算法</strong>：将物品按大小<strong>非递增序列</strong>排序，然后使用<strong><code>First/Best Fit</code></strong>算法</li>
 <li><strong>定理</strong>：设 <span class="arithmatex">\(M\)</span> 为打包物品列表 <span class="arithmatex">\(I\)</span> 所需的最优箱子数，则<code>first fit decreasing</code>使用的箱子数 <span class="arithmatex">\(\leq 11M/9+6/9\)</span> ，并且存在某些序列使得<code>first fit decreasing</code>使用 <span class="arithmatex">\(11M/9+6/9\)</span> 个箱子</li>
 </ul>
 <h2 id="_3">背包问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
@@ -3408,9 +3420,11 @@ S_i=\{0.4,0.4,0.6,0.6\}
 <p class="admonition-title">Example</p>
 <p><strong>Problem</strong>: </p>
 <div class="arithmatex">\[
+\begin{aligned}
 n=3, M=20 \\
 (p_1,p_2,p_3)=(25,24,15) \\
 (w_1,w_2,w_3)=(18,15,10)
+\end{aligned}
 \]</div>
 <p><strong>Solution</strong>: <span class="arithmatex">\((x_1,x_2,x_3)=(0,1,1/2)且P=31.5\)</span></p>
 </div>
@@ -3448,22 +3462,24 @@ n=3, M=20 \\
 <div class="admonition note">
 <p class="admonition-title">定义</p>
 <ol>
-<li><span class="arithmatex">\(p_max\)</span> = 单个物品的最大价值</li>
-<li><span class="arithmatex">\(P_opt\)</span> = 最优解的总价值</li>
-<li><span class="arithmatex">\(P_frac\)</span> = 分数背包问题的最优解总价值</li>
-<li><span class="arithmatex">\(P_greedy\)</span> = 0-1背包问题的贪心算法解的总价值</li>
+<li><span class="arithmatex">\(p_{max}\)</span> = 单个物品的最大价值</li>
+<li><span class="arithmatex">\(P_{opt}\)</span> = 最优解的总价值</li>
+<li><span class="arithmatex">\(P_{frac}\)</span> = 分数背包问题的最优解总价值</li>
+<li><span class="arithmatex">\(P_{greedy}\)</span> = 0-1背包问题的贪心算法解的总价值</li>
 </ol>
 </div>
 <p><strong>证明</strong></p>
 <p>已知</p>
 <div class="arithmatex">\[
-p_max ≤ P_opt ≤ P_frac \\
-p_max ≤ P_greedy
-P_frac ≤ P_greedy + p_max
+\begin{aligned}
+p_{max} ≤ P_{opt} ≤ P_{frac} \\
+p_{max} ≤ P_{greedy}
+P_{frac} ≤ P_{greedy} + p_{max}
+\end{aligned}
 \]</div>
 <p>则</p>
 <div class="arithmatex">\[
-P_opt / P_greedy ≤ 1 + p_max / P_greedy ≤ 1 + 1 = 2
+P_{opt} / P_{greedy} ≤ 1 + p_{max} / P_{greedy} ≤ 1 + 1 = 2
 \]</div>
 </div>
 <ol start="2">
@@ -3489,7 +3505,7 @@ W_{i-1,p} &amp; p_i &gt; p \\
 <ul>
 <li>当利润值很大时，DP效率很低</li>
 <li>
-<p><strong>解决方案</strong>：对利润值进行<strong>s四舍五入</strong>，以精度换取效率</p>
+<p><strong>解决方案</strong>：对利润值进行<strong>四舍五入</strong>，以精度换取效率</p>
 <div class="arithmatex">\[
 (1 + \epsilon) P_{alg} \leq P
 \]</div>
@@ -3500,6 +3516,10 @@ W_{i-1,p} &amp; p_i &gt; p \\
 </li>
 </ul>
 <h2 id="k">K中心问题<a class="headerlink" href="#k" title="Permanent link">&para;</a></h2>
+<div class="admonition error">
+<p class="admonition-title">Notice</p>
+<p>不太完整！</p>
+</div>
 <ol>
 <li><strong>问题定义</strong>：从 <span class="arithmatex">\(n\)</span> 个站点中选择 <span class="arithmatex">\(K\)</span> 个中心 <span class="arithmatex">\(C\)</span> ，使得任意站点到其最近中心的最大距离（<strong>覆盖半径</strong>）最小</li>
 </ol>
@@ -3509,7 +3529,7 @@ W_{i-1,p} &amp; p_i &gt; p \\
 <li><strong>自反性</strong> <span class="arithmatex">\(dist(x,x)=0\)</span></li>
 <li><strong>对称性</strong> <span class="arithmatex">\(dist(x,y)=dist(y,x)\)</span></li>
 <li><strong>三角不等式</strong> <span class="arithmatex">\(dist(x,y)\leq dist(x,z)+dist(z,y)\)</span></li>
-<li><strong><span class="arithmatex">\(s_i\)</span> 到最近中心的距离</strong>：$dist(s_i,C)=min_{c \in C} {dist(s_i,c)}</li>
+<li><strong><span class="arithmatex">\(s_i\)</span> 到最近中心的距离</strong>：<span class="arithmatex">\(dist(s_i,C)=min_{c \in C} \{dist(s_i,c)\}\)</span></li>
 <li><strong>最小覆盖半径</strong>：<span class="arithmatex">\(r(C)=max_i \{dist(s_i,C)\}\)</span></li>
 </ol>
 </div>
