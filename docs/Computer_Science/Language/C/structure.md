@@ -156,6 +156,9 @@ typedef struct list{
 
 ## Makefile
 
+!!! info "Makefile 详细知识"
+    参照文档 [Makefile](https://seisman.github.io/how-to-write-makefile/)
+
 ```makefile
 CC = gcc              # C编译器            
 SRC = src             # 源文件目录           

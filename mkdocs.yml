@@ -40,6 +40,7 @@ nav:
       - 流水线CPU : Computer_Science/Computer_System/pipeline.md
       - 操作系统 : Computer_Science/Computer_System/OS.md
       - 进程 : Computer_Science/Computer_System/process.md
+      - 实验 : Computer_Science/Computer_System/lab.md
     - 数据结构 :
       - FDS :
         - Computer_Science/Data_Structure/Foundation/index.md
@@ -62,7 +63,8 @@ nav:
         - 分而治之 : Computer_Science/Data_Structure/Advanced/divide.md
         - 动态规划 : Computer_Science/Data_Structure/Advanced/DP.md
         - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
-        - NP 完全性 : Computer_Science/Data_Structure/Advanced/NP.md
+        - NP完全性 : Computer_Science/Data_Structure/Advanced/NP.md
+        - 近似算法 : Computer_Science/Data_Structure/Advanced/appro.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
   - Math and Physics : 
     - Math_and_Physics/index.md
