@@ -16,6 +16,7 @@
     \]
 
     则该算法具有近似比 \(\rho(n)\)
+
 - 如果一个算法达到了 \(\rho(n)\) 的近似比，我们称其为 **\(\rho(n)\)-近似算法**
 - **近似方案**：一种近似算法
     - **定义**：
@@ -59,10 +60,12 @@
             设 \( S(B_i) \) 为第 \( i \) 个箱子中物品的大小之和。那么必须有：
             
             \[
+            \begin{aligned}
             S(B_1) + S(B_2) > 1 \\
             S(B_3) + S(B_4) > 1 \\
             \cdots\cdots\cdots \\
             S(B_{2M-1}) + S(B_{2M}) > 1
+            \end{aligned}
             \]
 
             **最优解至少需要 \(\lceil\) 所有物品总大小 / 1 \(\rceil\) 个箱子**
@@ -100,9 +103,11 @@
     
     !!! example "Example 1"
         $$
+        \begin{aligned}
         S_i = \{1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, 1/7+ε, \\
         1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, 1/3+ε, \\
         1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε, 1/2+ε\}
+        \end{aligned}
         $$
         
         其中 $\epsilon = 0.001$
@@ -121,7 +126,7 @@
 
 - **定义**：在给出答案之前**查看整个物品列表**
 - **麻烦制造者**：大尺寸物品
-- **`First/Best Fit Decreasing`算法**:将物品按大小**非递增序列**排序，然后使用**`First/Best Fit`**算法
+- **`First/Best Fit Decreasing`算法**：将物品按大小**非递增序列**排序，然后使用**`First/Best Fit`**算法
 - **定理**：设 $M$ 为打包物品列表 $I$ 所需的最优箱子数，则`first fit decreasing`使用的箱子数 $\leq 11M/9+6/9$ ，并且存在某些序列使得`first fit decreasing`使用 $11M/9+6/9$ 个箱子
   
 ## 背包问题
@@ -140,9 +145,11 @@
     **Problem**: 
     
     $$
+    \begin{aligned}
     n=3, M=20 \\
     (p_1,p_2,p_3)=(25,24,15) \\
     (w_1,w_2,w_3)=(18,15,10)
+    \end{aligned}
     $$
 
     **Solution**: $(x_1,x_2,x_3)=(0,1,1/2)且P=31.5$
@@ -172,25 +179,27 @@
     
 !!! info "证明"
     !!! note "定义"
-        1. $p_max$ = 单个物品的最大价值
-        2. $P_opt$ = 最优解的总价值
-        3. $P_frac$ = 分数背包问题的最优解总价值
-        4. $P_greedy$ = 0-1背包问题的贪心算法解的总价值
+        1. $p_{max}$ = 单个物品的最大价值
+        2. $P_{opt}$ = 最优解的总价值
+        3. $P_{frac}$ = 分数背包问题的最优解总价值
+        4. $P_{greedy}$ = 0-1背包问题的贪心算法解的总价值
 
     **证明**
 
     已知
     
     $$
-    p_max ≤ P_opt ≤ P_frac \\
-    p_max ≤ P_greedy
-    P_frac ≤ P_greedy + p_max
+    \begin{aligned}
+    p_{max} ≤ P_{opt} ≤ P_{frac} \\
+    p_{max} ≤ P_{greedy}
+    P_{frac} ≤ P_{greedy} + p_{max}
+    \end{aligned}
     $$
     
     则
     
     $$
-    P_opt / P_greedy ≤ 1 + p_max / P_greedy ≤ 1 + 1 = 2
+    P_{opt} / P_{greedy} ≤ 1 + p_{max} / P_{greedy} ≤ 1 + 1 = 2
     $$
 
 2. **动态规划解法**
@@ -212,7 +221,7 @@
 
     !!! warning "Notice"
         - 当利润值很大时，DP效率很低
-        - **解决方案**：对利润值进行**s四舍五入**，以精度换取效率
+        - **解决方案**：对利润值进行**四舍五入**，以精度换取效率
             
             \[
             (1 + \epsilon) P_{alg} \leq P
@@ -221,13 +230,16 @@
             其中 $\epsilon$ 为精度系数，$P_{alg}$ 为四舍五入之后算法的解，$P$ 为实际解
 
 ## K中心问题
+!!! error "Notice"
+    不太完整！
+
 1. **问题定义**：从 $n$ 个站点中选择 $K$ 个中心 $C$ ，使得任意站点到其最近中心的最大距离（**覆盖半径**）最小
 
 !!! abstract "距离性质"
     1. **自反性** $dist(x,x)=0$
     2. **对称性** $dist(x,y)=dist(y,x)$
     3. **三角不等式** $dist(x,y)\leq dist(x,z)+dist(z,y)$
-    4. **$s_i$ 到最近中心的距离**：$dist(s_i,C)=min_{c \in C} \{dist(s_i,c)\}
+    4. **$s_i$ 到最近中心的距离**：$dist(s_i,C)=min_{c \in C} \{dist(s_i,c)\}$
     5. **最小覆盖半径**：$r(C)=max_i \{dist(s_i,C)\}$
 
 2. **贪心算法（Greedy-Kcenter）**
