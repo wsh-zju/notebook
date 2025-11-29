@@ -1539,6 +1539,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程就绪、运行、等待
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程就绪、运行、等待">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程调度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内核陷入与返回
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上下文切换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3189,6 +3239,56 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程就绪、运行、等待
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="进程就绪、运行、等待">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进程调度
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内核陷入与返回
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        上下文切换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3324,6 +3424,36 @@
 <li><strong>状态转换</strong></li>
 </ol>
 <p><img alt="" src="../photo/11-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<ol start="3">
+<li><strong>对比</strong></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">进程状态</p>
+<p>进程状态是<strong>程序相关</strong>寄存器的状态和程序相关内存的内存总和</p>
+<ul>
+<li>内存只包括Program自己的部分（Program+PCB）</li>
+<li>CSR只包括控制process运行的部分，不包括<code>stvec</code>等</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">处理器状态</p>
+<p>处理器的架构层状态是<strong>所有架构层</strong>寄存器状态和内存状态的总和</p>
+<div class="admonition info">
+<p class="admonition-title">寄存器状态</p>
+<ol>
+<li><strong>PC（程序计数器）</strong></li>
+<li><strong>GPR（通用寄存器）</strong>: </li>
+</ol>
+<ul>
+<li><code>caller</code>: <code>ra</code>, <code>sp</code>, <code>fp</code>, <code>tp</code>, <code>gp</code>, <code>tx</code>, <code>ax</code></li>
+<li><code>callee</code>: <code>sx</code></li>
+</ul>
+<ol start="3">
+<li><strong>CSR（控制和状态寄存器）</strong>: <code>status</code>, <code>sepc</code>, <code>stval</code>, <code>scause</code></li>
+<li><strong>others</strong></li>
+</ol>
+</div>
+</div>
 <h3 id="_3">进程创建<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>一个进程（<strong>父进程</strong>）可以创建一个新的进程（<strong>子进程</strong>），得到的树为<strong>进程树</strong></li>
@@ -3342,12 +3472,33 @@
 <li><strong><code>fork()</code>系统调用</strong>（Linux/UNIX）</li>
 </ol>
 <ul>
-<li><strong>作用</strong>：创建一个新进程</li>
+<li><strong>作用</strong>：创建一个新进程（父进程的副本）</li>
 <li><strong>返回值</strong>：向父进程返回子进程的<code>pid</code>，向子进程返回<code>0</code></li>
+<li><strong>步骤</strong><ul>
+<li>执行 <code>fork syscall</code></li>
+<li>为子进程申请<strong>内存和PCB</strong></li>
+<li><strong>拷贝</strong>所有的内存和PCB（进程状态）</li>
+<li><strong>初始化</strong>子进程PCB（PID和状态等等）</li>
+<li><strong>设置返回值</strong><ul>
+<li>将父进程的<code>a0</code>写为<strong>子进程PID</strong></li>
+<li>将子进程的<code>a0</code>写为<strong>0</strong></li>
+</ul>
+</li>
+<li><strong>上下文切换</strong><ul>
+<li>父进程 CPU 进入 PCB</li>
+<li>子进程 PCB 进入 CPU</li>
+</ul>
+</li>
+<li>子进程<strong>执行</strong></li>
+</ul>
+</li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">Note</p>
-<p>可以使用 <code>getpid()</code> 和 <code>getppid()</code> 获取当前进程的<code>pid</code>和<code>ppid</code></p>
+<ol>
+<li>可以使用 <code>getpid()</code> 和 <code>getppid()</code> 获取当前进程的<code>pid</code>和<code>ppid</code></li>
+<li><strong>子进程只是父进程的副本，无法直接变成另一个程序，如果你只想运行一个不同的程序，仅靠 <code>fork</code> 是不够的</strong></li>
+</ol>
 </div>
 <details class="example">
 <summary>示例代码</summary>
@@ -3607,10 +3758,12 @@
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>lucy@LucyhandeMacBook-Pro<span class="w"> </span>C<span class="o">(</span>vscode<span class="o">)</span><span class="w"> </span>%<span class="w"> </span>./1
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>lucy@LucyhandeMacBook-Pro<span class="w"> </span>C<span class="o">(</span>vscode<span class="o">)</span><span class="w"> </span>%<span class="w"> </span>./1
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a>^CI<span class="w"> </span>don<span class="s1">&#39;t want to die!</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="s1">^CI don&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a>^CI<span class="w"> </span>don<span class="err">&#39;</span>t<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>die!
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>...
 </code></pre></div></td></tr></table></div>
 </details>
 <ol start="4">
@@ -3618,7 +3771,7 @@
 </ol>
 <ul>
 <li><strong>定义</strong>：子进程终止后，在未被父进程“收割”前，处于一种“未死”的僵尸状态</li>
-<li><strong>存在原因</strong>：父进程可能还需要调用<code>wait()</code>或者其变体来获取子进程的退出代码</li>
+<li><strong>存在原因</strong>：父进程<strong>没有调用<code>wait()</code>或者其变体</strong>来获取子进程的退出代码</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
@@ -3655,6 +3808,173 @@
 </ul>
 </li>
 </ul>
+<h3 id="_5">进程就绪、运行、等待<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">进程调度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>目的</strong>：最大化<strong>CPU使用率</strong>，通过<strong>在进程间快速切换</strong>来实现</li>
+<li><strong>进程调度器</strong> 从<strong>就绪队列</strong>中选择下一个在CPU核心上执行的进程</li>
+<li><strong>调度队列</strong></li>
+</ol>
+<ul>
+<li><strong>分类</strong><ul>
+<li><strong>就绪队列</strong>：<ul>
+<li>位于主存中，包含所有准备就绪并等待执行的进程</li>
+<li><strong>数量有限</strong>（不超过CPU的核心数）</li>
+</ul>
+</li>
+<li><strong>等待队列</strong>：<ul>
+<li>包含因特定事件（<strong>e.g.</strong> I/O）而阻塞的进程</li>
+<li><strong>数量无限</strong>（只要<code>wait()</code>调用成功就会产生）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程在各个队列之间迁移</li>
+<li>
+<p><strong>数据结构</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">list_head</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_head</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">prev</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="../photo/11-7.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">进程调度示意图</p>
+<p><img alt="alt text" src="../photo/11-8.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</div>
+<h4 id="_7">内核陷入与返回<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>核心问题</strong>：当<strong>发生异常、中断或系统调用</strong>时，进程状态陷入内核，会被改变，但是<strong>并不希望它改变</strong></p>
+</li>
+<li>
+<p><strong>解决方案</strong>：在<code>kernel entry</code>时保存进程状态，在<code>kernel exit</code>时恢复</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../photo/11-10.png" /></p>
+<ol start="3">
+<li><strong>需要保存的寄存器</strong>：<code>caller</code>、<code>callee</code>、<code>sepc</code>、<code>sstatus</code>、<code>scause</code>、<code>stval</code></li>
+</ol>
+<p><img alt="alt text" src="../photo/11-11.png" /></p>
+<ol start="4">
+<li><strong>代码</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">// kernel entry</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="nf">csrrw</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">scratch</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="w">   </span><span class="c1">// 交换sp和scratch寄存器（栈指针）</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="nf">store</span><span class="w"> </span><span class="no">callee</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="nf">store</span><span class="w"> </span><span class="no">scause</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="nf">store</span><span class="w"> </span><span class="no">stval</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="nf">store</span><span class="w"> </span><span class="no">sepc</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nf">call</span><span class="w"> </span><span class="no">trap_handler</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="c1">// kernel exit</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nf">load</span><span class="w"> </span><span class="no">sepc</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="nf">load</span><span class="w"> </span><span class="no">stval</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="nf">load</span><span class="w"> </span><span class="no">scause</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="nf">load</span><span class="w"> </span><span class="no">callee</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="nf">csrrw</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">scratch</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="nf">sret</span><span class="w">                    </span><span class="c1">// 恢复PC（PC=sepc）</span>
+</code></pre></div></td></tr></table></div>
+<ol start="5">
+<li><strong>系统调用</strong></li>
+</ol>
+<ul>
+<li><strong>参数传递</strong>：传递<code>callee</code>所在的地址，读入对应偏移就是<code>a0-a7</code>，写入对应偏移修改<code>a0</code> </li>
+</ul>
+<h4 id="_8">上下文切换<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/11-9.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>定义</strong>：当CPU从一个进程切换到另一个进程时，系统必须<strong>保存旧进程的状态</strong>并通过上下文切换<strong>加载新进程的已保存状态</strong></li>
+<li><strong>上下文</strong>：一个进程运行时CPU的状态，进程的上下文体现<strong>在PCB中</strong></li>
+<li><strong>开销</strong>：上下文切换时间</li>
+</ol>
+<ul>
+<li><strong>原因</strong>：系统在切换时不做<strong>任何</strong>有用的工作</li>
+<li><strong>影响因素</strong><ul>
+<li>操作系统和PCB<strong>越复杂</strong>，上下文切换时间越长</li>
+<li>还取决于<strong>硬件支持</strong>：有些硬件为每个CPU提供多组寄存器，可以同时保存/加载多个上下文</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>步骤</strong></li>
+</ol>
+<ul>
+<li>正在执行的进程寄存器状态存在<strong>CPU reg</strong>中</li>
+<li>等待执行的进程寄存器状态存在<strong>PCB</strong>中</li>
+</ul>
+<p><img alt="alt text" src="../photo/11-12.png" /></p>
+<ol start="5">
+<li><strong>代码</strong></li>
+</ol>
+<ul>
+<li><strong>架构</strong>：<code>arm64 linux</code></li>
+<li><strong>思路</strong>：切换<code>sp</code>、<code>caller</code>、<code>ra</code>、<code>sstatus</code></li>
+<li><strong>关键操作</strong>：对返回地址的操作，对栈帧的操作（高亮部分）</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1">// 函数声明</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">extern</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">task_struct</span><span class="w"> </span><span class="o">*</span><span class="n">cpu_switch_to</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">task_struct</span><span class="w"> </span><span class="o">*</span><span class="n">prev</span><span class="p">,</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">task_struct</span><span class="w"> </span><span class="o">*</span><span class="n">next</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><span class="filename">GAS</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nf">ENTRY</span><span class="p">(</span><span class="no">cpu_switch_to</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">x10</span><span class="p">,</span><span class="w"> </span><span class="c1">#THREAD_CPU_CONTEXT  //获取 cpu_context 结构在 task_struct 中的内存偏移量</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="no">x8</span><span class="p">,</span><span class="w"> </span><span class="no">x0</span><span class="p">,</span><span class="w"> </span><span class="no">x10</span><span class="w">              </span><span class="c1">//计算旧进程的内存地址</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="hll"><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="no">sp</span><span class="w">                   </span><span class="c1">//保存当前栈指针（sp 不能直接用于 stp 指令）</span>
+</span><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="c1">// 保存旧进程的寄存器</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x20</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span><span class="w">      </span><span class="c1">//将两个寄存器存入内存</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x21</span><span class="p">,</span><span class="w"> </span><span class="no">x22</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x23</span><span class="p">,</span><span class="w"> </span><span class="no">x24</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x25</span><span class="p">,</span><span class="w"> </span><span class="no">x26</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x27</span><span class="p">,</span><span class="w"> </span><span class="no">x28</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="hll"><span class="w">    </span><span class="nf">stp</span><span class="w"> </span><span class="no">x29</span><span class="p">,</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+</span><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="hll"><span class="w">    </span><span class="nf">str</span><span class="w"> </span><span class="no">lr</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">]</span><span class="w">                 </span><span class="c1">//保存返回地址</span>
+</span><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="nf">add</span><span class="w"> </span><span class="no">x8</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x10</span><span class="w">              </span><span class="c1">//计算新进程的内存地址</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">    </span><span class="c1">// 加载新进程的寄存器</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x19</span><span class="p">,</span><span class="w"> </span><span class="no">x20</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span><span class="w">      </span><span class="c1">//从内存中加载两个寄存器</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x21</span><span class="p">,</span><span class="w"> </span><span class="no">x22</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x23</span><span class="p">,</span><span class="w"> </span><span class="no">x24</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x25</span><span class="p">,</span><span class="w"> </span><span class="no">x26</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x27</span><span class="p">,</span><span class="w"> </span><span class="no">x28</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="hll"><span class="w">    </span><span class="nf">ldp</span><span class="w"> </span><span class="no">x29</span><span class="p">,</span><span class="w"> </span><span class="no">x9</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">],</span><span class="w"> </span><span class="mi">#16</span><span class="w">       </span><span class="c1">//恢复桢指针和栈指针</span>
+</span><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="hll"><span class="w">    </span><span class="nf">ldr</span><span class="w"> </span><span class="no">lr</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="no">x8</span><span class="p">]</span><span class="w">                 </span><span class="c1">//恢复返回地址</span>
+</span><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="hll"><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">sp</span><span class="p">,</span><span class="w"> </span><span class="no">x9</span>
+</span><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">    </span><span class="nf">msr</span><span class="w"> </span><span class="no">sp_el0</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">    </span><span class="nf">ret</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="nf">ENDPROC</span><span class="p">(</span><span class="no">cpu_switch_to</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">arm64 汇编</p>
+<ol>
+<li><strong>寄存器</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>x29 = fp (Frame Pointer)
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>x30 = lr (Return Address)
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li><strong>保存寄存器</strong></li>
+</ol>
+<ul>
+<li><strong><code>Caller-saved</code>寄存器</strong> (<code>x0-x18</code>): 由<strong>调用函数</strong>负责保存，在函数调用中可能被破坏</li>
+<li><strong><code>Callee-saved</code>寄存器</strong> (<code>x19-x30</code>): 由<strong>被调用函数</strong>负责保存，在函数返回时必须恢复原值</li>
+<li><strong>特殊寄存器</strong> (<code>sp</code>、<code>lr</code>): 必须显式保存，包含关键的执行状态</li>
+</ul>
+</div>
 
 
 
