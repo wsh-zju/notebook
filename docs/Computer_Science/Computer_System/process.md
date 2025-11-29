@@ -82,6 +82,27 @@
 
 ![](photo/11-1.png){style="width:80%;display: block;margin: 20px auto"}
 
+3. **对比**
+
+!!! note "进程状态"
+    进程状态是**程序相关**寄存器的状态和程序相关内存的内存总和
+    
+    - 内存只包括Program自己的部分（Program+PCB）
+    - CSR只包括控制process运行的部分，不包括`stvec`等
+    
+!!! abstract "处理器状态"
+    处理器的架构层状态是**所有架构层**寄存器状态和内存状态的总和
+
+    !!! info "寄存器状态"
+        1. **PC（程序计数器）**
+        2. **GPR（通用寄存器）**: 
+        
+        - `caller`: `ra`, `sp`, `fp`, `tp`, `gp`, `tx`, `ax`
+        - `callee`: `sx`
+
+        3. **CSR（控制和状态寄存器）**: `status`, `sepc`, `stval`, `scause`
+        4. **others**
+
 ### 进程创建
 
 1. 一个进程（**父进程**）可以创建一个新的进程（**子进程**），得到的树为**进程树**
@@ -95,11 +116,25 @@
 
 3. **`fork()`系统调用**（Linux/UNIX）
 
-- **作用**：创建一个新进程
+- **作用**：创建一个新进程（父进程的副本）
 - **返回值**：向父进程返回子进程的`pid`，向子进程返回`0`
+- **步骤**
+    - 执行 `fork syscall`
+    - 为子进程申请**内存和PCB**
+    - **拷贝**所有的内存和PCB（进程状态）
+    - **初始化**子进程PCB（PID和状态等等）
+    - **设置返回值**
+        - 将父进程的`a0`写为**子进程PID**
+        - 将子进程的`a0`写为**0**
+    - **上下文切换**
+        - 父进程 CPU 进入 PCB
+        - 子进程 PCB 进入 CPU
+    - 子进程**执行**
+    
 
 !!! abstract "Note"
-    可以使用 `getpid()` 和 `getppid()` 获取当前进程的`pid`和`ppid`
+    1. 可以使用 `getpid()` 和 `getppid()` 获取当前进程的`pid`和`ppid`
+    2. **子进程只是父进程的副本，无法直接变成另一个程序，如果你只想运行一个不同的程序，仅靠 `fork` 是不够的**
 
 ??? example "示例代码"
     1. **创建一个子进程**
@@ -289,13 +324,13 @@ if (fork() == 0) {              // 子进程
     ^CI don't want to die!
     ^CI don't want to die!
     ^CI don't want to die!
-    
+    ...
     ```
 
 4. **僵尸进程** `Zombie`
 
 - **定义**：子进程终止后，在未被父进程“收割”前，处于一种“未死”的僵尸状态
-- **存在原因**：父进程可能还需要调用`wait()`或者其变体来获取子进程的退出代码
+- **存在原因**：父进程**没有调用`wait()`或者其变体**来获取子进程的退出代码
 
 !!! tip "Tips"
     1. 哪些资源不能由子进程释放？**PCB**
@@ -319,3 +354,144 @@ if (fork() == 0) {              // 子进程
 - **技巧**：创建一个**完全独立于父进程**的进程
     - 创建“孙子”进程
     - 立即终止其父进程（子进程）
+
+
+### 进程就绪、运行、等待
+
+#### 进程调度
+
+1. **目的**：最大化**CPU使用率**，通过**在进程间快速切换**来实现
+2. **进程调度器** 从**就绪队列**中选择下一个在CPU核心上执行的进程
+3. **调度队列**
+    
+- **分类**
+    - **就绪队列**：
+        - 位于主存中，包含所有准备就绪并等待执行的进程
+        - **数量有限**（不超过CPU的核心数）
+    - **等待队列**：
+        - 包含因特定事件（**e.g.** I/O）而阻塞的进程
+        - **数量无限**（只要`wait()`调用成功就会产生）
+- 进程在各个队列之间迁移
+- **数据结构**
+
+    ```c
+    struct list_head {
+        struct list_head *next, *prev;
+    };
+    ```
+
+    ![](photo/11-7.png){style="width:80%;display: block;margin: 20px auto"}
+
+!!! info "进程调度示意图"
+    ![alt text](photo/11-8.png){style="width:80%;display: block;margin: 20px auto"}
+
+
+#### 内核陷入与返回
+
+1. **核心问题**：当**发生异常、中断或系统调用**时，进程状态陷入内核，会被改变，但是**并不希望它改变**
+
+2. **解决方案**：在`kernel entry`时保存进程状态，在`kernel exit`时恢复
+
+![alt text](photo/11-10.png)
+
+3. **需要保存的寄存器**：`caller`、`callee`、`sepc`、`sstatus`、`scause`、`stval`
+
+![alt text](photo/11-11.png)
+
+4. **代码**
+
+```asm
+// kernel entry
+csrrw sp, scratch, sp   // 交换sp和scratch寄存器（栈指针）
+store callee
+store scause
+store stval
+store sepc
+call trap_handler
+// kernel exit
+load sepc
+load stval
+load scause
+load callee
+csrrw sp, scratch, sp
+sret                    // 恢复PC（PC=sepc）
+```
+
+5. **系统调用**
+
+- **参数传递**：传递`callee`所在的地址，读入对应偏移就是`a0-a7`，写入对应偏移修改`a0` 
+
+
+#### 上下文切换
+
+![alt text](photo/11-9.png){style="width:80%;display: block;margin: 20px auto"}
+
+1. **定义**：当CPU从一个进程切换到另一个进程时，系统必须**保存旧进程的状态**并通过上下文切换**加载新进程的已保存状态**
+2. **上下文**：一个进程运行时CPU的状态，进程的上下文体现**在PCB中**
+3. **开销**：上下文切换时间
+
+- **原因**：系统在切换时不做**任何**有用的工作
+- **影响因素**
+    - 操作系统和PCB**越复杂**，上下文切换时间越长
+    - 还取决于**硬件支持**：有些硬件为每个CPU提供多组寄存器，可以同时保存/加载多个上下文
+
+4. **步骤**
+
+- 正在执行的进程寄存器状态存在**CPU reg**中
+- 等待执行的进程寄存器状态存在**PCB**中
+
+![alt text](photo/11-12.png)
+
+5. **代码**
+
+- **架构**：`arm64 linux`
+- **思路**：切换`sp`、`caller`、`ra`、`sstatus`
+- **关键操作**：对返回地址的操作，对栈帧的操作（高亮部分）
+
+```c
+// 函数声明
+extern struct task_struct *cpu_switch_to(struct task_struct *prev, struct task_struct *next);
+```
+
+```asm linenums="0" hl_lines="4 11 12 20 21 22"
+ENTRY(cpu_switch_to)
+    mov x10, #THREAD_CPU_CONTEXT  //获取 cpu_context 结构在 task_struct 中的内存偏移量
+    add x8, x0, x10              //计算旧进程的内存地址
+    mov x9, sp                   //保存当前栈指针（sp 不能直接用于 stp 指令）
+    // 保存旧进程的寄存器
+    stp x19, x20, [x8], #16      //将两个寄存器存入内存
+    stp x21, x22, [x8], #16
+    stp x23, x24, [x8], #16
+    stp x25, x26, [x8], #16
+    stp x27, x28, [x8], #16
+    stp x29, x9, [x8], #16
+    str lr, [x8]                 //保存返回地址
+    add x8, x1, x10              //计算新进程的内存地址
+    // 加载新进程的寄存器
+    ldp x19, x20, [x8], #16      //从内存中加载两个寄存器
+    ldp x21, x22, [x8], #16
+    ldp x23, x24, [x8], #16
+    ldp x25, x26, [x8], #16
+    ldp x27, x28, [x8], #16
+    ldp x29, x9, [x8], #16       //恢复桢指针和栈指针
+    ldr lr, [x8]                 //恢复返回地址
+    mov sp, x9
+    msr sp_el0, x1
+    ret
+ENDPROC(cpu_switch_to)
+```
+
+!!! abstract "arm64 汇编"
+    1. **寄存器**
+
+    ```txt
+    x29 = fp (Frame Pointer)
+    x30 = lr (Return Address)
+    ```
+
+    2. **保存寄存器**
+
+    - **`Caller-saved`寄存器** (`x0-x18`): 由**调用函数**负责保存，在函数调用中可能被破坏
+    - **`Callee-saved`寄存器** (`x19-x30`): 由**被调用函数**负责保存，在函数返回时必须恢复原值
+    - **特殊寄存器** (`sp`、`lr`): 必须显式保存，包含关键的执行状态
+
