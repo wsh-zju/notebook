@@ -380,10 +380,10 @@ if (fork() == 0) {              // 子进程
     };
     ```
 
-    ![](photo/11-7.png){style="width:80%;display: block;margin: 20px auto"}
+    ![](photo/11-7.png){style="width:50%;display: block;margin: 20px auto"}
 
 !!! info "进程调度示意图"
-    ![alt text](photo/11-8.png){style="width:80%;display: block;margin: 20px auto"}
+    ![alt text](photo/11-8.png){style="width:50%;display: block;margin: 20px auto"}
 
 
 #### 内核陷入与返回
@@ -392,11 +392,11 @@ if (fork() == 0) {              // 子进程
 
 2. **解决方案**：在`kernel entry`时保存进程状态，在`kernel exit`时恢复
 
-![alt text](photo/11-10.png)
+![alt text](photo/11-10.png){style="width:80%;display: block;margin: 20px auto"}
 
 3. **需要保存的寄存器**：`caller`、`callee`、`sepc`、`sstatus`、`scause`、`stval`
 
-![alt text](photo/11-11.png)
+![alt text](photo/11-11.png){style="width:80%;display: block;margin: 20px auto"}
 
 4. **代码**
 
@@ -424,7 +424,7 @@ sret                    // 恢复PC（PC=sepc）
 
 #### 上下文切换
 
-![alt text](photo/11-9.png){style="width:80%;display: block;margin: 20px auto"}
+![alt text](photo/11-9.png){style="width:50%;display: block;margin: 20px auto"}
 
 1. **定义**：当CPU从一个进程切换到另一个进程时，系统必须**保存旧进程的状态**并通过上下文切换**加载新进程的已保存状态**
 2. **上下文**：一个进程运行时CPU的状态，进程的上下文体现**在PCB中**
@@ -440,7 +440,7 @@ sret                    // 恢复PC（PC=sepc）
 - 正在执行的进程寄存器状态存在**CPU reg**中
 - 等待执行的进程寄存器状态存在**PCB**中
 
-![alt text](photo/11-12.png)
+![alt text](photo/11-12.png){style="width:80%;display: block;margin: 20px auto"}
 
 5. **代码**
 
