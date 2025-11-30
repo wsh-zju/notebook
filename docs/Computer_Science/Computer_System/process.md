@@ -380,10 +380,10 @@ if (fork() == 0) {              // 子进程
     };
     ```
 
-    ![](photo/11-7.png){style="width:50%;display: block;margin: 20px auto"}
+    ![](photo/11-7.png){style="width:60%;display: block;margin: 20px auto"}
 
 !!! info "进程调度示意图"
-    ![alt text](photo/11-8.png){style="width:50%;display: block;margin: 20px auto"}
+    ![alt text](photo/11-8.png){style="width:60%;display: block;margin: 20px auto"}
 
 
 #### 内核陷入与返回
@@ -424,7 +424,7 @@ sret                    // 恢复PC（PC=sepc）
 
 #### 上下文切换
 
-![alt text](photo/11-9.png){style="width:50%;display: block;margin: 20px auto"}
+![alt text](photo/11-9.png){style="width:60%;display: block;margin: 20px auto"}
 
 1. **定义**：当CPU从一个进程切换到另一个进程时，系统必须**保存旧进程的状态**并通过上下文切换**加载新进程的已保存状态**
 2. **上下文**：一个进程运行时CPU的状态，进程的上下文体现**在PCB中**
