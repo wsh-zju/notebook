@@ -11,8 +11,8 @@
 
 2. **邻居关系**
  
-- $S ~ S$ ：$S'$ 是 $S$ 的邻居解（ $S'$ 可以通过对 $S$ 进行微小的修改得到）
-- $N(S)$ ：$S$ 的邻域——集合 ${ S': S ~ S' }$
+- $S \sim S$ ：$S'$ 是 $S$ 的邻居解（ $S'$ 可以通过对 $S$ 进行微小的修改得到）
+- $N(S)$ ：$S$ 的邻域——集合 $\{ S': S \sim S' \}$
 
 ## 梯度下降算法
 
@@ -51,11 +51,15 @@ SolutionType Gradient_descent(){
 !!! warning "warning"
     有的情况下，无法得到局部最优解
 
-    ![alt text](images/8-2.png){style="width:80%;display: block;margin: 20px auto"}
+    ![alt text](images/8-2.png){style="width:60%;display: block;margin: 20px auto"}
 
 ### 改进：Metropolis 算法
 
-**引入概率** $p=e^{\frac{-\Delta cost}{kT}}$
+**引入概率**:
+
+$$
+p=e^{\frac{-\Delta cost}{kT}}
+$$
 
 ```c
 SolutionType Metropolis(){   
@@ -95,13 +99,12 @@ SolutionType Metropolis(){
 !!! warning "Warning"
     可能**不存在**满足所有边要求的配置，只需要寻找一个**足够好**的配置。
 
-    ![alt text](images/8-1.png){style="width:10%;display: block;margin: 20px auto"}
+    ![alt text](images/8-1.png){style="width:20%;display: block;margin: 20px auto"}
 
 3. **相关定义**
 
 - 在配置 $S$ 中，边 $e = (u, v)$ 是**好边**，如果 $w_e s_u s_v < 0$（即当且仅当 $w_e < 0$ 时 $s_u = s_v$ ）；否则是**坏边**
-- 在配置 $S$ 中，节点 $u$ 是**满足的**，如果  
-与其关联的**好边**的权重之和 $\geq$ 与其关联的**坏边**的权重之和  
+- 在配置 $S$ 中，节点 $u$ 是**满足的**，如果与其关联的**好边**的权重之和 $\geq$ 与其关联的**坏边**的权重之和  
 
     $$
     \sum_{v: e = (u, v) \in E} w_e s_u s_v \leq 0
@@ -124,7 +127,7 @@ ConfigType State_flipping(){
 
 - **断言 1**：状态翻转算法**最多**在 $W= \sum_{e} |w_e|$ 次迭代后终止于一个稳定配置
 
-    !!! success "证明"
+    ??? success "证明"
         考虑进展度量
 
         $$
@@ -166,7 +169,7 @@ $$
 
 3. **断言**：设 $(A, B)$ 是一个局部最优划分，$(A^*, B^*)$ 是全局最优划分，那么 $w(A, B) \geq \frac{1}{2} w(A^*, B^*)$
 
-!!! success "证明"
+??? success "证明"
     由于 \((A, B)\) 是局部最优划分，对于任意 \(u \in A\)
 
     \[

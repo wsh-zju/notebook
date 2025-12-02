@@ -23,8 +23,12 @@
         - **输入**：问题实例和一个参数 \(\epsilon > 0\) 
         - 使得对于任何固定的 \(\epsilon\)，该方案都是 **\((1+\epsilon)\)-近似算法**
     - **分类**：
-        - **多项式时间近似方案（PTAS）**：对于任何固定的 \(\epsilon > 0\)，该方案在其输入实例的规模 \(n\) 的**多项式时间**内运行 **e.g.** $O(n^{2/\epsilon})$
-        - **完全多项式时间近似方案（FPTAS）**：运行时间关于 $n$ 和 $1/ε$ 都是多项式时间  **e.g.** $O((1/\epsilon)^2 n^3)$
+        - **多项式时间近似方案（PTAS）**：
+            - 对于任何固定的 \(\epsilon > 0\)，该方案在其输入实例的规模 \(n\) 的**多项式时间**内运行 
+            - **e.g.** $O(n^{2/\epsilon})$
+        - **完全多项式时间近似方案（FPTAS）**：
+            - 运行时间关于 $n$ 和 $1/ε$ 都是多项式时间  
+            - **e.g.** $O((1/\epsilon)^2 n^3)$
     
 
 ## 近似装箱问题
@@ -60,15 +64,15 @@
             设 \( S(B_i) \) 为第 \( i \) 个箱子中物品的大小之和。那么必须有：
             
             \[
-            \begin{aligned}
+            \begin{gathered}
             S(B_1) + S(B_2) > 1 \\
             S(B_3) + S(B_4) > 1 \\
             \cdots\cdots\cdots \\
             S(B_{2M-1}) + S(B_{2M}) > 1
-            \end{aligned}
+            \end{gathered}
             \]
 
-            **最优解至少需要 \(\lceil\) 所有物品总大小 / 1 \(\rceil\) 个箱子**
+            **最优解至少需要 \(\lceil\)所有物品总大小/1\(\rceil\) 个箱子**
 
             \[
             \lceil \sum_{i=1}^{2M} S(B_i) \rceil \geq M+1
@@ -91,9 +95,10 @@
     
     - **时间复杂度**： $O(N \log N)$
     - **定理**：设 $M$ 为打包物品列表 $I$ 所需的最优箱子数，则`first fit`使用的箱子数 $\leq 1.7M$ ，并且存在某些序列使得`first fit`使用 $1.7(M-1)$ 个箱子 
+
 - **`Best Fit`算法**
     - **思路**：放入最紧的箱子（即能放下该物品并且剩余空间最小）
-    - **时间复杂度**： $O(N \log N)$
+    - **时间复杂度**：$O(N \log N)$
     - 使用的箱子数 $\leq 1.7M$ 
 
 !!! warning "局限性"
@@ -145,14 +150,14 @@
     **Problem**: 
     
     $$
-    \begin{aligned}
+    \begin{gathered}
     n=3, M=20 \\
     (p_1,p_2,p_3)=(25,24,15) \\
     (w_1,w_2,w_3)=(18,15,10)
-    \end{aligned}
+    \end{gathered}
     $$
 
-    **Solution**: $(x_1,x_2,x_3)=(0,1,1/2)且P=31.5$
+    **Solution**: $(x_1,x_2,x_3)=(0,1,1/2)$ 且 $P=31.5$
 
 ### 0-1/整数版本
 !!! error "Notice"
@@ -189,11 +194,11 @@
     已知
     
     $$
-    \begin{aligned}
+    \begin{gathered}
     p_{max} ≤ P_{opt} ≤ P_{frac} \\
     p_{max} ≤ P_{greedy}
     P_{frac} ≤ P_{greedy} + p_{max}
-    \end{aligned}
+    \end{gathered}
     $$
     
     则
