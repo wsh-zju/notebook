@@ -65,6 +65,7 @@ nav:
         - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
         - NP完全性 : Computer_Science/Data_Structure/Advanced/NP.md
         - 近似算法 : Computer_Science/Data_Structure/Advanced/appro.md
+        - 局部搜索 : Computer_Science/Data_Structure/Advanced/localsearch.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
   - Math and Physics : 
     - Math_and_Physics/index.md
