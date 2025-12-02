@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Advanced/NP/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Advanced/localsearch/">
       
       
-        <link rel="prev" href="../greedy/">
+        <link rel="prev" href="../appro/">
       
       
-        <link rel="next" href="../appro/">
+        <link rel="next" href="../pta/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>NP完全性 - Lucy Wisteria's Notebook</title>
+        <title>局部搜索 - Lucy Wisteria's Notebook</title>
       
     
     
@@ -106,7 +106,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#np" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -139,7 +139,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NP完全性
+              局部搜索
             
           </span>
         </div>
@@ -2203,37 +2203,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NP完全性
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../NP/" class="md-nav__link">
         
   
   
@@ -2249,70 +2222,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        停机问题
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        图灵机
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#np_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NP 完全性
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        形式语言框架
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2350,10 +2259,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../localsearch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    局部搜索
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2369,6 +2305,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        梯度下降算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="梯度下降算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        顶点覆盖问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metropolis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改进：Metropolis 算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模拟退火算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟退火算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        霍普菲尔德神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最大割问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3155,46 +3189,80 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        停机问题
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        图灵机
+        梯度下降算法
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#np_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        NP 完全性
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="梯度下降算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        形式语言框架
+        顶点覆盖问题
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metropolis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        改进：Metropolis 算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        模拟退火算法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="模拟退火算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        霍普菲尔德神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最大割问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3215,7 +3283,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Advanced/NP.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Advanced/localsearch.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3223,185 +3291,284 @@
   
 
 
-<h1 id="np">NP 完全性<a class="headerlink" href="#np" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">计算问题 Easy or Hard</p>
-<ol>
-<li><strong>最简单的问题</strong>：<span class="arithmatex">\(O(N)\)</span>，至少需要读入数据</li>
-<li><strong>最难的问题</strong>：不可判定问题</li>
-</ol>
-</div>
-<h2 id="_1">停机问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>（<strong>Halting Problem</strong>）</p>
-<ol>
-<li><strong>问题</strong>：你的C编译器是否能够检测<strong>所有</strong>无限的循环？</li>
-<li><strong>答案</strong>：不能</li>
-<li><strong>证明</strong></li>
-</ol>
-<ul>
-<li>
-<p>假设存在一个可以检测无限循环的程序，并且确保可以检测自己</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Loop</span><span class="p">(</span><span class="n">P</span><span class="p">){</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">P</span><span class="w"> </span><span class="n">loops</span><span class="p">)</span><span class="w"> </span><span class="n">print</span><span class="p">(</span><span class="s">&quot;YES&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="n">infinite_loop</span><span class="p">();</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p>无法判断 <code>Loop(Loop)</code> 是终止还是循环</p>
-<ul>
-<li>若判定 <code>Loop</code> 会无限循环 → 打印 <code>YES</code> → 实际停止 → 与判定<strong>矛盾</strong></li>
-<li>若判定 <code>Loop</code> 会停止 → 进入 <code>infinite loop</code> → 实际不会停止 → 与判定<strong>矛盾</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="_2">图灵机<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>组成</strong>：</li>
-</ol>
-<ul>
-<li><strong>无限内存</strong>：相当于无限长的纸带，用于<strong>存储数据</strong></li>
-<li><strong>扫描头</strong>：读写内容</li>
-<li><strong>有限状态控制器</strong>：根据当前状态和读写头所读到的符号决定下一操作，<strong>执行图灵机操作逻辑</strong></li>
-</ul>
-<ol start="2">
-<li><strong>运行</strong></li>
-</ol>
-<ul>
-<li>改变有限状态机的当前状态</li>
-<li>擦除读写头所在单元的符号，并写入新的符号</li>
-<li>将读写头向左（L）或向右（R）移动一个单元，或者保持不动（S）</li>
-</ul>
-<ol start="3">
-<li><strong>类型</strong></li>
-</ol>
-<ul>
-<li><strong>确定性图灵机 DTM</strong>：每一步确定唯一操作</li>
-<li><strong>非确定性图灵机 NTM</strong>：每一步可同时尝试多条路径，只要有一条成功即认为成功</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Notices</p>
-<p>即使使用非确定性图灵机，<strong>不可判定问题仍然不可判定</strong></p>
-</div>
-<h2 id="np_1">NP 完全性<a class="headerlink" href="#np_1" title="Permanent link">&para;</a></h2>
+<h1 id="_1">局部搜索<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ol>
 <li><strong>定义</strong></li>
 </ol>
 <ul>
-<li><strong>P</strong>：在<strong>确定性</strong>图灵机上在多项式时间内<strong>被直接解决</strong></li>
-<li><strong>NP</strong>：问题的解可以在<strong>确定性图灵机</strong>上在多项式时间内<strong>被验证</strong></li>
-<li><strong>co-NP</strong>：问题的<strong>补问题属于 NP</strong></li>
-<li><strong>NP-Hard</strong>：所有问题Q，使得NP中的每一个问题都可以多项式时间归约到Q</li>
-<li><strong>NP-Complete</strong>：<ul>
-<li>一个问题Q既是 <strong>NP-Hard</strong> ，又属于 <strong>NP</strong></li>
-<li>是NP中<strong>最难</strong>的问题子集</li>
+<li><strong>局部性</strong><ul>
+<li>在可行解集中定义<strong>邻域</strong></li>
+<li><strong>局部最优解</strong>是邻域中的最优解</li>
+</ul>
+</li>
+<li><strong>搜索</strong><ul>
+<li>从一个可行解开始，并在其邻域中搜索更好的解</li>
+<li>当无法进一步改进时，即达到局部最优解</li>
 </ul>
 </li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Notices</p>
-<ol>
-<li><strong>NP-Hard</strong> 问题不一定在 <strong>NP</strong> 中</li>
-<li>所有 NP 问题都可以在<strong>非确定性图灵机</strong>上在多项式时间内<strong>解决</strong>，与定义不矛盾</li>
-<li>已知 <span class="arithmatex">\(P \subseteq NP\)</span></li>
+<ol start="2">
+<li><strong>邻居关系</strong></li>
 </ol>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Problem</strong>: 哈密顿回路问题</p>
-<p><strong>Answer</strong>: 给定一条回路，只需要验证该回路是否包含了所有顶点即可，这一验证过程可以在多项式时间内完成，因此该问题属于 NP</p>
-<div class="admonition warning">
-<p class="admonition-title">Notices</p>
-<p><strong>并非所有可判定问题都属于 NP</strong></p>
-<p><strong>e.g.</strong> 判断一个图不存在哈密顿回路并不一定能在多项式时间内验证，因此不属于 NP</p>
-</div>
+<ul>
+<li><span class="arithmatex">\(S ~ S\)</span> ：<span class="arithmatex">\(S'\)</span> 是 <span class="arithmatex">\(S\)</span> 的邻居解（ <span class="arithmatex">\(S'\)</span> 可以通过对 <span class="arithmatex">\(S\)</span> 进行微小的修改得到）</li>
+<li><span class="arithmatex">\(N(S)\)</span> ：<span class="arithmatex">\(S\)</span> 的邻域——集合 <span class="arithmatex">\({ S': S ~ S' }\)</span></li>
+</ul>
+<h2 id="_2">梯度下降算法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>定义</strong>：梯度下降（在局部搜索中）是一种贪心改进策略，通过不断移动到<strong>当前解的最优邻域解</strong>来寻找局部最优解</p>
+</li>
+<li>
+<p><strong>代码</strong></p>
+</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Gradient_descent</span><span class="p">(){</span><span class="w"> </span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="n">从可行解集</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="n">中的可行解</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">开始</span><span class="err">；</span><span class="w">  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">S</span><span class="err">&#39;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Search</span><span class="p">(</span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">));</span><span class="w"> </span><span class="cm">/* 在 N(S) 中找到最优的 S&#39; */</span><span class="w">  </span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">&#39;</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">&#39;</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">break</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="_3">顶点覆盖问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>问题</strong>：给定一个无向图 <span class="arithmatex">\(G=(V,E)\)</span> ，找到一个最小的顶点集合 <span class="arithmatex">\(S\)</span> ，<strong>对于每条边，至少有一个顶点在集合中</strong></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">相关定义</p>
+<ol>
+<li><strong>可行解集</strong> <span class="arithmatex">\(\mathcal{FS}\)</span>：所有能覆盖图中每条边的顶点子集</li>
+<li><strong>成本函数</strong>：<span class="arithmatex">\(cost(S) = |S|\)</span></li>
+<li><strong>邻居关系</strong> <span class="arithmatex">\(S \sim S'\)</span>：<span class="arithmatex">\(S'\)</span> 可以通过在 <span class="arithmatex">\(S\)</span> 中添加或删除一个节点得到</li>
+<li>每个顶点覆盖 <span class="arithmatex">\(S\)</span> 最多有 <span class="arithmatex">\(|V|\)</span> 个邻居</li>
+</ol>
 </div>
 <ol start="2">
-<li><strong>性质</strong></li>
+<li><strong>搜索过程</strong>：从 <span class="arithmatex">\(S = V\)</span> 开始，删除一个节点并检查 <span class="arithmatex">\(S'\)</span> 是否是一个成本更小的顶点覆盖，如果是，直接应用</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">warning</p>
+<p>有的情况下，无法得到局部最优解</p>
+<p><img alt="alt text" src="../images/8-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="metropolis">改进：Metropolis 算法<a class="headerlink" href="#metropolis" title="Permanent link">&para;</a></h3>
+<p><strong>引入概率</strong> <span class="arithmatex">\(p=e^{\frac{-\Delta cost}{kT}}\)</span></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Metropolis</span><span class="p">(){</span><span class="w">   </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">Define</span><span class="w"> </span><span class="n">constants</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Randomly</span><span class="w"> </span><span class="n">chosen</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="err">’</span><span class="p">);</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CurrentCost</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinCost</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">            </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CurrentCost</span><span class="p">;</span><span class="w">    </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">            </span><span class="n">With</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">probability</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">let</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">S</span><span class="err">’</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="k">else</span><span class="w">  </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_4">模拟退火算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><code>Simulated Annealing</code>：材料从高温开始，非常缓慢地冷却，使其有足够时间在一系列逐步降低的中间温度下达到平衡</li>
+</ol>
+<h3 id="_5">霍普菲尔德神经网络<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>问题</strong>：</li>
 </ol>
 <ul>
-<li>一个问题若是NP完全问题，那么NP中的任意问题都可以在多项式时间内归约到该问题</li>
-<li>如果有一个NP完全问题能够在多项式时间内被解决，那么<strong>所有NP问题都能在多项式时间内解决</strong></li>
+<li>图 <span class="arithmatex">\(G = (V, E)\)</span> 具有整数边权重 <span class="arithmatex">\(w\)</span>（可为正或负）<ul>
+<li>若 <span class="arithmatex">\( w_e &lt; 0 \)</span>，其中 <span class="arithmatex">\(e = (u, v)\)</span>，则 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(v\)</span> 需要处于<strong>相同状态</strong>（+1/-1）</li>
+<li>若 <span class="arithmatex">\( w_e &gt; 0 \)</span>，则 <span class="arithmatex">\(u\)</span> 和 <span class="arithmatex">\(v\)</span> 需要处于<strong>不同状态</strong></li>
+<li>绝对值 <span class="arithmatex">\( |w_e| \)</span> 表示该要求的强度</li>
 </ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>输出</strong>：网络的一个配置 <span class="arithmatex">\(S\)</span> ——每个节点 <span class="arithmatex">\(u\)</span> 的状态 <span class="arithmatex">\( s_u \)</span> 分配 </li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>可能<strong>不存在</strong>满足所有边要求的配置，只需要寻找一个<strong>足够好</strong>的配置。</p>
+<p><img alt="alt text" src="../images/8-1.png" style="width:10%;display: block;margin: 20px auto" /></p>
+</div>
 <ol start="3">
-<li><strong>多项式归约定理</strong>：若对任意输入 <span class="arithmatex">\(α\)</span> 属于问题 <span class="arithmatex">\(A\)</span>，能找到一个多项式时间算法将其转换为问题 <span class="arithmatex">\(B\)</span> 的输入 <span class="arithmatex">\(β\)</span>，即：</li>
+<li><strong>相关定义</strong></li>
 </ol>
 <ul>
-<li>转换过程 <span class="arithmatex">\(R(\alpha) \rightarrow \beta\)</span> 的时间复杂度为 <span class="arithmatex">\(O(N^{k_1})\)</span></li>
-<li>解 <span class="arithmatex">\(β\)</span> 的过程时间复杂度为 <span class="arithmatex">\(O(N^{k_2})\)</span></li>
-<li>并且问题 <span class="arithmatex">\(B\)</span> 的答案与问题 <span class="arithmatex">\(A\)</span> 的答案一致</li>
-<li>那么可认为<strong>问题 <span class="arithmatex">\(A\)</span> 可以被归约到问题 <span class="arithmatex">\(B\)</span></strong></li>
+<li>在配置 <span class="arithmatex">\(S\)</span> 中，边 <span class="arithmatex">\(e = (u, v)\)</span> 是<strong>好边</strong>，如果 <span class="arithmatex">\(w_e s_u s_v &lt; 0\)</span>（即当且仅当 <span class="arithmatex">\(w_e &lt; 0\)</span> 时 <span class="arithmatex">\(s_u = s_v\)</span> ）；否则是<strong>坏边</strong></li>
+<li>
+<p>在配置 <span class="arithmatex">\(S\)</span> 中，节点 <span class="arithmatex">\(u\)</span> 是<strong>满足的</strong>，如果<br />
+与其关联的<strong>好边</strong>的权重之和 <span class="arithmatex">\(\geq\)</span> 与其关联的<strong>坏边</strong>的权重之和  </p>
+<div class="arithmatex">\[
+\sum_{v: e = (u, v) \in E} w_e s_u s_v \leq 0
+\]</div>
+</li>
+<li>
+<p>如果所有节点都满足，则该配置是<strong>稳定的</strong></p>
+</li>
 </ul>
-<p><img alt="" src="../images/6-2.png" style="width:50%;display: block;margin: 20px auto" /></p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><strong>Problem</strong>: 假设我们已经知道哈密顿回路问题是NP完全问题，证明<strong>旅行商问题（TSP）</strong>也是NP完全问题</p>
-<details class="abstract">
-<summary>Abstract</summary>
-<ol>
-<li><strong>旅行商问题</strong>：给定一个带有权重的完全图 <span class="arithmatex">\(G=(V,E)\)</span>，以及整数 <span class="arithmatex">\(K\)</span>，是否存在一个访问所有顶点的简单回路，使得其总权值不超过 <span class="arithmatex">\(K\)</span></li>
-<li><strong>哈密顿回路问题</strong>：给定图 <span class="arithmatex">\(G=(V,E)\)</span>，是否存在一个包含所有顶点的简单回路</li>
-</ol>
-</details>
-<p><img alt="" src="../images/6-3.png" style="width:70%;display: block;margin: 20px auto" /></p>
-</div>
 <ol start="4">
-<li><strong>证明问题是 NP-Complete 的标准步骤</strong></li>
+<li><strong>状态翻转算法</strong></li>
 </ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">ConfigType</span><span class="w"> </span><span class="nf">State_flipping</span><span class="p">(){</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">从任意配置</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">开始</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="n">IsStable</span><span class="p">(</span><span class="n">S</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetUnsatisfied</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w">   </span><span class="c1">// 获取一个不满足的节点</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">        </span><span class="n">s_u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="n">s_u</span><span class="p">;</span><span class="w">              </span><span class="c1">// 翻转该节点的状态</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">S</span><span class="p">;</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <ul>
-<li>证明它属于 <strong>NP</strong>：给出一个验证其解的多项式时间算法</li>
-<li>证明它是 <strong>NP-Hard</strong>：将一个已知的 NP-Complete 问题归约到它</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">SAT</p>
-<ol>
-<li>第一个被证明为NP完全的问题：可满足性问题（SAT），它是NP完全研究的起点</li>
-<li><strong>问题描述</strong>：给定一个布尔表达式，询问是否存在一组对变量的赋值，使得该表达式的值为1</li>
-<li><strong>Cook定理</strong>：所有NP问题都可以多项式时间归约到可满足性问题</li>
-<li><strong>证明方法</strong>：通过在非确定性图灵机上以多项式时间解决此问题来证明</li>
-</ol>
-</div>
-<h2 id="_3">形式语言框架<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>抽象问题</strong>：一个抽象问题 <span class="arithmatex">\(Q\)</span> 是问题实例集合 <span class="arithmatex">\(I\)</span> 和问题解集合 <span class="arithmatex">\(S\)</span> 之间的一个<strong>二元关系</strong></li>
-<li><strong>编码</strong>：将实例集合 <span class="arithmatex">\(I\)</span> 映射到二进制串 <span class="arithmatex">\({0, 1}\)</span>，经过编码的问题称为<strong>具体问题</strong></li>
-<li><strong>形式语言理论</strong></li>
-</ol>
-<details class="abstract">
-<summary>Definition</summary>
-<ul>
-<li>字母表 <span class="arithmatex">\(\Sigma\)</span> 是一个有限符号集合</li>
-<li>语言 <span class="arithmatex">\(L\)</span> 是一个由 <span class="arithmatex">\(\Sigma\)</span> 中符号组成的字符串集合</li>
-<li>空字符串 <span class="arithmatex">\(\epsilon\)</span></li>
-<li>空语言 <span class="arithmatex">\(\emptyset\)</span></li>
-<li>所有可能字符串集合 <span class="arithmatex">\(\Sigma^*\)</span></li>
-<li>语言 <span class="arithmatex">\(L\)</span> 的补集 <span class="arithmatex">\(\Sigma^* - L\)</span></li>
-<li>语言的连接 <span class="arithmatex">\(L = \{x_1x_2 | x_1 \in L_1, x_2 \in L_2\}\)</span></li>
-<li>语言的闭包 <span class="arithmatex">\(L^* = \{\epsilon\} \cup L \cup L^2 \cup L^3 \cup \cdots\)</span></li>
-</ul>
-</details>
-<ol start="4">
-<li><strong>归约</strong></li>
-</ol>
-<ul>
-<li><strong>如果</strong>存在一个<strong>多项式时间可计算</strong>的函数 <span class="arithmatex">\(f: \{0,1\}^* \rightarrow \{0,1\}\)</span> ，使得对于所有 <span class="arithmatex">\(x \in \{0,1\}\)</span> ，<span class="arithmatex">\(x \in L_1\)</span> 当且仅当 <span class="arithmatex">\(f(x) \in L_2\)</span>，则称语言 <span class="arithmatex">\(L_1\)</span> 可<strong>多项式时间归约到</strong>语言 <span class="arithmatex">\(L_2\)</span>，记作 <span class="arithmatex">\(L_1 \leq_p L_2\)</span></li>
-<li>其中 <span class="arithmatex">\(f\)</span> 称为<strong>归约函数</strong>，计算 <span class="arithmatex">\(f\)</span> 的多项式时间算法 <span class="arithmatex">\(F\)</span> 称为<strong>归约算法</strong></li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">定理</p>
-<p>如果 <span class="arithmatex">\(L_1 \leq_p L_2\)</span> ，并且 <span class="arithmatex">\(L_2 \in NP\)</span> ，那么 <span class="arithmatex">\(L_1 \in NP\)</span></p>
-</div>
+<li>
+<p><strong>断言 1</strong>：状态翻转算法<strong>最多</strong>在 <span class="arithmatex">\(W= \sum_{e} |w_e|\)</span> 次迭代后终止于一个稳定配置</p>
 <div class="admonition success">
-<p class="admonition-title">NP完全的证明</p>
-<p>一个语言 <span class="arithmatex">\(L \subseteq \{0,1\}^*\)</span> 是NP完全的，如果</p>
+<p class="admonition-title">证明</p>
+<p>考虑进展度量</p>
+<div class="arithmatex">\[
+\Phi(S) = \sum_{e 是好边} |w_e|
+\]</div>
+<p>当节点 <span class="arithmatex">\( u \)</span> 翻转状态（<span class="arithmatex">\( S \)</span> 变为 <span class="arithmatex">\( S' \)</span>）时：</p>
+<ul>
+<li>所有与 <span class="arithmatex">\( u \)</span> 相关的好边变为坏边</li>
+<li>所有与 <span class="arithmatex">\( u \)</span> 相关的坏边变为好边</li>
+<li>所有其他边保持不变</li>
+</ul>
+<div class="arithmatex">\[
+\Phi(S') = \Phi(S) - \sum_{\begin{array}{c}
+e:e=(u,v)\in E \\
+e 是坏边
+\end{array}} |w_e| + \sum_{\begin{array}{c}
+e:e=(u,v)\in E \\
+e 是好边
+\end{array}} |w_e|
+\]</div>
+<p>显然 <span class="arithmatex">\(0 \leq \Phi(S) \leq W\)</span></p>
+</div>
+</li>
+<li>
+<p><strong>断言 2</strong>：在状态翻转算法中，<strong>任何最大化 <span class="arithmatex">\(\Phi\)</span> 的局部极大值都是一个稳定配置</strong></p>
+</li>
+</ul>
+<h3 id="_6">最大割问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><span class="arithmatex">\(L \in NP\)</span></li>
-<li>对于每个 <span class="arithmatex">\(L' \in NP\)</span> ，有 <span class="arithmatex">\(L' \leq_p L\)</span></li>
+<li><strong>问题</strong>：给定一个具有正整数边权重 <span class="arithmatex">\(w_e\)</span> 的无向图 <span class="arithmatex">\(G = (V, E)\)</span>，寻找一个节点划分 <span class="arithmatex">\((A, B)\)</span>，使得<strong>跨越割的边的总权重最大化</strong></li>
+</ol>
+<div class="arithmatex">\[
+w(A, B) := \sum_{u \in A, v \in B} w_{uv}
+\]</div>
+<div class="admonition abstract">
+<p class="admonition-title">note</p>
+<p>是霍普菲尔德神经网络问题的一个特殊情况，所有边的权重都是正数</p>
+</div>
+<ol start="2">
+<li>
+<p><strong>简单应用示例</strong>：<span class="arithmatex">\( n \)</span> 个活动，<span class="arithmatex">\( m \)</span> 个人，每个人希望参加其中两个活动，将每个活动安排在上午或下午，以最大化能够同时参加两个活动的人数</p>
+</li>
+<li>
+<p><strong>断言</strong>：设 <span class="arithmatex">\((A, B)\)</span> 是一个局部最优划分，<span class="arithmatex">\((A^*, B^*)\)</span> 是全局最优划分，那么 <span class="arithmatex">\(w(A, B) \geq \frac{1}{2} w(A^*, B^*)\)</span></p>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">证明</p>
+<p>由于 <span class="arithmatex">\((A, B)\)</span> 是局部最优划分，对于任意 <span class="arithmatex">\(u \in A\)</span></p>
+<div class="arithmatex">\[
+\sum_{\nu \in A} w_{uv} \leq \sum_{\nu \in B} w_{uv}
+\]</div>
+<p>对所有的 <span class="arithmatex">\(u \in A\)</span> 求和</p>
+<div class="arithmatex">\[
+2 \sum_{\{u,v\} \subseteq A} w_{uv} = \sum_{u \in A} \sum_{\nu \in A} w_{uv} \leq \sum_{u \in A} \sum_{\nu \in B} w_{uv} = w(A, B)
+\]</div>
+<p>类似地</p>
+<div class="arithmatex">\[
+2 \sum_{\{u,v\} \subseteq B} w_{uv} \leq w(A, B)
+\]</div>
+<p>因此</p>
+<div class="arithmatex">\[
+w(A^*, B^*) \leq \sum_{\{u,v\} \subseteq A} w_{uv} + \sum_{\{u,v\} \subseteq B} w_{uv} + w(A, B) \leq 2w(A, B)
+\]</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol>
+<li><strong>最坏时间复杂度</strong>：可能为 <span class="arithmatex">\(O(W)\)</span> 次翻转</li>
+<li>如果边的权重很大，可能不是多项式时间算法  </li>
 </ol>
 </div>
+<ol start="4">
+<li><strong>大改进翻转</strong>：仅选择翻转后能至少将割值增加 <span class="arithmatex">\(\frac{2\varepsilon}{|V|} w(A,B)\)</span> 的节点</li>
+</ol>
+<ul>
+<li>
+<p><strong>断言 1</strong>：大改进翻转算法终止时返回的割 <span class="arithmatex">\((A, B)\)</span> 满足  </p>
+<div class="arithmatex">\[
+(2 + \varepsilon) w(A, B) \geq w(A^*, B^*)
+\]</div>
+</li>
+<li>
+<p><strong>断言 2</strong>：大改进翻转算法最多在 <span class="arithmatex">\(O(n/\varepsilon \log W)\)</span> 次翻转后终止</p>
+</li>
+</ul>
+<ol start="5">
+<li><strong>更好的局部搜索</strong></li>
+</ol>
+<ul>
+<li>解的邻域应足够丰富，以避免陷入<strong>不良的局部最优解</strong></li>
+<li>但是解的邻域不应太大，保证能够<strong>高效地搜索</strong>邻域以找到可能的局部移动</li>
+<li><strong>k-L heuristic 算法</strong><ul>
+<li>第1步：尽可能优化单次翻转 $O(n)</li>
+<li>第k步：对未标记节点尽可能优化单次翻转 <span class="arithmatex">\(O(n-k+1)\)</span></li>
+<li><strong>邻域大小</strong>：<span class="arithmatex">\(n-1\)</span> 个候选解</li>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(n^2)\)</span></li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -3437,7 +3604,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../greedy/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 贪心算法">
+          <a href="../appro/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 近似算法">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3447,20 +3614,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                贪心算法
+                近似算法
               </div>
             </div>
           </a>
         
         
           
-          <a href="../appro/" class="md-footer__link md-footer__link--next" aria-label="下一页: 近似算法">
+          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                近似算法
+                PTA
               </div>
             </div>
             <div class="md-footer__button md-icon">
