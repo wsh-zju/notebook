@@ -3290,8 +3290,16 @@
 </ul>
 </li>
 <li><strong>分类</strong>：<ul>
-<li><strong>多项式时间近似方案（PTAS）</strong>：对于任何固定的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，该方案在其输入实例的规模 <span class="arithmatex">\(n\)</span> 的<strong>多项式时间</strong>内运行 <strong>e.g.</strong> <span class="arithmatex">\(O(n^{2/\epsilon})\)</span></li>
-<li><strong>完全多项式时间近似方案（FPTAS）</strong>：运行时间关于 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(1/ε\)</span> 都是多项式时间  <strong>e.g.</strong> <span class="arithmatex">\(O((1/\epsilon)^2 n^3)\)</span></li>
+<li><strong>多项式时间近似方案（PTAS）</strong>：<ul>
+<li>对于任何固定的 <span class="arithmatex">\(\epsilon &gt; 0\)</span>，该方案在其输入实例的规模 <span class="arithmatex">\(n\)</span> 的<strong>多项式时间</strong>内运行 </li>
+<li><strong>e.g.</strong> <span class="arithmatex">\(O(n^{2/\epsilon})\)</span></li>
+</ul>
+</li>
+<li><strong>完全多项式时间近似方案（FPTAS）</strong>：<ul>
+<li>运行时间关于 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(1/ε\)</span> 都是多项式时间  </li>
+<li><strong>e.g.</strong> <span class="arithmatex">\(O((1/\epsilon)^2 n^3)\)</span></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3343,14 +3351,14 @@
 <p><strong>即证</strong>：如果<code>Next Fit</code>生成了 <span class="arithmatex">\( 2M \)</span>（或 <span class="arithmatex">\( 2M+1 \)</span>）个箱子，那么最优解必须至少生成 <span class="arithmatex">\( M+1 \)</span> 个箱子</p>
 <p>设 <span class="arithmatex">\( S(B_i) \)</span> 为第 <span class="arithmatex">\( i \)</span> 个箱子中物品的大小之和。那么必须有：</p>
 <div class="arithmatex">\[
-\begin{aligned}
+\begin{gathered}
 S(B_1) + S(B_2) &gt; 1 \\
 S(B_3) + S(B_4) &gt; 1 \\
 \cdots\cdots\cdots \\
 S(B_{2M-1}) + S(B_{2M}) &gt; 1
-\end{aligned}
+\end{gathered}
 \]</div>
-<p><strong>最优解至少需要 <span class="arithmatex">\(\lceil\)</span> 所有物品总大小 / 1 <span class="arithmatex">\(\rceil\)</span> 个箱子</strong></p>
+<p><strong>最优解至少需要 <span class="arithmatex">\(\lceil\)</span>所有物品总大小/1<span class="arithmatex">\(\rceil\)</span> 个箱子</strong></p>
 <div class="arithmatex">\[
 \lceil \sum_{i=1}^{2M} S(B_i) \rceil \geq M+1
 \]</div>
@@ -3386,9 +3394,13 @@ S(B_{2M-1}) + S(B_{2M}) &gt; 1
 <p><strong>时间复杂度</strong>： <span class="arithmatex">\(O(N \log N)\)</span></p>
 </li>
 <li><strong>定理</strong>：设 <span class="arithmatex">\(M\)</span> 为打包物品列表 <span class="arithmatex">\(I\)</span> 所需的最优箱子数，则<code>first fit</code>使用的箱子数 <span class="arithmatex">\(\leq 1.7M\)</span> ，并且存在某些序列使得<code>first fit</code>使用 <span class="arithmatex">\(1.7(M-1)\)</span> 个箱子 </li>
-<li><strong><code>Best Fit</code>算法</strong></li>
+</ul>
+</li>
+<li>
+<p><strong><code>Best Fit</code>算法</strong></p>
+<ul>
 <li><strong>思路</strong>：放入最紧的箱子（即能放下该物品并且剩余空间最小）</li>
-<li><strong>时间复杂度</strong>： <span class="arithmatex">\(O(N \log N)\)</span></li>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(N \log N)\)</span></li>
 <li>使用的箱子数 <span class="arithmatex">\(\leq 1.7M\)</span> </li>
 </ul>
 </li>
@@ -3450,13 +3462,13 @@ S_i=\{0.4,0.4,0.6,0.6\}
 <p class="admonition-title">Example</p>
 <p><strong>Problem</strong>: </p>
 <div class="arithmatex">\[
-\begin{aligned}
+\begin{gathered}
 n=3, M=20 \\
 (p_1,p_2,p_3)=(25,24,15) \\
 (w_1,w_2,w_3)=(18,15,10)
-\end{aligned}
+\end{gathered}
 \]</div>
-<p><strong>Solution</strong>: <span class="arithmatex">\((x_1,x_2,x_3)=(0,1,1/2)且P=31.5\)</span></p>
+<p><strong>Solution</strong>: <span class="arithmatex">\((x_1,x_2,x_3)=(0,1,1/2)\)</span> 且 <span class="arithmatex">\(P=31.5\)</span></p>
 </div>
 <h3 id="0-1">0-1/整数版本<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h3>
 <div class="admonition error">
@@ -3501,11 +3513,11 @@ n=3, M=20 \\
 <p><strong>证明</strong></p>
 <p>已知</p>
 <div class="arithmatex">\[
-\begin{aligned}
+\begin{gathered}
 p_{max} ≤ P_{opt} ≤ P_{frac} \\
 p_{max} ≤ P_{greedy}
 P_{frac} ≤ P_{greedy} + p_{max}
-\end{aligned}
+\end{gathered}
 \]</div>
 <p>则</p>
 <div class="arithmatex">\[
