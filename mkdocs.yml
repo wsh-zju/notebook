@@ -40,6 +40,7 @@ nav:
       - 流水线CPU : Computer_Science/Computer_System/pipeline.md
       - 操作系统 : Computer_Science/Computer_System/OS.md
       - 进程 : Computer_Science/Computer_System/process.md
+      - CPU 调度 : Computer_Science/Computer_System/schedule.md
       - 实验 : Computer_Science/Computer_System/lab.md
     - 数据结构 :
       - FDS :

@@ -119,7 +119,7 @@
 
     !!! tip "为什么fork()返回两个值"
         1. 对于父进程来说，`fork()`只是一个普通的系统调用，`new_pid`通过系统调用返回值返回给父进程（保存在`pt_regs`中）
-        2. 对于子进程，同样通过`pt_regs`实现，将`pt_regs[0] = 0（将返回值设为0）
+        2. 对于子进程，同样通过`pt_regs`实现，将`pt_regs[0] = 0`（将返回值设为0）
 
 - **步骤**
     - 执行 `fork syscall`
@@ -512,4 +512,4 @@ ENDPROC(cpu_switch_to)
     ![alt text](photo/11-13.png){style="width:80%;display: block;margin: 20px auto"}
 
     1. `pt_regs`：负责在用户态与内核态切换`kernel_entry`时**保存用户态**的硬件上下文
-    2. `thread_info`：快速访问当前进程的 `task_struct`，
+    2. `thread_info`：快速访问当前进程的 `task_struct`
