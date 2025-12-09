@@ -94,14 +94,14 @@
     
 
     !!! example "Example"
-        ![alt text](photo/12-3.png){style="width:80%;display: block;margin: 20px auto"}
+        ![alt text](photo/12-3.png){style="width:60%;display: block;margin: 20px auto"}
 
         **`waiting time = finish time - arrival time - CPU burst time`**
 
 - **非抢占式**（shortest-remaining-time-first，SRTP）：选择**已经到达**的进程中CPU burst最短的进程
 
     !!! example "Example"
-        ![alt text](photo/12-2.png){style="width:80%;display: block;margin: 20px auto"}
+        ![alt text](photo/12-2.png){style="width:60%;display: block;margin: 20px auto"}
 
 3. **优劣势**
 

@@ -259,10 +259,7 @@ void quicksort(int *p , int start ,int end){
 ### 堆排序（heap sort）
 1. **思路**：利用最大/最小堆
 2. **平均时间复杂度**： $O(N\log N)$
-3. 对于包含 \( N \) 个不同元素的随机排列，堆排序的平均比较次数为：  
-    \[ 
-    2N \log N - O(N \log \log N) 
-    \]  
+3. 对于包含 \( N \) 个不同元素的随机排列，堆排序的平均比较次数为 $2N \log N - O(N \log \log N) $
 
 #### 方法一
 ```c
