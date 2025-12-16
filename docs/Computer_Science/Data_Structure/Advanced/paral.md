@@ -161,7 +161,7 @@ for P_i, 1 ≤ i ≤ n pardo
     ```
 
 
-- **结论：** 给定排名问题的解，合并问题可以在 O(1) 时间和 O(\( n+m \)) 工作量内解决。
+- **结论：** 给定排名问题的解，合并问题可以在 O(1) 时间和 O(\( n+m \)) 工作量内解决
 
 4. **并行排名算法**
 
@@ -169,8 +169,8 @@ for P_i, 1 ≤ i ≤ n pardo
 
 - **划分**：
     - **采样数量**：$p = n / \log n$
-    - $A_Select( i ) = A(1+(i-1)\log n)$，对于 \( 1 \leq i \leq p \)  
-    - $B_Select( i ) = B(1+(i-1)\log n)$，对于 \( 1 \leq i \leq p \)  
+    - $A_ Select( i ) = A(1+(i-1)\log n)$，对于 \( 1 \leq i \leq p \)  
+    - $B_ Select( i ) = B(1+(i-1)\log n)$，对于 \( 1 \leq i \leq p \)  
     - 计算每个**选定**元素（路标）的`RANK`
     - **性能**：\( T = O(\log n) \) 且 \( W = O(p\log n) = O(n) \)  
 - **实际排名**
@@ -216,7 +216,8 @@ for P_i, 1 ≤ i ≤ n pardo
 ![alt text](images/10-3.png){style="width:60%;display: block;margin: 20px auto"}
 
 - **性能**
-    - $T(n)=O(h+\log \log (n/h))=O(\log \log n)$ 且 $W(n)=O((n/h)(h+\log \log (n/h)))=O(n)$
+    - $T(n)=O(h+\log \log (n/h))=O(\log \log n)$ 
+    - $W(n)=O((n/h)(h+\log \log (n/h)))=O(n)$
 
 4. **随机采样**：
 

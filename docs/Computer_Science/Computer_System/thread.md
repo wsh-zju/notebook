@@ -17,11 +17,223 @@
     ![alt text](photo/14-2.png){style="width:60%;display: block;margin: 20px auto"}
 
 4. **并发性**：多线程进程可以同时执行多个任务
-5. **优点**
+
+### 优缺点
+
+1. **优点**
 
 - **经济性**
-    - **创建线程**成本低廉（相比于进程）：代码、数据和堆已经存在于内存中，只需要创建一个栈空间
+    - **创建线程**成本低廉（相比于进程）：代码、数据和堆已经存在于内存中，**只需要创建一个栈空间**
     - **线程间上下文切换**成本低廉（相比于进程）：不需要刷新缓存
 - **资源共享**
     - 线程共享**内存**：进程可能需要使用较复杂的IPC，但是进程不需要
-    - 在同一地址空间内进行并发活动的能力非常强大（但也充满风险）
+    - 在同一地址空间内**进行并发活动的能力非常强大**（但也充满风险）
+- **响应性**：一个包含并发活动的程序具有**更好的响应性**
+    - 当一个线程因等待某个事件而被阻塞时，另一个线程可以继续执行其他任务 
+    - **e.g.** 在客户端-服务器架构的实现中，可以创建一个新线程来响应客户端请求
+- **可扩展性**
+    - 同时运行多个“线程”可以**更有效地利用机器资源** 
+    - **e.g.** 在多核机器上
+
+!!! abstract "Notice"
+    **进程同样具有后两个特性**，但线程在资源共享和经济性方面更具优势
+
+2. **缺点**
+
+- **线程间的隔离性弱**：如果一个线程失败（**e.g.** 段错误），那么整个进程就会失败，从而导致整个程序崩溃
+
+    !!! info "Info"
+        1. 线程**无法受益于内存保护**：使用线程进行并发编程很困难，但对于使用**进程+共享内存段**的情况也是如此
+        2. 这催生了基于进程的并发模型 **e.g.** 谷歌 Chrome 浏览器
+
+- 线程可能比进程**更受内存限制**：原因在于操作系统对单个进程地址空间大小的限制（在64位架构上这已不再是问题）
+
+!!! warning "多线程挑战"
+    1. 处理数据依赖与同步问题
+    2. 在线程间划分任务活动
+    3. 平衡各线程间的负载
+    4. 在线程间拆分数据
+    5. 测试与调试
+
+### 分类
+1. **分类**
+
+- **User-thread**：内核不知道该线程，完全在用户空间运行
+- **Kernel-thread**：内核知道该线程，运行在用户空间或内核空间
+
+2. **对应关系**
+
+- **Many-to-one Model**：多个用户线程对应一个内核线程
+    - **优点**：多线程效率高、开销低（无需向内核发起系统调用）
+    - **缺点**：
+        - 无法利用**多核架构**的优势
+        - 如果一个线程阻塞，其他所有线程也会被阻塞
+- **One-to-One Model**：一个用户线程对应一个内核线程
+    - **优点**：消除了Many-to-one Model的两个缺点，线程管理变简单
+    - **缺点**：创建新线程需要**内核**参与工作
+    - **e.g.**：Linux、Windows、Solaris 9 及更高版本
+- **Many-to-Many Model**：多个用户线程对应多个内核线程（折中）
+    - 如果某个用户线程被阻塞，内核可以创建新的内核线程来避免阻塞所有用户线程
+    - **缺点**：太复杂
+- **Two-Level Model**：可以选择Many-to-Many或者One-to-One（太复杂）
+
+### 线程库
+1. 线程库为用户提供了在其程序中**创建线程的方式**
+2. **类型**
+
+- `C/C++`：
+    - `pthreads` 和 `Win32` 线程：由内核实现
+    - `OpenMP`：构建于 `pthreads` 之上，用于在"简单"情况下方便地进行多线程编程
+- `Java`：
+    - `Java` 线程：由 `JVM` 实现，`JVM` 依赖于内核实现的线程
+
+3. **`pthreads`**
+
+- 是规范，不是实现（API 规定了线程库的行为，具体实现由**库的开发者**决定）
+- **e.g.** 常见于 `UNIX` 操作系统（`Linux` 和 `Mac OS X`）
+
+??? example "示例代码"
+    ```c
+    #include <pthread.h>
+    #include <stdio.h>
+    #include <stdlib.h>
+    int sum; /* 该数据由线程共享 */
+
+    /* 线程将在此函数中执行 */
+    void *runner(void *param) {
+        int i, upper = atoi(param);
+        sum = 0;
+
+        for (i = 1; i <= upper; i++)
+            sum += 1;
+        pthread_exit(0);
+    }
+
+    int main(int argc, char *argv[]) {
+        pthread_t tid; /* 线程标识符 */
+        pthread_attr_t attr; /* 线程属性集 */
+
+        /* 设置线程的默认属性 */
+        pthread_attr_init(&attr);
+
+        /* 创建线程 */
+        pthread_create(&tid, &attr, runner, argv[1]);
+
+        /* 等待线程退出 */
+        pthread_join(tid, NULL);
+
+        printf("sum = %d\n", sum);
+    }
+    ```
+
+4. **`Win32`**
+
+??? example "示例代码"
+    ```c
+    #include <windows.h>
+    #include <stdio.h>
+    DWORD Sum; /* 该数据由线程共享 */
+
+    /* 线程将在此函数中执行 */
+    DWORD WINAPI Summation(LPVOID Param) {
+        DWORD Upper = *(DWORD *)Param;
+        for (DWORD i = 1; i <= Upper; i++)
+            Sum += i;
+        return 0;
+    }
+
+    int main(int argc, char *argv[]) {
+        DWORD ThreadId;
+        HANDLE ThreadHandle;
+        int Param;
+
+        Param = atoi(argv[1]);
+
+        /* 创建线程 */
+        ThreadHandle = CreateThread(NULL, 0,
+            Summation, /* 线程函数 */
+            &Param, /* 传递给线程函数的参数 */
+            0, &ThreadId); /* 返回线程标识符 */
+
+        /* 等待线程完成 */
+        WaitForSingleObject(ThreadHandle, INFINITE);
+
+        /* 输出结果 */
+        printf("sum = %d\n", Sum);
+    }
+    ```
+
+5. **`OpenMP`**
+
+- 通过识别**并行区域**（即可并行运行的代码块）来实现并行化
+- `#pragma omp parallel`：创建**与核心数量相同**的线程
+
+??? example "示例代码" 
+    ```c
+    #include <omp.h>
+    #include <stdio.h>
+    int main(int argc, char *argv[]){
+        /* sequential code */
+        #pragma omp parallel
+        {
+            printf("I am a parallel region.");  //并行
+        }
+        /* sequential code */
+        return 0;
+    }
+
+    #pragma omp parallel for
+    for (i = 0; i < N; i++){
+        c[i] = a[i] + b[i];
+    }
+    ```
+
+6. **`Java`**
+
+- **便利性**：可以避免所有内存管理的烦恼
+- **创建方式**：
+    - 继承 `Thread` 类
+    - 实现 `Runnable` 接口 
+
+??? example "示例代码"
+    ```java
+    class MyThread extends Thread {
+        public void run() {
+            . . .
+        }
+    }
+        MyThread t = new MyThread();
+        public interface Runnable {
+        public abstract void run();
+    }
+    ```
+
+## 线程相关问题
+
+1. **`fork()` 和 `exec()` 系统调用**
+
+- **调用可能性**
+    - 创建一个**仅包含一个线程的新进程**（该线程是调用 `fork()` 的线程的副本）
+    - 创建一个**包含原进程所有线程的新进程**（复制所有线程，包括调用 `fork()` 的线程）
+- 在 Linux 中采用上述**第一种**选项：如果在 `fork()` 之后调用 `exec()`，**所有线程都会被“清除”**
+
+2. **信号处理**
+
+- 有**多种选项**
+    - 将信号传递给信号**所适用**的线程
+    - 将信号传递给进程中的**每个**线程
+    - 将信号传递给进程中的**某些**线程
+    - **指定**一个特定线程接收**所有**信号
+- 在大多数 UNIX 版本中，线程可以指定它接受哪些信号以及不接受哪些信号
+- 在 Linux 系统中，处理线程与信号的关系较为复杂
+
+
+同步与异步
+
+目标线程的线程取消
+
+异步或延迟
+
+线程局部存储
+
+调度器激活
