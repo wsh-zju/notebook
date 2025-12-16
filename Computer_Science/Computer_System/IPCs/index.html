@@ -12,31 +12,27 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Data_Structure/Foundation/Linear/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/IPCs/">
       
       
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../Tree/">
       
       
         
       
       
-      <link rel="icon" href="../../../../style/images/favicon_io/favicon.ico">
+      <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>线性数据结构 - Lucy Wisteria's Notebook</title>
+        <title>进程间通信 - Lucy Wisteria's Notebook</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -65,23 +61,23 @@
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts/asana-math.css">
     
-      <link rel="stylesheet" href="../../../../style/css/tasklist.css">
+      <link rel="stylesheet" href="../../../style/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../../style/css/custom.css">
+      <link rel="stylesheet" href="../../../style/css/custom.css">
     
-      <link rel="stylesheet" href="../../../../style/css/card.css">
+      <link rel="stylesheet" href="../../../style/css/card.css">
     
-      <link rel="stylesheet" href="../../../../style/css/flink.css">
+      <link rel="stylesheet" href="../../../style/css/flink.css">
     
-      <link rel="stylesheet" href="../../../../style/css/changelog_extra.css">
+      <link rel="stylesheet" href="../../../style/css/changelog_extra.css">
     
-      <link rel="stylesheet" href="../../../../style/css/toc_extra.css">
+      <link rel="stylesheet" href="../../../style/css/toc_extra.css">
     
-      <link rel="stylesheet" href="../../../../style/css/svg_extra.css">
+      <link rel="stylesheet" href="../../../style/css/svg_extra.css">
     
-      <link rel="stylesheet" href="../../../../style/css/counter.css">
+      <link rel="stylesheet" href="../../../style/css/counter.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -106,7 +102,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#list" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -120,9 +116,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -139,7 +135,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              线性数据结构
+              进程间通信
             
           </span>
         </div>
@@ -259,7 +255,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -277,8 +273,6 @@
   
   
   
-    
-  
   
     
     
@@ -286,13 +280,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../Language/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../Language/" class="md-tabs__link">
           
   
   
@@ -317,7 +309,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../Math_and_Physics/" class="md-tabs__link">
+        <a href="../../../Math_and_Physics/" class="md-tabs__link">
           
   
   
@@ -339,7 +331,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../tool/" class="md-tabs__link">
+        <a href="../../../tool/" class="md-tabs__link">
           
   
   
@@ -375,9 +367,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     Lucy Wisteria's Notebook
@@ -425,7 +417,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -468,10 +460,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -485,20 +475,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -516,7 +503,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -561,7 +548,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/" class="md-nav__link ">
+            <a href="../../Language/" class="md-nav__link ">
               
   
   
@@ -636,7 +623,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/C/" class="md-nav__link ">
+            <a href="../../Language/C/" class="md-nav__link ">
               
   
   
@@ -680,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/pointer/" class="md-nav__link">
+      <a href="../../Language/C/pointer/" class="md-nav__link">
         
   
   
@@ -708,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/recursion/" class="md-nav__link">
+      <a href="../../Language/C/recursion/" class="md-nav__link">
         
   
   
@@ -736,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/structure/" class="md-nav__link">
+      <a href="../../Language/C/structure/" class="md-nav__link">
         
   
   
@@ -764,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/file/" class="md-nav__link">
+      <a href="../../Language/C/file/" class="md-nav__link">
         
   
   
@@ -792,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/C/accumulate/" class="md-nav__link">
+      <a href="../../Language/C/accumulate/" class="md-nav__link">
         
   
   
@@ -857,7 +844,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Language/Python/" class="md-nav__link ">
+            <a href="../../Language/Python/" class="md-nav__link ">
               
   
   
@@ -901,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/foundation/" class="md-nav__link">
+      <a href="../../Language/Python/foundation/" class="md-nav__link">
         
   
   
@@ -929,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/data/" class="md-nav__link">
+      <a href="../../Language/Python/data/" class="md-nav__link">
         
   
   
@@ -957,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/advance/" class="md-nav__link">
+      <a href="../../Language/Python/advance/" class="md-nav__link">
         
   
   
@@ -985,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Python/accumulate/" class="md-nav__link">
+      <a href="../../Language/Python/accumulate/" class="md-nav__link">
         
   
   
@@ -1021,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Language/Css/" class="md-nav__link">
+      <a href="../../Language/Css/" class="md-nav__link">
         
   
   
@@ -1104,7 +1091,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Computer_System/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1148,7 +1135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/data/" class="md-nav__link">
+      <a href="../data/" class="md-nav__link">
         
   
   
@@ -1176,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/logic/" class="md-nav__link">
+      <a href="../logic/" class="md-nav__link">
         
   
   
@@ -1204,7 +1191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/combine/" class="md-nav__link">
+      <a href="../combine/" class="md-nav__link">
         
   
   
@@ -1232,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/ALU/" class="md-nav__link">
+      <a href="../ALU/" class="md-nav__link">
         
   
   
@@ -1260,7 +1247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/sequence/" class="md-nav__link">
+      <a href="../sequence/" class="md-nav__link">
         
   
   
@@ -1288,7 +1275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/ISA/" class="md-nav__link">
+      <a href="../ISA/" class="md-nav__link">
         
   
   
@@ -1316,7 +1303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/CPU/" class="md-nav__link">
+      <a href="../CPU/" class="md-nav__link">
         
   
   
@@ -1344,7 +1331,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/MultiCPU/" class="md-nav__link">
+      <a href="../MultiCPU/" class="md-nav__link">
         
   
   
@@ -1372,7 +1359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/pipeline/" class="md-nav__link">
+      <a href="../pipeline/" class="md-nav__link">
         
   
   
@@ -1400,7 +1387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/OS/" class="md-nav__link">
+      <a href="../OS/" class="md-nav__link">
         
   
   
@@ -1428,7 +1415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/process/" class="md-nav__link">
+      <a href="../process/" class="md-nav__link">
         
   
   
@@ -1456,7 +1443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/schedule/" class="md-nav__link">
+      <a href="../schedule/" class="md-nav__link">
         
   
   
@@ -1484,7 +1471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Computer_System/lab/" class="md-nav__link">
+      <a href="../lab/" class="md-nav__link">
         
   
   
@@ -1517,10 +1504,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1535,11 +1520,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1560,7 +1545,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1575,8 +1560,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1609,15 +1592,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../Data_Structure/Foundation/" class="md-nav__link ">
               
   
   
@@ -1641,7 +1624,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1658,35 +1641,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    线性数据结构
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/Foundation/Linear/" class="md-nav__link">
         
   
   
@@ -1702,63 +1660,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        线性表 List
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="线性表 List">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        实现方式
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        应用
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1771,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tree/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Tree/" class="md-nav__link">
         
   
   
@@ -1799,7 +1700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Heap/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Heap/" class="md-nav__link">
         
   
   
@@ -1827,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ADT/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/ADT/" class="md-nav__link">
         
   
   
@@ -1855,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Graph/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Graph/" class="md-nav__link">
         
   
   
@@ -1883,7 +1784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Sort/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Sort/" class="md-nav__link">
         
   
   
@@ -1911,7 +1812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Hash/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/Hash/" class="md-nav__link">
         
   
   
@@ -1939,7 +1840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pta/" class="md-nav__link">
+      <a href="../../Data_Structure/Foundation/pta/" class="md-nav__link">
         
   
   
@@ -2026,7 +1927,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Advanced/" class="md-nav__link ">
+            <a href="../../Data_Structure/Advanced/" class="md-nav__link ">
               
   
   
@@ -2070,7 +1971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/tree/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/tree/" class="md-nav__link">
         
   
   
@@ -2098,7 +1999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/heap/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/heap/" class="md-nav__link">
         
   
   
@@ -2126,7 +2027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/queue/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/queue/" class="md-nav__link">
         
   
   
@@ -2154,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/amort/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/amort/" class="md-nav__link">
         
   
   
@@ -2182,7 +2083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/inv/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/inv/" class="md-nav__link">
         
   
   
@@ -2210,7 +2111,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/back/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/back/" class="md-nav__link">
         
   
   
@@ -2238,7 +2139,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/divide/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/divide/" class="md-nav__link">
         
   
   
@@ -2266,7 +2167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/DP/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/DP/" class="md-nav__link">
         
   
   
@@ -2294,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/greedy/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/greedy/" class="md-nav__link">
         
   
   
@@ -2322,7 +2223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/NP/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/NP/" class="md-nav__link">
         
   
   
@@ -2350,7 +2251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/appro/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/appro/" class="md-nav__link">
         
   
   
@@ -2378,7 +2279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/localsearch/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/localsearch/" class="md-nav__link">
         
   
   
@@ -2406,7 +2307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/random/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/random/" class="md-nav__link">
         
   
   
@@ -2434,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/paral/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/paral/" class="md-nav__link">
         
   
   
@@ -2462,7 +2363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Advanced/pta/" class="md-nav__link">
+      <a href="../../Data_Structure/Advanced/pta/" class="md-nav__link">
         
   
   
@@ -2536,7 +2437,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Math_and_Physics/" class="md-nav__link ">
+            <a href="../../../Math_and_Physics/" class="md-nav__link ">
               
   
   
@@ -2621,7 +2522,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
+            <a href="../../../Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
               
   
   
@@ -2665,7 +2566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
         
   
   
@@ -2693,7 +2594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
         
   
   
@@ -2721,7 +2622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
         
   
   
@@ -2749,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
         
   
   
@@ -2777,7 +2678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
         
   
   
@@ -2805,7 +2706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
         
   
   
@@ -2833,7 +2734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
         
   
   
@@ -2861,7 +2762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
         
   
   
@@ -2889,7 +2790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
         
   
   
@@ -2917,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
+      <a href="../../../Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
         
   
   
@@ -2985,7 +2886,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../tool/" class="md-nav__link ">
+            <a href="../../../tool/" class="md-nav__link ">
               
   
   
@@ -3083,7 +2984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tool/mkdocs/theme/" class="md-nav__link">
+      <a href="../../../tool/mkdocs/theme/" class="md-nav__link">
         
   
   
@@ -3173,7 +3074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tool/latex/Latex/" class="md-nav__link">
+      <a href="../../../tool/latex/Latex/" class="md-nav__link">
         
   
   
@@ -3226,6 +3127,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3234,22 +3137,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#list" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        线性表 List
+        通信模型
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="线性表 List">
+    <nav class="md-nav" aria-label="通信模型">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        实现方式
+        共享内存
       
     </span>
   </a>
@@ -3257,10 +3160,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        应用
+        消息传递
       
     </span>
   </a>
@@ -3289,7 +3192,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Data_Structure/Foundation/Linear.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/IPCs.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3297,136 +3200,10 @@
   
 
 
-  <h1>线性数据结构</h1>
-
-<h2 id="list">线性表 List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
-<h3 id="_1">实现方式<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">数组</label><label for="__tabbed_1_2">单向链表</label><label for="__tabbed_1_3">双向循环链表</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ol>
-<li><strong>缺点：</strong><ul>
-<li>需要预估数组最大容量</li>
-<li>插入和删除元素的时间复杂度为<span class="arithmatex">\(O(N)\)</span></li>
-</ul>
-</li>
-<li><strong>优点：</strong><ul>
-<li>查找任何数据的时间复杂度均为<span class="arithmatex">\(O(1)\)</span></li>
-</ul>
-</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><strong>初始化</strong>
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="w"> </span><span class="o">*</span><span class="n">list_ptr</span><span class="p">;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">list_node</span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">      </span><span class="kt">char</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">      </span><span class="n">list_ptr</span><span class="w"> </span><span class="n">next</span><span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">};</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list_ptr</span><span class="w"> </span><span class="n">ptr</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></li>
-<li><strong>插入：</strong>时间复杂度为<span class="arithmatex">\(O(1)\)</span>
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">temp</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">temp</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div></li>
-<li><strong>删除：</strong>时间复杂度为<span class="arithmatex">\(O(1)\)</span>
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">pre</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">=</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">free</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
-</code></pre></div></td></tr></table></div></li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><strong>初始化</strong>
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span>
-<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="o">*</span><span class="n">node_ptr</span><span class="p">;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">       </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">llink</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">       </span><span class="n">element</span><span class="w"> </span><span class="n">item</span><span class="p">;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">       </span><span class="n">node_ptr</span><span class="w"> </span><span class="n">rlink</span><span class="p">;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">};</span>
-</code></pre></div></td></tr></table></div></li>
-<li>满足<code>ptr = ptr-&gt;llink-&gt;rlink = ptr-&gt;rlink-&gt;llink</code></li>
-</ol>
-</div>
-</div>
-</div>
-<h3 id="_2">应用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">多项式</label><label for="__tabbed_2_2">多重表</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><strong>实现方式：</strong></p>
-<ol>
-<li>
-<p><strong>数组</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">CoeffArray</span><span class="p">[</span><span class="n">MaxDegree</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w">  </span><span class="c1">//系数数组，下标为指数</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">HighPower</span><span class="p">;</span><span class="w">                </span><span class="c1">// 最高指数</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span><span class="o">*</span><span class="n">Polynomial</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li>优点：加法、乘法操作直观，直接通过下标访问系数</li>
-<li>缺点：稀疏多项式会浪费大量数组空间</li>
-</ul>
-</li>
-<li>
-<p><strong>链表</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">poly_node</span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Coefficient</span><span class="p">;</span><span class="w">  </span><span class="c1">//系数</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Exponent</span><span class="p">;</span><span class="w">     </span><span class="c1">//指数</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">poly_node</span><span class="w"> </span><span class="o">*</span><span class="n">Next</span><span class="p">;</span><span class="w">  </span><span class="c1">//下一节点指针</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">}</span><span class="o">*</span><span class="n">PolyPtr</span><span class="p">;</span>
-</code></pre></div></td></tr></table></div>
-<ul>
-<li>优点：<ul>
-<li>仅存储非零项，节省空间</li>
-<li>处理稀疏多项式更高效，避免无效计算</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><strong>问题情境</strong>：管理40000名学生与2500门课程的选课关系</li>
-<li><strong>实现方式</strong><ul>
-<li><strong>二维数组</strong>
-    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">Enrollment</span><span class="p">[</span><span class="mi">40000</span><span class="p">][</span><span class="mi">2500</span><span class="p">];</span><span class="w">  </span><span class="c1">//Enrollment[i][j] = 1 表示学生i选课程j</span>
-</code></pre></div></td></tr></table></div><ul>
-<li>缺点：<ul>
-<li>空间浪费</li>
-<li>操作低效：遍历某门课程的学生需扫描整列</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>双向链表</strong></li>
-</ul>
-</li>
-</ol>
-</div>
-</div>
-</div>
+<h1 id="_1">进程间通信<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">通信模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">共享内存<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">消息传递<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 
 
 
@@ -3458,44 +3235,6 @@
         <footer class="md-footer">
   
     
-      
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
-        
-          
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数据结构基础">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                上一页
-              </span>
-              <div class="md-ellipsis">
-                数据结构基础
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../Tree/" class="md-footer__link md-footer__link--next" aria-label="下一页: 树">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                树
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -3526,10 +3265,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
