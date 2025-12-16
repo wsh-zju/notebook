@@ -3130,6 +3130,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        定义
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3154,6 +3173,38 @@
 
 
 <h1 id="_1">线程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Cause</p>
+<p><strong>如何让进程运行的更快？</strong>在进程内使用多个执行单元（多线程）</p>
+<p><img alt="alt text" src="../photo/14-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</div>
+<h2 id="_2">定义<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>线程</strong>：进程内的一个基本执行单位</li>
+<li><strong>独有的</strong>：每个线程都拥有自己的线程ID、程序计数器<code>pc</code>、寄存器组、栈</li>
+<li><strong>共享的</strong>：它与<strong>同一进程内</strong>的其他线程共享代码段、数据段、堆（动态分配的内存）、打开的文件与信号</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">代码</p>
+<p>同一个进程中的线程执行的代码可以相同，但大概率不同</p>
+<p><img alt="alt text" src="../photo/14-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+<ol start="4">
+<li><strong>并发性</strong>：多线程进程可以同时执行多个任务</li>
+<li><strong>优点</strong></li>
+</ol>
+<ul>
+<li><strong>经济性</strong><ul>
+<li><strong>创建线程</strong>成本低廉（相比于进程）：代码、数据和堆已经存在于内存中，只需要创建一个栈空间</li>
+<li><strong>线程间上下文切换</strong>成本低廉（相比于进程）：不需要刷新缓存</li>
+</ul>
+</li>
+<li><strong>资源共享</strong><ul>
+<li>线程共享<strong>内存</strong>：进程可能需要使用较复杂的IPC，但是进程不需要</li>
+<li>在同一地址空间内进行并发活动的能力非常强大（但也充满风险）</li>
+</ul>
+</li>
+</ul>
 
 
 
