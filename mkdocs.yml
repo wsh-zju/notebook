@@ -41,6 +41,8 @@ nav:
       - 操作系统 : Computer_Science/Computer_System/OS.md
       - 进程 : Computer_Science/Computer_System/process.md
       - CPU 调度 : Computer_Science/Computer_System/schedule.md
+      - 进程间通信 : Computer_Science/Computer_System/IPCs.md
+      - 线程 : Computer_Science/Computer_System/thread.md
       - 实验 : Computer_Science/Computer_System/lab.md
     - 数据结构 :
       - FDS :
