@@ -18,14 +18,14 @@
         <link rel="prev" href="../IPCs/">
       
       
-        <link rel="next" href="../lab/">
+        <link rel="next" href="../synch/">
       
       
         
       
       
       <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1095,6 +1095,8 @@
       
         
       
+        
+      
     
     
     
@@ -1638,10 +1640,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实现示例 Linux
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3380,6 +3421,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实现示例 Linux
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3771,11 +3823,138 @@
 <li>在大多数 UNIX 版本中，线程可以指定它接受哪些信号以及不接受哪些信号</li>
 <li>在 Linux 系统中，处理线程与信号的关系较为复杂</li>
 </ul>
-<p>同步与异步</p>
-<p>目标线程的线程取消</p>
-<p>异步或延迟</p>
-<p>线程局部存储</p>
-<p>调度器激活</p>
+<ol start="3">
+<li><strong>线程安全取消</strong></li>
+</ol>
+<ul>
+<li>允许一个线程直接终止另一个线程</li>
+<li><strong>实现方式</strong><ul>
+<li><strong>异步取消</strong>：一个线程立即终止另一个线程</li>
+<li><strong>延迟取消</strong>：线程<strong>定期</strong>检查是否应当终止</li>
+</ul>
+</li>
+<li>
+<p>调用线程取消只是发出取消请求，但实际的取消操作<strong>取决于目标线程的状态</strong></p>
+<ul>
+<li>如果线程<strong>禁用（关闭）</strong>了取消功能，取消请求将保持<strong>挂起</strong>状态，直到线程启用该功能</li>
+<li>默认取消类型为<strong>延迟取消</strong> <strong>e.g.</strong> <code>pthread_testcancel()</code></li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">实际的取消操作</p>
+<p><img alt="alt text" src="../photo/14-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">创建与取消线程的 Pthread 代码</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="cm">/* 创建线程 */</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">worker</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="cm">/* 取消线程 */</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">pthread_cancel</span><span class="p">(</span><span class="n">tid</span><span class="p">);</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="cm">/* 等待线程终止 */</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="n">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">缺点</p>
+<ol>
+<li><strong>异步取消</strong></li>
+</ol>
+<ul>
+<li>如果线程正在执行“重要操作”，异步取消可能导致<strong>状态不一致或引发同步问题</strong></li>
+<li><strong>e.g.</strong> 一个线程正在写变量，值还没有同步到内存或者 <code>cache</code>，这个 <code>bug</code> 很难被复现</li>
+</ul>
+<ol start="2">
+<li><strong>延迟取消</strong>：由于需要设置多个取消点，代码会变得<strong>繁琐</strong></li>
+<li>在 <code>Java</code> 中，<code>Thread.stop()</code> 方法已被弃用，因此必须使用<strong>延迟取消</strong>方式</li>
+</ol>
+</div>
+<ol start="4">
+<li><strong>线程调度</strong></li>
+</ol>
+<ul>
+<li>PCS：线程只在同一进程内竞争 CPU，调度由用户级线程库控制</li>
+<li>SCS：线程在整个系统中竞争 CPU，调度由操作系统内核控制</li>
+</ul>
+<h2 id="linux">实现示例 Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<ol>
+<li>在 <code>Linux</code> 中，线程也被称为轻量级进程（Lightweight Process，LWP）</li>
+<li><strong><code>clone()</code>系统调用</strong></li>
+</ol>
+<ul>
+<li><strong>用途</strong>：创建一个线程或进程</li>
+<li>新创建的线程/进程与其父进程<strong>共享</strong>执行上下文</li>
+<li><code>pthread</code> 库使用 <code>clone()</code> 来实现线程</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">参数</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">标志（flag）</th>
+<th style="text-align: left;">含义（meaning）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">CLONE_FS</td>
+<td style="text-align: left;">共享文件系统信息</td>
+</tr>
+<tr>
+<td style="text-align: center;">CLONE_VM</td>
+<td style="text-align: left;">共享同一块内存空间（地址空间）</td>
+</tr>
+<tr>
+<td style="text-align: center;">CLONE_SIGHAND</td>
+<td style="text-align: left;">共享信号处理函数</td>
+</tr>
+<tr>
+<td style="text-align: center;">CLONE_FILES</td>
+<td style="text-align: left;">共享已打开的文件集合（文件描述符表）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol start="3">
+<li><strong>数据结构</strong></li>
+</ol>
+<ul>
+<li><strong>TCB</strong>用来存储线程的信息</li>
+<li>Linux并不区分PCB和TCB，都是用 <code>task_struct</code> 来表示</li>
+</ul>
+<ol start="3">
+<li><strong>单线程进程 VS 多线程进程</strong></li>
+</ol>
+<p><img alt="alt text" src="../photo/14-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><code>ps -elf</code></li>
+<li>如果 <code>PID</code> 和 <code>LWP</code> <strong>相同</strong>，说明这个进程只有这一个线程</li>
+<li>如果<strong>不相同</strong>，说明进程有多个线程，此时进程的 <code>PID</code> 是第一个线程的 <code>LWP</code></li>
+</ul>
+<ol start="4">
+<li><strong>用户线程到内核线程的映射</strong></li>
+</ol>
+<ul>
+<li>同一个 <code>task_struct</code>（PCB）意味着是<strong>同一个线程</strong><ul>
+<li>一个用户线程映射到一个内核线程</li>
+<li><strong>但实际上，它们是同一个线程</strong></li>
+</ul>
+</li>
+<li><strong>执行方式</strong><ul>
+<li>可以在用户空间执行：用户代码，用户空间栈</li>
+<li>可以在内核空间执行<ul>
+<li><strong>e.g.</strong> 调用系统调用</li>
+<li>执行流程切换到内核，执行内核代码（用户线程对应的内核线程），使用内核空间栈</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -3828,13 +4007,13 @@
         
         
           
-          <a href="../lab/" class="md-footer__link md-footer__link--next" aria-label="下一页: 实验">
+          <a href="../synch/" class="md-footer__link md-footer__link--next" aria-label="下一页: 同步">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                实验
+                同步
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3875,10 +4054,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
