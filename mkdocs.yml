@@ -44,7 +44,6 @@ nav:
       - 进程间通信 : Computer_Science/Computer_System/IPCs.md
       - 线程 : Computer_Science/Computer_System/thread.md
       - 同步 : Computer_Science/Computer_System/synch.md
-      - 实验 : Computer_Science/Computer_System/lab.md
     - 数据结构 :
       - FDS :
         - Computer_Science/Data_Structure/Foundation/index.md
@@ -93,6 +92,7 @@ nav:
       - 主题 : tool/mkdocs/theme.md
     - Latex : 
       - 语法 : tool/latex/Latex.md
+    - 终端常用命令 : tool/lab.md
   
   
   

@@ -1,6 +1,6 @@
 # 同步
 
-??? example "Example"
+??? warning "Warning"
     ```c
     #include <stdio.h>
     #include <stdlib.h>
@@ -111,7 +111,7 @@
 - **Bounded waiting（有限等待）**：当一个进程申请进入临界区后，必须在**有限的时间**内获得许可并进入临界区，不能无限等待
 
 ----
-## Peterson’s solution
+## Peterson's solution
 
 1. **用途**：解决两个进程/线程的同步问题（只适用于两个进程的情况）
 2. **条件**
@@ -160,7 +160,7 @@ do {
 
 - **Mutual Exclusion（互斥访问）**：满足
   
-    !!! info "证明"
+    ??? info "证明"
         **假设**：P0 进入了临界区（说明 `flag[1] == false` 或者 `turn == 0`）
 
         !!! example "情况"
@@ -172,8 +172,8 @@ do {
 
 - **Progress（空闲让进）**：满足
 
-    !!! info "证明"
-        ![alt text](photo/15-2.png)
+    ??? info "证明"
+        ![alt text](photo/15-2.png){style="width:60%;display: block;margin: 20px auto"}
 
 - **Bounded waiting（有限等待）**：满足（P0 将在 P1 进入临界区后，**最多等待一次**后进入）
 
@@ -187,7 +187,7 @@ do {
         - 对于单线程，这样做是可以的，因为结果总是相同的
         - 对于多线程，重排可能会导致不一致或意外的结果
   
-    !!! example "指令重排"
+    ??? example "指令重排"
         ```c
         // 两个线程共享
         boolean flag = false;
@@ -261,7 +261,7 @@ do {
     flag = true;
     ```
 
-!!! tip "tips"
+??? tip "x86"
     ![alt text](photo/15-3.png)
 
 ### Hardware instructions
@@ -295,7 +295,7 @@ do {
 - 第一个成功执行 `test_set` 的进程：看到旧值 `FALSE`，把锁设为 `TRUE`，循环结束，进入临界区
 - 其他进程：看到旧值 `TRUE`，继续循环等待
 
-!!! info "三大性质"
+??? info "三大性质"
 	1. mutual exclusion：满足，`test_set` 是原子操作，同一时刻只能有一个进程把 `lock` 从 `FALSE` 改成 `TRUE`
 	2. progress：满足，只要临界区空闲（`lock = FALSE`），想进入的进程一定能通过 `test_set` 竞争到锁
 	3. bounded-waiting：**不满足**！！！！！
@@ -303,7 +303,7 @@ do {
     !!! example "Example"
         假设有三个线程
         
-        ![alt text](photo/15-4.png)
+        ![alt text](photo/15-4.png){style="width:60%;display: block;margin: 20px auto"}
 
     !!! success "改进"
         ```c
@@ -328,7 +328,7 @@ do {
         } while (true);
         ```
 
-        ![alt text](photo/15-5.png)
+        ![alt text](photo/15-5.png){style="width:60%;display: block;margin: 20px auto"}
 
 #### Compare-and-swap
 1. **定义**
@@ -529,14 +529,14 @@ do {
 } while (TRUE);  // while 循环，但不进行忙等待
 ```
 
-!!! abstract "互斥锁 vs 信号量"
+??? abstract "互斥锁 vs 信号量"
     1. **互斥锁或自旋锁**（Mutex or Spinlock）
 	
     - **优点**：没有阻塞，不需要操作系统切换上下文
 	- **缺点**：在循环等待时浪费 CPU 时间
 	- **适合**于：短的临界区
 
-    1. **信号量**（Semaphore）
+    2. **信号量**（Semaphore）
 	
     - **优点**：没有循环等待，可以节省大量的 CPU 时间
 	- **缺点**：上下文切换耗时（将一个进程从运行状态切换到休眠状态，然后再切换回来）
@@ -558,7 +558,7 @@ do {
     } while (TRUE);  // while 循环，但不进行忙等待
     ```
 
-!!! example "真正实现"
+??? example "真正实现"
     ```c
     typedef struct __lock_t {
         int flag;   // value：用于标记锁的状态，0 表示没有被占用，1 表示已被占用
@@ -603,7 +603,7 @@ do {
     }
     ```
 
-## 死锁与饥饿
+### 死锁与饥饿
 1. **死锁**（Deadlock）：两个或多个进程**无限期地**等待一个事件，而该事件只能由其中一个等待的进程触发
 
 !!! example "Example"
@@ -627,7 +627,7 @@ do {
 
 2. **饥饿**（Starvation）：进程被无限期阻塞，永远不会从信号量的等待队列中被移除
 
-## 优先级反转
+### 优先级反转
 
 1. **优先级反转**（Priority Inversion）：一个高优先级进程被低优先级任务**间接抢占**
 
@@ -644,4 +644,136 @@ do {
 
 2. **解决方案**：优先级继承（Priority Inheritance）
 
-- 将等待进程（PH）的最高优先级临时分配给持有锁的进程（PL）
+- 将等待进程（PH）的**最高优先级临时分配**给持有锁的进程（PL）
+- PL 会尽快完成它的任务并释放锁，PH 就可以获得锁并继续执行
+- 当 PL 释放锁后，它的优先级会**恢复**为原始的低优先级
+
+--- 
+## Linux
+1. 2.6 以前的版本的 kernel 中通过禁用中断来实现一些短的 critical section；2.6 及之后的版本的 kernel 是抢占式的
+2. Linux **提供的同步机制**：
+
+- 原子整数（atomic integers）
+- 自旋锁（spinlocks）
+- 信号量（semaphores）：
+    - 在单处理器系统上，自旋锁通过启用/禁用内核抢占来替代
+    - `down()` 和 `up()`
+- 读写锁（reader-writer locks）
+
+---
+## [POSIX](https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/OS/?h=posix#_6)  同步机制
+
+1. **用于user space 的同步机制**
+2. 常见的 POSIX **同步机制**
+
+- 互斥锁（mutex locks）
+- 信号量（semaphores）
+- 条件变量（condition variable）
+
+3. **互斥锁**
+
+```c
+#include <pthread.h>
+pthread_mutex_t mutex;
+
+/* 创建并初始化互斥锁 */
+pthread_mutex_init(&mutex, NULL);
+
+/* 获取互斥锁 */
+pthread_mutex_lock(&mutex);
+
+/* 临界区 */
+
+/* 释放互斥锁 */
+pthread_mutex_unlock(&mutex);
+```
+
+4. **信号量**
+
+- 未命名信号量（unnamed）：只能被当前进程使用
+   
+    !!! abstract "code"
+        ```c
+        #include <semaphore.h>
+        sem_t sem;
+
+        /* 创建并初始化信号量，将其值设为 1 */
+        sem_init(&sem, 0, 1);
+
+        /* 获取信号量 */
+        sem_wait(&sem);
+
+        /* 临界区 */
+
+        /* 释放信号量 */
+        sem_post(&sem);
+        ```
+
+- 命名信号量（named）：可以被不相关的进程使用
+	- 通过 `sem_open()` 函数创建并初始化命名信号量，`"SEM"` 为信号量的名称，`O_CREAT` 表示创建新信号量
+	- 另一个进程可以通过信号量的名称访问它
+    
+    !!! abstract "code"
+        ```c
+        #include <semaphore.h>
+        sem_t *sem;
+
+        /* 创建并初始化信号量，将其值设为 1 */
+        sem = sem_open("SEM", O_CREAT, 0666, 1);
+
+        /* 获取信号量 */
+        sem_wait(sem);
+
+        /* 临界区 */
+
+        /* 释放信号量 */
+        sem_post(sem);
+        ```
+
+5. **条件变量**：允许线程等待某个特定的条件发生，才能继续执行
+
+- while 检查不是原子操作时，可以使用条件变量
+- **不能支持多线程**
+- 条件变量是用户模式对象，不能在进程间共享
+
+!!! example "Example"
+    ```c
+    void* thread_func(void *args) {
+        while (x != 10) {
+            sleep(5);  // 每次检查不到条件时，线程会休眠
+        }
+        // 条件成立后，执行后续的代码
+    }
+    ```
+
+!!! abstract "操作"
+    - `wait(condition, lock)`：释放锁并让线程等待，直到条件成立；线程被唤醒后，需要重新获取锁
+	- `signal(condition, lock)`：如果有线程在等待条件成立，唤醒一个线程
+	- `broadcast(condition, lock)`：与 `signal()` 类似，但**唤醒所有等待线程**
+
+!!! success "POSIX 条件变量"
+    POSIX 条件变量与 POSIX 互斥锁关联，以提供互斥（保证操作的原子性）
+
+    ```c
+    // 创建和初始化条件变量
+    pthread_mutex_t mutex;
+    pthread_cond_t cond_var;
+    pthread_mutex_init(&mutex, NULL);
+    pthread_cond_init(&cond_var, NULL);
+    
+    // 	线程等待条件：a == b 为 true
+    pthread_mutex_lock(&mutex);
+    while (a != b)
+        pthread_cond_wait(&cond_var, &mutex);  // 释放锁并等待条件
+    pthread_mutex_unlock(&mutex);
+    
+    // 线程发出信号，唤醒另一个线程
+    pthread_mutex_lock(&mutex);
+    /* 执行可能满足条件的操作 */
+    pthread_mutex_unlock(&mutex);
+    pthread_cond_signal(&cond_var);  // 唤醒线程 1
+    ```
+
+!!! abstract "信号量 vs 条件变量"
+    - 条件变量可以唤醒所有等待条件的线程，适用于多个线程等待相同条件的情况（只关心队列是否为空，而不关心队列的长度）
+    - 信号量通常只唤醒一个线程，它适用于较少的线程间同步情况
