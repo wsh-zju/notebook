@@ -18,7 +18,7 @@
         <link rel="prev" href="../thread/">
       
       
-        <link rel="next" href="../lab/">
+        <link rel="next" href="../../Data_Structure/Foundation/">
       
       
         
@@ -1095,8 +1095,6 @@
       
         
       
-        
-      
     
     
     
@@ -1622,7 +1620,7 @@
   <a href="#petersons-solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Peterson’s solution
+        Peterson's solution
       
     </span>
   </a>
@@ -1741,12 +1739,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1756,12 +1749,39 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         优先级反转
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSIX 同步机制
       
     </span>
   </a>
@@ -1772,34 +1792,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    实验
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -3184,6 +3176,8 @@
       
         
       
+        
+      
     
     
     
@@ -3416,6 +3410,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tool/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    终端常用命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3464,7 +3486,7 @@
   <a href="#petersons-solution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Peterson’s solution
+        Peterson's solution
       
     </span>
   </a>
@@ -3583,12 +3605,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3598,12 +3615,39 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         优先级反转
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSIX 同步机制
       
     </span>
   </a>
@@ -3636,8 +3680,8 @@
 
 
 <h1 id="_1">同步<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<details class="example">
-<summary>Example</summary>
+<details class="warning">
+<summary>Warning</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -3806,7 +3850,7 @@
 <li><strong>Bounded waiting（有限等待）</strong>：当一个进程申请进入临界区后，必须在<strong>有限的时间</strong>内获得许可并进入临界区，不能无限等待</li>
 </ul>
 <hr />
-<h2 id="petersons-solution">Peterson’s solution<a class="headerlink" href="#petersons-solution" title="Permanent link">&para;</a></h2>
+<h2 id="petersons-solution">Peterson's solution<a class="headerlink" href="#petersons-solution" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>用途</strong>：解决两个进程/线程的同步问题（只适用于两个进程的情况）</li>
 <li><strong>条件</strong></li>
@@ -3889,8 +3933,8 @@
 <ul>
 <li>
 <p><strong>Mutual Exclusion（互斥访问）</strong>：满足</p>
-<div class="admonition info">
-<p class="admonition-title">证明</p>
+<details class="info">
+<summary>证明</summary>
 <p><strong>假设</strong>：P0 进入了临界区（说明 <code>flag[1] == false</code> 或者 <code>turn == 0</code>）</p>
 <div class="admonition example">
 <p class="admonition-title">情况</p>
@@ -3901,14 +3945,14 @@
 </ol>
 </div>
 <p>无论 <code>flag[1]</code> 和 <code>turn</code> 取什么值，<strong>只要 P0 在临界区，P1 一定无法进入临界区</strong>，因此 Peterson 算法保证互斥性</p>
-</div>
+</details>
 </li>
 <li>
 <p><strong>Progress（空闲让进）</strong>：满足</p>
-<div class="admonition info">
-<p class="admonition-title">证明</p>
-<p><img alt="alt text" src="../photo/15-2.png" /></p>
-</div>
+<details class="info">
+<summary>证明</summary>
+<p><img alt="alt text" src="../photo/15-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
 </li>
 <li>
 <p><strong>Bounded waiting（有限等待）</strong>：满足（P0 将在 P1 进入临界区后，<strong>最多等待一次</strong>后进入）</p>
@@ -3927,8 +3971,8 @@
 </ul>
 </li>
 </ul>
-<div class="admonition example">
-<p class="admonition-title">指令重排</p>
+<details class="example">
+<summary>指令重排</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -3958,7 +4002,7 @@
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>如果发生这种情况，输出可能是 0</p>
-</div>
+</details>
 </div>
 <hr />
 <h2 id="_2">硬件支持同步<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -4033,10 +4077,10 @@
 <a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">tips</p>
+<details class="tip">
+<summary>x86</summary>
 <p><img alt="alt text" src="../photo/15-3.png" /></p>
-</div>
+</details>
 <h3 id="hardware-instructions">Hardware instructions<a class="headerlink" href="#hardware-instructions" title="Permanent link">&para;</a></h3>
 <p><strong>定义</strong>：一些特殊的硬件指令，允许我们<strong>原子地</strong>（不可中断地）对一个字中的内容进行测试并修改，或者<strong>原子地</strong>交换两个字的内容</p>
 <h4 id="test-and-set">Test-and-set<a class="headerlink" href="#test-and-set" title="Permanent link">&para;</a></h4>
@@ -4076,8 +4120,8 @@
 <li>第一个成功执行 <code>test_set</code> 的进程：看到旧值 <code>FALSE</code>，把锁设为 <code>TRUE</code>，循环结束，进入临界区</li>
 <li>其他进程：看到旧值 <code>TRUE</code>，继续循环等待</li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">三大性质</p>
+<details class="info">
+<summary>三大性质</summary>
 <ol>
 <li>mutual exclusion：满足，<code>test_set</code> 是原子操作，同一时刻只能有一个进程把 <code>lock</code> 从 <code>FALSE</code> 改成 <code>TRUE</code></li>
 <li>progress：满足，只要临界区空闲（<code>lock = FALSE</code>），想进入的进程一定能通过 <code>test_set</code> 竞争到锁</li>
@@ -4086,7 +4130,7 @@
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>假设有三个线程</p>
-<p><img alt="alt text" src="../photo/15-4.png" /></p>
+<p><img alt="alt text" src="../photo/15-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">改进</p>
@@ -4128,9 +4172,9 @@
 <a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">    </span><span class="cm">/* remainder section */</span>
 <a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="alt text" src="../photo/15-5.png" /></p>
+<p><img alt="alt text" src="../photo/15-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
-</div>
+</details>
 <h4 id="compare-and-swap">Compare-and-swap<a class="headerlink" href="#compare-and-swap" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>定义</strong></li>
@@ -4423,8 +4467,8 @@
 <a id="__codelineno-18-26" name="__codelineno-18-26"></a><span class="w">    </span><span class="n">remainder</span><span class="w"> </span><span class="n">section</span><span class="w">  </span><span class="c1">// 其余部分</span>
 <a id="__codelineno-18-27" name="__codelineno-18-27"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span><span class="w">  </span><span class="c1">// while 循环，但不进行忙等待</span>
 </code></pre></div></td></tr></table></div>
-<div class="admonition abstract">
-<p class="admonition-title">互斥锁 vs 信号量</p>
+<details class="abstract">
+<summary>互斥锁 vs 信号量</summary>
 <ol>
 <li><strong>互斥锁或自旋锁</strong>（Mutex or Spinlock）</li>
 </ol>
@@ -4433,7 +4477,7 @@
 <li><strong>缺点</strong>：在循环等待时浪费 CPU 时间</li>
 <li><strong>适合</strong>于：短的临界区</li>
 </ul>
-<ol>
+<ol start="2">
 <li><strong>信号量</strong>（Semaphore）</li>
 </ol>
 <ul>
@@ -4441,7 +4485,7 @@
 <li><strong>缺点</strong>：上下文切换耗时（将一个进程从运行状态切换到休眠状态，然后再切换回来）</li>
 <li><strong>适合</strong>于：长的临界区</li>
 </ul>
-</div>
+</details>
 <div class="admonition tip">
 <p class="admonition-title">原子性</p>
 <p>真实实现中，<code>wait</code> 或 <code>signal</code> 操作应该是<strong>原子性的</strong>，需要用 <strong>spinlock</strong> 来实现</p>
@@ -4464,8 +4508,8 @@
 <a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span><span class="w">  </span><span class="c1">// while 循环，但不进行忙等待</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<div class="admonition example">
-<p class="admonition-title">真正实现</p>
+<details class="example">
+<summary>真正实现</summary>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
@@ -4548,8 +4592,8 @@
 <a id="__codelineno-20-40" name="__codelineno-20-40"></a><span class="w">    </span><span class="cm">/* end */</span>
 <a id="__codelineno-20-41" name="__codelineno-20-41"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-</div>
-<h2 id="_4">死锁与饥饿<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+</details>
+<h3 id="_4">死锁与饥饿<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>死锁</strong>（Deadlock）：两个或多个进程<strong>无限期地</strong>等待一个事件，而该事件只能由其中一个等待的进程触发</li>
 </ol>
@@ -4577,7 +4621,7 @@
 <ol start="2">
 <li><strong>饥饿</strong>（Starvation）：进程被无限期阻塞，永远不会从信号量的等待队列中被移除</li>
 </ol>
-<h2 id="_5">优先级反转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_5">优先级反转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>优先级反转</strong>（Priority Inversion）：一个高优先级进程被低优先级任务<strong>间接抢占</strong></li>
 </ol>
@@ -4599,8 +4643,215 @@
 <li><strong>解决方案</strong>：优先级继承（Priority Inheritance）</li>
 </ol>
 <ul>
-<li>将等待进程（PH）的最高优先级临时分配给持有锁的进程（PL）</li>
+<li>将等待进程（PH）的<strong>最高优先级临时分配</strong>给持有锁的进程（PL）</li>
+<li>PL 会尽快完成它的任务并释放锁，PH 就可以获得锁并继续执行</li>
+<li>当 PL 释放锁后，它的优先级会<strong>恢复</strong>为原始的低优先级</li>
 </ul>
+<hr />
+<h2 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<ol>
+<li>2.6 以前的版本的 kernel 中通过禁用中断来实现一些短的 critical section；2.6 及之后的版本的 kernel 是抢占式的</li>
+<li>Linux <strong>提供的同步机制</strong>：</li>
+</ol>
+<ul>
+<li>原子整数（atomic integers）</li>
+<li>自旋锁（spinlocks）</li>
+<li>信号量（semaphores）：<ul>
+<li>在单处理器系统上，自旋锁通过启用/禁用内核抢占来替代</li>
+<li><code>down()</code> 和 <code>up()</code></li>
+</ul>
+</li>
+<li>读写锁（reader-writer locks）</li>
+</ul>
+<hr />
+<h2 id="posix"><a href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/OS/?h=posix#_6">POSIX</a>  同步机制<a class="headerlink" href="#posix" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>用于user space 的同步机制</strong></li>
+<li>常见的 POSIX <strong>同步机制</strong></li>
+</ol>
+<ul>
+<li>互斥锁（mutex locks）</li>
+<li>信号量（semaphores）</li>
+<li>条件变量（condition variable）</li>
+</ul>
+<ol start="3">
+<li><strong>互斥锁</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-22-10">10</a></span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span>
+<span class="normal"><a href="#__codelineno-22-12">12</a></span>
+<span class="normal"><a href="#__codelineno-22-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;pthread.h&gt;</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="cm">/* 创建并初始化互斥锁 */</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="cm">/* 获取互斥锁 */</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9"></a>
+<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="cm">/* 临界区 */</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11"></a>
+<a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="cm">/* 释放互斥锁 */</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ol start="4">
+<li><strong>信号量</strong></li>
+</ol>
+<ul>
+<li>
+<p>未命名信号量（unnamed）：只能被当前进程使用</p>
+<div class="admonition abstract">
+<p class="admonition-title">code</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span>
+<span class="normal"><a href="#__codelineno-23-12">12</a></span>
+<span class="normal"><a href="#__codelineno-23-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">sem_t</span><span class="w"> </span><span class="n">sem</span><span class="p">;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="cm">/* 创建并初始化信号量，将其值设为 1 */</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="n">sem_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a>
+<a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="cm">/* 获取信号量 */</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="n">sem_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9"></a>
+<a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="cm">/* 临界区 */</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11"></a>
+<a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="cm">/* 释放信号量 */</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="n">sem_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</li>
+<li>
+<p>命名信号量（named）：可以被不相关的进程使用</p>
+<ul>
+<li>通过 <code>sem_open()</code> 函数创建并初始化命名信号量，<code>"SEM"</code> 为信号量的名称，<code>O_CREAT</code> 表示创建新信号量</li>
+<li>另一个进程可以通过信号量的名称访问它</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">code</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;semaphore.h&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="n">sem_t</span><span class="w"> </span><span class="o">*</span><span class="n">sem</span><span class="p">;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="cm">/* 创建并初始化信号量，将其值设为 1 */</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="n">sem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sem_open</span><span class="p">(</span><span class="s">&quot;SEM&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_CREAT</span><span class="p">,</span><span class="w"> </span><span class="mo">0666</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="cm">/* 获取信号量 */</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="n">sem_wait</span><span class="p">(</span><span class="n">sem</span><span class="p">);</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="cm">/* 临界区 */</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="cm">/* 释放信号量 */</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="n">sem_post</span><span class="p">(</span><span class="n">sem</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</li>
+</ul>
+<ol start="5">
+<li><strong>条件变量</strong>：允许线程等待某个特定的条件发生，才能继续执行</li>
+</ol>
+<ul>
+<li>while 检查不是原子操作时，可以使用条件变量</li>
+<li><strong>不能支持多线程</strong></li>
+<li>条件变量是用户模式对象，不能在进程间共享</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span>
+<span class="normal"><a href="#__codelineno-25-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="nf">thread_func</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 每次检查不到条件时，线程会休眠</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="w">    </span><span class="c1">// 条件成立后，执行后续的代码</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">操作</p>
+<ul>
+<li><code>wait(condition, lock)</code>：释放锁并让线程等待，直到条件成立；线程被唤醒后，需要重新获取锁</li>
+<li><code>signal(condition, lock)</code>：如果有线程在等待条件成立，唤醒一个线程</li>
+<li><code>broadcast(condition, lock)</code>：与 <code>signal()</code> 类似，但<strong>唤醒所有等待线程</strong></li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">POSIX 条件变量</p>
+<p>POSIX 条件变量与 POSIX 互斥锁关联，以提供互斥（保证操作的原子性）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-26-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-26-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-26-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-26-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-26-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-26-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-26-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-26-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-26-10">10</a></span>
+<span class="normal"><a href="#__codelineno-26-11">11</a></span>
+<span class="normal"><a href="#__codelineno-26-12">12</a></span>
+<span class="normal"><a href="#__codelineno-26-13">13</a></span>
+<span class="normal"><a href="#__codelineno-26-14">14</a></span>
+<span class="normal"><a href="#__codelineno-26-15">15</a></span>
+<span class="normal"><a href="#__codelineno-26-16">16</a></span>
+<span class="normal"><a href="#__codelineno-26-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1">// 创建和初始化条件变量</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="n">pthread_mutex_t</span><span class="w"> </span><span class="n">mutex</span><span class="p">;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="n">pthread_cond_t</span><span class="w"> </span><span class="n">cond_var</span><span class="p">;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="n">pthread_mutex_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="n">pthread_cond_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cond_var</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="c1">//  线程等待条件：a == b 为 true</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10"></a><span class="w">    </span><span class="n">pthread_cond_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cond_var</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span><span class="w">  </span><span class="c1">// 释放锁并等待条件</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13"></a><span class="c1">// 线程发出信号，唤醒另一个线程</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14"></a><span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15"></a><span class="cm">/* 执行可能满足条件的操作 */</span>
+<a id="__codelineno-26-16" name="__codelineno-26-16"></a><span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17"></a><span class="n">pthread_cond_signal</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cond_var</span><span class="p">);</span><span class="w">  </span><span class="c1">// 唤醒线程 1</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">信号量 vs 条件变量</p>
+<ul>
+<li>条件变量可以唤醒所有等待条件的线程，适用于多个线程等待相同条件的情况（只关心队列是否为空，而不关心队列的长度）</li>
+<li>信号量通常只唤醒一个线程，它适用于较少的线程间同步情况</li>
+</ul>
+</div>
 
 
 
@@ -4653,13 +4904,13 @@
         
         
           
-          <a href="../lab/" class="md-footer__link md-footer__link--next" aria-label="下一页: 实验">
+          <a href="../../Data_Structure/Foundation/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构基础">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                实验
+                数据结构基础
               </div>
             </div>
             <div class="md-footer__button md-icon">
