@@ -18,7 +18,7 @@
         <link rel="prev" href="../thread/">
       
       
-        <link rel="next" href="../../Data_Structure/Foundation/">
+        <link rel="next" href="../deadlock/">
       
       
         
@@ -1095,6 +1095,8 @@
       
         
       
+        
+      
     
     
     
@@ -1788,10 +1790,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典同步问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典同步问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有界缓冲区问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读者-写者 问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哲学家进餐问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deadlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    死锁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2185,6 +2265,8 @@
       
         
           
+        
+      
         
       
         
@@ -2648,6 +2730,34 @@
     
   
     并行算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Data_Structure/Advanced/exter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    外部排序
   
 
     
@@ -3651,6 +3761,56 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        经典同步问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="经典同步问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        有界缓冲区问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        读者-写者 问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哲学家进餐问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4852,6 +5012,263 @@
 <li>信号量通常只唤醒一个线程，它适用于较少的线程间同步情况</li>
 </ul>
 </div>
+<hr />
+<h2 id="_6">经典同步问题<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">有界缓冲区问题<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>有界缓冲区问题</strong>（Bounded-Buffer Problem）：也称为生产者-消费者问题（producer-consumer problem）</li>
+</ol>
+<p>-<strong>两个进程</strong>：生产者（producer）和消费者（consumer）共享 n 个缓冲区
+    - <strong>生产者</strong>生成数据，并把数据放入缓冲区
+    - <strong>消费者</strong>通过从缓冲区取出数据来消费数据
+- <strong>保证</strong>：
+    - 当缓冲区<strong>已满</strong>时，生产者不会尝试往缓冲区继续放数据
+    - 当缓冲区<strong>为空</strong>时，消费者不会尝试从缓冲区取数据</p>
+<ol start="2">
+<li><strong>解决方案</strong></li>
+</ol>
+<ul>
+<li><code>n</code> 个缓冲区，每个缓冲区只能容纳 <code>1</code> 个数据项</li>
+<li>信号量 <code>mutex</code> 初始化为 <code>1</code></li>
+<li>信号量 <code>full-slots</code> 初始化为 <code>0</code></li>
+<li>信号量 <code>empty-slots</code> 初始化为 <code>N</code></li>
+</ul>
+<ol start="3">
+<li><strong>生产者进程</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-27-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-27-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-27-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-27-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-27-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-27-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-27-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-27-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">    </span><span class="c1">// produce an item           // 生产一个数据项</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">empty</span><span class="o">-</span><span class="n">slots</span><span class="p">);</span><span class="w">          </span><span class="c1">// 等待“空槽位”&gt;0：防止缓冲区满了还写入</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">                </span><span class="c1">// 获取互斥锁：进入临界区，独占访问缓冲区</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="w">    </span><span class="c1">// add the item to the buffer// 把数据项放入缓冲区（对共享缓冲区的写操作）</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">              </span><span class="c1">// 释放互斥锁：退出临界区</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">full</span><span class="o">-</span><span class="n">slots</span><span class="p">);</span><span class="w">         </span><span class="c1">// 满槽位+1：通知消费者“现在有数据可取了”</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ol start="4">
+<li><strong>消费者进程</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-28-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-28-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-28-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-28-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-28-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-28-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-28-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-28-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-28-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">full</span><span class="o">-</span><span class="n">slots</span><span class="p">);</span><span class="w">           </span><span class="c1">// 等待“满槽位”&gt;0：防止从空缓冲区读取</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">                </span><span class="c1">// 获取互斥锁：进入临界区，独占访问缓冲区</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">    </span><span class="c1">// remove an item from buffer// 从缓冲区取出一个数据项（对共享缓冲区的读/删操作）</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">              </span><span class="c1">// 释放互斥锁：退出临界区</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">empty</span><span class="o">-</span><span class="n">slots</span><span class="p">);</span><span class="w">        </span><span class="c1">// 空槽位+1：通知生产者“现在有空位可写了”</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="w">    </span><span class="c1">// consume the item          // 消费/处理该数据项（不需要在临界区内做）</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="-">读者-写者 问题<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>条件</strong>：一个数据集被多个并发进程<strong>共享</strong></li>
+</ol>
+<ul>
+<li><strong>读者</strong>（readers）：只读取数据集，不进行任何更新操作</li>
+<li><strong>写者</strong>（writers）：既可以<strong>读取</strong>数据，也可以写入数据</li>
+</ul>
+<ol start="2">
+<li><strong>读者-写者问题</strong>（readers-writers problem）</li>
+</ol>
+<ul>
+<li><strong>允许多个读者</strong>同时读取数据（共享访问）</li>
+<li>任意时刻<strong>只允许一个写者访问</strong>共享数据（独占访问）</li>
+</ul>
+<ol start="3">
+<li><strong>解决方案</strong></li>
+</ol>
+<ul>
+<li>信号量 <code>mutex</code> 初始化为 <code>1</code></li>
+<li>信号量 <code>write</code> 初始化为 <code>1</code></li>
+<li>整型变量 <code>readcount</code> 初始化为 <code>0</code></li>
+</ul>
+<ol start="4">
+<li><strong>写者进程</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span>
+<span class="normal"><a href="#__codelineno-29-6">6</a></span>
+<span class="normal"><a href="#__codelineno-29-7">7</a></span>
+<span class="normal"><a href="#__codelineno-29-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">write</span><span class="p">);</span><span class="w">            </span><span class="c1">// 请求写锁，确保对共享数据的独占访问</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="w">                            </span><span class="c1">// 若有读者或其他写者在访问，则在此阻塞</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">    </span><span class="c1">// write the shared data // 写共享数据（写操作必须独占）</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">write</span><span class="p">);</span><span class="w">          </span><span class="c1">// 释放写锁，允许读者或其他写者进入</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ol start="5">
+<li><strong>读者进程</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-30-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-30-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-30-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-30-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-30-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-30-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-30-10">10</a></span>
+<span class="normal"><a href="#__codelineno-30-11">11</a></span>
+<span class="normal"><a href="#__codelineno-30-12">12</a></span>
+<span class="normal"><a href="#__codelineno-30-13">13</a></span>
+<span class="normal"><a href="#__codelineno-30-14">14</a></span>
+<span class="normal"><a href="#__codelineno-30-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">            </span><span class="c1">// 进入临界区，保护 readcount（防止多个读者同时修改）</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">    </span><span class="n">readcount</span><span class="o">++</span><span class="p">;</span><span class="w">            </span><span class="c1">// 当前读者数量 +1</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">readcount</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">     </span><span class="c1">// 如果是第一个进入的读者</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="n">write</span><span class="p">);</span><span class="w">        </span><span class="c1">// 获取写锁，阻止写者进入临界区</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">          </span><span class="c1">// 离开临界区，允许其他读者修改 readcount</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="c1">// reading data          // 读共享数据（允许多个读者同时进行）</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">            </span><span class="c1">// 再次进入临界区，准备更新 readcount</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="w">    </span><span class="n">readcount</span><span class="o">--</span><span class="p">;</span><span class="w">            </span><span class="c1">// 当前读者数量 -1</span>
+<a id="__codelineno-30-12" name="__codelineno-30-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">readcount</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">     </span><span class="c1">// 如果这是最后一个离开的读者</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13"></a><span class="w">        </span><span class="n">signal</span><span class="p">(</span><span class="n">write</span><span class="p">);</span><span class="w">      </span><span class="c1">// 释放写锁，允许写者进入</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">          </span><span class="c1">// 离开临界区</span>
+<a id="__codelineno-30-15" name="__codelineno-30-15"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ol start="6">
+<li><strong>问题变种</strong>（不同的优先策略）</li>
+</ol>
+<ul>
+<li><strong>读者优先</strong>（Reader first）：前边的代码所实现<ul>
+<li>只要写者没有正在更新数据，就不会让读者等待</li>
+<li>如果已有读者在访问数据，新来的读者可以<strong>直接继续读取</strong></li>
+<li><strong>写者可能发生饥饿</strong></li>
+</ul>
+</li>
+<li><strong>写者优先</strong>（Writer first）<ul>
+<li>一旦写者准备好写数据，就应尽快执行写操作</li>
+<li>如果已有读者在访问数据，新来的读者将<strong>等待被挂起的写者</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="_8">哲学家进餐问题<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>哲学家进餐问题</strong>（Dining-Philosophers Problem）：一种多资源同步问题</li>
+</ol>
+<ul>
+<li>哲学家围坐在一张圆桌旁，但彼此之间<strong>不直接交互</strong></li>
+<li>每两个相邻的哲学家之间放置<strong>一根筷子</strong></li>
+<li>进餐需要同时拿到两根筷子，进餐结束后释放两根筷子</li>
+</ul>
+<ol start="2">
+<li><strong>解决方案</strong>（假设有5位哲学家）</li>
+</ol>
+<p><img alt="" src="../photo/15-6.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>信号量 <code>chopstick[5]</code> 初始化为 <code>1</code></li>
+<li>
+<p><strong>第i个哲学家</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
+<span class="normal"><a href="#__codelineno-31-2">2</a></span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span>
+<span class="normal"><a href="#__codelineno-31-4">4</a></span>
+<span class="normal"><a href="#__codelineno-31-5">5</a></span>
+<span class="normal"><a href="#__codelineno-31-6">6</a></span>
+<span class="normal"><a href="#__codelineno-31-7">7</a></span>
+<span class="normal"><a href="#__codelineno-31-8">8</a></span>
+<span class="normal"><a href="#__codelineno-31-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="c1">// 哲学家i（总共5个），每根筷子用一个信号量 chopstick[k] 表示（初值 1）</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">chopstick</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w">           </span><span class="c1">// 拿起左边筷子（对第 i 根筷子加锁）</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">chopstick</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">5</span><span class="p">]);</span><span class="w">     </span><span class="c1">// 再拿起右边筷子（对相邻那根筷子加锁）</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w">    </span><span class="n">eat</span><span class="p">;</span><span class="w">                          </span><span class="c1">// 同时拿到两根筷子后才能吃</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">chopstick</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w">         </span><span class="c1">// 放下左边筷子（释放资源）</span>
+<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">chopstick</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">5</span><span class="p">]);</span><span class="w">   </span><span class="c1">// 放下右边筷子（释放资源）</span>
+<a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">    </span><span class="n">think</span><span class="p">;</span><span class="w">                        </span><span class="c1">// 思考</span>
+<a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>问题</strong>：死锁（deadlock）</p>
+<p><strong>原因</strong>：如果5个哲学家同时先拿左筷子，每个人都在等右筷子，而右筷子被别人拿着，形成<strong>循环等待</strong></p>
+</div>
+</li>
+</ul>
+<ol start="3">
+<li><strong>在实际代码中的哲学家进餐问题</strong></li>
+</ol>
+<ul>
+<li>每个哲学家线程先随机思考一段时间</li>
+<li>想吃饭时调用 <code>pickup()</code> 去拿筷子</li>
+<li>吃完后调用 <code>putdown()</code> 放下筷子</li>
+</ul>
+<details class="abstract">
+<summary>code</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-32-10">10</a></span>
+<span class="normal"><a href="#__codelineno-32-11">11</a></span>
+<span class="normal"><a href="#__codelineno-32-12">12</a></span>
+<span class="normal"><a href="#__codelineno-32-13">13</a></span>
+<span class="normal"><a href="#__codelineno-32-14">14</a></span>
+<span class="normal"><a href="#__codelineno-32-15">15</a></span>
+<span class="normal"><a href="#__codelineno-32-16">16</a></span>
+<span class="normal"><a href="#__codelineno-32-17">17</a></span>
+<span class="normal"><a href="#__codelineno-32-18">18</a></span>
+<span class="normal"><a href="#__codelineno-32-19">19</a></span>
+<span class="normal"><a href="#__codelineno-32-20">20</a></span>
+<span class="normal"><a href="#__codelineno-32-21">21</a></span>
+<span class="normal"><a href="#__codelineno-32-22">22</a></span>
+<span class="normal"><a href="#__codelineno-32-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="nf">philosopher</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">){</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">    </span><span class="n">Phil_struct</span><span class="w"> </span><span class="o">*</span><span class="n">ps</span><span class="p">;</span><span class="w">      </span><span class="c1">// 哲学家对应的数据结构（包含编号、共享资源等）</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">st</span><span class="p">;</span><span class="w">               </span><span class="c1">// 状态/计时等（具体含义看结构体定义）</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w">                </span><span class="c1">// 时间/随机数等（具体含义看结构体定义）</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5"></a>
+<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="w">    </span><span class="n">ps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Phil_struct</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w">   </span><span class="c1">// 取出线程参数</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7"></a>
+<a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">        </span><span class="cm">/* 先思考随机秒数 */</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11"></a>
+<a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">        </span><span class="cm">/* 醒来后想吃饭：调用 pickup 去拿筷子（拿资源） */</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14"></a><span class="w">        </span><span class="n">pickup</span><span class="p">(</span><span class="n">ps</span><span class="p">);</span><span class="w">           </span><span class="c1">// 尝试获取两根筷子（这里如果策略不当会死锁/饥饿）</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15"></a>
+<a id="__codelineno-32-16" name="__codelineno-32-16"></a><span class="w">        </span><span class="cm">/* pickup 返回后说明已经拿到筷子，可以吃一段时间 */</span>
+<a id="__codelineno-32-17" name="__codelineno-32-17"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-32-18" name="__codelineno-32-18"></a>
+<a id="__codelineno-32-19" name="__codelineno-32-19"></a><span class="w">        </span><span class="cm">/* 吃完后调用 putdown 放下筷子（释放资源） */</span>
+<a id="__codelineno-32-20" name="__codelineno-32-20"></a><span class="w">        </span><span class="p">...</span>
+<a id="__codelineno-32-21" name="__codelineno-32-21"></a><span class="w">        </span><span class="n">putdown</span><span class="p">(</span><span class="n">ps</span><span class="p">);</span><span class="w">          </span><span class="c1">// 释放两根筷子，唤醒其他等待者</span>
+<a id="__codelineno-32-22" name="__codelineno-32-22"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-32-23" name="__codelineno-32-23"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
 
 
 
@@ -4904,13 +5321,13 @@
         
         
           
-          <a href="../../Data_Structure/Foundation/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构基础">
+          <a href="../deadlock/" class="md-footer__link md-footer__link--next" aria-label="下一页: 死锁">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数据结构基础
+                死锁
               </div>
             </div>
             <div class="md-footer__button md-icon">
