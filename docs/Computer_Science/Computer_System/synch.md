@@ -784,7 +784,7 @@ pthread_mutex_unlock(&mutex);
 ### 有界缓冲区问题
 1. **有界缓冲区问题**（Bounded-Buffer Problem）：也称为生产者-消费者问题（producer-consumer problem）
 
--**两个进程**：生产者（producer）和消费者（consumer）共享 n 个缓冲区
+- **两个进程**：生产者（producer）和消费者（consumer）共享 n 个缓冲区
     - **生产者**生成数据，并把数据放入缓冲区
 	- **消费者**通过从缓冲区取出数据来消费数据
 - **保证**：
