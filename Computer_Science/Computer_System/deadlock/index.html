@@ -3558,27 +3558,166 @@
 <p>如果线程1获得了 <code>first_mutex</code> 锁，线程2获得了 <code>second_mutex</code> 锁，接着线程1等待 <code>second_mutex</code> 锁，线程2等待 <code>first_mutex</code> 锁，则可能会发生死锁</p>
 </div>
 <h2 id="_2">系统模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>死锁的四个必要条件</strong></p>
+<ol>
+<li><strong>死锁的四个必要条件</strong></li>
+</ol>
 <ul>
 <li><strong>互斥</strong>（Mutual exclusion）：一种资源在同一时刻只能被一个进程使用</li>
 <li><strong>占有并等待</strong>（Hold and wait）：一个进程至少占有一个资源，同时又在等待获取其他进程所占有的额外资源</li>
 <li><strong>不可抢占</strong>（No preemption）：资源只能由持有它的进程在完成任务后<strong>自愿</strong>释放，<strong>不能被强制抢占</strong></li>
 <li>
-<p><strong>循环等待</strong>（Circular wait）：存在一组处于等待状态的进程 <span class="arithmatex">\(\{P_0, P_1, …, P_n\}\)</span></p>
+<p><strong>循环等待</strong>（Circular wait）：存在一组处于循环等待状态的进程 <span class="arithmatex">\(\{P_0, P_1, …, P_n\}\)</span></p>
 <div class="admonition info">
 <p class="admonition-title">循环等待</p>
 <ul>
-<li><span class="arithmatex">\(P₀\)</span> 正在等待一个由 <span class="arithmatex">\(P₁\)</span> 持有的资源</li>
-<li><span class="arithmatex">\(P₁\)</span> 正在等待一个由 <span class="arithmatex">\(P₂\)</span> 持有的资源</li>
+<li><span class="arithmatex">\(P_0\)</span> 正在等待一个由 <span class="arithmatex">\(P_1\)</span> 持有的资源</li>
+<li><span class="arithmatex">\(P_1\)</span> 正在等待一个由 <span class="arithmatex">\(P_2\)</span> 持有的资源</li>
 <li>……</li>
-<li><span class="arithmatex">\(Pₙ₋₁\)</span> 正在等待一个由 <span class="arithmatex">\(Pₙ\)</span> 持有的资源</li>
-<li><span class="arithmatex">\(Pₙ\)</span> 正在等待一个由 <span class="arithmatex">\(P₀\)</span> 持有的资源</li>
+<li><span class="arithmatex">\(P_{n-1}\)</span> 正在等待一个由 <span class="arithmatex">\(P_n\)</span> 持有的资源</li>
+<li><span class="arithmatex">\(P_n\)</span> 正在等待一个由 <span class="arithmatex">\(P_0\)</span> 持有的资源</li>
 </ul>
 </div>
 </li>
 </ul>
+<ol start="2">
+<li><strong>资源分配图</strong></li>
+</ol>
+<ul>
+<li><strong>组成</strong><ul>
+<li>两种类型的<strong>节点</strong>：<ul>
+<li>系统中所有进程的集合 <span class="arithmatex">\(P = {P_1, P_2, …, P_n}\)</span></li>
+<li>系统中所有资源类型的集合 <span class="arithmatex">\(R = {R_1, R_2, …, R_m}\)</span></li>
+</ul>
+</li>
+<li>两种类型的<strong>边</strong>：请求边、分配边</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">资源分配图</p>
+<p><strong>Example 1</strong></p>
+<p><img alt="alt text" src="../photo/16-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><span class="arithmatex">\(P_1\)</span> 持有 <span class="arithmatex">\(R_2\)</span>，并等待 <span class="arithmatex">\(R_1\)</span></li>
+<li><span class="arithmatex">\(P_2\)</span> 持有 <span class="arithmatex">\(R_1\)</span> 和 <span class="arithmatex">\(R_2\)</span>，并等待 <span class="arithmatex">\(R_3\)</span></li>
+<li><span class="arithmatex">\(P_3\)</span> 持有 <span class="arithmatex">\(R_3\)</span></li>
+<li><strong>结论</strong>：不存在死锁</li>
+</ul>
+<p><strong>Example 2</strong></p>
+<p><img alt="alt text" src="../photo/16-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>结论</strong>：存在死锁（存在环）</li>
+</ul>
+<p><strong>Example 3</strong></p>
+<p><img alt="alt text" src="../photo/16-3.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><span class="arithmatex">\(P_4\)</span> 和 <span class="arithmatex">\(P_2\)</span> 释放资源后，<span class="arithmatex">\(P_1\)</span> 和 <span class="arithmatex">\(P_3\)</span> 就可以获取资源</li>
+<li><strong>结论</strong>：不存在死锁</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Notice</p>
+<ol>
+<li>如果图中<strong>没有循环</strong>，则没有死锁</li>
+<li>如果图中有循环</li>
+</ol>
+<ul>
+<li>如果每种资源类型<strong>只有一个实例</strong>，则死锁</li>
+<li>如果每种资源类型有<strong>多个实例</strong>，则可能存在死锁（<strong>循环等待不一定导致死锁！</strong>）</li>
+</ul>
+</div>
+</div>
 <h2 id="_3">解决方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>分类</strong></p>
+<ol>
+<li>确保系统永远不会进入死锁状态</li>
+</ol>
+<ul>
+<li>预防（Prevention）</li>
+<li>避免（Avoidance）</li>
+</ul>
+<ol start="2">
+<li><strong>允许系统进入死锁状态</strong>，然后再进行恢复：死锁检测与恢复（Deadlock detection and recovery）</li>
+</ol>
 <h3 id="_4">死锁预防<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>基本思路</strong>：从系统设计上<strong>破坏死锁产生的四个必要条件中的至少一个</strong>，让死锁根本不可能发生</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">检查死锁的条件</p>
+<ol>
+<li>防止<strong>互斥</strong>（mutual exclusion）</li>
+</ol>
+<ul>
+<li>对于可共享资源，不需要互斥</li>
+<li>对于<strong>不可共享资源</strong>，必须满足互斥条件</li>
+<li><strong>结论</strong>：互斥条件<strong>一般无法被破坏</strong>，只能在可共享资源上避免</li>
+</ul>
+<ol start="2">
+<li>防止<strong>占有并等待</strong>（hold and wait）</li>
+</ol>
+<ul>
+<li>当一个进程请求资源时，它不能持有任何其他资源<ul>
+<li>在开始执行前<strong>一次性请求</strong>进程所需的全部资源</li>
+<li>只允许进程<strong>在不持有任何资源时</strong>请求资源</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：资源利用率低；可能发生饥饿</li>
+<li><strong>结论</strong>：破坏占有并等待<strong>可以防止死锁</strong>，但<strong>存在代价</strong></li>
+</ul>
+<ol start="3">
+<li>处理<strong>不可抢占</strong>（no preemption）</li>
+</ol>
+<ul>
+<li>系统可以打断进程，回收资源</li>
+<li>如果一个进程请求的<strong>资源不可用</strong><ul>
+<li><strong>释放</strong>当前持有的所有资源，被抢占的资源会加入该进程等待的资源列表</li>
+<li>只有当<strong>进程能够获得其所有等待的资源</strong>时，才会重新启动该进程</li>
+</ul>
+</li>
+<li><strong>结论</strong>：但是有的资源不能被强占，不可行</li>
+</ul>
+</div>
+<ol start="3">
+<li><strong>解决方案</strong>：处理循环等待（circular wait）</li>
+</ol>
+<ul>
+<li>对所有资源类型施加一个<strong>全局顺序</strong></li>
+<li>要求每个进程<strong>按照资源顺序递增</strong>的方式请求资源</li>
+<li>许多操作系统在某些锁机制中采用了这种策略</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>对于动态获取锁不适用</strong>：</p>
+<p>这两个锁依赖<strong>不确定的两个参数</strong><code>from</code>和<code>to</code>，所以获取的两个锁的先后顺序是<strong>不确定的</strong>，不一定满足按照资源顺序递增的条件</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">transaction</span><span class="p">(</span><span class="n">Account</span><span class="w"> </span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">Account</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">amount</span><span class="p">){</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">mutex</span><span class="w"> </span><span class="n">lock1</span><span class="p">,</span><span class="w"> </span><span class="n">lock2</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">lock1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_lock</span><span class="p">(</span><span class="n">from</span><span class="p">);</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">lock2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_lock</span><span class="p">(</span><span class="n">to</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="n">acquire</span><span class="p">(</span><span class="n">lock1</span><span class="p">);</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">        </span><span class="n">acquire</span><span class="p">(</span><span class="n">lock2</span><span class="p">);</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">            </span><span class="n">withdraw</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">            </span><span class="n">deposit</span><span class="p">(</span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">);</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">        </span><span class="n">release</span><span class="p">(</span><span class="n">lock2</span><span class="p">);</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">    </span><span class="n">release</span><span class="p">(</span><span class="n">lock1</span><span class="p">);</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <h3 id="_5">死锁避免<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 
 
