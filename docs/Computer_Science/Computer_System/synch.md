@@ -868,7 +868,7 @@ do {
         wait(write);        // 获取写锁，阻止写者进入临界区
     signal(mutex);          // 离开临界区，允许其他读者修改 readcount
     ...
-    // reading data          // 读共享数据（允许多个读者同时进行）
+    // reading data         // 读共享数据（允许多个读者同时进行）
     ...
     wait(mutex);            // 再次进入临界区，准备更新 readcount
     readcount--;            // 当前读者数量 -1
@@ -925,6 +925,8 @@ do {
 - 每个哲学家线程先随机思考一段时间
 - 想吃饭时调用 `pickup()` 去拿筷子
 - 吃完后调用 `putdown()` 放下筷子
+- 偶数哲学家先拿左筷子，奇数哲学家先拿右筷子
+
 
 ??? abstract "code"
     ```c
