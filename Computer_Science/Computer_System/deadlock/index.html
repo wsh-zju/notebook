@@ -1678,6 +1678,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="死锁避免">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源分配图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        银行家算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁恢复
+      
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -3441,6 +3519,84 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="死锁避免">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        资源分配图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        银行家算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁检测">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多实例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁恢复
+      
+    </span>
+  </a>
+  
 </li>
         
       </ul>
@@ -3572,7 +3728,7 @@
 <ul>
 <li><span class="arithmatex">\(P_0\)</span> 正在等待一个由 <span class="arithmatex">\(P_1\)</span> 持有的资源</li>
 <li><span class="arithmatex">\(P_1\)</span> 正在等待一个由 <span class="arithmatex">\(P_2\)</span> 持有的资源</li>
-<li>……</li>
+<li>......</li>
 <li><span class="arithmatex">\(P_{n-1}\)</span> 正在等待一个由 <span class="arithmatex">\(P_n\)</span> 持有的资源</li>
 <li><span class="arithmatex">\(P_n\)</span> 正在等待一个由 <span class="arithmatex">\(P_0\)</span> 持有的资源</li>
 </ul>
@@ -3719,6 +3875,181 @@
 </code></pre></div></td></tr></table></div>
 </div>
 <h3 id="_5">死锁避免<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>要求</strong>：需要额外的信息来描述资源的请求方式</li>
+</ol>
+<ul>
+<li>每个进程声明它可能需要的<strong>最大资源数</strong></li>
+<li>死锁避免算法确保系统<strong>永远不会出现循环等待</strong>的情况</li>
+</ul>
+<ol start="2">
+<li><strong>安全状态</strong></li>
+</ol>
+<ul>
+<li>当一个进程请求一个可用资源时，系统需要判断分配该资源后系统<strong>是否仍处于安全状态</strong></li>
+<li><strong>定义</strong>：系统中存在一个进程执行顺序 <span class="arithmatex">\(&lt;P_1, P_2, …, P_n&gt;\)</span>，每个进程 <span class="arithmatex">\(P_i\)</span> 所需的资源<strong>可以</strong>通过当前可用资源和其他进程已经持有的资源来满足</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Notice</p>
+<p>安全状态可以<strong>保证没有死锁</strong>！！！</p>
+<p>如果 <span class="arithmatex">\(P_i\)</span> 的资源需求不能立即满足：</p>
+<ul>
+<li>等待其他进程完成资源的使用，直到<strong>所有进程都完成</strong></li>
+<li>一旦某个进程完成，其他进程可以按顺序获得资源，系统依然可以顺利执行</li>
+</ul>
+</div>
+<div class="admonition success">
+<p class="admonition-title">基本事实</p>
+<ol>
+<li>如果系统处于安全状态，则<strong>没有</strong>死锁</li>
+<li>如果系统处于不安全状态，则<strong>有可能</strong>有死锁</li>
+<li>死锁避免要求确保系统<strong>永远不进入不安全状态</strong></li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><strong>Example 1</strong>：</p>
+<p><img alt="alt text" src="../photo/16-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>系统状态</strong>：安全状态</p>
+<p><strong>进程执行的顺序</strong>：<span class="arithmatex">\(P_1, P_0, P_2\)</span>
+23-30</p>
+<p><strong>Example 2</strong></p>
+<p><img alt="alt text" src="../photo/16-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>系统状态</strong>：不安全状态</p>
+<p><strong>进程不能全部执行完</strong></p>
+</div>
+<ol start="3">
+<li><strong>死锁避免算法</strong></li>
+</ol>
+<ul>
+<li>每种资源类型<strong>只有一个实例</strong>：使用资源分配图</li>
+<li>每种资源类型有<strong>多个实例</strong>：使用银行家算法（banker’s algorithm）</li>
+</ul>
+<h4 id="_6">资源分配图<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>新增的边类型</strong>：声明边（claim edge）</li>
+</ol>
+<ul>
+<li>声明边 <span class="arithmatex">\(p_i \rightarrow r_j\)</span> 表示进程 <span class="arithmatex">\(p_i\)</span> <strong>可能会请求</strong>资源 <span class="arithmatex">\(r_j\)</span></li>
+<li>声明边用<strong>虚线</strong>表示</li>
+<li>资源必须在系统中<strong>预先声明</strong>（即在请求资源之前进行声明）</li>
+</ul>
+<ol start="2">
+<li><strong>边之间的转换</strong></li>
+</ol>
+<ul>
+<li>当进程<strong>请求</strong>资源时，声明边转换为请求边</li>
+<li>当资源<strong>分配</strong>给进程时，请求边转换为分配边</li>
+<li>当进程<strong>释放</strong>资源时，分配边转换为声明边</li>
+</ul>
+<ol start="3">
+<li><strong>解决死锁的方法</strong>：只有在将<strong>请求边转换为分配边</strong>后，不会形成一个循环，请求才可以被批准</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/16-7.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+<h4 id="_7">银行家算法<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>要求</strong>：</li>
+</ol>
+<ul>
+<li>每个进程必须事先声明它对每种资源类型的<strong>最大使用量</strong></li>
+<li>当一个进程请求资源时，<strong>可能需要等待</strong></li>
+<li>当一个进程获得了它所需的全部资源后，必须<strong>在有限时间内</strong>释放这些资源</li>
+</ul>
+<ol start="2">
+<li><strong>数据结构</strong></li>
+</ol>
+<ul>
+<li>系统中有 <code>n</code> 个进程，<code>m</code> 种资源类型</li>
+<li><code>available</code>：长度为 <code>m</code> 的数组，表示<strong>可用资源的实例数量</strong><ul>
+<li><strong>e.g.</strong> <code>available[j] = k</code>：表示资源类型 <code>R_j</code> 还有 <code>k</code> 个实例可用</li>
+</ul>
+</li>
+<li><code>max</code>：一个 <code>n × m</code> 的矩阵<ul>
+<li><strong>e.g.</strong> <code>max[i, j] = k</code>：表示进程 <code>P_i</code> <strong>最多可能请求</strong> <code>k</code> 个 <code>R_j</code> 资源实例</li>
+</ul>
+</li>
+<li><code>allocation</code>：一个 <code>n × m</code> 的矩阵<ul>
+<li><strong>e.g.</strong> <code>allocation[i, j] = k</code>：表示进程 <code>P_i</code> 当前<strong>已经分配</strong>了 <code>k</code> 个 <code>R_j</code> 实例</li>
+</ul>
+</li>
+<li><code>need</code>：一个 <code>n × m</code> 的矩阵<ul>
+<li><strong>e.g.</strong> <code>need[i, j] = k</code>：表示进程 <code>P_i</code> <strong>还需要</strong> <code>k</code> 个 <code>R_j</code> 实例才能完成任务</li>
+<li><code>need[i, j] = max[i, j] − allocation[i, j]</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/16-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>系统状态</strong>：安全状态</p>
+<p><strong>第一个执行的可以是</strong> <span class="arithmatex">\(P_1\)</span> 或 <span class="arithmatex">\(P_3\)</span> （<code>need &lt; available</code>）</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>处于不安全状态！！！</strong></p>
+<p><img alt="alt text" src="../photo/16-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
+<h3 id="_8">死锁检测<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><strong>定义</strong>：允许系统进入死锁状态，但必须能够检测并从中恢复</p>
+<h4 id="_9">单实例<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>等待图</strong>：</li>
+</ol>
+<p><img alt="alt text" src="../photo/16-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>节点是进程</li>
+<li>如果进程 <span class="arithmatex">\(P_i\)</span> 正在等待进程 <span class="arithmatex">\(P_j\)</span>，则表示图中有一条边 <span class="arithmatex">\(P_i \rightarrow P_j\)</span></li>
+</ul>
+<ol start="2">
+<li><strong>解决方案</strong>：<strong>定期</strong>调用一个算法来搜索图中的循环</li>
+</ol>
+<ul>
+<li>如果图中<strong>存在循环</strong>，则说明系统处于死锁状态</li>
+<li>检测图中循环的算法需要进行大约 <strong><span class="arithmatex">\(n^2\)</span> 次操作</strong>，其中 <span class="arithmatex">\(n\)</span> 是图中顶点的数量</li>
+</ul>
+<h4 id="_10">多实例<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<p><strong>跟银行家算法类似</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/16-10.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>系统状态</strong>：安全状态</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>处于不安全状态，导致死锁！！！</strong></p>
+<p><img alt="alt text" src="../photo/16-11.png" style="width:30%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
+<h3 id="_11">死锁恢复<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>选择 1：终止死锁进程</strong></li>
+</ol>
+<ul>
+<li>终止死锁进程的<strong>选项</strong>：<ul>
+<li>终止<strong>所有</strong>死锁进程</li>
+<li>一次终止<strong>一个进程</strong>，直到死锁循环被消除</li>
+</ul>
+</li>
+<li>终止进程时的<strong>考虑因素</strong>：<ul>
+<li>进程的优先级</li>
+<li>进程已计算的时间以及完成所需时间</li>
+<li>进程已使用的资源</li>
+<li>进程完成所需的剩余资源</li>
+<li>需要终止的进程数量</li>
+<li>进程是交互式还是批处理</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>选择 2：资源抢占</strong></li>
+</ol>
+<ul>
+<li>选择一个要终止的进程</li>
+<li><strong>回滚</strong>（Rollback）：恢复进程到先前的状态</li>
+<li><strong>饥饿</strong>（Starvation）</li>
+</ul>
 
 
 

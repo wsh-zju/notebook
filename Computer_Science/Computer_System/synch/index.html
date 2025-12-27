@@ -5151,7 +5151,7 @@
 <a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="n">write</span><span class="p">);</span><span class="w">        </span><span class="c1">// 获取写锁，阻止写者进入临界区</span>
 <a id="__codelineno-30-6" name="__codelineno-30-6"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">          </span><span class="c1">// 离开临界区，允许其他读者修改 readcount</span>
 <a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">    </span><span class="p">...</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="c1">// reading data          // 读共享数据（允许多个读者同时进行）</span>
+<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="w">    </span><span class="c1">// reading data         // 读共享数据（允许多个读者同时进行）</span>
 <a id="__codelineno-30-9" name="__codelineno-30-9"></a><span class="w">    </span><span class="p">...</span>
 <a id="__codelineno-30-10" name="__codelineno-30-10"></a><span class="w">    </span><span class="n">wait</span><span class="p">(</span><span class="n">mutex</span><span class="p">);</span><span class="w">            </span><span class="c1">// 再次进入临界区，准备更新 readcount</span>
 <a id="__codelineno-30-11" name="__codelineno-30-11"></a><span class="w">    </span><span class="n">readcount</span><span class="o">--</span><span class="p">;</span><span class="w">            </span><span class="c1">// 当前读者数量 -1</span>
@@ -5225,6 +5225,7 @@
 <li>每个哲学家线程先随机思考一段时间</li>
 <li>想吃饭时调用 <code>pickup()</code> 去拿筷子</li>
 <li>吃完后调用 <code>putdown()</code> 放下筷子</li>
+<li>偶数哲学家先拿左筷子，奇数哲学家先拿右筷子</li>
 </ul>
 <details class="abstract">
 <summary>code</summary>
