@@ -1585,6 +1585,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其余模型
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3421,6 +3432,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其余模型
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3452,9 +3474,317 @@
 
 
 <h1 id="_1">进程间通信<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ol>
+<li>同一台主机上的进程可以是相互独立的，也可以是<strong>相互协作</strong>的</li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">进程协作的原因</p>
+<ul>
+<li>信息共享 <strong>e.g.</strong> 对共享文件进行协调访问</li>
+<li>计算加速 <strong>e.g.</strong> 在同一任务上进行多进程处理</li>
+<li>模块化</li>
+<li>便利性</li>
+</ul>
+</div>
+<ol start="2">
+<li><strong>定义</strong>：协作进程之间用于通信的机制称为进程间通信（IPC）</li>
+</ol>
+<ul>
+<li>进程在设计上是<strong>相互隔离</strong>的，因此 IPC 并不容易</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Google Chrome 浏览器</p>
+<ol>
+<li>
+<p>许多网页浏览器运行在<strong>单进程模式</strong>：如果某一个网站出问题，整个浏览器可能会卡死或崩溃</p>
+</li>
+<li>
+<p>Google Chrome 浏览器采用<strong>多进程架构</strong>，包含3种不同类型的进程：</p>
+</li>
+</ol>
+<ul>
+<li>浏览器进程（Browser process）：管理用户界面、磁盘 I/O 和网络 I/O</li>
+<li>渲染器进程（Renderer process）<ul>
+<li>渲染网页，处理 <code>HTML</code> 和 <code>JavaScript</code></li>
+<li>每打开一个网站，就会创建<strong>一个新的渲染器进程</strong></li>
+<li>在<strong>沙箱</strong>中运行，限制磁盘和网络 I/O，最大限度<strong>降低安全漏洞的影响</strong></li>
+</ul>
+</li>
+<li>插件进程（Plug-in process）：每种插件类型对应一个插件进程</li>
+<li><strong>每一个标签页代表一个独立的进程</strong></li>
+</ul>
+</div>
 <h2 id="_2">通信模型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="../photo/13-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<div class="admonition success">
+<p class="admonition-title">Notice</p>
+<p>大多数操作系统<strong>同时实现</strong>这两种模型</p>
+</div>
+<ol>
+<li><strong>消息传递</strong>（Message-passing）</li>
+</ol>
+<ul>
+<li><strong>优点</strong>：<ul>
+<li>适合交换<strong>少量</strong>数据</li>
+<li>在操作系统中<strong>实现简单</strong></li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>对用户来说有时<strong>比较繁琐</strong>，因为代码中会大量出现 <code>send/recv</code> 操作</li>
+<li><strong>开销较高</strong>：每一次通信操作都需要一次<strong>系统调用</strong></li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>共享内存</strong>（Shared memory）</li>
+</ol>
+<ul>
+<li><strong>优点</strong>：<ul>
+<li><strong>开销较低</strong>：最开始需要少量系统调用，之后不再需要</li>
+<li>对用户来说<strong>更方便</strong>，因为我们已经习惯了直接进行内存读写</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：在操作系统中<strong>实现更困难</strong></li>
+</ul>
 <h3 id="_3">共享内存<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>步骤</strong></li>
+</ol>
+<ul>
+<li>
+<p>进程需要先建立一个<strong>共享内存区域</strong></p>
+<ul>
+<li>由一个进程创建一个<strong>共享内存段</strong></li>
+<li>其他进程随后可以将其附加到各自的地址空间</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Notice</p>
+<p>这实际上与多道程序设计中<strong>以“内存保护”为核心</strong>的思想是相违背的！</p>
+</div>
+</li>
+<li>
+<p>进程通过对共享内存区域<strong>进行读/写</strong>来通信</p>
+<ul>
+<li>进程自身负责避免<strong>数据冲突</strong></li>
+<li>操作系统<strong>完全不参与</strong>通信过程</li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">producer/consumer example</p>
+<p>伪代码（因为在同一个内存空间中）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#define BUFFER_SIZE 10     </span><span class="c1">// 定义缓冲区大小为 10</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">}</span><span class="w"> </span><span class="n">item</span><span class="p">;</span><span class="w">                   </span><span class="c1">// 定义缓冲区中存放的数据类型</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">item</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="n">BUFFER_SIZE</span><span class="p">];</span><span class="w"> </span><span class="c1">// 共享缓冲区（环形队列）</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// 生产者写入位置索引</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="kt">int</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">              </span><span class="c1">// 消费者读取位置索引</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>生产者</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">item</span><span class="w"> </span><span class="n">next_produced</span><span class="p">;</span><span class="w">       </span><span class="c1">// 即将被生产的数据</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="cm">/* 在 next_produced 中生成一个数据项 */</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(((</span><span class="n">in</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">out</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="p">;</span><span class="w">                 </span><span class="cm">/* 缓冲区满时忙等待（什么也不做） */</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">buffer</span><span class="p">[</span><span class="n">in</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">next_produced</span><span class="p">;</span><span class="w">   </span><span class="c1">// 将数据写入缓冲区</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">in</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="p">;</span><span class="w">  </span><span class="c1">// 更新写指针（环形）</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>消费者</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">item</span><span class="w"> </span><span class="n">next_consumed</span><span class="p">;</span><span class="w">       </span><span class="c1">// 即将被消费的数据</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">out</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="p">;</span><span class="w">                 </span><span class="cm">/* 缓冲区空时忙等待 */</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">next_consumed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">buffer</span><span class="p">[</span><span class="n">out</span><span class="p">];</span><span class="w">  </span><span class="c1">// 从缓冲区取数据</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="cm">/* 消费 next_consumed 中的数据 */</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">    </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">out</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">BUFFER_SIZE</span><span class="p">;</span><span class="w"> </span><span class="c1">// 更新读指针（环形）</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<ol start="2">
+<li><strong>POSIX 共享内存</strong></li>
+</ol>
+<ul>
+<li>进程是如何知道<strong>共享内存段的ID</strong>的？<ul>
+<li>共享内存的 <code>id</code> 在 <code>fork()</code> <strong>之前</strong>创建</li>
+<li>因此父进程和子进程都知道这个 <code>id</code></li>
+<li>但是这个解决方案并不通用，<strong>通用的方案</strong>        <ul>
+<li>通过命令行参数传递 <code>id</code></li>
+<li>把 <code>id</code> 存储在文件中</li>
+<li><strong>更好的方式</strong>：使用<strong>消息传递</strong>来传递 <code>id</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在支持 POSIX 的系统上，可以使用 <code>ipcs -a</code> 命令查看 IPC 的状态</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol>
+<li>共享内存的IPC<strong>非常繁琐</strong>，因为我们打破了操作系统的内存隔离</li>
+<li>多个运行上下文之间的内存共享现在是通过<strong>线程</strong>来实现的</li>
+</ol>
+</div>
 <h3 id="_4">消息传递<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>消息传递</strong>（Message Passing）：进程之间<strong>不共享</strong>任何用于通信的地址空间，保持内存隔离</li>
+<li><strong>两个基本操作</strong>：</li>
+</ol>
+<ul>
+<li><strong><code>send</code></strong>：发送一条消息</li>
+<li><strong><code>recv</code></strong>：接收一条消息</li>
+<li>如果进程 P 和 Q 希望通信，它们会：<ul>
+<li>在它们之间建立一条通信 <code>link</code></li>
+<li>调用 <code>send()</code> 和 <code>recv()</code></li>
+<li>关闭这条通信 <code>link</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Notice</p>
+<ol>
+<li>消息传递是分布式计算的关键机制（位于不同主机上的进程不能共享物理内存）</li>
+<li>但消息传递对<strong>同一主机上的进程</strong>也同样非常有用</li>
+</ol>
+</div>
+<ol start="3">
+<li><strong>通信链路</strong>的实现方式</li>
+</ol>
+<ul>
+<li>物理层：共享内存、硬件总线、网络</li>
+<li>逻辑层：直接或间接、同步或异步、自动缓冲或显式缓冲</li>
+<li><strong>直接通信</strong><ul>
+<li>进程必须<strong>显式地</strong>指明对方 <code>send(P, message)</code></li>
+<li>通信链路的<strong>性质</strong>：<ul>
+<li>链路会<strong>自动</strong>建立</li>
+<li>一条链路<strong>只</strong>与一对正在通信的进程相关联</li>
+<li>在每一对进程之间<strong>恰好存在</strong>一条链路</li>
+<li>链路可以是单向的，但通常是双向的</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：link 会非常多</li>
+</ul>
+</li>
+<li>
+<p><strong>间接通信</strong></p>
+<ul>
+<li>消息通过<strong>mailbox</strong>（也称为端口 port）来发送和接收<ul>
+<li>每个邮箱都有一个唯一的 ID</li>
+<li>只有<strong>共享同一个邮箱</strong>的进程才能进行通信</li>
+</ul>
+</li>
+<li>通信链路的<strong>性质</strong><ul>
+<li>只有当进程<strong>共享一个公共邮箱</strong>时，链路才会建立</li>
+<li>一条链路可以与<strong>多个进程</strong>相关联</li>
+<li>每一对进程之间可能共享<strong>多条</strong>通信链路</li>
+<li>链路可以是单向的，也可以是双向的</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当一个link与多个进程关联时，可能会出现<strong>数据冲突</strong>：一个进程发消息，不清楚消息应该被哪个进程接收</p>
+<p><strong>解决方案</strong>：</p>
+<ul>
+<li>限制一条链路<strong>最多只能与两个进程</strong>关联</li>
+<li>任意时刻<strong>只允许一个进程</strong>执行接收操作</li>
+<li>允许系统<strong>任意选择接收者</strong>，并将接收者信息<strong>通知发送方</strong></li>
+</ul>
+</div>
+</li>
+</ul>
+<ol start="4">
+<li><strong>阻塞方式</strong></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">abstract</p>
+<p><strong>消息传递可以是阻塞的，也可以是非阻塞的</strong></p>
+<ol>
+<li><strong>阻塞</strong>被认为是同步</li>
+</ol>
+<ul>
+<li>阻塞发送：发送方会被阻塞，直到消息被接收</li>
+<li>阻塞接收：接收方会被阻塞，直到有消息可用</li>
+</ul>
+<ol start="2">
+<li><strong>非阻塞</strong>被认为是异步</li>
+</ol>
+<ul>
+<li>非阻塞发送：发送方发送消息后立即继续执行</li>
+<li>非阻塞接收：接收方接收到一条有效消息或者一个空消息</li>
+</ul>
+</div>
+<ul>
+<li>生产者只需调用<strong>阻塞的</strong> <code>send()</code> 并等待，直到消息被投递给接收者或邮箱</li>
+<li>当消费者调用 <code>receive()</code> 时，如果没有消息可用，它会一直<strong>阻塞</strong>，直到消息到达</li>
+</ul>
+<ol start="5">
+<li><strong>缓冲</strong>（Buffering）：附加在通信链路上的<strong>消息队列</strong>，有三种实现方式</li>
+</ol>
+<ul>
+<li><strong>零容量</strong>：链路上不缓存任何消息；发送方<strong>必须等待</strong>接收方</li>
+<li><strong>有限容量</strong>：缓冲区最多容纳 <code>n</code> 条消息；当链路满时，发送方<strong>必须等待</strong></li>
+<li><strong>无限容量</strong>（仅理论）：缓冲区长度无限；发送方<strong>永远不需要等待</strong></li>
+</ul>
+<h3 id="_5">其余模型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong><code>signal</code></strong></li>
+<li><strong><code>pipe</code></strong>：管道充当一个通道，使两个进程能够通信</li>
+</ol>
+<ul>
+<li>
+<p><strong>普通管道</strong>：单向的</p>
+<ul>
+<li>不能被<strong>创建它的进程之外</strong>的进程访问</li>
+<li>通常由父进程创建，用于与它创建的子进程通信</li>
+<li>没有名字，只能通过 <code>fork()</code> 来传播</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><code>fd[0]</code> 是读端；<code>fd[1]</code> 是写端</p>
+<p><img alt="alt text" src="../photo/13-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+</li>
+<li>
+<p><strong>命名管道</strong>：双向的</p>
+<ul>
+<li><strong>不需要父子进程关系</strong>即可访问</li>
+<li>功能更强</li>
+<li>多个进程可以使用<strong>同一个命名管道</strong>进行通信</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>客户端–服务器通信</strong>（了解即可）</li>
+</ol>
+<ul>
+<li><strong><code>socket</code></strong></li>
+<li><strong><code>RPCs</code></strong></li>
+<li><strong><code>Java RMI</code></strong></li>
+</ul>
 
 
 

@@ -2239,12 +2239,12 @@
   <a href="#b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B+树
+        B+ 树
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="B+树">
+    <nav class="md-nav" aria-label="B+ 树">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3576,12 +3576,12 @@
   <a href="#b" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B+树
+        B+ 树
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="B+树">
+    <nav class="md-nav" aria-label="B+ 树">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3634,7 +3634,7 @@
 <li><strong>基本操作</strong>：</li>
 </ol>
 <ul>
-<li><strong>查找</strong>&amp;<strong>插入</strong>：<ul>
+<li><strong>查找</strong> &amp; <strong>插入</strong>：<ul>
 <li>二叉搜索树比较均衡的情况下，时间复杂度都是 <span class="arithmatex">\(O(\log n)\)</span></li>
 <li>如果二叉搜索树非常不平衡（构建时序列已经有序），则时间复杂度可能退化为 <span class="arithmatex">\(O(n)\)</span></li>
 </ul>
@@ -3745,7 +3745,7 @@
 <hr />
 <h2 id="splay">伸展树 Splay<a class="headerlink" href="#splay" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>目标</strong>：从一棵空树开始，连续进行 <span class="arithmatex">\(M\)</span> 次操作，总耗时不会超过 <span class="arithmatex">\(O(M \log N)\)</span></li>
+<li><strong>目标</strong>：从一棵空树开始，连续进行 <span class="arithmatex">\(M\)</span> 次操作，总耗时不会超过 <span class="arithmatex">\(O(M \log N)\)</span> （并不意味每一步都是 <span class="arithmatex">\(O(\log N)\)</span>）</li>
 <li><strong>解决方法</strong>：在一个节点<strong>被访问</strong>之后，将该节点旋转（利用 AVL 树的旋转方式）到根节点位置</li>
 <li><strong>调整方式</strong>：对于非根节点<code>X</code>，其父节点为<code>P</code>，祖父节点为<code>G</code></li>
 </ol>
@@ -3757,6 +3757,10 @@
 </ul>
 </li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Notices</p>
+<p>伸展操作不仅会把被访问的节点移动到根节点，还会使<strong>访问路径上大多数节点的深度大致减半</strong></p>
+</div>
 <ol start="4">
 <li><strong>删除</strong>：</li>
 </ol>
@@ -3797,13 +3801,12 @@
 <li><strong>黑高</strong>：</li>
 </ol>
 <ul>
-<li><strong>定义</strong>：从结点<code>x</code>（不包括<code>x</code>）到任一个叶结点的任意简单路径上的<strong>黑色结点个数</strong>，不包括该节点自身，但包括终止的 <code>NULL</code> 节点，记为 <span class="arithmatex">\(bh(x)\)</span></li>
-<li><strong>定理</strong><ul>
-<li>树的黑高 <span class="arithmatex">\(bh(Tree) = bh(root)\)</span></li>
-<li>一棵有 <span class="arithmatex">\(N\)</span> 个内部结点的红黑树的高度至多为 <span class="arithmatex">\(2\log(N+1)\)</span>，至少为 <span class="arithmatex">\(\log(N+1)\)</span></li>
+<li><strong>定义</strong>：从结点<code>x</code>（不包括<code>x</code>）到任一个叶结点的任意简单路径上的<strong>黑色结点个数</strong>，不包括该节点自身，但包括终止的<code>NULL</code>节点，记为 <span class="arithmatex">\(bh(x)\)</span></li>
+<li><strong>树的黑高</strong> <span class="arithmatex">\(bh(Tree) = bh(root)\)</span></li>
 </ul>
-</li>
-</ul>
+<ol start="4">
+<li><strong>定理</strong>：一棵有 <span class="arithmatex">\(N\)</span> 个内部结点的红黑树的高度至多为 <span class="arithmatex">\(2\log(N+1)\)</span>，至少为 <span class="arithmatex">\(\log(N+1)\)</span></li>
+</ol>
 <h3 id="_3">插入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>插入操作与二叉搜索树一致</li>
@@ -3840,7 +3843,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Notices</p>
 <p>该情况下被删除节点只有可能是<strong>黑色的</strong>！并且不可能是只有左子树/右子树！</p>
-<p>如果节点是红色的或者只有左子树/右子树，则破坏了黑路同的性质。</p>
+<p>如果节点是红色的或者只有左子树/右子树，则破坏了<strong>黑路同</strong>的性质。</p>
 </div>
 <ol start="2">
 <li><strong>有两个孩子</strong>：</li>
@@ -3950,9 +3953,9 @@
 </tbody>
 </table>
 <hr />
-<h2 id="b">B+树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<h2 id="b">B+ 树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>M阶B+树结构特征</strong></li>
+<li><strong>M 阶 B+ 树结构特征</strong></li>
 </ol>
 <ul>
 <li><strong>根节点</strong>没有子节点或有<span class="arithmatex">\(2～M\)</span>个子节点</li>
@@ -3972,19 +3975,18 @@
 <li><strong>复杂度</strong></li>
 </ol>
 <ul>
-<li><strong>深度：</strong>  </li>
-</ul>
-<div class="arithmatex">\[
-\text{Depth}(M, N) = O\left(\lceil \log_{\lceil M/2 \rceil} N \rceil\right)
-\]</div>
-<ul>
-<li><strong>查找时间复杂度：</strong>  </li>
-</ul>
-<div class="arithmatex">\[
-T_{\text{Find}}(M, N) = O(\log N)
-\]</div>
-<ul>
-<li><strong>注意：</strong> M 的最佳选择是3（2-3 tree）或4（2-3-4 tree）</li>
+<li>
+<p><strong>深度：</strong> <span class="arithmatex">\(Depth(M, N) = O\left(\lceil \log_{\lceil M/2 \rceil} N \rceil\right)\)</span></p>
+</li>
+<li>
+<p><strong>查找时间复杂度：</strong> <span class="arithmatex">\(T_{Find}(M, N) = O(\log N)\)</span></p>
+</li>
+<li>
+<p><strong>插入时间复杂度：</strong> <span class="arithmatex">\(T(M, N) = O(M \cdot \frac{\log N}{\log M})\)</span></p>
+</li>
+<li>
+<p><strong>注意：</strong> M 的最佳选择是3（2-3 tree）或4（2-3-4 tree）</p>
+</li>
 </ul>
 <p><img alt="" src="../images/1-9.png" /></p>
 <h3 id="_6">基本操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
@@ -3993,7 +3995,7 @@ T_{\text{Find}}(M, N) = O(\log N)
 </ol>
 <ul>
 <li>如果没有<strong>上溢出</strong>，则无需调整</li>
-<li>如果上溢出，则中间元素<span class="arithmatex">\(\lceil m/2 \rceil\)</span>上移，两边分裂，直至没有上溢出</li>
+<li>如果上溢出，则两边分裂，分别包含 <span class="arithmatex">\(⌈(M+1)/2⌉\)</span> 和 <span class="arithmatex">\(⌊(M+1)/2⌋\)</span> 个关键字，直至没有上溢出</li>
 </ul>
 <ol start="2">
 <li><strong>删除</strong>：</li>
