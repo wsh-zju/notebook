@@ -28,7 +28,7 @@
 
     **Answer:**D
 
-    **Analysis:**使得摊还成本不依赖 $$k$$
+    **Analysis:**使得摊还成本不依赖 $k$
 
 ## Midterm
 
@@ -54,8 +54,8 @@
 
     **Answer:**A
 
-    **Analysis:**\\
-    - 把唯一的不平衡结点放在**整棵树的根**能获得最少节点数，最小值为23\\
+    **Analysis:**</br>
+    - 把唯一的不平衡结点放在**整棵树的根**能获得最少节点数，最小值为23
     - 如果不放在根节点，那么一定有一个根的子树是满的，另一个子树的深度一定等于4（因为根节点平衡）
 
 2. To build a skew heap, we can start from placing all the keys as single-node heaps on a queue, and perform the following until only one heap is on the queue: dequeue two heaps, merge them, and enqueue the result.

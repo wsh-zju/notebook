@@ -1,13 +1,14 @@
 # 高级数据结构与算法分析
 ## Advanced Data Structures
 
-- 高级数据结构:
-    - 树——AVL 树、Splay 树、红黑树、B+ 树、摊还分析[note]:tree.md
-    - 堆——左倾堆、斜堆[note]:heap.md
-    - 队列——二项队列[note]:queue.md
-- 算法分析:
-    - 倒排索引[note]:algorithm.md
-- 练习:
-    - PTA Problems[exercise]:pta.md
+!!! tip "Tips"
+    这里提供一份 ADS 知识清单，可以打印下来默写知识点
 
-
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../../style/images/code.png" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">ADS 知识清单</div>
+<div class="file-meta">2026-1-8 / 64 pages</div>
+</div>
+<a class="down-button" target="_blank" href="ADS 知识清单.md" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
