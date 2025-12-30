@@ -1,5 +1,5 @@
 ## 二项队列
-1. **目标**：为了寻找一种能实现**高效插入**（理想情况下是常数平均时间）的优先队列结构。
+1. **目标**：为了寻找一种能实现**高效插入**（理想情况下是常数平均时间）的优先队列结构
 
 - 某些堆结构（如左式堆、斜堆）的**单次**插入操作时间复杂度为 $O(\log N)$，在需要频繁插入的场景下可能不够高效
 - 二叉堆的 $N$ 次**连续插入**的摊还总时间复杂度为 $O(N)$ ，意味着**平均每次**插入的成本是 $O(1)$（常数时间）
@@ -50,7 +50,9 @@ struct Collection {   // 二项队列结构
 } ;
 ```
 
-2. **合并**
+2. **二项树合并** $O(1)$
+
+![alt text](images/3-4.png){style="width:30%;display: block;margin: 20px auto"}
 
 ```c
 BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 */
@@ -65,6 +67,36 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
 
 
 ### 操作
+=== "Insert"
+    1. **步骤**：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并
+
+    ![](images/3-2.png){style="width:80%;display: block;margin: 20px auto"}
+
+    2. **时间复杂度**：如果**最小的不存在的**二项树是 $B_i$ ，则单次插入 $T_p = const · (i+1)$ 
+    
+    - **每次插入的最坏时间复杂度**： $O(\log N)$ （一直合并到最后一个二项树）
+    - 在一个初始为空的二项队列上执行 $N$ 次插入操作将花费 $O(N)$ 的时间，因此**平均时间是常数**
+
+        ??? abstract "证明"
+            ![alt text](images/3-5.png){style="width:80%;display: block;margin: 20px auto"}
+
+        !!! abstract "摊还时间复杂度：势能法"
+            **定理**：一次代价为 $c$ 的插入操作，会使森林中的二项树数量净增加 $2 - c$
+
+            - $C_i$：第 $i$ 次插入的代价
+            
+            - $\Phi_i$：第 $i$ 次插入之后森林中的树的数量（$\Phi_0 = 0$）
+            
+            对所有 i = 1, 2, \dots, N，都有 $C_i + (\Phi_i - \Phi_{i-1}) = 2$
+            
+            将上述等式全部相加，得到 $\sum_{i=1}^{N} C_i + \Phi_N - \Phi_0 = 2N$
+            
+            因此 $\sum_{i=1}^{N} C_i = 2N - \Phi_N \le 2N = O(N)$
+
+            **摊还时间复杂度**：$T_{amortized} = 2$
+
+            !!! success "Notice"
+                最坏情况下，会减少树的数量，为后续插入预付了成本
 
 === "FindMin"
     1. **步骤**： 遍历所有树的根节点 ($\lceil \log N \rceil$ 个)，找到最小值
@@ -89,7 +121,9 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
             T1 = H1->TheTrees[i]; T2 = H2->TheTrees[i]; /*current trees */
             switch( 4*!!Carry + 2*!!T2 + !!T1 ) { 
                 /*
-                !!Carry：进位是否存在（1=存在，0=不存在）
+                相当于 {carry,T2,T1}
+                !!x = (x ≠ 0 ? 1 : 0)
+                !!Carry：进位二项树是否存在（1=存在，0=不存在）
                 !!T2：H2在当前高度的树是否存在
                 !!T1：H1在当前高度的树是否存在
                 */
@@ -98,28 +132,19 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
                 case 2: /* 010 */  H1->TheTrees[i] = T2; H2->TheTrees[i] = NULL; break;
                 case 4: /* 100 */  H1->TheTrees[i] = Carry; Carry = NULL; break;
                 case 3: /* 011 */  Carry = CombineTrees( T1, T2 );
-                                H1->TheTrees[i] = H2->TheTrees[i] = NULL; break;
+                                   H1->TheTrees[i] = H2->TheTrees[i] = NULL; break;
                 case 5: /* 101 */  Carry = CombineTrees( T1, Carry );
-                                H1->TheTrees[i] = NULL; break;
+                                   H1->TheTrees[i] = NULL; break;
                 case 6: /* 110 */  Carry = CombineTrees( T2, Carry );
-                                H2->TheTrees[i] = NULL; break;
+                                   H2->TheTrees[i] = NULL; break;
                 case 7: /* 111 */  H1->TheTrees[i] = Carry; 
-                                Carry = CombineTrees( T1, T2 ); 
-                                H2->TheTrees[i] = NULL; break;
+                                   Carry = CombineTrees( T1, T2 ); 
+                                   H2->TheTrees[i] = NULL; break;
             } 
         }
         return H1;
     }
     ```
-
-=== "Insert"
-    1. **步骤**：（合并操作的特例）逐个插入，插入后将相同高度的树进行合并
-
-    ![](images/3-2.png){style="width:80%;display: block;margin: 20px auto"}
-
-    2. **时间复杂度**：如果**最小的不存在的**二项树是 $B_i$ ，则 $T_p = const · (i+1)$ 
-    3. 在一个初始为空的二项队列上执行 $N$ 次插入操作将花费 $O(N)$ 的最坏情况时间，因此**平均时间是常数**
-
 
 === "DeleteMin"
     1. **步骤**：
