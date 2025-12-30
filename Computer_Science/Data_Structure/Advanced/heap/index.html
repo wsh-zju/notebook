@@ -3418,11 +3418,12 @@
 <h2 id="_1">左倾堆<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>目标</strong>：加快原本为 <span class="arithmatex">\(O(N)\)</span> 的合并速度</li>
-<li><strong>空路径长度 <span class="arithmatex">\(Npl(X)\)</span></strong>：任意节点 <span class="arithmatex">\(X\)</span> 的空路径长度 <span class="arithmatex">\(Npl(X)\)</span> 是 <span class="arithmatex">\(X\)</span> 到不具有两个子节点的节点的最短路径长度，并且定义 <span class="arithmatex">\(Npl(NULL) = –1\)</span></li>
+<li><strong>空路径长度 <span class="arithmatex">\(Npl(X)\)</span></strong>：任意节点 <span class="arithmatex">\(X\)</span> 的空路径长度 <span class="arithmatex">\(Npl(X)\)</span> 是 <span class="arithmatex">\(X\)</span> 到<strong>不具有两个子节点的节点</strong>的最短路径长度</li>
 </ol>
-<div class="arithmatex">\[
-Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}
-\]</div>
+<ul>
+<li>定义 <span class="arithmatex">\(Npl(NULL) = –1\)</span></li>
+<li><strong>递推</strong>：<span class="arithmatex">\(Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}\)</span></li>
+</ul>
 <ol start="3">
 <li><strong>左式堆性质</strong>：</li>
 </ol>
@@ -3546,7 +3547,7 @@ Npl(X) = min \{ Npl(C) + 1 | C 是 X 的所有子节点 \}
 <li>也不需要测试来确定何时交换子项</li>
 <li>实现简单</li>
 </ul>
-<ol>
+<ol start="3">
 <li><strong>斜堆的缺点</strong>：理论分析复杂，平均右路径长度的期望仍是未完全解决的开放问题</li>
 </ol>
 </div>
