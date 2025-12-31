@@ -3462,14 +3462,15 @@
 <li>摊还分析的目标是：把这些“偶尔昂贵”的操作成本，平均摊到多次操作中去，得出<strong>更合理的平均性能指标</strong></li>
 </ul>
 <ol start="2">
-<li><strong>摊还时间界</strong>（amortized time bound）：连续操作的<strong>平均最坏</strong>情况（总时间复杂度的上界）</li>
+<li><strong>摊还时间界</strong>（amortized time bound）：连续操作总时间的上界</li>
 </ol>
 <ul>
 <li>最坏情况界 <span class="arithmatex">\(\geq\)</span> 摊还界 <span class="arithmatex">\(\geq\)</span> 平均情况界 </li>
 </ul>
 <hr />
 <h2 id="_2">聚合分析<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>对于任意 <span class="arithmatex">\(n\)</span>，一个包含 <span class="arithmatex">\(n\)</span> 次操作的序列总共需要的最坏情况时间为 <span class="arithmatex">\(T(n)\)</span>。因此，在最坏情况下，每次操作的平均成本（即摊还成本）为 <span class="arithmatex">\(T(n)/n\)</span></p>
+<p>对于任意 <span class="arithmatex">\(n\)</span>，一个包含 <span class="arithmatex">\(n\)</span> 次操作的序列总共需要的<strong>最坏情况时间</strong>为 <span class="arithmatex">\(T(n)\)</span></p>
+<p>因此，在最坏情况下，每次操作的平均成本（即摊还成本）为 <span class="arithmatex">\(T(n)/n\)</span></p>
 <hr />
 <h2 id="_3">会计方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
@@ -3486,9 +3487,15 @@
 <div class="arithmatex">\[
 \sum_{i=1}^n \hat{c}_i \geq \sum_{i=1}^n c_i
 \]</div>
+<ol start="3">
+<li><strong>摊还时间复杂度</strong>： </li>
+</ol>
+<div class="arithmatex">\[
+T_{\text{amortized}}=\frac{\sum_{i=1}^n \hat{c}_i}{n}
+\]</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>支持MultiPop的栈</strong></p>
+<p><strong>支持 MultiPop 的栈</strong></p>
 <p><strong>实际成本</strong> <span class="arithmatex">\( c_i \)</span>：<code>Push</code> 为 1；<code>Pop</code> 为 1；<code>MultiPop 为</code> <span class="arithmatex">\( \min(\text{sizeof}(S), k) \)</span></p>
 <p><strong>摊还成本</strong> <span class="arithmatex">\( \hat{c}_i \)</span>：<code>Push</code> 为 2；<code>Pop</code> 为 0；<code>MultiPop</code> 为 0</p>
 <p><strong>信用分配：</strong></p>
@@ -3497,7 +3504,7 @@
 <li><code>Pop</code>: -1（使用1单位信用支付实际成本）；</li>
 <li><code>MultiPop</code>: 每弹出一个元素使用1单位信用（因为实际成本为 <span class="arithmatex">\(k'\)</span>，但摊还成本为0）。</li>
 </ul>
-<p>由于栈大小 <span class="arithmatex">\( \text{sizeof}(S) \geq 0 \)</span>，因此总信用始终非负。</p>
+<p>由于栈大小 <span class="arithmatex">\( \text{sizeof}(S) \geq 0 \)</span>，因此总信用始终非负</p>
 <div class="arithmatex">\[
 \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i  \Rightarrow T_{\text{amortized}} = O(n)/n = O(1)
 \]</div>
@@ -3510,12 +3517,13 @@
 <div class="admonition abstract">
 <p class="admonition-title">Notices</p>
 <p>通常，一个好的势能函数应在操作序列开始时取最小值（即 <strong><span class="arithmatex">\( \Phi(D_0) \)</span> 最小</strong>）</p>
+<p>并且<strong>单调递增的函数</strong>不能用来做势能函数，会导致实际成本与摊还成本之间的差距不断加大</p>
 </div>
 <ol start="2">
 <li><strong>公式</strong>：</li>
 </ol>
 <div class="arithmatex">\[
-\hat{c}_i - c_i = \text{Credit}_i = \Phi(D_i) - \Phi(D_{i-1})
+\hat{c}_i - c_i = Credit_i = \Phi(D_i) - \Phi(D_{i-1})
 \]</div>
 <div class="arithmatex">\[
 \sum_{i=1}^n \hat{c}_i = \sum_{i=1}^n \left( c_i + \Phi(D_i) - \Phi(D_{i-1}) \right) = \left( \sum_{i=1}^n c_i \right) + \Phi(D_n) - \Phi(D_0)
@@ -3563,7 +3571,14 @@
 <div class="arithmatex">\[
 \Rightarrow \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1}) = k' - k' = 0
 \]</div>
-<p>因此，总摊还成本 <span class="arithmatex">\( \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i \)</span>，摊还时间为 <span class="arithmatex">\( O(1) \)</span>。</p>
+<p>因此，总摊还成本 <span class="arithmatex">\( \sum_{i=1}^n \hat{c}_i = O(n) \geq \sum_{i=1}^n c_i \)</span>，摊还时间为 <span class="arithmatex">\( O(1) \)</span></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">总结</p>
+<ol>
+<li><strong>会计方法</strong>：人为分配摊还成本</li>
+<li><strong>势能方法</strong>：定义势能函数，利用势能函数求出摊还成本</li>
+</ol>
 </div>
 
 

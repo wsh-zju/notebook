@@ -3333,6 +3333,12 @@
 <h1 id="_1">倒排索引<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <ol>
 <li><strong>概念</strong>：由词查找文档</li>
+</ol>
+<ul>
+<li><strong>索引</strong>（Index）：用于在文本中定位某个给定词项（term）</li>
+<li><strong>倒排文件</strong>（Inverted file）：包含一个指针列表（例如页码），指向该词项在文本中出现的所有位置</li>
+</ul>
+<ol start="2">
 <li><strong>组成</strong></li>
 </ol>
 <ul>
@@ -3355,14 +3361,14 @@
 <span class="normal"><a href="#__codelineno-0-7">7</a></span>
 <span class="normal"><a href="#__codelineno-0-8">8</a></span>
 <span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="n">D</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">D</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Find</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="n">Insert</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">read</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">D</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// Token Analyzer &amp; Stop Filter</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Find</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="p">)</span><span class="w">   </span><span class="c1">// Vocabulary Scanner</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="n">Insert</span><span class="p">(</span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="p">);</span><span class="w">          </span><span class="c1">// Dictionary Insertor</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="n">Get</span><span class="w"> </span><span class="n">T</span><span class="err">’</span><span class="n">s</span><span class="w"> </span><span class="n">posting</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Insert</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">T</span><span class="err">’</span><span class="n">s</span><span class="w"> </span><span class="n">posting</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Write</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">inverted</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">Write</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">inverted</span><span class="w"> </span><span class="n">index</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span><span class="w">           </span><span class="c1">// Memory Management</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>核心功能模块</strong>：</p>
 <ul>
@@ -3372,19 +3378,55 @@
 <li>词汇表插入器<code>Vocabulary Insertor</code></li>
 <li>内存管理<code>Memory management</code></li>
 </ul>
+<details class="abstract">
+<summary>内存不足时的倒排索引</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">BlockCnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">read</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">term</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">memory</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="n">Write</span><span class="w"> </span><span class="n">BlockIndex</span><span class="p">[</span><span class="n">BlockCnt</span><span class="p">]</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">disk</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="n">BlockCnt</span><span class="w"> </span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="n">FreeMemory</span><span class="p">;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Find</span><span class="p">(</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">            </span><span class="n">Insert</span><span class="p">(</span><span class="w"> </span><span class="n">Dictionary</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">        </span><span class="n">Get</span><span class="w"> </span><span class="n">T</span><span class="err">’</span><span class="n">s</span><span class="w"> </span><span class="n">posting</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">        </span><span class="n">Insert</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">T</span><span class="err">’</span><span class="n">s</span><span class="w"> </span><span class="n">posting</span><span class="w"> </span><span class="n">list</span><span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">BlockCnt</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">InvertedIndex</span><span class="p">,</span><span class="w"> </span><span class="n">BlockIndex</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>当内存装不下整个倒排索引时，把索引分块写到磁盘，最后再把这些块按词项顺序归并成一个完整的倒排索引</p>
+</details>
 <ol start="4">
 <li><strong>文本预处理</strong></li>
 </ol>
 <ul>
-<li>词干提取（stemming）（还原为词根）：提高召回率，降低精确率</li>
-<li>去除停用词（<code>a</code>,<code>the</code>...）</li>
+<li><strong>词干提取</strong>（stemming）（还原为词根）：提高召回率，降低精确率</li>
+<li><strong>去除停用词</strong>（<code>a</code>,<code>the</code>...）</li>
 </ul>
 <ol start="5">
 <li><strong>关键技术</strong></li>
 </ol>
 <ul>
 <li>
-<p><strong>词典数据结构</strong>：哈希表、搜索树</p>
+<p><strong>词典数据结构</strong>（用于访问词）：哈希表、搜索树</p>
 <div class="admonition abstract">
 <p class="admonition-title"><strong>Pros &amp; Cons</strong></p>
 <table>
@@ -3398,33 +3440,33 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><strong>查找速度</strong></td>
-<td style="text-align: left;">平均 O(1)，非常快</td>
+<td style="text-align: left;">平均 O(1)，非常<strong>快</strong></td>
 <td style="text-align: left;">O(log n)，较快但略慢于哈希</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>是否有序</strong></td>
-<td style="text-align: left;">无序，不支持范围或前缀查询</td>
+<td style="text-align: left;">无序，<strong>不支持范围或前缀查询</strong></td>
 <td style="text-align: left;">有序，可支持排序、范围查找、前缀匹配</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>内存利用率</strong></td>
 <td style="text-align: left;">可能浪费空间（哈希桶未满）</td>
-<td style="text-align: left;">节点结构紧凑，空间利用率较高</td>
+<td style="text-align: left;">节点结构紧凑，<strong>空间利用率较高</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>插入/删除</strong></td>
-<td style="text-align: left;">操作简单，速度快</td>
+<td style="text-align: left;">操作简单，速度<strong>快</strong></td>
 <td style="text-align: left;">需要维护树的平衡，稍慢</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>扩展性</strong></td>
-<td style="text-align: left;">当数据量增大时可能需要重哈希（rehash）</td>
+<td style="text-align: left;">当数据量增大时可能需要<strong>重哈希</strong>（rehash）</td>
 <td style="text-align: left;">可随数据量增长自然扩展</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>实现复杂度</strong></td>
 <td style="text-align: left;">简单</td>
-<td style="text-align: left;">相对复杂（尤其是平衡树、Trie）</td>
+<td style="text-align: left;">相对<strong>复杂</strong>（尤其是平衡树、前缀树 Trie）</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>适用场景</strong></td>
@@ -3443,20 +3485,20 @@
 <li>
 <p><strong>大规模数据处理</strong>：分区索引（词项分区索引、文档分区索引）</p>
 </li>
-<li><strong>动态索引</strong>：更新现有词项或添加新词项、添加辅助索引（用于临时存储新文档）</li>
+<li><strong>动态索引</strong>：辅助索引临时存储新文档，达到一定大小/时间再合并入主索引</li>
 </ul>
 <ol start="6">
 <li><strong>性能优化</strong></li>
 </ol>
 <ul>
-<li><strong>索引压缩</strong>：去除停用词、差分存储（利用<strong>文档ID之间的差值</strong>进行压缩，大多数间隙可以用远小于20位的位进行编码）</li>
+<li><strong>索引压缩</strong>（compression）：去除停用词、<strong>差分存储</strong>（利用<strong>文档ID之间的差值</strong>进行压缩，大多数间隙可以用远小于20位的位进行编码）</li>
 <li><strong>阈值检索</strong>（Thresholding）：<ul>
-<li><strong>文档截断</strong>：仅返回权重最高的前X篇文档<ul>
+<li><strong>文档截断</strong>：仅返回权重最高的前 <span class="arithmatex">\(x\)</span> 篇文档<ul>
 <li>不适用于布尔查询</li>
 <li>由于截断，可能会遗漏部分相关文档</li>
 </ul>
 </li>
-<li><strong>查询截断</strong>：按词项频率升序排序，选择性处理查询词项（优先选择较稀有的词项进行搜索）</li>
+<li><strong>查询截断</strong>（Query）：按词项频率<strong>升序</strong>排序，选择性处理查询词项（优先选择<strong>较稀有</strong>的词项进行搜索）</li>
 </ul>
 </li>
 </ul>
