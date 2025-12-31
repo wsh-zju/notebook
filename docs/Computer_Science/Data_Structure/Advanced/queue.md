@@ -77,7 +77,7 @@ BinTree CombineTrees( BinTree T1, BinTree T2 ){  /* merge equal-sized T1 and T2 
     - **每次插入的最坏时间复杂度**： $O(\log N)$ （一直合并到最后一个二项树）
     - 在一个初始为空的二项队列上执行 $N$ 次插入操作将花费 $O(N)$ 的时间，因此**平均时间是常数**
 
-        ??? abstract "证明"
+        ??? abstract "摊还时间复杂度：聚合分析"
             ![alt text](images/3-5.png){style="width:80%;display: block;margin: 20px auto"}
 
         !!! abstract "摊还时间复杂度：势能法"
