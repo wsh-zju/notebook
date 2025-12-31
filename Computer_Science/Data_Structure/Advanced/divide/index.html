@@ -3442,21 +3442,23 @@
 
 
 <h1 id="_1">分而治之<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p><strong>解决案例</strong>：</p>
+<div class="admonition success">
+<p class="admonition-title">解决案例</p>
 <ul>
 <li>最大子序列和: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
 <li>树的遍历: 时间复杂度 <span class="arithmatex">\(O(N)\)</span></li>
 <li>归并排序和快速排序: 时间复杂度 <span class="arithmatex">\(O(N \log N)\)</span></li>
 </ul>
+</div>
 <hr />
-<h3 id="_2">通用递归式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">通用递归式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[ T(N) = aT(N/b) + f(N) \]</div>
 <p>其中 <span class="arithmatex">\(f(N)\)</span> 代表将子问题的解合并成原问题</p>
-<details class="abstract">
-<summary>常见解</summary>
+<div class="admonition abstract">
+<p class="admonition-title">常见解</p>
 <p><span class="arithmatex">\( T(N) = 2T(N/2) + cN = O(N\log N) \)</span></p>
 <p><span class="arithmatex">\(T(N) = 2T(N/2) + cN^2 = O(N^2) \)</span></p>
-</details>
+</div>
 <hr />
 <h2 id="_3">递归式求解方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[ T(N) = a \, T(N/b) + f(N) \]</div>
@@ -3466,7 +3468,13 @@
 <li>当 <span class="arithmatex">\(n\)</span> 足够小时，<span class="arithmatex">\(T(n) = \Theta(1)\)</span></li>
 </ul>
 </li>
-<li><strong>代入法</strong>：猜测解的形式，并用数学归纳法证明</li>
+<li>
+<p><strong>代入法</strong>：猜测解的形式，并用数学归纳法证明</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>可能会猜错解，导致结论无法被证明，因此可以利用递归树求解</p>
+</div>
+</li>
 <li>
 <p><strong>递归树法</strong>：通过画递归树直观理解递归过程</p>
 <details class="example">
@@ -3514,53 +3522,61 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <h2 id="_4">最近点对问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>问题</strong>：给定平面上的 <span class="arithmatex">\(N\)</span> 个点，找出距离最近的点对（如果两个点位置相同，则该点对即为最近点对，距离为0）</li>
-<li><strong>简单穷举搜索法</strong>：检查 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对（时间复杂度 <span class="arithmatex">\( T = O(N^2) \)</span>）</li>
-<li><strong>分而治之</strong>：按 <span class="arithmatex">\(x\)</span> 坐标排序并进行<strong>划分</strong>，分成左半部分、右半部分以及<strong>跨越分割线</strong>的三部分解来<strong>递归求解</strong><ul>
+<li><strong>简单穷举搜索法</strong></li>
+</ol>
+<ul>
+<li><strong>思路</strong>：检查 <span class="arithmatex">\( N(N-1)/2 \)</span> 个点对</li>
+<li><strong>时间复杂度</strong>： <span class="arithmatex">\( T = O(N^2) \)</span></li>
+</ul>
+<ol start="3">
+<li><strong>分而治之</strong></li>
+</ol>
+<ul>
+<li><strong>思路</strong>：按 <span class="arithmatex">\(x\)</span> 坐标排序并进行<strong>划分</strong>，分成左半部分、右半部分以及<strong>跨越分割线</strong>的三部分解来<strong>递归求解</strong></li>
 <li>
-<p><strong>跨越分割线的解法</strong>：</p>
+<p><strong>跨越分割线的解法</strong>（合并阶段）</p>
+<ul>
+<li>利用 <strong>δ-strip</strong> 求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</li>
+</ul>
+<p><img alt="" src="../images/5-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
 <ul>
 <li>
-<p>利用<strong>δ-strip</strong>求解：找到左半部分和右半部分中最短的一段距离，记为 <span class="arithmatex">\(\delta\)</span> ，在 <span class="arithmatex">\((x-\delta, x+\delta)\)</span> 的范围内寻找即可</p>
-<p><img alt="" src="../images/5-1.png" style="width:30%;display: block;margin: 20px auto" /></p>
-</li>
-<li>
-<p>如果带状区域内的点数为 <span class="arithmatex">\( O(\sqrt{N}) \)</span>，使用遍历，时间复杂度为 <span class="arithmatex">\( O(N) \)</span></p>
+<p>如果带状区域内的点数为 <span class="arithmatex">\( O(\sqrt{N}) \)</span>，使用<strong>遍历</strong>，时间复杂度为 <span class="arithmatex">\( O(N) \)</span></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">            </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>最坏情况：带状区域内的点数为 <span class="arithmatex">\( N \)</span>，遍历并不高效，采取优化策略</p>
+<p><strong>最坏情况</strong>：带状区域内的点数为 <span class="arithmatex">\( N \)</span>，遍历并不高效，<strong>采取优化策略</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">/* points are all in the strip */</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="cm">/* and sorted by y coordinates */</span><span class="w">  </span><span class="c1">// 关键：已按y坐标排序</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist_y</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span><span class="w">  </span><span class="c1">// 先比较y坐标距离</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">                 </span><span class="c1">// 如果y方向已超过δ，直接跳出内循环</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">            </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// 关键：已按y坐标排序</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NumPointsInStrip</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist_y</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span><span class="w">   </span><span class="c1">// 先比较y坐标距离</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">                  </span><span class="c1">// 如果y方向已超过δ，直接跳出内循环</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">δ</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="n">δ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Dist</span><span class="p">(</span><span class="n">P_i</span><span class="p">,</span><span class="w"> </span><span class="n">P_j</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p>对于任意点 <span class="arithmatex">\( p_i \)</span> ，最多只需要考虑7个点（因为这些点与 <span class="arithmatex">\( p_i \)</span> 的距离小于 <span class="arithmatex">\(δ\)</span>），从而时间复杂度 <span class="arithmatex">\( f(N) = O(N) \)</span></p>
+<p>对于任意点 <span class="arithmatex">\( p_i \)</span> ，<strong>最多只需要考虑7个点</strong>和其之间的距离（在一个 <span class="arithmatex">\(\delta \times 2\delta\)</span> 的矩形中，最多只能放8个点，且任意两点距离 <span class="arithmatex">\(≥ \delta\)</span>）</p>
 </li>
+<li>从而<strong>时间复杂度</strong> <span class="arithmatex">\( f(N) = O(N) \)</span></li>
+<li><strong>递归关系</strong>：<span class="arithmatex">\(T(N) = 2T(N/2) + O(N)\)</span></li>
+<li><strong>总时间复杂度</strong>：<span class="arithmatex">\(T(N) = O(N \log N)\)</span></li>
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 
 
 
