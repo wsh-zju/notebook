@@ -3498,15 +3498,20 @@
 
 
 <h1 id="_1">近似算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition success">
+<p class="admonition-title">Summary</p>
+<p>算法设计通常需要在解的最优性、计算效率和适用实例范围之间进行权衡（<strong>即使 <span class="arithmatex">\(P=NP\)</span>，也不可能三个方面都满足</strong>）</p>
+<p>近似算法是在保证效率和普适性的前提下，<strong>牺牲部分最优性</strong>的一种方法</p>
+</div>
 <ol>
 <li><strong>目的</strong>：解决<strong>困难问题</strong></li>
 </ol>
 <div class="admonition info">
-<p class="admonition-title">NP完全</p>
+<p class="admonition-title">NP 完全</p>
 <ul>
 <li>当 <span class="arithmatex">\(N\)</span> 很小时，指数级复杂度 <span class="arithmatex">\(O(2^N)\)</span> 是可以接受的</li>
 <li>在多项式时间内可以解决某些重要的特殊情况</li>
-<li>在多项式时间内找到<strong>近似最优解</strong>：近似算法</li>
+<li><strong>在多项式时间内找到近似最优解</strong>：近似算法</li>
 </ul>
 </div>
 <ol start="2">
@@ -3545,6 +3550,7 @@
 </ul>
 </li>
 </ul>
+<hr />
 <h2 id="_2">近似装箱问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>问题</strong>：将 <span class="arithmatex">\(N\)</span> 个大小不超过1的物品装入最少数量的单位容量箱子中</li>
@@ -3684,6 +3690,7 @@ S_i=\{0.4,0.4,0.6,0.6\}
 <li><strong><code>First/Best Fit Decreasing</code>算法</strong>：将物品按大小<strong>非递增序列</strong>排序，然后使用<strong><code>First/Best Fit</code></strong>算法</li>
 <li><strong>定理</strong>：设 <span class="arithmatex">\(M\)</span> 为打包物品列表 <span class="arithmatex">\(I\)</span> 所需的最优箱子数，则<code>first fit decreasing</code>使用的箱子数 <span class="arithmatex">\(\leq 11M/9+6/9\)</span> ，并且存在某些序列使得<code>first fit decreasing</code>使用 <span class="arithmatex">\(11M/9+6/9\)</span> 个箱子</li>
 </ul>
+<hr />
 <h2 id="_3">背包问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h3 id="_4">分数版本<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3700,14 +3707,7 @@ S_i=\{0.4,0.4,0.6,0.6\}
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p><strong>Problem</strong>: </p>
-<div class="arithmatex">\[
-\begin{gathered}
-n=3, M=20 \\
-(p_1,p_2,p_3)=(25,24,15) \\
-(w_1,w_2,w_3)=(18,15,10)
-\end{gathered}
-\]</div>
+<p><strong>Problem</strong>: $<span class="arithmatex">\(n=3, M=20,\, (p_1,p_2,p_3)=(25,24,15),\,(w_1,w_2,w_3)=(18,15,10)\)</span></p>
 <p><strong>Solution</strong>: <span class="arithmatex">\((x_1,x_2,x_3)=(0,1,1/2)\)</span> 且 <span class="arithmatex">\(P=31.5\)</span></p>
 </div>
 <h3 id="0-1">0-1/整数版本<a class="headerlink" href="#0-1" title="Permanent link">&para;</a></h3>
@@ -3737,10 +3737,10 @@ n=3, M=20 \\
 </div>
 </div>
 <ul>
-<li><strong>近似比</strong>：贪心算法是2-近似的</li>
+<li><strong>近似比</strong>：贪心算法是<strong>2-近似的</strong></li>
 </ul>
-<div class="admonition info">
-<p class="admonition-title">证明</p>
+<details class="info">
+<summary>证明</summary>
 <div class="admonition note">
 <p class="admonition-title">定义</p>
 <ol>
@@ -3750,12 +3750,11 @@ n=3, M=20 \\
 <li><span class="arithmatex">\(P_{greedy}\)</span> = 0-1背包问题的贪心算法解的总价值</li>
 </ol>
 </div>
-<p><strong>证明</strong></p>
-<p>已知</p>
+<p><strong>证明</strong>：已知</p>
 <div class="arithmatex">\[
 \begin{gathered}
 p_{max} ≤ P_{opt} ≤ P_{frac} \\
-p_{max} ≤ P_{greedy}
+p_{max} ≤ P_{greedy}\\
 P_{frac} ≤ P_{greedy} + p_{max}
 \end{gathered}
 \]</div>
@@ -3763,7 +3762,7 @@ P_{frac} ≤ P_{greedy} + p_{max}
 <div class="arithmatex">\[
 P_{opt} / P_{greedy} ≤ 1 + p_{max} / P_{greedy} ≤ 1 + 1 = 2
 \]</div>
-</div>
+</details>
 <ol start="2">
 <li><strong>动态规划解法</strong></li>
 </ol>
@@ -3778,7 +3777,7 @@ W_{i-1,p} &amp; p_i &gt; p \\
 \min\{W_{i-1,p}, w_i + W_{i-1,p-p_i}\} &amp; \text{其他情况}
 \end{cases}
 \]</div>
-<p>其中 <span class="arithmatex">\( i = 1, ..., n \)</span>，<span class="arithmatex">\( p = 1, ..., n \, p_{\max}\)</span></p>
+<p>其中 <span class="arithmatex">\( i = 1, ..., n \)</span> 且 <span class="arithmatex">\( p = 1, ..., n \, p_{\max}\)</span></p>
 </li>
 <li>
 <p><strong>时间复杂度</strong>：<span class="arithmatex">\(O(n^2 p_{max})\)</span></p>
@@ -3805,8 +3804,8 @@ W_{i-1,p} &amp; p_i &gt; p \\
 <ol>
 <li><strong>问题定义</strong>：从 <span class="arithmatex">\(n\)</span> 个站点中选择 <span class="arithmatex">\(K\)</span> 个中心 <span class="arithmatex">\(C\)</span> ，使得任意站点到其最近中心的最大距离（<strong>覆盖半径</strong>）最小</li>
 </ol>
-<div class="admonition abstract">
-<p class="admonition-title">距离性质</p>
+<details class="abstract">
+<summary>距离性质</summary>
 <ol>
 <li><strong>自反性</strong> <span class="arithmatex">\(dist(x,x)=0\)</span></li>
 <li><strong>对称性</strong> <span class="arithmatex">\(dist(x,y)=dist(y,x)\)</span></li>
@@ -3814,27 +3813,59 @@ W_{i-1,p} &amp; p_i &gt; p \\
 <li><strong><span class="arithmatex">\(s_i\)</span> 到最近中心的距离</strong>：<span class="arithmatex">\(dist(s_i,C)=min_{c \in C} \{dist(s_i,c)\}\)</span></li>
 <li><strong>最小覆盖半径</strong>：<span class="arithmatex">\(r(C)=max_i \{dist(s_i,C)\}\)</span></li>
 </ol>
-</div>
+</details>
 <ol start="2">
 <li><strong>贪心算法（Greedy-Kcenter）</strong></li>
 </ol>
 <ul>
 <li>
-<p><strong>方法一</strong>：将第一个中心放置在对于<strong>单个中心</strong>而言的最佳可能位置，然后持续添加中心，每次<strong>尽可能大地减少覆盖半径</strong></p>
+<p><strong>直觉贪心</strong>：将第一个中心放置在对于<strong>单个中心</strong>而言的最佳可能位置，然后持续添加中心，每次<strong>尽可能大地减少覆盖半径</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Notice</p>
 <p>对于单个中心可行；但是对于多个中心，效果非常差</p>
+<p><img alt="alt text" src="../images/7-3.png" style="width:40%;display: block;margin: 20px auto" /></p>
 </div>
 </li>
 <li>
-<p><strong>方法二</strong>：任意选择一个点作为第一个中心，接下来每次选择<strong>距离当前中心集合最远</strong>的点作为下一个中心，直到选出 <span class="arithmatex">\(K\)</span> 个中心</p>
+<p><strong>Greedy-2r 判定算法</strong>：</p>
 <ul>
+<li><strong>步骤</strong><ul>
+<li>猜测半径 <span class="arithmatex">\(r\)</span></li>
+<li>反复从<strong>未覆盖集合</strong> <span class="arithmatex">\(S'\)</span> 里任选一个点 <span class="arithmatex">\(s\)</span> 加入中心集 <span class="arithmatex">\(C\)</span>，并删除所有距离 <span class="arithmatex">\(s\)</span> 不超过 <span class="arithmatex">\(2r\)</span> 的点</li>
+<li>最后如果 <span class="arithmatex">\(|C|\leq K\)</span> 则返回，否则<strong>报错</strong></li>
+</ul>
+</li>
+<li><strong>定理</strong>：若 Greedy-2r 选出了超过 <span class="arithmatex">\(K\)</span> 个中心，则对任意 <span class="arithmatex">\(|C^*|\leq K\)</span>，都有 <span class="arithmatex">\(r(C^*)&gt;r\)</span> （即<strong>半径 <span class="arithmatex">\(r\)</span> 不可能实现 K-center 覆盖</strong>）</li>
 <li>该贪心算法是<strong>2-近似的</strong>：返回的解满足 <span class="arithmatex">\(r(C) \leq 2 \cdot r(C^*)\)</span></li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">二分查找</p>
+<p>设 <span class="arithmatex">\(0&lt;r\leq r_{max}\)</span>，二分查找<strong>猜</strong> <span class="arithmatex">\(r\)</span>  ￼</p>
+<ul>
+<li>每次调用 Greedy-2r<ul>
+<li>用半径 <span class="arithmatex">\(2r\)</span> 能找到 <span class="arithmatex">\(≤K\)</span> 个中心 → <span class="arithmatex">\(r\)</span> 可能偏大，<strong>缩小上界</strong></li>
+<li><span class="arithmatex">\(r\)</span> 太小，<strong>增大下界</strong></li>
+</ul>
+</li>
+<li>最终得到区间 <span class="arithmatex">\(r_0&lt;r\leq r_1\)</span></li>
+<li><strong>输出半径为 <span class="arithmatex">\(2r_1\)</span></strong> （因为是<strong>被证明可行</strong>的半径的下界）</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Farthest-first 贪心</strong>：</p>
+<ul>
+<li><strong>步骤</strong>（在Greedy-2r 算法的基础上改变）<ul>
+<li>任意选择一个点作为第一个中心</li>
+<li>接下来每次选择<strong>距离当前中心集合最远</strong>的点作为下一个中心，直到选出 <span class="arithmatex">\(K\)</span> 个中心</li>
+</ul>
+</li>
+<li>该贪心算法仍然是<strong>2-近似的</strong></li>
 </ul>
 </li>
 </ul>
 <ol start="3">
-<li><strong>定理</strong>：除非 <span class="arithmatex">\(P = NP\)</span>，否则<code>K-center</code>问题不能有比2更小的近似比，即不存在比<strong>2-近似算法</strong>更好的多项式时间算法</li>
+<li><strong>定理</strong>：除非 <span class="arithmatex">\(P = NP\)</span>，否则不存在比<strong>2-近似算法</strong>更好的多项式时间算法</li>
 </ol>
 
 

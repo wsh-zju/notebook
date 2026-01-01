@@ -3468,7 +3468,7 @@
 <p class="admonition-title">计算问题 Easy or Hard</p>
 <ol>
 <li><strong>最简单的问题</strong>：<span class="arithmatex">\(O(N)\)</span>，至少需要读入数据</li>
-<li><strong>最难的问题</strong>：不可判定问题</li>
+<li><strong>最难的问题</strong>：不可判定问题（不存在任何算法能保证对所有输入给出答案 <strong>e.g.</strong> 停机问题）</li>
 </ol>
 </div>
 <h2 id="_1">停机问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -3498,6 +3498,7 @@
 </ul>
 </li>
 </ul>
+<hr />
 <h2 id="_2">图灵机<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>组成</strong>：</li>
@@ -3526,18 +3527,19 @@
 <p class="admonition-title">Notices</p>
 <p>即使使用非确定性图灵机，<strong>不可判定问题仍然不可判定</strong></p>
 </div>
+<hr />
 <h2 id="np_1">NP 完全性<a class="headerlink" href="#np_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>定义</strong></li>
 </ol>
 <ul>
-<li><strong>P</strong>：在<strong>确定性</strong>图灵机上在多项式时间内<strong>被直接解决</strong></li>
+<li><strong>P</strong>：在<strong>确定性图灵机</strong>上在多项式时间内<strong>被直接解决</strong></li>
 <li><strong>NP</strong>：问题的解可以在<strong>确定性图灵机</strong>上在多项式时间内<strong>被验证</strong></li>
-<li><strong>co-NP</strong>：问题的<strong>补问题属于 NP</strong></li>
+<li><strong>co-NP</strong>：问题的<strong>补问题属于 NP</strong> <span class="arithmatex">\(\bar{L} \in NP\)</span></li>
 <li><strong>NP-Hard</strong>：所有问题Q，使得NP中的每一个问题都可以多项式时间归约到Q</li>
 <li><strong>NP-Complete</strong>：<ul>
 <li>一个问题Q既是 <strong>NP-Hard</strong> ，又属于 <strong>NP</strong></li>
-<li>是NP中<strong>最难</strong>的问题子集</li>
+<li>是 NP 中<strong>最难</strong>的问题子集</li>
 </ul>
 </li>
 </ul>
@@ -3547,12 +3549,13 @@
 <li><strong>NP-Hard</strong> 问题不一定在 <strong>NP</strong> 中</li>
 <li>所有 NP 问题都可以在<strong>非确定性图灵机</strong>上在多项式时间内<strong>解决</strong>，与定义不矛盾</li>
 <li>已知 <span class="arithmatex">\(P \subseteq NP\)</span></li>
+<li>某些图论问题（如欧拉回路、最短路径）可以在多项式时间内求解，而与之形式相似的问题（如哈密顿回路、最长路径）却是 <strong>NP-Hard</strong> 问题，目前不存在已知的多项式时间算法</li>
 </ol>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><strong>Problem</strong>: 哈密顿回路问题</p>
-<p><strong>Answer</strong>: 给定一条回路，只需要验证该回路是否包含了所有顶点即可，这一验证过程可以在多项式时间内完成，因此该问题属于 NP</p>
+<p><strong>Answer</strong>: 给定一条回路，只需要验证该回路是否包含了所有顶点即可，这一验证过程可以在多项式时间内完成，因此<strong>该问题属于 NP</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Notices</p>
 <p><strong>并非所有可判定问题都属于 NP</strong></p>
@@ -3563,8 +3566,8 @@
 <li><strong>性质</strong></li>
 </ol>
 <ul>
-<li>一个问题若是NP完全问题，那么NP中的任意问题都可以在多项式时间内归约到该问题</li>
-<li>如果有一个NP完全问题能够在多项式时间内被解决，那么<strong>所有NP问题都能在多项式时间内解决</strong></li>
+<li>一个问题若是<strong>NP完全问题</strong>，那么NP中的任意问题都可以<strong>在多项式时间内归约</strong>到该问题</li>
+<li>如果有一个<strong>NP完全问题</strong>能够在多项式时间内被解决，那么<strong>所有NP问题都能在多项式时间内解决</strong></li>
 </ul>
 <ol start="3">
 <li><strong>多项式归约定理</strong>：若对任意输入 <span class="arithmatex">\(α\)</span> 属于问题 <span class="arithmatex">\(A\)</span>，能找到一个多项式时间算法将其转换为问题 <span class="arithmatex">\(B\)</span> 的输入 <span class="arithmatex">\(β\)</span>，即：</li>
@@ -3598,12 +3601,13 @@
 <div class="admonition info">
 <p class="admonition-title">SAT</p>
 <ol>
-<li>第一个被证明为NP完全的问题：可满足性问题（SAT），它是NP完全研究的起点</li>
+<li>第一个被证明为<strong>NP完全</strong>的问题：可满足性问题（SAT），它是NP完全研究的起点</li>
 <li><strong>问题描述</strong>：给定一个布尔表达式，询问是否存在一组对变量的赋值，使得该表达式的值为1</li>
 <li><strong>Cook定理</strong>：所有NP问题都可以多项式时间归约到可满足性问题</li>
 <li><strong>证明方法</strong>：通过在非确定性图灵机上以多项式时间解决此问题来证明</li>
 </ol>
 </div>
+<hr />
 <h2 id="_3">形式语言框架<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>抽象问题</strong>：一个抽象问题 <span class="arithmatex">\(Q\)</span> 是问题实例集合 <span class="arithmatex">\(I\)</span> 和问题解集合 <span class="arithmatex">\(S\)</span> 之间的一个<strong>二元关系</strong></li>
