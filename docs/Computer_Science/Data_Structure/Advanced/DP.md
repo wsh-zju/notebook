@@ -62,7 +62,7 @@ int Fibonacci ( int N ) {
     b_n = \sum_{i=0}^{n} b_i b_{n-i} \Rightarrow b_n = O(\frac{4^n}{n \sqrt{n}})
     $$
 
-    其中 $n >14$ 且 $b_1=1$
+    其中 $n >1$ 且 $b_1=1$
 
 - **$m_{ij}$ 的递推式**
   
