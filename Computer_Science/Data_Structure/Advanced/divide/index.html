@@ -3572,10 +3572,12 @@ O(N^k \log^p N) &amp; \text{若 } a &lt; b^k
 <p>对于任意点 <span class="arithmatex">\( p_i \)</span> ，<strong>最多只需要考虑7个点</strong>和其之间的距离（在一个 <span class="arithmatex">\(\delta \times 2\delta\)</span> 的矩形中，最多只能放8个点，且任意两点距离 <span class="arithmatex">\(≥ \delta\)</span>）</p>
 </li>
 <li>从而<strong>时间复杂度</strong> <span class="arithmatex">\( f(N) = O(N) \)</span></li>
-<li><strong>递归关系</strong>：<span class="arithmatex">\(T(N) = 2T(N/2) + O(N)\)</span></li>
-<li><strong>总时间复杂度</strong>：<span class="arithmatex">\(T(N) = O(N \log N)\)</span></li>
 </ul>
 </li>
+<li>
+<p><strong>递归关系</strong>：<span class="arithmatex">\(T(N) = 2T(N/2) + O(N)\)</span></p>
+</li>
+<li><strong>总时间复杂度</strong>：<span class="arithmatex">\(T(N) = O(N \log N)\)</span></li>
 </ul>
 
 

@@ -2378,7 +2378,7 @@
   <a href="#huffman" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huffman编码
+        Huffman 编码
       
     </span>
   </a>
@@ -3387,7 +3387,7 @@
   <a href="#huffman" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Huffman编码
+        Huffman 编码
       
     </span>
   </a>
@@ -3435,7 +3435,7 @@
 </ol>
 <ul>
 <li>给定一个活动集合 <span class="arithmatex">\(S=\{ a_1,a_2,\cdots,a_n \}\)</span></li>
-<li>每个活动 <span class="arithmatex">\(a_i\)</span> 都发生在一个时间区间 <span class="arithmatex">\(\[s_i,f_i\)\)</span></li>
+<li>每个活动 <span class="arithmatex">\(a_i\)</span> 都发生在一个时间区间 <span class="arithmatex">\([s_i,f_i)\)</span> 内</li>
 <li>这些活动希望使用一个资源，选择<strong>尽量多</strong>的互相不重叠的活动</li>
 </ul>
 <div class="admonition info">
@@ -3450,10 +3450,24 @@
 </ol>
 <ul>
 <li>
-<p><strong>DP</strong></p>
+<p><strong>DP 解法</strong></p>
 <ul>
 <li>定义<strong>二维DP表</strong>：<span class="arithmatex">\(c[i][j]\)</span> 为活动 <span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(a_j\)</span> 之间（不包括<span class="arithmatex">\(a_i\)</span> 和 <span class="arithmatex">\(a_j\)</span>）可选择的最大活动数</li>
-<li><strong>状态转移公式</strong>：<span class="arithmatex">\(c[i][j] = \max_{k \in S(i,j)} \left{ c[i][k] + c[k][j] + 1 \right}\)</span> </li>
+<li>
+<p><strong>状态转移公式</strong>：</p>
+<div class="arithmatex">\[
+c_{ij} =
+\begin{cases}
+0, &amp;  S_{ij} = \varnothing \\
+\max_{a_k \in S_{ij}}
+\left\{ c_{ik} + c_{kj} + 1 \right\},
+&amp; S_{ij} \neq \varnothing
+\end{cases}
+\]</div>
+</li>
+<li>
+<p><strong>时间复杂度</strong>：<span class="arithmatex">\(O(N^2)\)</span></p>
+</li>
 </ul>
 </li>
 <li>
@@ -3462,15 +3476,18 @@
 <li><strong>贪心规则 2</strong>：选择<strong>最短</strong>但不与已选区间重叠的活动</li>
 <li><strong>贪心规则 3</strong>：选择<strong>与剩余其他区间冲突最少</strong>且不与已选区间重叠的活动</li>
 </ul>
-<div class="admonition error">
+<div class="admonition danger">
 <p class="admonition-title">Error</p>
 <p>贪心规则1、2、3<strong>都不能得到最优解</strong>，反例如下</p>
-<p><img alt="" src="../images/6-1.png" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="" src="../images/6-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
 </div>
 <ul>
 <li><strong>贪心规则 4</strong>：选择<strong>结束最早</strong>但不与已选区间重叠的活动<ul>
 <li><strong>定理</strong>：考虑任何非空子问题 <span class="arithmatex">\(S_k\)</span>，令 <span class="arithmatex">\(a_m\)</span> 是 <span class="arithmatex">\(S_k\)</span> 中最早结束的活动，那么 <span class="arithmatex">\(a_m\)</span> 被包含在 <span class="arithmatex">\(S_k\)</span> 的<strong>某个</strong>最大规模的<strong>相互兼容</strong>活动子集中</li>
-<li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(N \log N)\)</span></li>
+<li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(N \log N)\)</span>（来源于排序而不是贪心）</li>
 </ul>
 </li>
 </ul>
@@ -3478,16 +3495,23 @@
 <p class="admonition-title">Success</p>
 <p>贪心规则4可以得到最优解，因为<strong>资源可以尽快释放</strong></p>
 </div>
+<div class="admonition abstract">
+<p class="admonition-title">Notice</p>
+<ol>
+<li>在几乎所有贪心算法的背后，都存在一个更加繁琐但可靠的动态规划解法</li>
+<li>但是如果是<strong>有权问题</strong>，贪心算法不一定能得到正确解，动态规划可以得到最优解</li>
+</ol>
+</div>
 <hr />
-<h2 id="huffman">Huffman编码<a class="headerlink" href="#huffman" title="Permanent link">&para;</a></h2>
+<h2 id="huffman">Huffman 编码<a class="headerlink" href="#huffman" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>用途</strong>：对数据进行无损压缩</li>
 <li><strong>基本思想</strong>：为出现频率较高的字符分配较短的编码，为出现频率较低的字符分配较长的编码</li>
 <li><strong>编码方式</strong>：前缀码（任何一个字符的编码都不是另一个字符编码的前缀，保证了<strong>无歧义编码</strong>）</li>
-<li><strong>成本计算</strong>：</li>
+<li><strong>成本计算</strong></li>
 </ol>
 <ul>
-<li>一个字符的编码长度等于它在树中的深度</li>
+<li>一个字符的编码长度等于它在树中的深度 <span class="arithmatex">\(d_i\)</span></li>
 <li><strong>编码总成本</strong>：<span class="arithmatex">\(Cost = \sum (f_i × d_i)\)</span></li>
 </ul>
 <ol start="5">
@@ -3499,11 +3523,11 @@
 </li>
 </ol>
 <ul>
-<li>
-<p><strong>贪心选择性质</strong>：令 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是频率最低的两个字符，那么存在一棵最优前缀码树，其中 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是<strong>深度最大且为兄弟节点</strong>的两个叶子节点</p>
-</li>
-<li>
-<p><strong>最优子结构性质</strong>：将 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 合并为一个新节点 <span class="arithmatex">\(z\)</span>（<code>z.freq = x.freq + y.freq</code>），得到一个新字母表 <span class="arithmatex">\(C'\)</span>。设 <span class="arithmatex">\(T'\)</span> 是 <span class="arithmatex">\(C'\)</span> 的最优前缀码树，那么将 <span class="arithmatex">\(T'\)</span> 中的 <span class="arithmatex">\(z\)</span> 节点展开为具有孩子 x 和 y 的内部节点后得到的树 <span class="arithmatex">\(T\)</span>，是原字母表 <span class="arithmatex">\(C\)</span> 的最优前缀码树。</p>
+<li><strong>贪心选择性质</strong>：令 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是频率最低的两个字符，那么存在一棵最优前缀码树，其中 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是<strong>深度最大且为兄弟节点</strong>的两个叶子节点</li>
+<li><strong>最优子结构性质</strong>：<ul>
+<li>将 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 合并为一个新节点 <span class="arithmatex">\(z\)</span>（<code>z.freq = x.freq + y.freq</code>），得到一个新字母表 <span class="arithmatex">\(C'\)</span></li>
+<li>设 <span class="arithmatex">\(T'\)</span> 是 <span class="arithmatex">\(C'\)</span> 的最优前缀码树，那么将 <span class="arithmatex">\(T'\)</span> 中的 <span class="arithmatex">\(z\)</span> 节点展开为具有孩子 x 和 y 的内部节点后得到的树 <span class="arithmatex">\(T\)</span>，是原字母表 <span class="arithmatex">\(C\)</span> 的最优前缀码树</li>
+</ul>
 </li>
 </ul>
 
