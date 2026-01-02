@@ -2,7 +2,7 @@
 ## Advanced Data Structures
 
 !!! tip "Tips"
-    这里提供一份 ADS 知识清单，可以打印下来默写知识点
+    这里提供一份 ADS 知识清单，可以打印下来默写知识点(◍•ᴗ•◍)
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../../style/images/code.svg" style="height: 3em;"></div>
