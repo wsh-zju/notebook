@@ -10,5 +10,5 @@
 <div class="file-title">ADS 知识清单</div>
 <div class="file-meta">2026-1-8 / 64 pages</div>
 </div>
-<a class="down-button" target="_blank" href="ADS 知识清单.md" markdown="1">:fontawesome-solid-download: Download</a>
+<a class="down-button" target="_blank" href="ADS.md" markdown="1">:fontawesome-solid-download: Download</a>
 </div>

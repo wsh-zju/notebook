@@ -11,9 +11,10 @@
 
 2. **邻居关系**
  
-- $S \sim S$ ：$S'$ 是 $S$ 的邻居解（ $S'$ 可以通过对 $S$ 进行微小的修改得到）
+- $S \sim S'$ ：$S'$ 是 $S$ 的邻居解（ $S'$ 可以通过对 $S$ 进行微小的修改得到）
 - $N(S)$ ：$S$ 的邻域——集合 $\{ S': S \sim S' \}$
 
+---
 ## 梯度下降算法
 
 1. **定义**：梯度下降（在局部搜索中）是一种贪心改进策略，通过不断移动到**当前解的最优邻域解**来寻找局部最优解
@@ -28,7 +29,8 @@ SolutionType Gradient_descent(){
         S' = Search(N(S)); /* 在 N(S) 中找到最优的 S' */  
         CurrentCost = cost(S');  
         if (CurrentCost < MinCost) {  
-            MinCost = CurrentCost; S = S';  
+            MinCost = CurrentCost; 
+            S = S';  
         }  
         else break;  
     }  
@@ -61,6 +63,11 @@ $$
 p=e^{\frac{-\Delta cost}{kT}}
 $$
 
+其中定义常量：
+
+- $k$：玻尔兹曼常数（理论中用，算法中常取 1）
+- $T$：温度参数，控制接受较差解的概率
+
 ```c
 SolutionType Metropolis(){   
     Define constants k and T;
@@ -73,7 +80,7 @@ SolutionType Metropolis(){
             MinCost = CurrentCost;    S = S’;
         }
         else {
-            With a probability p , let S = S’;
+            With a probability p , let S = S’;      // 以一定概率 p 接受该“较差解”
             else  break;
         }
     }
@@ -81,18 +88,17 @@ SolutionType Metropolis(){
 }
 ```
 
+---
 ## 模拟退火算法
-
-1. `Simulated Annealing`：材料从高温开始，非常缓慢地冷却，使其有足够时间在一系列逐步降低的中间温度下达到平衡
+`Simulated Annealing`：材料从高温开始，非常缓慢地冷却，使其有足够时间在一系列逐步降低的中间温度下达到平衡
 
 ### 霍普菲尔德神经网络
 
-1. **问题**：
-
-- 图 $G = (V, E)$ 具有整数边权重 $w$（可为正或负）
-    - 若 \( w_e < 0 \)，其中 $e = (u, v)$，则 $u$ 和 $v$ 需要处于**相同状态**（+1/-1）
-    - 若 \( w_e > 0 \)，则 $u$ 和 $v$ 需要处于**不同状态**
-    - 绝对值 \( |w_e| \) 表示该要求的强度
+1. **问题**：图 $G = (V, E)$ 具有整数边权重 $w$（可为正或负）
+    
+- 若 \( w_e < 0 \)，其中 $e = (u, v)$，则 $u$ 和 $v$ 需要处于**相同状态**（+1/-1）
+- 若 \( w_e > 0 \)，则 $u$ 和 $v$ 需要处于**不同状态**
+- 绝对值 \( |w_e| \) 表示该要求的强度
 
 2. **输出**：网络的一个配置 $S$ ——每个节点 $u$ 的状态 \( s_u \) 分配 
 
@@ -117,7 +123,7 @@ SolutionType Metropolis(){
 ```c
 ConfigType State_flipping(){
     从任意配置 S 开始;
-    while ( ! IsStable(S) ) {
+    while ( ! IsStable(S) ) {    // 如果不稳定
         u = GetUnsatisfied(S);   // 获取一个不满足的节点
         s_u = -s_u;              // 翻转该节点的状态
     }
@@ -213,7 +219,7 @@ $$
 - 解的邻域应足够丰富，以避免陷入**不良的局部最优解**
 - 但是解的邻域不应太大，保证能够**高效地搜索**邻域以找到可能的局部移动
 - **k-L heuristic 算法**
-    - 第1步：尽可能优化单次翻转 $O(n)
+    - 第1步：尽可能优化单次翻转 $O(n)$
     - 第k步：对未标记节点尽可能优化单次翻转 $O(n-k+1)$
     - **邻域大小**：$n-1$ 个候选解
     - **时间复杂度**：$O(n^2)$
