@@ -3462,11 +3462,11 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">候选人0的质量</span><span class="p">;</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* 成本 \( C_i \) */</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* 成本 C_i */</span>
 <a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* 成本 \( C_h \) */</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w">      </span><span class="cm">/* 成本 C_h */</span>
 <a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
@@ -3488,7 +3488,7 @@
 <li><strong>随机性假设</strong>：前 <span class="arithmatex">\(i\)</span> 个候选人中的任何一个都等可能是当前最佳人选，即 <span class="arithmatex">\(Pr[X_i=1] = \frac{1}{i}\)</span></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">推导</p>
+<p class="admonition-title">推导雇佣者数量的期望</p>
 <p>根据定义可知</p>
 <div class="arithmatex">\[
 X=\sum_{i=1}^N X_i
@@ -3534,13 +3534,13 @@ E[X]=E[\sum_{i=1}^N X_i]=\sum_{i=1}^N E[X_i]=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1)
 <a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
 <a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="cm">/* 成本 C_h */</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="n">hire</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w">       </span><span class="cm">/* 成本 C_h */</span>
 <a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="p">}</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>思路</strong>：随机排序候选人列表，然后根据朴素解法进行面试</li>
+<li><strong>思路</strong>：<strong>随机排序</strong>候选人列表，然后根据朴素解法进行面试</li>
 <li><strong>优势</strong>：不再需要假设候选人是随机排序的</li>
 <li><strong>缺点</strong>：随机排序花时间</li>
 <li>
@@ -3556,9 +3556,9 @@ E[X]=E[\sum_{i=1}^N X_i]=\sum_{i=1}^N E[X_i]=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1)
 <span class="normal"><a href="#__codelineno-2-5">5</a></span>
 <span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">PermuteBySorting</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ElemType</span><span class="w"> </span><span class="n">A</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="p">){</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">N³</span><span class="p">);</span><span class="w"> </span><span class="c1">// 使用 N³ 作为随机数范围</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">        </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">P</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rand</span><span class="p">()</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="p">(</span><span class="n">N³</span><span class="p">);</span><span class="w">     </span><span class="c1">// 使用 N³ 作为随机数范围</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="cm">/* 使所有优先级更可能唯一 */</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">Sort</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="n">keys</span><span class="p">;</span><span class="w"> </span><span class="c1">// 根据优先级 P 对 A 进行排序</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="n">Sort</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">using</span><span class="w"> </span><span class="n">P</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="n">keys</span><span class="p">;</span><span class="w">   </span><span class="c1">// 根据优先级 P 对 A 进行排序</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </li>
@@ -3588,26 +3588,33 @@ E[X]=E[\sum_{i=1}^N X_i]=\sum_{i=1}^N E[X_i]=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1)
 <span class="normal"><a href="#__codelineno-3-14">14</a></span>
 <span class="normal"><a href="#__codelineno-3-15">15</a></span>
 <span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">OnlineHiring</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">){</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w">          </span><span class="c1">// 默认返回最后一位（未找到更好人选时）</span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">OnlineHiring</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">){</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w">             </span><span class="c1">// 默认返回最后一位（未找到更好人选时）</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">负无穷</span><span class="p">;</span><span class="w">        </span><span class="c1">// 初始化最佳质量为负无穷</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w">  </span><span class="c1">// 面试前 k 个人，只记录最佳质量，不雇佣</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 遇到比前 k 个中最佳更好的人</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">         </span><span class="c1">// 雇佣此人</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">            </span><span class="c1">// 并停止面试</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="p">}</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="c1">// 面试前 k 个人，只记录最佳质量，不雇佣</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w">  </span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">            </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 遇到比前 k 个中最佳更好的人</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">            </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">         </span><span class="c1">// 雇佣此人</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">            </span><span class="k">break</span><span class="p">;</span><span class="w">            </span><span class="c1">// 并停止面试</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li><strong>思路</strong>：只面试前 <span class="arithmatex">\(k\)</span> 个人，记录最佳质量，然后从第 <span class="arithmatex">\(k+1\)</span> 个人开始逐个面试，<strong>如果面试的人质量更好，就雇佣他并立即停止面试</strong>；如果没有找到更好的人，就雇佣最后一个人</li>
+<li><strong>思路</strong>：<ul>
+<li>只面试前 <span class="arithmatex">\(k\)</span> 个人，记录最佳质量</li>
+<li>然后从第 <span class="arithmatex">\(k+1\)</span> 个人开始逐个面试，<strong>如果面试的人质量更好，就雇佣他并立即停止面试</strong></li>
+<li>如果没有找到更好的人，就雇佣最后一个人</li>
+</ul>
+</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">问题</p>
@@ -3615,11 +3622,10 @@ E[X]=E[\sum_{i=1}^N X_i]=\sum_{i=1}^N E[X_i]=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1)
 <li>对于给定的 <span class="arithmatex">\(k\)</span>，我们雇佣到最佳候选人的概率是多少？</li>
 <li>最佳 <span class="arithmatex">\(k\)</span> 值是多少，以使上述概率最大化？</li>
 </ol>
-</div>
 <div class="admonition info">
 <p class="admonition-title">数学分析</p>
 <ol>
-<li><strong>定义</strong>：$S_i := $ 第 <span class="arithmatex">\(i\)</span> 个候选人是<code>Best</code></li>
+<li><strong>定义</strong>：$S_i = $ 第 <span class="arithmatex">\(i\)</span> 个候选人是<code>Best</code></li>
 <li><strong><span class="arithmatex">\(S_i\)</span> 为真的条件</strong>： <span class="arithmatex">\(A \land B\)</span></li>
 </ol>
 <ul>
@@ -3633,6 +3639,7 @@ E[X]=E[\sum_{i=1}^N X_i]=\sum_{i=1}^N E[X_i]=\sum_{i=1}^N \frac{1}{i}=\ln N+O(1)
 <div class="arithmatex">\[
 Pr[S_i=1] = Pr[A \land B]=Pr[A] \cdot Pr[B]=\frac{k}{N (i-1)}
 \]</div>
+<p>其中 <span class="arithmatex">\(Pr[B]\)</span> 在前 <span class="arithmatex">\(i-1\)</span> 个里最好者落在前 <span class="arithmatex">\(k\)</span> 个的概率</p>
 <ol start="4">
 <li><strong>选到最佳候选人的概率</strong>：（从 <span class="arithmatex">\(k+1\)</span> 开始是因为前 <span class="arithmatex">\(k\)</span> 个人都不会被雇佣）</li>
 </ol>
@@ -3648,9 +3655,11 @@ Pr[S]=\sum_{i=k+1}^N Pr[S_i]=\sum_{i=k+1}^N \frac{k}{N (i-1)}=\frac{k}{N} \sum_{
 \frac{k}{N} \ln (\frac{N}{k})\leq Pr[S] \leq \frac{k}{N} \ln (\frac{N-1}{k-1})
 \]</div>
 <ol start="5">
-<li><strong>概率最大化的 <span class="arithmatex">\(k\)</span> 值</strong>：对 <span class="arithmatex">\(\frac{k}{N} \ln (\frac{N}{k})\)</span> 求导取0，得 <span class="arithmatex">\(k=\frac{N}{e}\)</span>，则最大值为 <span class="arithmatex">\(\frac{1}{e}\)</span></li>
+<li><strong>概率最大化的 <span class="arithmatex">\(k\)</span> 值</strong>：对 <span class="arithmatex">\(\frac{k}{N} \ln (\frac{N}{k})\)</span> 求导取 <span class="arithmatex">\(0\)</span>，得 <span class="arithmatex">\(k=\frac{N}{e}\)</span>，则 <span class="arithmatex">\(Pr[S]\)</span> 最大值为 <span class="arithmatex">\(\frac{1}{e}\)</span></li>
 </ol>
 </div>
+</div>
+<hr />
 <h2 id="_3">快速排序<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>确定性快速排序</strong></li>
@@ -3683,15 +3692,17 @@ E(X)=\sum_{t=1}^{\infty} t\cdot (\frac{1}{2})^t=2
 <div class="arithmatex">\[
 N\left(\frac{3}{4}\right)^{j+1} \leq |S| \leq N\left(\frac{3}{4}\right)^j
 \]</div>
-<p>那么它属于type <span class="arithmatex">\(j\)</span></p>
+<p>那么它属于 type <span class="arithmatex">\(j\)</span></p>
 </li>
 <li>
-<p>type <span class="arithmatex">\(j\)</span> 的子问题数量最多为 <span class="arithmatex">\((\frac{4}{3})^{j+1}\)</span></p>
+<p><strong>type <span class="arithmatex">\(j\)</span> 的子问题数量最多为 <span class="arithmatex">\((\frac{4}{3})^{j+1}\)</span></strong></p>
 </li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">期望运行时间</p>
-<p><img alt="alt text" src="../images/9-1.png" /></p>
+<p>每一个规模的期望运行时间： <span class="arithmatex">\(E[T_{type j}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)\)</span></p>
+<p>不同规模的数量 <span class="arithmatex">\(=\log_{4/3} N=O(\log N)\)</span></p>
+<p><strong>总的期望运行时间</strong>： <span class="arithmatex">\(O(N\log N)\)</span></p>
 </div>
 </li>
 </ul>
