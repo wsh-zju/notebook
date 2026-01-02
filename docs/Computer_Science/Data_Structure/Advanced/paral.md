@@ -211,31 +211,45 @@ for P_i, 1 ≤ i ≤ n pardo
 
 2. **双对数方法 1**：按照 $\sqrt{n}$ 划分
 
-![alt text](images/10-4.png){style="width:60%;display: block;margin: 20px auto"}
-
-- 假设 $h = \log \log n$ 是一个整数（即 $n = 2^(2^h)$）
-- 按 $\sqrt{n}$ **划分**为 $\sqrt{n} $ 个子问题
+- 假设 $h = \log \log n$ 是一个整数（即 $n = 2^{(2^h)}$）
+- 按 $\sqrt{n}$ **划分**为 $\sqrt{n}$ 个子问题
     
     !!! info "划分"
-        $A_1 = A(1), \dots,A(\sqrt{n})\Rightarrow  M_1 \sim T(\sqrt{n}), W(\sqrt{n})$
-
-        $A_2 = A(\sqrt{n}+1), \dots,A(2\sqrt{n})\Rightarrow  M_2 \sim T(\sqrt{n}), W(\sqrt{n})$
-        
-        ...
-
-        $A_{\sqrt{n}} = A(n-\sqrt{n}+1), \dots,A(n)\Rightarrow  M_{\sqrt{n}} \sim T(\sqrt{n}), W(\sqrt{n})$
+        $$
+        \begin{aligned}
+        A_1 &= A(1), \dots,A(\sqrt{n}) & \Rightarrow  M_1 \sim T(\sqrt{n}), W(\sqrt{n})$\\
+        A_2 &= A(\sqrt{n}+1), \dots,A(2\sqrt{n}) & \Rightarrow  M_2 \sim T(\sqrt{n}), W(\sqrt{n})\\
+        \vdots \\
+        A_{\sqrt{n}} &= A(n-\sqrt{n}+1), \dots,A(n) & \Rightarrow  M_{\sqrt{n}} \sim T(\sqrt{n}), W(\sqrt{n})$
+        \end{aligned}
+        $$
 
 - 使用**并行比较算法**将每个子问题**合并**得到最终最大值 $A_{max} \sim T(1),W=O(\sqrt{n}^2)=O(n)$
-- **建立递归关系**：$T(n) \leq T(\sqrt{n}) + c_1, \quad W(n) \leq \sqrt{n} W(\sqrt{n}) + c_2 n$
-- **解得性能**：$T(n)=O(\log \log n), \quad W(n)=O(n\log \log n)$
+- **建立递归关系**：
+    - $T(n) \leq T(\sqrt{n}) + c_1$
+    - $W(n) \leq \sqrt{n} W(\sqrt{n}) + c_2 n$
+- **解得性能**：
+    - $T(n)=O(\log \log n)$
+    - $W(n)=O(n\log \log n)$
 
 3. **双对数方法 2**：按照 $h=\log \log n$ 划分
 
-![alt text](images/10-3.png){style="width:60%;display: block;margin: 20px auto"}
+- **划分**
 
+    !!! info "划分"
+        $$
+        \begin{aligned}
+        A_1 &= A(1), \dots,A(h) & \Rightarrow  M_1 \sim O(h)\\
+        A_2 &= A(h+1), \dots,A(2h) & \Rightarrow  M_2 \sim O(h)\\
+        \vdots \\
+        A_{n/h} &= A(n-h+1), \dots,A(n) & \Rightarrow  M_{n/h} \sim O(h)
+        \end{aligned}
+        $$
+
+- 使用**双对数方法 1**将每个子问题**合并**得到最终最大值 $A_{max} \sim T=O(\log \log (n/h)),W=O((n/h)\log \log (n/h))$
 - **性能**
     - $T(n)=O(h+\log \log (n/h))=O(\log \log n)$ 
-    - $W(n)=O((n/h)(h+\log \log (n/h)))=O(n)$
+    - $W(n)=O(h\times(n/h)+(n/h)\log \log (n/h))=O(n)$
 
 4. **随机采样**：
 
