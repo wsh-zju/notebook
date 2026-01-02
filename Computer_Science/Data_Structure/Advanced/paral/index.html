@@ -3906,27 +3906,31 @@ W(n)&amp;=O(h\times(n/h)+(n/h)\log \log (n/h))=O(n)
 </li>
 </ul>
 <ol start="4">
-<li><strong>随机采样</strong>：</li>
+<li><strong>随机采样</strong></li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">示意图</p>
+<p><img alt="alt text" src="../images/10-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
 <ul>
 <li><strong>步骤</strong>：<ul>
-<li><strong>采样</strong> <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 个元素<ul>
-<li>将采样得到的元素按照每块 <span class="arithmatex">\(n^{\frac{1}{8}}\)</span> 划分为 <span class="arithmatex">\(n^{\frac{3}{4}}\)</span> 个块，找到每一块的最大值</li>
-<li>继续将得到的最大值划分为每块 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 个元素，共 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 块</li>
-<li>最终找到最大值M</li>
+<li><strong>随机采样</strong> <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 个元素 <span class="arithmatex">\(T=O(1)\quad W=O(n^{\frac{7}{8}})\)</span><ul>
+<li>将采样得到的元素按照每块 <span class="arithmatex">\(n^{\frac{1}{8}}\)</span> 划分为 <span class="arithmatex">\(n^{\frac{3}{4}}\)</span> 个块</li>
+<li>利用<strong>并行比较算法</strong>找到每一块的最大值 <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
+<li>继续将<strong>得到的最大值</strong>划分为每块 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 个元素，共 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 块，找到每一块的最大值 <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
+<li>对得到的 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 个最大值使用<strong>并行比较算法</strong>得到最终解 <span class="arithmatex">\(M\)</span> <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
 </ul>
 </li>
 <li><strong>迭代</strong><ul>
-<li>淘汰小于等于M的元素，大于M的元素随机放入新数组</li>
-<li>在新数组中找最大值</li>
+<li><strong>淘汰</strong>小于等于 <span class="arithmatex">\(M\)</span> 的元素</li>
+<li>使用上述<strong>随机采样</strong>方法不断重复</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>定理</strong>：<ul>
-<li>该算法可找到 <span class="arithmatex">\( n \)</span> 个元素中的最大值</li>
-<li>（在任意 CRCW PRAM 上）以极高概率，它在 <span class="arithmatex">\( O(1) \)</span> 时间和 <span class="arithmatex">\( O(n) \)</span> 工作内完成</li>
-<li>在此时限和工作复杂度内未能完成的概率为 <span class="arithmatex">\( O(1/n^c) \)</span>，其中 <span class="arithmatex">\( c \)</span> 为某个正常数</li>
+<li>以极高概率，该算法<strong>在 <span class="arithmatex">\( O(1) \)</span> 时间和 <span class="arithmatex">\( O(n) \)</span> 工作量内</strong>找到最大值（在任意 CRCW PRAM 上）</li>
+<li><strong>未能找到最大值的概率</strong>为 <span class="arithmatex">\( O(1/n^c) \)</span>，其中 <span class="arithmatex">\( c \)</span> 为某个正常数</li>
 </ul>
 </li>
 </ul>
