@@ -3893,7 +3893,7 @@ A_{n/h} &amp;= A(n-h+1), \dots,A(n) &amp; \Rightarrow  &amp; M_{n/h} \sim O(h)
 </div>
 </li>
 <li>
-<p>使用<strong>双对数方法 1</strong>将每个子问题<strong>合并</strong>得到最终最大值 <span class="arithmatex">\(A_{max} \sim T=O(\log \log (n/h)),W=O((n/h)\log \log (n/h))\)</span></p>
+<p>使用<strong>双对数方法 1</strong>将子问题<strong>合并</strong> <span class="arithmatex">\(\sim T=O(\log \log (n/h)),W=O((n/h)\log \log (n/h))\)</span></p>
 </li>
 <li>
 <p><strong>性能</strong></p>
@@ -3914,11 +3914,11 @@ W(n)&amp;=O(h\times(n/h)+(n/h)\log \log (n/h))=O(n)
 </div>
 <ul>
 <li><strong>步骤</strong>：<ul>
-<li><strong>随机采样</strong> <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 个元素 <span class="arithmatex">\(T=O(1)\quad W=O(n^{\frac{7}{8}})\)</span><ul>
+<li><strong>随机采样</strong> <span class="arithmatex">\(n^{\frac{7}{8}}\)</span> 个元素 <span class="arithmatex">\(\sim T=O(1)\quad W=O(n^{\frac{7}{8}})\)</span><ul>
 <li>将采样得到的元素按照每块 <span class="arithmatex">\(n^{\frac{1}{8}}\)</span> 划分为 <span class="arithmatex">\(n^{\frac{3}{4}}\)</span> 个块</li>
-<li>利用<strong>并行比较算法</strong>找到每一块的最大值 <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
-<li>继续将<strong>得到的最大值</strong>划分为每块 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 个元素，共 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 块，找到每一块的最大值 <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
-<li>对得到的 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 个最大值使用<strong>并行比较算法</strong>得到最终解 <span class="arithmatex">\(M\)</span> <span class="arithmatex">\(T=O(1)\quad W=O(n)\)</span></li>
+<li>利用<strong>并行比较算法</strong>找到每一块的最大值 <span class="arithmatex">\(\sim T=O(1)\quad W=O(n)\)</span></li>
+<li>继续将<strong>得到的最大值</strong>划分为每块 <span class="arithmatex">\(n^{\frac{1}{4}}\)</span> 个元素，共 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 块，找到每一块的最大值 <span class="arithmatex">\(\sim T=O(1)\quad W=O(n)\)</span></li>
+<li>对得到的 <span class="arithmatex">\(n^{\frac{1}{2}}\)</span> 个最大值使用<strong>并行比较算法</strong>得到最终解 <span class="arithmatex">\(M\)</span> <span class="arithmatex">\(\sim T=O(1)\quad W=O(n)\)</span></li>
 </ul>
 </li>
 <li><strong>迭代</strong><ul>
