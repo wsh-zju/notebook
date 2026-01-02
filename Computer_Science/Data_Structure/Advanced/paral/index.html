@@ -3843,17 +3843,17 @@
 <li><strong>双对数方法 1</strong>：按照 <span class="arithmatex">\(\sqrt{n}\)</span> 划分</li>
 </ol>
 <ul>
-<li>假设 <span class="arithmatex">\(h = \log \log n\)</span> 是一个整数（即 <span class="arithmatex">\(n = 2^{(2^h)}\)</span>）</li>
+<li>假设 <span class="arithmatex">\(h = \log \log n\)</span> 是一个整数（即 <span class="arithmatex">\(n = 2^{2^h}\)</span>）</li>
 <li>
 <p>按 <span class="arithmatex">\(\sqrt{n}\)</span> <strong>划分</strong>为 <span class="arithmatex">\(\sqrt{n}\)</span> 个子问题</p>
 <div class="admonition info">
 <p class="admonition-title">划分</p>
 <div class="arithmatex">\[
 \begin{aligned}
-A_1 &amp;= A(1), \dots,A(\sqrt{n}) &amp; \Rightarrow  M_1 \sim T(\sqrt{n}), W(\sqrt{n})$\\
-A_2 &amp;= A(\sqrt{n}+1), \dots,A(2\sqrt{n}) &amp; \Rightarrow  M_2 \sim T(\sqrt{n}), W(\sqrt{n})\\
+A_1 &amp;= A(1), \dots,A(\sqrt{n}) &amp; \Rightarrow  &amp; M_1 \sim T(\sqrt{n}), W(\sqrt{n})\\
+A_2 &amp;= A(\sqrt{n}+1), \dots,A(2\sqrt{n}) &amp; \Rightarrow &amp; M_2 \sim T(\sqrt{n}), W(\sqrt{n})\\
 \vdots \\
-A_{\sqrt{n}} &amp;= A(n-\sqrt{n}+1), \dots,A(n) &amp; \Rightarrow  M_{\sqrt{n}} \sim T(\sqrt{n}), W(\sqrt{n})$
+A_{\sqrt{n}} &amp;= A(n-\sqrt{n}+1), \dots,A(n) &amp; \Rightarrow &amp; M_{\sqrt{n}} \sim T(\sqrt{n}), W(\sqrt{n})
 \end{aligned}
 \]</div>
 </div>
@@ -3861,15 +3861,17 @@ A_{\sqrt{n}} &amp;= A(n-\sqrt{n}+1), \dots,A(n) &amp; \Rightarrow  M_{\sqrt{n}} 
 <li>
 <p>使用<strong>并行比较算法</strong>将每个子问题<strong>合并</strong>得到最终最大值 <span class="arithmatex">\(A_{max} \sim T(1),W=O(\sqrt{n}^2)=O(n)\)</span></p>
 </li>
-<li><strong>建立递归关系</strong>：<ul>
-<li><span class="arithmatex">\(T(n) \leq T(\sqrt{n}) + c_1\)</span></li>
-<li><span class="arithmatex">\(W(n) \leq \sqrt{n} W(\sqrt{n}) + c_2 n\)</span></li>
-</ul>
+<li>
+<p><strong>建立递归关系</strong></p>
+<div class="arithmatex">\[
+T(n) \leq T(\sqrt{n}) + c_1\qquad W(n) \leq \sqrt{n} W(\sqrt{n}) + c_2 n
+\]</div>
 </li>
-<li><strong>解得性能</strong>：<ul>
-<li><span class="arithmatex">\(T(n)=O(\log \log n)\)</span></li>
-<li><span class="arithmatex">\(W(n)=O(n\log \log n)\)</span></li>
-</ul>
+<li>
+<p><strong>解得性能</strong>：</p>
+<div class="arithmatex">\[
+T(n)=O(\log \log n)\qquad W(n)=O(n\log \log n)
+\]</div>
 </li>
 </ul>
 <ol start="3">
@@ -3882,10 +3884,10 @@ A_{\sqrt{n}} &amp;= A(n-\sqrt{n}+1), \dots,A(n) &amp; \Rightarrow  M_{\sqrt{n}} 
 <p class="admonition-title">划分</p>
 <div class="arithmatex">\[
 \begin{aligned}
-A_1 &amp;= A(1), \dots,A(h) &amp; \Rightarrow  M_1 \sim O(h)\\
-A_2 &amp;= A(h+1), \dots,A(2h) &amp; \Rightarrow  M_2 \sim O(h)\\
+A_1 &amp;= A(1), \dots,A(h) &amp; \Rightarrow  &amp; M_1 \sim O(h)\\
+A_2 &amp;= A(h+1), \dots,A(2h) &amp; \Rightarrow  &amp; M_2 \sim O(h)\\
 \vdots \\
-A_{n/h} &amp;= A(n-h+1), \dots,A(n) &amp; \Rightarrow  M_{n/h} \sim O(h)
+A_{n/h} &amp;= A(n-h+1), \dots,A(n) &amp; \Rightarrow  &amp; M_{n/h} \sim O(h)
 \end{aligned}
 \]</div>
 </div>
@@ -3893,10 +3895,14 @@ A_{n/h} &amp;= A(n-h+1), \dots,A(n) &amp; \Rightarrow  M_{n/h} \sim O(h)
 <li>
 <p>使用<strong>双对数方法 1</strong>将每个子问题<strong>合并</strong>得到最终最大值 <span class="arithmatex">\(A_{max} \sim T=O(\log \log (n/h)),W=O((n/h)\log \log (n/h))\)</span></p>
 </li>
-<li><strong>性能</strong><ul>
-<li><span class="arithmatex">\(T(n)=O(h+\log \log (n/h))=O(\log \log n)\)</span> </li>
-<li><span class="arithmatex">\(W(n)=O(h\times(n/h)+(n/h)\log \log (n/h))=O(n)\)</span></li>
-</ul>
+<li>
+<p><strong>性能</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+T(n)&amp;=O(h+\log \log (n/h))=O(\log \log n) \\
+W(n)&amp;=O(h\times(n/h)+(n/h)\log \log (n/h))=O(n)
+\end{aligned}
+\]</div>
 </li>
 </ul>
 <ol start="4">
