@@ -205,7 +205,7 @@ int OnlineHiring ( EventType C[], int N, int k){
     - **type $j$ 的子问题数量最多为 $(\frac{4}{3})^{j+1}$**
 
     !!! abstract "期望运行时间"
-        每一个规模的期望运行时间： $E[T_{type j}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)$
+        每一个规模的期望运行时间： $E[T_{type\,j}]=O(N(\frac{3}{4})^j)\times(\frac{4}{3})^{j+1}=O(N)$
 
         不同规模的数量 $=\log_{4/3} N=O(\log N)$
 
