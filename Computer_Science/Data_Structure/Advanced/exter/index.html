@@ -3567,32 +3567,33 @@
 <li>利用缓冲区实现<strong>并行</strong></li>
 <li>改进 run 的生成方式</li>
 </ul>
+<hr />
 <h2 id="k">k 路归并<a class="headerlink" href="#k" title="Permanent link">&para;</a></h2>
 <ol>
 <li>合并多条磁带上的数据时，使用<strong>最小堆结构</strong></li>
 <li><strong>number of passes</strong> = <span class="arithmatex">\(1+\lceil \log_k (N/M) \rceil\)</span></li>
+<li><strong>优点</strong>：可以减小 number of passes</li>
+<li><strong>缺点</strong>：需要 <span class="arithmatex">\(2k\)</span> 条磁带</li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><img alt="" src="../images/11-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="3">
-<li><strong>优点</strong>：可以减小 number of passes</li>
-<li><strong>缺点</strong>：需要 <span class="arithmatex">\(2k\)</span> 条磁带</li>
-</ol>
+<hr />
 <h2 id="_2">减少磁带数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
+<p class="admonition-title">Question</p>
 <p><strong>问题</strong>：能否只用3个磁带完成2路归并？</p>
 <ul>
 <li>
-<p><strong>直接均分 runs 会导致效率低</strong>：需要先合并，再拆分</p>
+<p><strong>直接均分 runs 会导致效率低</strong>：需要先合并，再copy一半到另一条磁带</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><img alt="" src="../images/11-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
 </li>
 <li>
-<p>更聪明的方法：<strong>不均匀拆分 runs</strong></p>
+<p>更聪明的方法：<strong>不均匀拆分 runs</strong>（不用进行copy！！！）</p>
 </li>
 </ul>
 </div>
@@ -3601,10 +3602,11 @@
 <p><strong>断言 1</strong>：如果 runs 数是斐波那契数 <span class="arithmatex">\(F_n\)</span>，<strong>最优拆分方式</strong>是 <span class="arithmatex">\(F_{n-1}\)</span> + <span class="arithmatex">\(F_{n-2}\)</span></p>
 </li>
 <li>
-<p><strong>断言 2</strong>：对于 k 路归并，有 <span class="arithmatex">\(k\)</span> 阶斐波那契数 <span class="arithmatex">\(F_N^k = F_{N-1}^{(k)} + F_{N-2}^{(k)} + \cdots + F_{N-k}^{(k)}\)</span> 其中 <span class="arithmatex">\(F_N^{(k)} = 0\)</span>，<span class="arithmatex">\(F_{k-1}^{(k)} = 1\)</span></p>
+<p><strong>断言 2</strong>：对于 k 路归并，有 <span class="arithmatex">\(k\)</span> 阶斐波那契数 <span class="arithmatex">\(F_N^k = F_{N-1}^{(k)} + F_{N-2}^{(k)} + \cdots + F_{N-k}^{(k)}\)</span> </p>
 </li>
 </ol>
 <ul>
+<li>其中 <span class="arithmatex">\(F_N^{(k)} = 0\)</span>，<span class="arithmatex">\(F_{k-1}^{(k)} = 1\)</span></li>
 <li><strong>最优拆分方式</strong>：按照 <span class="arithmatex">\(k\)</span> 阶斐波那契数 </li>
 <li>只需要 <span class="arithmatex">\(k+1\)</span> 个磁带即可完成 <span class="arithmatex">\(k\)</span> 路归并</li>
 </ul>
@@ -3612,6 +3614,7 @@
 <p class="admonition-title">Warning</p>
 <p>如果 runs 的数目不是斐波那契数，<strong>补空气</strong>，直到是斐波那契数</p>
 </div>
+<hr />
 <h2 id="_3">并行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>问题</strong>：对一个包含3250条数据的文件进行排序，使用一台内存最大可排序750条数据的计算机，输入文件的块大小为250条数据</li>
@@ -3621,7 +3624,7 @@
 <ol>
 <li>内存中可以放3块数据</li>
 <li>将内存分为：输入缓冲区（500）、输出缓冲区（250）</li>
-<li>归并排序输入缓冲区中的两块数据，将数据依次写入输出缓冲区</li>
+<li><strong>归并排序</strong>输入缓冲区中的两块数据，将数据依次写入输出缓冲区</li>
 <li>输出缓冲区写满之后，一次性写入硬盘（只进行了一次I/O操作，大大减少了I/O操作）</li>
 </ol>
 </div>
@@ -3643,6 +3646,7 @@
 <li>最优的 k 值显然取决于磁盘参数以及可用于缓冲区的内存大小</li>
 </ol>
 </div>
+<hr />
 <h2 id="_4">替换选择<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>目的</strong>：生成更长的 runs</li>
@@ -3660,19 +3664,20 @@
 <li><strong>run 的平均长度</strong>： <span class="arithmatex">\(L_{avg} = 2M\)</span> （相当于number of passes中的 <span class="arithmatex">\(M\)</span>）</li>
 <li>当输入数据<strong>接近有序</strong>时，替换选择非常强大，适用于外部排序</li>
 </ol>
+<hr />
 <h2 id="_5">哈夫曼树<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>目标</strong>：最小化合并时间</p>
+<p><strong>目标</strong>：多路归并时，合理安排合并顺序，最小化合并时间</p>
 </li>
 <li>
-<p><strong>示例</strong></p>
+<p><strong>示例</strong>：<strong>假设</strong>有4个长度分别为2、4、5、15的runs</p>
 </li>
 </ol>
-<ul>
-<li><strong>假设</strong>：有4个长度分别为2、4、5、15的runs</li>
-</ul>
-<p><img alt="" src="../images/11-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><img alt="" src="../images/11-5.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<ol start="3">
+<li><strong>总合并时间</strong>：<span class="arithmatex">\(O (\)</span> 加权外部路径长度 <span class="arithmatex">\()\)</span></li>
+</ol>
 
 
 
