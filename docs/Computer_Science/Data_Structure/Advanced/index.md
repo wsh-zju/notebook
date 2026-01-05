@@ -2,13 +2,15 @@
 ## Advanced Data Structures
 
 !!! tip "Tips"
+    总的来说，知识点多又难懂www
+
     这里提供一份 ADS 知识清单，可以打印下来默写知识点(◍•ᴗ•◍)
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../../../style/images/code.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">ADS 知识清单</div>
-<div class="file-meta">2026-1-8 / 64 pages</div>
+<div class="file-meta">2026-1-8 / 5 pages</div>
 </div>
-<a class="down-button" target="_blank" href="ADS.md" markdown="1">:fontawesome-solid-download: Download</a>
+<a class="down-button" target="_blank" href="ADS.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
