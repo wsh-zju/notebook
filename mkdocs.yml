@@ -88,6 +88,9 @@ nav:
       - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
       - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
       - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
+  - Others :
+    - Others/index.md
+    - 马克思主义原理 : Others/mayuan.md
   - Tools :
     - tool/index.md
     - mkdocs : 
