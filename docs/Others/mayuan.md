@@ -14,7 +14,7 @@
 <div class="file-title">马原思维导图</div>
 <div class="file-meta">2026-1-8 / 1 page</div>
 </div>
-<a class="down-button" target="_blank" href="../Others/files/马原思维导图.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+<a class="down-button" target="_blank" href="../files/马原思维导图.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
    
 
