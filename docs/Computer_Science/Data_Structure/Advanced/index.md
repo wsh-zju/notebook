@@ -2,7 +2,7 @@
 ## Advanced Data Structures
 
 !!! tip "Tips"
-    总的来说，知识点多又难懂www
+    总的来说，知识点多又难懂www（但是考完了hhh😁
 
     这里提供一份 ADS 知识清单，可以打印下来默写知识点(◍•ᴗ•◍)
 

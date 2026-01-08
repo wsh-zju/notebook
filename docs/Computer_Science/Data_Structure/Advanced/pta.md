@@ -65,7 +65,6 @@
 
     **Answer:**D
 
-    **Analysis:**
 
 3. Consider a dynamic array (i.e., a sequence list) with an initial capacity of c=1 and an initial size of s=0. It supports two operations:
     
@@ -81,9 +80,7 @@
 
     A.$O(1)$     B.$O(\log n)$    C.$O(\sqrt{n})$    D.$O(n)$
 
-    **Answer:**
-
-    **Analysis:**
+    **Answer:**D ？
 
 4. Consider ordered sequences composed of prime numbers (repetition allowed) such that the sum of the elements equals exactly 12. Sequences differing in order are considered distinct; for example, (2, 3, 7) and (7, 2, 3) are counted as two different sequences. What is the total number of such sequences?
    
@@ -93,7 +90,5 @@
     A.32    B.35    C.36    D.40
 
     **Answer:** B
-
-    **Analysis:**
 
 
