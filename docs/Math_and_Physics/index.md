@@ -1,6 +1,6 @@
 # 数理基础课
 
-## 课程笔记
+## :fontawesome-solid-book: 课程笔记
 ### 数学分析
  
 <div class="card file-block" markdown="1">
