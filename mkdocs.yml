@@ -14,13 +14,15 @@ nav:
     - Computer_Science/index.md
     - 编程语言 :
       - Computer_Science/Language/index.md
-      - C 语言 :
+      - C :
         - Computer_Science/Language/C/index.md
         - 指针 : Computer_Science/Language/C/pointer.md
         - 递归与迭代 : Computer_Science/Language/C/recursion.md
         - 程序结构 : Computer_Science/Language/C/structure.md
         - 文件底层操作 : Computer_Science/Language/C/file.md
         - 常用知识汇总 : Computer_Science/Language/C/accumulate.md
+      - C++ :
+        - Computer_Science/Language/C++/index.md
       - Python :
         - Computer_Science/Language/Python/index.md
         - 基础语法 : Computer_Science/Language/Python/foundation.md
@@ -102,9 +104,6 @@ nav:
       - 主题 : tool/mkdocs/theme.md
     - Latex 语法 : tool/Latex.md
     - 终端常用命令 : tool/lab.md
-  
-  
-  
 
 theme: 
   name: 'material'

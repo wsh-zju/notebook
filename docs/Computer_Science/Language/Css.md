@@ -1,4 +1,4 @@
-## :fontawesome-brands-css3-alt: CSS 语法
+# :fontawesome-brands-css3-alt: CSS 语法
 
 1. **构成：**
 
@@ -11,8 +11,8 @@
 !!! abstract "Note" 
     1. 不要在属性值与单位之间留有空格，e.g. `margin-left: 20px"`
     2. 
-### 选择器
-#### id 选择器
+## 选择器
+### id 选择器
 
 **作用**：可以为标有特定 `id` 的 `HTML` 元素指定特定的样式
 
@@ -31,7 +31,7 @@
 !!! tip "Tips"
     `id`属性不要以数字开头，数字开头的`id`在 `Mozilla/Firefox` 浏览器中不起作用。
 
-#### class 选择器
+### class 选择器
 
 ```css
 .center  {text-align:center;}   
@@ -45,7 +45,7 @@ p.center {text-align:center;}  /*指定p元素的class为center的样式，其�
 <p class="center color">This is a paragraph</p>   <!-- 多个class选择器可以使用空格分开 -->
 ```
 
-### 样式表
+## 样式表
 
 1. **外部样式表**
     - **应用场景：**当样式需要应用于很多页面时，选择外部样式表
