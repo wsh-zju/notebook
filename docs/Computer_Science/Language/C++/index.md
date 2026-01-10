@@ -1,1 +1,1 @@
-# :fontawesome-solid-cpp: C++
+# :fontawesome-regular-file-code: C++
