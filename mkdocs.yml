@@ -46,7 +46,7 @@ nav:
       - 线程 : Computer_Science/Computer_System/thread.md
       - 同步 : Computer_Science/Computer_System/synch.md
       - 死锁 : Computer_Science/Computer_System/deadlock.md
-    - 数据结构 :
+    - 数据结构与算法分析 :
       - FDS :
         - Computer_Science/Data_Structure/Foundation/index.md
         - 线性数据结构 : Computer_Science/Data_Structure/Foundation/Linear.md

@@ -1,6 +1,5 @@
-# 编程语言
+# :fontawesome-solid-code: 编程语言
 
-## Languages
 
 !!! tip "Tips"
     该部分收录了一些已经学过的编程语言。

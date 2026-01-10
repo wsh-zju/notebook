@@ -1,4 +1,4 @@
-# 离散数学理论基础
+# :fontawesome-solid-diagram-project: 离散数学理论基础
 
 !!! success "Success!"
     该部分内容基本完结**(〜^∇^)〜**
