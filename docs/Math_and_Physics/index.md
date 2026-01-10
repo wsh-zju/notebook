@@ -73,5 +73,5 @@
     <div class="file-title">普通物理学 II（H）知识框架</div>
     <div class="file-meta">2026-1-10</div>
     </div>
-    <a class="down-button" target="_blank" href="https://www.notion.so/physics-28f5d7183437807d8c47e315184924da?v=28f5d7183437817f9361000c97c184a1&source=copy_link" markdown="1">:fontawesome-solid-download: Link</a>
+    <a class="down-button" target="_blank" href="https://www.notion.so/physics-28f5d7183437807d8c47e315184924da?v=28f5d7183437817f9361000c97c184a1&source=copy_link" markdown="1">:fontawesome-solid-link: Link</a>
     </div>

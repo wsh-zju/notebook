@@ -137,3 +137,19 @@
         - pymdownx.snippets
         - pymdownx.superfences
     ```
+
+## 图标
+
+在文档中使用的是 `MkDocs` + `pymdownx.emoji` 的 `FontAwesome` 映射语法
+
+```markdown
+:fontawesome-solid-download:
+```
+
+使用别的图标时，需要在[`fontawesome`网站](https://fontawesome.com/)中查找对应的`style`
+
+|前缀|含义|
+|:--|:--|
+|fas|solid|
+|far|regular|
+|fab|brands|
