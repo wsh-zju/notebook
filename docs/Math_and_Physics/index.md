@@ -1,7 +1,7 @@
-# 数理基础课
+# 数理基础课 :fontawesome-solid-book:
 
-## :fontawesome-solid-book: 课程笔记
-### 数学分析
+## 课程笔记 :fontawesome-solid-book: 
+### 数学分析 :fontawesome-solid-function: 
  
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
@@ -21,7 +21,7 @@
 <a class="down-button" target="_blank" href="files/数学分析2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
 
-### 线性代数
+### 线性代数 :fontawesome-solid-grid-round-2-plus: 
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
@@ -44,7 +44,7 @@
 !!! tip "Tips"
     线性代数 II (H)的笔记基本都在课本上，此处笔记之提供扩展部分和总结部分。
     
-### 普通物理学
+### 普通物理学 :fontawesome-solid-atom: 
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>

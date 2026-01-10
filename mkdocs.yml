@@ -8,10 +8,10 @@ edit_uri: tree/main/docs
 copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
 
 nav:
-  - Home: 
+  - :fontawesome-solid-house: Home: 
     - index.md
-  - Computer Science :
-    - 编程语言 :
+  - :fontawesome-solid-computer: Computer Science :
+    - :fontawesome-solid-code: 编程语言 :
       - Computer_Science/Language/index.md
       - C 语言 :
         - Computer_Science/Language/C/index.md
@@ -74,7 +74,7 @@ nav:
         - 并行算法 : Computer_Science/Data_Structure/Advanced/paral.md
         - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
-  - Math and Physics : 
+  - :fontawesome-solid-calculator-simple: Math and Physics : 
     - Math_and_Physics/index.md
     - 离散数学理论基础 :
       - Math_and_Physics/Discrete_Mathematics/index.md
@@ -88,10 +88,10 @@ nav:
       - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
       - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
       - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
-  - Others :
+  - :fontawesome-solid-book-open: Others :
     - Others/index.md
     - 马克思主义基本原理 : Others/mayuan.md
-  - Tools :
+  - :fontawesome-solid-gear: Tools :
     - tool/index.md
     - mkdocs : 
       - 主题 : tool/mkdocs/theme.md
