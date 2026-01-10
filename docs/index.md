@@ -1,4 +1,4 @@
-# ヾ(＠^∇^＠)ノ
+# :fontawesome-solid-house: ヾ(＠^∇^＠)ノ
 # Welcome to Lucy Wisteria's Notebook!
 
 ## 励志格言

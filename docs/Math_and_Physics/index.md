@@ -1,7 +1,7 @@
-# 数理基础课 :fontawesome-solid-book:
+# :fontawesome-solid-calculator-simple: 数理基础课
 
 ## 课程笔记 :fontawesome-solid-book: 
-### 数学分析 :fontawesome-solid-function: 
+### 数学分析 :fontawesome-solid-sigma: 
  
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
@@ -21,7 +21,7 @@
 <a class="down-button" target="_blank" href="files/数学分析2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
 
-### 线性代数 :fontawesome-solid-grid-round-2-plus: 
+### 线性代数 :fontawesome-solid-grid: 
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
