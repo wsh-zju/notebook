@@ -38,7 +38,7 @@
 | $\infty$    | `\infty`   | $\partial$    | `\partial` |
 | $\nabla$    | `\nabla`   | $\sqrt{x}$    | `\sqrt{x}`  |
 | $\int$    | `\int`     | $\iint$    | `\iint`    |
-|$\oint_\limits{S}$|`\oint_\limits{S}`| $\oiint_\limit{S}$    | `\oiint_\limit{S}`    |
+|$\oint_\limits{S}$|`\oint_\limits{S}`| $\oiint\limit{_S}$    | `\oiint\limit{_S}`    |
 | $\sum$    | `\sum`     | $\prod$    | `\prod`    |
 | $\cap$    | `\cap`     | $\cup$    | `\cup`     |
 | $\in$    | `\in`      | $\notin$    | `\notin`   |
