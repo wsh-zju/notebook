@@ -1,4 +1,4 @@
-# 高级数据结构与算法分析
+# :fontawesome-solid-chart-line: 高级数据结构与算法分析
 
 !!! tip "Tips"
     总的来说，知识点多又难懂www（但是考完了hhh😁

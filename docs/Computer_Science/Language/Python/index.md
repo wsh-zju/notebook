@@ -1,5 +1,4 @@
-
-# Python
+# :fontawesome-brands-python: Python
 
 !!! tip "Tips"
     该部分的`python`语法为`python3`版本。

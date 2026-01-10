@@ -1,4 +1,4 @@
-
+# :fontawesome-solid-tex: LaTeX 语法
 
 ## 希腊字母
 

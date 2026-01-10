@@ -47,6 +47,7 @@ nav:
       - 同步 : Computer_Science/Computer_System/synch.md
       - 死锁 : Computer_Science/Computer_System/deadlock.md
     - 数据结构与算法分析 :
+      - Computer_Science/Data_Structure/index.md
       - FDS :
         - Computer_Science/Data_Structure/Foundation/index.md
         - 线性数据结构 : Computer_Science/Data_Structure/Foundation/Linear.md
@@ -92,12 +93,14 @@ nav:
   - Others :
     - Others/index.md
     - 马克思主义基本原理 : Others/mayuan.md
+    - 毛泽东思想和中国特色社会主义理论体系概论 : Others/maogai.md
+    - 习近平新时代中国特色社会主义思想概论 : Others/xigai.md
   - Tools :
     - tool/index.md
-    - mkdocs : 
+    - mkdocs 配置: 
+      - tool/mkdocs/index.md
       - 主题 : tool/mkdocs/theme.md
-    - Latex : 
-      - 语法 : tool/latex/Latex.md
+    - Latex 语法 : tool/Latex.md
     - 终端常用命令 : tool/lab.md
   
   

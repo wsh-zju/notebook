@@ -76,4 +76,4 @@
     <a class="down-button" target="_blank" href="https://www.notion.so/physics-28f5d7183437807d8c47e315184924da?v=28f5d7183437817f9361000c97c184a1&source=copy_link" markdown="1">:fontawesome-solid-link: Link</a>
     </div>
 
-## :fontawesome-solid-chart-pie: 概率论和数理统计
+### :fontawesome-solid-chart-pie: 概率论和数理统计
