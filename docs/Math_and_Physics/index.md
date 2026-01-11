@@ -77,3 +77,12 @@
     </div>
 
 ### :fontawesome-solid-chart-pie: 概率论和数理统计
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">概率论和数理统计知识总结</div>
+<div class="file-meta">2026-1-13 / 13 pages</div>
+</div>
+<a class="down-button" target="_blank" href="files/概率论和数理统计.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
