@@ -1,0 +1,5521 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A notebook for Lucy Wisteria">
+      
+      
+        <meta name="author" content="Lucy Wisteria">
+      
+      
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/AI/">
+      
+      
+        <link rel="prev" href="../Data_Structure/Advanced/pta/">
+      
+      
+        <link rel="next" href="../../Math_and_Physics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../style/images/favicon_io/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>人工智能引论 - Lucy Wisteria's Notebook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=JetBrains+Mono:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"JetBrains Mono";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts/asana-math.css">
+    
+      <link rel="stylesheet" href="../../style/css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../style/css/custom.css">
+    
+      <link rel="stylesheet" href="../../style/css/card.css">
+    
+      <link rel="stylesheet" href="../../style/css/flink.css">
+    
+      <link rel="stylesheet" href="../../style/css/changelog_extra.css">
+    
+      <link rel="stylesheet" href="../../style/css/toc_extra.css">
+    
+      <link rel="stylesheet" href="../../style/css/svg_extra.css">
+    
+      <link rel="stylesheet" href="../../style/css/counter.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+      
+  <img src="../../style/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lucy Wisteria's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              人工智能引论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/wsh-zju/notebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wsh-zju/notebook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Math_and_Physics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Math and Physics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Others/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Others
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tool/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+      
+  <img src="../../style/images/logo.png" alt="logo">
+
+    </a>
+    Lucy Wisteria's Notebook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wsh-zju/notebook" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wsh-zju/notebook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Computer Science
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Computer Science
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Language/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    编程语言
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    编程语言
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Language/C/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/C/pointer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指针
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/C/recursion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    递归与迭代
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/C/structure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    程序结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/C/file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文件底层操作
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/C/accumulate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用知识汇总
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Language/C%2B%2B/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C++
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    C++
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Language/Python/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/Python/foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/Python/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据类型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/Python/advance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进阶语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/Python/accumulate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常用知识汇总
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Language/Css/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Computer_System/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计算机系统
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    计算机系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据编码
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字逻辑基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/combine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    组合逻辑电路
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/ALU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    运算单元
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/sequence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    时序逻辑电路
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/ISA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ISA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/CPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/MultiCPU/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多周期CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    流水线CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/OS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    操作系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    进程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/IPCs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/schedule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU 调度
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/thread/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/synch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_System/deadlock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    死锁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Data_Structure/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据结构与算法分析
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据结构与算法分析
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Data_Structure/Foundation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FDS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    线性数据结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Heap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/ADT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    不相交集ADT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Sort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/Hash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    哈希
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Foundation/pta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../Data_Structure/Advanced/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ADS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/tree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/heap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    堆
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/queue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    队列
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/amort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    摊还分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/inv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    倒排索引
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/back/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    回溯算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/divide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分而治之
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/DP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    动态规划
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/greedy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    贪心算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/NP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NP完全性
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/appro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    近似算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/localsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    局部搜索
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/random/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    随机化算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/paral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并行算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/exter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    外部排序
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data_Structure/Advanced/pta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    人工智能引论
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    人工智能引论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二章 知识表达与推理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章 知识表达与推理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 命题逻辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 谓词逻辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 知识图谱推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 概率图推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 因果推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三章 搜索探寻与问题求解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 搜索探寻与问题求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 搜索基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 贪婪最佳优先搜索与A*搜索算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-minimaxalpha-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Minimax搜索与alpha-beta剪枝算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 蒙特卡洛树搜索
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四章 机器学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 机器学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 机器学习基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 监督学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 无监督学习：K均值聚类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 监督学习与非监督学习下特征降维
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 演化算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五章 神经网络与深度学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五章 神经网络与深度学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 前馈神经网络与参数优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 卷积神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 循环神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 注意力机制与正则化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六章 强化学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六章 强化学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 强化学习问题定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 基于价值的强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 基于策略的强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 深度强化学习应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七章 人工智能博弈
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Math_and_Physics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Math and Physics
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Math and Physics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    离散数学理论基础
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    离散数学理论基础
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    逻辑与证明
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本结构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    归纳与递归
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    计数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    高级计数
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    关系
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    图
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    树
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Others/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Others
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Others
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/mayuan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    马克思主义基本原理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/maogai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    毛泽东思想和中国特色社会主义理论体系概论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Others/xigai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    习近平新时代中国特色社会主义思想概论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tool/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tool/mkdocs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mkdocs 配置
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    mkdocs 配置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool/mkdocs/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool/Latex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Latex 语法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tool/lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    终端常用命令
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第二章 知识表达与推理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第二章 知识表达与推理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 命题逻辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 谓词逻辑
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 知识图谱推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 概率图推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 因果推理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第三章 搜索探寻与问题求解
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第三章 搜索探寻与问题求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 搜索基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 贪婪最佳优先搜索与A*搜索算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-minimaxalpha-beta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Minimax搜索与alpha-beta剪枝算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 蒙特卡洛树搜索
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第四章 机器学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第四章 机器学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 机器学习基本概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 监督学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 无监督学习：K均值聚类
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 监督学习与非监督学习下特征降维
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 演化算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第五章 神经网络与深度学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第五章 神经网络与深度学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 前馈神经网络与参数优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 卷积神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 循环神经网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 注意力机制与正则化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第六章 强化学习
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="第六章 强化学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 强化学习问题定义
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 基于价值的强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 基于策略的强化学习
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 深度强化学习应用
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        第七章 人工智能博弈
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/AI.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="_1">人工智能引论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p>主要是考前整理了一下ppt上的内容</p>
+</div>
+<h2 id="_2">第二章 知识表达与推理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>逻辑本身不承载推理的使命，而是研究什么是推理以及提出一些一般性的原则来保证推理结果的正确性</strong></p>
+<h3 id="21">2.1 命题逻辑<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>逻辑</strong>：进行正确推理和充分论证的研究</p>
+</li>
+<li>
+<p><strong>命题</strong>：<strong>确定</strong>为真或为假的陈述句</p>
+<ul>
+<li><strong>原子命题</strong>：不包含其他命题作为其组成部分的命题，又称简单命题</li>
+<li><strong>复合命题</strong>：包含其他命题作为其组成部分的命题</li>
+</ul>
+</li>
+<li>
+<p><strong>逻辑等价</strong>：在所有情况下都具有相同的真假结果 <span class="arithmatex">\(\equiv\)</span></p>
+<ul>
+<li>逆否命题：<span class="arithmatex">\((\alpha\rightarrow\beta)\equiv\neg\beta\rightarrow\neg\alpha\)</span></li>
+<li>蕴含消除：<span class="arithmatex">\((\alpha\rightarrow\beta)\equiv\neg\alpha\vee\beta\)</span></li>
+<li>双向消除：<span class="arithmatex">\((\alpha\leftrightarrow\beta)\equiv(\alpha\rightarrow\beta)\wedge(\beta\rightarrow\alpha)\)</span></li>
+</ul>
+</li>
+<li>
+<p><strong>逻辑推理</strong>：根据某种特定策略，从前提出发推出结论的过程 <span class="arithmatex">\(\Rightarrow\)</span></p>
+<ul>
+<li>
+<p>假言推理：<span class="arithmatex">\(\alpha\rightarrow\beta, \alpha\Rightarrow\beta\)</span></p>
+</li>
+<li>
+<p>与消解：<span class="arithmatex">\(\alpha_1\wedge\alpha_2\wedge\cdots\wedge\alpha_n\Rightarrow\alpha_i(1\leq i\leq n)\)</span></p>
+</li>
+<li>
+<p>与导入：<span class="arithmatex">\(\alpha_1,\alpha_2,\cdots,\alpha_n\Rightarrow\alpha_1\wedge\alpha_2\wedge\cdots\wedge\alpha_n\)</span></p>
+</li>
+<li>
+<p>双重否定</p>
+</li>
+<li>
+<p>单项消解或单项归结：<span class="arithmatex">\(\alpha\vee\beta,\neg\beta\Rightarrow\alpha\)</span></p>
+</li>
+<li>
+<p>消解或归结：<span class="arithmatex">\(\alpha\vee\beta,\neg\beta\vee\gamma\Rightarrow\alpha\vee\gamma\)</span></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="22">2.2 谓词逻辑<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>命题逻辑无法表达局部与整体、一般与个别的关系   <strong>e.g.</strong> 苏格拉底三段论</p>
+</li>
+<li>
+<p><strong>谓词逻辑</strong>：刻画主体（个体和群体）之间逻辑关系的方法</p>
+<ul>
+<li>谓词逻辑的<strong>研究内容</strong>：将原子命题进一步细化，分解出个体、谓词和量词，来表达个体与总体的内在联系和数量关系</li>
+</ul>
+</li>
+<li>
+<p><strong>个体</strong>：指所研究领域中可以<strong>独立存在</strong>的具体或抽象的概念</p>
+</li>
+<li>
+<p><strong>谓词</strong>：用来刻画个体属性或者描述个体之间的关系存在性的元素，其值为真或假</p>
+<ul>
+<li><strong>一元谓词</strong>：包含一个参数的谓词，表示一元关系，通常用于刻画个体是否包含特定的属性 <span class="arithmatex">\(P(x)\)</span></li>
+<li><strong>多元谓词</strong>：包含多个参数的谓词，表示个体间的多元关系，通常用于描述个体之间是否存在特定的关联 <span class="arithmatex">\(Father(x,y)\)</span></li>
+<li>谓词是从定义域到 <span class="arithmatex">\(\{𝑇𝑟𝑢𝑒, 𝐹𝑎𝑙𝑠𝑒\}\)</span> 的映射</li>
+</ul>
+</li>
+<li>
+<p><strong>量词</strong></p>
+<ul>
+<li><strong>全称量词</strong>：表示一切的、所有的、凡事、每一个等，符号 <span class="arithmatex">\(\forall\)</span></li>
+<li><strong>存在量词</strong>：表示存在、有一个、某些等，符号 <span class="arithmatex">\(\exist\)</span></li>
+<li><strong>结论</strong>：<ul>
+<li><span class="arithmatex">\((\forall x)(A(x)\vee B(x))\equiv(\forall x)A(x)\vee (\forall x)B(x)\)</span> 不成立</li>
+<li><span class="arithmatex">\((\forall x)(A(x)\wedge B(x))\equiv(\forall x)A(x)\wedge (\forall x)B(x)\)</span> 成立</li>
+<li><span class="arithmatex">\((\exist x)(A(x)\vee B(x))\equiv(\exist x)A(x)\vee (\exist x)B(x)\)</span> 成立</li>
+<li><span class="arithmatex">\((\exist x)(A(x)\wedge B(x))\equiv(\exist x)A(x)\wedge (\exist x)B(x)\)</span> 不成立</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>谓词逻辑推理的手段</strong></p>
+<ul>
+<li>全称量词消去（UI）：<span class="arithmatex">\((\forall x)A(x)\Rightarrow A(y)\)</span></li>
+<li>全称量词引入（UG）：<span class="arithmatex">\(A(y)\Rightarrow(\forall x)A(x)\)</span></li>
+<li>存在量词消去（EI）：<span class="arithmatex">\((\exist x)A(x)\Rightarrow A(a)\)</span></li>
+<li>存在量词引入（EG）：<span class="arithmatex">\(A(a)\Rightarrow(\exist x)A(x)\)</span></li>
+</ul>
+</li>
+</ol>
+<h3 id="23">2.3 知识图谱推理<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>知识图谱</strong>：由有向图构成，被用来描述现实世界中实体及实体之间的关系，<strong>是人工智能中进行知识表达的重要方式</strong></p>
+<ul>
+<li>两个节点和连接边可表示为形如 &lt;left_node, relation, right_node&gt; 的三元组形式，也可表示为一阶逻辑的形式</li>
+</ul>
+</li>
+<li>
+<p><strong>关系推理</strong>是统计关系学习研究的基本问题，也是当前知识图谱领域研究的热点问题</p>
+</li>
+<li>
+<p><strong>归纳逻辑程序设计</strong>（ILP）是机器学习和逻辑程序设计交叉领域的研究内容</p>
+<ul>
+<li>ILP 使用<strong>一阶谓词</strong>逻辑进行知识表示，通过修改和扩充逻辑表达式对现有知识进行归纳，完成推理内容</li>
+<li><strong>FOIL算法</strong>是 ILP 的代表性方法，通过<strong>序贯覆盖</strong>学习推理</li>
+</ul>
+</li>
+<li>
+<p><strong>FOIL 算法</strong></p>
+<ul>
+<li>
+<p><strong>目标谓词</strong>是需要推断规则的结论，也称为规则头</p>
+</li>
+<li>
+<p><strong>输出目标</strong>：可得到目标谓词这一结论的推理规则</p>
+</li>
+<li>
+<p><strong>信息增益值</strong>：作为添加前提约束谓词后所得的<strong>推理规则的质量的好坏</strong>的评估标准
+    $$
+    \mathrm{FOIL_Gain} = \widehat{m_+}\cdot\left(\log_2\frac{\widehat{m_+}}{\widehat{m_+}+\widehat{m_-}}-\log_2\frac{m_+}{m_++m_-}\right)
+    $$</p>
+<ul>
+<li><span class="arithmatex">\(\widehat{m_+}, \widehat{m_-}\)</span> 是<strong>增加前提约束谓词后得到的新推理规则</strong>能覆盖的正例和反例数目</li>
+<li><span class="arithmatex">\(m_+, m_-\)</span> 是<strong>原推理规则</strong>覆盖的正例和反例数目</li>
+<li>当出现负无穷的情况，此时𝐹𝑂𝐼𝐿_𝐺𝑎𝑖𝑛记为NA</li>
+</ul>
+</li>
+<li>
+<p><strong>步骤</strong></p>
+<ul>
+<li>为了学习推理规则，需要<strong>构造目标谓词 <span class="arithmatex">\(𝑃\)</span> 的训练样例</strong>（包含正例集合 𝑬+ 和反例集合 𝑬−）<ul>
+<li>从知识图谱中显式地得到正例；反例在知识图谱中一般不会显式给出，但可从知识图谱中构造出来</li>
+<li>只有在已知两个实体之间存在的关系且确定这一关系与目标谓词相悖时，才能将这两个实体用于构建目标谓词的反例</li>
+</ul>
+</li>
+<li>在推理中还需要其他<strong>背景知识</strong>（来自知识图谱中<strong>目标谓词以外</strong>的其他谓词实例化结果）</li>
+<li>将背景知识样例中出现的所有谓词<strong>依次作为前提约束</strong>加入推理规则，计算得到𝐹𝑂𝐼𝐿_𝐺𝑎𝑖𝑛的值</li>
+<li>选取可带来<strong>最大信息增益值</strong>的前提约束谓词加入原来的推理规则，得到<strong>新的推理规则</strong>，并将训练样例集合中与该推理规则<strong>不符的样例</strong>去掉</li>
+<li>重复上述过程，直到所得到的推理规则<strong>不覆盖任何反例</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>路径排序推理算法</strong>（PRA）</p>
+<ul>
+<li>
+<p><strong>基本思路</strong>：将实体之间的关联路径作为特征，来学习目标关系的分类器</p>
+</li>
+<li>
+<p><strong>三步流程</strong>：</p>
+<ul>
+<li><strong>特征抽取</strong>：生成并选择路径特征集合<ul>
+<li>生成路径方法：随机游走、BFS、DFS</li>
+</ul>
+</li>
+<li><strong>特征计算</strong>：计算每个训练样例的特征值 <span class="arithmatex">\(P(s\rightarrow t; \pi_j)\)</span><ul>
+<li>表示从实体节点 <span class="arithmatex">\(s\)</span> 出发，通过关系路径 <span class="arithmatex">\(\pi_j\)</span> 达到实体节点 <span class="arithmatex">\(t\)</span> 的概率</li>
+<li>或为布尔值，表示是否存在这样一条路径</li>
+<li>或表示路径出现的频次、频率</li>
+</ul>
+</li>
+<li><strong>分类器训练</strong>：<ul>
+<li>根据训练样例特征值，为目标关系训练分类器</li>
+<li>当训练好分类器后，即可将该分类器用于推理两个实体间是否存在目标关系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="24">2.4 概率图推理<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>概率图</strong>：可用概率描述两个相连节点之间的关联，而不是假设节点之间的影响一定会百分之百发生</p>
+<ul>
+<li>概率图模型一般分为贝叶斯网络和马尔可夫网络两大类</li>
+<li>一般认为还包括朴素贝叶斯模型、最大熵模型、隐马尔可夫模型、条件随机场、主题模型等</li>
+</ul>
+</li>
+<li>
+<p><strong>概率推理</strong>：基于概率图进行的推理（反映了推理过程中存在的不确定性特点）</p>
+</li>
+<li>
+<p><strong>贝叶斯网络</strong>：有向无环图，用有向边来表示节点之间的<strong>单向</strong>概率依赖</p>
+<ul>
+<li>满足<strong>局部马尔可夫性</strong>：在给定一个节点的父节点的情况下，该父亲节点有条件地独立于它的非后代节点</li>
+<li>贝叶斯网络中<strong>所有因素的联合分布</strong>等于所有节点的<strong>P（节点|父节点）</strong>的乘积</li>
+</ul>
+</li>
+<li>
+<p><strong>马尔可夫网络</strong>：无向图，用无向边来表示节点之间的<strong>相互概率依赖</strong></p>
+<ul>
+<li>
+<p>给定一个由若干规则构成的集合，集合中<strong>每条推理规则赋予一定权重</strong>，则计算某个断言 <span class="arithmatex">\(x\)</span> 成立的概率</p>
+<div class="arithmatex">\[
+P(X = x)
+= \frac{1}{Z} \exp\left( \sum_i w_i n_i(x) \right)
+= \frac{1}{Z} \prod_i \phi_i(x_{\{i\}})^{\,n_i(x)}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(n_i(x)\)</span>：在推导 <span class="arithmatex">\(x\)</span> 的过程中，第 <span class="arithmatex">\(i\)</span>  条规则的逻辑取值（取值为 1 或 0）</li>
+<li><span class="arithmatex">\(\omega_i\)</span>：该规则对应的权重</li>
+<li>固定常量：<span class="arithmatex">\(Z = \sum_{x \in \mathcal{X}}\exp\left( \sum_i w_i n_i(x) \right)\)</span>​</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="25">2.5 因果推理<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>哲学上把现象和现象之间那种“引起和被引起”的关系，叫做<strong>因果关系</strong>，其中引起某种现象产生的现象叫做原因，被某种现象引起的现象叫做结果</p>
+</li>
+<li>
+<p><strong>因果推理</strong>是一种重要的推理手段，是人类智能的重要组成</p>
+</li>
+<li>
+<p><strong>辛普森悖论</strong>：在某些情况下，忽略潜在的“第三个变量”，可能会改变已有的结论，而我们常常会忽略这一因素，造成<strong>虚假关联</strong></p>
+</li>
+<li>
+<p><strong>三种关联</strong></p>
+<ul>
+<li><strong>因果关联</strong>：如果一个变量是另一个变量的<strong>原因</strong>，则该两变量之间存在因果关联</li>
+<li><strong>混淆关联</strong>：<ul>
+<li><strong>混淆偏差</strong>：数据中待研究的两个变量之间<strong>存在共同的原因变量</strong></li>
+<li>如果<strong>忽略掉X</strong>，那么T和Y在数据中会存在<strong>虚假关联</strong></li>
+<li>由于该关联是混淆偏差导致的，我们称之为<strong>混淆关联</strong></li>
+</ul>
+</li>
+<li><strong>选择关联</strong><ul>
+<li><strong>选择偏差</strong>：数据中待研究的两个变量之间<strong>存在共同的结果变量</strong></li>
+<li>如果我们基于<strong>特定S的取值</strong>来选择一部分变量进行研究，那么T和Y在数据中就会存在<strong>虚假关联</strong></li>
+<li>由于该关联是选择偏差导致的，我们称之为<strong>选择关联</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>因果分析的两种理论框架</strong>：</p>
+<ul>
+<li><strong>潜在结果框架</strong></li>
+<li><strong>结构因果模型</strong>：因果图（有向无环图）</li>
+</ul>
+</li>
+<li>
+<p><strong>因果图</strong></p>
+<ul>
+<li><strong>优势：</strong>易于计算变量的联合概率</li>
+<li>任意有向无环图模型中 <span class="arithmatex">\(d\)</span> 个变量的联合概率分布等于每个节点与其父节点之间条件概率<span class="arithmatex">\(P(child|parents)\)</span>的乘积</li>
+</ul>
+</li>
+<li>
+<p><strong>干预</strong>：改变明确存在关联关系的某变量取值，研究变量取值改变对结果变量的影响</p>
+<ul>
+<li><strong>“do”算子</strong>：<span class="arithmatex">\(do(X=x)\)</span><ul>
+<li>计算当系统中一个变量取值发生变化、其他变量保持不变时，系统输出结果是否变化</li>
+<li><strong>可判断改变取值的变量是否是系统中起决定作用的原因要素</strong></li>
+</ul>
+</li>
+<li><strong>因果效应</strong>：<span class="arithmatex">\(P(Y=y│do(X=x) )\)</span></li>
+<li><strong>因果效应差/平均因果效应</strong>：<span class="arithmatex">\(P(Y=1│do(X=1) )-P(Y=1│do(X=0) )\)</span></li>
+<li>对用药情况 <span class="arithmatex">\(X\)</span> 进行干预并固定其值为 <span class="arithmatex">\(x\)</span> 时，可<strong>将所有指向 <span class="arithmatex">\(X\)</span> 的边均移除</strong></li>
+<li>因果效应等于<strong>引入干预的操纵图模型</strong>中对应的条件概率（操纵概率 <span class="arithmatex">\(P_m (Y=y│X=x)\)</span>）</li>
+<li>
+<p><strong>定理 2.5  因果效应</strong>：给定因果图 <span class="arithmatex">\(G\)</span>，<span class="arithmatex">\(PA\)</span> 表示 <span class="arithmatex">\(X\)</span> 的父节点集合，则 <span class="arithmatex">\(X\)</span> 对 <span class="arithmatex">\(Y\)</span> 的因果效应为（调整公式）</p>
+<div class="arithmatex">\[
+𝑃(𝑌=𝑦│𝑑𝑜(𝑋=𝑥) )=\sum_Z𝑃(𝑌=𝑦│𝑋=𝑥, PA=𝑧)𝑃(PA=𝑧)
+\]</div>
+<p>其中，<span class="arithmatex">\(z\)</span> 是 <span class="arithmatex">\(PA\)</span> 的具体取值</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>反事实</strong>：某个事情已经发生了，则在相同环境中，这个事情不发生会带来怎样的新结果</p>
+</li>
+</ol>
+<h2 id="_3">第三章 搜索探寻与问题求解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>搜索是人工智能智能能力体现的一种手段，匹配式搜索与数据采样式学习相互结合，使得搜索超越了传统匹配计算模式</strong></p>
+<h3 id="31">3.1 搜索基本概念<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>形式化描述</strong>：</p>
+<ul>
+<li><strong>状态</strong>：广义来说状态是对搜索算法和搜索环境当前所处情形的描述信息<ul>
+<li>搜索算法刚开始所在状态被称为<strong>初始状态</strong></li>
+<li>完成任务时所在状态被称为<strong>终止状态</strong></li>
+</ul>
+</li>
+<li><strong>动作</strong>：算法从一个状态转移到另外一个状态所采取的行为（任何状态下可选择的动作都是离散的而非连续）</li>
+<li><strong>状态转移</strong>：算法选择了一个动作之后，其所处状态也会发生相应变化，这个过程被称为<strong>状态转移</strong></li>
+<li><strong>路径</strong>：以任何一个状态为起点，搜索算法通过执行一系列动作后，将会在不同状态之间不断转移。将这个过程中经历的状态记录下来，可以得到一个<strong>状态序列</strong>，这个状态序列被称为一条路径</li>
+<li><strong>代价</strong>：每条路径对应一个代价<ul>
+<li>如果一条路径对应的状态序列长度为2，那么这条路径的代价也被称为<strong>单步代价</strong></li>
+<li>一般假定单步代价取值为非负</li>
+</ul>
+</li>
+<li><strong>目标测试</strong>：目标测试函数<code>goal_test(s)</code>用于判断<strong>状态<code>s</code>是否为目标状态</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>搜索树</strong>：用一棵树来记录算法所探索的路径（<strong>搜索过程可视为搜索树的构建</strong>）</p>
+</li>
+<li>
+<p><strong>搜索算法的评测标准</strong></p>
+<ul>
+<li>完备性：能否找到解（不一定最优）  </li>
+<li>最优性：能否保证找到的第一个解是最优解</li>
+<li>时间复杂度：找到一个搜索路径所需时间（通过<strong>扩展的结点数量</strong>衡量）</li>
+<li>空间复杂度：算法运行时所需的内存空间（通过<strong>同时记录的结点数量</strong>衡量）</li>
+<li>完备性和最优性刻画了<strong>算法找到解的能力以及所求的解的质量</strong>，时间复杂度和空间复杂度衡量了<strong>算法的资源消耗</strong></li>
+<li><strong>相关变量</strong>：<ul>
+<li><strong>分支因子</strong> <span class="arithmatex">\(b\)</span>：搜索树中每个结点的最大分支数目</li>
+<li>目标节点到根节点的<strong>最浅深度</strong> <span class="arithmatex">\(d\)</span>：搜索树中最早出现的目标结点所在层数</li>
+<li>搜索树中路径的<strong>最大可能长度</strong> <span class="arithmatex">\(m\)</span></li>
+<li><strong>状态空间的大小</strong> <span class="arithmatex">\(n\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>搜索算法框架</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span>
+<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">{</span><span class="n">根节点</span><span class="p">}</span><span class="w">          </span><span class="c1">// 对边缘集合进行初始化，将根结点作为边缘集合第一个元素</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">while</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="err">∅</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pick_from</span><span class="p">(</span><span class="n">F</span><span class="p">)</span><span class="w">       </span><span class="c1">// 取出节点n</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">{</span><span class="n">n</span><span class="p">}</span><span class="w">                </span><span class="c1">// n从集合中去除</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">goal_test</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">then</span><span class="w">   </span><span class="c1">// 目标测试</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="p">.</span><span class="n">path</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="n">end</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">F</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="err">∪</span><span class="w"> </span><span class="n">successor_nodes</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="w">     </span><span class="c1">// 将结点n的后继结点加入边缘集合</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">end</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><code>pick_from</code>：决定扩展结点的顺序</li>
+<li><code>successor_nodes</code>：决定哪些节点可被放入边缘集合供后续被扩展</li>
+</ul>
+</li>
+<li>
+<p>放弃扩展部分结点的做法被称为<strong>剪枝</strong>，其对应的搜索算法被称为<strong>剪枝搜索</strong></p>
+<ul>
+<li>主动放弃一些后继结点能够<strong>提高搜索效率</strong>而不会影响最终搜索结果</li>
+<li>甚至能解决<strong>无限循环（即算法不停机）</strong>问题</li>
+</ul>
+</li>
+</ol>
+<h3 id="32-a">3.2 贪婪最佳优先搜索与A*搜索算法<a class="headerlink" href="#32-a" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>两个重要函数</strong></p>
+<ul>
+<li><strong>评价函数</strong> <span class="arithmatex">\(f(n)\)</span>：从当前节点 <span class="arithmatex">\(n\)</span> 出发，根据评价函数来<strong>选择后续结点</strong></li>
+<li><strong>启发函数</strong> <span class="arithmatex">\(h(n)\)</span>：计算从结点 <span class="arithmatex">\(n\)</span> 到<strong>目标结点</strong>之间所形成路径的<strong>最小代价值</strong>，这里将两点之间的直线距离作为启发函数</li>
+</ul>
+</li>
+<li>
+<p><strong>贪婪最佳优先搜索</strong>：有信息搜索或启发式搜索</p>
+<ul>
+<li><strong>定义</strong>：将启发函数作为评价函数的搜索过程（<strong>启发函数</strong> <span class="arithmatex">\(h(n)\)</span> = <strong>评价函数</strong> <span class="arithmatex">\(f(n)\)</span>）</li>
+<li>采用了<strong>排除环路</strong>的剪枝方法，完备但不最优</li>
+<li>在最坏的情况下，贪婪最佳优先搜索算法时间和空间复杂度均为 <span class="arithmatex">\(O(b^m)\)</span></li>
+<li><strong>问题</strong>：总是贪婪地扩展与目标结点之间代价最小的结点，而不考虑从初始结点到达该结点所需的代价</li>
+</ul>
+</li>
+<li>
+<p><strong>A*搜索算法</strong></p>
+<ul>
+<li><strong>路径代价函数</strong> <span class="arithmatex">\(g(n)\)</span>：<strong>起始结点</strong>到结点 <span class="arithmatex">\(n\)</span> 的当前最小代价</li>
+<li><strong>评价函数</strong> <span class="arithmatex">\(f(n)=g(n)+h(n)\)</span></li>
+<li>值得注意的是，每次从边缘结点集合中所扩展的结点<strong>并非总是当前结点的相邻后继结点</strong></li>
+<li><strong>性能分析</strong>：<ul>
+<li>A<em>算法的完备性和最优性取决于</em><em>搜索问题和启发函数的性质</em>*<ul>
+<li>如果所求解问题和启发函数满足以下条件，则<strong>A*算法是完备的</strong><ul>
+<li>搜索树中分支数量是<strong>有限的</strong>，即每个结点的<strong>后继结点数量</strong>是有限的</li>
+<li>单步代价的下界是<strong>正数</strong></li>
+<li>启发函数<strong>有下界</strong></li>
+</ul>
+</li>
+<li><strong>最优性</strong>：如果启发函数是<strong>可容的</strong>，那么A*算法满足最优性</li>
+</ul>
+</li>
+<li><strong>可容性</strong>：<ul>
+<li>满足可容性的启发函数<strong>不会过高估计</strong>从结点 <span class="arithmatex">\(𝑛\)</span> 到终止结点所应该付出的代价</li>
+<li>即估计代价小于等于实际代价 <span class="arithmatex">\(h(n)&lt;h^*(n)\)</span></li>
+</ul>
+</li>
+<li><strong>一致性</strong>：<ul>
+<li>满足条件 <span class="arithmatex">\(h(n)≤c(n,a,n^′ )+h(n^′)\)</span></li>
+<li><span class="arithmatex">\(c(n,a,n^′ )\)</span>表示结点 <span class="arithmatex">\(n\)</span> 通过动作 <span class="arithmatex">\(a\)</span> 到达其相应的后继结点 <span class="arithmatex">\(n^′\)</span> 的代价</li>
+</ul>
+</li>
+<li>一致性比可容性更严格，<strong>启发函数如果满足一致性，那么必然满足可容性</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="33-minimaxalpha-beta">3.3 Minimax搜索与alpha-beta剪枝算法<a class="headerlink" href="#33-minimaxalpha-beta" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Minimax 搜索</strong>：对抗搜索或博弈搜索</p>
+<ul>
+<li><strong>定义</strong>：两个智能体同处于一个竞争的环境，智能体之间通过竞争来实现各自相反目标，即一方想<strong>最大化自身的利益</strong>，而另一方则想<strong>最小化对手的利益</strong></li>
+<li>通俗地说，对抗搜索的过程就是两个智能体<strong>各自选择对自己有利的策略</strong></li>
+<li><strong>时间复杂度</strong>为 <span class="arithmatex">\(O(b^m)\)</span>，<strong>空间复杂度</strong>为 <span class="arithmatex">\(O(bm)\)</span></li>
+<li>子树的得分由所有它的子树的得分取最大或最小得到</li>
+</ul>
+</li>
+<li>
+<p><strong>Alpha-Beta 剪枝</strong>：在Minimax 算法中可减少被搜索的结点数</p>
+<ul>
+<li>找到一个下界和一个上界，即可以为每个结点设置一个 <span class="arithmatex">\(α\)</span> 值和一个 <span class="arithmatex">\(β\)</span> 值，来判断该结点及其后继结点是否可被剪枝</li>
+<li><strong>根结点（MAX结点）</strong>的 <span class="arithmatex">\(α\)</span> 值和 <span class="arithmatex">\(β\)</span> 值分别被初始化为 <span class="arithmatex">\(-∞\)</span> 和 <span class="arithmatex">\(+∞\)</span></li>
+<li><strong>继承父结点</strong>的 <span class="arithmatex">\(α\)</span> 值和 <span class="arithmatex">\(β\)</span> 值，再按照一定的规则加以更新<ul>
+<li>对于MAX结点，如果其孩子结点（MIN结点）的收益大于当前的 <span class="arithmatex">\(α\)</span> 值，则将 <span class="arithmatex">\(α\)</span> 值更新为该收益</li>
+<li>对于MIN结点，如果其孩子结点（MAX结点）的收益小于当前的 <span class="arithmatex">\(β\)</span> 值，则将 <span class="arithmatex">\(β\)</span> 值新为该收益</li>
+</ul>
+</li>
+<li>如果一个结点的 <span class="arithmatex">\(α\)</span> 值和 <span class="arithmatex">\(β\)</span> 值满足 <span class="arithmatex">\(α&gt;β\)</span> 的条件，则该结点<strong>尚未被访问的后续结点就会被剪枝</strong></li>
+</ul>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">剪枝</p>
+<div class="arithmatex">\[
+\begin{align*}
+\mathrm{minimax}(s_0) &amp;= \max(\min(3, 9, 10), \min(2, x, y), \min(10, 5, 1))\\
+&amp;= \max(3, \min(2, x, y), 1)
+\end{align*}
+\]</div>
+<ul>
+<li>上式中 <span class="arithmatex">\(\min(2, x, y)\)</span> 肯定小于 2，而外面一层求最大值又有 3 比它大</li>
+<li>所以就没有必要去搜索 <span class="arithmatex">\(x, y\)</span> 对应的子树得到具体的 <span class="arithmatex">\(x, y\)</span> 值，可以将这两个动作剪枝掉</li>
+</ul>
+</div>
+<h3 id="34">3.4 蒙特卡洛树搜索<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>悔值函数</strong>：根据智能体前 <span class="arithmatex">\(T\)</span> 次动作，悔值函数</p>
+<div class="arithmatex">\[
+\rho_T = T \mu^{*} - \sum_{t=1}^{T} \hat{r}_t
+\]</div>
+<p>其中 <span class="arithmatex">\(\mu^{*} = \max_{i=1,\ldots,K} \mu_i\)</span> , 第 <span class="arithmatex">\(t\)</span> 次行动中所得收益分数 <span class="arithmatex">\(r ̂_t\)</span></p>
+</li>
+<li>
+<p>智能体不能预先计算好最优策略，然后实行，而是需要<strong>一边探索一边调整自己的策略</strong>，争取获得更好的收益</p>
+</li>
+<li>
+<p><strong>贪心算法</strong>：<strong>利用</strong>从已有尝试结果中所得估计来指导后续动作（每次选择已有的<strong>数据平均值最大的</strong>）</p>
+<ul>
+<li><strong>问题</strong>：难以尝试去摇动其他编号赌博机的臂膀，从而无法对其他赌博机的平均收益分数进行准确估计</li>
+<li><strong>盲从过去历史而导致不足</strong>，<strong>体现了探索和利用之间存在对立关系</strong></li>
+</ul>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(\epsilon\)</span>-贪心算法</strong>：在探索与利用之间进行平衡的搜索算法</p>
+<ul>
+<li><strong>机制</strong>：<ul>
+<li>以 <span class="arithmatex">\(1-ϵ\)</span> 的概率选择在过去 <span class="arithmatex">\(t-1\)</span> 次摇动赌博机臂膀行动中所得<strong>平均收益分数最高</strong>的赌博机摇动</li>
+<li>以 <span class="arithmatex">\(ϵ\)</span> 的概率<strong>随机选择</strong>一个赌博机进行摇动</li>
+</ul>
+</li>
+<li>虽然能有效地促使算法进行探索，但通过这种随机机制来选择动作进行探索的做法<strong>很可能不是最优的</strong>（<strong>没有将每个动作被探索的次数纳入考虑</strong>）</li>
+</ul>
+</li>
+<li>
+<p><strong>上限置信区间算法</strong>（UCB1）</p>
+<ul>
+<li>
+<p><strong>策略</strong>：为每个动作的奖励期望计算一个<strong>估计范围</strong>，优先采用<strong>估计范围上限较高</strong>的动作</p>
+</li>
+<li>
+<p><strong>奖励期望上限</strong>：</p>
+<div class="arithmatex">\[
+UCB_i=\bar{x}_{i,\,T_{(i,t-1)} } \;+\; C \sqrt{\frac{2 \ln t}{T_{(i,t-1)}  }}
+\]</div>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>蒙特卡洛树搜索</strong></p>
+<ul>
+<li>算法事先不知道每个结点将会得到怎样的代价（或终局分数）分布，只能通过<strong>采样式探索</strong>来得到计算奖励的样本。由于这个算法利用<strong>蒙特卡洛法</strong>通过<strong>采样</strong>来估计每个结点的价值，因此它被称为<strong>蒙特卡洛树搜索算法</strong></li>
+<li><strong>步骤</strong><ul>
+<li><strong>选择</strong>：算法从搜索树的根结点开始，向下递归选择子结点，直至到达叶子结点或者到达尚未被完全扩展的的结点L<ul>
+<li>向下递归选择过程可由UCB1算法来实现</li>
+<li>在递归选择过程中记录下每个结点被选择次数和每个结点得到的奖励均值</li>
+</ul>
+</li>
+<li><strong>扩展</strong>：如果结点 L 不是终止结点，则<strong>随机扩展</strong>它的一个未被扩展过的后继结点M</li>
+<li><strong>模拟</strong>：从结点M出发，模拟扩展搜索树，直到找到一个终止结点（模拟过程通常会使用比较简单的策略，例如随机策略）</li>
+<li><strong>反向传播</strong>：用模拟所得结果回溯更新模拟路径中M及以上结点的奖励均值和被访问次数 </li>
+</ul>
+</li>
+<li>以Minimax算法为基础的蒙特卡洛树搜索算法也被称为上限置信区间树搜索算法（UCT）  </li>
+</ul>
+</li>
+</ol>
+<h2 id="_4">第四章 机器学习<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>从数据中学习概念或模式形成判断和决策能力</strong>是机器学习的一个基本目标</li>
+<li>如何形成<strong>数据依赖灵活、且在学习过程中有效利用知识或先验</strong>，是机器学习今后发展的重要方向</li>
+<li>一个任务是否可以<strong>被学习</strong>仍然是学术界的热点和难点</li>
+</ol>
+<h3 id="41">4.1 机器学习基本概念<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>概念</strong>：</p>
+<ul>
+<li>机器学习通过对数据的优化学习，<strong>建立能够刻画数据中所蕴含语义概念或分布结构等信息的模型</strong></li>
+<li>在模型学习过程中，采用合适手段来利用<strong>有标签数据或无标签数据</strong>， 对模型参数不断进行优化，从而提升模型性能</li>
+</ul>
+</li>
+<li>
+<p><strong>分类</strong>（从数据利用的角度）：监督学习、无监督学习及半监督学习等</p>
+<ul>
+<li><strong>监督学习</strong>：算法从<strong>假设空间</strong>学习得到一个<strong>最优映射函数</strong> <span class="arithmatex">\(f\)</span>（决策函数），其将输入数据映射到<strong>语义标注空间</strong>，实现数据的<strong>分类和识别</strong></li>
+<li><strong>无监督学习</strong>：直接从<strong>无标签数据</strong> <span class="arithmatex">\({x_i,i=1,…,n}\)</span> 出发学习映射函数</li>
+<li><strong>半监督学习</strong>：在学习映射函数过程中使用的<strong>一部分数据有标签、一部分数据没有标签</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>有监督学习</strong>：运用最为广泛</p>
+<ul>
+<li><strong>目标</strong>：给定带<strong>有标签信息数据</strong>的<strong>训练集</strong> <span class="arithmatex">\(D=\{(x_i,y_i )\}_{i=1}^n\)</span>，学习一个从输入 <span class="arithmatex">\(x_i\)</span> 到输出 <span class="arithmatex">\(y_i\)</span> 的<strong>映射</strong></li>
+<li><strong>数据集</strong><ul>
+<li><strong>训练集</strong>用于模型训练</li>
+<li><strong>验证集</strong>用于评估模型以调整相应参数</li>
+<li><strong>测试集</strong>用于得到模型的优劣水平</li>
+<li>训练集、验证集和测试集所包含数据之间<strong>没有任何交叉</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>没有免费午餐定理</strong>：任一机器学习模型如果在一些训练集以外的样本误差小，那么必然在另外一些训练集以外的样本上表现欠佳，任何模型<strong>在平均意义上而言其性能都是一样的</strong>，即没有放之四海而皆准的最好算法</p>
+<ul>
+<li>应该在机器学习中合理引入<strong>已有先验假设</strong>对模型进行约束，以提升模型效果</li>
+</ul>
+</li>
+<li>
+<p><strong>泛化能力</strong>：在机器学习中，需要保证模型<strong>在训练集上所取得性能与在测试集上所取得性能保持一致</strong>，即模型具有泛化能力</p>
+</li>
+<li>
+<p><strong>模型评估与参数估计</strong>手段：<strong>损失函数</strong> <span class="arithmatex">\(\mathrm{Loss}(f(x_i), y_i)\)</span></p>
+<ul>
+<li>
+<p><strong>经验风险</strong>：映射函数 <span class="arithmatex">\(f\)</span> 在训练集上所产生损失 </p>
+<div class="arithmatex">\[
+\Re_{emp}=\frac{1}{n} \sum_{i=1}^{n} \mathrm{Loss}(y_i, f(x_i))
+\]</div>
+<p>经验风险<strong>越小</strong>说明模型对训练集数据<strong>拟合程度越好</strong></p>
+</li>
+<li>
+<p><strong>期望风险</strong>：如果知道某一任务包含的<strong>所有数据</strong>，则可以从所有数据中计算模型产生的损失，这一误差损失被称为期望风险（真实风险或真实误差）</p>
+<div class="arithmatex">\[
+\Re=\int_{x \times y} \mathrm{Loss}(y, f(x)) \, P(x,y) \, dx \, dy
+\]</div>
+<p>该任务中所有数据的联合分布为 <span class="arithmatex">\(P(x,y)\)</span></p>
+</li>
+<li>
+<p>机器学习中模型优化目标<strong>一般</strong>为<strong>经验风险最小化</strong></p>
+<ul>
+<li>由于无法事先就得到任何任务所对应的所有数据分布</li>
+<li>机器学习的目标是<strong>追求期望风险最小化</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>关系</strong>：<span class="arithmatex">\(\Re≤\Re_{emp}+err\)</span></p>
+<ul>
+<li>其中 <span class="arithmatex">\(err\)</span> 取值与机器学习模型的<strong>复杂程度和训练集样本数目</strong>有关</li>
+</ul>
+</li>
+<li><strong>过学习</strong>：在模型训练过程中，如果使用<strong>同一批训练数据</strong>反复训练，模型会变得<strong>越复杂</strong>，虽然经验风险会降低，但是 <span class="arithmatex">\(err\)</span> 取值会越大，导致期望风险增加</li>
+<li>
+<p>为了<strong>防止过学习</strong>，结构风险最小化引入<strong>正则化或惩罚项</strong>来降低模型模型复杂度</p>
+<div class="arithmatex">\[
+\frac{1}{n} \sum_{i=1}^{n} \mathrm{Loss}(y_i, f(x_i))+\lambda J(f)
+\]</div>
+<p>其中 <span class="arithmatex">\(J(f)\)</span> 是正则化因子或惩罚项因子，<span class="arithmatex">\(λ\)</span> 是用来调整惩罚强度的系数</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>模型度量方法</strong></p>
+<ul>
+<li><strong>综合分类率</strong>F1-score：精确率和召回率的调和平均数</li>
+<li><strong>参数优化</strong>：<ul>
+<li>从<strong>频率学派</strong>角度而言，对模型参数优化学习的结果就是得到使观测数据<strong>发生概率最大</strong>的模型参数，又称为<strong>最大似然估计</strong></li>
+<li>从<strong>贝叶斯学派</strong>角度而言，对模型参数优化学习的结果就是<strong>似然概率</strong>（模型参数产生数据的概率）与<strong>先验概率</strong>（没有任何实验数据时对模型参数的经验判断）<strong>乘积最大</strong>，又称为<strong>最大后验估计</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="42">4.2 监督学习<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>回归分析</strong>：</p>
+<ul>
+<li>分析不同变量之间存在关系的研究叫作回归分析</li>
+<li>刻画不同变量之间关系的模型称为回归模型</li>
+<li><strong>一元线性回归</strong>：误差总和最小，分别对参数求导</li>
+<li><strong>多元线性回归</strong>：<ul>
+<li>线性函数 <span class="arithmatex">\(f(\mathbf{x}_i)=a_0+\mathbf{a}^T\mathbf{x}_i\)</span> </li>
+<li>最小化均方误差函数 <span class="arithmatex">\(J_m=\dfrac{1}{m}\sum_{i=1}^m\left(y_i-f(\mathbf{x}_i)\right)^2=(\mathbf{y}-\mathbf{X}^\top\mathbf{a})^\top(\mathbf{y}-\mathbf{X}^\top\mathbf{a})\)</span></li>
+<li>解得 <span class="arithmatex">\(\mathbf{a}=(\mathbf{X}\mathbf{X}^T)^{-1}\mathbf{X}\mathbf{y}\)</span></li>
+</ul>
+</li>
+<li><strong>非线性回归</strong>：线性回归对离群点非常敏感，导致模型建模不稳定，结果有偏<ul>
+<li><strong>逻辑斯蒂回归</strong>：在回归模型中引入<strong>sigmoid函数</strong>的一种非线性回归模型，只能用于解决二分类问题</li>
+<li>推广为<strong>多项逻辑斯蒂回归模型</strong>（softmax函数)，处理多类分类问题，得到softmax回归</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>决策树</strong>：将分类问题分解为若干<strong>基于单个信息</strong>的推理任务，采用<strong>树状结构</strong>来逐步完成决策判断</p>
+<ul>
+<li>性能好的决策树随着划分不断进行，分支结点样本集的“纯度”会越来越高（<strong>其所包含样本尽可能属于相同类别</strong>）</li>
+<li>构建决策树的时候，选择划分之后纯度最高的方案</li>
+<li>
+<p><strong>信息熵</strong>：一种衡量样本集合<strong>“纯度”</strong>的指标</p>
+<div class="arithmatex">\[
+E(D)=-\sum^{K}_{k=1}p_k\log_2 p_k
+\]</div>
+<p>其中 <span class="arithmatex">\(p_k\)</span> 为第 <span class="arithmatex">\(k\)</span> 个信息发生的概率</p>
+<ul>
+<li>信息熵越大，说明该集合的<strong>不确定性越大，“纯度”越低</strong></li>
+<li>
+<p><strong>信息增益</strong>：选择属性划分样本集前后信息熵的<strong>减少量</strong>，用来衡量样本集合复杂度（不确定性）所减少的程度</p>
+<div class="arithmatex">\[
+Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
+\]</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="43-k">4.3 无监督学习：K均值聚类<a class="headerlink" href="#43-k" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>k-means算法的目标</strong>：将 <span class="arithmatex">\(n\)</span> 个 <span class="arithmatex">\(d\)</span> 维数据 <span class="arithmatex">\(\{x_i,i=1,…,n\}\)</span> 划分为 <span class="arithmatex">\(K\)</span> 个聚簇，使得簇内<strong>方差最小化</strong></li>
+<li>找到的是<strong>“局部”最优</strong>，即没有任何其他的聚类结果，能够让簇内的方差更小，但<strong>不能保证找到全局最优</strong></li>
+<li>是<strong>易受初始值影响的迭代算法</strong>，可用不同初始值重复几次，以达到“局部”最优，常用的初始化方法包括<strong>Forgy</strong>和<strong>Random Partition</strong></li>
+<li>
+<p><strong>算法步骤</strong></p>
+<ul>
+<li>初始化聚类质心</li>
+<li>根据预定的相似度/距离函数（通常为<strong>欧式距离</strong>）对数据进行聚类（将每个数据放入与之<strong>距离最近</strong>的聚类质心所在聚类集合中）</li>
+<li>更新聚类质心：求均值</li>
+<li>迭代直到收敛：判断条件（达到<strong>迭代次数上限</strong>；前后两次迭代中<strong>聚类质心保持不变</strong>）</li>
+</ul>
+</li>
+<li>
+<p><strong>聚类算法的目标</strong>：都是得到一个聚类结果，最小化类内距离（或最大化类内相似度），而最大化类间距离（或最小化类间相似度）</p>
+</li>
+<li>k-means聚类：通过<strong>最小化聚簇内的数据方差</strong>来实现最大化类内相似度的，即最小化每个类簇方差</li>
+</ol>
+<h3 id="44">4.4 监督学习与非监督学习下特征降维<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>线性判别分析</strong>（LDA）：一种基于<strong>监督学习</strong>的降维方法，也称为 <strong>Fisher 线性判别分析</strong>（FDA）</p>
+<ul>
+<li>对于一组具有<strong>标签信息</strong>的<strong>高维</strong>数据样本，LDA 利用其<strong>类别信息</strong>，将其<strong>线性</strong>投影到一个<strong>低维空间</strong>上</li>
+<li>在低维空间中<strong>同一类别样本尽可能靠近，不同类样本尽可能彼此远离</strong></li>
+<li><strong>优化目标</strong><ul>
+<li><span class="arithmatex">\(S_b\)</span> 类间散度矩阵：衡量两个类别均值点之间的“分离”程度</li>
+<li><span class="arithmatex">\(S_w\)</span> 类内散度矩阵：衡量每个类别中数据点的“分离”程度</li>
+</ul>
+</li>
+<li>只需要分别求出<strong>待投影数据的均值和方差</strong>，就可以设计得到最佳投影方向<strong>w</strong></li>
+<li>对原始 <span class="arithmatex">\(d\)</span> 维数据进行降维后，<strong>所得维度 <span class="arithmatex">\(r\)</span> 最大取值</strong>为 <span class="arithmatex">\(min(K-1,d)\)</span>：说明在二分类问题中，原始高维数据只能被投影到一维空间中</li>
+<li>对线性判别分析的<strong>降维步骤</strong>描述<ul>
+<li>计算数据样本集中每个类别样本的<strong>均值</strong></li>
+<li>计算 <span class="arithmatex">\(\mathbf{S}_w=\mathbf{\Sigma}_1+\mathbf{\Sigma}_2\)</span>（<span class="arithmatex">\(\mathbf{\Sigma}\)</span> 协方差矩阵）和 <span class="arithmatex">\(\mathbf{S}_b=(\mathbf{m}_2-\mathbf{m}_1)(\mathbf{m}_2-\mathbf{m}_1)^\top\)</span></li>
+<li>根据 <span class="arithmatex">\(\mathbf{S}_w^{-1}\mathbf{S}_b\mathbf{W}=\lambda\mathbf{W}\)</span> 来求解 <span class="arithmatex">\(\mathbf{S}_w^{-1}\mathbf{S}_b\)</span> 所对应的前 <span class="arithmatex">\(r\)</span> 个最大特征值所对应的特征向量 <span class="arithmatex">\((\mathbf{w}_1, \mathbf{w}_2, \cdots, \mathbf{w}_r)\)</span> 构成矩阵 <span class="arithmatex">\(\mathbf{W}\)</span></li>
+<li>通过矩阵 <span class="arithmatex">\(\mathbf{W}\)</span> 将每个样本映射到低维空间，实现特征降维</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>主成分分析</strong>：一种特征降维方法，也被称为KL变换、霍林特变换或本征正交分解</p>
+<ul>
+<li>通过分析找到数据特征的主要成分，使用这些<strong>主要成分</strong>来代替原始数据</li>
+<li><strong>优点</strong>：可以<strong>加深</strong>对数据本身的理解；简化后的数据（主要成分）在用于下游的其他任务时，有着<strong>噪声少、易于处理计算</strong>的特点；体现了<strong>“简单有效原理”</strong></li>
+<li>主成分分析要求<strong>“降维后的结果要保持原始数据的原有结构”</strong>（要求最大限度保持原始高维数据的<strong>总体方差结构</strong>）</li>
+<li><strong>降维</strong>需要尽可能将数据<strong>向方差最大</strong>的方向进行投影，使得数据所蕴含的信息丢失得尽可能少（更好的保留了<strong>未降维前数据的离散程度</strong>）</li>
+<li><strong>思想</strong>：<ul>
+<li>将 <span class="arithmatex">\(d\)</span> 维特征数据映射到 <span class="arithmatex">\(𝑙\)</span> 维空间（一般 <span class="arithmatex">\(d≫l\)</span>），去除原始数据之间的<strong>冗余性</strong>（通过去除相关性）</li>
+<li>将原始数据向这些<strong>数据方差最大</strong>的方向进行投影</li>
+<li>一旦发现方差最大的投影方向，则继续寻找保持<strong>方差第二</strong>的方向且进行投影</li>
+<li>其目标是<strong>使得数据每一维的方差都尽可能大</strong></li>
+</ul>
+</li>
+<li><strong>算法步骤</strong><ul>
+<li>对于每个样本数据 <span class="arithmatex">\(x_i\)</span> 进行<strong>中心化处理</strong>：<span class="arithmatex">\(x_i:=x_i-\mu, \mu=\dfrac{1}{n}\sum_{j=1}^nx_j\)</span></li>
+<li>计算原始样本数据的<strong>协方差矩阵</strong>：<span class="arithmatex">\(\mathbf{\Sigma} = \dfrac{1}{n-1}\mathbf{X}^\top\mathbf{X}\)</span></li>
+<li>对协方差矩阵 <span class="arithmatex">\(\mathbf{\Sigma}\)</span> 进行<strong>特征值分解</strong>，对所得特征根进行<strong>排序</strong> <span class="arithmatex">\(\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_l\)</span></li>
+<li>取<strong>前 <span class="arithmatex">\(l\)</span> 个特征根所对应特征向量</strong> <span class="arithmatex">\(\mathbf{w}_1, \mathbf{w}_2, \cdots, \mathbf{w}_l\)</span> 组成<strong>映射矩阵</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>特征人脸</strong>：基于外观的人脸识别方法</p>
+<ul>
+<li><strong>目的</strong>：捕捉人脸图像集合中的特征信息，并使用该信息对各个人脸图像进行<strong>编码和比较</strong></li>
+<li>使用<strong>主成分分析</strong>的手段表示特征人脸，其<strong>本质</strong>是使用<strong>一组特征向量的线性组合</strong>来表示原始人脸，进而实现人脸识别</li>
+<li>在<strong>特征维度较高</strong>的情况下，主成分分析算法暴力求解特征向量是一个<strong>耗时操作</strong></li>
+<li><strong>奇异值分解</strong>：一种新的矩阵分解方法来实现主成分分析，对原始数据进行降维</li>
+</ul>
+</li>
+</ol>
+<h3 id="45">4.5 演化算法<a class="headerlink" href="#45" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>演化算法</strong>：指一大类受自然演化启发的启发式随机优化算法，通过<strong>“突变重组”和“自然选择”</strong> 这两种机制来模拟自然演化过程</li>
+<li><strong>实现方法</strong>：遗传算法、遗传规划、演化策略</li>
+<li>
+<p><strong>遗传算法</strong>：是<strong>演化学习</strong>的代表性算法之一，其受到达尔文<strong>“物竞天择、适者生存”</strong>进化论思想启示，引入<strong>选择、交叉和变异</strong>等操作以<strong>搜索</strong>方式来进行优化求解</p>
+<ul>
+<li>对于一个待求解的最优化问题，先给定一定数量<strong>候选解</strong>（称为个体或染色体），然后让这些染色体所构成种群<strong>向最优解进化</strong></li>
+<li>在每一次进化过程中，计算每个染色体（即候选解）的<strong>适应度</strong>，根据适应度选择合适染色体</li>
+<li>
+<p>随后施以<strong>选择和变异</strong>来产生新的生命种群，该种群在算法<strong>下一次迭代</strong>中被作为当前种群
+4. <strong>步骤</strong></p>
+</li>
+<li>
+<p><strong>初始化</strong>具有若干规模数目的群体，当前进化代数Generation=0</p>
+</li>
+<li>采用<strong>评估函数</strong>计算群体中每个染色体的<strong>适应值</strong>，保存适应值<strong>最大</strong>的染色体Best</li>
+<li>采用<strong>轮盘赌选择算法</strong>对群体中染色体进行<strong>选择</strong>，产生<strong>同样规模</strong>的种群</li>
+<li>按照<strong>概率</strong>从种群中选择两对染色体进行<strong>交叉</strong>操作（对所选中两对染色体中相应基因片段信息进行交换）；交叉所得染色体进入新种群，未交叉操作染色体被复制进入新种群</li>
+<li>按照<strong>概率</strong>对新种群中被选中染色体的若干基因片段进行<strong>变异</strong>操作；变异后染色体取代原有染色体进入新种群，未发生变异染色体直接进入新群体</li>
+<li>计算种群中各个染色体的<strong>适应值</strong>；倘若种群中染色体最大适应值大于已知Best适应值，则取代原有Best</li>
+<li>当前进化代数Generation加1；如果Generation超过规定的最大进化代数或Best达到规定的误差要求，算法结束；否则返回步骤3</li>
+</ul>
+</li>
+</ol>
+<h2 id="_5">第五章 神经网络与深度学习<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>神经网络基本单元</strong>：<strong>MCP神经元</strong></li>
+<li>深度学习模型受到了神经系统层次化结构特性的启发，以“层层递进、逐层抽象”机制来完成特定任务</li>
+<li><strong>赫布理论</strong>：神经元之间持续<strong>重复经验刺激</strong>可导致突触传递效能增加，即学习和记忆的本质是大脑结构在后期经验刺激下改变神经元之间强弱联结的权重的结果</li>
+<li>“<strong>感知机</strong>”模型：是一个仅包含输入层和输出层的两层神经网络，可完成两类问题的线性分类</li>
+<li><strong>误差后向传播</strong>算法：以<strong>数据驱动方式来</strong>根据输出误差自动优化神经网络参数成为可能，解决了<strong>多层感知机</strong>中参数优化这一难题</li>
+</ol>
+<h3 id="51">5.1 <strong>前馈神经网络与参数优化</strong><a class="headerlink" href="#51" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>若干个MCP神经元前后相连就构成了<strong>最早神经网络雏形</strong>；实现了将输入数据分类到<strong>1或0</strong>两个类别中，解决了<strong>二分类问题</strong></p>
+</li>
+<li>
+<p><strong>感知机</strong></p>
+<ul>
+<li>输入层负责接收实数值的输入向量，输出层则能输出<strong>1或-1</strong>两个值</li>
+<li><strong>激活函数</strong> <span class="arithmatex">\(\Phi(∙)\)</span> 的值与<strong>阈值</strong>比较进行分类</li>
+<li>感知机中的<strong>连接权重参数</strong>并不是预先设定好的，而是通过<strong>多次迭代训练</strong>得到的</li>
+<li>单层感知机构建<strong>损失函数，</strong>来计算模型预测值与数据真实值之间的“误差”，通过最小化损失函数取值，来<strong>优化模型参数</strong></li>
+<li>感知机可模拟<strong>逻辑与、逻辑与非和逻辑或</strong>等线性可分函数，但是<strong>无法完成逻辑异或</strong>这一非线性可分逻辑函数任务</li>
+</ul>
+</li>
+<li>
+<p><strong>前馈神经网络</strong>：<strong>由多个隐藏层构成的多层感知机</strong>（由输入层、输出层和若干隐藏层构成）</p>
+<ul>
+<li>在感知机模型中增加若干隐藏层，增强神经网络的<strong>非线性</strong>表达能力，让神经网络具有<strong>更强的拟合能力</strong></li>
+<li>相邻层所包含的神经元之间通常使用<strong>“全连接”方式</strong>进行连接<ul>
+<li>“全连接”是指两个<strong>相邻层之间的神经元相互成对连接</strong>，但<strong>同一层内神经元之间没有连接</strong></li>
+</ul>
+</li>
+<li>前馈神经网络可以<strong>模拟复杂非线性函数功能</strong>，所模拟函数的复杂性取决于<strong>网络隐藏层数目和各层中神经元数目</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>激活函数</strong></p>
+<ul>
+<li>
+<p><strong>sigmoid 函数</strong>：<span class="arithmatex">\(f(x)=\dfrac{1}{1+e^{-x}}\)</span>，导数 <span class="arithmatex">\(f'(x)=f(x)(1-f(x))\)</span></p>
+<ul>
+<li><strong>优点</strong>：1）概率形式输出；2）单调递增；3）非线性变化</li>
+<li><strong>缺点</strong>：导数小于1，在使用<strong>反向传播算法</strong>更新参数过程中易出现导数过于接近于0的情况，即<strong>梯度消失</strong>问题，并且这个问题会随着<strong>网络的深度增加</strong>而变得愈发严重</li>
+</ul>
+</li>
+<li>
+<p><strong>ReLU 函数</strong>：<span class="arithmatex">\(f(x)=\max(0, x)\)</span></p>
+<ul>
+<li><strong>优点</strong>：有效缓解<strong>梯度消失</strong>；参与分类等任务神经元数目稀缺，一定程度上克服<strong>过拟合现象</strong></li>
+<li><strong>缺点</strong>：导致<strong>神经元“死亡”</strong>，神经元对应权重永远不会更新</li>
+</ul>
+</li>
+<li>
+<p><strong>softmax 函数</strong>：<span class="arithmatex">\(f(x_i)=\dfrac{e^{x_i}}{\sum_{j=1}^ke^{x_j}}\)</span></p>
+<ul>
+<li>
+<p>一般用在<strong>多分类</strong>问题中，对逻辑斯蒂回归的一种推广，也被称为多项逻辑斯蒂回归模型</p>
+</li>
+<li>
+<p>可将<strong>输出概率最大</strong>的作为分类目标</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>神经网络参数优化是一个<strong>监督学习</strong>的过程</p>
+<ul>
+<li>模型利用<strong>反向传播算法</strong>将<strong>损失函数</strong>计算所得误差从输出端出发、<strong>由后向前</strong>传递给神经网络中每个单元</li>
+<li>然后通过<strong>梯度下降算法</strong>对神经网络中参数进行更新</li>
+</ul>
+</li>
+<li>
+<p><strong>损失函数</strong>：用来计算模型预测值与真实值之间的误差</p>
+<ul>
+<li><strong>均方误差损失函数</strong>：通过计算预测值和实际值之间距离（即误差）的<strong>平方</strong>来衡量模型优劣</li>
+<li><strong>交叉熵损失函数</strong>：<span class="arithmatex">\(H(y_i, y ̂_i )=-y_i∗logy ̂_i\)</span><ul>
+<li><strong>交叉熵</strong>是信息论中的重要概念，主要用来度量两个<strong>概率分布间的差异</strong></li>
+<li>预测类别分布概率与实际类别分布概率之间的<strong>差距越小，交叉熵就越小</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>梯度下降</strong>：<strong>一种使损失函数最小化的方法</strong></p>
+<ul>
+<li><strong>在多元函数中，梯度是对每一变量所求导数组成的向量</strong></li>
+<li><strong>梯度的反方向</strong>是函数值下降最快的方向，因此是损失函数求解的方向</li>
+<li><strong>分类</strong><ul>
+<li><strong>批量梯度下降</strong>：<strong>整个训练集上</strong>计算损失误差</li>
+<li>如果数据集较大，则会因<strong>内存容量不足</strong>而无法完成梯度计算</li>
+<li><strong>随机梯度下降</strong>：使用训练集中<strong>每个训练样本</strong>计算损失误差</li>
+<li><strong>其收敛速度通常较慢</strong>；随机性有助于跳出局部最优解，有时可能找到更好的解</li>
+<li><strong>小批量梯度下降</strong>：选取训练集中<strong>小批量样本</strong>计算</li>
+<li>训练过程<strong>更稳定</strong>，可利用矩阵计算优势，<strong>目前最常用</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>误差反向传播</strong>：</p>
+<ul>
+<li>要求取损失函数<strong>相对于参数的偏导</strong>，然后按照<strong>损失函数梯度的反方向</strong>选取一个微小的增量，来调整参数的取值，就能够保证损失函数取值减少</li>
+<li><strong>学习速率</strong>的大小会影响模型参数<strong>收敛速度</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="52">5.2 <strong>卷积神经网络</strong><a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
+<ol>
+<li>对于图像这样的数据，<strong>不能直接将所构成的像素点向量与前馈神经网络中的每个神经元相连</strong></li>
+<li>通过<strong>级联方式</strong>（逐层滤波）实现一种满足<strong>平移不变性</strong>的网络，这就是卷积神经网络的前身</li>
+<li>以<strong>卷积操作与池化操作</strong>为核心构建而成的</li>
+<li>
+<p><strong>卷积</strong>：</p>
+<ul>
+<li>利用了图像中像素点存在<strong>“空间依赖度”</strong>的特点</li>
+<li>图像卷积计算对图像进行了<strong>下采样操作</strong>，符合<strong>“视觉系统信息分层处理”</strong>这一机制</li>
+<li><strong>卷积核中的权重系数</strong>：通过<strong>数据驱动机制学习</strong>得到<ul>
+<li>用来捕获图像中某像素点及其邻域像素点所构成的<strong>特有空间模式</strong></li>
+<li>刻画了图像中像素点构成的<strong>空间分布不同模式</strong></li>
+</ul>
+</li>
+<li>如果卷积核<strong>中心位置的权重系数越小且与其它卷积权重系数差别越小</strong>，则卷积得到图像滤波结果（<strong>特征图</strong>）越<strong>模糊</strong>，这被称为<strong>图像平滑操作</strong></li>
+<li><strong>填充</strong>：在边缘像素点周围0填充，卷积后的图像分辨率将与卷积前的图像<strong>分辨率一致</strong>，<strong>不存在下采样</strong></li>
+<li><strong>步长</strong>：通过改变卷积核在被卷积图像中移动步长的大小来<strong>跳过一些像素</strong>（单步滑动是标准的卷积模式）</li>
+</ul>
+</li>
+<li>
+<p><strong>感受野</strong>是卷积神经网络每一层输出的特征图上的像素点在输入图像上映射的区域大小</p>
+</li>
+<li>
+<p><strong>池化</strong>：</p>
+<ul>
+<li><strong>最大池化</strong>：从输入特征图的某个区域子块中选择值最大的像素点</li>
+<li><strong>平均池化</strong>：计算所有像素点的<strong>均值</strong></li>
+<li><strong>k-max池化</strong>：取前k个最大值</li>
+</ul>
+</li>
+<li>
+<p><strong>全貌</strong>：通过卷积操作提取特征，池化操作减少尺寸，最后通过全连接层和Softmax分类器进行图像分类</p>
+</li>
+</ol>
+<h3 id="53">5.3 <strong>循环神经网络</strong><a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>循环神经网络（RNN）是一类<strong>处理序列数据</strong>（如文本句子、视频帧等）时所采用的网络结构</p>
+<ul>
+<li><strong>本质</strong>：希望模拟人所具有的记忆能力，在学习过程中记住部分已经出现的信息，并利用所记住的信息影响后续结点输出</li>
+<li><span class="arithmatex">\(Φ(∙)\)</span>是激活函数，一般可为Sigmoid或者Tanh激活函数</li>
+</ul>
+</li>
+<li>
+<p>根据<strong>输入序列数据与输出序列数据中所包含“单元”的多寡</strong>，循环神经网络可以实现<strong>“多对多”</strong>（机器翻译）、<strong>“多对一”</strong>（文本的情感分类）和<strong>“一对多”</strong>（图像描述生成）三种模式</p>
+</li>
+<li>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>虽具有一定的记忆能力，但当<strong>彼此相关信息在序列中相距较远</strong>时，无法捕捉到数据之中的<strong>时序依赖关系</strong></li>
+<li>当<strong>输入序列过长</strong>时，循环神经网络也容易出现<strong>梯度消失或者梯度爆炸</strong>的问题</li>
+</ul>
+</li>
+<li>
+<p>为了<strong>缓解梯度消失</strong>问题，<strong>长短时记忆模型</strong>（LSTM）被提出</p>
+<ul>
+<li>引入了<strong>内部记忆单元和门结构</strong>来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递</li>
+<li>内部记忆单元中信息可视为<strong>对“历史信息”的累积</strong></li>
+<li>常见的LSTM模型中有<strong>输入门、遗忘门和输出门</strong>三种门结构；三个门结构所输出向量的维数、内部记忆单元的维数和隐式编码的维数均相等</li>
+<li><strong>步骤</strong>：对于给定的当前时刻输入数据和前一时刻隐式编码，输入门、遗忘门和输出门通过各自参数对其编码，分别得到三种门结构的输出；在此基础上，再进一步结合前一时刻内部记忆单元信息来更新当前时刻内部记忆单元信息，最终得到当前时刻的隐式编码</li>
+</ul>
+</li>
+</ol>
+<h3 id="54">5.4 <strong>注意力机制与正则化</strong><a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>注意力机制</strong></p>
+<ul>
+<li><strong>注意</strong>：指意识对一定信息或对象的指向与集中的过程，具有<strong>选择性和集中性</strong>等特点，是一切心理过程得以产生和进行的必不可少的心理属性</li>
+<li><strong>注意力</strong>：<ul>
+<li>自然语言：句子级或篇章级中单词和单词之间因为上下文而共同出现的<strong>概率</strong></li>
+<li>图像分析：在一定视觉区域中<strong>视觉子块之间的空间分布模式</strong></li>
+<li>机器翻译：<strong>输入源语言单词和输出目标语言单词</strong>之间的关联</li>
+</ul>
+</li>
+<li>谷歌公司的研究人员于2017年提出了Transformer模型，引入“自注意力”来计算自然语言句子中单词和单词之间的概率关联</li>
+</ul>
+</li>
+<li>
+<p><strong>神经网络正则化</strong></p>
+<ul>
+<li>
+<p>为了缓解神经网络在训练过程中出现的<strong>过拟合</strong>现象，需要采取正则化技术来<strong>提升神经网络的泛化能力</strong></p>
+</li>
+<li>
+<p><strong>两种方法</strong></p>
+<ul>
+<li>
+<p><strong>Dropout</strong>：指在训练神经网络的过程中<strong>随机丢掉一部分神经元来降低神经网络的复杂度</strong>，从而防止过拟合</p>
+</li>
+<li>
+<p><strong>批归一化</strong>：通过规范化手段，把神经网络每层中任意神经元的输入值分布改变成均值为<strong>0</strong>、方差为<strong>1</strong>的标准正态分布，把偏移较大的分布强制映射为标准正态分布。经过批归一化处理，激活函数的输入值被映射到非线性函数梯度较大的区域，使得梯度变大从而克服梯度消失问题，<strong>进而加快收敛速度</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="_6">第六章 强化学习<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li>基于价值的强化学习算法和基于策略的强化学习算法都可以认为是基于通用策略迭代框架的方法，即算法是<strong>由策略评估和策略优化两个步骤</strong>组成的</li>
+<li>
+<p>强化学习可以分为两类：</p>
+<ul>
+<li>依靠对环境（即马尔可夫随机过程）的先验知识或建模的算法称为<strong>基于模型的方法，反之称为无模型的方法</strong></li>
+<li>只对价值函数建模并利用策略优化定理求解的方法称为<strong>基于价值的方法</strong></li>
+<li>对策略函数建模并利用策略梯度定理求解的方法称为<strong>基于策略的方法</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="61">6.1 <strong>强化学习问题定义</strong><a class="headerlink" href="#61" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>定义</strong>：</p>
+<ul>
+<li><strong>智能体</strong>是强化学习算法的<strong>主体</strong>，能够根据经验做出主观判断并执行动作，是整个<strong>智能系统的核心</strong></li>
+<li>智能体以外的一切统称为<strong>环境</strong>，能被智能体所采取的动作影响，也能向智能体反馈状态和奖励</li>
+<li><strong>状态</strong>：智能体对环境的一种理解和编码，通常包含了对智能体所采取决策产生影响的信息</li>
+<li><strong>动作</strong>：智能体对环境产生影响的方式</li>
+<li><strong>策略</strong>：智能体在所处状态下去执行某个动作的依据</li>
+<li><strong>奖励</strong>：智能体序贯式采取一系列动作后从环境获得的收益（现实中奖励和惩罚的统合，一般正值来代表实际奖励，负值代表实际惩罚）</li>
+</ul>
+</li>
+<li>
+<p><strong>强化学习</strong>：<strong>智能体在与环境交互中去学习能帮助其获得最大化奖励这一策略的过程</strong></p>
+<ul>
+<li><strong>基于评估：</strong>强化学习利用环境评估当前策略，以此为依据进行优化</li>
+<li><strong>交互性：</strong>强化学习的数据在与环境的交互中产生</li>
+<li><strong>序列决策过程：</strong>智能主体在与环境的交互中需要作出一系列的决策，往往是前后关联的<ul>
+<li><strong>注：现实中强化学习问题往往还具有奖励滞后，基于采样的评估等特点</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>马尔可夫决策过程</strong>：机器人寻路问题</p>
+<ul>
+<li><strong>马尔可夫链</strong>：满足马尔可夫性的离散随机过程，也被称为离散马尔科夫过程（<strong>t+1</strong>时刻状态仅与<strong>t</strong>时刻状态相关）<ul>
+<li><strong>引入奖励机制，这样可以衡量任意序列的优劣，即对序列决策进行评价</strong></li>
+<li>为比较不同奖励机制的优劣，每个时刻定义<strong>回报</strong>来反映该时刻可得的累加奖励（引入折扣因子）</li>
+</ul>
+</li>
+<li>在马尔可夫链模型$<span class="arithmatex">\(MP=(S,P)\)</span><span class="arithmatex">\(中加入奖励函数和折扣因子后，得到马尔可夫奖励过程\)</span><span class="arithmatex">\(MRP=(S,P,R,γ)\)</span>$<ul>
+<li>能够用奖励和回报来刻画智能体的目标，但是不能体现机器人的能动性，缺乏让机器人与环境进行交互的手段；需要在马尔可夫奖励过程中<strong>引入动作</strong>，让动作成为机器人影响环境的手段</li>
+<li>智能体逐步行动，得到一个状态序列称为<strong>轨迹</strong>（无限的/有终止状态）</li>
+<li>有终止状态的问题叫<strong>分段</strong>问题，不包含终止状态的问题叫<strong>持续</strong>问题</li>
+<li>在分段问题中，一个从初始状态到终止状态的完整轨迹称为一个<strong>片段</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>贝尔曼方程</strong>：也被称作<strong>动态规划方程</strong>，由理查德·贝尔曼提出</p>
+<ul>
+<li>
+<p>贝尔曼方程是动态规划这种数学最佳化方法<strong>能够达到最佳化的必要条件</strong></p>
+</li>
+<li>
+<p><strong>贝尔曼方程描述了价值函数或动作-价值函数的递推关系，是研究强化学习问题的重要手段</strong></p>
+</li>
+<li><strong>求解最优策略的一种方法就是去求解最优的价值函数或最优的动作-价值函数，即基于价值方法</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="62">6.2 基于价值的强化学习<a class="headerlink" href="#62" title="Permanent link">&para;</a></h3>
+<ul>
+<li>通过策略计算价值函数的过程叫做<strong>策略评估</strong></li>
+<li>通过价值函数优化策略的过程叫做<strong>策略优化</strong></li>
+<li><strong>策略评估和策略优化交替进行的强化学习求解方法叫做通用策略迭代</strong></li>
+</ul>
+<ol>
+<li><strong>策略优化定理</strong></li>
+<li>
+<p>假定当前策略为$<span class="arithmatex">\(π\)</span><span class="arithmatex">\(，策略评估指的是根据策略\)</span><span class="arithmatex">\(π\)</span><span class="arithmatex">\(来计算相应的价值函数\)</span><span class="arithmatex">\(V_π\)</span><span class="arithmatex">\(或动作-价值函数\)</span><span class="arithmatex">\(q_π\)</span>$</p>
+<ul>
+<li><strong>在状态集合有限前提下三种常见的策略评估方法</strong><ul>
+<li><strong>基于动态规划的方法</strong>：</li>
+<li>使用<strong>迭代</strong>的方法求解贝尔曼方程组</li>
+<li><strong>缺点：</strong>智能主体需要事先知道状态转移概率；无法处理状态集合大小无限的情况</li>
+<li><strong>基于蒙特卡洛采样的方法</strong></li>
+<li><strong>核心思想</strong>：期望可以通过样本均值来估计</li>
+<li><strong>时序差分法</strong>：可看作蒙特卡罗方法和动态规划方法的有机结合</li>
+<li>从实际经验中获取信息，无需提前获知环境模型的全部信息</li>
+<li>能利用前序已知信息来进行在线实时学习，无需等到整个片段结束（终止状态抵达）再进行价值函数的更新</li>
+</ul>
+</li>
+<li><strong>价值迭代算法</strong>在策略评估动态规划法的基础上，每次迭代只对一个状态进行策略评估和策略优化</li>
+</ul>
+</li>
+<li>
+<p>将动作-价值函数参数化，即用一个回归模型来拟合$<span class="arithmatex">\(q_π\)</span>$函数，如果回归模型是一个<strong>深度神经网络</strong>，那么这样的算法就被称为深度强化学习算法</p>
+</li>
+</ol>
+<h3 id="63">6.3 基于策略的强化学习<a class="headerlink" href="#63" title="Permanent link">&para;</a></h3>
+<ol>
+<li>通过直接参数化策略函数的方法求解强化学习问题，由于算法需要求参数化的策略函数的梯度，因此这些方法称为<strong>策略梯度法</strong></li>
+<li><strong>策略梯度定理</strong>：提供了策略梯度法的求解思路（如果能够计算或估计策略函数的梯度，智能体就能直接对策略函数进行优化）</li>
+<li>可以使用蒙特卡洛采样法来求解，即算法只需<strong>根据策略来采样一个状态$<span class="arithmatex">\(s\)</span><span class="arithmatex">\(、一个动作\)</span><span class="arithmatex">\(a\)</span>$和将来的轨迹</strong>，就能构造公式中求取期望所对应的一个样本</li>
+</ol>
+<h3 id="64">6.4 深度强化学习应用<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<p>面临挑战：<strong>奖励的设置</strong>、<strong>样本的采集</strong>、<strong>局部最优解与探索</strong>、<strong>训练时的不稳定性与方差</strong>、<strong>泛化和迁移能力</strong></p>
+<h2 id="_7">第七章 人工智能博弈<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li>博弈论又称对策论，主要研究<strong>博弈行为中最优的对抗策略及其稳定局势</strong>，协助人们在一定规则范围内寻求最合理的行为方式</li>
+<li>1944年冯·诺伊曼与奥斯卡·摩根斯特恩合著《博弈论与经济行为》，以数学形式来阐述博弈论及其应用，标志着现代系统博弈理论的初步形成，<strong>冯·诺伊曼</strong>被称为现代博弈论之父</li>
+<li>
+<p><strong>相关定义</strong>：</p>
+<ul>
+<li><strong>博弈行为</strong>：带有相互竞争性质的主体，为了达到各自目标和利益，采取的带有对抗性质的行为</li>
+<li><strong>参与者或玩家</strong>：参与博弈的决策主体</li>
+<li><strong>策略</strong>：参与者可以采取的行动方案（一整套，在采取行动之前）</li>
+<li><strong>收益</strong>：各个参与者在不同局势下得到的利益（混合策略意义下的收益应为<strong>期望收益</strong>）</li>
+<li><strong>规则</strong>：对参与者行动的先后顺序、参与者获得信息多少等内容的规定</li>
+<li><strong>博弈论研究的范式</strong>：建模者对参与者规定可采取的策略集和取得的收益，观察当参与者选择若干策略以最大化其收益时会产生什么结果</li>
+</ul>
+</li>
+<li>
+<p><strong>博弈分类</strong></p>
+<ul>
+<li><strong>参与者或玩家合作博弈与非合作博弈</strong></li>
+<li><strong>静态博弈与动态博弈</strong><ul>
+<li>静态博弈：所有参与者同时决策，或参与者互相不知道对方的决策</li>
+<li>动态博弈：参与者所采取行为的先后顺序由规则决定，且后行动者知道先行动者所采取的行为</li>
+</ul>
+</li>
+<li><strong>完全信息博弈与不完全信息博弈</strong>（所有参与者均了解其他参与者的信息/并非所有参与者）</li>
+</ul>
+</li>
+<li>
+<p><strong>纳什均衡</strong>：博弈的稳定局势 </p>
+<ul>
+<li><strong>Nash定理</strong>：若参与者有限，每位参与者的策略集有限，收益函数为实值函数，则博弈必存在混合策略意义下的纳什均衡</li>
+</ul>
+</li>
+<li>
+<p><strong>策梅洛定理</strong>：对于任意一个有限步的双人完全信息零和动态博弈，一定存在先手必胜策略或后手必胜策略或双方保平策略</p>
+</li>
+<li>
+<p><strong>最优反应策略</strong></p>
+<ul>
+<li>在策略组合$<span class="arithmatex">\(σ^∗\)</span><span class="arithmatex">\(中，如果每个玩家的策略相对于其他玩家的策略而言都是最佳反应策略，那么策略组合\)</span><span class="arithmatex">\(σ^∗\)</span>$就是一个<strong>纳什均衡策略</strong></li>
+<li><strong>在有限对手、有限策略情况下，纳什均衡一定存在</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>遗憾最小化算法</strong>是一种根据以往博弈过程中所得遗憾程度来选择未来行为的方法</p>
+<ul>
+<li>在得到玩家$<span class="arithmatex">\(i\)</span><span class="arithmatex">\(的所有可选策略的遗憾值后，可以根据遗憾值的大小来选择后续第\)</span><span class="arithmatex">\(T+1\)</span>$轮博弈的策略，这种选择方式被称为<strong>遗憾匹配</strong></li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../Data_Structure/Advanced/pta/" class="md-footer__link md-footer__link--prev" aria-label="上一页: PTA">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                PTA
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Math_and_Physics/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数理基础课">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                数理基础课
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

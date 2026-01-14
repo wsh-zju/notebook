@@ -495,6 +495,8 @@
       
         
       
+        
+      
     
     
     
@@ -1761,14 +1763,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../schedule/" class="md-nav__link">
+      <a href="../IPCs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CPU 调度
+    IPC
   
 
     
@@ -1789,14 +1791,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../IPCs/" class="md-nav__link">
+      <a href="../schedule/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    进程间通信
+    CPU 调度
   
 
     
@@ -2840,6 +2842,34 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    人工智能引论
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4024,7 +4054,7 @@
 <li>显式操作数：寄存器、内存地址</li>
 <li>
 <p><strong>寄存器-存储器架构</strong>：任何指令都可以访问内存，e.g. x86</p>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># C=A+B</span>
@@ -4032,7 +4062,9 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nf">add</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">B</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nf">store</span><span class="w"> </span><span class="no">R3</span><span class="p">,</span><span class="w"> </span><span class="no">C</span>
 </code></pre></div></td></tr></table></div>
-- <strong>Load-Store架构（寄存器-寄存器架构）</strong>：只有<code>load</code>和<code>store</code>指令可以访问内存，e.g. <strong>RISC-V</strong></p>
+</li>
+<li>
+<p><strong>Load-Store架构（寄存器-寄存器架构）</strong>：只有<code>load</code>和<code>store</code>指令可以访问内存，e.g. <strong>RISC-V</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
