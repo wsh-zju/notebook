@@ -83,6 +83,7 @@ store C
     add R3, R1, B
     store R3, C
     ```
+
 - **Load-Store架构（寄存器-寄存器架构）**：只有`load`和`store`指令可以访问内存，e.g. **RISC-V**
     
     ```asm
@@ -654,3 +655,5 @@ jalr x0,0(x1)         //跳转到x1储存的返回地址，x0是为了满足指�
 - complier(\*.i->\*.s):生成汇编文件
 - assembler(\*.s->\*.o):生成目标文件
 - linker(\*.o->\*.out):生成可执行文件
+
+

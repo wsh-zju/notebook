@@ -1,5 +1,5 @@
 # 操作系统
-1. **操作系统**：充当计算机用户和计算机硬件之间中介的程序（`a resource abstract and a resource allocator`）
+1. **操作系统**：充当计算机用户和计算机硬件之间中介的程序（`a resource abstracter and a resource allocator`）
 
 - **资源分配器**
     - 管理所有资源

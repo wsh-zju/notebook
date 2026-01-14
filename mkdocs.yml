@@ -43,8 +43,8 @@ nav:
       - 流水线CPU : Computer_Science/Computer_System/pipeline.md
       - 操作系统 : Computer_Science/Computer_System/OS.md
       - 进程 : Computer_Science/Computer_System/process.md
+      - IPC : Computer_Science/Computer_System/IPCs.md
       - CPU 调度 : Computer_Science/Computer_System/schedule.md
-      - 进程间通信 : Computer_Science/Computer_System/IPCs.md
       - 线程 : Computer_Science/Computer_System/thread.md
       - 同步 : Computer_Science/Computer_System/synch.md
       - 死锁 : Computer_Science/Computer_System/deadlock.md
@@ -78,6 +78,7 @@ nav:
         - 并行算法 : Computer_Science/Data_Structure/Advanced/paral.md
         - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
+    - 人工智能引论 : Computer_Science/AI.md
   - Math and Physics : 
     - Math_and_Physics/index.md
     - 离散数学理论基础 :
