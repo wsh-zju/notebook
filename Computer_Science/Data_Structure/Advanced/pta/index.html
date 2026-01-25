@@ -55,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
@@ -72,8 +74,6 @@
       <link rel="stylesheet" href="../../../../style/css/card.css">
     
       <link rel="stylesheet" href="../../../../style/css/flink.css">
-    
-      <link rel="stylesheet" href="../../../../style/css/changelog_extra.css">
     
       <link rel="stylesheet" href="../../../../style/css/toc_extra.css">
     
@@ -3804,9 +3804,11 @@
 <p>If the depth of an AVL tree is 5 (the depth of an empty tree is defined to be 0),  and there's at most one node with balance factor not equal to 0, then the minimum possible number of nodes in this tree is:</p>
 <p>A.23    B.17    C.20    D.11</p>
 <p><strong>Answer:</strong>A</p>
-<p><strong>Analysis:</strong></br>
-- 把唯一的不平衡结点放在<strong>整棵树的根</strong>能获得最少节点数，最小值为23
-- 如果不放在根节点，那么一定有一个根的子树是满的，另一个子树的深度一定等于4（因为根节点平衡）</p>
+<p><strong>Analysis:</strong></p>
+<ul>
+<li>把唯一的不平衡结点放在<strong>整棵树的根</strong>能获得最少节点数，最小值为23</li>
+<li>如果不放在根节点，那么一定有一个根的子树是满的，另一个子树的深度一定等于4（因为根节点平衡）</li>
+</ul>
 </li>
 <li>
 <p>To build a skew heap, we can start from placing all the keys as single-node heaps on a queue, and perform the following until only one heap is on the queue: dequeue two heaps, merge them, and enqueue the result.
@@ -3906,7 +3908,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
+      Copyright &copy; 2024 - (｡･ω･｡)ﾉ Lucy Wisteria
     </div>
   
   

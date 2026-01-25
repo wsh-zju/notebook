@@ -55,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
@@ -72,8 +74,6 @@
       <link rel="stylesheet" href="../../style/css/card.css">
     
       <link rel="stylesheet" href="../../style/css/flink.css">
-    
-      <link rel="stylesheet" href="../../style/css/changelog_extra.css">
     
       <link rel="stylesheet" href="../../style/css/toc_extra.css">
     
@@ -4299,7 +4299,8 @@
 <h1 id="_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M352 0c0-17.7-14.3-32-32-32s-32 14.3-32 32v64h-96c-53 0-96 43-96 96v224c0 53 43 96 96 96h256c53 0 96-43 96-96V160c0-53-43-96-96-96h-96zM160 368c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24m120 0c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24m120 0c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24M224 176a48 48 0 1 1 0 96 48 48 0 1 1 0-96m144 48a48 48 0 1 1 96 0 48 48 0 1 1-96 0m-304 0c0-17.7-14.3-32-32-32S0 206.3 0 224v96c0 17.7 14.3 32 32 32s32-14.3 32-32zm544-32c-17.7 0-32 14.3-32 32v96c0 17.7 14.3 32 32 32s32-14.3 32-32v-96c0-17.7-14.3-32-32-32"/></svg></span> 人工智能引论<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
-<p>主要是考前整理了一下ppt上的内容</p>
+<p>主要是考前整理了一下ppt上的内容（好多，记不住www</p>
+<p><strong>考试范围</strong>：第2章（知识表达与推理）、第3章（搜索探寻与问题求解）、第4章（机器学习）、第5章（神经网络与深度学习）、第6章（强化学习）、第7章（人工智能博弈，不包括7.2.3和7.4）</p>
 </div>
 <h2 id="_2">知识表达与推理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><strong>逻辑本身不承载推理的使命，而是研究什么是推理以及提出一些一般性的原则来保证推理结果的正确性</strong></p>
@@ -4373,12 +4374,12 @@
 <p><strong>量词</strong></p>
 <ul>
 <li><strong>全称量词</strong>：表示一切的、所有的、凡事、每一个等，符号 <span class="arithmatex">\(\forall\)</span></li>
-<li><strong>存在量词</strong>：表示存在、有一个、某些等，符号 <span class="arithmatex">\(\exist\)</span></li>
+<li><strong>存在量词</strong>：表示存在、有一个、某些等，符号 <span class="arithmatex">\(\exists\)</span></li>
 <li><strong>结论</strong>：<ul>
 <li><span class="arithmatex">\((\forall x)(A(x)\vee B(x))\equiv(\forall x)A(x)\vee (\forall x)B(x)\)</span> 不成立</li>
 <li><span class="arithmatex">\((\forall x)(A(x)\wedge B(x))\equiv(\forall x)A(x)\wedge (\forall x)B(x)\)</span> 成立</li>
-<li><span class="arithmatex">\((\exist x)(A(x)\vee B(x))\equiv(\exist x)A(x)\vee (\exist x)B(x)\)</span> 成立</li>
-<li><span class="arithmatex">\((\exist x)(A(x)\wedge B(x))\equiv(\exist x)A(x)\wedge (\exist x)B(x)\)</span> 不成立</li>
+<li><span class="arithmatex">\((\exists x)(A(x)\vee B(x))\equiv(\exists x)A(x)\vee (\exists x)B(x)\)</span> 成立</li>
+<li><span class="arithmatex">\((\exists x)(A(x)\wedge B(x))\equiv(\exists x)A(x)\wedge (\exists x)B(x)\)</span> 不成立</li>
 </ul>
 </li>
 </ul>
@@ -4388,8 +4389,8 @@
 <ul>
 <li>全称量词消去（UI）：<span class="arithmatex">\((\forall x)A(x)\Rightarrow A(y)\)</span></li>
 <li>全称量词引入（UG）：<span class="arithmatex">\(A(y)\Rightarrow(\forall x)A(x)\)</span></li>
-<li>存在量词消去（EI）：<span class="arithmatex">\((\exist x)A(x)\Rightarrow A(a)\)</span></li>
-<li>存在量词引入（EG）：<span class="arithmatex">\(A(a)\Rightarrow(\exist x)A(x)\)</span></li>
+<li>存在量词消去（EI）：<span class="arithmatex">\((\exists x)A(x)\Rightarrow A(a)\)</span></li>
+<li>存在量词引入（EG）：<span class="arithmatex">\(A(a)\Rightarrow(\exists x)A(x)\)</span></li>
 </ul>
 </li>
 </ol>
@@ -4421,10 +4422,10 @@
 <p><strong>输出目标</strong>：可得到目标谓词这一结论的推理规则</p>
 </li>
 <li>
-<p><strong>信息增益值</strong>：作为添加前提约束谓词后所得的<strong>推理规则的质量的好坏</strong>的评估标准
-    $$
-    \mathrm{FOIL_Gain} = \widehat{m_+}\cdot\left(\log_2\frac{\widehat{m_+}}{\widehat{m_+}+\widehat{m_-}}-\log_2\frac{m_+}{m_++m_-}\right)
-    $$</p>
+<p><strong>信息增益值</strong>：作为添加前提约束谓词后所得的<strong>推理规则的质量的好坏</strong>的评估标准</p>
+<div class="arithmatex">\[
+\mathrm{FOIL\_Gain} = \widehat{m_+}\cdot\left(\log_2\frac{\widehat{m_+}}{\widehat{m_+}+\widehat{m_-}}-\log_2\frac{m_+}{m_++m_-}\right)
+\]</div>
 <ul>
 <li><span class="arithmatex">\(\widehat{m_+}, \widehat{m_-}\)</span> 是<strong>增加前提约束谓词后得到的新推理规则</strong>能覆盖的正例和反例数目</li>
 <li><span class="arithmatex">\(m_+, m_-\)</span> 是<strong>原推理规则</strong>覆盖的正例和反例数目</li>
@@ -5202,7 +5203,7 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
 <p>循环神经网络（RNN）是一类<strong>处理序列数据</strong>（如文本句子、视频帧等）时所采用的网络结构</p>
 <ul>
 <li><strong>本质</strong>：希望模拟人所具有的记忆能力，在学习过程中记住部分已经出现的信息，并利用所记住的信息影响后续结点输出</li>
-<li><span class="arithmatex">\(Φ(∙)\)</span>是激活函数，一般可为Sigmoid或者Tanh激活函数</li>
+<li><span class="arithmatex">\(Φ(∙)\)</span> 是激活函数，一般可为Sigmoid或者Tanh激活函数</li>
 </ul>
 </li>
 <li>
@@ -5305,7 +5306,7 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
 <li>为比较不同奖励机制的优劣，每个时刻定义<strong>回报</strong>来反映该时刻可得的累加奖励（引入折扣因子）</li>
 </ul>
 </li>
-<li>在马尔可夫链模型$<span class="arithmatex">\(MP=(S,P)\)</span><span class="arithmatex">\(中加入奖励函数和折扣因子后，得到马尔可夫奖励过程\)</span><span class="arithmatex">\(MRP=(S,P,R,γ)\)</span>$<ul>
+<li>在马尔可夫链模型 <span class="arithmatex">\(MP=(S,P)\)</span> 中加入奖励函数和折扣因子后，得到马尔可夫奖励过程 <span class="arithmatex">\(MRP=(S,P,R,γ)\)</span><ul>
 <li>能够用奖励和回报来刻画智能体的目标，但是不能体现机器人的能动性，缺乏让机器人与环境进行交互的手段；需要在马尔可夫奖励过程中<strong>引入动作</strong>，让动作成为机器人影响环境的手段</li>
 <li>智能体逐步行动，得到一个状态序列称为<strong>轨迹</strong>（无限的/有终止状态）</li>
 <li>有终止状态的问题叫<strong>分段</strong>问题，不包含终止状态的问题叫<strong>持续</strong>问题</li>
@@ -5336,7 +5337,7 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
 <ol>
 <li><strong>策略优化定理</strong></li>
 <li>
-<p>假定当前策略为$<span class="arithmatex">\(π\)</span><span class="arithmatex">\(，策略评估指的是根据策略\)</span><span class="arithmatex">\(π\)</span><span class="arithmatex">\(来计算相应的价值函数\)</span><span class="arithmatex">\(V_π\)</span><span class="arithmatex">\(或动作-价值函数\)</span><span class="arithmatex">\(q_π\)</span>$</p>
+<p>假定当前策略为 <span class="arithmatex">\(π\)</span> ，策略评估指的是根据策略 <span class="arithmatex">\(π\)</span> 来计算相应的价值函数 <span class="arithmatex">\(V_π\)</span> 或动作-价值函数 <span class="arithmatex">\(q_π\)</span></p>
 <ul>
 <li><strong>在状态集合有限前提下三种常见的策略评估方法</strong><ul>
 <li><strong>基于动态规划的方法</strong>：</li>
@@ -5360,7 +5361,7 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
 <ol>
 <li>通过直接参数化策略函数的方法求解强化学习问题，由于算法需要求参数化的策略函数的梯度，因此这些方法称为<strong>策略梯度法</strong></li>
 <li><strong>策略梯度定理</strong>：提供了策略梯度法的求解思路（如果能够计算或估计策略函数的梯度，智能体就能直接对策略函数进行优化）</li>
-<li>可以使用蒙特卡洛采样法来求解，即算法只需<strong>根据策略来采样一个状态$<span class="arithmatex">\(s\)</span><span class="arithmatex">\(、一个动作\)</span><span class="arithmatex">\(a\)</span>$和将来的轨迹</strong>，就能构造公式中求取期望所对应的一个样本</li>
+<li>可以使用蒙特卡洛采样法来求解，即算法只需<strong>根据策略来采样一个状态 <span class="arithmatex">\(s\)</span> 、一个动作 <span class="arithmatex">\(a\)</span> 和将来的轨迹</strong>，就能构造公式中求取期望所对应的一个样本</li>
 </ol>
 <h3 id="_25">深度强化学习应用<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
 <p>面临挑战：<strong>奖励的设置</strong>、<strong>样本的采集</strong>、<strong>局部最优解与探索</strong>、<strong>训练时的不稳定性与方差</strong>、<strong>泛化和迁移能力</strong></p>
@@ -5404,14 +5405,14 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
 <li>
 <p><strong>最优反应策略</strong></p>
 <ul>
-<li>在策略组合$<span class="arithmatex">\(σ^∗\)</span><span class="arithmatex">\(中，如果每个玩家的策略相对于其他玩家的策略而言都是最佳反应策略，那么策略组合\)</span><span class="arithmatex">\(σ^∗\)</span>$就是一个<strong>纳什均衡策略</strong></li>
+<li>在策略组合 <span class="arithmatex">\(σ^∗\)</span> 中，如果每个玩家的策略相对于其他玩家的策略而言都是最佳反应策略，那么策略组合 <span class="arithmatex">\(σ^∗\)</span> 就是一个<strong>纳什均衡策略</strong></li>
 <li><strong>在有限对手、有限策略情况下，纳什均衡一定存在</strong></li>
 </ul>
 </li>
 <li>
 <p><strong>遗憾最小化算法</strong>是一种根据以往博弈过程中所得遗憾程度来选择未来行为的方法</p>
 <ul>
-<li>在得到玩家$<span class="arithmatex">\(i\)</span><span class="arithmatex">\(的所有可选策略的遗憾值后，可以根据遗憾值的大小来选择后续第\)</span><span class="arithmatex">\(T+1\)</span>$轮博弈的策略，这种选择方式被称为<strong>遗憾匹配</strong></li>
+<li>在得到玩家 <span class="arithmatex">\(i\)</span> 的所有可选策略的遗憾值后，可以根据遗憾值的大小来选择后续第 <span class="arithmatex">\(T+1\)</span> 轮博弈的策略，这种选择方式被称为<strong>遗憾匹配</strong></li>
 </ul>
 </li>
 </ol>
@@ -5490,7 +5491,7 @@ Gain(D,A)=E(D)-∑_{i=1}^n\frac{|D_i |}{|D|} E(D_i)
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
+      Copyright &copy; 2024 - (｡･ω･｡)ﾉ Lucy Wisteria
     </div>
   
   

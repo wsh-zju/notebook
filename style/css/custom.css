@@ -1,9 +1,10 @@
+/* 全局字体设置 */
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
-  --md-code-font: "JetBrains Mono";
+  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen";  /* 正文字体 */
+  --md-code-font: "JetBrains Mono";  /* 代码字体 */
 }
 
-
+/* 电脑端字体缩放 */
 @media screen and (min-width: 960px) {
   /* body {
     zoom: 1.1;
@@ -25,88 +26,95 @@
   }
 }
 
-.md-typeset h1, .md-typeset h2 {
-  font-weight: 600;
-}
-
-.md-typeset h3 {
-  font-weight: 500;
+/* markdown 字体大小 */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-weight: 600;     /* 粗细 */
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
-  letter-spacing: 0;
+  letter-spacing: 0;    /* 字体间距 */
 }
 
+/* 正文字体 */
 .md-typeset {
-  font-size: .7rem;
+  font-size: .7rem;     /* 字体大小 */
 }
 
-.md-typeset h3 {
-  font-weight: 600;
-}
-
+/* 行内 code 字号继承正文 */
 .md-typeset code:not(pre code) {
   font-size: inherit;
 }
 
+/* 浅色主题 */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #efefef; 
-  --md-primary-bg-color: #000000;
-  --md-typeset-a-color: #555555;
-  --md-footer-fg-color: #000000;
+  --md-primary-fg-color: #efefef;  /* 顶栏前景色 */
+  --md-primary-bg-color: #000000;  /* 顶栏背景色 */
+  --md-typeset-a-color: #555555;   /* 链接颜色 */
+  /* 页脚 */
+  --md-footer-fg-color: #000000;   
   --md-footer-bg-color: #efefef;
   --md-footer-bg-color--dark: #efefef;
   --md-footer-fg-color--light: #000000;
   --md-footer-fg-color--lighter: #000000;
-  --md-code-bg-color: #fafafa;
-  --md-code-fg-color: var(--md-typeset-color);
+  --md-code-bg-color: #fafafa;     /* 代码块背景色 */
+  --md-code-fg-color: var(--md-typeset-color);  /* 代码块字体色与正文一致 */
 }
 
+/* 深色主题 */
 [data-md-color-scheme="slate"][data-md-color-primary="indigo"] {
+  /* 背景色 */
   --md-default-bg-color: #161616;
   --md-default-bg-color--light: #161616;
   --md-default-bg-color--lighter: #161616;
   --md-default-bg-color--lightest: #161616;
+  /* 正文字体 */
   --md-default-fg-color: rgba(255,255,255,0.9);
   --md-default-fg-color--light: rgba(255,255,255,0.85);
   --md-default-fg-color--lighter: rgba(255,255,255,0.8);
   --md-default-fg-color--lightest: rgba(255,255,255,0.6);
-  --md-primary-fg-color: #0d0d0d;
-  --md-typeset-a-color: #d3d3d3;
+  --md-primary-fg-color: #0d0d0d;  /* 顶栏前景色 */
+  --md-typeset-a-color: #d3d3d3;   /* 链接颜色 */
+  /* 页脚 */
   --md-footer-fg-color: #fff;
   --md-footer-bg-color: #0d0d0d;
   --md-footer-bg-color--dark: #0d0d0d;
   --md-footer-fg-color--light: #fff;
   --md-footer-fg-color--lighter: #fff;
+  /* 代码块 */
   --md-code-bg-color: #1d1d1d;
 }
 
+/* 搜索框 */
 input.md-search__input {
   background-color: #fff;
 }
-
+/* 深色主题下搜索框变黑 */
 [data-md-color-scheme="slate"] input.md-search__input {
   background-color: #000;
 }
-
+/* 深色模式下内容区按钮颜色 */
 [data-md-color-scheme="slate"] .md-typeset .md-content__button {
   color: #555555;
 }
 
+/* 页脚版权信息 */
 .md-copyright {
   font-size: .55rem;
 }
 
+/* 深色模式下图标 */
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .light-mode,
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .system-mode,
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .unknown-mode {
   display: none;
 }
+/* 浅色模式下图标 */
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .dark-mode,
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .system-mode,
 body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .unknown-mode {
   display: none;
 }
+/* 其他主题下 */
 body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .dark-mode,
 body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .light-mode,
 body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .system-mode {
@@ -118,12 +126,12 @@ body[data-md-prefers-color-scheme=true] .md-icon .unknown-mode {
   display: none;
 }
 
+/* 移动端导航栏背景色 */
 @media screen and (max-width: 59.9375em) {
   .md-nav__source {
     background-color: var(--md-primary-fg-color);
   }
 }
-
 @media screen and (max-width: 76.1875em) {
   .md-nav--primary .md-nav__title {
     background-color: var(--md-primary-fg-color);
@@ -159,6 +167,7 @@ input#mkdocs-content-password {
   font-size: 0.8em;
 }
 
+/* RISC-V 表格 */
 .riscv-table, .fl-table {
   width: 100%;
   display: inline-table;
@@ -244,29 +253,6 @@ input#mkdocs-content-password {
 
 .md-typeset :is(.emojione,.twemoji,.gemoji) {
   vertical-align: sub;
-}
-
-.toc-tag {
-  background-color: #3f6ec6b0;
-  border-radius: 3px;
-  font-size: 80%;
-  padding: 3px;
-}
-
-.toc-tag-classnotes {
-  background-color: #e6ad5bb0;
-}
-
-.toc-tag-classnotes::before {
-  content: "课程笔记"
-}
-
-.toc-tag-reports {
-  background-color: #3f6ec6b0;
-}
-
-.toc-tag-reports::before {
-  content: "实验报告"
 }
 
 .md-source-file__fact {
