@@ -5,7 +5,7 @@ repo_name: wsh-zju/notebook
 site_url: https://wsh-zju.github.io/notebook/
 repo_url: https://github.com/wsh-zju/notebook
 edit_uri: tree/main/docs
-copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ LucyWisteria
+copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ Lucy Wisteria
 
 nav:
   - Home: 
@@ -209,8 +209,11 @@ plugins:
         #- arithmatex
   - macros
 
+hooks:
+  - hooks/toc.py
 
 extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://cdn.tonycrane.cc/utils/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
@@ -220,7 +223,6 @@ extra_css:
   - style/css/custom.css
   - style/css/card.css
   - style/css/flink.css
-  - style/css/changelog_extra.css
   - style/css/toc_extra.css
   - style/css/svg_extra.css
   - style/css/counter.css

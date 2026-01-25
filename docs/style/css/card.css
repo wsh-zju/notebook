@@ -1,3 +1,4 @@
+/* 卡片 */
 .card {
     position: relative;
     display: -ms-flexbox;
@@ -8,16 +9,18 @@
     word-wrap: break-word;
     background-color: #FEFEFE;
     background-clip: border-box;
+    /* 边框 */
     border: 0.5px solid #606060;
     border-radius: .25rem;
     margin-bottom: 1em;
 }
 
+/* 深色模式 */
 [data-md-color-scheme="slate"] .card {
     background-color: #181818;
     border: 0.5px solid #606060;
 }
-
+/* 内容区域 */
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -27,7 +30,7 @@
     padding-bottom: 1rem;
     padding-top: 0.5rem;
 }
-
+/* 标题 */
 .card-header {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -63,14 +66,14 @@
 [data-md-color-scheme="slate"] .file-block:hover {
     background-color: #606060;
 }
-
+/* 文件标题 */
 .file-title {
     padding-left: 0rem;
     margin-bottom: 0;
     font-size: 1.1em;
     font-weight: 600;
 }
-
+/* 文件元数据 */
 .file-meta {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
@@ -81,7 +84,7 @@
     padding-left: 1em;
     margin-right: auto;
 }
-
+/* 下载按钮 */
 .down-button {
     border: 0.05rem solid;
     border-radius: 0.1rem;
@@ -91,7 +94,7 @@
     padding: 0.25em 0.5em;
     transition: color .3s,background-color .3s,border-color .3s !important;
 }
-
+/* 下载按钮悬停样式 */
 .down-button:is(:focus,:hover) {
     background-color: var(--md-accent-fg-color);
     border-color: var(--md-accent-fg-color);

@@ -1,3 +1,4 @@
+/* 自动编号 */
 h1 {
   counter-reset: h2;
 }
