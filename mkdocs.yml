@@ -108,6 +108,7 @@ nav:
 
 theme: 
   name: 'material'
+  custom_dir: docs/overrides
   language: 'zh'
   logo: style/images/logo.png
   favicon: style/images/favicon_io/favicon.ico
