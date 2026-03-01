@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 逻辑操作和逻辑门
 1. **操作运算符**
 

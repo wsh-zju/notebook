@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 外部排序
 
 !!! warning "Warning"

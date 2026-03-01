@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 近似算法
 
 !!! success "Summary"

@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 倒排索引
 1. **概念**：由词查找文档
 

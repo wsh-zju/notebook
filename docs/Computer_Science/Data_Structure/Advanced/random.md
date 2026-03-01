@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 随机化算法
 
 !!! warning "Notice!"

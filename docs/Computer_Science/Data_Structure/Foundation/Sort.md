@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 简单排序
 ### 选择排序 [Selection Sort.c](code_docu/SelectionSort.c)
 1. **思路**：在每一轮迭代中选择剩余元素中的最小（或最大）元素，并将其放到剩余序列的起始位置

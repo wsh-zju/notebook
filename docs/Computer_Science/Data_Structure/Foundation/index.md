@@ -1,3 +1,8 @@
+---
+counter: True
+comment: False
+---
+
 # :fontawesome-solid-sitemap: 数据结构基础
 
 !!! tip "Tips"

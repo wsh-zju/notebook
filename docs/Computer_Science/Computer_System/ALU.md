@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 加法器
 ### 单比特加法器
 #### 半加器

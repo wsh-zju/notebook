@@ -1,3 +1,7 @@
+---
+counter: True
+comment: True
+---
 
 # <span style="color: #8B0000;">摊还分析</span>
 1. **目标**：任意连续的 $M$ 次操作最多需要 $O(M \log N)$ 时间（其中 $N$ 是数据规模）

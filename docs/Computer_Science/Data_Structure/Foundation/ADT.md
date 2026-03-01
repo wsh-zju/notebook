@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 等价关系
 **性质**：
 

@@ -1,3 +1,9 @@
+---
+counter: True
+comment: True
+---
+
+
 # NP 完全性
 
 !!! info "计算问题 Easy or Hard"

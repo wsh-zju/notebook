@@ -1,3 +1,7 @@
+---
+counter: True
+comment: True
+---
 
 ## 二叉堆
 - **性质**：

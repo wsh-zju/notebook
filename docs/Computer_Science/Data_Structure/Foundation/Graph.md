@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 !!! note "Notice!"
     以下代码均为伪代码！
 

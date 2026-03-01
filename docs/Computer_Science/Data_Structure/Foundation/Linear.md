@@ -1,3 +1,7 @@
+---
+counter: True
+comment: True
+---
 
 ## 线性表 List
 ### 实现方式

@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # PTA Homework Problems
 !!! warning "Warning"
     PTA上所有的作业题目都值的一看！！！

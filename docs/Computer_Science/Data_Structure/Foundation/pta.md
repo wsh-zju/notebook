@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # PTA Homework Problems
 ## HW1 : time complexity
 ### 一、判断题

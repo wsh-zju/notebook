@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 哈希表
 ### 相关定义
 1. **哈希函数**

@@ -1,3 +1,8 @@
+---
+counter: True
+comment: False
+---
+
 # :fontawesome-solid-chart-line: 高级数据结构与算法分析
 
 !!! tip "Tips"

@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 贪心算法
 
 !!! warning "Notices"

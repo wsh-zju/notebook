@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 动态规划 DP
 !!! tip "Tips"
     需要大量做题！！！

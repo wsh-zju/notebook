@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 分而治之
 !!! success "解决案例"
     - 最大子序列和: 时间复杂度 \(O(N \log N)\)

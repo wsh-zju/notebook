@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 并行算法
 
 !!! abstract "并行性"

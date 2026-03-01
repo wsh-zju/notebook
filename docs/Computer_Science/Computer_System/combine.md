@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 经典组合电路设计
 ### 译码器(Decoder)
 1. **工作原理**

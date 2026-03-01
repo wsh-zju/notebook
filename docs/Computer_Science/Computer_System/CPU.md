@@ -1,3 +1,9 @@
+---
+counter: True
+comment: True
+---
+
+
 ## 计算机体系结构
 1. **计算机体系结构**
 

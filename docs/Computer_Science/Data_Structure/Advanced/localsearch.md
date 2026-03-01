@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 局部搜索
 
 1. **定义**

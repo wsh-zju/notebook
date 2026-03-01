@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 单周期与多周期CPU
 ### 单周期CPU
 1. **特点：**

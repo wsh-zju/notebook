@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 ## 时序电路
 1. **组成部分**
 

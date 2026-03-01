@@ -1,3 +1,8 @@
+---
+counter: True
+comment: True
+---
+
 # 线程
 
 !!! tip "Cause"
