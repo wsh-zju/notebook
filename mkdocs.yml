@@ -126,9 +126,7 @@ theme:
     - search.suggest # 搜索输入一些字母时推荐补全整个单词
     - search.highlight # 搜索出的文章关键词加入高亮
     - search.share #搜索分享按钮
-  font:
-      code: JetBrains Mono
-      text: JetBrains Mono
+  font: false
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -214,11 +212,9 @@ hooks:
   - hooks/toc.py
 
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
   - https://cdn.tonycrane.cc/utils/katex.min.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - https://cdn.jsdelivr.net/npm/asana-math@1.0/fonts/asana-math.css
   - style/css/tasklist.css
   - style/css/custom.css
   - style/css/card.css
