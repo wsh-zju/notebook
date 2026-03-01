@@ -7,7 +7,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）I（H）笔记</div>
-<div class="file-meta">2025-6-24 / 64 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-24 /
+    <i class="fa-regular fa-note-sticky"></i>
+     64 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/数学分析1.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -16,7 +21,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）II（H）笔记</div>
-<div class="file-meta">2025-6-10 / 107 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-10 /
+    <i class="fa-regular fa-note-sticky"></i>
+     107 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/数学分析2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -27,7 +37,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">线性代数 I（H）笔记</div>
-<div class="file-meta">2025-6-24 / 76 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-24 /
+    <i class="fa-regular fa-note-sticky"></i>
+     76 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/线性代数1.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -36,7 +51,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">线性代数 II（H）笔记</div>
-<div class="file-meta">2025-6-16 / 17 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-16 /
+    <i class="fa-regular fa-note-sticky"></i>
+     17 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/线性代数2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -50,7 +70,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">普通物理学 I（H）笔记</div>
-<div class="file-meta">2025-6-16 / 36 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-16 /
+    <i class="fa-regular fa-note-sticky"></i>
+     36 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/普通物理学1.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -59,7 +84,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">普通物理学 II（H）笔记</div>
-<div class="file-meta">2026-1-10 / 33 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-1-10 /
+    <i class="fa-regular fa-note-sticky"></i>
+     33 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/普通物理学2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
@@ -71,7 +101,10 @@
     <div class="file-icon"><img src="../style/images/link.svg" style="height: 3em;"></div>
     <div class="file-body">
     <div class="file-title">普通物理学 II（H）知识框架</div>
-    <div class="file-meta">2026-1-10</div>
+    <div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-1-10
+    </div>
     </div>
     <a class="down-button" target="_blank" href="https://www.notion.so/physics-28f5d7183437807d8c47e315184924da?v=28f5d7183437817f9361000c97c184a1&source=copy_link" markdown="1">:fontawesome-solid-link: Link</a>
     </div>
@@ -82,7 +115,12 @@
 <div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">概率论和数理统计知识总结</div>
-<div class="file-meta">2026-1-13 / 13 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-1-13 /
+    <i class="fa-regular fa-note-sticky"></i>
+     13 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/概率论和数理统计.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
