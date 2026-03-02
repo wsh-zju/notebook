@@ -5,6 +5,13 @@
     {# 强制在首页加载样式 #}
     {% if page.url == "" or page.url == "index.html" %}
         <link rel="stylesheet" href="../style/css/home_card.css"></link>
+        <style>
+        /* 隐藏内容区的重复标题 */
+        .md-content__inner h1:not(.hero-header h1) { display: none !important; }
+        .md-content__inner {
+            padding-top: 0 !important;
+        }
+        </style>
     {% endif %}
 
     {% if page.meta and page.meta.counter %}
