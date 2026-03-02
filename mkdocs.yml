@@ -12,29 +12,6 @@ nav:
     - index.md
   - Computer Science :
     - Computer_Science/index.md
-    - 编程语言 :
-      - Computer_Science/Language/index.md
-      - C :
-        - Computer_Science/Language/C/index.md
-        - 指针 : Computer_Science/Language/C/pointer.md
-        - 递归与迭代 : Computer_Science/Language/C/recursion.md
-        - 程序结构 : Computer_Science/Language/C/structure.md
-        - 文件底层操作 : Computer_Science/Language/C/file.md
-        - 常用知识汇总 : Computer_Science/Language/C/accumulate.md
-      - C++ :
-        - Computer_Science/Language/C++/index.md
-      - Python :
-        - Computer_Science/Language/Python/index.md
-        - 基础语法 : Computer_Science/Language/Python/foundation.md
-        - 数据类型 : Computer_Science/Language/Python/data.md
-        - 进阶语法 : Computer_Science/Language/Python/advance.md
-        - 常用知识汇总 : Computer_Science/Language/Python/accumulate.md
-      - CSS : Computer_Science/Language/Css.md
-      - mkdocs 配置: 
-        - Computer_Science/Language/mkdocs/index.md
-        - 主题 : Computer_Science/Language/mkdocs/theme.md
-      - Latex 语法 : Computer_Science/Language/Latex.md
-      - 终端常用命令 : Computer_Science/Language/lab.md
     - 计算机系统 :
       - Computer_Science/Computer_System/index.md
       - 数据编码 : Computer_Science/Computer_System/data.md
@@ -84,25 +61,49 @@ nav:
         - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
     - 人工智能引论 : Computer_Science/AI.md
-  - Math and Physics : 
-    - Math_and_Physics/index.md
-    - 离散数学理论基础 :
-      - Math_and_Physics/Discrete_Mathematics/index.md
-      - 逻辑与证明: Math_and_Physics/Discrete_Mathematics/chapter1.md
-      - 基本结构: Math_and_Physics/Discrete_Mathematics/chapter2.md
-      - 算法: Math_and_Physics/Discrete_Mathematics/chapter3.md
-      - 数论: Math_and_Physics/Discrete_Mathematics/chapter4.md
-      - 归纳与递归: Math_and_Physics/Discrete_Mathematics/chapter5.md
-      - 计数: Math_and_Physics/Discrete_Mathematics/chapter6.md
-      - 高级计数: Math_and_Physics/Discrete_Mathematics/chapter8.md
-      - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
-      - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
-      - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
+  - 开发工具 :
+    - Tools/index.md
+    - C :
+      - Tools/C/index.md
+      - 指针 : Tools/C/pointer.md
+      - 递归与迭代 : Tools/C/recursion.md
+      - 程序结构 : Tools/C/structure.md
+      - 文件底层操作 : Tools/C/file.md
+      - 常用知识汇总 : Tools/C/accumulate.md
+    - C++ :
+      - Tools/C++/index.md
+    - Python :
+      - Tools/Python/index.md
+      - 基础语法 : Tools/Python/foundation.md
+      - 数据类型 : Tools/Python/data.md
+      - 进阶语法 : Tools/Python/advance.md
+      - 常用知识汇总 : Tools/Python/accumulate.md
+    - CSS : Tools/Css.md
+    - mkdocs 配置: 
+      - Tools/mkdocs/index.md
+      - 主题 : Tools/mkdocs/theme.md
+    - Latex 语法 : Tools/Latex.md
+    - 终端常用命令 : Tools/lab.md
   - Others :
     - Others/index.md
-    - 马克思主义基本原理 : Others/mayuan.md
-    - 毛泽东思想和中国特色社会主义理论体系概论 : Others/maogai.md
-    - 习近平新时代中国特色社会主义思想概论 : Others/xigai.md
+    - 数理课程 : 
+      - Math_and_Physics/index.md
+      - 离散数学理论基础 :
+        - Math_and_Physics/Discrete_Mathematics/index.md
+        - 逻辑与证明: Math_and_Physics/Discrete_Mathematics/chapter1.md
+        - 基本结构: Math_and_Physics/Discrete_Mathematics/chapter2.md
+        - 算法: Math_and_Physics/Discrete_Mathematics/chapter3.md
+        - 数论: Math_and_Physics/Discrete_Mathematics/chapter4.md
+        - 归纳与递归: Math_and_Physics/Discrete_Mathematics/chapter5.md
+        - 计数: Math_and_Physics/Discrete_Mathematics/chapter6.md
+        - 高级计数: Math_and_Physics/Discrete_Mathematics/chapter8.md
+        - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
+        - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
+        - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
+    - 思政课程 :
+      - 马克思主义基本原理 : Others/mayuan.md
+      - 毛泽东思想和中国特色社会主义理论体系概论 : Others/maogai.md
+      - 习近平新时代中国特色社会主义思想概论 : Others/xigai.md
 
 theme: 
   name: 'material'
