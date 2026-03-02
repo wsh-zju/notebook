@@ -26,5 +26,6 @@ comment: False
     - LaTeX 语法[note]: Latex/
 - 静态网站生成工具:
     - mkdocs 配置[note]: mkdocs/
-- 终端常用命令[note]: terminal/
+- 终端:
+  - 终端常用命令[note]: terminal/
 {{ END_TOC }}
