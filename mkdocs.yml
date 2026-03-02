@@ -61,7 +61,7 @@ nav:
         - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
     - 人工智能引论 : Computer_Science/AI.md
-  - 开发工具 :
+  - Development Tools :
     - Tools/index.md
     - C :
       - Tools/C/index.md
@@ -87,23 +87,23 @@ nav:
   - Others :
     - Others/index.md
     - 数理课程 : 
-      - Math_and_Physics/index.md
+      - Others/Math_and_Physics/index.md
       - 离散数学理论基础 :
-        - Math_and_Physics/Discrete_Mathematics/index.md
-        - 逻辑与证明: Math_and_Physics/Discrete_Mathematics/chapter1.md
-        - 基本结构: Math_and_Physics/Discrete_Mathematics/chapter2.md
-        - 算法: Math_and_Physics/Discrete_Mathematics/chapter3.md
-        - 数论: Math_and_Physics/Discrete_Mathematics/chapter4.md
-        - 归纳与递归: Math_and_Physics/Discrete_Mathematics/chapter5.md
-        - 计数: Math_and_Physics/Discrete_Mathematics/chapter6.md
-        - 高级计数: Math_and_Physics/Discrete_Mathematics/chapter8.md
-        - 关系 : Math_and_Physics/Discrete_Mathematics/chapter9.md
-        - 图: Math_and_Physics/Discrete_Mathematics/chapter10.md
-        - 树: Math_and_Physics/Discrete_Mathematics/chapter11.md
+        - Others/Math_and_Physics/Discrete_Mathematics/index.md
+        - 逻辑与证明: Others/Math_and_Physics/Discrete_Mathematics/chapter1.md
+        - 基本结构: Others/Math_and_Physics/Discrete_Mathematics/chapter2.md
+        - 算法: Others/Math_and_Physics/Discrete_Mathematics/chapter3.md
+        - 数论: Others/Math_and_Physics/Discrete_Mathematics/chapter4.md
+        - 归纳与递归: Others/Math_and_Physics/Discrete_Mathematics/chapter5.md
+        - 计数: Others/Math_and_Physics/Discrete_Mathematics/chapter6.md
+        - 高级计数: Others/Math_and_Physics/Discrete_Mathematics/chapter8.md
+        - 关系 : Others/Math_and_Physics/Discrete_Mathematics/chapter9.md
+        - 图: Others/Math_and_Physics/Discrete_Mathematics/chapter10.md
+        - 树: Others/Math_and_Physics/Discrete_Mathematics/chapter11.md
     - 思政课程 :
-      - 马克思主义基本原理 : Others/mayuan.md
-      - 毛泽东思想和中国特色社会主义理论体系概论 : Others/maogai.md
-      - 习近平新时代中国特色社会主义思想概论 : Others/xigai.md
+      - 马克思主义基本原理 : Others/sizheng/mayuan.md
+      - 毛泽东思想和中国特色社会主义理论体系概论 : Others/sizheng/maogai.md
+      - 习近平新时代中国特色社会主义思想概论 : Others/sizheng/xigai.md
 
 theme: 
   name: 'material'
