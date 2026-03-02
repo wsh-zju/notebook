@@ -201,6 +201,18 @@
          <lastmod>2026-03-02</lastmod>
     </url>
     <url>
+         <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/Latex/</loc>
+         <lastmod>2026-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/Verilog/</loc>
+         <lastmod>2026-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/terminal/</loc>
+         <lastmod>2026-03-02</lastmod>
+    </url>
+    <url>
          <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/C/</loc>
          <lastmod>2026-03-02</lastmod>
     </url>
@@ -246,6 +258,14 @@
     </url>
     <url>
          <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/Python/foundation/</loc>
+         <lastmod>2026-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/mkdocs/</loc>
+         <lastmod>2026-03-02</lastmod>
+    </url>
+    <url>
+         <loc>https://wsh-zju.github.io/notebook/Computer_Science/Language/mkdocs/theme/</loc>
          <lastmod>2026-03-02</lastmod>
     </url>
     <url>
@@ -310,26 +330,6 @@
     </url>
     <url>
          <loc>https://wsh-zju.github.io/notebook/Others/xigai/</loc>
-         <lastmod>2026-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://wsh-zju.github.io/notebook/tool/</loc>
-         <lastmod>2026-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://wsh-zju.github.io/notebook/tool/Latex/</loc>
-         <lastmod>2026-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://wsh-zju.github.io/notebook/tool/lab/</loc>
-         <lastmod>2026-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://wsh-zju.github.io/notebook/tool/mkdocs/</loc>
-         <lastmod>2026-03-02</lastmod>
-    </url>
-    <url>
-         <loc>https://wsh-zju.github.io/notebook/tool/mkdocs/theme/</loc>
          <lastmod>2026-03-02</lastmod>
     </url>
 </urlset>
