@@ -30,6 +30,11 @@ nav:
         - 进阶语法 : Computer_Science/Language/Python/advance.md
         - 常用知识汇总 : Computer_Science/Language/Python/accumulate.md
       - CSS : Computer_Science/Language/Css.md
+      - mkdocs 配置: 
+        - Computer_Science/Language/mkdocs/index.md
+        - 主题 : Computer_Science/Language/mkdocs/theme.md
+      - Latex 语法 : Computer_Science/Language/Latex.md
+      - 终端常用命令 : Computer_Science/Language/lab.md
     - 计算机系统 :
       - Computer_Science/Computer_System/index.md
       - 数据编码 : Computer_Science/Computer_System/data.md
@@ -98,13 +103,6 @@ nav:
     - 马克思主义基本原理 : Others/mayuan.md
     - 毛泽东思想和中国特色社会主义理论体系概论 : Others/maogai.md
     - 习近平新时代中国特色社会主义思想概论 : Others/xigai.md
-  - Tools :
-    - tool/index.md
-    - mkdocs 配置: 
-      - tool/mkdocs/index.md
-      - 主题 : tool/mkdocs/theme.md
-    - Latex 语法 : tool/Latex.md
-    - 终端常用命令 : tool/lab.md
 
 theme: 
   name: 'material'
