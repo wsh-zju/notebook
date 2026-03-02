@@ -16,13 +16,33 @@ comment: False
 1. 计算机系统 I ：计算机组成+逻辑电路
 2. 计算机系统 II/III ：操作系统+计算机架构
 
-## 计算机系统 I
-**主要包含内容**：[数据编码](data.md)、[数字逻辑基础](logic.md)、[组合逻辑电路](combine.md)、[运算单元](ALU.md)、[时序逻辑电路](sequence.md)、[ISA](ISA.md)、[CPU](CPU.md)、[多周期CPU](MultiCPU.md)
+## 主要实验内容
 
-!!! tip "Tips"
-    附一份手写笔记，包含除法器内容。
 
-    （除法器等未完成内容等闲来无事再补充到网站上吧**(=￣ ρ￣=) ..zzZZ**）
+## 笔记目录
+
+{{ BEGIN_TOC }}
+- 计算机系统 I:
+    - 数据编码[note]: data/
+    - 数字逻辑基础[note]: logic/
+    - 组合逻辑电路[note]: combine/
+    - 运算单元[note]: ALU/
+    - 时序逻辑电路[note]: sequence/
+    - ISA[note]: ISA/
+    - CPU[note]: CPU/
+    - 多周期CPU[note]: MultiCPU/
+- 计算机系统 II:
+    - 流水线CPU[note]: pipeline/
+    - 操作系统[note]: OS/
+    - 进程[note]: process/
+    - IPC[note]: IPCs/
+    - CPU调度[note]: schedule/
+    - 线程[note]: thread/
+    - 同步[note]: synch/
+    - 死锁[note]: deadlock/
+- 计算机系统 III:
+{{ END_TOC }}
+
 
 ## 课程手写笔记
 
@@ -30,7 +50,17 @@ comment: False
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">计算机系统 I 笔记</div>
-<div class="file-meta">2025-6-20 / 8 pages</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2025-6-20 /
+    <i class="fa-regular fa-note-sticky"></i>
+     8 pages
+</div>
 </div>
 <a class="down-button" target="_blank" href="files/system1 note.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
+
+!!! tip "Tips"
+    附一份手写笔记，包含除法器内容。
+
+    （除法器等未完成内容等闲来无事再补充到网站上吧**(=￣ ρ￣=) ..zzZZ**）
