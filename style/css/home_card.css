@@ -1,0 +1,177 @@
+
+/* 定义动画关键帧 */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 基础结构：确保动画属性被正确继承 */
+.hero-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    padding: 2rem;
+    margin: -1.5rem -0.8rem 2rem -0.8rem;
+    border-radius: 0 0 2rem 2rem;
+    
+    /* 核心修复：必须确保 background-size 在所有模式下生效 */
+    background-size: 400% 400% !important;
+    animation: gradientMove 15s ease infinite !important;
+    transition: background 0.8s ease, box-shadow 0.5s ease;
+    text-align: center;
+}
+
+/* --- [白天模式] 高级灰色渐变 (Default) --- */
+[data-md-color-scheme="default"] .hero-header {
+    /* 使用 莫兰迪灰/冷灰 组合 */
+    background: linear-gradient(-45deg, #8e9eab, #eef2f3, #bdc3c7, #8e9eab);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+[data-md-color-scheme="default"] .hero-header h1 { 
+    color: #444a4d !important; /* 深灰色文字 */
+    text-shadow: none; 
+}
+[data-md-color-scheme="default"] .hero-header p { 
+    color: #6c757d !important; 
+}
+
+/* --- [黑夜模式] 深邃蓝渐变 (Slate) --- */
+[data-md-color-scheme="slate"] .hero-header {
+    /* 使用 深蓝/极夜蓝 组合 */
+    background: linear-gradient(-45deg, #2c3e50, #4ca1af, #2c3e50, #7b4397);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+[data-md-color-scheme="slate"] .hero-header h1 { 
+    color: #ffffff !important; 
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+}
+[data-md-color-scheme="slate"] .hero-header p { 
+    color: rgba(255, 255, 255, 0.7) !important; 
+}
+
+/* 文字通用样式强制修正 */
+.hero-header h1 {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    display: block !important;
+    z-index: 10;
+}
+.hero-header p {
+    font-size: 1.2rem;
+    margin-top: 1rem !important;
+    z-index: 10;
+}
+
+/* 隐藏内容区的重复标题 */
+.md-content__inner h1:not(.hero-header h1) { display: none !important; }
+
+/* 容器布局 */
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 1rem;
+}
+
+/* 卡片基础样式 */
+.home-card {
+  padding: 2rem 1.5rem;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 磨砂玻璃效果自适应 */
+[data-md-color-scheme="default"] .home-card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .home-card {
+  background: rgba(30, 34, 45, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.home-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* 标题与描述 */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.card-desc {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-bottom: 1.2rem;
+}
+
+/* 底部按钮 */
+.enter-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--md-accent-fg-color);
+  color: white !important;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+/* 统计面板样式 */
+.stats-glass-card {
+    position: absolute;
+    top: 75%; /* 位于 Hero 文字下方 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px 25px;
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 激活状态 */
+.stats-glass-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 白天模式微调 */
+[data-md-color-scheme="default"] .stats-glass-card {
+    background: rgba(0, 0, 0, 0.05);
+    color: #444a4d;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.stats-content p {
+    margin: 8px 0 !important;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.stats-content strong {
+    color: var(--md-accent-fg-color);
+}
