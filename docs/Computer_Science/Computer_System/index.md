@@ -40,7 +40,6 @@ comment: False
     - 线程[note]: thread/
     - 同步[note]: synch/
     - 死锁[note]: deadlock/
-- 计算机系统 III:
 {{ END_TOC }}
 
 
