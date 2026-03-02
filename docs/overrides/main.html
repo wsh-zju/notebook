@@ -1,29 +1,40 @@
 {% extends "base.html" %}
 
 {% block styles %}
-  {{ super() }}
-  {% if page.meta and page.meta.counter %}
-    <link rel="stylesheet" href="{{ 'css/counter.css' | url }}">
-  {% endif %}
+    {{ super() }}
+    {# 强制在首页加载样式 #}
+    {% if page.url == "" or page.url == "index.html" %}
+        <link rel="stylesheet" href="../style/css/home_card.css"></link>
+    {% endif %}
+
+    {% if page.meta and page.meta.counter %}
+        <link rel="stylesheet" href="../style/css/counter.css"></link>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
+    {# 使用 page.url == "" 来精准判断首页 #}
+    {% if page.url == "" or page.url == "index.html" %}
+        <div class="hero-header">
+            <h1>ヾ(＠^∇^＠)ノ</h1>
+            <p>Welcome to Lucy Wisteria's Notebook!</p>
+        </div>
+    {% endif %}
+
     {{ super() }}
     
+    {# 评论系统 ... #}
     {% if page.meta and page.meta.comment %}
-        <hr />
-
         <script src="https://giscus.app/client.js"
-                data-årepo="wsh-zju/notebook"
-                data-repo-id="R_kgDOOJR4ig"
-                data-category="Announcements"
-                data-category-id="DIC_kwDOOJR4is4C1eU0"
+                data-repo="TonyCrane/note"
+                data-repo-id="R_kgDOGnfbUQ"
+                data-category="General"
+                data-category-id="DIC_kwDOGnfbUc4CPrf4"
                 data-mapping="pathname"
-                data-strict="0"
                 data-reactions-enabled="1"
                 data-emit-metadata="0"
                 data-input-position="bottom"
-                data-theme="preferred_color_scheme"
+                data-theme="light"
                 data-lang="zh-CN"
                 crossorigin="anonymous"
                 async>

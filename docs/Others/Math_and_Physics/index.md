@@ -4,7 +4,7 @@
 ### :fontawesome-solid-square-root-variable: 数学分析
  
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）I（H）笔记</div>
 <div class="file-meta">
@@ -18,7 +18,7 @@
 </div>
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">数学分析（甲）II（H）笔记</div>
 <div class="file-meta">
@@ -34,7 +34,7 @@
 ### :fontawesome-solid-th: 线性代数  
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">线性代数 I（H）笔记</div>
 <div class="file-meta">
@@ -48,7 +48,7 @@
 </div>
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">线性代数 II（H）笔记</div>
 <div class="file-meta">
@@ -67,7 +67,7 @@
 ### :fontawesome-solid-atom: 普通物理学  
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">普通物理学 I（H）笔记</div>
 <div class="file-meta">
@@ -81,7 +81,7 @@
 </div>
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">普通物理学 II（H）笔记</div>
 <div class="file-meta">
@@ -98,7 +98,7 @@
     该部分为在本人`Notion`中整理的知识框架，链接如下：
 
     <div class="card file-block" markdown="1">
-    <div class="file-icon"><img src="../style/images/link.svg" style="height: 3em;"></div>
+    <div class="file-icon"><img src="../../style/images/link.svg" style="height: 3em;"></div>
     <div class="file-body">
     <div class="file-title">普通物理学 II（H）知识框架</div>
     <div class="file-meta">
@@ -112,7 +112,7 @@
 ### :fontawesome-solid-chart-pie: 概率论和数理统计
 
 <div class="card file-block" markdown="1">
-<div class="file-icon"><img src="../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">概率论和数理统计知识总结</div>
 <div class="file-meta">

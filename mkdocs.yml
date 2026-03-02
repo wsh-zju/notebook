@@ -7,6 +7,7 @@ repo_url: https://github.com/wsh-zju/notebook
 edit_uri: tree/main/docs
 copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ Lucy Wisteria
 
+
 nav:
   - Home: 
     - index.md
@@ -78,12 +79,14 @@ nav:
       - 数据类型 : Tools/Python/data.md
       - 进阶语法 : Tools/Python/advance.md
       - 常用知识汇总 : Tools/Python/accumulate.md
+    - Verilog :
+      - Tools/Verilog.md
     - CSS : Tools/Css.md
     - mkdocs 配置: 
       - Tools/mkdocs/index.md
       - 主题 : Tools/mkdocs/theme.md
     - Latex 语法 : Tools/Latex.md
-    - 终端常用命令 : Tools/lab.md
+    - 终端常用命令 : Tools/terminal.md
   - Others :
     - Others/index.md
     - 数理课程 : 
@@ -221,6 +224,7 @@ extra_css:
   - style/css/toc_extra.css
   - style/css/svg_extra.css
   - style/css/counter.css
+  - style/css/home_card.css
 
 
 extra_javascript:

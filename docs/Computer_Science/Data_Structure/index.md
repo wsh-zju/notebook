@@ -1,6 +1,6 @@
 ---
-counter: False
-comment: False
+counter: false
+comment: false
 ---
 
 # :fontawesome-solid-code-fork: 数据结构与算法分析
