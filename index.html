@@ -42,14 +42,13 @@
 
     
     
-    
         <link rel="stylesheet" href="../style/css/home_card.css"></link>
         <style>
         /* 隐藏内容区的重复标题 */
         .md-content__inner h1:not(.hero-header h1) { display: none !important; }
         .md-content__inner {
             padding-top: 0 !important;
-        }
+        } 
         </style>
     
 
@@ -3616,11 +3615,144 @@
     
     
         <div class="hero-header">
-            <h1>ヾ(＠^∇^＠)ノ</h1>
-            <p>Welcome to Lucy Wisteria's Notebook!</p>
+            <div class="hero-title-group">
+                <h1>ヾ(＠^∇^＠)ノ</h1>
+                <p>Welcome to Lucy Wisteria's Notebook!</p>
+            </div>
+            <div class="hero-custom-container">
+    <nav class="hero-nav-links">
+        <a href="changelog/" class="hero-link-item">
+            <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span>
+            最近更新
+        </a>
+        <span class="hero-divider">/</span>
+        <a href="links/" class="hero-link-item">
+            <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018 2 2 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042m-4.69 9.64a2 2 0 0 0 2.83 0l1.25-1.25a.75.75 0 0 1 1.042.018.75.75 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .75.75 0 0 1-.018 1.042.75.75 0 0 1-1.042.018 2 2 0 0 0-2.83 0l-2.5 2.5a2 2 0 0 0 0 2.83"/></svg></span>
+            朋友们!
+        </a>
+        <span class="hero-divider">/</span>
+        <a href="javascript:void(0);" onclick="toggle_statistics()" class="hero-link-item">
+            <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span>
+            站点统计
+        </a>
+    </nav>
+
+    <div id="statistics-card" class="glass-stats-card">
+        <div class="stats-line">页面总数：83</div>
+        <div class="stats-line">总字数：131.5k</div>
+        <div class="stats-line">代码行数：4.2k</div>
+        <div class="stats-line">运行时间：<span id="web-time-display"></span></div>
+    </div>
+</div>
+
+<style>
+/* 1. 缩小与大标题的间距 */
+.hero-custom-container {
+    margin-top: 0.5rem; /* 从 2rem 缩小到 0.5rem */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* 2. 颜色适配逻辑 */
+
+/* 默认状态（白天/浅色模式）：使用深色文字 */
+.hero-link-item, .hero-divider, .stats-line {
+    color: #333333 !important; /* 深灰色，比纯黑更有高级感 */
+}
+.hero-link-item svg {
+    fill: #333333; /* 确保图标也是深色 */
+}
+.glass-stats-card {
+    background: rgba(0, 0, 0, 0.05); /* 浅色背景 */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 自动适配 MkDocs 的夜间模式 (Slate 方案) */
+[data-md-color-scheme="slate"] .hero-link-item,
+[data-md-color-scheme="slate"] .hero-divider,
+[data-md-color-scheme="slate"] .stats-line {
+    color: #ffffff !important; /* 纯白文字 */
+}
+[data-md-color-scheme="slate"] .hero-link-item svg {
+    fill: #ffffff;
+}
+[data-md-color-scheme="slate"] .glass-stats-card {
+    background: rgba(255, 255, 255, 0.1); /* 深色背景下的半透明亮色 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 基础结构样式保持不变 */
+.hero-nav-links {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-link-item {
+    text-decoration: none !important;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero-link-item:hover {
+    opacity: 0.6;
+}
+.hero-divider {
+    margin: 0 5px;
+}
+
+.glass-stats-card {
+    text-align: right; /* 卡片内文字靠右 */
+    border: none !important;
+    backdrop-filter: blur(10px); /* 玻璃效果 */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 20px; 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.glass-stats-card.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.stats-line {
+    font-size: 0.75rem; 
+    margin: 4px 0; 
+}
+</style>
+
+<script>
+// 时间更新和切换逻辑保持不变
+function updateTime() {
+    var startDate = new Date("2025/04/20 14:32:00");
+    var now = new Date();
+    var diff = now.getTime() - startDate.getTime();
+    var y = Math.floor(diff / (365 * 24 * 3600 * 1000));
+    diff -= y * 365 * 24 * 3600 * 1000;
+    var d = Math.floor(diff / (24 * 3600 * 1000));
+    var h = Math.floor(diff / (3600 * 1000) % 24);
+    var m = Math.floor(diff / (60 * 1000) % 60);
+    document.getElementById("web-time-display").innerHTML = (y > 0 ? y + "年 " : "") + d + "天 " + h + "时 " + m + "分";
+    setTimeout(updateTime, 60000);
+}
+updateTime();
+
+function toggle_statistics() {
+    document.getElementById("statistics-card").classList.toggle("is-active");
+}
+</script>
         </div>
     
-
+    
     
                   
   
@@ -3674,9 +3806,8 @@
 
 
 
-                
-    
-    
+                 
+
     
 
               </article>
@@ -3700,7 +3831,7 @@
       
         
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav class="md-footer__inner md-grid" aria-label="页脚" hidden>
         
         
           
