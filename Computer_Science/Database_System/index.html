@@ -12,32 +12,32 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/CPU/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Database_System/">
       
       
-        <link rel="prev" href="../ISA/">
+        <link rel="prev" href="../AI/">
       
       
-        <link rel="next" href="../MultiCPU/">
+        <link rel="next" href="../../Tools/">
       
       
         
       
       
-      <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
+      <link rel="icon" href="../../style/images/favicon_io/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>CPU - Lucy Wisteria's Notebook</title>
+        <title>数据库系统 - Lucy Wisteria's Notebook</title>
       
     
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -60,29 +60,29 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-      <link rel="stylesheet" href="../../../style/css/tasklist.css">
+      <link rel="stylesheet" href="../../style/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../style/css/home_card.css">
+      <link rel="stylesheet" href="../../style/css/home_card.css">
     
-      <link rel="stylesheet" href="../../../style/css/custom.css">
+      <link rel="stylesheet" href="../../style/css/custom.css">
     
-      <link rel="stylesheet" href="../../../style/css/card.css">
+      <link rel="stylesheet" href="../../style/css/card.css">
     
-      <link rel="stylesheet" href="../../../style/css/flink.css">
+      <link rel="stylesheet" href="../../style/css/flink.css">
     
-      <link rel="stylesheet" href="../../../style/css/toc_extra.css">
+      <link rel="stylesheet" href="../../style/css/toc_extra.css">
     
-      <link rel="stylesheet" href="../../../style/css/svg_extra.css">
+      <link rel="stylesheet" href="../../style/css/svg_extra.css">
     
-      <link rel="stylesheet" href="../../../style/css/counter.css">
+      <link rel="stylesheet" href="../../style/css/counter.css">
     
-      <link rel="stylesheet" href="../../../style/css/english.css">
+      <link rel="stylesheet" href="../../style/css/english.css">
     
-      <link rel="stylesheet" href="../../../style/css/riscv.css">
+      <link rel="stylesheet" href="../../style/css/riscv.css">
     
-      <link rel="stylesheet" href="../../../style/css/search.css">
+      <link rel="stylesheet" href="../../style/css/search.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -121,9 +121,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../style/images/logo.png" alt="logo">
+  <img src="../../style/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CPU
+              数据库系统
             
           </span>
         </div>
@@ -260,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -306,7 +306,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Tools/" class="md-tabs__link">
+        <a href="../../Tools/" class="md-tabs__link">
           
   
   
@@ -328,7 +328,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../Others/" class="md-tabs__link">
+        <a href="../../Others/" class="md-tabs__link">
           
   
   
@@ -364,9 +364,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../../style/images/logo.png" alt="logo">
+  <img src="../../style/images/logo.png" alt="logo">
 
     </a>
     Lucy Wisteria's Notebook
@@ -414,7 +414,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
@@ -494,7 +494,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -535,8 +535,6 @@
                 
   
   
-    
-  
   
   
     
@@ -585,15 +583,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../Computer_System/" class="md-nav__link ">
               
   
   
@@ -617,7 +615,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -637,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data/" class="md-nav__link">
+      <a href="../Computer_System/data/" class="md-nav__link">
         
   
   
@@ -665,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../logic/" class="md-nav__link">
+      <a href="../Computer_System/logic/" class="md-nav__link">
         
   
   
@@ -693,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../combine/" class="md-nav__link">
+      <a href="../Computer_System/combine/" class="md-nav__link">
         
   
   
@@ -721,7 +719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ALU/" class="md-nav__link">
+      <a href="../Computer_System/ALU/" class="md-nav__link">
         
   
   
@@ -749,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sequence/" class="md-nav__link">
+      <a href="../Computer_System/sequence/" class="md-nav__link">
         
   
   
@@ -777,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ISA/" class="md-nav__link">
+      <a href="../Computer_System/ISA/" class="md-nav__link">
         
   
   
@@ -802,35 +800,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CPU
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Computer_System/CPU/" class="md-nav__link">
         
   
   
@@ -846,135 +819,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        计算机体系结构
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CPU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        核心组成部分
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datapath" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        数据通路（Datapath）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        性能（performance）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPI（每条指令的平均周期数）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cpu-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CPU design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        数据通路
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        控制器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -987,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../MultiCPU/" class="md-nav__link">
+      <a href="../Computer_System/MultiCPU/" class="md-nav__link">
         
   
   
@@ -1015,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pipeline/" class="md-nav__link">
+      <a href="../Computer_System/pipeline/" class="md-nav__link">
         
   
   
@@ -1043,7 +887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../OS/" class="md-nav__link">
+      <a href="../Computer_System/OS/" class="md-nav__link">
         
   
   
@@ -1071,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../process/" class="md-nav__link">
+      <a href="../Computer_System/process/" class="md-nav__link">
         
   
   
@@ -1099,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../IPCs/" class="md-nav__link">
+      <a href="../Computer_System/IPCs/" class="md-nav__link">
         
   
   
@@ -1127,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schedule/" class="md-nav__link">
+      <a href="../Computer_System/schedule/" class="md-nav__link">
         
   
   
@@ -1155,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thread/" class="md-nav__link">
+      <a href="../Computer_System/thread/" class="md-nav__link">
         
   
   
@@ -1183,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../synch/" class="md-nav__link">
+      <a href="../Computer_System/synch/" class="md-nav__link">
         
   
   
@@ -1211,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deadlock/" class="md-nav__link">
+      <a href="../Computer_System/deadlock/" class="md-nav__link">
         
   
   
@@ -1272,7 +1116,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Data_Structure/" class="md-nav__link ">
+            <a href="../Data_Structure/" class="md-nav__link ">
               
   
   
@@ -1353,7 +1197,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Data_Structure/Foundation/" class="md-nav__link ">
+            <a href="../Data_Structure/Foundation/" class="md-nav__link ">
               
   
   
@@ -1397,7 +1241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Linear/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Linear/" class="md-nav__link">
         
   
   
@@ -1425,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Tree/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Tree/" class="md-nav__link">
         
   
   
@@ -1453,7 +1297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Heap/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Heap/" class="md-nav__link">
         
   
   
@@ -1481,7 +1325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/ADT/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/ADT/" class="md-nav__link">
         
   
   
@@ -1509,7 +1353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Graph/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Graph/" class="md-nav__link">
         
   
   
@@ -1537,7 +1381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Sort/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Sort/" class="md-nav__link">
         
   
   
@@ -1565,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/Hash/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/Hash/" class="md-nav__link">
         
   
   
@@ -1593,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Foundation/pta/" class="md-nav__link">
+      <a href="../Data_Structure/Foundation/pta/" class="md-nav__link">
         
   
   
@@ -1682,7 +1526,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Data_Structure/Advanced/" class="md-nav__link ">
+            <a href="../Data_Structure/Advanced/" class="md-nav__link ">
               
   
   
@@ -1726,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/tree/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/tree/" class="md-nav__link">
         
   
   
@@ -1754,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/heap/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/heap/" class="md-nav__link">
         
   
   
@@ -1782,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/queue/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/queue/" class="md-nav__link">
         
   
   
@@ -1810,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/amort/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/amort/" class="md-nav__link">
         
   
   
@@ -1838,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/inv/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/inv/" class="md-nav__link">
         
   
   
@@ -1866,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/back/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/back/" class="md-nav__link">
         
   
   
@@ -1894,7 +1738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/divide/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/divide/" class="md-nav__link">
         
   
   
@@ -1922,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/DP/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/DP/" class="md-nav__link">
         
   
   
@@ -1950,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/greedy/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/greedy/" class="md-nav__link">
         
   
   
@@ -1978,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/NP/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/NP/" class="md-nav__link">
         
   
   
@@ -2006,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/appro/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/appro/" class="md-nav__link">
         
   
   
@@ -2034,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/localsearch/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/localsearch/" class="md-nav__link">
         
   
   
@@ -2062,7 +1906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/random/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/random/" class="md-nav__link">
         
   
   
@@ -2090,7 +1934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/paral/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/paral/" class="md-nav__link">
         
   
   
@@ -2118,7 +1962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/exter/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/exter/" class="md-nav__link">
         
   
   
@@ -2146,7 +1990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Data_Structure/Advanced/pta/" class="md-nav__link">
+      <a href="../Data_Structure/Advanced/pta/" class="md-nav__link">
         
   
   
@@ -2190,7 +2034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AI/" class="md-nav__link">
+      <a href="../AI/" class="md-nav__link">
         
   
   
@@ -2215,10 +2059,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../Database_System/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2234,6 +2105,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据库系统概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2290,7 +2192,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tools/" class="md-nav__link ">
+            <a href="../../Tools/" class="md-nav__link ">
               
   
   
@@ -2365,7 +2267,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tools/C/" class="md-nav__link ">
+            <a href="../../Tools/C/" class="md-nav__link ">
               
   
   
@@ -2409,7 +2311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/C/pointer/" class="md-nav__link">
+      <a href="../../Tools/C/pointer/" class="md-nav__link">
         
   
   
@@ -2437,7 +2339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/C/recursion/" class="md-nav__link">
+      <a href="../../Tools/C/recursion/" class="md-nav__link">
         
   
   
@@ -2465,7 +2367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/C/structure/" class="md-nav__link">
+      <a href="../../Tools/C/structure/" class="md-nav__link">
         
   
   
@@ -2493,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/C/file/" class="md-nav__link">
+      <a href="../../Tools/C/file/" class="md-nav__link">
         
   
   
@@ -2521,7 +2423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/C/accumulate/" class="md-nav__link">
+      <a href="../../Tools/C/accumulate/" class="md-nav__link">
         
   
   
@@ -2578,7 +2480,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tools/C%2B%2B/" class="md-nav__link ">
+            <a href="../../Tools/C%2B%2B/" class="md-nav__link ">
               
   
   
@@ -2654,7 +2556,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tools/Python/" class="md-nav__link ">
+            <a href="../../Tools/Python/" class="md-nav__link ">
               
   
   
@@ -2698,7 +2600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Python/foundation/" class="md-nav__link">
+      <a href="../../Tools/Python/foundation/" class="md-nav__link">
         
   
   
@@ -2726,7 +2628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Python/data/" class="md-nav__link">
+      <a href="../../Tools/Python/data/" class="md-nav__link">
         
   
   
@@ -2754,7 +2656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Python/advance/" class="md-nav__link">
+      <a href="../../Tools/Python/advance/" class="md-nav__link">
         
   
   
@@ -2782,7 +2684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Python/accumulate/" class="md-nav__link">
+      <a href="../../Tools/Python/accumulate/" class="md-nav__link">
         
   
   
@@ -2872,7 +2774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Verilog/" class="md-nav__link">
+      <a href="../../Tools/Verilog/" class="md-nav__link">
         
   
   
@@ -2908,7 +2810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Css/" class="md-nav__link">
+      <a href="../../Tools/Css/" class="md-nav__link">
         
   
   
@@ -2959,7 +2861,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Tools/mkdocs/" class="md-nav__link ">
+            <a href="../../Tools/mkdocs/" class="md-nav__link ">
               
   
   
@@ -3003,7 +2905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/mkdocs/theme/" class="md-nav__link">
+      <a href="../../Tools/mkdocs/theme/" class="md-nav__link">
         
   
   
@@ -3039,7 +2941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/Latex/" class="md-nav__link">
+      <a href="../../Tools/Latex/" class="md-nav__link">
         
   
   
@@ -3067,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Tools/terminal/" class="md-nav__link">
+      <a href="../../Tools/terminal/" class="md-nav__link">
         
   
   
@@ -3127,7 +3029,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Others/" class="md-nav__link ">
+            <a href="../../Others/" class="md-nav__link ">
               
   
   
@@ -3194,7 +3096,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Others/Math_and_Physics/" class="md-nav__link ">
+            <a href="../../Others/Math_and_Physics/" class="md-nav__link ">
               
   
   
@@ -3279,7 +3181,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
+            <a href="../../Others/Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
               
   
   
@@ -3323,7 +3225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
         
   
   
@@ -3351,7 +3253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
         
   
   
@@ -3379,7 +3281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
         
   
   
@@ -3407,7 +3309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
         
   
   
@@ -3435,7 +3337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
         
   
   
@@ -3463,7 +3365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
         
   
   
@@ -3491,7 +3393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
         
   
   
@@ -3519,7 +3421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
         
   
   
@@ -3547,7 +3449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
         
   
   
@@ -3575,7 +3477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
+      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
         
   
   
@@ -3677,7 +3579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/sizheng/mayuan/" class="md-nav__link">
+      <a href="../../Others/sizheng/mayuan/" class="md-nav__link">
         
   
   
@@ -3705,7 +3607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/sizheng/maogai/" class="md-nav__link">
+      <a href="../../Others/sizheng/maogai/" class="md-nav__link">
         
   
   
@@ -3733,7 +3635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Others/sizheng/xigai/" class="md-nav__link">
+      <a href="../../Others/sizheng/xigai/" class="md-nav__link">
         
   
   
@@ -3786,6 +3688,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -3794,113 +3698,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        计算机体系结构
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CPU">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        核心组成部分
+        数据库系统概述
       
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#datapath" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        数据通路（Datapath）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        性能（performance）
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cpi" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPI（每条指令的平均周期数）
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cpu-design" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CPU design
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CPU design">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        数据通路
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        控制器
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3925,7 +3729,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/CPU.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Database_System/index.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -3933,523 +3737,42 @@
   
 
 
-  <h1>CPU</h1>
-
-<h2 id="_1">计算机体系结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p><strong>计算机体系结构</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Computer Architecture</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">problem</td>
-</tr>
-<tr>
-<td style="text-align: center;">algorithm</td>
-</tr>
-<tr>
-<td style="text-align: center;">program</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>runtime systerm (VM,OS,MM)</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>ISA (architecture)</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>microarchitecture</strong></td>
-</tr>
-<tr>
-<td style="text-align: center;">logic</td>
-</tr>
-<tr>
-<td style="text-align: center;">circuits</td>
-</tr>
-<tr>
-<td style="text-align: center;">electrons</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Notice!</p>
+<h1 id="_1"><i class="fa-solid fa-table"></i> 数据库系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 class="title-en" data-en="Database" id="_2">数据库系统概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
-<li>VM（ 虚拟机，Virtual Machine ）</li>
-<li>OS（ 操作系统，Operating System ）</li>
-<li>MM（ 内存管理，Memory Management ） </li>
-</ul>
-</div>
-<ol start="2">
-<li><strong>冯诺伊曼架构</strong></li>
-</ol>
-<div class="arithmatex">\[
-\text{Computer}
-\begin{cases}
-    \text{CPU} &amp; 
-        \begin{cases}
-            \text{Control unit} \\
-            \text{Datapath} &amp; 
-                \begin{cases}
-                    \text{Path: multiplexors} \\
-                    \text{ALU} \\
-                    \text{Registers} \\
-                    \text{……}
-                \end{cases}
-        \end{cases} \\
-    \text{Memory} \\
-    \text{I/O interface}
-\end{cases}
-\]</div>
-<hr />
-<h2 id="cpu">CPU<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h2>
-<h3 id="_2">核心组成部分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>数据通路</strong>：对数据执行操作</li>
-<li><strong>控制单元</strong>：对数据通路、内存等进行时序控制</li>
-<li><strong>高速缓存</strong>（cache memory）：一种小型快速的静态随机存取存储器（SRAM），用于快速访问数据</li>
-</ol>
-<h3 id="datapath">数据通路（Datapath）<a class="headerlink" href="#datapath" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>ALU</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Operation</th>
-<th style="text-align: center;">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">000</td>
-<td style="text-align: center;">And</td>
-</tr>
-<tr>
-<td style="text-align: center;">001</td>
-<td style="text-align: center;">Or</td>
-</tr>
-<tr>
-<td style="text-align: center;">010</td>
-<td style="text-align: center;">Add</td>
-</tr>
-<tr>
-<td style="text-align: center;">110</td>
-<td style="text-align: center;">Sub</td>
-</tr>
-<tr>
-<td style="text-align: center;">111</td>
-<td style="text-align: center;">Sit(比较)</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p><strong>Memory（存储器）</strong></p>
-<ul>
-<li>指令存储器<ul>
-<li>只读</li>
-<li>输入指令地址，输出相应指令</li>
+<li>Purpose of Database Systems <ul>
+<li>Database Applications </li>
+<li>Several Concepts </li>
+<li>Database System vs. File-Processing System（Drawbacks：并发访问很困难、安全性问题）</li>
 </ul>
 </li>
-<li>数据存储器<ul>
-<li>读写</li>
-<li>由<code>MemRead</code>和<code>MemWrite</code>控制</li>
+<li>View of Data <ul>
+<li>Level of Data Abstraction （3个level的关系）</li>
+<li>Schemas模式（level分别对应） and Instances实例 ：真实内容</li>
+<li>Physical Independence vs. Logical Independence </li>
+<li>Data Models </li>
 </ul>
 </li>
+<li>Database Language<ul>
+<li>Data Definition Language (DDL) 数据定义语言</li>
+<li>Data Manipulation Language (DML) 数据操作语言</li>
+<li>SQL </li>
 </ul>
 </li>
-<li>
-<p><strong>register files</strong>（寄存器堆）</p>
-<ul>
-<li>由32个64 bit的寄存器组成</li>
-<li>由D触发器实现</li>
-<li>输入/输出<ul>
-<li>输入：两个5 bit的寄存器编号/一个5 bit的寄存器编号和一个64 bit的数据</li>
-<li>输出：64 bit的数据</li>
+<li>Database Design <ul>
+<li>Steps of Database Design （）</li>
+<li>Entity-Relationship Model </li>
+<li>Relational Model</li>
 </ul>
 </li>
+<li>Database Users and Administrators </li>
+<li>Transaction Management </li>
+<li>Database Architecture </li>
+<li>History of Database Systems </li>
+<li>Summary </li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">Module</span><span class="w"> </span><span class="n">regs</span><span class="p">(</span><span class="w"> </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">clk</span><span class="p">,</span><span class="w"> </span><span class="n">rst</span><span class="p">,</span><span class="w"> </span><span class="n">RegWrite</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">4</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Rs1_addr</span><span class="p">,</span><span class="w"> </span><span class="n">Rs2_addr</span><span class="p">,</span><span class="w"> </span><span class="n">Wt_addr</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">63</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Wt_data</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">63</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">Rs1_data</span><span class="p">,</span><span class="w"> </span><span class="n">Rs2_data</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">);</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">63</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">register</span><span class="w"> </span><span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="mh">31</span><span class="p">];</span><span class="w">        </span><span class="c1">// r1 - r31</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">integer</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">assign</span><span class="w"> </span><span class="n">rdata_A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Rs1_addr</span><span class="o">==</span><span class="w"> </span><span class="mh">0</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">register</span><span class="p">[</span><span class="n">Rs1_addr</span><span class="p">];</span><span class="w">        </span><span class="c1">// read</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">assign</span><span class="w"> </span><span class="n">rdata_B</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Rs2_addr</span><span class="o">==</span><span class="w"> </span><span class="mh">0</span><span class="p">)</span><span class="o">?</span><span class="w"> </span><span class="mh">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">register</span><span class="p">[</span><span class="n">Rs2_addr</span><span class="p">];</span><span class="w">        </span><span class="c1">// read</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="k">posedge</span><span class="w"> </span><span class="n">clk</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="k">posedge</span><span class="w"> </span><span class="n">rst</span><span class="p">)</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="k">begin</span><span class="w"> </span>
-<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">rst</span><span class="o">==</span><span class="mh">1</span><span class="p">)</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mh">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="mh">32</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="n">register</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">        </span><span class="c1">// reset</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">Wt_addr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">RegWrite</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">1</span><span class="p">))</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">        </span><span class="n">register</span><span class="p">[</span><span class="n">Wt_addr</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">Wt_data</span><span class="p">;</span><span class="w">        </span><span class="c1">// write</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="k">end</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="k">endmodule</span><span class="w"> </span>
-</code></pre></div></td></tr></table></div>
-</li>
-<li>
-<p><strong>others：立即数生成单元</strong></p>
-<ul>
-<li>功能：<ul>
-<li>从指令中提取立即数</li>
-<li>符号扩展</li>
-<li>位移操作</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h3 id="performance">性能（performance）<a class="headerlink" href="#performance" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>相关定义</strong></p>
-<ul>
-<li>响应时间（Latency）：任务从开始到完成的总时间（如程序运行时间）</li>
-<li>
-<p>吞吐量（Throughput）：单位时间内完成的任务量（如每秒处理的事务数）</p>
-<div class="admonition note">
-<p class="admonition-title">Problem</p>
-<ul>
-<li>替换更快的处理器：响应时间下降，吞吐量可能上升（若任务独立）</li>
-<li>增加处理器数量：吞吐量上升（并行处理），但单任务响应时间可能不变</li>
-</ul>
-</div>
-</li>
-<li>
-<p>CPU时间 <strong>（用来衡量性能）</strong>  = 用户CPU时间 + 系统CPU时间</p>
-</li>
-<li>时钟周期（Clock Period）：单个周期持续时间</li>
-<li>时钟频率（Clock Rate）：每秒周期数</li>
-</ul>
-</li>
-<li>
-<p><strong>公式</strong></p>
-</li>
-</ol>
-<div class="arithmatex">\[Performance=\frac{1}{Execution Time(执行时间)}\]</div>
-<div class="arithmatex">\[CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}\]</div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>- X is $n$ time faster than Y.
-
-    $$
-    \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
-    $$
-</code></pre></div></td></tr></table></div>
-<ol start="3">
-<li><strong>性能提高的方式</strong><ul>
-<li>减少时钟周期数</li>
-<li>提高时钟频率</li>
-<li>硬件设计师常常需要在时钟频率和时钟周期数之间进行权衡 </li>
-</ul>
-</li>
-</ol>
-<hr />
-<h3 id="cpi">CPI（每条指令的平均周期数）<a class="headerlink" href="#cpi" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>特点</strong><ul>
-<li>由CPU硬件决定</li>
-<li>不同指令可能有不同的CPI</li>
-<li>平均CPI受指令组合的影响</li>
-</ul>
-</li>
-<li><strong>公式</strong></li>
-</ol>
-<div class="arithmatex">\[
-CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
-\]</div>
-<ol start="3">
-<li>
-<p><strong>重要公式：</strong></p>
-<div class="arithmatex">\[CPU \ Clock \ Cycles = Instruction \ Count \times Average \ Clock \ Cycles \ Per \ Instruction\]</div>
-<div class="arithmatex">\[CPU \ Time = Instruction \ Count \times CPI \times Clock \ Period\]</div>
-<div class="arithmatex">\[CPU \ Time = \frac{Instruction \ Count \times CPI}{Clock \ Rate}\]</div>
-<ul>
-<li>
-<p>当<strong>不同指令类别执行所需的时钟周期数不同</strong>时，总时钟周期数（Clock Cycles）的计算方法为：</p>
-<div class="arithmatex">\[ Clock \ Cycles = \sum_{i = 1}^{n} (CPI_{i} \times Instruction \ Count_{i}) \]</div>
-</li>
-<li>
-<p><strong>加权平均CPI</strong>的计算公式为：</p>
-<div class="arithmatex">\[ CPI = \frac{Clock \ Cycles}{Instruction \ Count} = \sum_{i = 1}^{n} \left( CPI_{i} \times \frac{Instruction \ Count_{i}}{Instruction \ Count} \right) \]</div>
-</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h2 id="cpu-design">CPU design<a class="headerlink" href="#cpu-design" title="Permanent link">&para;</a></h2>
-<p><img alt="" src="../photo/7-1.png" /></p>
-<h3 id="_3">数据通路<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>数据通路基本元素</strong></li>
-</ol>
-<ul>
-<li><strong>寄存器组（Registers）</strong><ul>
-<li>32 个 64 位寄存器（x0-x31）</li>
-<li>两个读端口和一个写端口</li>
-<li>写操作由时钟边沿触发，受RegWrite信号控制</li>
-</ul>
-</li>
-<li><strong>算术逻辑单元（ALU）</strong><ul>
-<li>加法（Add）、减法（Sub）、与（And）、或（Or）、小于置位（Slt）等操作</li>
-<li>由ALU Op1和ALU Op0两位信号控制</li>
-<li>输入：两个操作数（来源由ALUSrc信号决定：寄存器数据或立即数）</li>
-<li>输出：结果及标志位（如 Zero）</li>
-</ul>
-</li>
-<li><strong>存储器（Memory）</strong><ul>
-<li><strong>指令存储器（Instruction Memory）</strong>：只读，按地址读取指令</li>
-<li><strong>数据存储器（Data Memory）</strong>：读写由MemRead和MemWrite信号控制，支持按地址存取数据</li>
-</ul>
-</li>
-<li><strong>立即数生成单元（Immediate Generation Unit）</strong><ul>
-<li>根据指令类型生成对应立即数，并进行符号扩展至 64 位</li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="_4">控制器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>控制信号</strong></li>
-</ol>
-<ul>
-<li><strong>ALU op</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">指令</th>
-<th style="text-align: center;">ALU op</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">ld</td>
-<td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">sd</td>
-<td style="text-align: center;">00</td>
-</tr>
-<tr>
-<td style="text-align: center;">beq</td>
-<td style="text-align: center;">01</td>
-</tr>
-<tr>
-<td style="text-align: center;">R-type</td>
-<td style="text-align: center;">10</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">信号名称</th>
-<th style="text-align: center;">无效时（=0）</th>
-<th style="text-align: center;">有效时（=1）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">RegWrite</td>
-<td style="text-align: center;">无</td>
-<td style="text-align: center;">寄存器写入</td>
-</tr>
-<tr>
-<td style="text-align: center;">ALUSrc</td>
-<td style="text-align: center;">ALU的第二个操作数来自第二个寄存器文件输出（读数据2）</td>
-<td style="text-align: center;">ALU的第二个操作数来自立即数生成器</td>
-</tr>
-<tr>
-<td style="text-align: center;">Branch（PCSrc）</td>
-<td style="text-align: center;">PC=PC+4</td>
-<td style="text-align: center;">PC跳转至分支目标地址（PC+立即数）</td>
-</tr>
-<tr>
-<td style="text-align: center;">Jump</td>
-<td style="text-align: center;">PC=PC+4或分支目标</td>
-<td style="text-align: center;">PC跳转至跳转地址</td>
-</tr>
-<tr>
-<td style="text-align: center;">MemRead</td>
-<td style="text-align: center;">无</td>
-<td style="text-align: center;">读取数据存储器内容</td>
-</tr>
-<tr>
-<td style="text-align: center;">MemWrite</td>
-<td style="text-align: center;">无</td>
-<td style="text-align: center;">将数据写入数据存储器</td>
-</tr>
-<tr>
-<td style="text-align: center;">MemtoReg（2位）</td>
-<td style="text-align: center;">00：写入寄存器的数据来自ALU</td>
-<td style="text-align: center;">写入寄存器的数据来自<br>01：数据存储器<br>10：PC+4<br>11：立即数生成器的输出</td>
-</tr>
-</tbody>
-</table>
-<ol start="2">
-<li><strong>控制信号生成</strong></li>
-</ol>
-<ul>
-<li><strong>主译码器（Main Decoder）</strong><ul>
-<li>输入：7位操作码（Opcode）</li>
-<li>输出：7个控制信号和2位ALU Op信号</li>
-</ul>
-</li>
-<li><strong>ALU 译码器（ALU Decoder）</strong><ul>
-<li>输入：ALU Op和指令中的funct3、funct7</li>
-<li>输出：具体ALU操作</li>
-</ul>
-</li>
-</ul>
-<ol start="3">
-<li><strong>主指令译码器真值表</strong></li>
-</ol>
-<table>
-  <thead>
-    <tr>
-      <th colspan="2">输入</th>
-      <th colspan="9">输出</th>
-    </tr>
-    <tr>
-      <th>Instruction</th>
-      <th>OPCode</th>
-      <th>ALUSrcB</th>
-      <th>Memto-Reg</th>
-      <th>Reg Write</th>
-      <th>Mem Read</th>
-      <th>Mem Write</th>
-      <th>Branch</th>
-      <th>Jump</th>
-      <th>ALU Op1</th>
-      <th>ALU Op0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>R-format</td>
-      <td>0110011</td>
-      <td>0</td>
-      <td>00</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>Ld(I-Type)</td>
-      <td>0000011</td>
-      <td>1</td>
-      <td>01</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>sd(S-Type)</td>
-      <td>0100011</td>
-      <td>1</td>
-      <td>X</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>beq(SB-Type)</td>
-      <td>1100111</td>
-      <td>0</td>
-      <td>X</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>Jal(UJ-Type)</td>
-      <td>1101111</td>
-      <td>X</td>
-      <td>10</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr>
-      <td>Jalr</td>
-      <td>1100111</td>
-      <td>1</td>
-      <td>10</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>lui</td>
-      <td>0110111</td>
-      <td>X</td>
-      <td>11</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>X</td>
-      <td>X</td>
-  </tbody>
-</table>
+<p><abbr title="Stored Procedure">存储过程</abbr>
+<abbr title="触发器">chufa</abbr></p>
 
 
 
@@ -4457,38 +3780,6 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 
 
 
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="最后更新">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月1日 17:03:13 CST">2026年3月1日 17:03:13</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="创建日期">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年6月11日 19:30:17 CST">2025年6月11日 19:30:17</span>
-  </span>
-
-    
-    
-    
-  </aside>
 
 
 
@@ -4496,21 +3787,6 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
 
                  
 
-    
-        <script src="https://giscus.app/client.js"
-                data-repo="TonyCrane/note"
-                data-repo-id="R_kgDOGnfbUQ"
-                data-category="General"
-                data-category-id="DIC_kwDOGnfbUc4CPrf4"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="light"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
-        </script>
     
 
 
@@ -4536,7 +3812,7 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../ISA/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ISA">
+          <a href="../AI/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 人工智能引论">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4546,20 +3822,20 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
                 上一页
               </span>
               <div class="md-ellipsis">
-                ISA
+                人工智能引论
               </div>
             </div>
           </a>
         
         
           
-          <a href="../MultiCPU/" class="md-footer__link md-footer__link--next" aria-label="下一页: 多周期CPU">
+          <a href="../../Tools/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开发工具 / Development Tools">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                多周期CPU
+                开发工具 / Development Tools
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4600,11 +3876,11 @@ CPI = \frac{CPU \ Clock \ Cycles}{Instruction \ Count}
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

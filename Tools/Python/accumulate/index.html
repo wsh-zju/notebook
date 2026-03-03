@@ -46,8 +46,6 @@
     
 
     
-
-    
       
     
     
@@ -60,7 +58,11 @@
     
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
     
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
       <link rel="stylesheet" href="../../../style/css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../style/css/home_card.css">
     
       <link rel="stylesheet" href="../../../style/css/custom.css">
     
@@ -74,7 +76,11 @@
     
       <link rel="stylesheet" href="../../../style/css/counter.css">
     
-      <link rel="stylesheet" href="../../../style/css/home_card.css">
+      <link rel="stylesheet" href="../../../style/css/english.css">
+    
+      <link rel="stylesheet" href="../../../style/css/riscv.css">
+    
+      <link rel="stylesheet" href="../../../style/css/search.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -260,7 +266,7 @@
   
     
   
-  Home
+  首页
 
         </a>
       </li>
@@ -282,7 +288,7 @@
   
     
   
-  Computer Science
+  计算机类课程
 
         </a>
       </li>
@@ -306,7 +312,7 @@
   
     
   
-  Development Tools
+  开发工具
 
         </a>
       </li>
@@ -328,7 +334,7 @@
   
     
   
-  Others
+  其余课程
 
         </a>
       </li>
@@ -415,7 +421,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    首页
   
 
     
@@ -432,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Home
+    首页
   
 
           </label>
@@ -466,6 +472,8 @@
       
         
       
+        
+      
     
     
     
@@ -488,7 +496,7 @@
   <span class="md-ellipsis">
     
   
-    Computer Science
+    计算机类课程
   
 
     
@@ -510,7 +518,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Computer Science
+    计算机类课程
   
 
           </label>
@@ -2042,6 +2050,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_Science/Database_System/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据库系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2105,7 +2141,7 @@
   <span class="md-ellipsis">
     
   
-    Development Tools
+    开发工具
   
 
     
@@ -2127,7 +2163,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Development Tools
+    开发工具
   
 
           </label>
@@ -3009,7 +3045,7 @@
   <span class="md-ellipsis">
     
   
-    Others
+    其余课程
   
 
     
@@ -3031,7 +3067,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Others
+    其余课程
   
 
           </label>
@@ -3783,6 +3819,7 @@
 
     
 
+
               </article>
             </div>
           
@@ -3872,10 +3909,44 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
+    
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
+    <script>
+    function applyAbbrLogic() {
+        // 找到页面中所有的缩写标签
+        const abbrs = document.querySelectorAll(".md-typeset abbr");
+        
+        abbrs.forEach(abbr => {
+        // 1. 让标签可获得焦点（点击触发气泡的关键）
+        if (!abbr.hasAttribute("tabindex")) {
+            abbr.setAttribute("tabindex", "0");
+        }
+
+        // 2. 智能分类逻辑：
+        // 获取术语本身的文本内容（例如 "chufa" 或 "DBMS"）
+        const termText = abbr.textContent.trim();
+
+        // 使用正则表达式判断：如果是纯英文、数字、中划线、点或拼音（不含中文）
+        // 则自动加上紫色系的类名 .term-en
+        if (/^[a-zA-Z0-9\s\-\.\(\)]+$/.test(termText)) {
+            abbr.classList.add("term-en");
+        }
+        });
+    }
+
+    // 确保在页面加载和 Material 模式切换时都运行
+    document.addEventListener("DOMContentLoaded", applyAbbrLogic);
+    
+    // 针对 Material 主题的即时加载(Instant Loading)补丁
+    if (typeof document.onDOMContentLoaded === "undefined") {
+        const observer = new MutationObserver(applyAbbrLogic);
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+    </script>
+
   </body>
 </html>

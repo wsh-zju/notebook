@@ -47,6 +47,7 @@
 
 /* 浅色主题 */
 [data-md-color-scheme="default"] {
+  --md-default-bg-color: #f7f7f7;  /* 背景色 */
   --md-primary-fg-color: #efefef;  /* 顶栏前景色 */
   --md-primary-bg-color: #000000;  /* 顶栏背景色 */
   --md-typeset-a-color: #555555;   /* 链接颜色 */
@@ -84,14 +85,6 @@
   --md-code-bg-color: #1d1d1d;
 }
 
-/* 搜索框 */
-input.md-search__input {
-  background-color: #fff;
-}
-/* 深色主题下搜索框变黑 */
-[data-md-color-scheme="slate"] input.md-search__input {
-  background-color: #000;
-}
 /* 深色模式下内容区按钮颜色 */
 [data-md-color-scheme="slate"] .md-typeset .md-content__button {
   color: #555555;
@@ -167,90 +160,6 @@ input#mkdocs-content-password {
   font-size: 0.8em;
 }
 
-/* RISC-V 表格 */
-.riscv-table, .fl-table {
-  width: 100%;
-  display: inline-table;
-  table-layout: fixed;
-  /* border-collapse: collapse; */
-}
-.riscv-table-node {
-  text-align: center;
-  padding: 0.2em;
-  border: 0.04rem solid var(--md-default-fg-color);
-}
-.riscv-table-node-little, .fl-table-node {
-  text-align: center;
-  padding: 0.1em;
-  border: 0.04rem solid var(--md-default-fg-color);
-}
-.riscv-table-numnode {
-  font-size: .4rem;
-}
-.riscv-table-undernode {
-  font-size: .6rem;
-  text-align: center;
-}
-.riscv-table-numnodel {
-  font-size: .4rem;
-  text-align: left;
-}
-.riscv-table-numnoder {
-  font-size: .4rem;
-  text-align: right;
-}
-@media (max-width: 700px) {
-  .riscv-table-node, .riscv-table-node-little, .fl-table-node {
-    font-size: .6rem;
-  }
-}
-@media (max-width: 610px) {
-  .riscv-table-node, .riscv-table-node-little, .fl-table-node {
-    font-size: .5rem;
-  }
-}
-@media (max-width: 602px) {
-  .riscv-table-node, .riscv-table-node-little {
-    overflow-x: scroll;
-    word-wrap: normal;
-  }
-  .riscv-table-numnoder {
-    font-size: 0px;
-  }
-  .riscv-table-numnodel {
-    word-wrap: normal;
-  }
-}
-
-[data-md-color-scheme="slate"] .fl-affected {
-  background: linear-gradient(
-    45deg, 
-    rgb(255 255 255 / 30%) 0, rgb(255 255 255 / 30%) 25%, transparent 25%, transparent 50%, 
-    rgb(255 255 255 / 30%) 50%, rgb(255 255 255 / 30%) 75%, transparent 75%, transparent
-  );
-  background-size: 10px 10px;
-}
-[data-md-color-scheme="default"] .fl-affected {
-  background: linear-gradient(
-    45deg, 
-    rgb(0 0 0 / 30%) 0, rgb(0 0 0 / 30%) 25%, transparent 25%, transparent 50%, 
-    rgb(0 0 0 / 30%) 50%, rgb(0 0 0 / 30%) 75%, transparent 75%, transparent
-  );
-  background-size: 10px 10px;
-}
-[data-md-color-scheme="slate"] .fl-special {
-  background: rgb(255 255 255 / 30%);
-}
-[data-md-color-scheme="default"] .fl-special {
-  background: rgb(0 0 0 / 30%);
-}
-[data-md-color-scheme="slate"] .fl-undefined {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(255,255,255,0.9)" stroke-width="1"/></g><g><line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(255,255,255,0.9)" stroke-width="1"/></g></svg>');
-}
-[data-md-color-scheme="default"] .fl-undefined {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><g><line x1="0" y1="0" x2="100%" y2="100%" stroke="rgba(0, 0, 0, 0.85)" stroke-width="1"/></g><g><line x1="0" y1="100%" x2="100%" y2="0" stroke="rgba(0, 0, 0, 0.85)" stroke-width="1"/></g></svg>');
-}
-
 .md-typeset :is(.emojione,.twemoji,.gemoji) {
   vertical-align: sub;
 }
@@ -270,5 +179,46 @@ input#mkdocs-content-password {
     border-radius: 50%;
     overflow: hidden;
 }
+/* --- 调整页眉上边距与高度 --- */
+.md-header {
+  /* 1. 增加高度：原高度通常在 2.4rem 左右，拉大到 3.5rem 或更高 */
+  height: 2.6rem !important; 
+}
+  
+/* --- 1. 白天模式：浅灰色半透明 --- */
+[data-md-color-scheme="default"] .md-header {
+  /* 将 #efefef 转换为 rgba，0.7 代表 70% 的不透明度 */
+  background-color: rgba(239, 239, 239, 0.8) !important; 
+  
+  /* 必须配合模糊滤镜才能实现磨砂感 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px);
+}
 
+/* --- 2. 黑夜模式：深黑色半透明 --- */
+[data-md-color-scheme="slate"] .md-header {
+  /* 将 #0d0d0d 转换为 rgba，0.8 代表 80% 的不透明度 */
+  background-color: rgba(13, 13, 13, 0.8) !important; 
+  
+  /* 磨砂效果 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 4. 重点：确保内部元素（Logo、搜索框）依然垂直居中 */
+.md-header__inner {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important; /* 垂直居中 */
+}
+
+/* 5. 修正内容区的顶部偏移量，防止内容被加高的页眉遮挡 */
+.md-main__inner {
+  margin-top: 2rem !important; 
+}
+
+/* 如果你使用了标签栏 (Tabs)，也需要同步下移 */
+.md-tabs {
+  top: 3.5rem !important;
+}
 
