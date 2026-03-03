@@ -1,4 +1,4 @@
-# :fontawesome-solid-file-lines: Mkdocs 配置
+# <i class="fa-solid fa-file-lines"></i> Mkdocs 配置
 
 ## 自定义样式示例
 

@@ -1,4 +1,4 @@
-# :fontawesome-solid-computer: 计算机类课程
+# <i class="fa-solid fa-computer"></i> 计算机类课程 / Computer Science
 
 ## 笔记目录
 

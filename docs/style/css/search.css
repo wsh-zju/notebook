@@ -1,0 +1,55 @@
+/* --- 动态流动搜索框核心样式 --- */
+
+.md-search__form {
+    /* 核心：开启背景动画，设置 background-size 为 400% 以支持位移 */
+    background-size: 400% 400% !important;
+    animation: gradientMove 15s ease infinite !important;
+    
+    /* 胶囊感与磨砂细节 */
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px !important; /* 深度胶囊圆角 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* [白天模式] 动态配色：使用你主页的莫兰迪灰渐变 */
+[data-md-color-scheme="default"] .md-search__form {
+    background: linear-gradient(-45deg, #e0eafc, #cfdef3, #eef2f3, #e0eafc);
+}
+
+/* [黑夜模式] 动态配色：使用你主页的深邃蓝紫渐变 */
+[data-md-color-scheme="slate"] .md-search__form {
+    background: linear-gradient(-45deg, #2c3e50, #4ca1af, #2c3e50, #7b4397);
+}
+
+/* --- 增强胶囊悬停交互 --- */
+
+.md-search__form:hover {
+    transform: translateY(-2px) scale(1.02); /* 向上微浮并放大 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5); /* 悬停时边框加亮 */
+}
+
+/* 聚焦状态：当用户开始输入时，动画暂时变快，给人一种“唤醒”感 */
+.md-search__form:focus-within {
+    animation: gradientMove 5s ease infinite !important; /* 唤醒后的快速流动 */
+    transform: scale(1.03);
+    border-color: var(--md-accent-fg-color);
+}
+
+/* --- 文字颜色适配 --- */
+
+[data-md-color-scheme="default"] input.md-search__input {
+    color: #444a4d !important; /* 匹配你白天 Hero 的深灰字 */
+}
+[data-md-color-scheme="default"] .md-search__icon {
+    color: #444a4d !important;
+}
+
+[data-md-color-scheme="slate"] input.md-search__input {
+    color: #ffffff !important;
+}
+[data-md-color-scheme="slate"] .md-search__icon {
+    color: #ffffff !important;
+}

@@ -1,1 +1,1 @@
-# :fontawesome-regular-file-code: C++
+# <i class="fa-regular fa-file-code"></i> C++

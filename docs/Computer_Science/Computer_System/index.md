@@ -3,7 +3,7 @@ counter: True
 comment: False
 ---
 
-# :fontawesome-solid-microchip: 计算机系统
+# <i class="fa-solid fa-microchip"></i> 计算机系统
 
 ## 计算机架构
 

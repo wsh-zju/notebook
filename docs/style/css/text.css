@@ -1,0 +1,28 @@
+/* --- H1 渐变色设置 --- */
+
+/* 白天模式：紫色到深蓝的优雅渐变 */
+[data-md-color-scheme="default"] .md-typeset h1 {
+  background: linear-gradient(45deg, #7b4397, #2a5298);
+  -webkit-background-clip: text; /* 将背景裁剪到文字 */
+  -webkit-text-fill-color: transparent; /* 填色透明化 */
+  display: inline-block; /* 确保渐变范围仅限文字长度 */
+  margin-bottom: 1em;
+}
+
+/* 黑夜模式：更亮丽的霓虹紫到青色渐变，呼应 Hero 效果 */
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  background: linear-gradient(45deg, #bb86fc, #4ca1af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+/* 适配移动端和特殊情况：防止某些浏览器裁剪失效 */
+@supports not (-webkit-background-clip: text) {
+  .md-typeset h1 {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    color: var(--md-typeset-color);
+  }
+}

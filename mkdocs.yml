@@ -8,109 +8,9 @@ edit_uri: tree/main/docs
 copyright: Copyright &copy; 2024 - (｡･ω･｡)ﾉ Lucy Wisteria
 
 
-nav:
-  - Home: 
-    - index.md
-  - Computer Science :
-    - Computer_Science/index.md
-    - 计算机系统 :
-      - Computer_Science/Computer_System/index.md
-      - 数据编码 : Computer_Science/Computer_System/data.md
-      - 数字逻辑基础 : Computer_Science/Computer_System/logic.md
-      - 组合逻辑电路 : Computer_Science/Computer_System/combine.md
-      - 运算单元 : Computer_Science/Computer_System/ALU.md
-      - 时序逻辑电路 : Computer_Science/Computer_System/sequence.md
-      - ISA : Computer_Science/Computer_System/ISA.md
-      - CPU : Computer_Science/Computer_System/CPU.md
-      - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
-      - 流水线CPU : Computer_Science/Computer_System/pipeline.md
-      - 操作系统 : Computer_Science/Computer_System/OS.md
-      - 进程 : Computer_Science/Computer_System/process.md
-      - IPC : Computer_Science/Computer_System/IPCs.md
-      - CPU 调度 : Computer_Science/Computer_System/schedule.md
-      - 线程 : Computer_Science/Computer_System/thread.md
-      - 同步 : Computer_Science/Computer_System/synch.md
-      - 死锁 : Computer_Science/Computer_System/deadlock.md
-    - 数据结构与算法分析 :
-      - Computer_Science/Data_Structure/index.md
-      - FDS :
-        - Computer_Science/Data_Structure/Foundation/index.md
-        - 线性数据结构 : Computer_Science/Data_Structure/Foundation/Linear.md
-        - 树 : Computer_Science/Data_Structure/Foundation/Tree.md
-        - 堆 : Computer_Science/Data_Structure/Foundation/Heap.md
-        - 不相交集ADT : Computer_Science/Data_Structure/Foundation/ADT.md
-        - 图 : Computer_Science/Data_Structure/Foundation/Graph.md
-        - 排序 : Computer_Science/Data_Structure/Foundation/Sort.md
-        - 哈希 : Computer_Science/Data_Structure/Foundation/Hash.md
-        - PTA : Computer_Science/Data_Structure/Foundation/pta.md
-      - ADS :
-        - Computer_Science/Data_Structure/Advanced/index.md 
-        - 树 : Computer_Science/Data_Structure/Advanced/tree.md
-        - 堆 : Computer_Science/Data_Structure/Advanced/heap.md
-        - 队列 : Computer_Science/Data_Structure/Advanced/queue.md
-        - 摊还分析 : Computer_Science/Data_Structure/Advanced/amort.md
-        - 倒排索引 : Computer_Science/Data_Structure/Advanced/inv.md
-        - 回溯算法 : Computer_Science/Data_Structure/Advanced/back.md
-        - 分而治之 : Computer_Science/Data_Structure/Advanced/divide.md
-        - 动态规划 : Computer_Science/Data_Structure/Advanced/DP.md
-        - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
-        - NP完全性 : Computer_Science/Data_Structure/Advanced/NP.md
-        - 近似算法 : Computer_Science/Data_Structure/Advanced/appro.md
-        - 局部搜索 : Computer_Science/Data_Structure/Advanced/localsearch.md
-        - 随机化算法 : Computer_Science/Data_Structure/Advanced/random.md
-        - 并行算法 : Computer_Science/Data_Structure/Advanced/paral.md
-        - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
-        - PTA : Computer_Science/Data_Structure/Advanced/pta.md
-    - 人工智能引论 : Computer_Science/AI.md
-  - Development Tools :
-    - Tools/index.md
-    - C :
-      - Tools/C/index.md
-      - 指针 : Tools/C/pointer.md
-      - 递归与迭代 : Tools/C/recursion.md
-      - 程序结构 : Tools/C/structure.md
-      - 文件底层操作 : Tools/C/file.md
-      - 常用知识汇总 : Tools/C/accumulate.md
-    - C++ :
-      - Tools/C++/index.md
-    - Python :
-      - Tools/Python/index.md
-      - 基础语法 : Tools/Python/foundation.md
-      - 数据类型 : Tools/Python/data.md
-      - 进阶语法 : Tools/Python/advance.md
-      - 常用知识汇总 : Tools/Python/accumulate.md
-    - Verilog :
-      - Tools/Verilog.md
-    - CSS : Tools/Css.md
-    - mkdocs 配置: 
-      - Tools/mkdocs/index.md
-      - 主题 : Tools/mkdocs/theme.md
-    - Latex 语法 : Tools/Latex.md
-    - 终端常用命令 : Tools/terminal.md
-  - Others :
-    - Others/index.md
-    - 数理课程 : 
-      - Others/Math_and_Physics/index.md
-      - 离散数学理论基础 :
-        - Others/Math_and_Physics/Discrete_Mathematics/index.md
-        - 逻辑与证明: Others/Math_and_Physics/Discrete_Mathematics/chapter1.md
-        - 基本结构: Others/Math_and_Physics/Discrete_Mathematics/chapter2.md
-        - 算法: Others/Math_and_Physics/Discrete_Mathematics/chapter3.md
-        - 数论: Others/Math_and_Physics/Discrete_Mathematics/chapter4.md
-        - 归纳与递归: Others/Math_and_Physics/Discrete_Mathematics/chapter5.md
-        - 计数: Others/Math_and_Physics/Discrete_Mathematics/chapter6.md
-        - 高级计数: Others/Math_and_Physics/Discrete_Mathematics/chapter8.md
-        - 关系 : Others/Math_and_Physics/Discrete_Mathematics/chapter9.md
-        - 图: Others/Math_and_Physics/Discrete_Mathematics/chapter10.md
-        - 树: Others/Math_and_Physics/Discrete_Mathematics/chapter11.md
-    - 思政课程 :
-      - 马克思主义基本原理 : Others/sizheng/mayuan.md
-      - 毛泽东思想和中国特色社会主义理论体系概论 : Others/sizheng/maogai.md
-      - 习近平新时代中国特色社会主义思想概论 : Others/sizheng/xigai.md
-
 theme: 
   name: 'material'
-  custom_dir: docs/overrides
+  custom_dir: overrides
   language: 'zh'
   logo: style/images/logo.png
   favicon: style/images/favicon_io/favicon.ico
@@ -176,6 +76,11 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.magiclink
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: ["docs"]  # 告诉插件在 docs 目录找文件
+      check_paths: true    # 找不到文件时会在终端报错
+      auto_append:
+        - terms.md
   - pymdownx.inlinehilite
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -201,6 +106,7 @@ validation:
     not_found: ignore
     absolute_links: ignore
     unrecognized_links: ignore
+
 
 plugins:
     - mermaid2
@@ -228,15 +134,121 @@ extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css
   - https://npm.elemecdn.com/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css     # FontAwesome 
   - style/css/tasklist.css
+  - style/css/home_card.css
   - style/css/custom.css
   - style/css/card.css
   - style/css/flink.css
   - style/css/toc_extra.css
   - style/css/svg_extra.css
   - style/css/counter.css
-  - style/css/home_card.css
+  - style/css/english.css
+  - style/css/riscv.css
+  - style/css/search.css
 
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  
+
+nav:
+  - 首页: 
+    - index.md
+  - 计算机类课程 :
+    - Computer_Science/index.md
+    - 计算机系统 :
+      - Computer_Science/Computer_System/index.md
+      - 数据编码 : Computer_Science/Computer_System/data.md
+      - 数字逻辑基础 : Computer_Science/Computer_System/logic.md
+      - 组合逻辑电路 : Computer_Science/Computer_System/combine.md
+      - 运算单元 : Computer_Science/Computer_System/ALU.md
+      - 时序逻辑电路 : Computer_Science/Computer_System/sequence.md
+      - ISA : Computer_Science/Computer_System/ISA.md
+      - CPU : Computer_Science/Computer_System/CPU.md
+      - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
+      - 流水线CPU : Computer_Science/Computer_System/pipeline.md
+      - 操作系统 : Computer_Science/Computer_System/OS.md
+      - 进程 : Computer_Science/Computer_System/process.md
+      - IPC : Computer_Science/Computer_System/IPCs.md
+      - CPU 调度 : Computer_Science/Computer_System/schedule.md
+      - 线程 : Computer_Science/Computer_System/thread.md
+      - 同步 : Computer_Science/Computer_System/synch.md
+      - 死锁 : Computer_Science/Computer_System/deadlock.md
+    - 数据结构与算法分析 :
+      - Computer_Science/Data_Structure/index.md
+      - FDS :
+        - Computer_Science/Data_Structure/Foundation/index.md
+        - 线性数据结构 : Computer_Science/Data_Structure/Foundation/Linear.md
+        - 树 : Computer_Science/Data_Structure/Foundation/Tree.md
+        - 堆 : Computer_Science/Data_Structure/Foundation/Heap.md
+        - 不相交集ADT : Computer_Science/Data_Structure/Foundation/ADT.md
+        - 图 : Computer_Science/Data_Structure/Foundation/Graph.md
+        - 排序 : Computer_Science/Data_Structure/Foundation/Sort.md
+        - 哈希 : Computer_Science/Data_Structure/Foundation/Hash.md
+        - PTA : Computer_Science/Data_Structure/Foundation/pta.md
+      - ADS :
+        - Computer_Science/Data_Structure/Advanced/index.md 
+        - 树 : Computer_Science/Data_Structure/Advanced/tree.md
+        - 堆 : Computer_Science/Data_Structure/Advanced/heap.md
+        - 队列 : Computer_Science/Data_Structure/Advanced/queue.md
+        - 摊还分析 : Computer_Science/Data_Structure/Advanced/amort.md
+        - 倒排索引 : Computer_Science/Data_Structure/Advanced/inv.md
+        - 回溯算法 : Computer_Science/Data_Structure/Advanced/back.md
+        - 分而治之 : Computer_Science/Data_Structure/Advanced/divide.md
+        - 动态规划 : Computer_Science/Data_Structure/Advanced/DP.md
+        - 贪心算法 : Computer_Science/Data_Structure/Advanced/greedy.md
+        - NP完全性 : Computer_Science/Data_Structure/Advanced/NP.md
+        - 近似算法 : Computer_Science/Data_Structure/Advanced/appro.md
+        - 局部搜索 : Computer_Science/Data_Structure/Advanced/localsearch.md
+        - 随机化算法 : Computer_Science/Data_Structure/Advanced/random.md
+        - 并行算法 : Computer_Science/Data_Structure/Advanced/paral.md
+        - 外部排序 : Computer_Science/Data_Structure/Advanced/exter.md
+        - PTA : Computer_Science/Data_Structure/Advanced/pta.md
+    - 人工智能引论 : Computer_Science/AI.md
+    - 数据库系统 : Computer_Science/Database_System/index.md
+  - 开发工具 :
+    - Tools/index.md
+    - C :
+      - Tools/C/index.md
+      - 指针 : Tools/C/pointer.md
+      - 递归与迭代 : Tools/C/recursion.md
+      - 程序结构 : Tools/C/structure.md
+      - 文件底层操作 : Tools/C/file.md
+      - 常用知识汇总 : Tools/C/accumulate.md
+    - C++ :
+      - Tools/C++/index.md
+    - Python :
+      - Tools/Python/index.md
+      - 基础语法 : Tools/Python/foundation.md
+      - 数据类型 : Tools/Python/data.md
+      - 进阶语法 : Tools/Python/advance.md
+      - 常用知识汇总 : Tools/Python/accumulate.md
+    - Verilog :
+      - Tools/Verilog.md
+    - CSS : Tools/Css.md
+    - mkdocs 配置: 
+      - Tools/mkdocs/index.md
+      - 主题 : Tools/mkdocs/theme.md
+    - Latex 语法 : Tools/Latex.md
+    - 终端常用命令 : Tools/terminal.md
+  - 其余课程 :
+    - Others/index.md
+    - 数理课程 : 
+      - Others/Math_and_Physics/index.md
+      - 离散数学理论基础 :
+        - Others/Math_and_Physics/Discrete_Mathematics/index.md
+        - 逻辑与证明: Others/Math_and_Physics/Discrete_Mathematics/chapter1.md
+        - 基本结构: Others/Math_and_Physics/Discrete_Mathematics/chapter2.md
+        - 算法: Others/Math_and_Physics/Discrete_Mathematics/chapter3.md
+        - 数论: Others/Math_and_Physics/Discrete_Mathematics/chapter4.md
+        - 归纳与递归: Others/Math_and_Physics/Discrete_Mathematics/chapter5.md
+        - 计数: Others/Math_and_Physics/Discrete_Mathematics/chapter6.md
+        - 高级计数: Others/Math_and_Physics/Discrete_Mathematics/chapter8.md
+        - 关系 : Others/Math_and_Physics/Discrete_Mathematics/chapter9.md
+        - 图: Others/Math_and_Physics/Discrete_Mathematics/chapter10.md
+        - 树: Others/Math_and_Physics/Discrete_Mathematics/chapter11.md
+    - 思政课程 :
+      - 马克思主义基本原理 : Others/sizheng/mayuan.md
+      - 毛泽东思想和中国特色社会主义理论体系概论 : Others/sizheng/maogai.md
+      - 习近平新时代中国特色社会主义思想概论 : Others/sizheng/xigai.md

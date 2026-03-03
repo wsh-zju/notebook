@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    {% if page.url == "" or page.url == "index.html" %}
+        <style>
+        /* 隐藏内容区的重复标题 */
+        .md-content__inner h1:not(.hero-header h1) { display: none !important; }
+        .md-content__inner {
+            padding-top: 0 !important;
+        } 
+        </style>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {# 首页的大标题部分：使用 page.url == "" 来精准判断首页 #}
+    {% if page.url == "" or page.url == "index.html" %}
+        <div class="hero-header">
+            <div class="hero-title-group">
+                <h1>ヾ(＠^∇^＠)ノ</h1>
+                <p>Welcome to Lucy Wisteria's Notebook!</p>
+            </div>
+            {% include "home_static.html" %}
+        </div>
+    {% endif %}
+    
+    {{ super() }} {# 这里是原有的正文内容 #}
+
+    {% if page.meta and page.meta.comment %}
+        <script src="https://giscus.app/client.js"
+                data-repo="TonyCrane/note"
+                data-repo-id="R_kgDOGnfbUQ"
+                data-category="General"
+                data-category-id="DIC_kwDOGnfbUc4CPrf4"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
+    {% endif %}
+
+{% endblock %}
+
+{# 将脚本移动到专门的 scripts 区块，更稳定 #}
+{% block scripts %}
+    {{ super() }}
+    <script>
+    function applyAbbrLogic() {
+        // 找到页面中所有的缩写标签
+        const abbrs = document.querySelectorAll(".md-typeset abbr");
+        
+        abbrs.forEach(abbr => {
+        // 1. 让标签可获得焦点（点击触发气泡的关键）
+        if (!abbr.hasAttribute("tabindex")) {
+            abbr.setAttribute("tabindex", "0");
+        }
+
+        // 2. 智能分类逻辑：
+        // 获取术语本身的文本内容（例如 "chufa" 或 "DBMS"）
+        const termText = abbr.textContent.trim();
+
+        // 使用正则表达式判断：如果是纯英文、数字、中划线、点或拼音（不含中文）
+        // 则自动加上紫色系的类名 .term-en
+        if (/^[a-zA-Z0-9\s\-\.\(\)]+$/.test(termText)) {
+            abbr.classList.add("term-en");
+        }
+        });
+    }
+
+    // 确保在页面加载和 Material 模式切换时都运行
+    document.addEventListener("DOMContentLoaded", applyAbbrLogic);
+    
+    // 针对 Material 主题的即时加载(Instant Loading)补丁
+    if (typeof document.onDOMContentLoaded === "undefined") {
+        const observer = new MutationObserver(applyAbbrLogic);
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+    </script>
+{% endblock %}

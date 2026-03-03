@@ -3,7 +3,7 @@ counter: True
 comment: False
 ---
 
-# :fontawesome-solid-sitemap: 数据结构基础
+# <i class="fa-solid fa-sitemap"></i> 数据结构基础
 
 !!! tip "Tips"
     本部分内容基本完结（已考完**(｡･ω･｡)ﾉ**，虽然感觉很难……）

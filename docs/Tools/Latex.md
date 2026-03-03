@@ -1,4 +1,4 @@
-# :fontawesome-brands-tex: LaTeX 语法
+# <i class="fa-brands fa-tex"></i> LaTeX 语法
 
 ## 希腊字母
 

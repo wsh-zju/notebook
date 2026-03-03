@@ -1,4 +1,4 @@
-# :fontawesome-solid-terminal: 终端常用命令
+# <i class="fa-solid fa-terminal"></i> 终端常用命令
 
 ## 硬件
 

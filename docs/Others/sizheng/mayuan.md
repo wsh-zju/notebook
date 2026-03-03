@@ -1,4 +1,4 @@
-# :fontawesome-solid-brain: 马克思主义基本原理
+# <i class="fa-solid fa-brain"></i> 马克思主义基本原理
 
 !!! tip "Tips"
     整理比较重要的知识点，适合考前抱佛脚嘻嘻

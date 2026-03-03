@@ -3,7 +3,7 @@ counter: True
 comment: False
 ---
 
-# :fontawesome-solid-chart-line: 高级数据结构与算法分析
+# <i class="fa-solid fa-chart-line"></i> 高级数据结构与算法分析
 
 !!! tip "Tips"
     总的来说，知识点多又难懂www（但是考完了hhh😁

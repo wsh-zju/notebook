@@ -68,6 +68,7 @@
     text-align: left !important; /* 强制覆盖 */
     z-index: 10;
 }
+
 .hero-header p {
     font-size: 1.2rem;
     margin-top: 1rem !important;
@@ -261,3 +262,4 @@
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+

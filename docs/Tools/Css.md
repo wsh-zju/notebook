@@ -1,4 +1,4 @@
-# :fontawesome-brands-css3-alt: CSS 语法
+# <i class="fa-brands fa-css3-alt"></i> CSS 语法
 
 1. **构成：**
 

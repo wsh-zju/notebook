@@ -1,7 +1,7 @@
-# :fontawesome-solid-calculator: 数理基础课
+# <i class="fa-solid fa-calculator"></i> 数理基础课
 
-## :fontawesome-solid-book: 课程笔记
-### :fontawesome-solid-square-root-variable: 数学分析
+## <i class="fa-solid fa-book"></i> 课程笔记
+### <i class="fa-solid fa-square-root-variable"></i> 数学分析
  
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
@@ -31,7 +31,7 @@
 <a class="down-button" target="_blank" href="files/数学分析2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
 
-### :fontawesome-solid-th: 线性代数  
+### <i class="fa-solid fa-table-cells"></i> 线性代数  
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
@@ -64,7 +64,7 @@
 !!! tip "Tips"
     线性代数 II (H)的笔记基本都在课本上，此处笔记之提供扩展部分和总结部分。
     
-### :fontawesome-solid-atom: 普通物理学  
+### <i class="fa-solid fa-atom"></i> 普通物理学  
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
@@ -109,7 +109,7 @@
     <a class="down-button" target="_blank" href="https://www.notion.so/physics-28f5d7183437807d8c47e315184924da?v=28f5d7183437817f9361000c97c184a1&source=copy_link" markdown="1">:fontawesome-solid-link: Link</a>
     </div>
 
-### :fontawesome-solid-chart-pie: 概率论和数理统计
+### <i class="fa-solid fa-chart-pie"></i> 概率论和数理统计
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
