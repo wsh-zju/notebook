@@ -203,15 +203,26 @@ validation:
     unrecognized_links: ignore
 
 plugins:
-  - mermaid2
-  - search
-  #- heti:
-      #extra_skipped_class:
-        #- arithmatex
-  - macros
+    - mermaid2
+    - search
+    #- heti:
+        #extra_skipped_class:
+          #- arithmatex
+    - macros
+    - git-revision-date-localized:
+        enable_git_follow: true
+        enable_creation_date: true  # 开启创建时间
+        type: datetime              # 显示格式（包含具体时间）
+        timezone: Asia/Shanghai     # 设置为中国时区
+        locale: zh
+        exclude:
+            - 'index.md'  # 首页不显示修改时间
+            - '**/index.md'  # 各目录的index.md不显示修改时间
+            - '**/**/index.md'  # 多层目录的index.md不显示修改时间
 
 hooks:
   - hooks/toc.py
+  - hooks/static.py
 
 extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css

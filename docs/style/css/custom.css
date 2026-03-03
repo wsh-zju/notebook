@@ -45,7 +45,6 @@
   font-size: inherit;
 }
 
-
 /* 浅色主题 */
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #efefef;  /* 顶栏前景色 */

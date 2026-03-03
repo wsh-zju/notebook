@@ -4,6 +4,7 @@ comment: false
 hide:
   - navigation
   - toc
+  - footer
 ---
 
 <div class="home-container">
