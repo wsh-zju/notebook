@@ -25,7 +25,10 @@
     font-size: 137.5%;
   }
 }
-
+.md-header {
+  /* 1. 增加高度：原高度通常在 2.4rem 左右，拉大到 3.5rem 或更高 */
+  height: 2.6rem !important; 
+}
 /* markdown 字体大小 */
 .md-typeset h1, .md-typeset h2, .md-typeset h3 {
   font-weight: 600;     /* 粗细 */
@@ -180,10 +183,6 @@ input#mkdocs-content-password {
     overflow: hidden;
 }
 /* --- 调整页眉上边距与高度 --- */
-.md-header {
-  /* 1. 增加高度：原高度通常在 2.4rem 左右，拉大到 3.5rem 或更高 */
-  height: 2.6rem !important; 
-}
   
 /* --- 1. 白天模式：浅灰色半透明 --- */
 [data-md-color-scheme="default"] .md-header {
@@ -221,4 +220,3 @@ input#mkdocs-content-password {
 .md-tabs {
   top: 3.5rem !important;
 }
-
