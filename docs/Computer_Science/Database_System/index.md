@@ -26,6 +26,3 @@
 - History of Database Systems 
 - Summary 
 
-存储过程
-chufa
-
