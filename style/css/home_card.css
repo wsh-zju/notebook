@@ -68,6 +68,34 @@
     text-align: left !important; /* 强制覆盖 */
     z-index: 10;
 }
+/* --- H1 渐变色设置 --- */
+
+/* 白天模式 */
+[data-md-color-scheme="default"] .md-typeset h1 {
+  background: linear-gradient(45deg, #4ca1af, #7b4397);
+  -webkit-background-clip: text; /* 将背景裁剪到文字 */
+  -webkit-text-fill-color: transparent; /* 填色透明化 */
+  display: table; /* 确保渐变范围仅限文字长度 */
+}
+
+/* 黑夜模式 */
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  background: linear-gradient(45deg, #cfdef3, #e0eafc);
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  display: table;
+}
+
+/* 适配移动端和特殊情况：防止某些浏览器裁剪失效 */
+@supports not (-webkit-background-clip: text) {
+  .md-typeset h1 {
+    -webkit-text-fill-color: currentColor;
+    background: none;
+    color: var(--md-typeset-color);
+  }
+}
+
+
 
 .hero-header p {
     font-size: 1.2rem;

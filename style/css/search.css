@@ -11,6 +11,7 @@
     border-radius: 50px !important; /* 深度胶囊圆角 */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
 }
 
 /* [白天模式] 动态配色：使用你主页的莫兰迪灰渐变 */
