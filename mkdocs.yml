@@ -207,6 +207,7 @@ nav:
         - PTA : Computer_Science/Data_Structure/Advanced/pta.md
     - 人工智能引论 : Computer_Science/AI.md
     - 数据库系统 : Computer_Science/Database_System/index.md
+        - 基本介绍 : Computer_Science/Database_System/introduce.md
   - 开发工具 :
     - Tools/index.md
     - C :

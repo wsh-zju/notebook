@@ -4,9 +4,8 @@
 *[可扩展性]: scalability
 *[并发访问]: Concurrent access
 *[健壮性]: robustness 
-*[文件处理系统]: File-Processing System
 *[冗余]: redundancy
-*[]: 
+*[模式]: Schemas
 *[]: 
 *[]: 
 *[]: 
