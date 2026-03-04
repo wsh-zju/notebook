@@ -1,2 +1,15 @@
-*[存储过程]: Stored Procedure
-*[chufa]: 触发器
+*[数据库管理系统]: Database Management System
+*[相互关联的]: interrelated
+*[集成且持久]: integrated and persistent
+*[可扩展性]: scalability
+*[并发访问]: Concurrent access
+*[健壮性]: robustness 
+*[文件处理系统]: File-Processing System
+*[冗余]: redundancy
+*[]: 
+*[]: 
+*[]: 
+*[]: 
+*[]: 
+*[]: 
+*[]: 

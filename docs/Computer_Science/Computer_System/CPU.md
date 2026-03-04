@@ -126,11 +126,11 @@ $$Performance=\frac{1}{Execution Time(执行时间)}$$
 
 $$CPU Time= Clock Cycles \times Clock Period = \frac{Clock Cycles}{Clock Rate}$$
 
-    - X is $n$ time faster than Y.
+- X is $n$ time faster than Y.
 
-        $$
-        \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
-        $$
+    $$
+    \frac{Performance_X}{Performance_Y}=\frac{Execution Time_Y}{Execution Time_X}=n
+    $$
 
 
 3. **性能提高的方式**
