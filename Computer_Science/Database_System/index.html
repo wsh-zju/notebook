@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../style/images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
@@ -2125,7 +2125,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数据库系统概述
+        相关概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目标
       
     </span>
   </a>
@@ -3701,7 +3712,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        数据库系统概述
+        相关概念
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目标
       
     </span>
   </a>
@@ -3738,7 +3760,77 @@
 
 
 <h1 id="_1"><i class="fa-solid fa-table"></i> 数据库系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 class="title-en" data-en="Database" id="_2">数据库系统概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">相关概念<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<!-- {: .title-en data-en="Database" } -->
+
+<ol>
+<li><strong>数据库</strong>：</li>
+</ol>
+<ul>
+<li>一个与企业相关的<strong>相互关联</strong>的数据集合</li>
+<li>一个大的集成且持久的<strong>数据集合</strong> (DB)</li>
+<li>一个长期存在（通常许多年）的信息集合</li>
+<li>长期存储在计算机内、有组织的、可共享的数据集合</li>
+</ul>
+<ol start="2">
+<li><strong><abbr title="Database Management System">数据库管理系统</abbr></strong>（DBMS）</li>
+</ol>
+<ul>
+<li>是一种<strong>软件系统</strong>，用于存储、管理并支持对数据库的访问数据库管理系统</li>
+<li><strong>组成：数据库 + 一组用于访问、更新和管理数据库中数据的程序</strong></li>
+<li><strong>特点</strong><ul>
+<li>数据访问的高效性和可扩展性</li>
+<li>减少应用开发时间</li>
+<li>数据独立性 (包括物理数据独立性和逻辑数据独立性)</li>
+<li>数据完整性和安全性</li>
+<li>并发访问和健壮性 (可恢复性)</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title"><strong>数据库访问方法</strong></p>
+<ul>
+<li>使用 DBMS 提供的交互式工具（e.g. SQL Server 的查询分析器，ORACLE 的 Sql*Plus 和工作表等）访问数据库</li>
+<li>通过使用开发工具（e.g. VC++、PB、Delphi、ASP、JSP、PHP 等）调用 ODBC/JDBC 来访问数据库</li>
+</ul>
+</div>
+<details class="warning">
+<summary><strong><abbr title="File-Processing System">文件处理系统</abbr></strong></summary>
+<ol>
+<li>
+<p><strong>特点</strong>：</p>
+<ul>
+<li>由传统的<strong>操作系统</strong>支持</li>
+<li>必要时必须编写新的应用程序，并根据需要创建新的数据文件</li>
+<li>随着时间的推移，数据文件可能采用<strong>不同格式</strong></li>
+<li>数据文件<strong>彼此独立</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>数据<strong>冗余和不一致</strong>：多种文件格式，信息在不同文件中重复</li>
+<li><strong>访问困难</strong>：需要编写新程序来执行每个新任务</li>
+<li>数据孤立（多个文件和多种格式），难以检索，难以共享</li>
+<li>完整性问题：难以添加新约束或更改现有约束</li>
+<li>无更新原子性</li>
+<li>多用户<strong>并发</strong>访问困难，不受控的并发访问可能导致不一致</li>
+<li>安全问题</li>
+</ul>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>数据库系统为上述所有问题提供了解决方案！</p>
+</div>
+</details>
+<h2 id="_3">目标<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li><strong>Data processing and management</strong> are the most important fields of computer applications.</li>
+</ol>
+</div>
 <ul>
 <li>Purpose of Database Systems <ul>
 <li>Database Applications </li>
@@ -3771,6 +3863,13 @@
 <li>History of Database Systems </li>
 <li>Summary </li>
 </ul>
+<p><em>[]: 
+</em>[]: 
+<em>[]: 
+</em>[]: 
+<em>[]: 
+</em>[]: 
+*[]: </p>
 
 
 
