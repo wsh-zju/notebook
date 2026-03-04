@@ -6,9 +6,3 @@
 *[健壮性]: robustness 
 *[冗余]: redundancy
 *[模式]: Schemas
-*[]: 
-*[]: 
-*[]: 
-*[]: 
-*[]: 
-*[]: 
