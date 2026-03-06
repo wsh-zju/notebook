@@ -17,7 +17,7 @@ comment: False
 2. 计算机系统 II/III ：操作系统+计算机架构
 
 ## 主要实验内容
-
+![alt text](photo/0-3.png)
 
 ## 笔记目录
 

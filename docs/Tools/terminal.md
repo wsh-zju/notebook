@@ -231,3 +231,28 @@ deactivate
 cd /Users/lucy/Downloads/project
 zip -r project2.zip project2  -x "*.DS_Store" "_MACOSX"
 ```
+
+## 项目的构建与运行
+
+1. **进入项目目录** `cd "Lab1_Student I"`
+2. **创建 `build` 目录** `mkdir build`
+3. **进入 `build`** `cd build`
+4. **运行 `cmake`** `cmake ..` （这一步会生成 `Makefile`）
+5. **编译** `make` （生成可运行程序）
+
+
+## 数据库服务器（MySQL）
+
+```bash
+sudo /usr/local/mysql/support-files/mysql.server start #启动
+/usr/local/mysql/bin/mysql -u root -p #进入数据库
+sudo /usr/local/mysql/support-files/mysql.server stop #停止
+```
+```bash
+sudo mysqld_safe --skip-grant-tables & #跳过密码启动
+/usr/local/mysql/bin/mysql -u root  #进入数据库
+FLUSH PRIVILEGES; #刷新权限
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'lucy';  #修改密码
+exit; #退出
+sudo killall mysqld #结束进程
+```
