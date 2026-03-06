@@ -2050,9 +2050,32 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Database_System/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Database_System/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2066,7 +2089,59 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Database_System/introduce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本介绍
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3637,6 +3712,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        伟大的架构思想
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3682,20 +3768,65 @@
 <div class="arithmatex">\[
 T_{improved} = \frac{T_{affected}}{improvement factor} + T_{unaffected}
 \]</div>
+<ul>
+<li>
+<p>阿姆达尔定律指出，使用某种更快执行模式所能获得的性能提升受限于<strong>该更快模式可被使用的时间比例</strong></p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>乘法操作占 80s/100s，乘法性能需要提升多少才能达到整体5倍加速？</p>
+<div class="arithmatex">\[
+20  = \frac{80}{n} + 20
+\]</div>
+<p><strong>不可能做到！</strong></p>
+</div>
+</li>
+<li>
 <p><strong>整体与局部加速比</strong></p>
 <div class="arithmatex">\[
 Speedup_{overall} = \frac{1}{(1-Fraction_{enhanced})+\frac{Fraction_{enhanced}}{Speedup_{enhanced}}}
 \]</div>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<ol>
+<li><strong>可改进比例</strong>(Fraction_enhanced)</li>
+</ol>
 <ul>
-<li><strong>重要推论</strong></li>
+<li>总是小于或等于1</li>
+<li><strong>e.g.</strong> 整个程序执行时间60s，其中20s的计算可以改进，则可改进比例为20/60</li>
 </ul>
-<p><em>[]: 
-</em>[]: 
-<em>[]: 
-</em>[]: 
-<em>[]: 
-</em>[]: 
-*[]: </p>
+<ol start="2">
+<li><strong>加速比</strong>(Speedup_enhanced)</li>
+</ol>
+<ul>
+<li>总是大于1</li>
+<li><strong>e.g.</strong> 改进前执行时间5s，改进后2s，则加速比为5/2</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>重要推论</strong></p>
+<div class="arithmatex">\[
+Speedup_{overall} &lt; \frac{1}{(1-Fraction_{enhanced})}
+\]</div>
+</li>
+</ul>
+<h2 id="_2">伟大的架构思想<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>为摩尔定律设计</li>
+<li>用抽象简化设计：隐藏底层细节，在更高层次提供更简单的模型</li>
+<li>加速常见情况：<strong>最经济有效的改进方法</strong></li>
+<li>通过并行提升性能</li>
+<li>通过流水线提升性能：常用于提高指令吞吐量</li>
+<li>通过预测提升性能</li>
+<li>使用存储层次结构：</li>
+</ol>
+<ul>
+<li>将最快、最小、每比特最贵的存储器作为第一级访问，最慢、最大、每比特最便宜的存储器作为最后一级访问</li>
+<li>使大多数访问能在第一级命中，同时在最后一级保留大部分信息</li>
+</ul>
+<ol start="8">
+<li>通过冗余提升可靠性</li>
+</ol>
 
 
 
@@ -3718,7 +3849,7 @@ Speedup_{overall} = \frac{1}{(1-Fraction_{enhanced})+\frac{Fraction_{enhanced}}{
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月4日 20:44:25 CST">2026年3月4日 20:44:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月6日 13:27:00 CST">2026年3月6日 13:27:00</span>
   </span>
 
     

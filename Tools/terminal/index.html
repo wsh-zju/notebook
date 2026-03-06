@@ -2056,9 +2056,32 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Computer_Science/Database_System/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -2072,7 +2095,59 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    数据库系统
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_Science/Database_System/introduce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基本介绍
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3081,6 +3156,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目的构建与运行
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据库服务器（MySQL）
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3908,6 +4005,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        项目的构建与运行
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mysql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数据库服务器（MySQL）
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4211,13 +4330,33 @@
 <span class="normal"><a href="#__codelineno-20-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nb">cd</span><span class="w"> </span>/Users/lucy/Downloads/project
 <a id="__codelineno-20-2" name="__codelineno-20-2"></a>zip<span class="w"> </span>-r<span class="w"> </span>project2.zip<span class="w"> </span>project2<span class="w">  </span>-x<span class="w"> </span><span class="s2">&quot;*.DS_Store&quot;</span><span class="w"> </span><span class="s2">&quot;_MACOSX&quot;</span>
 </code></pre></div></td></tr></table></div>
-<p><em>[]: 
-</em>[]: 
-<em>[]: 
-</em>[]: 
-<em>[]: 
-</em>[]: 
-*[]: </p>
+<h2 id="_8">项目的构建与运行<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>进入项目目录</strong> <code>cd "Lab1_Student I"</code></li>
+<li><strong>创建 <code>build</code> 目录</strong> <code>mkdir build</code></li>
+<li><strong>进入 <code>build</code></strong> <code>cd build</code></li>
+<li><strong>运行 <code>cmake</code></strong> <code>cmake ..</code> （这一步会生成 <code>Makefile</code>）</li>
+<li><strong>编译</strong> <code>make</code> （生成可运行程序）</li>
+</ol>
+<h2 id="mysql">数据库服务器（MySQL）<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>sudo<span class="w"> </span>/usr/local/mysql/support-files/mysql.server<span class="w"> </span>start<span class="w"> </span><span class="c1">#启动</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>/usr/local/mysql/bin/mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p<span class="w"> </span><span class="c1">#进入数据库</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3"></a>sudo<span class="w"> </span>/usr/local/mysql/support-files/mysql.server<span class="w"> </span>stop<span class="w"> </span><span class="c1">#停止</span>
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>sudo<span class="w"> </span>mysqld_safe<span class="w"> </span>--skip-grant-tables<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1">#跳过密码启动</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a>/usr/local/mysql/bin/mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w">  </span><span class="c1">#进入数据库</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a>FLUSH<span class="w"> </span>PRIVILEGES<span class="p">;</span><span class="w"> </span><span class="c1">#刷新权限</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4"></a>ALTER<span class="w"> </span>USER<span class="w"> </span><span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="w"> </span>IDENTIFIED<span class="w"> </span>BY<span class="w"> </span><span class="s1">&#39;lucy&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">#修改密码</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5"></a>exit<span class="p">;</span><span class="w"> </span><span class="c1">#退出</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6"></a>sudo<span class="w"> </span>killall<span class="w"> </span>mysqld<span class="w"> </span><span class="c1">#结束进程</span>
+</code></pre></div></td></tr></table></div></p>
 
 
 
@@ -4240,7 +4379,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月3日 20:11:56 CST">2026年3月3日 20:11:56</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月6日 13:27:00 CST">2026年3月6日 13:27:00</span>
   </span>
 
     
