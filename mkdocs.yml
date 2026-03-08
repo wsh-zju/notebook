@@ -146,6 +146,7 @@ extra_css:
   - style/css/english.css
   - style/css/riscv.css
   - style/css/search.css
+  - style/css/weixin.css
 
 
 extra_javascript:
@@ -155,6 +156,7 @@ extra_javascript:
 nav:
   - 首页: 
     - index.md
+    - 公众号 : weixin.md
   - 计算机类课程 :
     - Computer_Science/index.md
     - 计算机系统 :
