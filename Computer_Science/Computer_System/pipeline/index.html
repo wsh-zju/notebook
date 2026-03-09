@@ -1061,6 +1061,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="数据冲突">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#war" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WAR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4243,6 +4282,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="数据冲突">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#war" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WAR
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#waw" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WAW
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -4643,9 +4721,11 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <p><strong>定义</strong>：指令间存在数据依赖关系，需要等待上一条指令完成数据的读写</p>
 <p><strong>e.g.</strong> <code>add x1, x2, x3</code> 指令需要等待 <code>x2</code> 寄存器写入完成，才能开始执行 </p>
 </li>
-<li>
-<p><strong>解决方法</strong>：</p>
-</li>
+</ol>
+<h4 id="raw">RAW<a class="headerlink" href="#raw" title="Permanent link">&para;</a></h4>
+<ol>
+<li>数据依赖</li>
+<li><strong>解决方法</strong>：</li>
 </ol>
 <ul>
 <li><code>stall</code><strong>暂停</strong>一些指令，直至上一条指令完成数据读写</li>
@@ -4752,6 +4832,8 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <li><code>stall</code>之后，可能又会产生数据冲突</li>
 </ol>
 </div>
+<h4 id="war">WAR<a class="headerlink" href="#war" title="Permanent link">&para;</a></h4>
+<h4 id="waw">WAW<a class="headerlink" href="#waw" title="Permanent link">&para;</a></h4>
 <h3 id="_10">控制冲突<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -4777,7 +4859,7 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <p><strong>Delay slot</strong>：</p>
 <ul>
 <li>在分支指令后设置一个位置，其中的指令<strong>总是会被执行，无论分支是否跳转</strong>，从而减少停顿</li>
-<li>编译器找到一条有用的、与分支指令不相关的指令，并将其移动到延迟槽中；找不到则填入nop</li>
+<li>编译器找到一条<strong>有用的、与分支指令不相关</strong>的指令，并将其移动到延迟槽中；找不到则填入nop</li>
 </ul>
 <div class="admonition error">
 <p class="admonition-title">注意！</p>
@@ -4798,7 +4880,7 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <ul>
 <li><strong>分支历史表</strong>（BHT）：<ul>
 <li>按分支指令地址<strong>（PC）</strong>索引</li>
-<li>存储当前指令上之前一次或多次的跳转结果，作为预测时的依据</li>
+<li>存储<strong>当前指令</strong>上之前一次或多次的跳转结果，作为预测时的依据</li>
 </ul>
 </li>
 <li>
@@ -4836,7 +4918,7 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
 <li><strong>跳转指令的数据冲突</strong></li>
 </ol>
 <ul>
-<li>若分支依赖的寄存器是之前指令的结果，则仍存在数据冲突，需要停顿+数据前递</li>
+<li>若分支依赖的寄存器是之前指令的结果，则仍存在数据冲突，需要<strong>停顿+数据前递</strong></li>
 <li><strong>情况</strong><ul>
 <li>比较寄存器需要紧接着前一条 <code>ALU</code> 指令的结果：停顿1周期</li>
 <li>比较寄存器是紧接着前一条 <code>LOAD</code> 指令的结果：停顿2周期</li>
@@ -5224,7 +5306,7 @@ Sp &amp;= \frac{非流水线执行时间}{流水线执行时间} \\
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月1日 17:03:13 CST">2026年3月1日 17:03:13</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月9日 19:56:37 CST">2026年3月9日 19:56:37</span>
   </span>
 
     
