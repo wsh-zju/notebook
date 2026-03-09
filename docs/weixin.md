@@ -66,3 +66,17 @@ counter: false
     </a>
 </div>
 
+<div class="article-card">
+    <a href="https://mp.weixin.qq.com/s/4J5fessgcLF5KsRIkU9o7w" class="card-link">
+        <div class="card-image">
+            <img src="../photo/image-1.png" alt="cover">
+        </div>
+        <div class="card-content">
+            <p>【macOS 终端】解锁 Oh My Zsh 插件与 Alias，打造 macOS 终端顶级生产力</p>
+            <div class="card-footer">
+                <span class="card-tag">macOS 终端效率提升篇</span>
+                <span class="card-time"><i class="fa-regular fa-clock"></i> 2026-03-09 12:05</span>
+            </div>
+        </div>
+    </a>
+</div>
