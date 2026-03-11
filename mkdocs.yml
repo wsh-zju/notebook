@@ -151,6 +151,7 @@ extra_css:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - style/js/mathjax.js
   
 
 nav:
@@ -177,7 +178,7 @@ nav:
       - 线程 : Computer_Science/Computer_System/thread.md
       - 同步 : Computer_Science/Computer_System/synch.md
       - 死锁 : Computer_Science/Computer_System/deadlock.md
-      
+      - 量化研究方法 : Computer_Science/Computer_System/quant.md
     - 数据结构与算法分析 :
       - Computer_Science/Data_Structure/index.md
       - FDS :
@@ -212,6 +213,7 @@ nav:
     - 数据库系统 : 
       - Computer_Science/Database_System/index.md
       - 基本介绍 : Computer_Science/Database_System/introduce.md
+      - 关系模型 : Computer_Science/Database_System/relationmodel.md
   - 开发工具 :
     - Tools/index.md
     - C :
@@ -223,6 +225,7 @@ nav:
       - 常用知识汇总 : Tools/C/accumulate.md
     - C++ :
       - Tools/C++/index.md
+      - 对象 : Tools/C++/object.md
     - Python :
       - Tools/Python/index.md
       - 基础语法 : Tools/Python/foundation.md
