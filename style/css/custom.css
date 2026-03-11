@@ -46,7 +46,19 @@
 /* 行内 code 字号继承正文 */
 .md-typeset code:not(pre code) {
   font-size: inherit;
+  border-radius: 4px;
+  overflow: hidden;
 }
+
+/* 代码块字体 */
+.md-typeset .highlighttable{
+  border-radius: 16px;
+  overflow: hidden;
+}
+.md-typeset pre {
+  overflow: hidden;
+}
+
 
 /* 浅色主题 */
 [data-md-color-scheme="default"] {
@@ -60,8 +72,8 @@
   --md-footer-bg-color--dark: #efefef;
   --md-footer-fg-color--light: #000000;
   --md-footer-fg-color--lighter: #000000;
-  --md-code-bg-color: #fafafa;     /* 代码块背景色 */
-  --md-code-fg-color: var(--md-typeset-color);  /* 代码块字体色与正文一致 */
+  --md-code-bg-color: #f4f6fa;     /* 代码块背景色 */
+  --md-code-fg-color: #2c3e50;  /* 代码块字体色与正文一致 */
 }
 
 /* 深色主题 */
@@ -85,7 +97,8 @@
   --md-footer-fg-color--light: #fff;
   --md-footer-fg-color--lighter: #fff;
   /* 代码块 */
-  --md-code-bg-color: #1d1d1d;
+  --md-code-bg-color: #121921;
+  --md-code-fg-color: #e0eafc;
 }
 
 /* 深色模式下内容区按钮颜色 */
