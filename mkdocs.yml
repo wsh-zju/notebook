@@ -179,6 +179,7 @@ nav:
       - 同步 : Computer_Science/Computer_System/synch.md
       - 死锁 : Computer_Science/Computer_System/deadlock.md
       - 量化研究方法 : Computer_Science/Computer_System/quant.md
+      - 指令级并行 : Computer_Science/Computer_System/ILP.md
     - 数据结构与算法分析 :
       - Computer_Science/Data_Structure/index.md
       - FDS :
@@ -226,6 +227,8 @@ nav:
     - C++ :
       - Tools/C++/index.md
       - 对象 : Tools/C++/object.md
+      - 容器 : Tools/C++/container.md
+      - 类 : Tools/C++/class.md
     - Python :
       - Tools/Python/index.md
       - 基础语法 : Tools/Python/foundation.md

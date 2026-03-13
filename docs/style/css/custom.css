@@ -72,8 +72,8 @@
   --md-footer-bg-color--dark: #efefef;
   --md-footer-fg-color--light: #000000;
   --md-footer-fg-color--lighter: #000000;
-  --md-code-bg-color: #f4f6fa;     /* 代码块背景色 */
-  --md-code-fg-color: #2c3e50;  /* 代码块字体色与正文一致 */
+  --md-code-bg-color: #f2f5fc;     /* 代码块背景色 */
+  --md-code-fg-color: #2c3e50;
 }
 
 /* 深色主题 */
@@ -97,7 +97,7 @@
   --md-footer-fg-color--light: #fff;
   --md-footer-fg-color--lighter: #fff;
   /* 代码块 */
-  --md-code-bg-color: #121921;
+  --md-code-bg-color: #1c2733;
   --md-code-fg-color: #e0eafc;
 }
 
@@ -232,4 +232,14 @@ input#mkdocs-content-password {
 /* 如果你使用了标签栏 (Tabs)，也需要同步下移 */
 .md-tabs {
   top: 3.5rem !important;
+}
+
+/* 非代码块和非 riscv 表格 */
+.md-typeset table:not(.highlighttable):not(.riscv-table) {
+  display: block;        /* 1. 变成块级元素，使 overflow 生效 */
+  overflow-x: auto;      /* 2. 宽度超出时显示滚动条 */
+  white-space: nowrap;   /* 3. 强制文字不换行，由内容决定列宽 */
+  width: fit-content;    /* 4. 使表格宽度刚好包裹内容 */
+  max-width: 100%;       /* 5. 限制最大宽度不超过屏幕 */
+  border-radius: 16px;   /* 6. 圆角 */
 }
