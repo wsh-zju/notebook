@@ -615,6 +615,8 @@
       
         
       
+        
+      
     
     
     
@@ -1130,6 +1132,34 @@
     
   
     量化研究方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Computer_System/ILP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指令级并行
   
 
     
@@ -2685,6 +2715,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2752,6 +2786,62 @@
     
   
     对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/C%2B%2B/container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/C%2B%2B/class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
   
 
     
@@ -4049,15 +4139,19 @@
 <li><strong>形式化表达</strong></li>
 </ol>
 <ul>
-<li>假设 <span class="arithmatex">\(A_1, A_2, …, A_n\)</span> 是属性</li>
+<li>假设 <span class="arithmatex">\(A_1, A_2, …, A_n\)</span> 是属性（列）</li>
 <li>
 <p><span class="arithmatex">\(R = (A_1, A_2, …, A_n)\)</span> 是一个关系模式 </p>
-<p><strong>e.g.</strong> <code>instructor = (ID, name, dept_name, salary)</code>
-- <span class="arithmatex">\(r(R)\)</span> 是在关系模式 R 上的一个关系 </p>
-<p><strong>e.g.</strong> <code>instructor(instructor-schema)= instructor(ID, name, dept_name, salary)</code>
-- r 的一个元素 t 是一个元组，由表中的一行表示
-- <code>t[name]</code> 表示 t 在 name 属性上的值</p>
+<p><strong>e.g.</strong> <code>instructor = (ID, name, dept_name, salary)</code></p>
 </li>
+<li>
+<p><span class="arithmatex">\(r(R)\)</span> 是在关系模式 R 上的一个关系 </p>
+<p><strong>e.g.</strong> <code>instructor(instructor-schema)= instructor(ID, name, dept_name, salary)</code></p>
+</li>
+<li>
+<p>r 的一个元素 t 是一个元组，由表中的<strong>一行</strong>表示</p>
+</li>
+<li><code>t[name]</code> 表示 t 在 name 属性上的值</li>
 </ul>
 <ol start="3">
 <li><strong>关系的性质</strong></li>
@@ -4079,7 +4173,7 @@
 </ul>
 </li>
 <li><strong>外码</strong>：<ul>
-<li>假设存在关系 r 和 s 满足 r(A, B, C)，s(B, D)，则关系 r 中的属性 B 是引用 s 的外键</li>
+<li>假设存在关系 r 和 s 满足 r(A, B, C)，s(B, D)，则<strong>关系 r 中的属性 B 是引用 s 的外键</strong></li>
 <li>r 是参照关系，s 是被参照关系</li>
 <li><strong>参照关系中外码的值必须在被参照关系中实际存在，或为 null</strong></li>
 </ul>
@@ -4097,29 +4191,45 @@
 <ol start="2">
 <li><strong>选择</strong> <span class="arithmatex">\(\sigma_p(r)\)</span>：提取满足条件的行（其中 <span class="arithmatex">\(p\)</span> 称为选择谓词）</li>
 </ol>
+<details class="example">
+<summary>Example</summary>
 <p><img alt="alt text" src="../photo/2-1.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</details>
 <ol start="3">
 <li><strong>投影</strong> <span class="arithmatex">\(\Pi_{A_1, A_2, \ldots, A_k}(r)\)</span>：提取满足条件的列（去除重复行）</li>
 </ol>
-<p><img alt="alt text" src="../photo/2-2.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-2.png" style="width:45%;display: block;margin: 20px auto" /></p>
+</details>
 <ol start="4">
 <li><strong>并</strong>：合并两个关系，去除重复行</li>
 </ol>
-<p><img alt="alt text" src="../photo/2-3.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</details>
 <ol start="5">
 <li><strong>差</strong>：从第一个关系中删除第二个关系中存在的行</li>
 </ol>
-<p><img alt="alt text" src="../photo/2-4.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-4.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</details>
 <ol start="6">
 <li><strong>笛卡儿积</strong>：生成所有可能的组合</li>
 </ol>
-<p><img alt="alt text" src="../photo/2-5.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-5.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</details>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>当不同表中属性名字相同时，则需要使用<strong>表名.属性名</strong>来区分</p>
+<p><img alt="alt text" src="../photo/2-11.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
 <ol start="7">
-<li><strong>改名</strong>：给关系中的属性重新命名 <span class="arithmatex">\(\rho_{X}(E)\)</span></li>
+<li><strong>改名</strong>：给关系（<span class="arithmatex">\(X\)</span>）和属性（<span class="arithmatex">\(A_1, ..., A_n\)</span>）重新命名 <span class="arithmatex">\(\rho_{X(A_1, ..., A_n)}(E)\)</span></li>
 </ol>
 <div class="admonition abstract">
 <p class="admonition-title">Exercise</p>
@@ -4134,26 +4244,29 @@
 <p><strong>交</strong>：两个关系中都存在的行</p>
 </li>
 </ol>
-<p><img alt="alt text" src="../photo/2-6.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-6.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</details>
 <ol start="3">
 <li><strong>自然连接</strong> <span class="arithmatex">\(r \bowtie s\)</span></li>
 </ol>
-<div class="arithmatex">\[
-r \bowtie s = \Pi_{r.A, r.B, r.C, r.D, s.E}(\sigma_{r.B = s.B \land r.D = s.D}(r \times s))
-\]</div>
 <ul>
-<li>r, s必须含有共同属性(名和域都对应相同)</li>
+<li>r, s必须含有<strong>共同属性</strong>(名和域都对应相同)</li>
 <li>连接二个关系中<strong>同名属性值相等</strong>的元组</li>
 <li>结果属性是二者属性集的并集, 但<strong>消去重名属性</strong> </li>
 </ul>
-<p><img alt="alt text" src="../photo/2-8.png" style="width:40%;display: block;margin: 20px auto" /></p>
-<ol start="4">
-<li><strong>除</strong>：从关系中删除满足条件的行</li>
-</ol>
-<p><img alt="alt text" src="../photo/2-9.png" style="width:40%;display: block;margin: 20px auto" /></p>
 <details class="example">
 <summary>Example</summary>
-<p><img alt="alt text" src="../photo/2-10.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/2-12.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="4">
+<li><strong>除</strong>：从关系中提取满足条件的行</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-9.png" style="width:60%;display: block;margin: 20px auto" />
+<img alt="alt text" src="../photo/2-10.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
 <ol start="5">
 <li><strong>赋值</strong>：给关系中的属性赋值 <span class="arithmatex">\(\leftarrow\)</span></li>
@@ -4161,9 +4274,9 @@ r \bowtie s = \Pi_{r.A, r.B, r.C, r.D, s.E}(\sigma_{r.B = s.B \land r.D = s.D}(r
 <div class="admonition success">
 <p class="admonition-title">Summary</p>
 <ol>
-<li>并、集合差、集合交 —— 为双目、等元运算</li>
-<li>笛卡儿积、自然连接、除 —— 为双目运算</li>
-<li>投影、选择 —— 为单运算对象（即单目运算）</li>
+<li>并、集合差、集合交为双目、等元运算</li>
+<li>笛卡儿积、自然连接、除为双目运算</li>
+<li>投影、选择为单运算对象（即单目运算）</li>
 </ol>
 <p><strong>操作的优先级：</strong>投影 &gt; 选择 &gt; 笛卡儿积（乘） &gt; 连接、除 &gt; 交 &gt; 并、差</p>
 </div>
@@ -4194,7 +4307,7 @@ r \bowtie s = \Pi_{r.A, r.B, r.C, r.D, s.E}(\sigma_{r.B = s.B \land r.D = s.D}(r
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月11日 18:55:07 CST">2026年3月11日 18:55:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月13日 16:31:53 CST">2026年3月13日 16:31:53</span>
   </span>
 
     
@@ -4228,7 +4341,7 @@ r \bowtie s = \Pi_{r.A, r.B, r.C, r.D, s.E}(\sigma_{r.B = s.B \land r.D = s.D}(r
                 data-reactions-enabled="1"
                 data-emit-metadata="0"
                 data-input-position="bottom"
-                data-theme="light"
+                data-theme="preferred_color_scheme"
                 data-lang="zh-CN"
                 crossorigin="anonymous"
                 async>
@@ -4364,6 +4477,35 @@ r \bowtie s = \Pi_{r.A, r.B, r.C, r.D, s.E}(\sigma_{r.B = s.B \land r.D = s.D}(r
         const observer = new MutationObserver(applyAbbrLogic);
         observer.observe(document.body, { childList: true, subtree: true });
     }
+
+    // 封装发送主题消息的函数
+    function updateGiscusTheme() {
+        const theme = document.body.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'light';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            iframe.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: theme } } },
+                'https://giscus.app'
+            );
+        }
+    }
+
+    // 监听 Material 主题切换
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-md-color-scheme') {
+                updateGiscusTheme();
+            }
+        });
+    });
+
+    observer.observe(document.body, { attributes: true });
+
+    // 页面加载完成后触发一次初始设置
+    document.addEventListener("DOMContentLoaded", () => {
+        // 延迟一小会儿，确保 iframe 已经加载完毕
+        setTimeout(updateGiscusTheme, 1000);
+    });
     </script>
 
   </body>

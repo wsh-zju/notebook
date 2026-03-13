@@ -615,6 +615,8 @@
       
         
       
+        
+      
     
     
     
@@ -1130,6 +1132,34 @@
     
   
     量化研究方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer_System/ILP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指令级并行
   
 
     
@@ -2595,6 +2625,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2662,6 +2696,62 @@
     
   
     对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/C%2B%2B/container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Tools/C%2B%2B/class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
   
 
     
@@ -4133,7 +4223,7 @@
                 data-reactions-enabled="1"
                 data-emit-metadata="0"
                 data-input-position="bottom"
-                data-theme="light"
+                data-theme="preferred_color_scheme"
                 data-lang="zh-CN"
                 crossorigin="anonymous"
                 async>
@@ -4269,6 +4359,35 @@
         const observer = new MutationObserver(applyAbbrLogic);
         observer.observe(document.body, { childList: true, subtree: true });
     }
+
+    // 封装发送主题消息的函数
+    function updateGiscusTheme() {
+        const theme = document.body.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'light';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            iframe.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: theme } } },
+                'https://giscus.app'
+            );
+        }
+    }
+
+    // 监听 Material 主题切换
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-md-color-scheme') {
+                updateGiscusTheme();
+            }
+        });
+    });
+
+    observer.observe(document.body, { attributes: true });
+
+    // 页面加载完成后触发一次初始设置
+    document.addEventListener("DOMContentLoaded", () => {
+        // 延迟一小会儿，确保 iframe 已经加载完毕
+        setTimeout(updateGiscusTheme, 1000);
+    });
     </script>
 
   </body>

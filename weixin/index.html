@@ -625,6 +625,8 @@
       
         
       
+        
+      
     
     
     
@@ -1140,6 +1142,34 @@
     
   
     量化研究方法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Computer_Science/Computer_System/ILP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指令级并行
   
 
     
@@ -2591,6 +2621,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2658,6 +2692,62 @@
     
   
     对象
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/C%2B%2B/container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    容器
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tools/C%2B%2B/class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    类
   
 
     
@@ -3954,6 +4044,21 @@
     </a>
 </div>
 
+<div class="article-card">
+    <a href="https://mp.weixin.qq.com/s/trHQzfHrVmo4lV0ioSst9w" class="card-link">
+        <div class="card-image">
+            <img src="../photo/image-4.png" alt="cover">
+        </div>
+        <div class="card-content">
+            <p>【六级词汇】六级高频词汇速记（A）</p>
+            <div class="card-footer">
+                <span class="card-tag">六级词汇</span>
+                <span class="card-time"><i class="fa-regular fa-clock"></i> 2026-03-12 10:00</span>
+            </div>
+        </div>
+    </a>
+</div>
+
 
 
 
@@ -3975,7 +4080,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月9日 19:56:37 CST">2026年3月9日 19:56:37</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月13日 16:31:53 CST">2026年3月13日 16:31:53</span>
   </span>
 
     
@@ -4130,6 +4235,35 @@
         const observer = new MutationObserver(applyAbbrLogic);
         observer.observe(document.body, { childList: true, subtree: true });
     }
+
+    // 封装发送主题消息的函数
+    function updateGiscusTheme() {
+        const theme = document.body.getAttribute('data-md-color-scheme') === 'slate' ? 'dark' : 'light';
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            iframe.contentWindow.postMessage(
+                { giscus: { setConfig: { theme: theme } } },
+                'https://giscus.app'
+            );
+        }
+    }
+
+    // 监听 Material 主题切换
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-md-color-scheme') {
+                updateGiscusTheme();
+            }
+        });
+    });
+
+    observer.observe(document.body, { attributes: true });
+
+    // 页面加载完成后触发一次初始设置
+    document.addEventListener("DOMContentLoaded", () => {
+        // 延迟一小会儿，确保 iframe 已经加载完毕
+        setTimeout(updateGiscusTheme, 1000);
+    });
     </script>
 
   </body>
