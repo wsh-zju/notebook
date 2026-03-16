@@ -1247,6 +1247,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tomasulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tomasulo 算法
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4058,6 +4069,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tomasulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tomasulo 算法
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4215,7 +4237,7 @@
 <div class="admonition warning">
 <p class="admonition-title">缺点</p>
 <ol>
-<li>Scoreboard 算法可以检测出来冲突，但没有解决冲突，还是通过阻塞的方式来解决冲突</li>
+<li>Scoreboard 算法可以检测出来冲突，<strong>但没有解决冲突</strong>，还是通过阻塞的方式来解决冲突</li>
 <li>scoreboard 上面的信息比较繁杂，效率不高</li>
 </ol>
 </div>
@@ -4286,7 +4308,7 @@
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">21</td>
 <td style="text-align: left;">61</td>
-<td style="text-align: left;">62</td>
+<td style="text-align: left;"><strong>62</strong></td>
 <td style="text-align: left;">等待 <code>FMUL</code> 写回 <code>F0</code></td>
 </tr>
 <tr>
@@ -4300,6 +4322,219 @@
 </tbody>
 </table>
 </details>
+</div>
+<h3 id="tomasulo">Tomasulo 算法<a class="headerlink" href="#tomasulo" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>寄存器重命名</strong></li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nf">FDIV.D</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span><span class="p">,</span><span class="w"> </span><span class="no">F4</span><span class="w">                           </span><span class="no">FDIV.D</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span><span class="p">,</span><span class="w"> </span><span class="no">F4</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nf">FADD.D</span><span class="w"> </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F8</span><span class="w">                           </span><span class="no">FADD.D</span><span class="w"> </span><span class="no">S</span><span class="p">,</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F8</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="nf">FSD</span><span class="w">    </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="w">        </span><span class="cm">/* 重命名 -&gt; */</span><span class="w">      </span><span class="no">FSD</span><span class="w">    </span><span class="no">S</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">(</span><span class="no">R1</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nf">FSUB.D</span><span class="w"> </span><span class="no">F8</span><span class="p">,</span><span class="w"> </span><span class="no">F10</span><span class="p">,</span><span class="w"> </span><span class="no">F14</span><span class="w">                         </span><span class="no">FSUB.D</span><span class="w"> </span><span class="no">T</span><span class="p">,</span><span class="w"> </span><span class="no">F10</span><span class="p">,</span><span class="w"> </span><span class="no">F14</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="nf">FMUL.D</span><span class="w"> </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="no">F10</span><span class="p">,</span><span class="w"> </span><span class="no">F8</span><span class="w">                          </span><span class="no">FMUL.D</span><span class="w"> </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="no">F10</span><span class="p">,</span><span class="w"> </span><span class="no">T</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>寄存器 <code>F8</code> 存在 WAR 冒险</li>
+<li>寄存器 <code>F6</code> 存在 WAW 冒险</li>
+<li>这些名称相关性可以通过<strong>寄存器重命名技术</strong>消除（本身的数据传递关系不能改变）</li>
+</ul>
+</div>
+<ol start="2">
+<li><strong>硬件结构</strong></li>
+</ol>
+<p><img alt="alt text" src="../photo/17-9.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong>保留站</strong>：<ul>
+<li>完成<strong>重命名</strong>：如果已经有正确的操作数值，直接填入保留站</li>
+<li><strong>乱序执行：</strong>指令操作数 ready 的指令先执行</li>
+</ul>
+</li>
+<li><strong>CDB</strong>：将计算结果分布式的发往所有需要该结果的部件</li>
+</ul>
+<ol start="3">
+<li><strong>Tomasulo 算法的主要思想</strong></li>
+</ol>
+<ul>
+<li>能够追踪指令操作数的就绪状态，以<strong>最大限度减少 RAW 冲突</strong></li>
+<li>通过硬件实现寄存器重命名技术，<strong>有效降低 WAW 和 WAR 冲突</strong></li>
+</ul>
+<ol start="4">
+<li><strong>Tomasulo 算法的三个阶段</strong></li>
+</ol>
+<ul>
+<li><strong>Issue <code>IS</code></strong>：从 FIFO（先进先出队列）的头部获取下一条指令<ul>
+<li>如果对应的保留站有空位，就将指令和对应的操作数<strong>当前在寄存器中的值</strong>放入保留站</li>
+<li>如果保留站<strong>没有空位</strong>，则指令阻塞等待</li>
+<li>如果操作数当前不在寄存器中，则需要追踪<strong>将会产生这些操作数的功能单元</strong></li>
+</ul>
+</li>
+<li><strong>Execute <code>EX</code></strong><ul>
+<li>如果保留站里指令的操作数都 <strong>ready</strong>， 该指令就可以执行<strong>（可能会乱序）</strong></li>
+<li><strong><code>Load/Store</code> 指令需要两步执行过程</strong><ul>
+<li>基址寄存器就绪时，<strong>计算有效地址</strong></li>
+<li>将计算出的有效地址放入加载缓冲区或存储缓冲区</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Write results <code>WB</code></strong>：通过 CDB 将执行结果写入<strong>寄存器以及任何正在等待该结果的保留站</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Store Buffer</p>
+<p>存储指令的结果会缓存在存储缓冲区中，直到<strong>待存储的数据值和存储地址</strong>都准备就绪；一旦存储单元空闲，就立即将结果写入内存。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/17-11.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p>对于上述两条指令，Tomasulo 算法的执行过程如下：</p>
+<details class="success">
+<summary>Answer</summary>
+<p><img alt="alt text" src="../photo/17-12.png" /></p>
+</details>
+</div>
+<ol start="5">
+<li><strong>Tomasulo 算法的三个表格</strong></li>
+</ol>
+<ul>
+<li><strong>指令状态表</strong></li>
+<li><strong>保留站状态表</strong><ul>
+<li><strong><code>Op</code></strong>：执行的操作</li>
+<li><strong><code>Qj &amp; Qk</code></strong>：产生相应源操作数的<strong>保留站编号</strong></li>
+<li><strong><code>Vj &amp; Vk</code></strong>：源操作数的<strong>数值</strong>（当操作数已就绪时）</li>
+<li><strong><code>Busy</code></strong>：是否被占用</li>
+<li><strong><code>A</code></strong>：加载或存储指令的内存地址计算信息</li>
+</ul>
+</li>
+<li><strong>寄存器状态表</strong>：记录哪个保留站产生的运算结果应当存入该寄存器</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nf">FLD</span><span class="w">     </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">(</span><span class="no">R2</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nf">FLD</span><span class="w">     </span><span class="no">F2</span><span class="p">,</span><span class="w"> </span><span class="mi">45</span><span class="p">(</span><span class="no">R3</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nf">FMUL.D</span><span class="w">  </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span><span class="p">,</span><span class="w"> </span><span class="no">F4</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="nf">FSUB.D</span><span class="w">  </span><span class="no">F8</span><span class="p">,</span><span class="w"> </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nf">FDIV.D</span><span class="w">  </span><span class="no">F10</span><span class="p">,</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F6</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="nf">FADD.D</span><span class="w">  </span><span class="no">F6</span><span class="p">,</span><span class="w"> </span><span class="no">F8</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span>
+</code></pre></div></td></tr></table></div>
+<details class="abstract">
+<summary>状态表</summary>
+<ul>
+<li>
+<p><strong>指令状态表</strong></p>
+<p><img alt="alt text" src="../photo/17-10.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>保留站状态表 &amp; 寄存器状态表</strong></p>
+<p><img alt="alt text" src="../photo/17-13.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+</details>
+<div class="admonition question">
+<p class="admonition-title">Exercise</p>
+<p><strong>假设：</strong></p>
+<ul>
+<li>加法、乘法、除法分别需要 2 个时钟周期、10 个时钟周期、40 个时钟周期</li>
+<li>加载指令计算目标地址需要 1 个时钟周期，访问内存需要 1 个时钟周期</li>
+</ul>
+<p><strong>使用 Tomasulo 算法，所有指令完成需要多少个时钟周期？</strong></p>
+<details class="success">
+<summary>Answer</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指令</th>
+<th style="text-align: left;">IS</th>
+<th style="text-align: left;">EX</th>
+<th style="text-align: left;">WB</th>
+<th style="text-align: left;">Explanations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>FLD F6, 34(R2)</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2-3</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">指令进入流水线是<strong>顺序的</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FLD F2, 45(R3)</code></td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3-4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">计算有效地址和执行不是一个部件？</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FMUL.D F0, F2, F4</code></td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6-15</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">等待 <code>FLD</code> 写回 <code>F2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FSUB.D F8, F6, F2</code></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">6-7</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">等待 <code>FLD</code> 写回 <code>F2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FDIV.D F10, F0, F6</code></td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">17-56</td>
+<td style="text-align: left;"><strong>57</strong></td>
+<td style="text-align: left;">等待 <code>FMUL</code> 写回 <code>F0</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FADD.D F6, F8, F2</code></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">9-10</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">等待 <code>FSUB</code> 执行完毕，<strong><code>adder</code> 空闲</strong>时进入 <code>EX</code> 阶段；</br>不需要等待 <code>FDIV</code> 读取 <code>F6</code> 之后写回，因为 <code>F6</code> 操作数已经<strong>被重命名进入保留站</strong></td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Summary</p>
+<ol>
+<li><strong>主要贡献</strong></li>
+</ol>
+<ul>
+<li>动态调度</li>
+<li>寄存器重命名：消除 WAW 和 WAR 冒险</li>
+<li>加载/存储歧义消除</li>
+<li>优于记分牌算法</li>
+</ul>
+<ol start="2">
+<li><strong>缺点</strong></li>
+</ol>
+<ul>
+<li>结构复杂</li>
+<li><strong>性能被 CDB 总线限制</strong></li>
+<li>乱序执行的<strong>安全性问题</strong>：加载和存储指令在访问不同地址时可以安全地乱序执行；但如果访问相同地址，则存在<strong>以下风险</strong>：<ul>
+<li>若程序中加载在前、存储在后，交换顺序会导致 WAR 冒险</li>
+<li>若程序中存储在前、加载在后，交换顺序会导致 RAW 冒险</li>
+<li>若两条存储指令访问相同地址，交换顺序会导致 WAW 冒险</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>ILP 算法的限制直接推动了多核处理器的兴起</li>
+</ol>
 </div>
 
 
@@ -4323,7 +4558,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月13日 16:31:53 CST">2026年3月13日 16:31:53</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月16日 15:13:04 CST">2026年3月16日 15:13:04</span>
   </span>
 
     
@@ -4346,6 +4581,24 @@
 
 
                  
+
+    
+        <script src="https://giscus.app/client.js"
+                data-repo="wsh-zju/notebook"
+                data-repo-id="R_kgDOOJR4ig"
+                data-category="General"
+                data-category-id="DIC_kwDOOJR4is4C1eU1"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
+    
 
 
               </article>
