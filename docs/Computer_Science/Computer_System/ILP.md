@@ -127,6 +127,85 @@ FADD.D  F6, F8, F2
         |`FDIV.D F10, F0, F6`|8|21|61|62|等待 `FMUL` 写回 `F0` |
         |`FADD.D F6, F8, F2`|13|14|16|22|等待 `FSUB` 执行完毕，**`ADD` 部件空闲**时才能进入 `IS` 阶段；</br>等待 `FDIV` 读取 `F6` 之后才能写回|
 
+### Tomasulo 算法
 
+1. **寄存器重命名**
 
+!!! example "例子"
+
+2. **硬件结构**
+
+![alt text](photo/17-9.png){style="width:60%;display: block;margin: 20px auto"}
+
+- buffer:？保留站 
+    - 完成重命名
+    - 乱序执行：指令操作数 ready 的指令先执行
+- CDB：
+    - 将计算结果分布式的发往需要该结果的部件
+
+3. **Tomasulo 算法的**
+4. **Tomasulo 算法的三个阶段**
+
+- issue IS
+- execute EX
+- write results WB
+
+!!! example "Example"
+     
+
+5. **Tomasulo 算法的三个表格**
+
+- **指令状态表**
+- **保留站状态表**
+    - Op: The operation to perform on source operands.
+    - Qj, Qk: The reservation stations that will produce the corresponding source operand.
+    - Vj, Vk: The value of the source operands.
+    - Busy: Indicates that this reservation station and its accompanying functional unit are occupied.
+    - A: Used to hold information for the memory address calculation for a load or store.
+- **寄存器状态表**
+
+!!! example "Example"
+    ```asm
+    FLD     F6, 34(R2)
+    FLD     F2, 45(R3)
+    FMUL.D  F0, F2, F4
+    FSUB.D  F8, F6, F2
+    FDIV.D  F10, F0, F6
+    FADD.D  F6, F8, F2
+    ```
+
+    - 保留站如果有空位，就可以进入 IS 阶段
+    - 操作数 ready 的指令先进入 EX 阶段
+    - **指令状态表**
+
+        ![alt text](photo/17-10.png){style="width:80%;display: block;margin: 20px auto"}
+
+    - **保留站状态表**
+
+    !!! question "Exercise"
+        **假设：**
         
+        - 加法、乘法、除法分别需要 2 个时钟周期、10 个时钟周期、40 个时钟周期
+        - 加载指令计算目标地址需要 1 个时钟周期，访问内存需要 1 个时钟周期
+
+        **使用 Tomasulo 算法，所有指令完成需要多少个时钟周期？**
+
+        ??? success "Answer"
+            |指令|IS|EX|WB|Explanations|
+            |:--|:--|:--|:--|:--|
+            |`FLD F6, 34(R2)`    |1|2-3  |4 |指令进入流水线是**顺序的**|
+            |`FLD F2, 45(R3)`    |2|3-4  |5 |等待前一条 `FLD` 指令执行完，**整数部件空闲**时才能进入 `IS` 阶段|
+            |`FMUL.D F0, F2, F4` |3|6-15 |16|等待 `FLD` 写回 `F2` |
+            |`FSUB.D F8, F6, F2` |4|6-7  |8 |等待 `FLD` 写回 `F2` |
+            |`FDIV.D F10, F0, F6`|5|17-56|57|等待 `FMUL` 写回 `F0` |
+            |`FADD.D F6, F8, F2` |6|9-10 |11|等待 `FSUB` 执行完毕，**`adder` 空闲**时进入 `EX` 阶段；</br>不需要等待 `FDIV` 读取 `F6` 之后写回，因为 `F6` 操作数已经**被重命名进入保留站**|
+
+
+!!! abstract "Summary"
+    1. 贡献
+    2. 缺点
+
+    - 结构复杂
+    - 性能被 CDB 总线限制
+
+    1. ILP 算法的限制直接导致了多核处理器的发展
