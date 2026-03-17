@@ -215,6 +215,7 @@ nav:
       - Computer_Science/Database_System/index.md
       - 基本介绍 : Computer_Science/Database_System/introduce.md
       - 关系模型 : Computer_Science/Database_System/relationmodel.md
+      - SQL 语言 : Computer_Science/Database_System/sql.md
   - 开发工具 :
     - Tools/index.md
     - C :

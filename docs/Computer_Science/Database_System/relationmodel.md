@@ -104,7 +104,7 @@ comment: True
 
 
 - r, s必须含有**共同属性**(名和域都对应相同)
-- 连接二个关系中**同名属性值相等**的元组
+- 连接二个关系中**同名属性值相等**的元组（其余行删去）
 - 结果属性是二者属性集的并集, 但**消去重名属性** 
 
 ??? example "Example"
@@ -127,6 +127,37 @@ comment: True
 
 ## 扩展关系代数运算
 
-1. **广义投影**
+1. **广义投影**：在投影中使用**算术函数** $\Pi_{F_1, F_2, \dots, F_k}(r)$
 
-## Modification of the Database 
+!!! example "Example"
+    给定关系 `credit-info(customer_name, limit, credit_balance)`，**找出每个人还能花多少钱**：
+    
+    $\Pi_{customer_name, limit – credit_balance}(credit-info)$
+
+2. **聚合函数** 
+
+- **聚合操作**：$_{G_1, G_2, \ldots, G_n}g_{F_1(A_1), F_2(A_2), \dots, F_n(A_n)}(E)$
+- 其中 $F_i$ 是聚合函数，包含 `avg`、`min`、`max`、`sum`、`count`
+
+??? example "Example"
+    ![alt text](photo/2-13.png){style="width:60%;display: block;margin: 20px auto"}
+
+    聚合结果没有名称，可以使用重命名操作给它一个名称
+
+
+## 数据库的修改
+
+1. **删除** $r \leftarrow r - E$ 
+
+??? example "Example"
+    ![alt text](photo/2-14.png){style="width:70%;display: block;margin: 20px auto"}
+
+2. **插入** $r \leftarrow E \cup r$ 
+
+??? example "Example"
+    ![alt text](photo/2-15.png){style="width:70%;display: block;margin: 20px auto"}
+
+3. **更新** $r \leftarrow \Pi_{F_1, F_2, \dots, F_k}(r)$ 
+
+??? example "Example"
+    ![alt text](photo/2-16.png){style="width:70%;display: block;margin: 20px auto"}

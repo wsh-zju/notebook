@@ -18,6 +18,8 @@ comment: false
     - C[note]: C/
     - C++[note]: C++/
     - Python[note]: Python/
+- 数据库语言:
+    - SQL[note]: ../Computer_Science/Database_System/sql/
 - Web开发语言:
     - CSS[note]: Css/
 - 硬件描述语言:
