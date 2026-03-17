@@ -18,7 +18,7 @@
         <link rel="prev" href="../introduce/">
       
       
-        <link rel="next" href="../../../Tools/">
+        <link rel="next" href="../sql/">
       
       
         
@@ -2171,6 +2171,8 @@
       
         
       
+        
+      
     
     
     
@@ -2362,10 +2364,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modification-of-the-database" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modification of the Database
+        数据库的修改
       
     </span>
   </a>
@@ -2376,6 +2378,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL 语言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4085,10 +4115,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#modification-of-the-database" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Modification of the Database
+        数据库的修改
       
     </span>
   </a>
@@ -4253,7 +4283,7 @@
 </ol>
 <ul>
 <li>r, s必须含有<strong>共同属性</strong>(名和域都对应相同)</li>
-<li>连接二个关系中<strong>同名属性值相等</strong>的元组</li>
+<li>连接二个关系中<strong>同名属性值相等</strong>的元组（其余行删去）</li>
 <li>结果属性是二者属性集的并集, 但<strong>消去重名属性</strong> </li>
 </ul>
 <details class="example">
@@ -4282,9 +4312,47 @@
 </div>
 <h2 id="_5">扩展关系代数运算<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>广义投影</strong></li>
+<li><strong>广义投影</strong>：在投影中使用<strong>算术函数</strong> <span class="arithmatex">\(\Pi_{F_1, F_2, \dots, F_k}(r)\)</span></li>
 </ol>
-<h2 id="modification-of-the-database">Modification of the Database<a class="headerlink" href="#modification-of-the-database" title="Permanent link">&para;</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>给定关系 <code>credit-info(customer_name, limit, credit_balance)</code>，<strong>找出每个人还能花多少钱</strong>：</p>
+<p><span class="arithmatex">\(\Pi_{customer_name, limit – credit_balance}(credit-info)\)</span></p>
+</div>
+<ol start="2">
+<li><strong>聚合函数</strong> </li>
+</ol>
+<ul>
+<li><strong>聚合操作</strong>：<span class="arithmatex">\(_{G_1, G_2, \ldots, G_n}g_{F_1(A_1), F_2(A_2), \dots, F_n(A_n)}(E)\)</span></li>
+<li>其中 <span class="arithmatex">\(F_i\)</span> 是聚合函数，包含 <code>avg</code>、<code>min</code>、<code>max</code>、<code>sum</code>、<code>count</code></li>
+</ul>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-13.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p>聚合结果没有名称，可以使用重命名操作给它一个名称</p>
+</details>
+<h2 id="_6">数据库的修改<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>删除</strong> <span class="arithmatex">\(r \leftarrow r - E\)</span> </li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-14.png" style="width:70%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="2">
+<li><strong>插入</strong> <span class="arithmatex">\(r \leftarrow E \cup r\)</span> </li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-15.png" style="width:70%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="3">
+<li><strong>更新</strong> <span class="arithmatex">\(r \leftarrow \Pi_{F_1, F_2, \dots, F_k}(r)\)</span> </li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/2-16.png" style="width:70%;display: block;margin: 20px auto" /></p>
+</details>
 
 
 
@@ -4307,7 +4375,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月15日 18:45:57 CST">2026年3月15日 18:45:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月17日 18:36:28 CST">2026年3月17日 18:36:28</span>
   </span>
 
     
@@ -4389,13 +4457,13 @@
         
         
           
-          <a href="../../../Tools/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开发工具 / Development Tools">
+          <a href="../sql/" class="md-footer__link md-footer__link--next" aria-label="下一页: SQL 语言">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                开发工具 / Development Tools
+                SQL 语言
               </div>
             </div>
             <div class="md-footer__button md-icon">
