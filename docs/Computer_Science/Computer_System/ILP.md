@@ -249,3 +249,14 @@ FADD.D  F6, F8, F2
         - 若两条存储指令访问相同地址，交换顺序会导致 WAW 冒险
 
     3. ILP 算法的限制直接推动了多核处理器的兴起
+
+---
+## 
+
+![alt text](photo/17-14.png){style="width:80%;display: block;margin: 20px auto"}
+
+1. **硬件结构**：加入 ROB（重排序缓冲区）
+
+![alt text](photo/17-15.png){style="width:80%;display: block;margin: 20px auto"}
+
+2. **执行阶段**
