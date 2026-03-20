@@ -40,6 +40,10 @@ comment: False
     - 线程[note]: thread/
     - 同步[note]: synch/
     - 死锁[note]: deadlock/
+- 计算机系统 III:
+    - 量化研究方法[note]: quant/
+    - 指令级并行[note]: ILP/
+    - 内存层次结构[note]: memory_hierarchy/
 {{ END_TOC }}
 
 

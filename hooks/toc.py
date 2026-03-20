@@ -97,7 +97,7 @@ def _get_toc_items(toc: dict, base: str) -> list:
             if "🔒" in t:
                 detail["lock"] = True
             details.append(detail)
-        details.sort(key=lambda x: x["update_time"], reverse=True)
+        # details.sort(key=lambda x: x["update_time"], reverse=True)
         item["contents"] = details
         ret.append(item)
     return ret
