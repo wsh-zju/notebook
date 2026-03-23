@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1267,10 +1267,88 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        基于硬件的推测执行
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多指令发射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多指令发射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多发射处理器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态多发射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态多发射
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键技术
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4130,10 +4208,88 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        
+        基于硬件的推测执行
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多指令发射
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多指令发射">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多发射处理器
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        分类
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分类">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        静态多发射
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态多发射
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关键技术
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4567,7 +4723,7 @@
 </ol>
 <ul>
 <li>动态调度</li>
-<li>寄存器重命名：消除 WAW 和 WAR 冒险</li>
+<li><strong>寄存器重命名：消除 WAW 和 WAR 冒险</strong></li>
 <li>加载/存储歧义消除</li>
 <li>优于记分牌算法</li>
 </ul>
@@ -4589,15 +4745,354 @@
 </ol>
 </div>
 <hr />
-<h2 id="_4"><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><img alt="alt text" src="../photo/17-14.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<h2 id="_4">基于硬件的推测执行<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">改进</p>
+<p>为了让指令执行完成的顺序也是顺序的，我们添加了一个 <strong>reorder buffer</strong>：结果先写到 ROB，再按照指令流出的顺序 <strong>commit</strong>，写回寄存器</p>
+<p><img alt="alt text" src="../photo/17-14.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
 <ol>
 <li><strong>硬件结构</strong>：加入 ROB（重排序缓冲区）</li>
 </ol>
 <p><img alt="alt text" src="../photo/17-15.png" style="width:80%;display: block;margin: 20px auto" /></p>
 <ol start="2">
-<li><strong>执行阶段</strong></li>
+<li><strong>执行阶段</strong>：<code>IS</code>、<code>EX</code>、<code>WB</code>、<code>Commit</code></li>
 </ol>
+<ul>
+<li><strong><code>WB</code></strong>：<ul>
+<li>指令执行完成后结果<strong>写回 ROB</strong></li>
+<li>ROB 中还没提交的指令结果可以作为<strong>后续指令的操作数</strong></li>
+</ul>
+</li>
+<li><strong><code>Commit</code></strong>：按照指令进入的顺序更新寄存器</li>
+</ul>
+<ol start="3">
+<li><strong>三个关键思想</strong></li>
+</ol>
+<ul>
+<li>动态分支预测</li>
+<li><strong>推测执行</strong>：允许在有跳转结果之前执行后边指令（并能够撤销错误推测序列的影响）</li>
+<li><strong>动态调度</strong>：允许指令跨越跳转指令乱序执行</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">精确异常</p>
+<ol>
+<li><strong>精确异常</strong>：当异常发生时，处理器的状态必须看起来就像指令是严格按照程序顺序一条一条执行完的一样</li>
+<li>而 ROB 可以解决<strong>之前算法非精确异常的问题</strong>，保证了精确异常</li>
+</ol>
+</div>
+<ol start="4">
+<li><strong>三张状态表格</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p>依旧使用前边六条指令，假设此时乘法指令已经准备好 <code>commit</code></p>
+</div>
+<ul>
+<li>
+<p><strong>保留站状态表</strong>：</p>
+<ul>
+<li><code>Qj &amp; Qk</code> 记录产生相应源操作数的<strong>ROB 编号</strong></li>
+<li><code>Dest</code> 记录指令<strong>对应的 ROB 编号</strong></li>
+</ul>
+<p><img alt="alt text" src="../photo/17-16.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>ROB 状态表</strong></p>
+<p><img alt="alt text" src="../photo/17-17.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>寄存器状态表</strong></p>
+<p><img alt="alt text" src="../photo/17-18.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Exercise</p>
+<p><strong>假设不变</strong>，使用 Tomasulo 算法和 ROB，所有指令完成需要多少个时钟周期？</p>
+<details class="success">
+<summary>Answer</summary>
+<p>在 Tomasulo 算法的基础上加入 <code>Commit</code> 阶段</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">指令</th>
+<th style="text-align: left;">IS</th>
+<th style="text-align: left;">EX</th>
+<th style="text-align: left;">WB</th>
+<th style="text-align: left;">Commit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>FLD F6, 34(R2)</code></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2-3</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FLD F2, 45(R3)</code></td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3-4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FMUL.D F0, F2, F4</code></td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6-15</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FSUB.D F8, F6, F2</code></td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">6-7</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">18</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FDIV.D F10, F0, F6</code></td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">17-56</td>
+<td style="text-align: left;"><strong>57</strong></td>
+<td style="text-align: left;">58</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FADD.D F6, F8, F2</code></td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">9-10</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">59</td>
+</tr>
+</tbody>
+</table>
+</details>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">ROB Summary</p>
+<ol>
+<li>指令根据重排序缓冲按顺序完成</li>
+<li>可以实现精确异常</li>
+<li><strong>很容易扩展</strong>到整数寄存器和整数功能单元</li>
+<li><strong>缺点</strong>：但硬件过于复杂</li>
+</ol>
+</div>
+<hr />
+<h2 id="_5">多指令发射<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<p>这一部分在 计算机系统 II 课程中第一次讲解，计算机系统 III 课程又做了一些补充</p>
+</div>
+<ol>
+<li>
+<p><strong>作用</strong>：提高指令并行性（ILP）</p>
+</li>
+<li>
+<p><strong>局限性</strong>：主要受到以下三个方面的影响</p>
+</li>
+</ol>
+<ul>
+<li>程序中固有的指令级并行性</li>
+<li>硬件实现的难度</li>
+<li>超标量和超长指令字处理器固有的技术限制</li>
+</ul>
+<h3 id="_6">多发射处理器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>超标量处理器</strong></li>
+</ol>
+<ul>
+<li><strong>特点</strong>：每个时钟周期发射的<strong>指令数量不固定</strong>，取决于代码的具体情况（1～8条，有上限）</li>
+<li>假设此上限为 <code>n</code>，则该处理器称为 <code>n</code> 路发射</li>
+<li><strong>指令调度</strong>：可以通过<strong>编译器</strong>进行静态调度，或基于 <strong><code>Tomasulo</code> 算法</strong>进行动态调度</li>
+<li><strong>应用</strong>：该方法是目前<strong>通用计算</strong>领域最成功的方法</li>
+</ul>
+<ol start="2">
+<li><strong>超长指令字 VLIW</strong></li>
+</ol>
+<ul>
+<li><strong>特点</strong>：每个时钟周期发射的指令数量是<strong>固定的</strong>（4-16条），构成一条长指令/指令包</li>
+<li>在指令包中，指令间的并行性通过<strong>指令</strong>显式表达</li>
+<li><strong>指令调度</strong>：只能通过<strong>编译器</strong>进行静态调度</li>
+<li><strong>应用</strong>：已成功应用于数字信号处理和多媒体应用</li>
+<li><strong>问题</strong><ul>
+<li>程序代码长度增加：<ul>
+<li>需要大量<strong>循环展开</strong>来提高并行性</li>
+<li>指令字中的操作槽无法始终被填满</li>
+<li><strong>解决方案</strong>：共享立即数字段的命令，或采用指令压缩存储，在解码时传输到<code>Cache</code>或进行扩展</li>
+</ul>
+</li>
+<li>机器代码不兼容</li>
+<li>步调一致机制：当任何一个操作部分暂停时，整个处理器必须暂停</li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../photo/17-22.png" style="width: 50%;display: block;margin: 20px auto" /></p>
+<ol start="3">
+<li><strong>超流水线处理器</strong></li>
+</ol>
+<ul>
+<li><strong>特点</strong>：每个流水线阶段被进一步细分，多个指令可以在一个时钟周期内<strong>分时</strong>执行</li>
+<li>实际上，<strong>超流水线处理器的流水线周期</strong>是 <code>1/n</code> 个时钟周期：对于每个时钟周期能流出 <code>n</code> 条指令的超流水线，这 <code>n</code> 条指令不是同时流出的，而是每 <code>1/n</code> 个时钟周期流出一条指令</li>
+</ul>
+<p><img alt="" src="../photo/9-17.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol start="4">
+<li><strong>对比</strong></li>
+</ol>
+<p><img alt="" src="../photo/9-18.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<h3 id="_7">分类<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="_8">静态多发射<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>利用<strong>超标量处理器</strong>/<strong>超长指令处理器</strong>，指令<strong>按序</strong>流出，<strong>流出时</strong>进行冲突检测</p>
+</li>
+<li>
+<p><strong>指令调度</strong></p>
+</li>
+</ol>
+<ul>
+<li><strong>编译器</strong>将需要同时发射的指令分组，将它们打包成“发射槽”</li>
+<li>编译器<strong>检测并避免冲突</strong>，必要时用空操作指令填充</li>
+</ul>
+<ol start="3">
+<li><strong>冲突检测</strong></li>
+</ol>
+<ul>
+<li>第一阶段：<strong>在流出包中</strong>进行冲突检测，并初步选择可以流出的指令</li>
+<li>第二阶段：检查所选指令与<strong>正在执行的指令</strong>是否冲突</li>
+</ul>
+<ol start="4">
+<li>
+<p><strong>硬件修改</strong>：增加取指和译码带宽，增加功能单元，增加前递路径</p>
+</li>
+<li>
+<p><strong>冲突缓解</strong>：循环展开</p>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">超标量 Example</p>
+<ol>
+<li>采用 <strong>1条整数指令 + 1条浮点指令</strong> 的并行流出方式</li>
+<li>假设所有浮点指令都是加法指令，执行时间为两个时钟周期</li>
+</ol>
+<p><img alt="alt text" src="../photo/17-19.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</div>
+<h4 id="_9">动态多发射<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<ol>
+<li>利用<strong>超标量处理器</strong>（基于 <strong>Tomasulo 算法</strong>）</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">GAS</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nl">Loop:</span><span class="w"> </span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="nf">FLD</span><span class="w">    </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="w">   </span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="no">FADD.D</span><span class="w"> </span><span class="no">F4</span><span class="p">,</span><span class="w"> </span><span class="no">F0</span><span class="p">,</span><span class="w"> </span><span class="no">F2</span><span class="w">   </span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="no">FSD</span><span class="w">    </span><span class="no">F4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="no">R1</span><span class="p">)</span><span class="w">   </span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="no">ADDI</span><span class="w">   </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w">    </span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="no">BNE</span><span class="w">    </span><span class="no">R1</span><span class="p">,</span><span class="w"> </span><span class="no">R2</span><span class="p">,</span><span class="w"> </span><span class="no">Loop</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>没有 ROB</summary>
+<p><img alt="alt text" src="../photo/17-20.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p>虽然指令流出率较高，但执行效率不是很高</p>
+<ul>
+<li>19 个时钟周期内共执行了 15 条指令</li>
+<li><strong>平均指令执行速度</strong>为每时钟周期 15/19 = 0.79 条</li>
+</ul>
+</details>
+<details class="success">
+<summary>有 ROB</summary>
+<p><img alt="alt text" src="../photo/17-21.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p>因为<strong>不需要等待跳转指令的结果</strong>，直接可以乱序执行后边的指令，所以执行需要的周期数减少。</p>
+</details>
+</div>
+<ol start="2">
+<li><strong>指令调度</strong></li>
+</ol>
+<ul>
+<li><strong>CPU</strong>检查指令流并<strong>选择</strong>每个周期要发射的指令</li>
+<li><strong>编译器</strong>可以通过<strong>重新排序指令</strong>来提供帮助</li>
+<li>CPU在运行时使用<strong>先进技术</strong>解决冲突</li>
+<li>允许CPU<strong>乱序</strong>执行指令以避免停顿，但按顺序将结果提交到寄存器</li>
+</ul>
+<ol start="3">
+<li><strong>需要动态调度的原因</strong></li>
+</ol>
+<ul>
+<li>并非所有停顿都是可预测的</li>
+<li>无法总是围绕分支进行调度，因为分支结果是动态确定的</li>
+<li>同一指令集架构的不同实现具有不同的延迟和冲突</li>
+</ul>
+<h3 id="_10">关键技术<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>推测执行</strong></li>
+</ol>
+<ul>
+<li><strong>原理</strong>：<strong>“猜测”</strong>执行指令（如分支方向、加载数值），并提前执行后续指令</li>
+<li>如果猜对，完成操作，大大提升性能；如果猜错，<code>roll-back</code> 清空流水线重新执行正确操作</li>
+<li><strong>编译器/硬件推测</strong><ul>
+<li><strong>编译器</strong>：重新排序指令，可包含“修复”指令以从错误猜测中恢复</li>
+<li><strong>硬件</strong>：前瞻查找要执行的指令，在错误推测时刷新缓冲区</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><strong>循环展开</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>原理</strong>：复制循环体以体现更多并行性，减少循环控制开销</p>
+</li>
+<li>
+<p>每次复制使用不同的寄存器（<strong>“寄存器重命名”</strong>）</p>
+<ul>
+<li>避免循环携带的<strong>“反依赖”</strong><ul>
+<li>存储指令后跟对同一寄存器的加载，也称为“名称依赖”</li>
+<li>来源于寄存器名的重复使用</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<details class="example">
+<summary>循环展开例题</summary>
+<p><strong>Problem:</strong></p>
+<p><img alt="" src="../photo/9-19.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>循环展开:</strong></p>
+<p><img alt="" src="../photo/9-20.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="3">
+<li><strong>寄存器重命名</strong></li>
+</ol>
+<ul>
+<li><strong>保留站和重排序缓冲区</strong>有效提供寄存器重命名功能</li>
+<li>当指令发射到保留站时：<ul>
+<li>如果操作数在寄存器文件或重排序缓冲区中<strong>可用</strong>，则被复制到保留站，不再需要保留在寄存器中，可以被覆盖</li>
+<li>如果操作数尚<strong>不可用</strong>，则将由功能单元提供给保留站，可能不需要更新寄存器</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li><strong>加载推测</strong></li>
+</ol>
+<ul>
+<li>预测分支并继续发射指令：在分支结果确定前不提交指令</li>
+<li><strong>加载推测</strong><ul>
+<li>避免加载和缓存未命中的延迟：<ul>
+<li>预测有效地址</li>
+<li>预测加载值</li>
+<li>在完成未完成的存储操作前进行加载</li>
+<li>将存储的值旁路到加载单元</li>
+</ul>
+</li>
+<li>在推测被清除前不提交加载操作</li>
+</ul>
+</li>
+</ul>
 
 
 
@@ -4620,7 +5115,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月19日 16:49:33 CST">2026年3月19日 16:49:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月20日 14:50:47 CST">2026年3月20日 14:50:47</span>
   </span>
 
     
