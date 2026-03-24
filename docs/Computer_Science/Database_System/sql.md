@@ -50,26 +50,17 @@ CREATE TABLE table_name (
 
 5. **修改表**
 
-- **添加属性**
-
-    ```sql
-    ALTER TABLE table_name
-    ADD A D;
-    ```
-
-- **删除属性**
-
-    ```sql
-    ALTER TABLE table_name
-    DROP A;
-    ```
-
-- **修改属性**
-
-    ```sql
-    ALTER TABLE table_name
-    MODIFY A D;
-    ```
+```sql
+-- 添加属性
+ALTER TABLE table_name
+ADD A D;
+-- 删除属性
+ALTER TABLE table_name
+DROP A;
+-- 修改属性
+ALTER TABLE table_name
+MODIFY A D;
+```
 
 6. **索引**
 
@@ -209,7 +200,7 @@ HAVING avg(balance) > 1200      -- 分组之后的谓词
 1. 涉及 `null` 的任何算术表达式的结果是 `null`
 2. 与 `null` 的任何比较返回 `unknown`
 
-!!! abstract "unknown 三值逻辑"
+??? abstract "unknown 三值逻辑"
     1. `OR`: 
     
     - (unknown or true) = true
