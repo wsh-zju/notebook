@@ -301,8 +301,8 @@ FROM depositor as T
 WHERE unique            -- 查找账户是否唯一
     (SELECT R.customer_name
      FROM account, depositor as R
-     WHERE T.customer_name = R.customer_name and
-           R.account_number = account.account_number
+     WHERE T.customer_name = R.customer_name 
+           and R.account_number = account.account_number
            and account.branch_name = 'Perryridge')
 -- 至少两个账户 not unique
 ```
@@ -371,9 +371,9 @@ WHERE P
     ```sql
     UPDATE table_name
     SET balance = CASE
-                    when balance > 1000 then balance * 0.95
-                    else balance * 1.05
-                  end
+                    WHEN balance > 1000 THEN balance * 0.95
+                    ELSE balance * 1.05
+                  END
     ```
 
 
