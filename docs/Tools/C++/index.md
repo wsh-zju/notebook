@@ -20,3 +20,8 @@ int main() {
     return 0;
 }
 ```
+
+## Makefile
+
+!!! abstract "Makefile"
+    xww 课上还补充了 makefile 相关知识，相关内容请跳转 [C/Makefile](https://wsh-zju.github.io/notebook/Tools/C/structure/#makefile)
