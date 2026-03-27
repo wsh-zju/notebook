@@ -1264,6 +1264,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Cache 设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块放置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块识别
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -2752,6 +2791,8 @@
       
         
       
+        
+      
     
     
     
@@ -2875,6 +2916,34 @@
     
   
     类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Tools/C%2B%2B/pta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTA
   
 
     
@@ -4094,6 +4163,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Cache 设计">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块放置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块识别
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        块替换
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -4354,6 +4462,113 @@
 <li>Q3：在 Cache/主存缺失时，应该替换哪一块？（块替换：随机算法、最近最少使用、先进先出）</li>
 <li>Q4：写入时会发生什么？（写策略：回写或配合写缓冲器直写）</li>
 </ul>
+<h4 id="_2">块放置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>直接映射</strong>：通常<strong>利用块地址取模</strong>的方式，将数据块映射到缓存中（容易冲突）</li>
+<li><strong>全相联</strong>：块可以放置在<strong>任意</strong>一个空的位置（寻找不方便）</li>
+<li><strong>组相联</strong>：</li>
+</ol>
+<ul>
+<li>结合上述两种方法<ul>
+<li>将缓存分组，利用<strong>取模</strong>的方式将数据块映射到组中</li>
+<li>在组内，块可以放置在<strong>任意</strong>一个空位置</li>
+</ul>
+</li>
+<li>如果每个组包含 <span class="arithmatex">\(n\)</span> 个数据块，则称该 Cache 为 <strong><span class="arithmatex">\(n\)</span> 路组相联</strong><ul>
+<li>大多数情况下， <span class="arithmatex">\(n \leq 4\)</span> </li>
+<li>相联度越高，Cache 空间的利用率就越高，数据块碰撞的概率越低，缺失率也就越低</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>Direct mapped 相当于 1-way set associative</li>
+<li>Fully associative 相当于 m-way set-associative (m blocks)</li>
+</ol>
+</div>
+<h4 id="_3">块识别<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ol>
+<li>每个块都有一个<strong>地址标签</strong>，用于存储该块中数据的<strong>内存地址</strong></li>
+</ol>
+<ul>
+<li>检查缓存时，处理器会将请求的内存地址与缓存标签进行比较</li>
+<li>如果两者相等，则发生<strong>缓存命中</strong>，数据存在于缓存中</li>
+</ul>
+<ol start="2">
+<li>
+<p>通常，每个缓存块还有一个<strong>有效位</strong>，用于指示缓存块的内容<strong>是否有效</strong></p>
+</li>
+<li>
+<p><strong>物理地址的格式</strong></p>
+</li>
+</ol>
+<p><img alt="alt text" src="../photo/18-5.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li><strong><code>Index</code></strong>：<ul>
+<li><strong>组相联</strong>：用于选择缓存中的组，位数为 <span class="arithmatex">\(\log_2(\#sets)\)</span></li>
+<li><strong>直接映射</strong>：用于选择缓存中的块，位数为 <span class="arithmatex">\(\log_2(\#blocks)\)</span></li>
+</ul>
+</li>
+<li><strong><code>Byte offset</code></strong>：<ul>
+<li>用于选择缓存块中的字节</li>
+<li>位数为 <span class="arithmatex">\(\log_2(size\_of\_block)\)</span> （字节数）</li>
+</ul>
+</li>
+<li><strong><code>Tag</code></strong>：<ul>
+<li>用于在组内或缓存中查找匹配的块</li>
+<li>位数为除去索引和字节偏移的剩余位数</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">cache 大小计算</p>
+<p><strong>地址长度</strong>：64 位</p>
+<p><strong>映射方式</strong>：直接映射</p>
+<p><strong>缓存大小</strong>：<span class="arithmatex">\(2^n\)</span> 个块（因此 Index 需要 <span class="arithmatex">\(n\)</span> 位）</p>
+<p><strong>块大小</strong>：<span class="arithmatex">\(2^m\)</span> 个字 (<span class="arithmatex">\(2^{m+2}\)</span> 字节 = <span class="arithmatex">\(2^{m+5}\)</span> 位)</p>
+<ul>
+<li>Word Offset：使用 <span class="arithmatex">\(m\)</span> 位定位块内的字</li>
+<li>Byte Offset：使用 2 位定位字内的字节（因为 1 字 = 4 字节）。</li>
+</ul>
+<p><strong>关键公式计算</strong>：</p>
+<ul>
+<li>
+<p>标签位数：$<span class="arithmatex">\(64 - (n + m + 2)\)</span>$</p>
+</li>
+<li>
+<p>总缓存占用空间：每个条目包含：数据位 + 标签位 + 有效位</p>
+</li>
+</ul>
+<div class="arithmatex">\[
+\text{Total bits} 
+= 2^n \times (\text{block size} + \text{tag size} + \text{valid bit}) \\
+= 2^n \times (2^m \times 32 + (64 - n - m - 2) + 1) \\
+= 2^n \times (2^m \times 32 + 63 - n - m)
+\]</div>
+</div>
+<ol>
+<li><strong>查找步骤</strong></li>
+</ol>
+<ul>
+<li><strong>直接映射</strong><ul>
+<li>是否<strong>有效</strong></li>
+<li>缓存行中的标签位是否与地址中的<strong>标签位匹配</strong></li>
+<li>如果均满足，则缓存命中，利用块偏移读取块中数据</li>
+</ul>
+</li>
+<li><strong>组相联</strong><ul>
+<li>是否<strong>有效</strong></li>
+<li>组其中一块的标签位是否与地址中的<strong>标签位匹配</strong></li>
+<li>如果均满足，则缓存命中，利用块偏移读取对应块中数据</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">有限状态机</p>
+<p><img alt="alt text" src="../photo/18-4.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</div>
+<h4 id="_4">块替换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>performence and improve cache performance</p>
 <p>CPU vulnerability</p>
 
@@ -4378,7 +4593,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月24日 10:52:55 CST">2026年3月24日 10:52:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月27日 10:23:46 CST">2026年3月27日 10:23:46</span>
   </span>
 
     

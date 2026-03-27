@@ -18,7 +18,7 @@
         <link rel="prev" href="../container/">
       
       
-        <link rel="next" href="../../Python/">
+        <link rel="next" href="../pta/">
       
       
         
@@ -2677,6 +2677,8 @@
       
         
       
+        
+      
     
     
     
@@ -2862,10 +2864,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问控制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不同位置的对象
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PTA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4067,6 +4119,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问控制
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        不同位置的对象
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4181,7 +4255,7 @@
 <li><code class="highlight"><span class="o">::&lt;</span><span class="n">function</span><span class="w"> </span><span class="n">name</span><span class="o">&gt;</span></code>：调用<strong>全局作用域</strong>下的函数</li>
 </ul>
 <ol start="2">
-<li><strong><code class="highlight"><span class="k">this</span></code></strong>：隐藏参数，是指向当前对象的指针</li>
+<li><strong><code class="highlight"><span class="k">this</span></code></strong>：隐藏参数，是指向当前对象的指针（只能在非静态成员函数中使用）</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
@@ -4313,6 +4387,167 @@
 <li>在<strong>程序运行结束</strong>时，会自动调用析构函数，释放内存</li>
 <li>析构函数执行的顺序是<strong>构造函数的逆序</strong></li>
 </ul>
+<h2 id="_3">访问控制<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>通过三个关键字来限制类成员的可见性</strong></li>
+</ol>
+<ul>
+<li><code class="highlight"><span class="k">public</span></code>：任何地方都可以访问</li>
+<li><code class="highlight"><span class="k">private</span></code>：只能在类的内部访问（同一个类的不同对象可以访问），派生类无法访问</li>
+<li><code class="highlight"><span class="k">protected</span></code>：派生类和类的内部可以访问</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">struct &amp; class</p>
+<p><code>class</code> 的默认访问权限是 <code>private</code></p>
+<p><code>struct</code> 的默认访问权限是 <code>public</code></p>
+</div>
+<ol start="2">
+<li><strong>友元</strong>：一种明确授予<strong>非结构成员函数</strong>访问权限的方法</li>
+</ol>
+<ul>
+<li><strong>类本身</strong>控制哪些代码可以访问其成员</li>
+<li>可以将全局函数、另一个类的成员函数、甚至整个类声明为友元</li>
+<li><strong>特点</strong>：非对称性、非传递性、不可继承性（友元无法访问派生类）</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="c1">// 友元函数声明</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Y::print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="_4">不同位置的对象<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>局部对象</strong></li>
+</ol>
+<ul>
+<li>定义在方法内部，其作用域仅限于所属的方法</li>
+<li><strong>与成员变量同名</strong>的局部变量会阻止在方法内访问该成员变量（字段）</li>
+</ul>
+<ol start="2">
+<li><strong>全局变量</strong></li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;X.h&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">);</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><strong>构造函数</strong>在进入 <code>main()</code> 之前被调用（<code>main()</code> 不再是第一个被调用的函数）</li>
+<li><strong>析构函数</strong>在以下情况被调用：<ul>
+<li><code>main()</code> 退出时</li>
+<li>或者调用 <code>exit()</code> 时</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li><strong>静态初始化依赖</strong></li>
+</ol>
+<ul>
+<li>文件内部的构造顺序是确定的，不同文件之间的顺序是<strong>未定义的</strong></li>
+<li>当不同文件中的非局部静态对象存在依赖关系时，会出现问题</li>
+<li><strong>非局部静态对象</strong>：<ul>
+<li>定义在全局或命名空间作用域的对象</li>
+<li>在类中声明为 <code>static</code> 的成员</li>
+<li>在文件作用域内定义为 <code>static</code> 的对象</li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">解决方案</p>
+<ol>
+<li>避免非局部静态依赖</li>
+<li>将静态对象定义放在<strong>单个文件</strong>中，并按正确的顺序排列</li>
+</ol>
+</div>
+<ol start="4">
+<li><strong>static</strong></li>
+</ol>
+<ul>
+<li><strong>都</strong>存储在全局/静态存储区中</li>
+<li><strong>两个基本含义</strong>：<ul>
+<li><strong>静态存储</strong>：只进行一次初始化，地址固定</li>
+<li><strong>访问限制</strong>：内部链接，只在定义他们的文件内可见</li>
+</ul>
+</li>
+<li><strong>静态成员</strong>：属于类本身，而不属于类的任何特定对象<ul>
+<li><strong>静态成员变量</strong>：<ul>
+<li>由该类的所有对象共享</li>
+<li>必须<strong>在类外定义</strong>和初始化</li>
+<li>也满足访问控制的规则</li>
+<li>可以不通过对象直接调用 <code>point::x</code></li>
+<li>实际上是全局变量，<code>sizeof(object)</code> 不包含静态成员变量的大小</li>
+</ul>
+</li>
+<li><strong>静态成员函数</strong>：<ul>
+<li><strong>没有 <code>this</code> 指针</strong>，不能访问<strong>非静态成员</strong></li>
+<li>可以不通过对象直接调用 <code>point::print()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>在 C++ 中不建议使用 static，除非是在函数或类内部</p>
+</div>
+<ol start="5">
+<li><strong>作用域与生命周期</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">变量类型</th>
+<th style="text-align: left;">作用域</th>
+<th style="text-align: left;">生命周期</th>
+<th style="text-align: left;">初始化时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>局部变量</strong></td>
+<td style="text-align: left;"><code>{}</code> 内部</td>
+<td style="text-align: left;"><code>{}</code> 内部</td>
+<td style="text-align: left;">执行到定义行时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全局变量</strong></td>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">在定义行，于 <code>main()</code> 之前</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>静态局部变量</strong></td>
+<td style="text-align: left;"><code>{}</code> 内部</td>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">第一次执行到该行时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>静态全局变量</strong></td>
+<td style="text-align: left;">文件内</td>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">在定义行，于 <code>main()</code> 之前</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>成员变量</strong></td>
+<td style="text-align: left;">类内部</td>
+<td style="text-align: left;">随对象的生命周期</td>
+<td style="text-align: left;">创建该对象时</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>静态成员变量</strong></td>
+<td style="text-align: left;">类内部</td>
+<td style="text-align: left;">全局</td>
+<td style="text-align: left;">在定义行，于 <code>main()</code> 之前</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -4335,7 +4570,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月19日 16:49:33 CST">2026年3月19日 16:49:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月27日 10:23:46 CST">2026年3月27日 10:23:46</span>
   </span>
 
     
@@ -4417,13 +4652,13 @@
         
         
           
-          <a href="../../Python/" class="md-footer__link md-footer__link--next" aria-label="下一页: Python">
+          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Python
+                PTA
               </div>
             </div>
             <div class="md-footer__button md-icon">
