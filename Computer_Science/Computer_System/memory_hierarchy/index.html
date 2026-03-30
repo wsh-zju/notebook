@@ -1252,10 +1252,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Cache">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cache_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1294,6 +1293,29 @@
     <span class="md-ellipsis">
       
         块替换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="块替换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        栈替换算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LRU 比较对法
       
     </span>
   </a>
@@ -4151,10 +4173,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Cache">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cache_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4193,6 +4214,29 @@
     <span class="md-ellipsis">
       
         块替换
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="块替换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        栈替换算法
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LRU 比较对法
       
     </span>
   </a>
@@ -4436,7 +4480,7 @@
 </tbody>
 </table>
 </details>
-<h3 id="cache_1">Cache 设计<a class="headerlink" href="#cache_1" title="Permanent link">&para;</a></h3>
+<h2 id="cache_1">Cache 设计<a class="headerlink" href="#cache_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>多级缓存组织</strong></li>
 </ol>
@@ -4462,7 +4506,7 @@
 <li>Q3：在 Cache/主存缺失时，应该替换哪一块？（块替换：随机算法、最近最少使用、先进先出）</li>
 <li>Q4：写入时会发生什么？（写策略：回写或配合写缓冲器直写）</li>
 </ul>
-<h4 id="_2">块放置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h3 id="_2">块放置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>直接映射</strong>：通常<strong>利用块地址取模</strong>的方式，将数据块映射到缓存中（容易冲突）</li>
 <li><strong>全相联</strong>：块可以放置在<strong>任意</strong>一个空的位置（寻找不方便）</li>
@@ -4487,9 +4531,9 @@
 <li>Fully associative 相当于 m-way set-associative (m blocks)</li>
 </ol>
 </div>
-<h4 id="_3">块识别<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h3 id="_3">块识别<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>每个块都有一个<strong>地址标签</strong>，用于存储该块中数据的<strong>内存地址</strong></li>
+<li>每个块都有一个<strong>地址标签 <code>Tag</code></strong>，用于存储该块中数据的<strong>内存地址</strong></li>
 </ol>
 <ul>
 <li>检查缓存时，处理器会将请求的内存地址与缓存标签进行比较</li>
@@ -4529,12 +4573,12 @@
 <p><strong>块大小</strong>：<span class="arithmatex">\(2^m\)</span> 个字 (<span class="arithmatex">\(2^{m+2}\)</span> 字节 = <span class="arithmatex">\(2^{m+5}\)</span> 位)</p>
 <ul>
 <li>Word Offset：使用 <span class="arithmatex">\(m\)</span> 位定位块内的字</li>
-<li>Byte Offset：使用 2 位定位字内的字节（因为 1 字 = 4 字节）。</li>
+<li>Byte Offset：使用 2 位定位字内的字节（因为 1 字 = 4 字节）</li>
 </ul>
 <p><strong>关键公式计算</strong>：</p>
 <ul>
 <li>
-<p>标签位数：$<span class="arithmatex">\(64 - (n + m + 2)\)</span>$</p>
+<p>标签位数：<span class="arithmatex">\(64 - (n + m + 2)\)</span></p>
 </li>
 <li>
 <p>总缓存占用空间：每个条目包含：数据位 + 标签位 + 有效位</p>
@@ -4546,8 +4590,16 @@
 = 2^n \times (2^m \times 32 + (64 - n - m - 2) + 1) \\
 = 2^n \times (2^m \times 32 + 63 - n - m)
 \]</div>
+<details class="question">
+<summary>Exercise 1</summary>
+<p><img alt="alt text" src="../photo/18-6.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</details>
+<details class="question">
+<summary>Exercise 2</summary>
+<p><img alt="alt text" src="../photo/18-7.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</details>
 </div>
-<ol>
+<ol start="4">
 <li><strong>查找步骤</strong></li>
 </ol>
 <ul>
@@ -4565,10 +4617,120 @@
 </li>
 </ul>
 <div class="admonition abstract">
-<p class="admonition-title">有限状态机</p>
+<p class="admonition-title">Cache 有限状态机</p>
 <p><img alt="alt text" src="../photo/18-4.png" style="width:50%;display: block;margin: 20px auto" /></p>
 </div>
-<h4 id="_4">块替换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h3 id="_4">块替换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>在指令缓存缺失时采取的步骤</strong>：</li>
+</ol>
+<ul>
+<li>将原始的 PC 值发送到内存（PC-4）</li>
+<li>指示<strong>主存执行读取</strong>操作，并等待内存完成访问</li>
+<li><strong>写入缓存条目</strong>：将来自内存的数据放入该条目的数据部分，将地址的高位（来自 ALU）写入标记字段，并将有效位置为开启</li>
+<li>从第一步重新开始指令执行，这将<strong>重新取指</strong>，而这一次将在缓存中找到该指令</li>
+</ul>
+<ol start="2">
+<li><strong>随机替换</strong>：随机选择任何一个数据块</li>
+</ol>
+<ul>
+<li><strong>在硬件上易于实现</strong>，只需要一个随机数生成器</li>
+<li>将<strong>均匀地分布</strong>在整个缓存中</li>
+<li>可能会驱逐一个<strong>即将被访问</strong>的数据块</li>
+</ul>
+<ol start="3">
+<li><strong>最近最少使用（LRU）</strong>：选择缓存中<strong>最近使用最少</strong>的块进行替换</li>
+</ol>
+<ul>
+<li>假设最近被访问过的数据块<strong>更有可能再次被引用</strong></li>
+<li>这需要在缓存中<strong>增加额外的位数</strong>来追踪访问情况</li>
+</ul>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/18-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="4">
+<li><strong>先进先出（FIFO）</strong>：选择缓存中<strong>进入最早</strong>的块进行替换（不管是否命中）</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/18-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="5">
+<li><strong>最优替换算法（OPT）</strong>：理论上的模拟算法，选择<strong>未来最长时间不会访问</strong>的块进行替换</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/18-10.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">命中率的影响因素</p>
+<ol>
+<li>命中率与<strong>替换算法</strong>有关</li>
+<li>命中率与<strong>访问序列</strong>有关</li>
+</ol>
+<details class="warning">
+<summary>thrashing 颠簸现象</summary>
+<p><img alt="alt text" src="../photo/18-11.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+<ol start="3">
+<li>命中率与<strong>块的大小</strong>有关</li>
+</ol>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/18-12.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+</div>
+<h4 id="_5">栈替换算法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong><span class="arithmatex">\(B_t(n)\)</span></strong>：表示在时刻 <span class="arithmatex">\(t\)</span>，容量为 <span class="arithmatex">\(n\)</span> 个数据块的缓存中所包含的页面（或数据块）集合</li>
+<li><strong>包含性质</strong>：<span class="arithmatex">\(B_t(n) \subseteq B_{t}(n+1)\)</span></li>
+<li><strong>LRU 算法是栈替换算法，但是 FIFO 算法不是</strong>（因为不满足包含性质）</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Using LRU</p>
+<p><img alt="alt text" src="../photo/18-13.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+<p>当 cache 块的数目为 N = 4 时，一共会命中 4 次</p>
+</div>
+<h4 id="lru">LRU 比较对法<a class="headerlink" href="#lru" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>比较对法</strong>：仅使用<strong>普通的逻辑门和触发器</strong>来实现 LRU 替换算法</li>
+<li><strong>基本思想</strong>： </li>
+</ol>
+<ul>
+<li>让每个缓存块<strong>两两组合</strong></li>
+<li>使用一个<strong>比较对触发器</strong>来记录该比较对中两个缓存块<strong>被访问的顺序</strong></li>
+<li>然后利用<strong>门电路</strong>组合每个比较对触发器的状态，就可以根据 LRU 算法找到需要被替换的块</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>假设有三个缓存块 A、B、C，有三对组合 AB、AC、BC</p>
+<p>每一对的访问顺序分别由比较对触发器 <span class="arithmatex">\(T_{AB}\)</span>、<span class="arithmatex">\(T_{AC}\)</span> 和 <span class="arithmatex">\(T_{BC}\)</span> 表示</p>
+<ul>
+<li><span class="arithmatex">\(T_{AB}=1\)</span> 表示 A 比 B 最近被访问过</li>
+<li><span class="arithmatex">\(T_{AB}=0\)</span> 表示 B 比 A 最近被访问过</li>
+</ul>
+<details class="question">
+<summary><strong>Exercise</strong></summary>
+<ol>
+<li>如果最近访问的块是 A，而 C 是最久未被访问的块：<span class="arithmatex">\(T_{AB}=1\)</span>，<span class="arithmatex">\(T_{AC}=1\)</span>，<span class="arithmatex">\(T_{BC}=1\)</span></li>
+<li>如果最近访问的块是 B，而 C 是最久未被访问的块：<span class="arithmatex">\(T_{AB}=0\)</span>，<span class="arithmatex">\(T_{AC}=1\)</span>，<span class="arithmatex">\(T_{BC}=1\)</span></li>
+</ol>
+</details>
+<p><strong>公式</strong>（用来判断谁应该被替换）：<span class="arithmatex">\(C_{LRU} = T_{AC} \cdot T_{BC}\)</span>、<span class="arithmatex">\(B_{LRU} = T_{AB} \cdot \overline{T_{BC}}\)</span>、<span class="arithmatex">\(A_{LRU} = \overline{T_{AB}} \cdot \overline{T_{AC}}\)</span></p>
+<p><strong>结构</strong>：每进行一次访问都会改变触发器的状态</p>
+<p><img alt="alt text" src="../photo/18-14.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<details class="abstract">
+<summary>硬件使用分析</summary>
+<p>假设 <span class="arithmatex">\(p\)</span> 是缓存块的数量</p>
+<ol>
+<li>由于每个缓存块都可能被替换，其信号需要通过一个<strong>与门</strong>来生成，因此与门的数量将等于 <span class="arithmatex">\(p\)</span>。</li>
+<li>与门的<strong>输入端</strong>数量为 <span class="arithmatex">\(p - 1\)</span></li>
+<li><strong>比较对触发器的数量</strong>是 <span class="arithmatex">\(C_p^2\)</span>，即 <span class="arithmatex">\(p \cdot (p-1) / 2\)</span></li>
+</ol>
+<p>当 <span class="arithmatex">\(p\)</span> 超过 8 时，需要的触发器过多，这个算法就不适用了</p>
+</details>
+</div>
 <p>performence and improve cache performance</p>
 <p>CPU vulnerability</p>
 
@@ -4593,7 +4755,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月27日 10:23:46 CST">2026年3月27日 10:23:46</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月30日 15:35:57 CST">2026年3月30日 15:35:57</span>
   </span>
 
     
