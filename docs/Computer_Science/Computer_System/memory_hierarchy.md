@@ -78,7 +78,7 @@
     | **n-way set associative** | n 路组相联 | **No-write allocate** | 非写分配 | **Miss penalty** | 缺失惩罚 |
     | **Least-recently used** | 最近最少使用 | **Write buffer** | 写缓冲 | **Write stall** | 写停顿 |
 
-### Cache 设计
+## Cache 设计
 
 1. **多级缓存组织**
 
@@ -99,7 +99,7 @@
 - Q4：写入时会发生什么？（写策略：回写或配合写缓冲器直写）
 
 
-#### 块放置
+### 块放置
 
 1. **直接映射**：通常**利用块地址取模**的方式，将数据块映射到缓存中（容易冲突）
 2. **全相联**：块可以放置在**任意**一个空的位置（寻找不方便）
@@ -116,9 +116,9 @@
     1. Direct mapped 相当于 1-way set associative
     2. Fully associative 相当于 m-way set-associative (m blocks)
 
-#### 块识别
+### 块识别
 
-1. 每个块都有一个**地址标签**，用于存储该块中数据的**内存地址**
+1. 每个块都有一个**地址标签 `Tag`**，用于存储该块中数据的**内存地址**
 
 - 检查缓存时，处理器会将请求的内存地址与缓存标签进行比较
 - 如果两者相等，则发生**缓存命中**，数据存在于缓存中
@@ -149,11 +149,11 @@
     **块大小**：$2^m$ 个字 ($2^{m+2}$ 字节 = $2^{m+5}$ 位)
 
     - Word Offset：使用 $m$ 位定位块内的字
-    - Byte Offset：使用 2 位定位字内的字节（因为 1 字 = 4 字节）。
+    - Byte Offset：使用 2 位定位字内的字节（因为 1 字 = 4 字节）
     
     **关键公式计算**：
     
-    - 标签位数：$$64 - (n + m + 2)$$
+    - 标签位数：$64 - (n + m + 2)$
     
     - 总缓存占用空间：每个条目包含：数据位 + 标签位 + 有效位
     
@@ -163,9 +163,14 @@
     = 2^n \times (2^m \times 32 + (64 - n - m - 2) + 1) \\
     = 2^n \times (2^m \times 32 + 63 - n - m)
     $$
- 
 
-1. **查找步骤**
+    ??? question "Exercise 1"
+        ![alt text](photo/18-6.png){style="width:80%;display: block;margin: 20px auto"}
+
+    ??? question "Exercise 2"
+        ![alt text](photo/18-7.png){style="width:80%;display: block;margin: 20px auto"}
+
+4. **查找步骤**
 
 - **直接映射**
     - 是否**有效**
@@ -176,10 +181,97 @@
     - 组其中一块的标签位是否与地址中的**标签位匹配**
     - 如果均满足，则缓存命中，利用块偏移读取对应块中数据
 
-!!! abstract "有限状态机"
+!!! abstract "Cache 有限状态机"
     ![alt text](photo/18-4.png){style="width:50%;display: block;margin: 20px auto"}
 
-#### 块替换
+### 块替换
+1. **在指令缓存缺失时采取的步骤**：
+
+- 将原始的 PC 值发送到内存（PC-4）
+- 指示**主存执行读取**操作，并等待内存完成访问
+- **写入缓存条目**：将来自内存的数据放入该条目的数据部分，将地址的高位（来自 ALU）写入标记字段，并将有效位置为开启
+- 从第一步重新开始指令执行，这将**重新取指**，而这一次将在缓存中找到该指令
+
+2. **随机替换**：随机选择任何一个数据块
+
+- **在硬件上易于实现**，只需要一个随机数生成器
+- 将**均匀地分布**在整个缓存中
+- 可能会驱逐一个**即将被访问**的数据块
+
+3. **最近最少使用（LRU）**：选择缓存中**最近使用最少**的块进行替换
+
+- 假设最近被访问过的数据块**更有可能再次被引用**
+- 这需要在缓存中**增加额外的位数**来追踪访问情况
+
+??? example "Example"
+    ![alt text](photo/18-9.png){style="width:60%;display: block;margin: 20px auto"}
+
+4. **先进先出（FIFO）**：选择缓存中**进入最早**的块进行替换（不管是否命中）
+
+??? example "Example"
+    ![alt text](photo/18-8.png){style="width:60%;display: block;margin: 20px auto"}
+
+5. **最优替换算法（OPT）**：理论上的模拟算法，选择**未来最长时间不会访问**的块进行替换
+    
+??? example "Example"
+    ![alt text](photo/18-10.png){style="width:60%;display: block;margin: 20px auto"}
+
+!!! tip "命中率的影响因素"
+    1. 命中率与**替换算法**有关
+    2. 命中率与**访问序列**有关
+
+    ??? warning "thrashing 颠簸现象"
+        ![alt text](photo/18-11.jpg){style="width:60%;display: block;margin: 20px auto"}
+
+    3. 命中率与**块的大小**有关
+
+    ??? example "Example"
+        ![alt text](photo/18-12.jpg){style="width:60%;display: block;margin: 20px auto"}
+
+#### 栈替换算法
+1. **$B_t(n)$**：表示在时刻 $t$，容量为 $n$ 个数据块的缓存中所包含的页面（或数据块）集合
+2. **包含性质**：$B_t(n) \subseteq B_{t}(n+1)$
+3. **LRU 算法是栈替换算法，但是 FIFO 算法不是**（因为不满足包含性质）
+
+!!! example "Using LRU"
+    ![alt text](photo/18-13.jpg){style="width:60%;display: block;margin: 20px auto"}
+
+    当 cache 块的数目为 N = 4 时，一共会命中 4 次
+
+#### LRU 比较对法
+1. **比较对法**：仅使用**普通的逻辑门和触发器**来实现 LRU 替换算法
+2. **基本思想**： 
+
+- 让每个缓存块**两两组合**
+- 使用一个**比较对触发器**来记录该比较对中两个缓存块**被访问的顺序**
+- 然后利用**门电路**组合每个比较对触发器的状态，就可以根据 LRU 算法找到需要被替换的块
+
+!!! example "Example"
+    假设有三个缓存块 A、B、C，有三对组合 AB、AC、BC
+    
+    每一对的访问顺序分别由比较对触发器 $T_{AB}$、$T_{AC}$ 和 $T_{BC}$ 表示
+
+    - $T_{AB}=1$ 表示 A 比 B 最近被访问过
+    - $T_{AB}=0$ 表示 B 比 A 最近被访问过
+
+    ??? question "**Exercise**"
+        1. 如果最近访问的块是 A，而 C 是最久未被访问的块：$T_{AB}=1$，$T_{AC}=1$，$T_{BC}=1$
+        2. 如果最近访问的块是 B，而 C 是最久未被访问的块：$T_{AB}=0$，$T_{AC}=1$，$T_{BC}=1$
+
+    **公式**（用来判断谁应该被替换）：$C_{LRU} = T_{AC} \cdot T_{BC}$、$B_{LRU} = T_{AB} \cdot \overline{T_{BC}}$、$A_{LRU} = \overline{T_{AB}} \cdot \overline{T_{AC}}$
+
+    **结构**：每进行一次访问都会改变触发器的状态
+
+    ![alt text](photo/18-14.png){style="width:50%;display: block;margin: 20px auto"}
+
+    ??? abstract "硬件使用分析"
+        假设 $p$ 是缓存块的数量
+        
+        1. 由于每个缓存块都可能被替换，其信号需要通过一个**与门**来生成，因此与门的数量将等于 $p$。
+        2. 与门的**输入端**数量为 $p - 1$
+        3. **比较对触发器的数量**是 $C_p^2$，即 $p \cdot (p-1) / 2$
+
+        当 $p$ 超过 8 时，需要的触发器过多，这个算法就不适用了
 
 performence and improve cache performance
 
