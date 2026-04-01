@@ -216,7 +216,10 @@ nav:
       - Computer_Science/Database_System/index.md
       - 基本介绍 : Computer_Science/Database_System/introduce.md
       - 关系模型 : Computer_Science/Database_System/relationmodel.md
-      - SQL 语言 : Computer_Science/Database_System/sql.md
+      - E-R 模型 : Computer_Science/Database_System/E-R.md
+      - SQL 语言 :
+        - SQL 基础 : Computer_Science/Database_System/sql_found.md 
+        - SQL 进阶 : Computer_Science/Database_System/sql_adv.md
   - 开发工具 :
     - Tools/index.md
     - C :

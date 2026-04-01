@@ -1,4 +1,4 @@
-# SQL
+# SQL 基础
 
 **SQL 标准符合度**：入门级、过渡级、中间级、完全级
 
@@ -420,3 +420,4 @@ VALUES (E1, E2, ..., En)
     FROM (depositor natural full outer join borrower) 
     WHERE account_number is null or loan_number is null 
     ```
+
