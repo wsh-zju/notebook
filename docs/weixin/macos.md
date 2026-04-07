@@ -1,0 +1,45 @@
+
+<div class="article-card">
+    <a href="https://mp.weixin.qq.com/s/NA8GaJarscswi8WTQzTiHg" class="card-link">
+        <div class="card-image">
+            <img src="../photo/image-1.png" alt="cover">
+        </div>
+        <div class="card-content">
+            <p>【macOS 终端】Oh My Zsh + Powerlevel10k，让你的 Mac 终端告别“黑白时代”</p>
+            <div class="card-footer">
+                <span class="card-tag">macOS 终端美化基础篇</span>
+                <span class="card-time"><i class="fa-regular fa-clock"></i> 2026-03-07 08:00</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="article-card">
+    <a href="https://mp.weixin.qq.com/s/AvtBrMiciJ1LcBJyP6cf0g?scene=1" class="card-link">
+        <div class="card-image">
+            <img src="../photo/image-1.png" alt="cover">
+        </div>
+        <div class="card-content">
+            <p>【macOS 终端】用 Powerlevel10k 玩转 macOS 终端，从“美化”到“完全掌控”</p>
+            <div class="card-footer">
+                <span class="card-tag">macOS 终端美化进阶篇</span>
+                <span class="card-time"><i class="fa-regular fa-clock"></i> 2026-03-08 17:44</span>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div class="article-card">
+    <a href="https://mp.weixin.qq.com/s/4J5fessgcLF5KsRIkU9o7w" class="card-link">
+        <div class="card-image">
+            <img src="../photo/image-1.png" alt="cover">
+        </div>
+        <div class="card-content">
+            <p>【macOS 终端】解锁 Oh My Zsh 插件与 Alias，打造 macOS 终端顶级生产力</p>
+            <div class="card-footer">
+                <span class="card-tag">macOS 终端效率提升篇</span>
+                <span class="card-time"><i class="fa-regular fa-clock"></i> 2026-03-09 12:05</span>
+            </div>
+        </div>
+    </a>
+</div>

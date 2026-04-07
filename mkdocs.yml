@@ -157,7 +157,11 @@ extra_javascript:
 nav:
   - 首页: 
     - index.md
-    - 公众号 : weixin.md
+    - 公众号 : 
+      - weixin/index.md
+      - macOS 终端 : weixin/macos.md
+      - 六级词汇 : weixin/cet6-cihui.md
+      - 六级翻译 : weixin/cet6-fanyi.md
   - 计算机类课程 :
     - Computer_Science/index.md
     - 计算机系统 :
