@@ -157,3 +157,26 @@ D. `vector v = (10, 1);`
     D. 使用了逗号运算符，因此等效于 `vector v = 1;`，不正确
 
 ---
+## Inside Object
+
+1. **假设 A 是一个类的名字，下面程序片段，类 A 会调用析构函数几次？**
+
+```cpp
+int main() {
+    A * p = new A[2];
+    A * p2 = new A;
+    A a;
+    delete [] p;
+}
+```
+
+A.1  &nbsp;    B.2   &nbsp;   C.3   &nbsp;   D.4
+
+??? success "Answer"
+    **Answer:** C
+
+    **Analysis**:
+
+    1. `A *p = new A[2];`：调用 2 次构造函数，析构时需要 `delete[] p` 来释放，会调用 2 次析构函数
+    2. `A *p2 = new A;`：调用 1 次构造函数，**但程序中没有 `delete p2`，所以不会调用析构函数**（内存泄漏）
+    3. `A a;`：在栈上创建，调用 1 次构造函数，在 `main` 函数结束时**自动析构**，调用 1 次析构函数

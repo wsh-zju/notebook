@@ -25,3 +25,14 @@ int main() {
 
 !!! abstract "Makefile"
     xww 课上还补充了 makefile 相关知识，相关内容请跳转 [C/Makefile](https://wsh-zju.github.io/notebook/Tools/C/structure/#makefile)
+
+## 笔记目录
+
+{{ BEGIN_TOC }}
+- C++ 课堂笔记:
+    - 对象[note]: object/
+    - 容器[note]: container/
+    - 类[note]: class/
+- C++ 课后练习:
+    - PTA[exercise]: pta/
+{{ END_TOC }}

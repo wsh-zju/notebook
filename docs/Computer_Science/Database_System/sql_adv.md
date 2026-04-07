@@ -1,3 +1,7 @@
+---
+comment: true
+---
+
 # SQL 进阶
 
 ## SQL 数据类型与模式
@@ -453,7 +457,7 @@ EXEC SQL EXECUTE dynprog USING :v_account;
 
 2. 上述程序包含一个 **`?`**，这是一个**占位符**，用于替换在执行 SQL 程序时通过 **`USING`** 变量提供的值
 
-## ODBC 与 JDBC
+## ODBC
 
 1. **ODBC 开放数据库互连**：应用程序与数据库服务器通信的标准 API
 
@@ -462,5 +466,277 @@ EXEC SQL EXECUTE dynprog USING :v_account;
 - 具有 **DBMS 无关性**（不特定于某种数据库，而嵌入式 SQL 特定数据库）
 - 不需要预编译
 
-!!! tip "Tip"
-    该部分具体请查看 PPT Lecture 4
+3. **ODBC 接口定义的三种句柄类型**：
+
+- **环境句柄** HENV：整个 ODBC 会话的上下文，一个应用程序通常只有一个
+- **连接句柄** HDBC：建立在环境句柄之上，代表与特定数据库的会话，一个环境可以产生多个连接
+- **语句句柄** HSTMT：建立在连接句柄之上，用于执行具体的 SQL 语句，一个连接可以关联多个语句句柄
+
+### ODBC 编程
+
+1. **建立连接**
+
+- **分配环境句柄**
+
+    ```c++
+    HENV henv;
+    SQLAllocEnv(&henv); // 为 ODBC 环境分配内存
+    ```
+
+- **分配连接句柄**
+
+    ```c++
+    HDBC hdbc;
+    SQLAllocConnect(henv, &hdbc); // 在指定环境下创建一个连接对象
+    ```
+
+- **用已分配的连接句柄连接数据源** (Core Step)
+
+    ```c++
+    SQLConnect(hdbc, szDSN, cbDSN, szUID, cbUID, szAuthStr, cbAuthStr);
+    ```
+
+    - `szDSN`：数据源名称
+    - `szUID`：用户 ID
+    - `szAuthStr`：权限字符串 (Password)
+    - `cb...`：对应字符串的长度（**`SQL_NTS`**：计算字符串长度直到遇到 `\0`）
+
+2. **SQL 执行阶段**
+
+- **分配语句句柄**
+
+    ```c++
+    HSTMT hstmt;
+    SQLAllocStmt(hdbc, &hstmt); // 为指定连接分配语句对象
+    ```
+
+- **直接执行**：适用于仅执行一次的 SQL
+
+    ```c++
+    SQLExecDirect(hstmt, szSqlStr, cbSqlStr);
+    ```
+
+    - `szSqlStr`：将要执行的 SQL 语句
+    - `cbSqlStr`：对应字符串的长度
+
+- **有准备地执行**：适用于需要重复执行多次的 SQL
+
+    ```c++
+    SQLPrepare(hstmt, szSqlStr, cbSqlStr); // SQL 语句准备函数
+    SQLExecute(hstmt); // SQL 语句执行函数
+    ```
+
+    - **优势**：避免多次重复分析 SQL，显著提高执行效率
+
+3. **结果处理阶段**：当执行 `SELECT` 语句后，需要通过以下步骤获取数据：
+
+- **移动游标**：将游标移至结果集的下一行，**第一次调用移至第一行**
+
+    ```c++
+    SQLFetch(hstmt);
+    ```     
+
+- **提取列值** 
+    
+    - **`SQLGetData`**：读取游标指向行的列值（在 `SQLFetach` 之后）
+
+        ```c++
+        SQLGetData(hstmt, icol, fCType, rgbValue, cbValueMax, pcbValue);
+        ```
+
+        - `icol`：目标列的编号
+        - `fCType`：C 语言中的目标数据类型
+        - `rgbValue`：接收数据存储区的指针
+        - `cbValueMax`：接收数据存储区的最大长度
+        - `pcbValue`：实际返回的数据字节数
+
+    - **`SQLBindCol`**：将游标指向行的列值**绑定到程序变量**，`Fetch` 之后自动更新
+
+        ```c++
+        SQLBindCol(hstmt, icol, fCType, rgbValue, cbValueMax, pcbValue);
+        ```
+
+4. **释放资源**
+
+- **释放语句句柄**
+
+    ```c++
+    SQLfreeStmt(hstmt, foption);
+    ```
+
+    - `foption`：指定选项（用 `SQL_DROP` 表示释放所有与该句柄相关的资源）
+
+- **断开数据源连接**
+
+    ```c++
+    SQLDisconnect(hdbc);
+    ```
+
+- **释放连接句柄**
+
+    ```c++
+    SQLFreeConnect(hdbc);
+    ```
+
+- **释放环境句柄**
+
+    ```c++
+    SQLFreeEnv(henv); 
+    ```
+
+??? example "Example"
+    ```cpp
+    #include <iostream>
+    #include <sql.h>
+    #include <sqlext.h>
+    #include <string.h>
+    #include <stdio.h>
+
+    int ODBCexample() {
+        RETCODE error;
+        HENV env;  /* environment */
+        HDBC conn; /* database connection */
+        // 建立环境与连接句柄
+        SQLAllocEnv(&env);
+        SQLAllocConnect(env, &conn); 
+        // 建立用户user与数据源的连接，SQL_NTS 表示前一参数以null结尾
+        error = SQLConnect(conn, "MySQLServer", SQL_NTS, "user", SQL_NTS, "password", SQL_NTS);        
+        
+        // --- Main body of program ---
+        char branchname[80];
+        float balance;
+        int lenOut1, lenOut2;
+        HSTMT stmt;
+        // 为该连接建立数据区，将来存放查询结果
+        SQLAllocStmt(conn, &stmt); 
+        char * sqlquery = (char*)"select branch_name, sum (balance) from account group by branch_name";  // SQL 语句
+        error = SQLExecDirect(stmt, (SQLCHAR*)sqlquery, SQL_NTS); // 执行sql语句,查询结果存放到数据区stmt，同时sql语句执行状态的返回值送变量error
+
+        if (error == SQL_SUCCESS) {
+            // 对stmt中的返回结果数据加以分离，并与相应变量绑定
+            SQLBindCol(stmt, 1, SQL_C_CHAR, branchname, 80, (SQLLEN*)&lenOut1); // 第1项数据转换为C的字符类型：变量branchname
+            SQLBindCol(stmt, 2, SQL_C_FLOAT, &balance, 0, (SQLLEN*)&lenOut2); // 第2项数据转换为C的浮点类型：变量balance
+            // 逐行从数据区stmt中取数据，放到绑定变量中
+            while (SQLFetch(stmt) >= SQL_SUCCESS) {
+                printf("%s %d\n", branchname, (int)balance); // 对取出的数据进行处理
+            }
+        }
+        // 释放数据区
+        SQLFreeStmt(stmt, SQL_DROP); 
+
+        // 断开连接并释放句柄
+        SQLDisconnect(conn);
+        SQLFreeConnect(conn);
+        SQLFreeEnv(env);
+    }
+    ```
+
+## JDBC
+
+1. **JDBC** 是一个用于与支持 SQL 的数据库系统进行通信的 Java API
+2. **功能**
+
+- 用于查询和更新数据，以及检索查询结果
+- 还支持**元数据检索**，例如查询数据库中存在的各种关系，以及关系属性的名称和类型
+
+3. **与数据库通信的模型**：
+
+- 打开连接
+- 创建一个 **statement 对象**
+- 使用 Statement 对象执行查询以发送查询并获取结果
+- **异常处理机制**
+
+??? example "Code"
+    1. **更新数据库**：
+
+    ```Java
+    try {
+        stmt.executeUpdate("insert into account values ('A_9732', 'Perryridge', 1200)");
+    } catch (SQLException sqle) {
+        System.out.println("Could not insert tuple. " + sqle);
+    }
+    ```
+
+    2. **执行查询并获取及打印结果**：
+
+    ```Java
+    ResultSet rset = stmt.executeQuery("select branch_name, avg(balance) from account group by branch_name");
+
+    while (rset.next()) {
+        System.out.println(rset.getString("branch_name") + " " + rset.getFloat(2));
+    }
+    ```
+
+    3. **获取结果字段**：如果 `branchname` 是查询结果的第一个参数，那么 `rs.getString("branchname")` 和 `rs.getString(1)` 是等效的
+
+    4. **处理空值**：
+
+    ```Java
+    int a = rs.getInt("a");
+    if (rs.wasNull()) System.out.println("Got null value");
+    ```
+
+    5. **预处理语句**：允许查询被编译并使用不同的参数多次执行
+
+    ```Java
+    PreparedStatement pStmt = conn.prepareStatement("insert into account values(?,?,?)");
+    pStmt.setString(1, "A_9732");
+    pStmt.setString(2, "Perryridge");
+    pStmt.setInt(3, 1200);
+    pStmt.executeUpdate();
+
+    pStmt.setString(1, "A_9733");
+    pStmt.executeUpdate();
+    ```
+    
+    !!! warning "注意"
+        如果要存储在数据库中的值包含**单引号或其他特殊字符**，预处理语句可以正常工作；但如果直接创建查询字符串并执行，则会导致**语法错误**！
+
+
+## 函数
+1. **MySQL 语法模板**：需要注意修改 `DELIMITER`（定界符），否则编译器会将函数体内的分号视为结束标记
+
+```SQL
+DELIMITER //
+
+CREATE FUNCTION function_name (
+    param1 datatype,
+    param2 datatype
+) 
+RETURNS return_datatype
+[DETERMINISTIC] -- 明确函数是否总是返回相同的结果
+BEGIN
+    DECLARE variable_name datatype;      -- 定义变量
+    
+    SET variable_name = param1 + param2; -- 逻辑代码
+    
+    RETURN variable_name;                -- 返回结果
+END //
+
+DELIMITER ;
+```
+
+2. **PostgreSQL 语法模板**：通常使用 `$$` 作为字符串常量符号，并需指定编程语言（通常是 `plpgsql`）
+
+```SQL
+CREATE [OR REPLACE] FUNCTION function_name (
+    param1 datatype, 
+    param2 datatype
+) 
+RETURNS return_datatype AS $$
+DECLARE
+    variable_name datatype;
+BEGIN
+    -- 逻辑代码
+    variable_name := param1 + param2;
+    
+    RETURN variable_name;
+END;
+$$ LANGUAGE plpgsql;
+```
+
+3. **调用函数**
+
+```SQL
+SELECT function_name(column1, column2) FROM table_name;
+```
