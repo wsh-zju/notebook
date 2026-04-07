@@ -461,9 +461,36 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../weixin/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../weixin/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -477,7 +504,115 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    公众号
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS 终端
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/cet6-cihui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    六级词汇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/cet6-fanyi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    六级翻译
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3008,6 +3143,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        static
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4263,6 +4409,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#static" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        static
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4549,6 +4706,8 @@
 </ol>
 <ul>
 <li>定义在方法内部，其作用域仅限于所属的方法</li>
+<li><strong>生命周期</strong>：函数执行期间</li>
+<li><strong>存储位置</strong>：栈</li>
 <li><strong>与成员变量同名</strong>的局部变量会阻止在方法内访问该成员变量（字段）</li>
 </ul>
 <ol start="2">
@@ -4561,6 +4720,7 @@
 <a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <ul>
+<li><strong>存储位置</strong>：全局/静态存储区</li>
 <li><strong>构造函数</strong>在进入 <code>main()</code> 之前被调用（<code>main()</code> 不再是第一个被调用的函数）</li>
 <li><strong>析构函数</strong>在以下情况被调用：<ul>
 <li><code>main()</code> 退出时</li>
@@ -4573,7 +4733,6 @@
 </ol>
 <ul>
 <li>文件内部的构造顺序是确定的，不同文件之间的顺序是<strong>未定义的</strong></li>
-<li>当不同文件中的非局部静态对象存在依赖关系时，会出现问题</li>
 <li><strong>非局部静态对象</strong>：<ul>
 <li>定义在全局或命名空间作用域的对象</li>
 <li>在类中声明为 <code>static</code> 的成员</li>
@@ -4581,24 +4740,34 @@
 </ul>
 </li>
 </ul>
-<div class="admonition tip">
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>当不同文件中的非局部静态对象存在<strong>依赖关系</strong>时，<strong>会出现问题</strong></p>
+<div class="admonition success">
 <p class="admonition-title">解决方案</p>
 <ol>
 <li>避免非局部静态依赖</li>
 <li>将静态对象定义放在<strong>单个文件</strong>中，并按正确的顺序排列</li>
 </ol>
 </div>
-<ol start="4">
-<li><strong>static</strong></li>
+</div>
+<h2 id="static">static<a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>都</strong>存储在全局/静态存储区中</p>
+</li>
+<li>
+<p><strong>两个基本含义</strong>：</p>
+</li>
 </ol>
 <ul>
-<li><strong>都</strong>存储在全局/静态存储区中</li>
-<li><strong>两个基本含义</strong>：<ul>
 <li><strong>静态存储</strong>：只进行一次初始化，地址固定</li>
 <li><strong>访问限制</strong>：内部链接，只在定义他们的文件内可见</li>
 </ul>
-</li>
-<li><strong>静态成员</strong>：属于类本身，而不属于类的任何特定对象<ul>
+<ol start="3">
+<li><strong>静态成员</strong>：属于类本身，而不属于<strong>类</strong>的任何特定对象</li>
+</ol>
+<ul>
 <li><strong>静态成员变量</strong>：<ul>
 <li>由该类的所有对象共享</li>
 <li>必须<strong>在类外定义</strong>和初始化</li>
@@ -4613,13 +4782,11 @@
 </ul>
 </li>
 </ul>
-</li>
-</ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>在 C++ 中不建议使用 static，除非是在函数或类内部</p>
+<p>在 C++ 中不建议使用 <code>static</code>，除非是在函数或类内部</p>
 </div>
-<ol start="5">
+<ol start="4">
 <li><strong>作用域与生命周期</strong></li>
 </ol>
 <table>
@@ -4692,7 +4859,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月27日 10:23:46 CST">2026年3月27日 10:23:46</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月7日 18:39:39 CST">2026年4月7日 18:39:39</span>
   </span>
 
     

@@ -461,9 +461,36 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../weixin/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../weixin/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -477,7 +504,115 @@
   
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    公众号
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS 终端
+  
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/cet6-cihui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    六级词汇
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../weixin/cet6-fanyi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    六级翻译
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1324,6 +1459,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        写策略
+      
+    </span>
+  </a>
   
 </li>
         
@@ -4370,6 +4516,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        写策略
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -4853,7 +5010,69 @@
 <p>当 <span class="arithmatex">\(p\)</span> 超过 8 时，需要的触发器过多，这个算法就不适用了</p>
 </details>
 </div>
-<p>performence and improve cache performance</p>
+<h3 id="_6">写策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Write Hit</strong>：</li>
+</ol>
+<ul>
+<li><strong>write-through</strong>：发生写命中时，数据被<strong>同时写入缓存和主存</strong><ul>
+<li>确保<strong>强数据一致性</strong>；每一次写入都会立即到达主存，内存始终拥有最新数据</li>
+<li><strong>缓存控制位</strong>：仅需一个有效位</li>
+<li><strong>典型应用场景</strong>： 对数据完整性要求极高的实时系统</li>
+</ul>
+</li>
+<li><strong>write-back</strong>：发生写命中时，数据被<strong>写入缓存</strong>，但<strong>不会写入主存</strong><ul>
+<li>只有当被修改的脏数据块从缓存中被驱逐时，主存才会被更新，<strong>减少了内存带宽</strong>的使用</li>
+<li><strong>缓存控制位</strong>：同时包含有效位和脏位（用来跟踪修改情况）</li>
+<li><strong>典型应用场景</strong>： 以性能为优先的通用处理器</li>
+</ul>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Dirty Bit</p>
+<ol>
+<li><strong>脏位</strong>：与缓存行相关联的一个状态位</li>
+<li>用于指示缓存中的数据是否已被修改但尚未写回主存</li>
+<li>对写回策略至关重要，用于在驱逐缓存行时确定<strong>是否需要执行写回操作</strong></li>
+</ol>
+</div>
+<ol start="2">
+<li><strong>Write Miss</strong>：</li>
+</ol>
+<ul>
+<li><strong>Write allocate</strong>：发生写缺失时，将缺失的数据块从主存加载到缓存中，然后<strong>在缓存中执行写操作</strong>（dirty bit = 1）<ul>
+<li>利用空间局部性和时间局部性来优化未来的访问</li>
+<li>对应 <strong>write-back</strong> 策略</li>
+</ul>
+</li>
+<li><strong>No Write Allocate（Write around）</strong>：发生写缺失时，数据<strong>直接写入主存</strong>，而不将数据块加载到缓存中<ul>
+<li>数据不存储在缓存中，可以防止一次性或低频次写入造成的<strong>缓存污染</strong></li>
+<li>对应 <strong>write-through</strong> 策略</li>
+<li><strong>典型应用场景</strong>： 日志系统或流媒体数据（写入的数据很少会被再次读取）</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p><strong>写停顿</strong> (Write stall)：在执行 <strong>write-through</strong> 过程中，CPU 必须等待写入操作完成时发生的现象</p>
+</li>
+<li>
+<p><strong>写缓冲</strong> (Write buffer)：用于 <strong>write-through</strong> 优化</p>
+</li>
+</ol>
+<ul>
+<li>一个小型缓冲区，用于临时保存 <strong>write-through</strong> 数据，允许 CPU 在<strong>无需等待内存写入完成</strong>的情况下继续执行指令</li>
+<li>减轻了 <strong>write-through</strong> 策略带来的性能损失，在写入操作密集时非常有帮助</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>写缓冲区<strong>并不能完全消除停顿</strong>，因为如果突发写入量大于缓冲区容量，缓冲区仍有可能被填满</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>这里补充了 Cache 安全相关知识，请参照 PPT</p>
+</div>
+<p>erformence and improve cache performance</p>
 <p>CPU vulnerability</p>
 
 
@@ -4877,7 +5096,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月30日 15:35:57 CST">2026年3月30日 15:35:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月7日 18:39:39 CST">2026年4月7日 18:39:39</span>
   </span>
 
     
