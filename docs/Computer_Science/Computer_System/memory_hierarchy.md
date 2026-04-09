@@ -316,28 +316,38 @@
     这里补充了 Cache 安全相关知识，请参照 PPT
 
 ---
-## 性能
-
 ## 缓存性能
+1. **CPU Execution Time** = (CPU clock cycles + Memory stall cycles) × Clock cycle time
+2. **Memory stall cycles** = IC × MemAccess refs per instructions × Miss rate × Miss penalty
 
-CPU执行时间
+!!! info "翻译"
+    MemAccess refs per instructions    每条指令的存储器访问引用次数
+    
+    Memory stall cycles                存储器停顿周期
 
-* CPU执行时间 = (CPU时钟周期 + 存储器停顿周期) × 时钟周期时间
+3. **CPU Time** 综合公式
 
-存储器停顿周期 = IC × 每条指令的存储器访问引用次数 × 缺失率 × 缺失代价
+$$
+CPUtime = IC \times \left( CPI_{Execution} + \frac{MemAccess}{Inst} \times MissRate \times MissPenalty \right) \times CycleTime
+$$
 
-$$CPUtime = IC \times \left( CPI_{Execution} + \frac{MemAccess}{Inst} \times MissRate \times MissPenalty \right) \times CycleTime$$
+$$
+CPUtime = IC \times \left( CPI_{Execution} + \frac{MemMisses}{Inst} \times MissPenalty \right) \times CycleTime
+$$
 
-$$CPUtime = IC \times \left( CPI_{Execution} + \frac{MemMisses}{Inst} \times MissPenalty \right) \times CycleTime$$
+!!! info ""
+    其中的 **CPI 执行** 包含 ALU 指令和内存指令
 
-* CPI执行包括ALU和存储器指令
+4. **平均内存访问时间**
 
-Average Memory Access Time$$Average\ Memory\ Access\ Time = \frac{Whole\ accesses\ time}{All\ memory\ accesses\ in\ program}$$$$= \frac{Accesses\ time\ on\ hitting + Accesses\ time\ on\ miss}{All\ memory\ accesses\ in\ program}$$$$= Hit\ time + (Miss\ Rate \times Miss\ Penalty)$$$$= (HitTime_{Inst} + MissRate_{Inst} \times MissPenalty_{Inst}) \times Inst\%$$$$+ (HitTime_{Data} + MissRate_{Data} \times MissPenalty_{Data}) \times Data\%$$CPU Time 计算公式$$CPUTime = IC \times \left( \frac{AluOps}{Inst} \times CPI_{AluOps} + \frac{MemAccess}{Inst} \times AMAT \right) \times CycleTime$$
+- AMAT = HitTime + MissRate * MissPenalty
+    - **Miss penalty**: 发生缺失时，将数据从主存加载到缓存所需的时间
+- AMAT = AMAT_inst × Inst% + AMAT_data × Data%
 
-
-AMAT = HitTime + MissRate * MissPenalty
-
-- **Miss penalty**: 发生缺失时，将数据从主存加载到缓存所需的时间
+!!! success "执行时间"
+    $$
+    CPUtime = IC \times \left( \frac{ALUOps}{Inst} \times CPI_{AluOps} + \frac{MemAccess}{Inst} \times AMAT \right) \times CycleTime
+    $$
 
 ### 性能提高基础方法
 
@@ -366,16 +376,19 @@ AMAT = HitTime + MissRate * MissPenalty
     - 可能导致 **Hit Time** 和 **Miss penalty** 略有增加
     - 功耗和面积占用增加
 - **适用场景**：适用于数据访问模式易引发冲突失效的程序
+- 必须在**更高的相联度与硬件成本之间**取得平衡
 
 !!! abstract "2:1 缓存规则"
     大小为 $N$ 的直接映射缓存的缺失率 $\approx$ 大小为 $N/2$ 的 2 路组相联缓存的缺失率
+
+    **意义**：更高的相联度可以减少冲突缺失，有助于以更小的缓存容量实现相同的缺失率
 
 #### 减少 MissPenalty
 
 1. **方法一**：多级缓存
 
 - **核心原理**：在 CPU 和主存之间添加 **L1/L2/L3 缓存**；当 L1 发生缺失时，先检查速度较快的 L2/L3，以避免缓慢的主存访问
-- **优点**：显著减少 Miss Penalty；是现代处理器的标准配置
+- **优点**：显著减少 **Miss Penalty**；是现代处理器的标准配置
 - **缺点**：增加了硬件复杂性和制造成本
 - **应用**：所有现代高性能处理器和计算系统
 
@@ -386,14 +399,17 @@ AMAT = HitTime + MissRate * MissPenalty
 - **潜在缺点**：可能会增加**写操作的延迟**（但由于写操作通常对实时性不敏感，此影响较小）
 - **适用场景**：读操作频率远高于写操作的应用程序
 
+!!! warning ""
+    导致的 RAW 的冲突需要解决！
+
 #### 减少 HitTime
 
-1. **方法一**：在缓存索引期间避免地址转换
+**在缓存索引期间避免地址转换**
 
-- 核心原理：使用虚拟地址而非物理地址进行缓存索引，从而绕过关键路径上的 TLB 查找
-- 优点： 显著减少缓存命中时间，并由于延迟降低而允许更高的 CPU 时钟频率
-- 缺点： 存在缓存别名（Cache Aliasing）风险（多个虚拟地址映射到同一个物理地址），需要特殊的硬件解决方案
-- 应用场景： 高性能处理器设计，其中为了实现峰值效率，必须将每一周期的延迟降至最低
+- **核心原理**：使用虚拟地址而非物理地址进行缓存索引，从而绕过关键路径上的 TLB 查找
+- **优点**：显著减少缓存命中时间，并由于延迟降低而允许更高的 CPU 时钟频率
+- **缺点**：存在**缓存别名**风险（多个虚拟地址映射到同一个物理地址），需要特殊的硬件解决方案
+- **应用场景**：高性能处理器设计，其中为了实现峰值效率，必须将每一周期的延迟降至最低
 
 ### 性能提高先进方法
 
@@ -421,7 +437,45 @@ AMAT = HitTime + MissRate * MissPenalty
 !!! info ""
     更多方法请查看 PPT
 
+    ??? success "Summary"
+        1. 减少缺失惩罚 (Reduce the miss penalty)
+        
+        多级缓存 (multilevel caches)
 
-erformence and improve cache performance
+        关键字优先 (critical word first)：在加载块时，优先传送 CPU 请求的那个字。
 
-CPU vulnerability
+        读缺失优先于写缺失 (read miss before write miss)：优化写缓冲器的查询顺序。
+
+        合并写缓冲器 (merging write buffers)
+
+        牺牲缓存 (victim caches)：存放因冲突被替换出的块。
+
+        2. 降低缺失率 (Reduce the miss rate)
+        
+        更大的块大小 (larger block size)
+
+        更大的缓存容量 (large cache size)
+
+        更高的相联度 (higher associativity)
+
+        路预测与伪组相联 (way prediction and pseudo-associativity)
+
+        编译器优化 (compiler optimizations)
+
+        3. 减少缓存命中时间 (Reduce the time to hit in the cache)
+        
+        小而简单的缓存 (small and simple caches)
+
+        避免地址转换 (avoiding address translation)：例如使用虚拟索引。
+
+        流水线化缓存访问 (pipelined cache access)
+
+        追踪缓存 (trace caches)
+
+        4. 通过并行化减少缺失惩罚和缺失率 (Reduce the miss penalty and miss rate via parallelism)
+        
+        非阻塞缓存 (non-blocking caches)：允许在发生缺失时继续处理后续访问。
+
+        硬件预取 (hardware prefetching)
+
+        编译器预取 (compiler prefetching)

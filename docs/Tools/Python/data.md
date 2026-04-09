@@ -137,6 +137,7 @@ a = (10, 11, 12, 13, 14)
 b = list(a)
 print(type(b))   # Output: <class 'list'>
 ```
+
 ---
 ## 列表
 

@@ -4,44 +4,45 @@ comment: true
 
 # 类
 
-```cpp
-#include <iostream>
+??? example "Example"
+    ```cpp
+    #include <iostream>
 
-class point {
-public:
-    // 成员函数声明
-    void init(int x, int y);
-    void move(int dx, int dy);
-    void print() const; 
+    class point {
+    public:
+        // 成员函数声明
+        void init(int x, int y);
+        void move(int dx, int dy);
+        void print() const; 
 
-private:        // 外部无法访问
-    int x, y;
-};
+    private:        // 外部无法访问
+        int x, y;
+    };
 
-// --- 成员函数的实现 ---
+    // --- 成员函数的实现 ---
 
-void point::init(int x, int y) {
-    this->x = x;        // this 指向当前对象
-    this->y = y;
-}
+    void point::init(int x, int y) {
+        this->x = x;        // this 指向当前对象
+        this->y = y;
+    }
 
-void point::move(int dx, int dy) {
-    x += dx;
-    y += dy;
-}
+    void point::move(int dx, int dy) {
+        x += dx;
+        y += dy;
+    }
 
-void point::print() const {
-    std::cout << "Point(" << x << ", " << y << ")" << std::endl;
-}
+    void point::print() const {
+        std::cout << "Point(" << x << ", " << y << ")" << std::endl;
+    }
 
-int main() {
-    point a;
-    a.init(1, 2);  // 初始坐标为 (1, 2)
-    a.move(3, 4);  // 移动后坐标变为 (4, 6)
-    a.print();     // 输出: Point(4, 6)
-    return 0;
-}
-```
+    int main() {
+        point a;
+        a.init(1, 2);  // 初始坐标为 (1, 2)
+        a.move(3, 4);  // 移动后坐标变为 (4, 6)
+        a.print();     // 输出: Point(4, 6)
+        return 0;
+    }
+    ```
 
 !!! warning "Warning"
     在 C 语言中，使用类似的函数必须传入**结构体的指针**；而在 C++ 中，可以直接使用类中的函数。
@@ -119,7 +120,7 @@ void point::print(point* this);
     ```
 
 !!! tip "Tips"
-    1. 这两个构造函数可以**同时存在**
+    1. 这两个构造函数可以**同时存在**（函数重载）
     2. 构造函数的名称需要**与类同名**；而初始化函数的名称可以是任意的
     3. 构造函数**没有返回类型**，而初始化函数**有返回类型** `void` 
  
@@ -142,6 +143,126 @@ public:
 
 - 在**程序运行结束**时，会自动调用析构函数，释放内存
 - 析构函数执行的顺序是**构造函数的逆序**
+
+## 重载函数
+
+1. **重载函数**：在同一个类中定义多个名称相同但参数列表不同的函数
+
+2. **参数列表不同**：通过参数的数量、类型或顺序来区分不同的构造函数
+
+### **代理构造函数**
+
+```cpp
+class Info {
+public:
+    Info() { InitRest(); }             // 目标构造函数 (target)
+    Info(int i) : Info() { tyep = i; } // 委托构造函数 (delegating)
+    Info(char e) : Info() { name = e; }
+};
+```
+ 
+1. **前提**：多个版本的重载构造函数在内部需要执行**相同的操作**
+2. **目标构造函数**：真正执行初始化列表的构造函数
+3. **代理构造函数**：调用目标构造函数的构造函数
+4. **优点**：可以减少重载构造函数中的**代码重复**
+
+5. **用法**：将对另一个构造函数的调用放在**初始化列表**中
+
+
+!!! warning "Warning"
+    但代理构造函数不能在其自身的初始化列表中初始化其他成员
+    
+    ```cpp
+    class Info {
+        Info() { InitRest(); }
+        Info(int i) : Info(), type(i) {} // Error: 委托构造函数不能有初始化列表
+    }
+    ```
+
+    **解决方案**：可以使用**私有**构造函数来为其他成员提供初始化
+
+    ```cpp
+    class Info {
+    public:
+        Info() : Info(1, 'a') {}          // 委托
+        Info(int i) : Info(i, 'a') {}     // 委托
+        Info(char e) : Info(1, e) {}
+    private:
+        Info(int i, char e) : type(i), name(e) {} // 目标
+    };
+    ```
+
+5. **执行顺序**
+
+- 目标构造函数的**初始化列表**
+- 目标构造函数的函数体 `{}`
+- 代理构造函数的函数体 `{}`
+
+6. 可以创建一个**代理构造函数链**
+
+```cpp
+class Info {
+public:
+    Info() : Info(1) {}               // 1: 委托 （使用 2）
+    Info(int i) : Info(i, 'a') {}     // 2: 既是目标也是委托 （使用 4）
+    Info(char e) : Info(1, e) {}      // 3: 委托
+private:
+    Info(int i, char e) : type(i), name(e) {} // 4: 目标
+};
+```
+
+!!! warning "Warning"
+    但应防止出现**环状委托链**！！！
+
+## 默认参数
+
+1. **默认参数**：在函数**声明或定义**时为某些参数指定默认值，如果在函数调用时没有提供该参数的值，编译器会自动插入该值
+
+2. **注意事项**：
+
+- 默认参数必须**从右往左**设置，不能跳过某个参数 **e.g.** `#!cpp void print(int a = 1, int b)`
+- 默认参数通常**只在函数声明中指定一次**，不要在定义中重复指定
+- **默认参数与重载的冲突**：当默认参数遇到函数重载时，容易产生二义性错误
+
+    ```C++
+    void print(int x);
+    void print(int x, int y = 10);
+    // 调用
+    print(5); // 编译器崩溃：不知道该调哪一个
+    ```
+
+3. **带默认参数的构造函数**：所有参数都有默认值的构造函数就是一个**默认构造函数**
+
+## 内联函数
+
+!!! warning "Warning"
+    调用函数的开销比较大
+
+1. **内联函数**：在调用处就地展开，类似于**预处理器宏**，从而消除了函数调用的开销
+
+```cpp
+inline int add(int a, int b) {
+    return a + b;
+}
+int main() {
+    int c = add(1, 2);  // 展开成 c = 1 + 2 
+}
+```
+
+2. **定义与声明**
+
+- 在声明和定义处都要**重复使用** `inline` 关键字
+- 内联函数的定义可能不会在 **`.obj`** 文件中生成任何代码
+- 必须将内联函数的完整定义放在**头文件**中，在需要该函数的地方使用 `#include`
+
+!!! tip "Tips"
+    1. 不用担心内联函数的**多重定义**问题，内联函数的定义仅仅是声明
+    2. **权衡**：可能会增加代码体积，但减少了调用的时间开销，因此内联函数是**以空间换取速度**
+    3. 相比于 C 语言中的宏，会进行**参数类型检查**（安全）
+    4. 内联函数**可能不会被内联**：
+    
+    - 编译器并不一定要满足将函数设为内联的请求
+    - 可能会判定函数体**过大**，或者发现函数**调用了自身**（内联函数不允许也不可能实现递归），或者特定编译器可能未实现该特性
 
 ## 访问控制
 
@@ -244,3 +365,4 @@ X global_x2(8, 16);
 |**静态全局变量**|文件内|全局|在定义行，于 `main()` 之前|
 |**成员变量**|类内部|随对象的生命周期|创建该对象时|
 |**静态成员变量**|类内部|全局|在定义行，于 `main()` 之前|
+
