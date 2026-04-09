@@ -1482,17 +1482,6 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        性能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         缓存性能
       
     </span>
@@ -1502,7 +1491,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         性能提高基础方法
@@ -1552,7 +1541,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         性能提高先进方法
@@ -4625,17 +4614,6 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        性能
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
         缓存性能
       
     </span>
@@ -4645,7 +4623,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         性能提高基础方法
@@ -4695,7 +4673,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         性能提高先进方法
@@ -5254,24 +5232,45 @@
 <p>这里补充了 Cache 安全相关知识，请参照 PPT</p>
 </div>
 <hr />
-<h2 id="_7">性能<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h2 id="_8">缓存性能<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>CPU执行时间</p>
+<h2 id="_7">缓存性能<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>CPU Execution Time</strong> = (CPU clock cycles + Memory stall cycles) × Clock cycle time</li>
+<li><strong>Memory stall cycles</strong> = IC × MemAccess refs per instructions × Miss rate × Miss penalty</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">翻译</p>
+<p>MemAccess refs per instructions    每条指令的存储器访问引用次数</p>
+<p>Memory stall cycles                存储器停顿周期</p>
+</div>
+<ol start="3">
+<li><strong>CPU Time</strong> 综合公式</li>
+</ol>
+<div class="arithmatex">\[
+CPUtime = IC \times \left( CPI_{Execution} + \frac{MemAccess}{Inst} \times MissRate \times MissPenalty \right) \times CycleTime
+\]</div>
+<div class="arithmatex">\[
+CPUtime = IC \times \left( CPI_{Execution} + \frac{MemMisses}{Inst} \times MissPenalty \right) \times CycleTime
+\]</div>
+<div class="admonition info">
+<p>其中的 <strong>CPI 执行</strong> 包含 ALU 指令和内存指令</p>
+</div>
+<ol start="4">
+<li><strong>平均内存访问时间</strong></li>
+</ol>
 <ul>
-<li>CPU执行时间 = (CPU时钟周期 + 存储器停顿周期) × 时钟周期时间</li>
-</ul>
-<p>存储器停顿周期 = IC × 每条指令的存储器访问引用次数 × 缺失率 × 缺失代价</p>
-<div class="arithmatex">\[CPUtime = IC \times \left( CPI_{Execution} + \frac{MemAccess}{Inst} \times MissRate \times MissPenalty \right) \times CycleTime\]</div>
-<div class="arithmatex">\[CPUtime = IC \times \left( CPI_{Execution} + \frac{MemMisses}{Inst} \times MissPenalty \right) \times CycleTime\]</div>
-<ul>
-<li>CPI执行包括ALU和存储器指令</li>
-</ul>
-<p>Average Memory Access Time$<span class="arithmatex">\(Average\ Memory\ Access\ Time = \frac{Whole\ accesses\ time}{All\ memory\ accesses\ in\ program}\)</span>$$<span class="arithmatex">\(= \frac{Accesses\ time\ on\ hitting + Accesses\ time\ on\ miss}{All\ memory\ accesses\ in\ program}\)</span>$$<span class="arithmatex">\(= Hit\ time + (Miss\ Rate \times Miss\ Penalty)\)</span>$$<span class="arithmatex">\(= (HitTime_{Inst} + MissRate_{Inst} \times MissPenalty_{Inst}) \times Inst\%\)</span>$$<span class="arithmatex">\(+ (HitTime_{Data} + MissRate_{Data} \times MissPenalty_{Data}) \times Data\%\)</span><span class="arithmatex">\(CPU Time 计算公式\)</span><span class="arithmatex">\(CPUTime = IC \times \left( \frac{AluOps}{Inst} \times CPI_{AluOps} + \frac{MemAccess}{Inst} \times AMAT \right) \times CycleTime\)</span>$</p>
-<p>AMAT = HitTime + MissRate * MissPenalty</p>
-<ul>
+<li>AMAT = HitTime + MissRate * MissPenalty<ul>
 <li><strong>Miss penalty</strong>: 发生缺失时，将数据从主存加载到缓存所需的时间</li>
 </ul>
-<h3 id="_9">性能提高基础方法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+</li>
+<li>AMAT = AMAT_inst × Inst% + AMAT_data × Data%</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">执行时间</p>
+<div class="arithmatex">\[
+CPUtime = IC \times \left( \frac{ALUOps}{Inst} \times CPI_{AluOps} + \frac{MemAccess}{Inst} \times AMAT \right) \times CycleTime
+\]</div>
+</div>
+<h3 id="_8">性能提高基础方法<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <h4 id="missrate">减少 MissRate<a class="headerlink" href="#missrate" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>方法一</strong>：增加<strong>缓存块</strong>的大小</li>
@@ -5304,10 +5303,12 @@
 </ul>
 </li>
 <li><strong>适用场景</strong>：适用于数据访问模式易引发冲突失效的程序</li>
+<li>必须在<strong>更高的相联度与硬件成本之间</strong>取得平衡</li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">2:1 缓存规则</p>
 <p>大小为 <span class="arithmatex">\(N\)</span> 的直接映射缓存的缺失率 <span class="arithmatex">\(\approx\)</span> 大小为 <span class="arithmatex">\(N/2\)</span> 的 2 路组相联缓存的缺失率</p>
+<p><strong>意义</strong>：更高的相联度可以减少冲突缺失，有助于以更小的缓存容量实现相同的缺失率</p>
 </div>
 <h4 id="misspenalty">减少 MissPenalty<a class="headerlink" href="#misspenalty" title="Permanent link">&para;</a></h4>
 <ol>
@@ -5315,7 +5316,7 @@
 </ol>
 <ul>
 <li><strong>核心原理</strong>：在 CPU 和主存之间添加 <strong>L1/L2/L3 缓存</strong>；当 L1 发生缺失时，先检查速度较快的 L2/L3，以避免缓慢的主存访问</li>
-<li><strong>优点</strong>：显著减少 Miss Penalty；是现代处理器的标准配置</li>
+<li><strong>优点</strong>：显著减少 <strong>Miss Penalty</strong>；是现代处理器的标准配置</li>
 <li><strong>缺点</strong>：增加了硬件复杂性和制造成本</li>
 <li><strong>应用</strong>：所有现代高性能处理器和计算系统</li>
 </ul>
@@ -5328,17 +5329,18 @@
 <li><strong>潜在缺点</strong>：可能会增加<strong>写操作的延迟</strong>（但由于写操作通常对实时性不敏感，此影响较小）</li>
 <li><strong>适用场景</strong>：读操作频率远高于写操作的应用程序</li>
 </ul>
+<div class="admonition warning">
+<p>导致的 RAW 的冲突需要解决！</p>
+</div>
 <h4 id="hittime">减少 HitTime<a class="headerlink" href="#hittime" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>方法一</strong>：在缓存索引期间避免地址转换</li>
-</ol>
+<p><strong>在缓存索引期间避免地址转换</strong></p>
 <ul>
-<li>核心原理：使用虚拟地址而非物理地址进行缓存索引，从而绕过关键路径上的 TLB 查找</li>
-<li>优点： 显著减少缓存命中时间，并由于延迟降低而允许更高的 CPU 时钟频率</li>
-<li>缺点： 存在缓存别名（Cache Aliasing）风险（多个虚拟地址映射到同一个物理地址），需要特殊的硬件解决方案</li>
-<li>应用场景： 高性能处理器设计，其中为了实现峰值效率，必须将每一周期的延迟降至最低</li>
+<li><strong>核心原理</strong>：使用虚拟地址而非物理地址进行缓存索引，从而绕过关键路径上的 TLB 查找</li>
+<li><strong>优点</strong>：显著减少缓存命中时间，并由于延迟降低而允许更高的 CPU 时钟频率</li>
+<li><strong>缺点</strong>：存在<strong>缓存别名</strong>风险（多个虚拟地址映射到同一个物理地址），需要特殊的硬件解决方案</li>
+<li><strong>应用场景</strong>：高性能处理器设计，其中为了实现峰值效率，必须将每一周期的延迟降至最低</li>
 </ul>
-<h3 id="_10">性能提高先进方法<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h3 id="_9">性能提高先进方法<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <ol>
 <li>采用<strong>虚拟索引和组相联</strong>结构的<strong>流水线化</strong> L1 缓存</li>
 </ol>
@@ -5368,9 +5370,39 @@
 </ul>
 <div class="admonition info">
 <p>更多方法请查看 PPT</p>
+<details class="success">
+<summary>Summary</summary>
+<ol>
+<li>减少缺失惩罚 (Reduce the miss penalty)</li>
+</ol>
+<p>多级缓存 (multilevel caches)</p>
+<p>关键字优先 (critical word first)：在加载块时，优先传送 CPU 请求的那个字。</p>
+<p>读缺失优先于写缺失 (read miss before write miss)：优化写缓冲器的查询顺序。</p>
+<p>合并写缓冲器 (merging write buffers)</p>
+<p>牺牲缓存 (victim caches)：存放因冲突被替换出的块。</p>
+<ol start="2">
+<li>降低缺失率 (Reduce the miss rate)</li>
+</ol>
+<p>更大的块大小 (larger block size)</p>
+<p>更大的缓存容量 (large cache size)</p>
+<p>更高的相联度 (higher associativity)</p>
+<p>路预测与伪组相联 (way prediction and pseudo-associativity)</p>
+<p>编译器优化 (compiler optimizations)</p>
+<ol start="3">
+<li>减少缓存命中时间 (Reduce the time to hit in the cache)</li>
+</ol>
+<p>小而简单的缓存 (small and simple caches)</p>
+<p>避免地址转换 (avoiding address translation)：例如使用虚拟索引。</p>
+<p>流水线化缓存访问 (pipelined cache access)</p>
+<p>追踪缓存 (trace caches)</p>
+<ol start="4">
+<li>通过并行化减少缺失惩罚和缺失率 (Reduce the miss penalty and miss rate via parallelism)</li>
+</ol>
+<p>非阻塞缓存 (non-blocking caches)：允许在发生缺失时继续处理后续访问。</p>
+<p>硬件预取 (hardware prefetching)</p>
+<p>编译器预取 (compiler prefetching)</p>
+</details>
 </div>
-<p>erformence and improve cache performance</p>
-<p>CPU vulnerability</p>
 
 
 
@@ -5393,7 +5425,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月8日 19:50:12 CST">2026年4月8日 19:50:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月9日 17:06:36 CST">2026年4月9日 17:06:36</span>
   </span>
 
     
