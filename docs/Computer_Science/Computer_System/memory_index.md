@@ -1,3 +1,7 @@
+---
+comments : True
+---
+
 # 内存层次结构
 
 1. **存储层次结构**：register、cache、memory、storage（从左到右容量越来越大，访问速度越来越慢，成本越来越低）
