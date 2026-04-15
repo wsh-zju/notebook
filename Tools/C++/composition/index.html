@@ -12,32 +12,32 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Tools/Verilog/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Tools/C%2B%2B/composition/">
       
       
-        <link rel="prev" href="../Python/accumulate/">
+        <link rel="prev" href="../class/">
       
       
-        <link rel="next" href="../Css/">
+        <link rel="next" href="../pta/">
       
       
         
       
       
-      <link rel="icon" href="../../style/images/favicon_io/favicon.ico">
+      <link rel="icon" href="../../../style/images/favicon_io/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Verilog - Lucy Wisteria's Notebook</title>
+        <title>组合 - Lucy Wisteria's Notebook</title>
       
     
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -60,31 +60,31 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-      <link rel="stylesheet" href="../../style/css/tasklist.css">
+      <link rel="stylesheet" href="../../../style/css/tasklist.css">
     
-      <link rel="stylesheet" href="../../style/css/home_card.css">
+      <link rel="stylesheet" href="../../../style/css/home_card.css">
     
-      <link rel="stylesheet" href="../../style/css/custom.css">
+      <link rel="stylesheet" href="../../../style/css/custom.css">
     
-      <link rel="stylesheet" href="../../style/css/card.css">
+      <link rel="stylesheet" href="../../../style/css/card.css">
     
-      <link rel="stylesheet" href="../../style/css/flink.css">
+      <link rel="stylesheet" href="../../../style/css/flink.css">
     
-      <link rel="stylesheet" href="../../style/css/toc_extra.css">
+      <link rel="stylesheet" href="../../../style/css/toc_extra.css">
     
-      <link rel="stylesheet" href="../../style/css/svg_extra.css">
+      <link rel="stylesheet" href="../../../style/css/svg_extra.css">
     
-      <link rel="stylesheet" href="../../style/css/counter.css">
+      <link rel="stylesheet" href="../../../style/css/counter.css">
     
-      <link rel="stylesheet" href="../../style/css/english.css">
+      <link rel="stylesheet" href="../../../style/css/english.css">
     
-      <link rel="stylesheet" href="../../style/css/riscv.css">
+      <link rel="stylesheet" href="../../../style/css/riscv.css">
     
-      <link rel="stylesheet" href="../../style/css/search.css">
+      <link rel="stylesheet" href="../../../style/css/search.css">
     
-      <link rel="stylesheet" href="../../style/css/weixin.css">
+      <link rel="stylesheet" href="../../../style/css/weixin.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -109,7 +109,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#verilog" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -123,9 +123,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-header__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -142,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Verilog
+              组合
             
           </span>
         </div>
@@ -262,7 +262,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
   
@@ -284,7 +284,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Computer_Science/" class="md-tabs__link">
+        <a href="../../../Computer_Science/" class="md-tabs__link">
           
   
   
@@ -308,7 +308,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -330,7 +330,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Others/" class="md-tabs__link">
+        <a href="../../../Others/" class="md-tabs__link">
           
   
   
@@ -366,9 +366,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
+    <a href="../../.." title="Lucy Wisteria&#39;s Notebook" class="md-nav__button md-logo" aria-label="Lucy Wisteria's Notebook" data-md-component="logo">
       
-  <img src="../../style/images/logo.png" alt="logo">
+  <img src="../../../style/images/logo.png" alt="logo">
 
     </a>
     Lucy Wisteria's Notebook
@@ -418,7 +418,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   
@@ -489,7 +489,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../weixin/" class="md-nav__link ">
+            <a href="../../../weixin/" class="md-nav__link ">
               
   
   
@@ -533,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../weixin/macos/" class="md-nav__link">
+      <a href="../../../weixin/macos/" class="md-nav__link">
         
   
   
@@ -561,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../weixin/cet6-cihui/" class="md-nav__link">
+      <a href="../../../weixin/cet6-cihui/" class="md-nav__link">
         
   
   
@@ -589,7 +589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../weixin/cet6-fanyi/" class="md-nav__link">
+      <a href="../../../weixin/cet6-fanyi/" class="md-nav__link">
         
   
   
@@ -661,7 +661,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/" class="md-nav__link ">
+            <a href="../../../Computer_Science/" class="md-nav__link ">
               
   
   
@@ -752,7 +752,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/Computer_System/" class="md-nav__link ">
+            <a href="../../../Computer_Science/Computer_System/" class="md-nav__link ">
               
   
   
@@ -796,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/data/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/data/" class="md-nav__link">
         
   
   
@@ -824,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/logic/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/logic/" class="md-nav__link">
         
   
   
@@ -852,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/combine/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/combine/" class="md-nav__link">
         
   
   
@@ -880,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/ALU/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/ALU/" class="md-nav__link">
         
   
   
@@ -908,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/sequence/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/sequence/" class="md-nav__link">
         
   
   
@@ -936,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/ISA/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/ISA/" class="md-nav__link">
         
   
   
@@ -964,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/CPU/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/CPU/" class="md-nav__link">
         
   
   
@@ -992,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/MultiCPU/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/MultiCPU/" class="md-nav__link">
         
   
   
@@ -1020,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/pipeline/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/pipeline/" class="md-nav__link">
         
   
   
@@ -1114,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/OS/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/OS/" class="md-nav__link">
         
   
   
@@ -1142,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/process/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/process/" class="md-nav__link">
         
   
   
@@ -1170,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/IPCs/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/IPCs/" class="md-nav__link">
         
   
   
@@ -1198,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/schedule/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/schedule/" class="md-nav__link">
         
   
   
@@ -1226,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/thread/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/thread/" class="md-nav__link">
         
   
   
@@ -1254,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/synch/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/synch/" class="md-nav__link">
         
   
   
@@ -1282,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/deadlock/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/deadlock/" class="md-nav__link">
         
   
   
@@ -1318,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/quant/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/quant/" class="md-nav__link">
         
   
   
@@ -1346,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/ILP/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/ILP/" class="md-nav__link">
         
   
   
@@ -1432,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/memory_index/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/memory_index/" class="md-nav__link">
         
   
   
@@ -1460,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/cache/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/cache/" class="md-nav__link">
         
   
   
@@ -1488,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Computer_System/main_memory/" class="md-nav__link">
+      <a href="../../../Computer_Science/Computer_System/main_memory/" class="md-nav__link">
         
   
   
@@ -1557,7 +1557,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/Data_Structure/" class="md-nav__link ">
+            <a href="../../../Computer_Science/Data_Structure/" class="md-nav__link ">
               
   
   
@@ -1638,7 +1638,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/Data_Structure/Foundation/" class="md-nav__link ">
+            <a href="../../../Computer_Science/Data_Structure/Foundation/" class="md-nav__link ">
               
   
   
@@ -1682,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Linear/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Linear/" class="md-nav__link">
         
   
   
@@ -1710,7 +1710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Tree/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Tree/" class="md-nav__link">
         
   
   
@@ -1738,7 +1738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Heap/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Heap/" class="md-nav__link">
         
   
   
@@ -1766,7 +1766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/ADT/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/ADT/" class="md-nav__link">
         
   
   
@@ -1794,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Graph/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Graph/" class="md-nav__link">
         
   
   
@@ -1822,7 +1822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Sort/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Sort/" class="md-nav__link">
         
   
   
@@ -1850,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/Hash/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/Hash/" class="md-nav__link">
         
   
   
@@ -1878,7 +1878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Foundation/pta/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Foundation/pta/" class="md-nav__link">
         
   
   
@@ -1967,7 +1967,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/Data_Structure/Advanced/" class="md-nav__link ">
+            <a href="../../../Computer_Science/Data_Structure/Advanced/" class="md-nav__link ">
               
   
   
@@ -2011,7 +2011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/tree/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/tree/" class="md-nav__link">
         
   
   
@@ -2039,7 +2039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/heap/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/heap/" class="md-nav__link">
         
   
   
@@ -2067,7 +2067,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/queue/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/queue/" class="md-nav__link">
         
   
   
@@ -2095,7 +2095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/amort/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/amort/" class="md-nav__link">
         
   
   
@@ -2123,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/inv/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/inv/" class="md-nav__link">
         
   
   
@@ -2151,7 +2151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/back/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/back/" class="md-nav__link">
         
   
   
@@ -2179,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/divide/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/divide/" class="md-nav__link">
         
   
   
@@ -2207,7 +2207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/DP/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/DP/" class="md-nav__link">
         
   
   
@@ -2235,7 +2235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/greedy/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/greedy/" class="md-nav__link">
         
   
   
@@ -2263,7 +2263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/NP/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/NP/" class="md-nav__link">
         
   
   
@@ -2291,7 +2291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/appro/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/appro/" class="md-nav__link">
         
   
   
@@ -2319,7 +2319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/localsearch/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/localsearch/" class="md-nav__link">
         
   
   
@@ -2347,7 +2347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/random/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/random/" class="md-nav__link">
         
   
   
@@ -2375,7 +2375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/paral/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/paral/" class="md-nav__link">
         
   
   
@@ -2403,7 +2403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/exter/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/exter/" class="md-nav__link">
         
   
   
@@ -2431,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Data_Structure/Advanced/pta/" class="md-nav__link">
+      <a href="../../../Computer_Science/Data_Structure/Advanced/pta/" class="md-nav__link">
         
   
   
@@ -2475,7 +2475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/AI/" class="md-nav__link">
+      <a href="../../../Computer_Science/AI/" class="md-nav__link">
         
   
   
@@ -2534,7 +2534,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Computer_Science/Database_System/" class="md-nav__link ">
+            <a href="../../../Computer_Science/Database_System/" class="md-nav__link ">
               
   
   
@@ -2578,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/introduce/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/introduce/" class="md-nav__link">
         
   
   
@@ -2606,7 +2606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/relationmodel/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/relationmodel/" class="md-nav__link">
         
   
   
@@ -2634,7 +2634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/relationdb/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/relationdb/" class="md-nav__link">
         
   
   
@@ -2662,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/E-R/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/E-R/" class="md-nav__link">
         
   
   
@@ -2746,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/sql_found/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/sql_found/" class="md-nav__link">
         
   
   
@@ -2774,7 +2774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Computer_Science/Database_System/sql_adv/" class="md-nav__link">
+      <a href="../../../Computer_Science/Database_System/sql_adv/" class="md-nav__link">
         
   
   
@@ -2867,7 +2867,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -2942,7 +2942,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../C/" class="md-nav__link ">
+            <a href="../../C/" class="md-nav__link ">
               
   
   
@@ -2986,7 +2986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C/pointer/" class="md-nav__link">
+      <a href="../../C/pointer/" class="md-nav__link">
         
   
   
@@ -3014,7 +3014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C/recursion/" class="md-nav__link">
+      <a href="../../C/recursion/" class="md-nav__link">
         
   
   
@@ -3042,7 +3042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C/structure/" class="md-nav__link">
+      <a href="../../C/structure/" class="md-nav__link">
         
   
   
@@ -3070,7 +3070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C/file/" class="md-nav__link">
+      <a href="../../C/file/" class="md-nav__link">
         
   
   
@@ -3098,7 +3098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C/accumulate/" class="md-nav__link">
+      <a href="../../C/accumulate/" class="md-nav__link">
         
   
   
@@ -3131,6 +3131,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3157,15 +3159,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../C%2B%2B/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -3189,7 +3191,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3209,7 +3211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C%2B%2B/object/" class="md-nav__link">
+      <a href="../object/" class="md-nav__link">
         
   
   
@@ -3237,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C%2B%2B/container/" class="md-nav__link">
+      <a href="../container/" class="md-nav__link">
         
   
   
@@ -3265,7 +3267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C%2B%2B/class/" class="md-nav__link">
+      <a href="../class/" class="md-nav__link">
         
   
   
@@ -3290,10 +3292,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../C%2B%2B/composition/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    组合
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3309,6 +3338,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clock-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实例 Clock Display
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3321,7 +3381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../C%2B%2B/pta/" class="md-nav__link">
+      <a href="../pta/" class="md-nav__link">
         
   
   
@@ -3386,7 +3446,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Python/" class="md-nav__link ">
+            <a href="../../Python/" class="md-nav__link ">
               
   
   
@@ -3430,7 +3490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/foundation/" class="md-nav__link">
+      <a href="../../Python/foundation/" class="md-nav__link">
         
   
   
@@ -3458,7 +3518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/data/" class="md-nav__link">
+      <a href="../../Python/data/" class="md-nav__link">
         
   
   
@@ -3486,7 +3546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/advance/" class="md-nav__link">
+      <a href="../../Python/advance/" class="md-nav__link">
         
   
   
@@ -3514,7 +3574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Python/accumulate/" class="md-nav__link">
+      <a href="../../Python/accumulate/" class="md-nav__link">
         
   
   
@@ -3547,8 +3607,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3563,11 +3621,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -3588,7 +3646,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3603,19 +3661,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../Verilog/" class="md-nav__link">
         
   
   
@@ -3631,7 +3680,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -3652,7 +3700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Css/" class="md-nav__link">
+      <a href="../../Css/" class="md-nav__link">
         
   
   
@@ -3703,7 +3751,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mkdocs/" class="md-nav__link ">
+            <a href="../../mkdocs/" class="md-nav__link ">
               
   
   
@@ -3747,7 +3795,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mkdocs/theme/" class="md-nav__link">
+      <a href="../../mkdocs/theme/" class="md-nav__link">
         
   
   
@@ -3783,7 +3831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Latex/" class="md-nav__link">
+      <a href="../../Latex/" class="md-nav__link">
         
   
   
@@ -3811,7 +3859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminal/" class="md-nav__link">
+      <a href="../../terminal/" class="md-nav__link">
         
   
   
@@ -3871,7 +3919,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Others/" class="md-nav__link ">
+            <a href="../../../Others/" class="md-nav__link ">
               
   
   
@@ -3938,7 +3986,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Others/Math_and_Physics/" class="md-nav__link ">
+            <a href="../../../Others/Math_and_Physics/" class="md-nav__link ">
               
   
   
@@ -4023,7 +4071,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Others/Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
+            <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/" class="md-nav__link ">
               
   
   
@@ -4067,7 +4115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter1/" class="md-nav__link">
         
   
   
@@ -4095,7 +4143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter2/" class="md-nav__link">
         
   
   
@@ -4123,7 +4171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter3/" class="md-nav__link">
         
   
   
@@ -4151,7 +4199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter4/" class="md-nav__link">
         
   
   
@@ -4179,7 +4227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter5/" class="md-nav__link">
         
   
   
@@ -4207,7 +4255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter6/" class="md-nav__link">
         
   
   
@@ -4235,7 +4283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter8/" class="md-nav__link">
         
   
   
@@ -4263,7 +4311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter9/" class="md-nav__link">
         
   
   
@@ -4291,7 +4339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter10/" class="md-nav__link">
         
   
   
@@ -4319,7 +4367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
+      <a href="../../../Others/Math_and_Physics/Discrete_Mathematics/chapter11/" class="md-nav__link">
         
   
   
@@ -4421,7 +4469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/sizheng/mayuan/" class="md-nav__link">
+      <a href="../../../Others/sizheng/mayuan/" class="md-nav__link">
         
   
   
@@ -4449,7 +4497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/sizheng/maogai/" class="md-nav__link">
+      <a href="../../../Others/sizheng/maogai/" class="md-nav__link">
         
   
   
@@ -4477,7 +4525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Others/sizheng/xigai/" class="md-nav__link">
+      <a href="../../../Others/sizheng/xigai/" class="md-nav__link">
         
   
   
@@ -4533,6 +4581,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clock-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实例 Clock Display
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4552,7 +4619,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Tools/Verilog.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Tools/C++/composition.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -4560,7 +4627,111 @@
   
 
 
-<h1 id="verilog"><i class="fa-regular fa-microchip"></i> Verilog<a class="headerlink" href="#verilog" title="Permanent link">&para;</a></h1>
+<h1 id="_1">组合<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ol>
+<li><strong>组合</strong>：利用现有对象构造新对象（<strong>一种 "has-a" 关系</strong>）</li>
+<li><strong>包含方式</strong>：</li>
+</ol>
+<ul>
+<li><strong>完全包含</strong> (Fully)：直接包含<ul>
+<li>构造与析构都会<strong>自动</strong>调用</li>
+<li>并且均在包含它的对象构造和析构<strong>之前</strong>调用</li>
+</ul>
+</li>
+<li>
+<p><strong>引用包含</strong> (By reference)：通过引用包含</p>
+<ul>
+<li>构造与析构都需要<strong>手动</strong>调用</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">引用包含使用的场景</p>
+<ol>
+<li>逻辑关系不是“完全拥有”关系</li>
+<li>初始状态下的<strong>大小未知</strong>（未知大小的数组）</li>
+<li>资源需要在运行时分配或连接</li>
+</ol>
+</div>
+</li>
+</ul>
+<ol start="3">
+<li><strong>嵌入式对象</strong>（一般定义为 <code class="highlight"><span class="k">private</span></code>）</li>
+</ol>
+<ul>
+<li><strong>初始化</strong>时<ul>
+<li>构造函数可以<strong>拥有初始化列表</strong>，为<strong>子构造函数</strong>提供参数</li>
+<li>调用默认构造函数：如果你没有提供参数，且<strong>存在默认构造函数</strong>（或有所有默认参数的构造函数）</li>
+</ul>
+</li>
+<li>析构函数将被自动调用</li>
+</ul>
+<details class="example">
+<summary>Example</summary>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Person</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Currency</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">class</span><span class="w"> </span><span class="nc">SavingsAccount</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">SavingsAccount</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">cents</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="o">~</span><span class="n">SavingsAccount</span><span class="p">();</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">print</span><span class="p">();</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">private</span><span class="o">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">    </span><span class="n">Person</span><span class="w"> </span><span class="n">m_saver</span><span class="p">;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="n">Currency</span><span class="w"> </span><span class="n">m_balance</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="p">};</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="c1">// 使用初始化列表初始化</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="n">SavingsAccount</span><span class="o">::</span><span class="n">SavingsAccount</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">cents</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">m_saver</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">address</span><span class="p">),</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="n">m_balance</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">cents</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="kt">void</span><span class="w"> </span><span class="n">SavingsAccount</span><span class="o">::</span><span class="n">print</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="n">m_saver</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="n">m_balance</span><span class="p">.</span><span class="n">print</span><span class="p">();</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>如果我们将构造函数写成如下形式，<strong>默认构造函数仍会被调用</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">SavingsAccount</span><span class="o">::</span><span class="n">SavingsAccount</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">address</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">cents</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">m_saver</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">m_saver</span><span class="p">.</span><span class="n">set_address</span><span class="p">(</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">m_balance</span><span class="p">.</span><span class="n">set_cents</span><span class="p">(</span><span class="w"> </span><span class="n">cents</span><span class="w"> </span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<h2 id="clock-display">实例 Clock Display<a class="headerlink" href="#clock-display" title="Permanent link">&para;</a></h2>
 
 
 
@@ -4583,7 +4754,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年3月3日 20:11:56 CST">2026年3月3日 20:11:56</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月15日 21:28:27 CST">2026年4月15日 21:28:27</span>
   </span>
 
     
@@ -4593,7 +4764,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月25日 22:55:42 CST">2026年1月25日 22:55:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月15日 21:28:27 CST">2026年4月15日 21:28:27</span>
   </span>
 
     
@@ -4632,7 +4803,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../Python/accumulate/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 常用知识汇总">
+          <a href="../class/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 类">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -4642,20 +4813,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                常用知识汇总
+                类
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Css/" class="md-footer__link md-footer__link--next" aria-label="下一页: CSS">
+          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                CSS
+                PTA
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -4696,15 +4867,15 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["favicon.ico", "content.action.edit", "content.code.copy", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../style/js/mathjax.js"></script>
+        <script src="../../../style/js/mathjax.js"></script>
       
     
     <script>

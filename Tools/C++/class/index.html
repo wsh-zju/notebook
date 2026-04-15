@@ -18,7 +18,7 @@
         <link rel="prev" href="../container/">
       
       
-        <link rel="next" href="../pta/">
+        <link rel="next" href="../composition/">
       
       
         
@@ -3150,6 +3150,8 @@
       
         
       
+        
+      
     
     
     
@@ -3375,6 +3377,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3384,9 +3398,36 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内联变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#weak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        weak
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         访问控制
@@ -3397,7 +3438,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         不同位置的对象
@@ -3422,6 +3463,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    组合
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -4691,6 +4760,18 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#inline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="inline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4700,9 +4781,36 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        内联变量
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#weak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        weak
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         访问控制
@@ -4713,7 +4821,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         不同位置的对象
@@ -5001,7 +5109,7 @@
 <span class="normal"><a href="#__codelineno-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Info</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">public</span><span class="o">:</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">Info</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">InitRest</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w">             </span><span class="c1">// 目标构造函数 (target)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="n">Info</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Info</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">tyep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// 委托构造函数 (delegating)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="n">Info</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Info</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// 委托构造函数 (delegating)</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="n">Info</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Info</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
@@ -5103,7 +5211,8 @@
 <ol start="3">
 <li><strong>带默认参数的构造函数</strong>：所有参数都有默认值的构造函数就是一个<strong>默认构造函数</strong></li>
 </ol>
-<h2 id="_6">内联函数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="inline"><code class="highlight"><span class="kr">inline</span></code><a class="headerlink" href="#inline" title="Permanent link">&para;</a></h2>
+<h3 id="_6">内联函数<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>调用函数的开销比较大</p>
@@ -5127,24 +5236,158 @@
 <li><strong>定义与声明</strong></li>
 </ol>
 <ul>
-<li>在声明和定义处都要<strong>重复使用</strong> <code>inline</code> 关键字</li>
+<li>在声明和定义处都要<strong>重复使用</strong> <code class="highlight"><span class="kr">inline</span></code> 关键字</li>
 <li>内联函数的定义可能不会在 <strong><code>.obj</code></strong> 文件中生成任何代码</li>
-<li>必须将内联函数的完整定义放在<strong>头文件</strong>中，在需要该函数的地方使用 <code>#include</code></li>
+<li>必须将内联函数的完整定义放在<strong>头文件</strong>中，在需要该函数的地方使用 <code class="highlight"><span class="cp">#include</span></code></li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Tips</p>
+<p class="admonition-title">优势与劣势</p>
 <ol>
-<li>不用担心内联函数的<strong>多重定义</strong>问题，内联函数的定义仅仅是声明</li>
+<li>不用担心内联函数的<strong>多重定义</strong>问题，内联函数的定义<strong>仅仅是声明</strong></li>
 <li><strong>权衡</strong>：可能会增加代码体积，但减少了调用的时间开销，因此内联函数是<strong>以空间换取速度</strong></li>
 <li>相比于 C 语言中的宏，会进行<strong>参数类型检查</strong>（安全）</li>
-<li>内联函数<strong>可能不会被内联</strong>：</li>
 </ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>内联函数<strong>可能不会被内联</strong>，编译器<strong>并不一定</strong>要满足将函数设为内联的请求：</p>
 <ul>
-<li>编译器并不一定要满足将函数设为内联的请求</li>
-<li>可能会判定函数体<strong>过大</strong>，或者发现函数<strong>调用了自身</strong>（内联函数不允许也不可能实现递归），或者特定编译器可能未实现该特性</li>
+<li>可能会判定函数体<strong>过大</strong></li>
+<li>或者发现函数<strong>调用了自身</strong>（内联函数不允许也不可能实现递归）</li>
+<li>或者特定编译器可能未实现该特性</li>
 </ul>
 </div>
-<h2 id="_7">访问控制<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol start="3">
+<li><strong>内联函数与类</strong>：如果将函数的完整定义写在类的声明中，则该函数默认是<strong>内联函数</strong>（不需要加关键字）</li>
+</ol>
+<h3 id="_7">内联变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">为什么要引入内联变量</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">header.h</label><label for="__tabbed_1_2">file1.cpp</label><label for="__tabbed_1_3">file2.cpp</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="cp">#ifndef HEADER_H</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="cp">#define HEADER_H</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">globalValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// 定义全局变量</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="cp">#endif</span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;header.h&quot;</span><span class="c1">     </span>
+</code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;header.h&quot;</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>如果在<strong>头文件中定义变量</strong>，因为每个包含该头文件的文件都会生成该变量的一个独立副本，这通常会导致链接阶段出现<strong>多重定义错误</strong></p>
+<div class="admonition success">
+<p class="admonition-title">解决方法</p>
+<p>为了避免这种情况，变量通常在头文件中使用 <code>extern</code> 声明，并在单个 <code>.cpp</code> 文件中定义</p>
+<p><strong>但是这种方法虽然可行，但需要将声明和定义分开，这并不总是很方便</strong></p>
+</div>
+</div>
+<ol>
+<li><strong><code class="highlight"><span class="kr">inline</span></code> 变量</strong>：通过使用 <code class="highlight"><span class="kr">inline</span></code> 变量，可以<strong>直接在头文件中定义变量</strong>，而不会导致链接错误</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">#ifndef HEADER_H</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="cp">#define HEADER_H</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="kr">inline</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">globalValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="c1">// 定义全局变量</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="cp">#endif</span>
+</code></pre></div></td></tr></table></div>
+<ol start="2">
+<li><code class="highlight"><span class="kr">inline</span></code> 变量的<strong>核心特性</strong></li>
+</ol>
+<ul>
+<li>跨编译单元的<strong>单一定义</strong>：编译器确保即使变量被包含在多个文件中，<code class="highlight"><span class="kr">inline</span></code> 变量也只存在一个实例</li>
+<li><strong>在头文件中初始化</strong>：可以在头文件中同时声明和初始化变量，使代码更加简洁</li>
+<li>全局或静态变量：非常适用于<strong>全局常量、类的静态成员</strong>或单例模式</li>
+</ul>
+<ol start="3">
+<li><strong><code class="highlight"><span class="kr">inline</span><span class="w"> </span><span class="k">static</span></code></strong> 允许直接在类中<strong>定义并初始化</strong>静态成员变量，无需在 <code>.cpp</code> 文件中进行单独定义</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Config</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">maxConnections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">    </span><span class="kr">inline</span><span class="w"> </span><span class="k">static</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">appName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;MyApp&quot;</span><span class="p">;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="p">};</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">使用场景</p>
+<ol>
+<li>何时使用 <code class="highlight"><span class="kr">inline</span></code> 变量</li>
+</ol>
+<ul>
+<li>在头文件中定义<strong>全局常量</strong>时</li>
+<li>使用直接<strong>在类定义中初始化的静态类成员</strong>时</li>
+<li>当需要在多个文件中共享变量的<strong>单一定义</strong>时</li>
+<li>当需要简化配置值或设置的管理时</li>
+</ul>
+<ol start="2">
+<li>何时不使用 <code class="highlight"><span class="kr">inline</span></code> 变量</li>
+</ol>
+<ul>
+<li>避免对<strong>大型对象或消耗大量内存</strong>的变量使用 <code class="highlight"><span class="kr">inline</span></code> 变量，可能会导致不必要的内存占用</li>
+<li>不要对需要在每个编译单元中拥有<strong>独立实例的变量</strong>使用 <code class="highlight"><span class="kr">inline</span></code></li>
+<li>对<strong>运行时可能被修改</strong>的变量使用 <code class="highlight"><span class="kr">inline</span></code> 时要谨慎，因为可能会导致意想不到的副作用</li>
+</ul>
+</div>
+<h2 id="weak"><code class="highlight"><span class="n">weak</span></code><a class="headerlink" href="#weak" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1">// 作为一个备选项的弱函数定义</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">__attribute__</span><span class="p">((</span><span class="n">weak</span><span class="p">))</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">printMessage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Default message&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><code class="highlight"><span class="kr">inline</span></code></th>
+<th style="text-align: left;"><code class="highlight"><span class="n">weak</span></code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>主要目的</strong></td>
+<td style="text-align: left;">通过向编译器建议内联来优化函数调用，<strong>提高性能</strong></td>
+<td style="text-align: left;"><strong>允许符号覆盖并防止链接冲突</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>适用范围</strong></td>
+<td style="text-align: left;">主要用于函数（尤其是小型或频繁调用的函数）</td>
+<td style="text-align: left;">用于函数、变量或对象（尤其是在动态链接或插件系统中）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>符号管理</strong></td>
+<td style="text-align: left;">编译器可能会在不同编译单元中生成多个函数副本，并进行<strong>去重</strong></td>
+<td style="text-align: left;"><strong>多个弱符号可以共存</strong>，链接器会选择最强的一个（非 <code class="highlight"><span class="n">weak</span></code> 符号，如果存在的话）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_8">访问控制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>通过三个关键字来限制类成员的可见性</strong></li>
 </ol>
@@ -5155,8 +5398,8 @@
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">struct &amp; class</p>
-<p><code>class</code> 的默认访问权限是 <code>private</code></p>
-<p><code>struct</code> 的默认访问权限是 <code>public</code></p>
+<p><code class="highlight"><span class="k">class</span></code> 的默认访问权限是 <code class="highlight"><span class="k">private</span></code></p>
+<p><code class="highlight"><span class="k">struct</span></code> 的默认访问权限是 <code class="highlight"><span class="k">public</span></code></p>
 </div>
 <ol start="2">
 <li><strong>友元</strong>：一种明确授予<strong>非结构成员函数</strong>访问权限的方法</li>
@@ -5166,19 +5409,19 @@
 <li>可以将全局函数、另一个类的成员函数、甚至整个类声明为友元</li>
 <li><strong>特点</strong>：非对称性、非传递性、不可继承性（友元无法访问派生类）</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="k">public</span><span class="o">:</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="c1">// 友元函数声明</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Y::print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">public</span><span class="o">:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="c1">// 友元函数声明</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">    </span><span class="k">friend</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">Y::print_point</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">);</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="_8">不同位置的对象<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_9">不同位置的对象<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>局部对象</strong></li>
 </ol>
@@ -5191,11 +5434,11 @@
 <ol start="2">
 <li><strong>全局变量</strong></li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;X.h&quot;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">);</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;X.h&quot;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p">);</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">X</span><span class="w"> </span><span class="nf">global_x2</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li><strong>存储位置</strong>：全局/静态存储区</li>
@@ -5337,7 +5580,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月9日 17:06:36 CST">2026年4月9日 17:06:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月15日 21:28:27 CST">2026年4月15日 21:28:27</span>
   </span>
 
     
@@ -5419,13 +5662,13 @@
         
         
           
-          <a href="../pta/" class="md-footer__link md-footer__link--next" aria-label="下一页: PTA">
+          <a href="../composition/" class="md-footer__link md-footer__link--next" aria-label="下一页: 组合">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                PTA
+                组合
               </div>
             </div>
             <div class="md-footer__button md-icon">
