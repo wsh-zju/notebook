@@ -1,5 +1,5 @@
 ---
-comments : True
+comment : True
 ---
 
 # 关系数据库设计
@@ -199,7 +199,7 @@ comments : True
 
 !!! abstract "BCNF 判定"
     1. 要检查一个关系模式 $R$ 是否符合 BCNF，只需检查给定集合 $F$ 中的依赖**是否违反 BCNF**，而**不需要检查 $F^+$ 中**的所有依赖
-    2. 但是在测试 **$R$ 分解后的关系** $R_i$ 时，仅使用 $F$ 进行测试可能是错误的，需要使用 $F^+$
+    2. 但是在测试 **$R$ 分解后的关系** $R_i$ 时，仅使用 $F$ 进行测试可能是错误的，**需要使用 $F^+$**
 
 2. **BCNF 分解**：
 
@@ -271,7 +271,39 @@ comments : True
 ??? example "Example"
     ![alt text](photo/5-11.png){style="width:60%;display: block;margin: 20px auto"}
 
+---
 ## 多值依赖
+!!! warning "Warning"
+    即使满足 BCNF ，仍然可能存在数据冗余
 
+    ??? example "Example"
+        ![alt text](photo/5-12.png){style="width:60%;display: block;margin: 20px auto"}
 
+        **最好分解为：**（分解之后也满足 4NF）
+
+        ![alt text](photo/5-13.png){style="width:60%;display: block;margin: 20px auto"}
+
+1. **定义**：令 $R$ 为一个关系模式，$\alpha \subseteq R$ 且 $\beta \subseteq R$
+    
+    若在 $R$ 的任何合法关系 $r(R)$ 中，对于 $r$ 中所有满足 $t_1[\alpha] = t_2[\alpha]$ 的元组对 $t_1$ 和 $t_2$，在 $r$ 中都存在元组 $t_3$ 和 $t_4$ 满足：
+    
+    - $t_1[\alpha] = t_2[\alpha] = t_3[\alpha] = t_4[\alpha]$
+    - $t_3[\beta] = t_1[\beta]$ & $t_4[\beta] = t_2[\beta]$
+    - $t_3[R - \alpha - \beta] = t_2[R - \alpha - \beta]$ & $t_4[R - \alpha - \beta] = t_1[R - \alpha - \beta]$
+
+    则称多值依赖 $\alpha \twoheadrightarrow \beta$ 在 $R$ 上成立
+
+!!! quote "通俗易懂"
+    当一个属性（人）能对应多组独立的信息（爱好、鞋号）时，这些信息之间就像平行线一样互不相关，但却被迫塞在同一个表里相互“连累”重写
+
+2. **理论**：如果 $\alpha \to \beta$，那么 $\alpha \twoheadrightarrow \beta$
+
+---
 ## 第四范式
+1. **定义**：一个关系模式 $R$ 关于函数依赖和多值依赖集 $D$ 属于 4NF，是指对于 $D^+$ 中所有形如 $\alpha \twoheadrightarrow \beta$ 的多值依赖（其中 $\alpha \subseteq R$ 且 $\beta \subseteq R$），至少满足以下条件之一：
+
+- $\alpha \twoheadrightarrow \beta$ 是平凡的（即 $\beta \subseteq \alpha$ 或 $\alpha \cup \beta = R$）
+- $\alpha$ 是模式 $R$ 的一个超码
+
+2. **如果一个关系属于 4NF，则它一定属于 BCNF**
+3. **分解**：识别并提取不满足 4NF 的多值依赖 $\alpha \twoheadrightarrow \beta$，将原模式分解为包含 $(\alpha \cup \beta)$ 和 $(R - \beta)$ 的两个子模式
