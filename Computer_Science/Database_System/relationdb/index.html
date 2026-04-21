@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Database_System/relationdb/">
       
       
-        <link rel="prev" href="../relationmodel/">
+        <link rel="prev" href="../sql_adv/">
       
       
-        <link rel="next" href="../E-R/">
+        <link rel="next" href="../store%26file/">
       
       
         
@@ -2526,6 +2526,8 @@
       
         
       
+        
+      
     
     
     
@@ -2629,6 +2631,154 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../E-R/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-R 模型
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_5" id="__nav_2_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL 语言
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SQL 语言
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql_found/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL 基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sql_adv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SQL 进阶
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2843,14 +2993,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../E-R/" class="md-nav__link">
+      <a href="../store%26file/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    E-R 模型
+    存储与文件结构
   
 
     
@@ -2859,126 +3009,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_5_6" id="__nav_2_5_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SQL 语言
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    SQL 语言
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sql_found/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SQL 基础
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sql_adv/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SQL 进阶
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -5112,7 +5142,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <p class="admonition-title">BCNF 判定</p>
 <ol>
 <li>要检查一个关系模式 <span class="arithmatex">\(R\)</span> 是否符合 BCNF，只需检查给定集合 <span class="arithmatex">\(F\)</span> 中的依赖<strong>是否违反 BCNF</strong>，而<strong>不需要检查 <span class="arithmatex">\(F^+\)</span> 中</strong>的所有依赖</li>
-<li>但是在测试 <strong><span class="arithmatex">\(R\)</span> 分解后的关系</strong> <span class="arithmatex">\(R_i\)</span> 时，仅使用 <span class="arithmatex">\(F\)</span> 进行测试可能是错误的，需要使用 <span class="arithmatex">\(F^+\)</span></li>
+<li>但是在测试 <strong><span class="arithmatex">\(R\)</span> 分解后的关系</strong> <span class="arithmatex">\(R_i\)</span> 时，仅使用 <span class="arithmatex">\(F\)</span> 进行测试可能是错误的，<strong>需要使用 <span class="arithmatex">\(F^+\)</span></strong></li>
 </ol>
 </div>
 <ol start="2">
@@ -5201,8 +5231,50 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/5-11.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
+<hr />
 <h2 id="_9">多值依赖<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>即使满足 BCNF ，仍然可能存在数据冗余</p>
+<details class="example">
+<summary>Example</summary>
+<p><img alt="alt text" src="../photo/5-12.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><strong>最好分解为：</strong>（分解之后也满足 4NF）</p>
+<p><img alt="alt text" src="../photo/5-13.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</details>
+</div>
+<ol>
+<li>
+<p><strong>定义</strong>：令 <span class="arithmatex">\(R\)</span> 为一个关系模式，<span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span></p>
+<p>若在 <span class="arithmatex">\(R\)</span> 的任何合法关系 <span class="arithmatex">\(r(R)\)</span> 中，对于 <span class="arithmatex">\(r\)</span> 中所有满足 <span class="arithmatex">\(t_1[\alpha] = t_2[\alpha]\)</span> 的元组对 <span class="arithmatex">\(t_1\)</span> 和 <span class="arithmatex">\(t_2\)</span>，在 <span class="arithmatex">\(r\)</span> 中都存在元组 <span class="arithmatex">\(t_3\)</span> 和 <span class="arithmatex">\(t_4\)</span> 满足：</p>
+<ul>
+<li><span class="arithmatex">\(t_1[\alpha] = t_2[\alpha] = t_3[\alpha] = t_4[\alpha]\)</span></li>
+<li><span class="arithmatex">\(t_3[\beta] = t_1[\beta]\)</span> &amp; <span class="arithmatex">\(t_4[\beta] = t_2[\beta]\)</span></li>
+<li><span class="arithmatex">\(t_3[R - \alpha - \beta] = t_2[R - \alpha - \beta]\)</span> &amp; <span class="arithmatex">\(t_4[R - \alpha - \beta] = t_1[R - \alpha - \beta]\)</span></li>
+</ul>
+<p>则称多值依赖 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 在 <span class="arithmatex">\(R\)</span> 上成立</p>
+</li>
+</ol>
+<div class="admonition quote">
+<p class="admonition-title">通俗易懂</p>
+<p>当一个属性（人）能对应多组独立的信息（爱好、鞋号）时，这些信息之间就像平行线一样互不相关，但却被迫塞在同一个表里相互“连累”重写</p>
+</div>
+<ol start="2">
+<li><strong>理论</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span>，那么 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span></li>
+</ol>
+<hr />
 <h2 id="_10">第四范式<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>定义</strong>：一个关系模式 <span class="arithmatex">\(R\)</span> 关于函数依赖和多值依赖集 <span class="arithmatex">\(D\)</span> 属于 4NF，是指对于 <span class="arithmatex">\(D^+\)</span> 中所有形如 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 的多值依赖（其中 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span>），至少满足以下条件之一：</li>
+</ol>
+<ul>
+<li><span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 是平凡的（即 <span class="arithmatex">\(\beta \subseteq \alpha\)</span> 或 <span class="arithmatex">\(\alpha \cup \beta = R\)</span>）</li>
+<li><span class="arithmatex">\(\alpha\)</span> 是模式 <span class="arithmatex">\(R\)</span> 的一个超码</li>
+</ul>
+<ol start="2">
+<li><strong>如果一个关系属于 4NF，则它一定属于 BCNF</strong></li>
+<li><strong>分解</strong>：识别并提取不满足 4NF 的多值依赖 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span>，将原模式分解为包含 <span class="arithmatex">\((\alpha \cup \beta)\)</span> 和 <span class="arithmatex">\((R - \beta)\)</span> 的两个子模式</li>
+</ol>
 
 
 
@@ -5225,7 +5297,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月15日 09:53:08 CST">2026年4月15日 09:53:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月21日 21:20:40 CST">2026年4月21日 21:20:40</span>
   </span>
 
     
@@ -5249,6 +5321,22 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 
                  
 
+    
+        <script src="https://giscus.app/client.js"
+                data-repo="wsh-zju/notebook"
+                data-repo-id="R_kgDOOJR4ig"
+                data-category="General"
+                data-category-id="DIC_kwDOOJR4is4C1eU1"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
     
 
 
@@ -5274,7 +5362,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../relationmodel/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 关系模型">
+          <a href="../sql_adv/" class="md-footer__link md-footer__link--prev" aria-label="上一页: SQL 进阶">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5284,20 +5372,20 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
                 上一页
               </span>
               <div class="md-ellipsis">
-                关系模型
+                SQL 进阶
               </div>
             </div>
           </a>
         
         
           
-          <a href="../E-R/" class="md-footer__link md-footer__link--next" aria-label="下一页: E-R 模型">
+          <a href="../store%26file/" class="md-footer__link md-footer__link--next" aria-label="下一页: 存储与文件结构">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                E-R 模型
+                存储与文件结构
               </div>
             </div>
             <div class="md-footer__button md-icon">
