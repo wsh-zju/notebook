@@ -191,6 +191,7 @@ comment: true
 
         ![alt text](photo/6-6.png){style="width:50%;display: block;margin: 20px auto"}
 
+---
 ## 数据字典存储 
 
 1. **元数据** (Metadata)：关于数据的数据，存储数据库的结构、约束及运行状态
