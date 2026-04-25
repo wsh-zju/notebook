@@ -120,11 +120,12 @@ comment : True
     - 编译器将符号绑定到**可重定位地址** **e.g.** 距此模块开头 14 个字节
     - 链接器（或加载器）将可重定位地址绑定到**绝对地址** **e.g.** 0x0e74014
 
+---
 ## Paging
 1. **基本思想**：
 
 - 进程的物理地址空间可以是**非连续的**（固定分区和可变分区属于**物理连续**分配）
-- 只要物理内存可用，就可以为进程分配物理内存
+- 只要物理内存可用，就可以为进程分配物理内存（一个进程对应一个页表）
 
 !!! success "优势"
     1. 避免了**外部碎片**的问题
@@ -213,6 +214,7 @@ comment : True
 !!! example "Paging Sharing"
     ![alt text](photo/19-10.jpg){style="width:50%;display: block;margin: 20px auto"}
 
+---
 ## 页表结构
 
 ### 二级页表
@@ -257,3 +259,39 @@ comment : True
     - **d** 需要 16 bits：一个 page 有 64 K 个 Bytes
     - **p2 需要 14 bits**：一个二级页表是一个 page，大小为 64 KB，可以放 16 K 个页表项
     - **p1 需要 2 bits**：一共 4 GB 的内存，一共 64 K 个 page，需要 4 个二级页表
+
+!!! quote "64 bits 虚拟地址空间"
+    64 bits 虚拟地址空间需要更多层次的页表结构
+
+    - 39 bits：三级页表（4KB / 8B = 512 entries，需要 9 bits 索引，9+9+9+12 = 39）
+    - 48 bits：四级页表
+    - 57 bits：五级页表
+
+### 哈希页表
+
+![alt text](photo/19-13.png){style="width:60%;display: block;margin: 20px auto"}
+
+1. 在哈希页表中，page number 被哈希成一个 frame number
+
+2. 每个元素包含：page#、frame# 和指向下一页的指针（解决冲突）
+3. **缺点**：哈希函数计算较慢
+4. **优点**：结构较简单
+
+### 倒置页表
+
+![alt text](photo/19-14.png){style="width:60%;display: block;margin: 20px auto"}
+
+1. 因为通常**物理地址空间远小于虚拟地址空间**，所以想要从**物理地址**映射到虚拟地址
+2. 只有一个页表，每个 entry 包含**进程 ID** 和 page#
+3. **缺点**：效率太低
+
+## Swapping
+
+![alt text](photo/19-15.png){style="width:50%;display: block;margin: 20px auto"}
+
+**交换**利用**后备磁盘**扩展了物理内存
+
+- 进程可以被临时从内存交换到后备存储中（后备存储通常是（快速）磁盘）
+- **不一定交换整个进程**
+- 进程将被重新调入内存以继续执行（不需要物理地址相同）
+
