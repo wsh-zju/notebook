@@ -1690,8 +1690,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哈希页表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        倒置页表
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swapping
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4881,8 +4914,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        哈希页表
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        倒置页表
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Swapping
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5067,13 +5133,14 @@
 <li>链接器（或加载器）将可重定位地址绑定到<strong>绝对地址</strong> <strong>e.g.</strong> 0x0e74014</li>
 </ul>
 </details>
+<hr />
 <h2 id="paging">Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>基本思想</strong>：</li>
 </ol>
 <ul>
 <li>进程的物理地址空间可以是<strong>非连续的</strong>（固定分区和可变分区属于<strong>物理连续</strong>分配）</li>
-<li>只要物理内存可用，就可以为进程分配物理内存</li>
+<li>只要物理内存可用，就可以为进程分配物理内存（一个进程对应一个页表）</li>
 </ul>
 <div class="admonition success">
 <p class="admonition-title">优势</p>
@@ -5192,6 +5259,7 @@
 <p class="admonition-title">Paging Sharing</p>
 <p><img alt="alt text" src="../photo/19-10.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
 </div>
+<hr />
 <h2 id="_7">页表结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="_8">二级页表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -5252,6 +5320,42 @@
 <li><strong>p1 需要 2 bits</strong>：一共 4 GB 的内存，一共 64 K 个 page，需要 4 个二级页表</li>
 </ul>
 </div>
+<div class="admonition quote">
+<p class="admonition-title">64 bits 虚拟地址空间</p>
+<p>64 bits 虚拟地址空间需要更多层次的页表结构</p>
+<ul>
+<li>39 bits：三级页表（4KB / 8B = 512 entries，需要 9 bits 索引，9+9+9+12 = 39）</li>
+<li>48 bits：四级页表</li>
+<li>57 bits：五级页表</li>
+</ul>
+</div>
+<h3 id="_9">哈希页表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../photo/19-13.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>
+<p>在哈希页表中，page number 被哈希成一个 frame number</p>
+</li>
+<li>
+<p>每个元素包含：page#、frame# 和指向下一页的指针（解决冲突）</p>
+</li>
+<li><strong>缺点</strong>：哈希函数计算较慢</li>
+<li><strong>优点</strong>：结构较简单</li>
+</ol>
+<h3 id="_10">倒置页表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../photo/19-14.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>因为通常<strong>物理地址空间远小于虚拟地址空间</strong>，所以想要从<strong>物理地址</strong>映射到虚拟地址</li>
+<li>只有一个页表，每个 entry 包含<strong>进程 ID</strong> 和 page#</li>
+<li><strong>缺点</strong>：效率太低</li>
+</ol>
+<h2 id="swapping">Swapping<a class="headerlink" href="#swapping" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="../photo/19-15.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<p><strong>交换</strong>利用<strong>后备磁盘</strong>扩展了物理内存</p>
+<ul>
+<li>进程可以被临时从内存交换到后备存储中（后备存储通常是（快速）磁盘）</li>
+<li><strong>不一定交换整个进程</strong></li>
+<li>进程将被重新调入内存以继续执行（不需要物理地址相同）</li>
+</ul>
 
 
 
@@ -5274,7 +5378,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月21日 21:20:40 CST">2026年4月21日 21:20:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月25日 11:17:31 CST">2026年4月25日 11:17:31</span>
   </span>
 
     
