@@ -244,7 +244,8 @@ nav:
       - 对象 : Tools/C++/object.md
       - 容器 : Tools/C++/container.md
       - 类 : Tools/C++/class.md
-      - 组合 : Tools/C++/composition.md
+      - 复用 : Tools/C++/reuse.md
+      - 多态 : Tools/C++/polymorphism.md
       - PTA : Tools/C++/pta.md
     - Python :
       - Tools/Python/index.md

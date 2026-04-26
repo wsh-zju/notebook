@@ -99,8 +99,15 @@ void point::print(point* this);
 
     !!! abstract "初始化列表"
         ```cpp
-        point(int x, int y) : x(x), y(y) {} 
+        class point {
+            int x, y;
+        public:
+            point(int value) : y(value), x(y) {} 
+        }
         ```
+
+        1. 初始化顺序是**按照声明顺序进行的**，而非列表中的顺序
+        2. **实例中 `x` 将会赋值成乱码**，`y` 赋值成 `value`
 
 - **默认构造函数**：无参数的构造函数，默认调用
 
