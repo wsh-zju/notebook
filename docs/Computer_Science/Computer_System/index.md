@@ -43,7 +43,10 @@ comment: False
 - 计算机系统 III:
     - 量化研究方法[note]: quant/
     - 指令级并行[note]: ILP/
-    - 内存层次结构[note]: memory_hierarchy/
+    - 内存层次结构[note]: memory_index/
+    - 缓存[note]: cache/
+    - 主存[note]: main_memory/
+    - 虚拟内存[note]: virtual_memory/
 {{ END_TOC }}
 
 

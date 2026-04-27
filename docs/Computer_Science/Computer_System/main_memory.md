@@ -170,7 +170,7 @@ comment : True
     - 长度寄存器 **`PTLR`**：表示页表的大小（省略）
 - 每次数据/指令访问都需要两次**内存访问**：一次用于访问页表，一次用于访问数据/指令
 
-2. **TLB**：
+2. **TLB**：在 MMU 中
 
 ![alt text](photo/19-9.png){style="width:60%;display: block;margin: 20px auto"}
 
