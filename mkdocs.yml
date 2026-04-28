@@ -231,6 +231,7 @@ nav:
         - SQL 进阶 : Computer_Science/Database_System/sql_adv.md
       - 关系数据库设计 : Computer_Science/Database_System/relationdb.md 
       - 存储与文件结构 : Computer_Science/Database_System/store&file.md
+      - 索引与哈希 : Computer_Science/Database_System/index&hash.md
   - 开发工具 :
     - Tools/index.md
     - C :
