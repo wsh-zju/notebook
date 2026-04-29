@@ -1595,6 +1595,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Demand Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copy-on-write
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1633,6 +1661,89 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        page replacement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="page replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIFO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LRU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counting-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页面缓冲算法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thrashing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4757,6 +4868,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Demand Paging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        copy-on-write
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4795,6 +4934,89 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        page replacement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="page replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FIFO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lru" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LRU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-based" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Counting-based
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        页面缓冲算法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Thrashing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4927,14 +5149,93 @@
 <li><strong>最坏情况</strong>：pure demand paging（启动进程时内存中没有任何 frame）</li>
 <li><strong>硬件支持</strong>：带有有效/无效位的页表项、<strong>后备存储</strong>（通常是磁盘）、指令重启能力</li>
 </ol>
-<h2 id="page-fault">page fault<a class="headerlink" href="#page-fault" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Frames 分配</p>
+<p><strong>进程内存分配的两种主要方案</strong>：</p>
 <ol>
 <li>
-<p><strong>触发条件</strong>：<strong>用户</strong>空间程序访问了一个地址，且该地址对应的页面当前<strong>未调入物理内存</strong></p>
+<p><strong>平均分配</strong></p>
+<ul>
+<li><strong>e.g.</strong> 100 个页框和 5 个进程，为每个进程分配 20 个页框</li>
+<li>保留一部分作为空闲页框缓冲池</li>
+</ul>
 </li>
 <li>
-<p><strong>发出 page fault 的硬件</strong>：MMU</p>
+<p><strong>按比例分配</strong>：根据进程的大小进行分配</p>
 </li>
+</ol>
+</div>
+<h3 id="_2">性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>缺页率</strong>：<span class="arithmatex">\(0 \le p \le 1\)</span>（如果 <span class="arithmatex">\(p = 0\)</span>，则没有缺页；如果 <span class="arithmatex">\(p = 1\)</span>，则每一次引用都会产生缺页）</li>
+<li><strong>有效访问时间</strong>：</li>
+</ol>
+<p>EAT = (1-p) <span class="arithmatex">\(\times\)</span> memory access + p <span class="arithmatex">\(\times\)</span> (page fault overhead + swap page out + swap page in + instruction restart overhead)</p>
+<div class="admonition quote">
+<p class="admonition-title">Translate</p>
+<p>(1 - p) <span class="arithmatex">\(\times\)</span> 内存访问时间 + p <span class="arithmatex">\(\times\)</span> ( 缺页中断开销 + 页面换出 + 页面换入 + 指令重启开销 )</p>
+</div>
+<ol start="3">
+<li><strong>优化</strong>：</li>
+</ol>
+<ul>
+<li><strong>方法 1：swap space</strong><ul>
+<li>交换空间的 <strong>I/O 比文件系统 I/O 更快</strong>（以更大的块进行分配，所需的管理比文件系统少）</li>
+<li>在进程加载时，将整个进程镜像从磁盘复制到交换空间，然后从交换空间进行页面的换入和换出</li>
+</ul>
+</li>
+<li><strong>方法 2</strong>：从磁盘上的程序二进制文件请求分页，但在<strong>释放帧时直接丢弃而非换出</strong>（下次使用时再从磁盘重新加载）<ul>
+<li>以下情况仍需写入<strong>交换空间</strong>：<ul>
+<li><strong>匿名内存</strong>：未与文件关联的页面（如栈和堆）</li>
+<li><strong>内存中已修改但尚未写回</strong>文件系统的页面</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="copy-on-write">copy-on-write<a class="headerlink" href="#copy-on-write" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../photo/20-5.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>COW</strong>：允许父进程和子进程在初始阶段<strong>共享内存中的相同页面</strong></li>
+</ol>
+<ul>
+<li>只要没有进程修改该页面，页面就会一直共享</li>
+<li>只有<strong>当其中一个进程修改共享页面时</strong>，才会复制该页面</li>
+</ul>
+<ol start="2">
+<li><strong>优点</strong>：进程创建更高效（在执行 <code>fork</code> 期间无需复制父进程内存，之后<strong>仅复制发生更改的内存部分</strong>）</li>
+</ol>
+<details class="info">
+<summary>vfork</summary>
+<p><code>vfork</code> 系统调用优化了子进程在 <code>fork</code> 后立即调用 <code>exec</code> 的情况</p>
+<ol>
+<li>父进程被挂起，直到子进程退出或调用 <code>exec</code></li>
+<li>子进程共享父进程的资源，包括<strong>堆和栈</strong></li>
+<li>子进程<strong>不能从函数返回或调用 <code>exit</code></strong>，而应调用 <code>_exit</code></li>
+</ol>
+</details>
+<hr />
+<h2 id="page-fault">page fault<a class="headerlink" href="#page-fault" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">Page Fault 分类</p>
+<ol>
+<li>
+<p><strong>主缺页中断</strong> (Major)：页面被引用但不在内存中， 只能通过访问磁盘来满足 <strong>e.g.</strong> code</p>
+</li>
+<li>
+<p><strong>次缺页中断</strong> (Minor)：映射不存在，但页面已在内存中 <strong>e.g.</strong> stack/heap、共享库、页面已被回收但尚未被完全释放</p>
+</li>
+</ol>
+</div>
+<ol>
+<li><strong>触发条件</strong>：<strong>用户</strong>空间程序访问了一个地址，且该地址对应的页面当前<strong>未调入物理内存</strong></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>只有 user space 才会产生 page fault，kernel space 不会产生 page fault，因为用户空间有 <strong>lazy allocation</strong></p>
+</div>
+<ol start="2">
+<li><strong>发出 page fault 的硬件</strong>：MMU</li>
 </ol>
 <ul>
 <li>通过查看页表项的 valid-invalid 位（present bit：操作系统来设置），判断该页是否被映射</li>
@@ -5025,6 +5326,240 @@
 <li><strong>修正页表</strong>，映射新的页框</li>
 <li><strong>返回用户态</strong>：恢复用户寄存器、进程状态和新页表，然后<strong>重启</strong>被中断的指令</li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">页表切换</p>
+<ol>
+<li><strong>一个进程对应一个页表</strong></li>
+<li>进行系统调用的时候，由用户空间跳到内核空间，页表切换为<strong>内核的页表</strong></li>
+</ol>
+</div>
+<hr />
+<h2 id="page-replacement">page replacement<a class="headerlink" href="#page-replacement" title="Permanent link">&para;</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">页面替换类型</p>
+<ol>
+<li><strong>全局置换</strong> (Global replacement)：进程从所有页框的集合中选择一个置换页框（一个进程可以从另一个进程那里夺取页框）</li>
+</ol>
+<ul>
+<li><strong>缺点</strong>：进程的执行时间可能会有很大波动（取决于其他进程）</li>
+<li><strong>优点</strong>：<strong>吞吐量更高，更为常见</strong></li>
+</ul>
+<ol start="2">
+<li><strong>局部置换</strong> (Local replacement)：每个进程<strong>仅从其自身分配</strong>的页框集合中进行选择</li>
+</ol>
+<ul>
+<li><strong>优点</strong>：每个进程的性能更加稳定</li>
+<li><strong>缺点</strong>：可能导致内存利用率不足</li>
+</ul>
+</div>
+<ol>
+<li><strong>页面替换算法</strong>：FIFO, optimal, LRU, LFU, MFU...</li>
+<li><strong>算法评估</strong>：在特定的内存引用序列上运行该算法，计算该引用串上的<strong>缺页中断次数</strong></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">info</p>
+<p>下述例子均为 7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 0, 3, 2, 1, 2, 0, 1, 7, 0, 1</p>
+</div>
+<h3 id="fifo">FIFO<a class="headerlink" href="#fifo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>FIFO</strong>：先进先出</p>
+</li>
+<li>
+<p><strong>实例</strong>：一共 15 次 page fault（3 个 frames）</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../photo/20-6.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol start="3">
+<li><strong>Belady's Anomaly</strong>：对于 FIFO，<strong>增加更多的页框</strong>反而可能导致更多的缺页中断</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/20-7.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/20-8.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="optimal">Optimal<a class="headerlink" href="#optimal" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Optimal</strong>：替换<strong>未来</strong>最长时间不使用的页面</li>
+<li><strong>缺点</strong>：无法预知未来（不可能实现）</li>
+<li>该算法主要用于<strong>衡量其他算法的性能优劣</strong></li>
+<li><strong>实例</strong>：9 个 page fault</li>
+</ol>
+<p><img alt="alt text" src="../photo/20-9.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+<h3 id="lru">LRU<a class="headerlink" href="#lru" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>LRU</strong>：最近最少使用</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">LRU 和 OPT 算法不会出现 Belady's Anomaly</p>
+</div>
+<ol start="2">
+<li><strong>实例</strong>：12 个 page fault</li>
+</ol>
+<p><img alt="alt text" src="../photo/20-10.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol start="3">
+<li><strong>实现</strong>：</li>
+</ol>
+<ul>
+<li><strong>counter-based</strong>：<ul>
+<li>每一个页表项带有一个 counter</li>
+<li>每当页面被引用时，将 <strong>clock</strong> 的值复制到该 counter 中</li>
+<li>当需要置换页面时，搜索 <strong>counter 值最小</strong>的页面（可以用<strong>最小堆</strong>来实现）</li>
+</ul>
+</li>
+<li>
+<p><strong>stack-based</strong>：</p>
+<ul>
+<li>维护一个<strong>页码栈</strong>（采用<strong>双向链表</strong>结构）</li>
+<li>当一个页面被引用时，将其移动到<strong>栈顶</strong></li>
+<li>每次更新的<strong>开销更高</strong>，但置换时<strong>无需进行搜索</strong></li>
+</ul>
+<p><img alt="alt text" src="../photo/20-11.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">基于计数器和基于栈的 LRU 实现具有较高的性能开销</p>
+</div>
+<ol start="4">
+<li><strong>LRU 近似算法</strong>（最常用）</li>
+</ol>
+<ul>
+<li><strong>硬件</strong>提供了一个<strong>引用位</strong> (Reference bit)</li>
+<li>为每个页面关联一个引用位，初始设置为 0；<strong>当页面被引用</strong>时，将该位设置为 1（由硬件完成）</li>
+<li><strong>置换</strong>任何引用位为 0 的页面（如果存在）</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>该算法无法得知这些页面的<strong>引用先后顺序</strong></p>
+</div>
+<ol start="5">
+<li><strong>附加引用位算法</strong>：假设为每个页面分配一个 8 位的字节</li>
+</ol>
+<ul>
+<li>在<strong>每个时间间隔</strong>内，将位右移 1 位，如果页面被使用过，则<strong>将最高位置为 1</strong>，然后舍弃低位</li>
+<li><strong>e.g.</strong> 11000100 vs 01110111，前者最近被使用</li>
+</ul>
+<ol start="6">
+<li><strong>二次机会算法</strong></li>
+</ol>
+<ul>
+<li>待置换的页面<ul>
+<li><strong>引用位 = 0</strong> -&gt; 置换该页面</li>
+<li><strong>引用位 = 1</strong> -&gt; 引用位清零，将页面留在内存中</li>
+</ul>
+</li>
+<li>按照相同规则置换下一个页面</li>
+</ul>
+<p><img alt="alt text" src="../photo/20-12.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+<ol start="7">
+<li><strong>增强型二次机会算法</strong>：通过结合使用<strong>引用位和修改位</strong>来改进算法</li>
+</ol>
+<ul>
+<li>采用<strong>有序对</strong>（引用位，修改位）</li>
+<li><strong>(0, 0)</strong>：最近未被使用也未被修改 -&gt; <strong>最佳置换页面</strong></li>
+</ul>
+<h3 id="counting-based">Counting-based<a class="headerlink" href="#counting-based" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>counter</strong> 记录对每个页面的<strong>引用次数</strong></li>
+<li><strong>最不经常使用算法</strong> (LFU)：置换 counter 值最小的页面（一个页面可能在进程初始化阶段被大量使用，随后便不再使用）</li>
+<li><strong>最经常使用算法</strong> (MFU)：置换 counter 值最大的页面（值最小的页面可能刚被调入内存，尚未被使用）</li>
+<li>LFU 和 MFU <strong>并不常用</strong></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">应用程序与页面替换</p>
+<ol>
+<li><strong>内存密集型应用程序</strong>可能会导致双重缓冲（一种内存浪费）：</li>
+</ol>
+<ul>
+<li>操作系统在内存中保留一份页面副本作为 I/O 缓冲区</li>
+<li>应用程序在内存中保留该页面用于自身工作</li>
+</ul>
+<ol start="2">
+<li><strong>原始磁盘模式</strong> (Raw disk mode)：授予操作系统对磁盘的直接访问权限，从而不干扰应用程序</li>
+</ol>
+</div>
+<hr />
+<h2 id="_3">页面缓冲算法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>维持一个 frame pool</strong>：</li>
+</ol>
+<ul>
+<li>当需要时立即有可用帧，无需在发生缺页时才去找</li>
+<li>将页面读入空闲帧，无需等待“牺牲页”被写回磁盘：<strong>尽可能快地重启进程</strong></li>
+<li>在方便时再驱逐牺牲页</li>
+</ul>
+<ol start="2">
+<li><strong>维护已修改页面的列表</strong>：</li>
+</ol>
+<ul>
+<li>当磁盘空闲时，将这些页面写入磁盘并设置为“非脏”</li>
+<li>这样该页面就可以在<strong>无需写入后端存储</strong>的情况下<strong>直接</strong>被置换</li>
+</ul>
+<ol start="3">
+<li><strong>帧内容缓存</strong>：保持空闲帧内容完好并记录其中的内容（如果页面在被重用前再次被引用，则无需再次从磁盘加载内容）</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">页面回收</p>
+<p><strong>页面回收</strong>：一种实现全局页面置换策略的方法，<strong>确保始终有足够的空闲内存</strong></p>
+<ul>
+<li>所有的内存请求都通过<strong>空闲页框列表</strong>来满足</li>
+<li>在列表降至<strong>特定阈值以下</strong>时触发页面置换（杀死某些进程：根据 OOM 分数进行选择）</li>
+</ul>
+<p><img alt="alt text" src="../photo/20-13.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<div class="admonition quote">
+<p class="admonition-title">NUMA 非一致性内存访问</p>
+<ol>
+<li><strong>NUMA</strong>：访问内存的速度各不相同</li>
+<li>不同 CPU 距离不同的内存的距离不同，因此访问时间也不同</li>
+</ol>
+</div>
+<hr />
+<h2 id="thrashing">Thrashing<a class="headerlink" href="#thrashing" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>抖动</strong>：进程忙于频繁地<strong>换入和换出</strong>页面</li>
+</ol>
+<ul>
+<li>如果<strong>一个进程没有足够的 frame</strong>，其缺页率可能会很高<ul>
+<li>发生缺页中断以获取页面，并置换掉某些现有的页框</li>
+<li>但很快又需要<strong>被置换掉的那个页框</strong>（刚换出就换入）</li>
+</ul>
+</li>
+<li>导致<strong>低 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 内核认为需要更多的进程以最大化 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 系统中加入更多进程</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">CPU 利用率</p>
+<p><img alt="alt text" src="../photo/20-14.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<ol start="2">
+<li>
+<p><strong>产生原因</strong>：内存总大小 &lt; 局部区域的总大小，导致有 frame 频繁的换入和换出</p>
+</li>
+<li>
+<p><strong>解决方法</strong>：</p>
+</li>
+</ol>
+<ul>
+<li><strong>局部页面置换</strong>：从<strong>同一个进程</strong>中选择要换出的页面，一个进程开始抖动不会导致其他进程也发生抖动</li>
+<li><strong>工作集模型</strong></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">工作集模型</p>
+<ol>
+<li><strong>工作集窗口</strong> <span class="arithmatex">\(\Delta\)</span>： 一个固定数量的页面引用序列</li>
+<li><strong>进程 <span class="arithmatex">\(p_i\)</span> 的工作集</strong> <span class="arithmatex">\(WSS_i\)</span>： 在最近的 <span class="arithmatex">\(\Delta\)</span> 窗口内引用的<strong>页面总数</strong>（随时间变化）</li>
+<li><strong>总工作集大小</strong>：<span class="arithmatex">\(D = \sum WSS_i\)</span></li>
+</ol>
+<ul>
+<li>如果 <span class="arithmatex">\(D &gt; m\)</span>（总内存页框数） <span class="arithmatex">\(\Rightarrow\)</span> 存在抖动的可能性</li>
+<li><strong>避免抖动</strong>：如果 <span class="arithmatex">\(D &gt; m\)</span>，则挂起或换出某些进程，将其释放的页框分给正在抖动的进程</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><span class="arithmatex">\(\Delta\)</span> = 10</p>
+<p><img alt="alt text" src="../photo/20-15.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
 
 
 
@@ -5047,7 +5582,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月27日 15:53:57 CST">2026年4月27日 15:53:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月29日 22:02:17 CST">2026年4月29日 22:02:17</span>
   </span>
 
     
