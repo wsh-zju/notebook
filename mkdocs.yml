@@ -246,8 +246,10 @@ nav:
       - 对象 : Tools/C++/object.md
       - 容器 : Tools/C++/container.md
       - 类 : Tools/C++/class.md
+      - 构造函数 : Tools/C++/ctor.md
       - 复用 : Tools/C++/reuse.md
       - 多态 : Tools/C++/polymorphism.md
+      - 运算符重载 : Tools/C++/overload.md
       - PTA : Tools/C++/pta.md
     - Python :
       - Tools/Python/index.md

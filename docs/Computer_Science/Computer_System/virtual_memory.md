@@ -242,9 +242,9 @@ EAT = (1-p) $\times$ memory access + p $\times$ (page fault overhead + swap page
 3. **Belady's Anomaly**：对于 FIFO，**增加更多的页框**反而可能导致更多的缺页中断
 
 !!! example "Example"
-    ![alt text](photo/20-7.jpg){style="width:40%;display: block;margin: 20px auto"}
+    <img src="../photo/20-8.jpg" align="right" width="45%">
 
-    ![alt text](photo/20-8.jpg){style="width:40%;display: block;margin: 20px auto"}
+    <img src="../photo/20-7.jpg" align="left" width="45%">
 
 ### Optimal
 1. **Optimal**：替换**未来**最长时间不使用的页面
