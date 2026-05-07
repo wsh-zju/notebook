@@ -250,6 +250,7 @@ nav:
       - 复用 : Tools/C++/reuse.md
       - 多态 : Tools/C++/polymorphism.md
       - 运算符重载 : Tools/C++/overload.md
+      - 模板 : Tools/C++/template.md
       - PTA : Tools/C++/pta.md
     - Python :
       - Tools/Python/index.md
