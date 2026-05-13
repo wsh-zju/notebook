@@ -244,15 +244,69 @@ zip -r project2.zip project2  -x "*.DS_Store" "_MACOSX"
 ## 数据库服务器（MySQL）
 
 ```bash
-sudo /usr/local/mysql/support-files/mysql.server start #启动
-/usr/local/mysql/bin/mysql -u root -p #进入数据库
-sudo /usr/local/mysql/support-files/mysql.server stop #停止
+# 启动 MySQL
+brew services start mysql
+# 停止 MySQL
+brew services stop mysql
+# 重启 MySQL
+brew services restart mysql
+# 检查 MySQL 是否启动
+mysql -uroot        # 会进入 > mysql
+# 登陆 MySQL
+mysql -u root -p    # -p 输入密码
+# 退出
+EXIT;
 ```
 ```bash
-sudo mysqld_safe --skip-grant-tables & #跳过密码启动
-/usr/local/mysql/bin/mysql -u root  #进入数据库
-FLUSH PRIVILEGES; #刷新权限
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'lucy';  #修改密码
-exit; #退出
-sudo killall mysqld #结束进程
+mysql_secure_installation # 配置密码
+```
+
+## Anaconda
+
+1. **环境**
+
+```bash
+# 创建环境
+conda create -n 环境名 python=版本号 -y
+# 激活环境
+conda activate 环境名
+# 退出环境
+conda deactivate
+# 查看环境
+conda env list
+conda info --envs  # * 表示当前环境
+# 删除环境
+conda remove --n 环境名 --all
+# 克隆
+conda create --n 环境名 --clone 源环境
+```
+
+2. **包管理**
+
+```bash
+# 安装包
+conda install 包名 -y
+# 升级包
+conda update 包名 
+conda update --all   # 升级所有包
+# 删除包
+conda remove 包名
+# 搜索包
+conda search 包名
+# 列出所有包
+conda list
+```
+
+3. **清理与维护**
+
+```bash
+conda clean --all   # 清理缓存
+conda update conda  # 升级 conda
+conda info           # 显示信息
+```
+
+4. **vscode**
+
+```bash
+python -m ipykernel install --user --name 环境名 --display-name "你在VS Code里想显示的名字"
 ```

@@ -166,15 +166,19 @@ nav:
     - Computer_Science/index.md
     - 计算机系统 :
       - Computer_Science/Computer_System/index.md
-      - 数据编码 : Computer_Science/Computer_System/data.md
-      - 数字逻辑基础 : Computer_Science/Computer_System/logic.md
-      - 组合逻辑电路 : Computer_Science/Computer_System/combine.md
-      - 运算单元 : Computer_Science/Computer_System/ALU.md
-      - 时序逻辑电路 : Computer_Science/Computer_System/sequence.md
-      - ISA : Computer_Science/Computer_System/ISA.md
-      - CPU : Computer_Science/Computer_System/CPU.md
-      - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
-      - 流水线CPU : Computer_Science/Computer_System/pipeline.md
+      - 数字逻辑 :
+        - 数据编码 : Computer_Science/Computer_System/data.md
+        - 数字逻辑基础 : Computer_Science/Computer_System/logic.md
+        - 组合逻辑电路 : Computer_Science/Computer_System/combine.md
+        - 运算单元 : Computer_Science/Computer_System/ALU.md
+        - 时序逻辑电路 : Computer_Science/Computer_System/sequence.md
+      - CPU :
+        - ISA : Computer_Science/Computer_System/ISA.md
+        - CPU : Computer_Science/Computer_System/CPU.md
+        - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
+        - 流水线CPU : Computer_Science/Computer_System/pipeline.md
+        - 量化研究方法 : Computer_Science/Computer_System/quant.md
+        - 指令级并行 : Computer_Science/Computer_System/ILP.md
       - 操作系统 : 
         - 操作系统 : Computer_Science/Computer_System/OS.md
         - 进程 : Computer_Science/Computer_System/process.md
@@ -183,13 +187,13 @@ nav:
         - 线程 : Computer_Science/Computer_System/thread.md
         - 同步 : Computer_Science/Computer_System/synch.md
         - 死锁 : Computer_Science/Computer_System/deadlock.md
-      - 量化研究方法 : Computer_Science/Computer_System/quant.md
-      - 指令级并行 : Computer_Science/Computer_System/ILP.md
       - 内存 : 
         - 内存层次结构 : Computer_Science/Computer_System/memory_index.md
         - 缓存 : Computer_Science/Computer_System/cache.md
         - 主存 : Computer_Science/Computer_System/main_memory.md
         - 虚拟内存 : Computer_Science/Computer_System/virtual_memory.md
+      - 存储 :
+        - 大容量存储 : Computer_Science/Computer_System/mass_storage.md
     - 数据结构与算法分析 :
       - Computer_Science/Data_Structure/index.md
       - FDS :
@@ -232,6 +236,7 @@ nav:
       - 关系数据库设计 : Computer_Science/Database_System/relationdb.md 
       - 存储与文件结构 : Computer_Science/Database_System/store&file.md
       - 索引与哈希 : Computer_Science/Database_System/index&hash.md
+      - 查询处理 : Computer_Science/Database_System/query.md
   - 开发工具 :
     - Tools/index.md
     - C :

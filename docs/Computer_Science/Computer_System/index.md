@@ -47,6 +47,7 @@ comment: False
     - 缓存[note]: cache/
     - 主存[note]: main_memory/
     - 虚拟内存[note]: virtual_memory/
+    - 大容量存储[note]: mass_storage/
 {{ END_TOC }}
 
 
