@@ -1,6 +1,6 @@
 /* 全局字体设置 */
 :root {
-  --md-text-font: "JetBrains Mono", "LXGW WenKai Screen";  /* 正文字体 */
+  --md-text-font: "LXGW WenKai Screen", "JetBrains Mono";  /* 正文字体 */
   --md-code-font: "JetBrains Mono";  /* 代码字体 */
 }
 
@@ -35,12 +35,15 @@
 }
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
-  letter-spacing: 0;    /* 字体间距 */
+  letter-spacing: 0.05em;    /* 字体间距 */
+  line-height: 1.5;
 }
 
 /* 正文字体 */
 .md-typeset {
   font-size: .7rem;     /* 字体大小 */
+  letter-spacing: 0.04em;
+  line-height: 1.8;
 }
 
 /* 行内 code 字号继承正文 */
@@ -55,10 +58,12 @@
   border-radius: 8px;
   overflow: hidden;
 }
-.md-typeset pre {
+.md-typeset pre,
+.md-typeset code {
+  line-height: 1.5; /* 代码行间距 */
   overflow: hidden;
+  letter-spacing: 0;
 }
-
 
 /* 浅色主题 */
 [data-md-color-scheme="default"] {

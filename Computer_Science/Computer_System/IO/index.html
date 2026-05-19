@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/memory_index/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/IO/">
       
       
-        <link rel="prev" href="../deadlock/">
+        <link rel="prev" href="../mass_storage/">
       
       
-        <link rel="next" href="../cache/">
+        <link rel="next" href="../../Data_Structure/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>内存层次结构 - Lucy Wisteria's Notebook</title>
+        <title>I/O 系统 - Lucy Wisteria's Notebook</title>
       
     
     
@@ -109,7 +109,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#io" class="md-skip">
           跳转至
         </a>
       
@@ -142,7 +142,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              内存层次结构
+              I/O 系统
             
           </span>
         </div>
@@ -1504,10 +1504,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1526,11 +1524,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
@@ -1551,7 +1549,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1566,19 +1564,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../memory_index/" class="md-nav__link">
         
   
   
@@ -1594,7 +1583,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1696,8 +1684,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1712,11 +1702,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
@@ -1737,7 +1727,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1780,10 +1770,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../IO/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I/O 系统
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1799,6 +1816,148 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Hardware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同步/异步 I/O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-io-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application I/O Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application I/O Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-io-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel I/O Subsystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5021,6 +5180,136 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#io-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Hardware
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="I/O Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interrupts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrupts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DMA
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O Devices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        同步/异步 I/O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-io-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application I/O Interface
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application I/O Interface">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kernel-io-subsystem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kernel I/O Subsystem
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        性能
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5040,7 +5329,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/memory_index.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/IO.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5048,48 +5337,275 @@
   
 
 
-<h1 id="_1">内存层次结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="io">I/O 系统<a class="headerlink" href="#io" title="Permanent link">&para;</a></h1>
 <ol>
-<li><strong>存储层次结构</strong>：register、cache、memory、storage（从左到右容量越来越大，访问速度越来越慢，成本越来越低）</li>
+<li><strong>I/O 管理</strong>是操作系统设计和运行的核心组成部分</li>
+<li><strong>I/O 设备</strong>是计算机与用户及其他系统进行交互的方式</li>
 </ol>
-<div class="admonition abstract">
-<p class="admonition-title"><strong>存储器层次结构</strong></p>
-<p>（以服务器为例，不同用途计算机的要求不同）</p>
-<p><img alt="alt text" src="../photo/18-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/22-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<h2 id="io-hardware">I/O Hardware<a class="headerlink" href="#io-hardware" title="Permanent link">&para;</a></h2>
+<ol>
+<li>I/O 设备种类繁多 <strong>e.g.</strong> 网卡、鼠标键盘、显示器</li>
+<li><strong>硬件连接</strong><ol>
+<li>总线 <strong>Bus</strong>：组件（包括 CPU）之间的互连通道</li>
+<li>端口 <strong>Port</strong>：设备的连接点</li>
+<li>控制器 <strong>Controller</strong>：控制设备的组件<ol>
+<li>可以集成到<strong>设备中</strong>或位于<strong>独立的电路板</strong>上</li>
+<li>通常包含处理器、微代码、私有内存、总线控制器等</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="io-access">I/O Access<a class="headerlink" href="#io-access" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>某些 CPU 架构具有<strong>专用的 I/O 指令</strong> </p>
+<p><strong>e.g.</strong> x86：in, out, ins, outs</p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title"><strong>设备</strong>通常提供用于<strong>数据和控制设备 I/O</strong> 的寄存器</p>
+<ol>
+<li>设备驱动程序将命令和数据（或其指针）放入寄存器</li>
+<li><strong>寄存器包括</strong>数据输入/数据输出寄存器、状态寄存器、控制（或命令）寄存器</li>
+<li>通常为 1-4 字节，或先进先出（FIFO）缓冲区</li>
+</ol>
 </div>
 <ol start="2">
-<li>存储介质分类：</li>
+<li>
+<p><strong>I/O 寻址</strong>：CPU 访问 I/O 设备寄存器的方式</p>
+<ol>
+<li><strong>Direct I/O instructions</strong>：用于访问（绝大多数）寄存器</li>
+<li><strong>Memory-mapped I/O</strong>：数据和命令寄存器被映射到<strong>内存地址空间</strong>，用于访问（<strong>大量的</strong>）片上内存（如显卡）</li>
 </ol>
-<ul>
-<li>机械存储</li>
-<li>电子存储：SRAM、DRAM（SDRAM）、Flash、ROM（PROM、EPROM）</li>
-<li>光学存储</li>
-</ul>
-<ol start="3">
-<li><strong>局部性</strong></li>
-</ol>
-<ul>
-<li><strong>时间</strong>局部性：如果一个条目被引用，它往往<strong>很快</strong>会再次被引用</li>
-<li><strong>空间</strong>局部性：如果一个条目被引用，地址<strong>与其接近</strong>的条目往往很快也会被引用</li>
-</ul>
-<div class="admonition success">
-<p class="admonition-title">优势</p>
-<p>为用户提供尽可能多的存储空间，同时提供最快技术所能达到的访问速度。</p>
-</div>
-<ol start="4">
-<li>存储层次结构中<strong>关注点不同</strong>的三类计算机</li>
-</ol>
-<ul>
-<li><strong>台式</strong>计算机：主要为单个用户运行一个应用程序，更关注存储层次结构带来的<strong>平均延迟</strong></li>
-<li><strong>服务器</strong>计算机：通常可能有数百个用户同时运行数十个应用程序，关注<strong>内存带宽</strong></li>
-<li><strong>嵌入式</strong>计算机<ul>
-<li>实时应用：关注最差情况性能 vs 最佳情况性能</li>
-<li>更关注<strong>功耗和电池寿命</strong>（如果能用简单的硬件电路实现，就不会写复杂的软件逻辑，因为软件运行需要 CPU 循环，非常耗电）</li>
-<li>运行单一程序并使用简单操作系统，<strong>不需要</strong>浪费额外的硬件电路去做复杂的内存保护</li>
-<li><strong>主存非常小</strong>，通常没有磁盘存储</li>
-</ul>
 </li>
-</ul>
+<li>
+<p><strong>I/O 访问方式</strong>：轮询（polling）或中断（interrupt）</p>
+</li>
+</ol>
+<h3 id="polling">Polling<a class="headerlink" href="#polling" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Polling：CPU 主动访问设备</strong></li>
+<li><strong>步骤：对于每个 I/O 操作</strong>：<ol>
+<li>如果设备处于忙碌状态，无法接受任何命令，则 <strong>Busy-wait</strong>（通过<strong>状态寄存器</strong>判断）</li>
+<li>向设备 controller 发送命令（<strong>命令寄存器</strong>）</li>
+<li>读取状态寄存器，直到其显示命令已执行完毕（期间 busy-wait）</li>
+<li>读取执行状态，并可能<strong>重置设备状态</strong></li>
+</ol>
+</li>
+<li><strong>缺点</strong>：需要忙等待<ol>
+<li>如果设备速度快，是合理的</li>
+<li>如果设备速度慢，则<strong>CPU 资源使用效率低下</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="interrupts">Interrupts<a class="headerlink" href="#interrupts" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>优点</strong>：中断可以避免忙等待</li>
+<li>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>设备驱动程序（<strong>操作系统</strong>）向控制器（<strong>设备</strong>）发送命令，然后返回</li>
+<li>操作系统可以调度<strong>其他</strong>活动</li>
+<li>当发送到设备上的命令执行完毕时，设备会<strong>中断处理器</strong></li>
+<li>操作系统<strong>通过处理该中断来获取结果</strong></li>
+</ol>
+<p><img alt="alt text" src="../photo/22-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>缺点</strong>：基于中断的 I/O 在开始和结束时需要 <strong>context switch</strong></p>
+<ol>
+<li>如果中断频率极高，上下文切换会<strong>浪费 CPU 时间</strong></li>
+<li><strong>解决方案</strong>：改用轮询</li>
+</ol>
+</li>
+<li>
+<p>多 CPU 系统可以<strong>并发处理中断</strong></p>
+<ol>
+<li>有时可以指定一个 CPU <strong>专门用来处理中断</strong></li>
+<li>中断也可以具有 <strong>CPU affinity</strong>（将特定中断请求分配给特定处理器（组）的能力）</li>
+</ol>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">中断也用于异常处理</p>
+<ol>
+<li>protection error for access violation</li>
+<li>page fault for memory access error</li>
+<li>software interrupt for system calls</li>
+</ol>
+</div>
+<h3 id="dma">DMA<a class="headerlink" href="#dma" title="Permanent link">&para;</a></h3>
+<ol>
+<li>DMA（Direct Memory Access）在 <strong>I/O 设备和内存</strong>之间直接传输数据<ol>
+<li>操作系统<strong>只需要发出命令</strong>，数据传输会绕过 CPU</li>
+<li>不是 programmed I/O（一次一个字节），数据是以 <strong>large blocks</strong> 形式传输的</li>
+</ol>
+</li>
+<li><strong>DMA controller</strong>：在设备或系统中配备，<strong>操作系统</strong>向 DMA 控制器发出命令<ol>
+<li>命令包括：操作、数据的内存地址、字节计数……</li>
+<li>通常是将命令的指针写入<strong>命令寄存器</strong></li>
+<li>当完成后，设备会中断 CPU 以发出完成信号</li>
+</ol>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">DMA 数据传输步骤</p>
+<ol>
+<li>device driver ：CPU</li>
+<li>device controller ：disk</li>
+</ol>
+<p><img alt="alt text" src="../photo/22-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
+</div>
+<h2 id="io-devices">I/O Devices<a class="headerlink" href="#io-devices" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>分类维度</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">维度</th>
+<th style="text-align: left;">差异</th>
+<th style="text-align: left;">示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>数据传输模式</strong></td>
+<td style="text-align: left;">字符 character<br>块 block</td>
+<td style="text-align: left;">终端、键盘、鼠标、串口<br>磁盘</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>访问方式</strong></td>
+<td style="text-align: left;">顺序 sequential<br>随机 random</td>
+<td style="text-align: left;">调制解调器 modem<br>光盘只读存储器 (CD-ROM)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>传输调度</strong></td>
+<td style="text-align: left;">同步 synchronous<br>异步 asynchronous</td>
+<td style="text-align: left;">磁带<br>键盘</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>共享性</strong></td>
+<td style="text-align: left;">独占 dedicated<br>可共享 sharable</td>
+<td style="text-align: left;">磁带<br>键盘</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>设备速度</strong></td>
+<td style="text-align: left;">延迟 latency<br>寻道时间<br>传输速率<br>操作间延迟</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>输入/输出方向</strong></td>
+<td style="text-align: left;">只读<br>只写<br>读写</td>
+<td style="text-align: left;">光盘只读存储器 (CD-ROM)<br>图形控制器<br>磁盘</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>广义上，<strong>操作系统可以将 I/O 设备分为以下几组</strong></p>
+<ol>
+<li><strong>block I/O</strong>：<ol>
+<li><strong>操作</strong>：支持读（read）、写（write）、寻道（seek） </li>
+<li><strong>寻址方式</strong>：文件系统访问、Raw/Direct I/O、Memory-mapped file</li>
+<li><strong>访问方式</strong>：DMA</li>
+</ol>
+</li>
+<li><strong>character I/O</strong>（Stream）</li>
+<li><strong>Network Devices</strong><ol>
+<li><strong>常用接口</strong>：socket interface（将网络协议与具体的网络操作细节分离）</li>
+</ol>
+</li>
+<li><strong>Clocks and Timers</strong>：可以被视为<strong>字符设备</strong>，提供当前时间、流逝的时间以及定时器功能</li>
+</ol>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>操作系统通常有一个后门/逃生通道（escape/back door），用于<strong>将任何 I/O 命令从应用程序直接传递给设备</strong></p>
+<p><strong>e.g.</strong> Linux 的 ioctl 调用，用于向设备驱动程序发送命令</p>
+</div>
+<h2 id="io_1">同步/异步 I/O<a class="headerlink" href="#io_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>同步 I/O</strong>（Synchronous I/O）<ol>
+<li><strong>阻塞 I/O</strong>（blocking I/O）：进程被挂起，直到 I/O 完成<ol>
+<li><strong>优点</strong>：易于使用和理解</li>
+<li><strong>缺点</strong>：但效率可能较低，无法满足某些特定需求</li>
+</ol>
+</li>
+<li><strong>非阻塞 I/O</strong>（non-blocking I/O）：I/O 调用会立即返回<ol>
+<li>如果数据就绪则传输</li>
+<li>如果未就绪，则返回一个<strong>错误码</strong>告知进程当前无数据</li>
+<li><strong>进程不会被挂起</strong>，可以利用空隙执行其他任务，但需要<strong>不断轮询查看状态</strong></li>
+<li>使用 select 来查找数据是否就绪，然后使用 read 或 write 来传输数据</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>异步 I/O</strong>（Asynchronous I/O）：在 I/O 执行的同时，进程继续运行<ol>
+<li>当 I/O 完成时，I/O 子系统通过 <strong>signal 或 callback</strong> 向进程发送通知</li>
+<li><strong>优点</strong>：效率极高</li>
+<li><strong>缺点</strong>：使用难度较大</li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="application-io-interface">Application I/O Interface<a class="headerlink" href="#application-io-interface" title="Permanent link">&para;</a></h2>
+<ol>
+<li>I/O system calls 将设备行为<strong>封装在通用类中</strong><ol>
+<li>在 Linux 中，设备可以作为<strong>文件</strong>进行访问</li>
+<li>使用 <strong><code>ioctl</code></strong> 进行底层访问（无法归类为标准读写的“非标准”硬件操作）</li>
+</ol>
+</li>
+<li><strong>设备驱动程序层</strong>：内核与硬件之间的“翻译官”，向内核隐藏了不同 I/O 控制器之间的差异</li>
+<li>每个操作系统都有自己的 <strong>I/O 子系统和设备驱动程序</strong>框架</li>
+</ol>
+<p><img alt="alt text" src="../photo/22-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<h3 id="kernel-io-subsystem">Kernel I/O Subsystem<a class="headerlink" href="#kernel-io-subsystem" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>I/O scheduling</strong>：通过每个设备专属的队列对 I/O 请求进行排队</li>
+<li><strong>Buffering</strong>：在<strong>设备间</strong>传输数据时将其<strong>暂存在内存中</strong><ol>
+<li>应对设备速度不匹配</li>
+<li>应对设备传输大小不匹配</li>
+</ol>
+</li>
+<li><strong>Caching</strong>：保留数据的副本以实现快速访问</li>
+<li><strong>假脱机（Spooling）</strong>：如果设备一次只能服务一个请求，假脱机是一个保存输出（即设备的输入）的缓冲区 <strong>e.g.</strong> 打印</li>
+<li><strong>设备预留（Device reservation）</strong>：提供对设备的独占访问<ol>
+<li>用于分配（allocation）和释放（de-allocation）的系统调用</li>
+<li>需要注意死锁（deadlock）</li>
+</ol>
+</li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">I/O 保护</p>
+<ol>
+<li><strong>操作系统需要保护 I/O 设备</strong></li>
+<li>为了保护 I/O 设备，<strong>将所有 I/O 指令定义为特权指令，I/O 必须通过系统调用来执行</strong></li>
+<li>内存映射 I/O (memory-mapped I/O) 和 I/O 端口也必须受到保护</li>
+</ol>
+</div>
+<h2 id="_1">性能<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>I/O 是系统性能的一个主要因素</strong>：<ol>
+<li>CPU 需要执行设备驱动程序和内核 I/O 代码</li>
+<li>中断引起的 context switches</li>
+<li>数据缓冲与复制（网络流量带来的负载尤其大）</li>
+</ol>
+</li>
+<li><strong>提高性能</strong>：<ol>
+<li>减少 context switches 的次数</li>
+<li>减少数据复制</li>
+<li>通过使用大块传输、智能控制器和 polling 来减少中断</li>
+<li>使用 DMA</li>
+<li>使用更智能的硬件设备</li>
+<li>平衡 CPU、内存、总线和 I/O 性能以实现最高吞吐量</li>
+<li>将用户模式进程/守护进程 (daemons) 移至内核线程</li>
+</ol>
+</li>
+</ol>
 
 
 
@@ -5112,7 +5628,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月22日 15:58:59 CST">2026年4月22日 15:58:59</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
   </span>
 
     
@@ -5122,7 +5638,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月13日 14:30:33 CST">2026年4月13日 14:30:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
   </span>
 
     
@@ -5177,7 +5693,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../deadlock/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 死锁">
+          <a href="../mass_storage/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 大容量存储">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5187,20 +5703,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                死锁
+                大容量存储
               </div>
             </div>
           </a>
         
         
           
-          <a href="../cache/" class="md-footer__link md-footer__link--next" aria-label="下一页: 缓存">
+          <a href="../../Data_Structure/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构与算法分析">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                缓存
+                数据结构与算法分析
               </div>
             </div>
             <div class="md-footer__button md-icon">

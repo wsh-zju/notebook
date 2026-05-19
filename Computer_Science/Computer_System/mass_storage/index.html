@@ -18,7 +18,7 @@
         <link rel="prev" href="../virtual_memory/">
       
       
-        <link rel="next" href="../../Data_Structure/">
+        <link rel="next" href="../IO/">
       
       
         
@@ -1693,6 +1693,8 @@
       
         
       
+        
+      
     
     
     
@@ -1944,6 +1946,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I/O 系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -5344,13 +5374,11 @@
 <ol>
 <li>磁盘驱动器被寻址为 logical blocks（LBA）的一维数组</li>
 <li>逻辑块是<strong>最小的传输单位</strong>，被顺序映射到磁盘的扇区中</li>
-<li><strong>Positioning time</strong>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong></li>
-</ol>
-<ul>
+<li><strong>Positioning time</strong>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong><ol>
 <li><strong>seek time</strong>：将磁头移动到目标柱面的时间</li>
 <li><strong>rotational latency</strong>：目标扇区旋转到磁头下方所需的时间</li>
-</ul>
-<ol start="4">
+</ol>
+</li>
 <li><strong>平均访问时间</strong> = 平均寻道时间 + 平均延迟</li>
 </ol>
 <div class="admonition quote">
@@ -5373,24 +5401,26 @@
 <p>主要慢在寻道时间和旋转延迟（不好提升）</p>
 </div>
 <ol start="6">
-<li><strong>性能</strong></li>
-</ol>
-<ul>
-<li><strong>transfer rate</strong>：驱动器与计算机之间数据流动的速率 <ul>
+<li>
+<p><strong>性能</strong></p>
+<ol>
+<li><strong>transfer rate</strong>：驱动器与计算机之间数据流动的速率 <ol>
 <li>理论值为 6gb/sec</li>
 <li>实际约为 1gb/sec</li>
-</ul>
+</ol>
 </li>
 <li>seek time 从 3ms 到 12ms（台式机驱动器常见为 9ms）</li>
 <li>基于主轴转速的延迟：1/rpm * 60（平均延迟 = 1/2 延迟）</li>
-</ul>
-<ol start="7">
-<li><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</li>
 </ol>
-<ul>
+</li>
+<li>
+<p><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</p>
+<ol>
 <li>数据：传输的<strong>总字节数</strong></li>
 <li>时间：从发出第一个请求到完成最后一次传输之间的时间</li>
-</ul>
+</ol>
+</li>
+</ol>
 <h2 id="_3">磁盘调度<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>磁盘调度</strong>：选择下一个要服务的待处理磁盘请求</li>
@@ -5423,25 +5453,25 @@
 </div>
 <h3 id="sstf">SSTF<a class="headerlink" href="#sstf" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>最短寻道时间优先</strong>：</li>
-</ol>
-<ul>
+<li>
+<p><strong>最短寻道时间优先</strong>：</p>
+<ol>
 <li>是 SJF（最短作业优先）调度的一种形式，可能<strong>存在饥饿现象</strong></li>
 <li>与 SJF 不同，SSTF <strong>可能不是最优的</strong></li>
-</ul>
-<ol start="2">
+</ol>
+</li>
 <li>
 <p><strong>优点</strong>：平均响应时间减少；吞吐量增加</p>
 </li>
 <li>
 <p><strong>缺点</strong>：</p>
-</li>
-</ol>
-<ul>
+<ol>
 <li>需要<strong>预先</strong>计算寻道时间的开销</li>
 <li>如果某个请求的寻道时间比新到达的请求长，可能会导致该请求出现<strong>“饥饿”</strong></li>
 <li>响应时间的<strong>方差较大</strong>，因为 SSTF <strong>仅有利于部分请求</strong></li>
-</ul>
+</ol>
+</li>
+</ol>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>磁头移动总量为 236 个柱面</p>
@@ -5460,14 +5490,16 @@
 </div>
 <h3 id="c-scan">C-SCAN<a class="headerlink" href="#c-scan" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>循环扫描</strong>（Circular-scan）旨在提供更均匀的等待时间</li>
-</ol>
-<ul>
+<li>
+<p><strong>循环扫描</strong>（Circular-scan）旨在提供更均匀的等待时间</p>
+<ol>
 <li>当磁头到达末端时，立即返回到起始处</li>
 <li><strong>在返回途中不服务任何请求</strong>（本质上将柱面视为一个循环列表）</li>
-</ul>
-<ol start="2">
-<li><strong>优点</strong>：与 SCAN 相比，提供更均匀的等待时间</li>
+</ol>
+</li>
+<li>
+<p><strong>优点</strong>：与 SCAN 相比，提供更均匀的等待时间</p>
+</li>
 </ol>
 <h3 id="lookc-look">LOOK/C-LOOK<a class="headerlink" href="#lookc-look" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -5496,27 +5528,29 @@
 <li><strong>优点</strong>：可以比 HDD 更可靠；速度快得多（没有移动部件，因此<strong>没有寻道时间或旋转延迟</strong>）</li>
 <li><strong>缺点</strong>：单位 MB 价格更贵；寿命可能较短，需要仔细管理；容量较小；总线可能太慢</li>
 <li><strong>调度算法</strong>：FCFS</li>
-<li><strong>特性</strong>：</li>
-</ol>
-<ul>
+<li>
+<p><strong>特性</strong>：</p>
+<ol>
 <li>以 <strong>page</strong> 为增量进行读写（类似扇区）</li>
 <li>但<strong>无法就地重写</strong>，必须先被擦除，且必须擦除 page 所在的整个 block</li>
 <li>在磨损前<strong>只能擦除有限次数</strong></li>
 <li>寿命通过<strong>每日全盘写入次数</strong> (DWPD) 来衡量</li>
-</ul>
-<ol start="6">
-<li><strong>NAND 闪存控制器算法</strong></li>
 </ol>
-<ul>
-<li>控制器维护<strong>闪存转换层 (FTL) 表</strong>：<ul>
+</li>
+<li>
+<p><strong>NAND 闪存控制器算法</strong></p>
+<ol>
+<li>控制器维护<strong>闪存转换层 (FTL) 表</strong>：<ol>
 <li><strong>原因</strong>：由于无法重写，页面最终会充满有效和无效数据的混合</li>
 <li><strong>目的</strong>：为了追踪哪些逻辑块是有效的</li>
-</ul>
+</ol>
 </li>
 <li>还实现了<strong>垃圾回收</strong>以释放无效页面空间</li>
 <li>分配<strong>预留空间</strong>为垃圾回收提供工作空间</li>
 <li>每个单元都有寿命，因此<strong>需要均衡地写入所有单元</strong></li>
-</ul>
+</ol>
+</li>
+</ol>
 <h2 id="_5">磁带<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -5592,8 +5626,13 @@
 </ol>
 <ul>
 <li><strong>数据镜像</strong> (Data Mirroring)：在多个磁盘上保留相同的数据</li>
-<li><strong>数据条带化</strong> (Data Striping)：将数据分散在多个磁盘上以<strong>允许并行读取</strong> <strong>e.g.</strong> 从 8 个磁盘读取一个字节的各个位</li>
-<li><strong>纠错码</strong> (ECC)：校验位（保留用于在驱动器故障时重建丢失位的信息）</li>
+<li>
+<p><strong>数据条带化</strong> (Data Striping)：将数据分散在多个磁盘上以<strong>允许并行读取</strong> </p>
+<p><strong>e.g.</strong> 从 8 个磁盘读取一个字节的各个位</p>
+</li>
+<li>
+<p><strong>纠错码</strong> (ECC)：校验位（保留用于在驱动器故障时重建丢失位的信息）</p>
+</li>
 </ul>
 <ol start="3">
 <li><strong>层级</strong></li>
@@ -5651,10 +5690,11 @@
 </div>
 </div>
 </div>
+<hr />
 <div class="admonition info">
 <p class="admonition-title">RAID 与文件系统</p>
 <ol>
-<li>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</li>
+<li><strong>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</strong></li>
 <li>像 Solaris ZFS 这样的文件系统增加了额外的检查来检测错误</li>
 </ol>
 <ul>
@@ -5691,7 +5731,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月13日 22:15:10 CST">2026年5月13日 22:15:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
   </span>
 
     
@@ -5773,13 +5813,13 @@
         
         
           
-          <a href="../../Data_Structure/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构与算法分析">
+          <a href="../IO/" class="md-footer__link md-footer__link--next" aria-label="下一页: I/O 系统">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                数据结构与算法分析
+                I/O 系统
               </div>
             </div>
             <div class="md-footer__button md-icon">
