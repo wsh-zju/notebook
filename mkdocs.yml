@@ -143,7 +143,7 @@ extra_css:
   - style/css/toc_extra.css
   - style/css/svg_extra.css
   - style/css/counter.css
-  - style/css/english.css
+  #- style/css/english.css
   - style/css/riscv.css
   - style/css/search.css
   - style/css/weixin.css
@@ -238,6 +238,7 @@ nav:
       - 存储与文件结构 : Computer_Science/Database_System/store&file.md
       - 索引与哈希 : Computer_Science/Database_System/index&hash.md
       - 查询处理 : Computer_Science/Database_System/query.md
+      - 查询优化 : Computer_Science/Database_System/query_opt.md
   - 开发工具 :
     - Tools/index.md
     - C :
