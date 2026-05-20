@@ -18,7 +18,7 @@
         <link rel="prev" href="../index%26hash/">
       
       
-        <link rel="next" href="../../../Tools/">
+        <link rel="next" href="../query_opt/">
       
       
         
@@ -75,8 +75,6 @@
       <link rel="stylesheet" href="../../../style/css/svg_extra.css">
     
       <link rel="stylesheet" href="../../../style/css/counter.css">
-    
-      <link rel="stylesheet" href="../../../style/css/english.css">
     
       <link rel="stylesheet" href="../../../style/css/riscv.css">
     
@@ -2808,6 +2806,8 @@
       
         
       
+        
+      
     
     
     
@@ -3240,12 +3240,12 @@
   <a href="#select" class="md-nav__link">
     <span class="md-ellipsis">
       
-        select
+        SELECT
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="select">
+    <nav class="md-nav" aria-label="SELECT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3315,15 +3315,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sorting" class="md-nav__link">
+  <a href="#sorting-fold" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * sorting
+        * Sorting [fold]
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* sorting">
+    <nav class="md-nav" aria-label="* Sorting [fold]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3346,10 +3346,105 @@
   <a href="#join" class="md-nav__link">
     <span class="md-ellipsis">
       
-        join
+        JOIN
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested-loop join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested-loop join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block nested-loop join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexed-nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexed nested-loop join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge-join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge-join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sort-merge join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid merge-join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash-join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3357,7 +3452,7 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * 其他行动
+        * 其他操作
       
     </span>
   </a>
@@ -3373,12 +3468,68 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="* 表达式的评估">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实例化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../query_opt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    查询优化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -5249,12 +5400,12 @@
   <a href="#select" class="md-nav__link">
     <span class="md-ellipsis">
       
-        select
+        SELECT
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="select">
+    <nav class="md-nav" aria-label="SELECT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5324,15 +5475,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sorting" class="md-nav__link">
+  <a href="#sorting-fold" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * sorting
+        * Sorting [fold]
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* sorting">
+    <nav class="md-nav" aria-label="* Sorting [fold]">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5355,10 +5506,105 @@
   <a href="#join" class="md-nav__link">
     <span class="md-ellipsis">
       
-        join
+        JOIN
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="JOIN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nested-loop join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nested-loop join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#block-nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block nested-loop join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indexed-nested-loop-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Indexed nested-loop join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Merge-join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Merge-join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sort-merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sort-merge join
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hybrid-merge-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hybrid merge-join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash-join
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5366,7 +5612,7 @@
   <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * 其他行动
+        * 其他操作
       
     </span>
   </a>
@@ -5381,6 +5627,34 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="* 表达式的评估">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        实例化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        流水线
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5504,7 +5778,7 @@
 <li>所需数据可能<strong>已经驻留在缓冲区中</strong>，从而避免磁盘 I/O，但这在代价估算中<strong>很难考虑在内</strong></li>
 </ol>
 </div>
-<h2 id="select">select<a class="headerlink" href="#select" title="Permanent link">&para;</a></h2>
+<h2 id="select">SELECT<a class="headerlink" href="#select" title="Permanent link">&para;</a></h2>
 <h3 id="_4">等值比较<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <h4 id="file-scan">file scan<a class="headerlink" href="#file-scan" title="Permanent link">&para;</a></h4>
 <p><strong>文件扫描</strong>：搜索定位并检索满足选择条件的记录的算法，<strong>不使用索引</strong></p>
@@ -5674,7 +5948,7 @@
 </div>
 </div>
 </div>
-<h2 id="sorting">* sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h2>
+<h2 id="sorting-fold">* Sorting [fold]<a class="headerlink" href="#sorting-fold" title="Permanent link">&para;</a></h2>
 <ol>
 <li>数据排序的<strong>两种情况</strong>：</li>
 </ol>
@@ -5696,14 +5970,12 @@
 <h3 id="_7"><strong>外部归并排序</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>M 表示内存大小（以页面为单位）</li>
-<li>创建<strong>排序好的归并段</strong> runs：令 i 初始为 0，重复执行以下操作直到关系结束（<strong>i 的最终值为 N</strong>）</li>
+<li>创建<strong>排序好的归并段</strong> runs：令 i 初始为 0，重复执行以下操作直到关系结束（<strong>i 的最终值为 N</strong>）<ol>
+<li>将关系的 M 个块读入内存</li>
+<li>对内存中的<strong>块</strong>进行排序</li>
+<li>将排序后的数据写入归并段 <span class="arithmatex">\(R_i\)</span>；将 i 加 1</li>
 </ol>
-<ul>
-<li>(a) 将关系的 M 个块读入内存</li>
-<li>(b) 对内存中的<strong>块</strong>进行排序</li>
-<li>(c) 将排序后的数据写入归并段 <span class="arithmatex">\(R_i\)</span>；将 i 加 1</li>
-</ul>
-<ol start="3">
+</li>
 <li><strong>归并</strong></li>
 </ol>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="arithmatex">\(N &lt; M\)</span></label><label for="__tabbed_5_2"><span class="arithmatex">\(N &gt; M\)</span></label></div>
@@ -5713,16 +5985,16 @@
 <li>使用 <span class="arithmatex">\(N\)</span> 个内存块来<strong>缓冲输入段</strong></li>
 <li>使用 1 个块来<strong>缓冲输出</strong></li>
 <li>将每个段的<strong>第一块</strong>读入其对应的缓冲页</li>
-<li><strong>重复</strong>：</li>
-</ol>
-<ul>
+<li><strong>重复</strong>：<ol>
 <li>在所有缓冲页中选择<strong>第一条记录</strong>并按排序顺序</li>
 <li>将该记录写入输出缓冲区</li>
 <li><strong>如果输出缓冲区已满，则将其写入磁盘</strong></li>
 <li>从其输入缓冲页中删除该记录</li>
 <li><strong>如果该缓冲页变为空</strong>，则将该段的<strong>下一块</strong>（如果有）读入缓冲区</li>
 <li><strong>直到所有输入缓冲页均为空</strong></li>
-</ul>
+</ol>
+</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <ol>
@@ -5739,34 +6011,278 @@
 <p><img alt="alt text" src="../photo/8-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
 <ol start="4">
-<li><strong>代价分析</strong></li>
-</ol>
-<ul>
-<li><strong>块传输次数</strong><ul>
+<li>
+<p><strong>代价分析</strong></p>
+<ol>
+<li><strong>块传输次数</strong><ol>
 <li><strong>构建阶段</strong>：<span class="arithmatex">\(2b_r\)</span>（读入+输出）</li>
-<li><strong>归并阶段</strong>：<ul>
+<li><strong>归并阶段</strong>：<ol>
 <li><strong>merge passes</strong>：<span class="arithmatex">\(\lceil \log_{M-1}(b_r / M) \rceil\)</span></li>
 <li>每一次  merge passes <strong>块传输次数</strong>均为 <span class="arithmatex">\(2b_r\)</span>（读入+输出）</li>
 <li><strong>注意：</strong>最后一个阶段不计算写入代价（无需写入磁盘）</li>
-</ul>
+</ol>
 </li>
 <li><strong>总块传输次数</strong>：<span class="arithmatex">\(b_r ( 2 \lceil \log_{M-1}(b_r / M) \rceil + 1)\)</span></li>
-</ul>
+</ol>
 </li>
-<li><strong>寻道次数</strong>：<ul>
+<li><strong>寻道次数</strong>：<ol>
 <li><strong>构建阶段</strong>：<span class="arithmatex">\(2 \lceil b_r / M \rceil\)</span>（读取和写入每个归并段都需要一次寻道）</li>
-<li><strong>归并阶段</strong>：<ul>
+<li><strong>归并阶段</strong>：<ol>
 <li><strong>缓冲区大小</strong>：<span class="arithmatex">\(b_b\)</span>（一次读/写 <span class="arithmatex">\(b_b\)</span> 个块）</li>
 <li>每个归并阶段需要 <span class="arithmatex">\(2 \lceil b_r / b_b \rceil\)</span> 次寻道（最后一个阶段除外）</li>
-</ul>
+</ol>
 </li>
 <li><strong>总寻道次数</strong>：<span class="arithmatex">\(2 \lceil b_r / M \rceil + \lceil b_r / b_b \rceil (2 \lceil \log_{M-1}(b_r / M) \rceil - 1)\)</span></li>
-</ul>
+</ol>
 </li>
-</ul>
-<h2 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h2>
-<h2 id="_8">* 其他行动<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="join">JOIN<a class="headerlink" href="#join" title="Permanent link">&para;</a></h2>
+<h3 id="nested-loop-join">Nested-loop join<a class="headerlink" href="#nested-loop-join" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>嵌套循环连接</strong></p>
+<ol>
+<li><strong>外层循环</strong>：遍历外层关系 <span class="arithmatex">\(r\)</span> 的每一条记录</li>
+<li><strong>内层循环</strong>：对于 <span class="arithmatex">\(r\)</span> 的每一条记录，都扫描一遍内层关系 <span class="arithmatex">\(s\)</span>，寻找满足连接条件的记录</li>
+</ol>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="n">test</span><span class="w"> </span><span class="n">pair</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="p">)</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">see</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">they</span><span class="w"> </span><span class="n">satisfy</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">join</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="n">θ</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">they</span><span class="w"> </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="err">·</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">result</span><span class="p">.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">end</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">end</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>优点</strong>：不需要索引，并且可以与任何类型的连接条件一起使用</p>
+</li>
+<li><strong>缺点</strong>：代价高昂（需要检查两个关系中的每一对元组）</li>
+<li>
+<p><strong>代价分析</strong></p>
+<ol>
+<li><strong>最坏情况</strong>：内存仅够容纳<strong>每个关系</strong>的一个数据块<ol>
+<li><span class="arithmatex">\(n_r * b_s + b_r\)</span> 次数据块传输</li>
+<li><span class="arithmatex">\(n_r + b_r\)</span> 次磁盘寻道</li>
+</ol>
+</li>
+<li><strong>最好情况</strong>：两个关系都<strong>全部</strong>在<strong>内存中</strong><ol>
+<li><span class="arithmatex">\(b_r + b_s\)</span> 次数据块传输</li>
+<li>2 次寻道</li>
+</ol>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">变量含义</p>
+<p><span class="arithmatex">\(n_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的行数</p>
+<p><span class="arithmatex">\(b_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的块数</p>
+<p><span class="arithmatex">\(n_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的行数</p>
+<p><span class="arithmatex">\(b_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的块数</p>
+</div>
+</li>
+<li>
+<p>如果<strong>较小</strong>的关系可以完全装入内存，则将其作为<strong>内层关系</strong>，只需要读一次</p>
+</li>
+</ol>
+<h4 id="block-nested-loop-join">Block nested-loop join<a class="headerlink" href="#block-nested-loop-join" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p><strong>块嵌套循环连接</strong>：以数据块为单位处理（内层关系的数据块针对外层关系的每个数据块只读取一次）</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">Br</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">block</span><span class="w"> </span><span class="n">Bs</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="c1">// 在内存中高效处理</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Br</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">tuple</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">Bs</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">begin</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">                </span><span class="n">Check</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">,</span><span class="w"> </span><span class="n">ts</span><span class="p">)</span><span class="w"> </span><span class="n">satisfy</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">join</span><span class="w"> </span><span class="n">condition</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="n">they</span><span class="w"> </span><span class="k">do</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="n">tr</span><span class="w"> </span><span class="err">·</span><span class="w"> </span><span class="n">ts</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">result</span><span class="p">.</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">            </span><span class="n">end</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="n">end</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">end</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">end</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>代价分析</strong></p>
+<ol>
+<li><strong>最坏情况</strong>：<span class="arithmatex">\(b_r * b_s + b_r\)</span> 次数据块传输 + <span class="arithmatex">\(2 * b_r\)</span> 次寻道<ol>
+<li><strong>条件</strong>：内存中只有 3 个 block：<span class="arithmatex">\(Br, Bs, Bout\)</span></li>
+<li><strong>优化</strong>：让数据块数量较少的关系作为外层关系</li>
+</ol>
+</li>
+<li><strong>最好情况</strong>：<span class="arithmatex">\(b_r + b_s\)</span> 次数据块访问 + 2 次寻道   <ol>
+<li><strong>条件</strong>：s 全部且始终在内存中，只读一次</li>
+<li><strong>优化</strong>：让数据块数量较少的关系作为内层关系</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>优化</strong><ol>
+<li>当 <span class="arithmatex">\(M &gt; 3\)</span>，但 <span class="arithmatex">\(M &lt; b_s\)</span> 且 <span class="arithmatex">\(M &lt; b_r\)</span> 时：（其中 <span class="arithmatex">\(M\)</span> = 以块为单位的内存大小）<ol>
+<li>使用 <span class="arithmatex">\(M - 2\)</span> 个磁盘块作为外层关系的块单位</li>
+<li>使用剩余的两个块来缓冲内层关系和输出</li>
+<li><strong>代价</strong>：<span class="arithmatex">\(\lceil b_r / (M-2) \rceil * b_s + b_r\)</span> 次数据块传输 + <span class="arithmatex">\(2 \lceil b_r / (M-2) \rceil\)</span> 次寻道</li>
+</ol>
+</li>
+<li>如果<strong>等值连接</strong>属性构成了内层关系上的<strong>主键</strong>，则在第一次匹配成功后即可<strong>停止内层循环</strong></li>
+<li><strong>交替向前和向后扫描内层循环</strong>，以充分利用残留在缓冲区中的数据块（使用 LRU 替换策略时，能直接复用上一轮残留在内存尾部的缓存块）</li>
+<li>如果内层关系上有可用索引，则<strong>使用索引</strong>（索引嵌套循环连接）</li>
+</ol>
+</li>
+</ol>
+<h4 id="indexed-nested-loop-join">Indexed nested-loop join<a class="headerlink" href="#indexed-nested-loop-join" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>索引嵌套循环连接</strong>：对于外层关系 <span class="arithmatex">\(r\)</span> 中的每一个元组 <span class="arithmatex">\(t_r\)</span>，<strong>使用索引去查找内层关系 <span class="arithmatex">\(s\)</span> 中</strong>满足与元组 <span class="arithmatex">\(t_r\)</span> 连接条件的元组</li>
+<li><strong>使用条件</strong>：<ol>
+<li>连接是<strong>等值连接或自然连接</strong></li>
+<li>内层关系 <span class="arithmatex">\(s\)</span> 有可用索引</li>
+</ol>
+</li>
+<li>
+<p><strong>最坏情况</strong>：</p>
+<ol>
+<li>缓冲区只能够容纳关系 <span class="arithmatex">\(r\)</span> 的一个页面（数据块），并且对于 <span class="arithmatex">\(r\)</span> 中的每一个元组，都要对 <span class="arithmatex">\(s\)</span> 执行一次索引查找</li>
+<li><strong>连接成本</strong>：<span class="arithmatex">\(b_r (t_T + t_S) + n_r * c\)</span></li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title"><span class="arithmatex">\(c\)</span></p>
+<ol>
+<li>指对于外层关系 <span class="arithmatex">\(r\)</span> 的一个元组，遍历索引并获取所有匹配的内层关系 <span class="arithmatex">\(s\)</span> 中元组的成本</li>
+<li><strong><span class="arithmatex">\(c\)</span> 可以估算为</strong>：使用该连接条件在关系 <span class="arithmatex">\(s\)</span> 上执行单次选择（条件查询）的成本</li>
+</ol>
+</div>
+</li>
+<li>
+<p>如果在关系 <span class="arithmatex">\(r\)</span> 和 <span class="arithmatex">\(s\)</span> 的连接属性上<strong>都有</strong>可用索引，应选择<strong>元组数量较少的关系作为外层关系</strong></p>
+</li>
+</ol>
+<h3 id="merge-join">Merge-join<a class="headerlink" href="#merge-join" title="Permanent link">&para;</a></h3>
+<h4 id="sort-merge-join">Sort-merge join<a class="headerlink" href="#sort-merge-join" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>排序归并连接</strong>：<ol>
+<li>将两个关系按照其连接属性进行排序</li>
+<li><strong>合并</strong>：<ol>
+<li>在内存中维护<strong>两个指针</strong>，分别指向关系 <span class="arithmatex">\(r\)</span> 和 <span class="arithmatex">\(s\)</span> 的当前元组</li>
+<li>依次比对连接属性的值，若相等则输出</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>只能用于等值连接和自然连接</strong></li>
+<li><strong>优点</strong>：每个数据块只需要被读取一次（假设连接属性上任意给定值的全部元组都能装入内存）</li>
+<li><strong>成本</strong>：<span class="arithmatex">\((b_r + b_s)\)</span> 次数据块传输 + <span class="arithmatex">\((\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道（如果关系未排序，则还需加上排序的成本）</li>
+</ol>
+<h4 id="hybrid-merge-join">Hybrid merge-join<a class="headerlink" href="#hybrid-merge-join" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>前提</strong>：如果一个关系<strong>已排序</strong>，而另一个关系在连接属性上具有<strong>辅助 <span class="arithmatex">\(B^+\)</span> 树索引</strong></li>
+<li><strong>步骤</strong>：<ol>
+<li>将已排序的关系与 <span class="arithmatex">\(B^+\)</span> 树的叶节点条目进行合并</li>
+<li>将结果按照<strong>未排序关系的元组地址</strong>进行排序</li>
+<li>按照物理地址顺序扫描未排序的关系，并与之前的结果进行合并，用实际的元组替换地址</li>
+</ol>
+</li>
+</ol>
+<h3 id="hash-join">Hash-join<a class="headerlink" href="#hash-join" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../photo/8-3.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>适用于等值连接和自然连接</strong></li>
+<li>
+<p><strong>步骤</strong>：</p>
+<ol>
+<li>使用哈希函数 <span class="arithmatex">\(h\)</span> 对两个关系的元组进行<strong>分区</strong></li>
+<li>对于每个 <span class="arithmatex">\(i\)</span>：<ol>
+<li>将 <span class="arithmatex">\(s_i\)</span> 加载到内存中，并使用连接属性在其上构建一个<strong>内存哈希索引</strong></li>
+<li>从磁盘中逐个读取 <span class="arithmatex">\(r_i\)</span> 中的元组，利用内存哈希索引定位 <span class="arithmatex">\(s_i\)</span> 中每个匹配的元组 <span class="arithmatex">\(t_s\)</span></li>
+</ol>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Abstract</p>
+<ol>
+<li><strong><span class="arithmatex">\(r_i\)</span> 中的 <span class="arithmatex">\(r\)</span> 元组只需要与 <span class="arithmatex">\(s_i\)</span> 中的 <span class="arithmatex">\(s\)</span> 元组进行比较，不需要与任何其他分区中的 <span class="arithmatex">\(s\)</span> 元组进行比较</strong></li>
+<li>关系 <span class="arithmatex">\(s\)</span> 被称为构建输入（build input），而 <span class="arithmatex">\(r\)</span> 被称为探测输入（probe input）</li>
+<li>如果分区数 <span class="arithmatex">\(n\)</span> 大于内存的页数 <span class="arithmatex">\(M\)</span>，则需要进行<strong>递归分区</strong></li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>成本</strong>：</p>
+<ol>
+<li><strong>如果不需要递归分区</strong>：<span class="arithmatex">\(3(b_r + b_s) + 4 * n_h\)</span> 次数据块传输 + <span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道 </li>
+<li><strong>如果需要递归分区</strong>：<ol>
+<li>对构建关系 <span class="arithmatex">\(s\)</span> 进行<strong>分区所需的趟数</strong>：<span class="arithmatex">\(\lceil \log_{M-1}(b_s) - 1 \rceil\)</span>（最好选择<strong>较小</strong>的关系作为构建关系）</li>
+<li><strong>总开销估计为</strong>：<ol>
+<li><span class="arithmatex">\(2(b_r + b_s)\lceil \log_{M-1}(b_s) - 1 \rceil + b_r + b_s\)</span> 次数据块传输</li>
+<li><span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil) \lceil \log_{M-1}(b_s) - 1 \rceil\)</span> 次寻道</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>如果整个构建输入可以全部保存在主内存中，则<strong>不需要进行分区</strong>：<span class="arithmatex">\(b_r + b_s\)</span>（<strong>最佳情况</strong>）</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>通常将 <span class="arithmatex">\(n_h\)</span> 选择为 <span class="arithmatex">\(\lceil b_s / M \rceil * f\)</span>，其中 <span class="arithmatex">\(f\)</span> 是一个修正因子（fudge factor），通常在 1.2 左右</p>
+</div>
+</li>
+</ol>
+<hr />
+<h2 id="_8">* 其他操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>去重</strong>可以通过 hash 或 sort 来实现</li>
+<li><strong>投影</strong>：对每个元组执行投影，随后进行去重</li>
+<li><strong>聚集</strong>可以通过类似于去重的方式来实现</li>
+</ol>
+<p>...</p>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>其他具体内容请查看 PPT</p>
+</div>
 <h2 id="_9">* 表达式的评估<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">实例化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Materialization</strong>：一次只执行一个操作，利用实例化到临时关系中的<strong>中间结果</strong>来执行下一层的操作</li>
+<li><strong>（改进）双缓冲</strong>：为每个操作使用两个输出缓冲区<ol>
+<li>当一个缓冲区填满时将其写入磁盘，同时填充另一个缓冲区</li>
+<li>允许磁盘写入与计算重叠（并行），从而减少执行时间</li>
+</ol>
+</li>
+</ol>
+<h3 id="_11">流水线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>流水线</strong>：在某个操作正在执行时，就将元组传递给其父操作（同时执行多个操作，将一个操作的结果直接传递给下一个操作）</li>
+<li><strong>优点</strong>：比实例化要便宜得多：不需要将临时关系存储到磁盘中</li>
+<li><strong>缺点</strong>：可能并不总是可行（取决于下一个操作的类型，以及输出是否排序等）</li>
+<li><strong>通过两种方式执行</strong>：需求驱动（demand driven）和生产者驱动（producer driven）<ol>
+<li><strong>demand driven/lazy evaluation</strong>：<ol>
+<li>每个操作根据需要向其子操作请求下一个元组</li>
+<li>每个操作都被实现为一个迭代器</li>
+</ol>
+</li>
+<li><strong>producer driven/eager evaluation</strong>：<ol>
+<li>在操作符之间维护缓冲区</li>
+<li>操作符急切地产生元组并将其向上传递给它们的父操作</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
 
 
 
@@ -5789,7 +6305,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月13日 22:15:10 CST">2026年5月13日 22:15:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 22:01:21 CST">2026年5月19日 22:01:21</span>
   </span>
 
     
@@ -5855,13 +6371,13 @@
         
         
           
-          <a href="../../../Tools/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开发工具 / Development Tools">
+          <a href="../query_opt/" class="md-footer__link md-footer__link--next" aria-label="下一页: 查询优化">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                开发工具 / Development Tools
+                查询优化
               </div>
             </div>
             <div class="md-footer__button md-icon">
