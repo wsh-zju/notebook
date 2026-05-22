@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/mass_storage/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/file/">
       
       
-        <link rel="prev" href="../virtual_memory/">
+        <link rel="prev" href="../IO/">
       
       
-        <link rel="next" href="../IO/">
+        <link rel="next" href="../../Data_Structure/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>大容量存储 - Lucy Wisteria's Notebook</title>
+        <title>文件系统 - Lucy Wisteria's Notebook</title>
       
     
     
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              大容量存储
+              文件系统
             
           </span>
         </div>
@@ -1621,7 +1621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../main_memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1649,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../virtual_memory/" class="md-nav__link">
+      <a href="../vm/" class="md-nav__link">
         
   
   
@@ -1688,6 +1688,8 @@
   
     
     
+      
+        
       
         
       
@@ -1740,37 +1742,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    大容量存储
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
         
   
   
@@ -1786,164 +1761,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁盘结构
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁盘调度
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="磁盘调度">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fcfs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FCFS
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sstf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SSTF
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SCAN
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#c-scan" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        C-SCAN
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#lookc-look" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LOOK/C-LOOK
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        非易失性存储器
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁带
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁盘管理
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁盘连接
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        RAID
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1972,6 +1789,480 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文件系统
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文件系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件属性
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打开的文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件类型
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件共享
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        访问方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单级目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多级目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        树状结构目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无环图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘与文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统挂载
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件组织模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O 控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统数据结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打开文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关闭文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘块分配方法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        空闲空间管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5234,30 +5525,19 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁盘结构
+        文件
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        磁盘调度
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="磁盘调度">
+    <nav class="md-nav" aria-label="文件">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fcfs" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FCFS
+        文件属性
       
     </span>
   </a>
@@ -5265,10 +5545,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sstf" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SSTF
+        文件操作
       
     </span>
   </a>
@@ -5276,10 +5556,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#scan" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SCAN
+        打开的文件
       
     </span>
   </a>
@@ -5287,10 +5567,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c-scan" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        C-SCAN
+        文件类型
       
     </span>
   </a>
@@ -5298,10 +5578,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lookc-look" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LOOK/C-LOOK
+        文件结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件共享
       
     </span>
   </a>
@@ -5314,10 +5605,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        非易失性存储器
+        访问方式
       
     </span>
   </a>
@@ -5325,10 +5616,121 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁带
+        目录
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录操作
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="目录结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        单级目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        多级目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        树状结构目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        无环图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通用图目录
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        目录实现
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protection
       
     </span>
   </a>
@@ -5336,10 +5738,171 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁盘管理
+        文件系统
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘与文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统挂载
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统结构
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        逻辑文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件组织模块
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本文件系统
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I/O 控制
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统数据结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        文件系统操作
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="文件系统操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        创建文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        打开文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关闭文件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘块分配方法
       
     </span>
   </a>
@@ -5347,21 +5910,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_32" class="md-nav__link">
     <span class="md-ellipsis">
       
-        磁盘连接
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raid" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        RAID
+        空闲空间管理
       
     </span>
   </a>
@@ -5389,7 +5941,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/mass_storage.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/file.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5397,346 +5949,421 @@
   
 
 
-<h1 id="_1">大容量存储<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">磁盘结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h1 id="_1">文件系统<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="_2">文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li>磁盘驱动器被寻址为 logical blocks（LBA）的一维数组</li>
-<li>逻辑块是<strong>最小的传输单位</strong>，被顺序映射到磁盘的扇区中</li>
-<li><strong>Positioning time</strong>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong><ol>
-<li><strong>seek time</strong>：将磁头移动到目标柱面的时间</li>
-<li><strong>rotational latency</strong>：目标扇区旋转到磁头下方所需的时间</li>
+<li><strong>文件</strong>：用于存储信息的<strong>连续逻辑空间</strong> <strong>e.g.</strong> 数据库、音频、视频、网页</li>
+<li><strong>类型</strong>：<ol>
+<li><strong>数据</strong>：文本（字符）、二进制以及特定于应用程序的数据</li>
+<li><strong>程序</strong></li>
+<li><strong>特殊文件</strong>：<code>proc</code> 文件系统（使用文件系统接口来获取系统信息）</li>
 </ol>
 </li>
-<li><strong>平均访问时间</strong> = 平均寻道时间 + 平均延迟</li>
 </ol>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
+<h3 id="_3">文件属性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>对于最快的磁盘：3ms + 2ms = 5ms</li>
-<li>对于慢速磁盘：9ms + 5.56ms = 14.56ms</li>
+<li>名称 (<strong>Name</strong>)：唯一以人类可读形式保留的信息</li>
+<li>标识符 (<strong>Identifier</strong>)：在文件系统内<strong>唯一</strong>标识文件的标签（数字）</li>
+<li>类型 (<strong>Type</strong>)：支持多种类型的系统需要此属性</li>
+<li>位置 (<strong>Location</strong>)：指向设备上文件位置的<strong>指针</strong></li>
+<li>大小 (<strong>Size</strong>)：文件的当前大小</li>
+<li>保护 (<strong>Protection</strong>)：控制谁可以进行读<strong>取、写入和执行</strong></li>
+<li>时间、日期和用户标识 (<strong>Time, date, and user identification</strong>)：用于保护、安全和使用情况监控的数据</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ol>
+<li>关于文件的信息保存在<strong>目录结构</strong>中，该结构维护在<strong>磁盘</strong>上</li>
+<li>有许多变体，包括<strong>扩展文件属性</strong>（例如文件校验和）</li>
+<li><strong><code>file</code> 命令</strong>：查看文件类型</li>
+<li><strong><code>stat</code> 命令</strong>：查看文件详细状态</li>
 </ol>
 </div>
-<ol start="5">
-<li><strong>平均 I/O 时间</strong>：平均访问时间 + (待传输数据 / 传输速率) + 控制器开销</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>在 7200 RPM 的磁盘上传输一个 4KB 的块，平均寻道时间为 5ms，传输速率为 1gb/sec，控制器开销为 0.1ms：</p>
-<p>5ms + 4.17ms + 4KB / (1gb/sec) + 0.1ms（4.17 为平均延迟）</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>主要慢在寻道时间和旋转延迟（不好提升）</p>
-</div>
-<ol start="6">
-<li>
-<p><strong>性能</strong></p>
+<h3 id="_4">文件操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>transfer rate</strong>：驱动器与计算机之间数据流动的速率 <ol>
-<li>理论值为 6gb/sec</li>
-<li>实际约为 1gb/sec</li>
-</ol>
-</li>
-<li>seek time 从 3ms 到 12ms（台式机驱动器常见为 9ms）</li>
-<li>基于主轴转速的延迟：1/rpm * 60（平均延迟 = 1/2 延迟）</li>
-</ol>
-</li>
-<li>
-<p><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</p>
-<ol>
-<li>数据：传输的<strong>总字节数</strong></li>
-<li>时间：从发出第一个请求到完成最后一次传输之间的时间</li>
-</ol>
-</li>
-</ol>
-<h2 id="_3">磁盘调度<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>磁盘调度</strong>：选择下一个要服务的待处理磁盘请求</li>
-<li><strong>目标</strong>：减小寻道时间</li>
-<li>过去，<strong>操作系统</strong>负责队列管理和磁盘驱动头调度；现在，已内置在存储设备、控制器的<strong>固件</strong>（fireware）中，仅提供 lba（<strong>逻辑块寻址</strong>）处理请求的排序</li>
+<li><strong>create</strong>：必须在文件系统中寻找空间，并且必须在目录中分配一个条目</li>
+<li><strong>open</strong>：大多数操作需要先打开文件；为其他操作返回一个<strong>句柄</strong>(handler)</li>
+<li><strong>read/write</strong>：需要维护一个<strong>指针</strong></li>
+<li><strong>seek</strong>：文件内重新定位</li>
+<li><strong>close</strong>：关闭文件</li>
+<li><strong>delete</strong>：释放文件空间</li>
+<li><strong>Hardlink</strong>：维护一个<strong>计数器</strong>（直到最后一个链接被删除才真正删除文件）</li>
+<li><strong>truncate（截断）</strong>：清空文件内容，但保留其属性</li>
 </ol>
 <div class="admonition info">
-<p class="admonition-title">调度算法的选择</p>
-<ol>
-<li>如果 <strong>I/O 比较少</strong>，FCFS 和 SSTF 即可</li>
-<li>如果 <strong>I/O 较多</strong>，一般使用 LOOK/C-LOOK</li>
-<li>如果是 SSD（<strong>不用 seek</strong>），一般使用 FCFS </li>
-</ol>
+<p class="admonition-title">Info</p>
+<p>其他操作可以通过这些基本操作来实现</p>
+<p><strong>e.g.</strong> 复制 (Copying)：创建并进行读/写</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>柱面请求队列：98, 183, 37, 122, 14, 124, 65, 67（范围为 [0, 199]）</p>
-<p>初始磁头位置：53</p>
-</div>
-<h3 id="fcfs">FCFS<a class="headerlink" href="#fcfs" title="Permanent link">&para;</a></h3>
+<h3 id="_5">打开的文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>最简单</strong>的调度算法</li>
-<li><strong>优点</strong>：每个请求的机会公平；不会无限期推迟</li>
-<li><strong>缺点</strong>：不尝试优化寻道时间；可能<strong>无法提供最佳服务</strong></li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>磁头移动总量为 640 个柱面</p>
-<p><img alt="alt text" src="../photo/21-2.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-<h3 id="sstf">SSTF<a class="headerlink" href="#sstf" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>最短寻道时间优先</strong>：</p>
-<ol>
-<li>是 SJF（最短作业优先）调度的一种形式，可能<strong>存在饥饿现象</strong></li>
-<li>与 SJF 不同，SSTF <strong>可能不是最优的</strong></li>
+<li><strong>管理打开的文件需要若干数据</strong>：<ol>
+<li><strong>Open-file table</strong>：追踪所有打开的文件</li>
+<li><strong>File pointer</strong>：指向最后一次读/写的位置，<strong>每个打开该文件的进程都各有一个</strong></li>
+<li><strong>File-open count</strong>：文件被打开次数的计数器，以便在最后一个进程关闭它时，将数据从打开文件表中移除</li>
+<li><strong>文件的磁盘位置</strong>：数据访问信息的缓存</li>
+<li>访问权限 (<strong>Access rights</strong>)：<strong>每个</strong>进程的访问模式信息</li>
 </ol>
 </li>
-<li>
-<p><strong>优点</strong>：平均响应时间减少；吞吐量增加</p>
+<li>某些文件系统提供<strong>文件锁 (file lock)</strong>来调解对文件的访问<ol>
+<li><strong>类型</strong>：<ol>
+<li>共享锁 (<strong>Shared lock</strong>)：多个进程可以并发获取该锁<strong>（读取操作）</strong></li>
+<li>排他锁 (<strong>Exclusive lock</strong>)：只有一个进程可以获取该锁<strong>（写入操作）</strong></li>
+</ol>
 </li>
-<li>
-<p><strong>缺点</strong>：</p>
-<ol>
-<li>需要<strong>预先</strong>计算寻道时间的开销</li>
-<li>如果某个请求的寻道时间比新到达的请求长，可能会导致该请求出现<strong>“饥饿”</strong></li>
-<li>响应时间的<strong>方差较大</strong>，因为 SSTF <strong>仅有利于部分请求</strong></li>
+<li><strong>机制</strong>：<ol>
+<li>强制锁 (<strong>mandatory lock</strong>)：根据已持有和请求的锁，内核直接拒绝访问</li>
+<li>劝告锁 (<strong>advisory lock</strong>)：进程可以查找锁的状态并自行决定如何处理</li>
 </ol>
 </li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>磁头移动总量为 236 个柱面</p>
-<p><img alt="alt text" src="../photo/21-3.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-<h3 id="scan">SCAN<a class="headerlink" href="#scan" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>elevator algorithm</strong></li>
-<li><strong>优点</strong>：高吞吐量；响应时间方差低；平均响应时间良好</li>
-<li><strong>缺点</strong>：对于磁臂刚刚访问过位置的请求，等待时间较长</li>
+</li>
 </ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>磁头移动总量为 236 个柱面</p>
-<p><img alt="alt text" src="../photo/21-1.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-<h3 id="c-scan">C-SCAN<a class="headerlink" href="#c-scan" title="Permanent link">&para;</a></h3>
+<h3 id="_6">文件类型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
+<li><strong>文件扩展名</strong>：作为文件名的一部分</li>
 <li>
-<p><strong>循环扫描</strong>（Circular-scan）旨在提供更均匀的等待时间</p>
+<p><strong>magic number</strong>：在文件开始部分放一些 magic number 来表明文件类型</p>
+<p><strong>e.g.</strong> 7f45 4c46 是 ASCII 字符，表示 ELF，代表 elf 文件格式</p>
+</li>
+</ol>
+<p><img alt="alt text" src="../photo/23-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<h3 id="_7">文件结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
-<li>当磁头到达末端时，立即返回到起始处</li>
-<li><strong>在返回途中不服务任何请求</strong>（本质上将柱面视为一个循环列表）</li>
+<li>文件可以有不同的结构，由<strong>操作系统或程序</strong>决定</li>
+<li><strong>类型</strong>：<ol>
+<li>无结构 (<strong>No structure</strong>)：<strong>字节或字</strong>构成的流 <strong>e.g.</strong> Linux 里的转储文件 dumps</li>
+<li>简单记录结构 (<strong>Simple record structure</strong>)：<strong>按行</strong>排列的记录，可以是固定长度或可变长度 <strong>e.g.</strong> 数据库</li>
+<li>复杂结构 (<strong>Complex structures</strong>)：<strong>e.g.</strong> Word 文档、可重定位的程序文件</li>
+</ol>
+</li>
+<li>通常由<strong>用户程序</strong>负责识别文件结构</li>
+</ol>
+<h3 id="_8">文件共享<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>文件共享</strong>：普遍用于多用户系统</li>
+<li><strong>实现</strong>：通过<strong>保护</strong>方案 (Protection Scheme)<ol>
+<li><strong>User IDs</strong>：唯一标识用户，允许针对单个用户进行保护控制</li>
+<li><strong>Group IDs</strong>：允许将用户划分到不同的组中，从而赋予<strong>组级别的访问权限</strong></li>
 </ol>
 </li>
 <li>
-<p><strong>优点</strong>：与 SCAN 相比，提供更均匀的等待时间</p>
+<p>在<strong>分布式系统 (Distributed Systems)</strong>中，文件可以通过<strong>网络</strong>进行共享</p>
+<ol>
+<li><strong>网络文件系统 (NFS)</strong> 是一种常见的分布式文件共享机制</li>
+<li><strong>客户机-服务器模型 (Client-Server Model)</strong> 允许客户机从服务器挂载远程文件系统</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">远程文件共享</p>
+<ol>
+<li>标准的操作系统文件调用会被转换成远程调用 (Remote Calls)</li>
+<li>NFS 是标准的 UNIX 文件共享协议，CIFS（通用因特网文件系统）是标准的 Windows 文件共享协议</li>
+</ol>
+</div>
+<hr />
+<h2 id="_9">访问方式<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="../photo/23-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>顺序访问 (Sequential access)</strong></p>
+<ol>
+<li>按<strong>预先确定的顺序</strong>访问一组元素</li>
+<li>对于某些介质类型，这是<strong>唯一</strong>的访问模式 <strong>e.g.</strong> 磁带</li>
+</ol>
+</li>
+<li><strong>直接访问 (Direct access)/随机访问 (random access)</strong><ol>
+<li>可以在<strong>（大致）相等的时间内</strong>访问序列中任意位置的元素，与序列大小无关</li>
+<li>在磁带上也可以<strong>模拟随机访问</strong>，但访问时间会有所不同（倒带）</li>
+</ol>
 </li>
 </ol>
-<h3 id="lookc-look">LOOK/C-LOOK<a class="headerlink" href="#lookc-look" title="Permanent link">&para;</a></h3>
+<div class="admonition abstract">
+<p class="admonition-title">其他访问方式</p>
+<ol>
+<li>基于直接访问方法，<strong>文件的索引</strong>指向各个块</li>
+<li>要在文件中寻找一条记录，首先检索索引，然后利用<strong>指针</strong>访问对应的物理块</li>
+<li>可以使用<strong>多层索引</strong></li>
+</ol>
+</div>
+<hr />
+<h2 id="_10">目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>目录</strong>是包含所有文件信息的<strong>节点集合</strong></li>
+<li>目录结构和文件本身都常驻在<strong>磁盘</strong>上</li>
+</ol>
+<p><img alt="alt text" src="../photo/23-4.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<h3 id="_11">目录操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li>创建文件 (Create a file)：需要创建新文件并添加至目录</li>
+<li>删除文件 (Delete a file)：从目录中移除一个文件</li>
+<li>列出目录 (List a directory)：列出目录中的所有文件</li>
+<li>搜索文件 (Search for a file)：模式匹配</li>
+<li>遍历文件系统 (Traverse the file system)：访问目录内的每一个目录和文件</li>
+</ol>
+<h3 id="_12">目录结构<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><strong>组织目录需要实现</strong>：</p>
+<ol>
+<li>高效性 (<strong>Efficiency</strong>)：快速定位一个文件</li>
+<li>命名方便 (<strong>Naming</strong>)：组织目录结构使其对用户而言非常便利<ol>
+<li>两个用户可以让不同的文件拥有相同的名字</li>
+<li>同一个文件可以拥有几个不同的名字</li>
+</ol>
+</li>
+</ol>
+<h4 id="_13">单级目录<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>所有用户<strong>共用</strong>一个单一的目录</li>
+<li><strong>缺点</strong>：存在命名问题和分组问题
+    <strong>e.g.</strong> 当两个用户想给各自的文件起<strong>相同的名字</strong>时会发生冲突</li>
+</ol>
+<h4 id="_14">多级目录<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>为每个用户设立<strong>独立</strong>的目录</li>
+<li>不同的用户可以让不同的文件拥有相同的名字<ol>
+<li>每个用户都有自己的<strong>用户文件目录</strong> (UFD)，它们包含在<strong>主文件目录</strong> (MFD) 中</li>
+</ol>
+</li>
+<li><strong>优点</strong>：搜索效率高</li>
+</ol>
+<div class="admonition question">
+<p class="admonition-title">思考</p>
+<p><strong>如何在不同用户之间共享文件？</strong> <span class="arithmatex">\(\rightarrow\)</span> 引入<strong>路径</strong></p>
+</div>
+<h4 id="_15">树状结构目录<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-7.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>优点</strong>：搜索高效、可以对文件进行分组、命名方便</li>
+<li><strong>访问文件</strong>：绝对路径或相对路径</li>
+</ol>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
-<p>SCAN 和 C-SCAN 会将磁头从一端移动到另一端，<strong>即使中间没有 I/O 请求</strong></p>
+<p>树状结构目录<strong>不允许共享文件和目录</strong>（如果共享则说明多个指针指向同一个文件，这会变成图而不是树）</p>
 </div>
+<div class="admonition abstract">
+<p class="admonition-title">相关命令</p>
 <ol>
-<li>LOOK 是 SCAN 的一个变体，C-LOOK 是 C-SCAN 的一个变体</li>
-<li><strong>实现</strong>：磁头在每个方向上<strong>仅移动到最后一个请求所在的位置</strong>（不会移动到 disk 的末尾）</li>
-<li><strong>优点</strong>：防止了由于不必要的磁盘端点遍历而产生的额外延迟</li>
+<li><code>mkdir &lt;dir&gt;</code> 创建目录</li>
+<li><code>rmdir &lt;dir&gt;</code> 删除目录（空目录）</li>
+<li><code>rm -r &lt;dir&gt;</code> 删除目录（非空目录）</li>
+<li><code>sudo rm -rf /</code> 从根目录删除所有文件</li>
+<li><code>rm &lt;file&gt;</code> 删除文件</li>
+<li><code>touch &lt;file&gt;</code> 创建文件</li>
+<li><code>pwd</code> 显示当前目录路径</li>
+</ol>
+</div>
+<h4 id="_16">无环图目录<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>将目录组织成<strong>有向无环图</strong></li>
+<li><strong>实现别名</strong>：允许创建指向某个目录条目或文件的链接 (<strong>Links</strong>)</li>
+<li><strong>悬空指针问题 (Dangling Pointer Problem)</strong><ol>
+<li><strong>e.g.</strong> 如果删除了文件 <code>/dict/all</code>，那么 <code>/dict/w/list</code> 和 <code>/spell/words/list</code> 就会变成悬空指针</li>
+<li><strong>解决方法</strong>：<ol>
+<li>反向指针 (<strong>Back Pointers</strong>)：记录所有指向该实体的指针（大小可变）</li>
+<li>引用计数器 (<strong>Reference Counter</strong>)：统计指向该实体的链接数量，只有当计数器归零时，才进行（物理上的）真正删除</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>共享文件的方式</strong>：硬链接、软链接</li>
+</ol>
+<h4 id="_17">通用图目录<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>允许任意链接可能会在目录结构中<strong>产生环</strong></li>
+<li><strong>问题</strong>：可能会导致无法回收磁盘空间（两个指针互相指向，引用计数一直不归零）</li>
+<li><strong>解决方案</strong>：<ol>
+<li>允许环的存在，但使用<strong>垃圾回收</strong>机制来回收磁盘空间</li>
+<li>每次添加新链接时，运行<strong>环检测算法</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="_18">目录实现<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>访问类型</strong>：读、写、追加、执行、删除、列出</li>
+<li><strong>访问控制列表（ACL）</strong>：为每个文件和目录分配一个<ol>
+<li><strong>优点</strong>：细粒度控制 (Fine-grained Control)</li>
+<li><strong>缺点</strong>：如何构建该列表；如何将列表存储在目录条目中</li>
+</ol>
+</li>
 </ol>
 <div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><img alt="alt text" src="../photo/21-4.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-<hr />
-<h2 id="_4">非易失性存储器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p class="admonition-title">Unix 访问控制</p>
 <ol>
-<li>如果特性类似磁盘驱动器，则称为<strong>固态硬盘 (SSDs)</strong></li>
-</ol>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<p>其他形式包括 USB 驱动器（优盘、闪存盘）、DRAM 磁盘替代品、主板表面贴装存储以及主内存</p>
-</div>
-<ol start="2">
-<li><strong>优点</strong>：可以比 HDD 更可靠；速度快得多（没有移动部件，因此<strong>没有寻道时间或旋转延迟</strong>）</li>
-<li><strong>缺点</strong>：单位 MB 价格更贵；寿命可能较短，需要仔细管理；容量较小；总线可能太慢</li>
-<li><strong>调度算法</strong>：FCFS</li>
-<li>
-<p><strong>特性</strong>：</p>
-<ol>
-<li>以 <strong>page</strong> 为增量进行读写（类似扇区）</li>
-<li>但<strong>无法就地重写</strong>，必须先被擦除，且必须擦除 page 所在的整个 block</li>
-<li>在磨损前<strong>只能擦除有限次数</strong></li>
-<li>寿命通过<strong>每日全盘写入次数</strong> (DWPD) 来衡量</li>
-</ol>
-</li>
-<li>
-<p><strong>NAND 闪存控制器算法</strong></p>
-<ol>
-<li>控制器维护<strong>闪存转换层 (FTL) 表</strong>：<ol>
-<li><strong>原因</strong>：由于无法重写，页面最终会充满有效和无效数据的混合</li>
-<li><strong>目的</strong>：为了追踪哪些逻辑块是有效的</li>
-</ol>
-</li>
-<li>还实现了<strong>垃圾回收</strong>以释放无效页面空间</li>
-<li>分配<strong>预留空间</strong>为垃圾回收提供工作空间</li>
-<li>每个单元都有寿命，因此<strong>需要均衡地写入所有单元</strong></li>
-</ol>
-</li>
-</ol>
-<h2 id="_5">磁带<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>磁带是早期的辅助存储类型，现在<strong>主要用于备份</strong></p>
-</li>
-<li>
-<p><strong>优点</strong>：容量大；存储在磁带上的数据<strong>相对永久</strong></p>
-</li>
-<li><strong>缺点</strong>：访问时间慢，尤其是随机访问（寻道时间远高于磁盘，随机访问需要卷带/倒带）</li>
-</ol>
-<h2 id="_6">磁盘管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>物理格式化</strong>：将磁盘划分成扇区，以便控制器进行读/写</li>
-</ol>
-<ul>
-<li><strong>扇区结构</strong>：包含头部信息、数据以及纠错码 ECC</li>
-</ul>
-<ol start="2">
-<li>操作系统在磁盘上<strong>记录其自身的数据结构</strong>，将磁盘分区为若干柱面组，每个组被视为一个<strong>逻辑磁盘</strong></li>
-<li><strong>逻辑格式化</strong>分区以在其上<strong>建立文件系统</strong>（文件 I/O 以<strong>簇</strong>为单位完成）</li>
-<li><strong>根分区</strong>包含 OS，Mounted at boot time</li>
-</ol>
-<ul>
-<li>其他分区可以包含其他操作系统、其他文件系统，或者是原始分区</li>
-<li>其他分区可以<strong>自动或手动挂载</strong></li>
-</ul>
-<ol start="5">
-<li><strong>引导块</strong>：包含足够的代码以了解如何从文件系统中<strong>加载内核</strong></li>
-</ol>
-<div class="admonition quote">
-<p class="admonition-title">Quote</p>
-<ol>
-<li>引导块初始化系统</li>
-</ol>
-<ul>
-<li>引导程序存储在 ROM、固件中</li>
-<li>自举加载程序程序存储在引导分区的引导块中</li>
-</ul>
-<ol start="2">
-<li><strong>原始磁盘访问</strong>适用于想要进行自身块管理、让操作系统避开的应用程序（例如数据库）</li>
-<li>使用诸如<strong>扇区备用</strong>之类的方法来处理坏块</li>
-<li>操作系统提供<strong>交换空间管理</strong></li>
+<li>三种访问模式：读、写、执行（使用 3 位编码 <code>RWX</code>）</li>
+<li>三类用户：所有者 (Owner)、用户组 (Group) 和 其他用户 (Others)
+    <img alt="alt text" src="../photo/23-10.png" style="width:30%;display: block;margin: 20px auto" /></li>
+<li>若要向用户授予访问权限，可以创建一个组并更改其访问模式（在 Linux 中，使用 <code>chmod</code> 和 <code>chgrp</code> 命令）</li>
 </ol>
 </div>
 <hr />
-<h2 id="_7">磁盘连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_19">文件系统<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>磁盘连接到计算机的方式</strong>：</li>
+<li><strong>文件系统是 disk 的抽象，文件是磁道/扇区的抽象</strong></li>
+<li>文件系统提供了一组文件的连贯视图</li>
 </ol>
-<ul>
-<li>主机连接存储 (host-attached storage)</li>
-<li>网络连接存储 (network-attached storage)：通过网络而非本地总线提供的存储</li>
-<li>存储区域网络 (storage area network)：连接服务器和存储单元的私有网络，使用高速互连和高效协议</li>
-</ul>
-<ol start="2">
-<li><strong>主机连接存储</strong></li>
-</ol>
-<ul>
-<li><strong>e.g.</strong>：硬盘、RAID 阵列、CD、DVD、磁带...</li>
-<li>磁盘可以通过 <strong>I/O bus</strong>直接连接到计算机 <strong>e.g.</strong> SCSI, IDE</li>
-</ul>
-<p><img alt="alt text" src="../photo/21-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<h2 id="raid">RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>独立磁盘冗余阵列</strong> (RAID)：操作系统可以通过<strong>多个</strong>总线连接的磁盘来实现</li>
-</ol>
-<ul>
-<li>磁盘是不可靠、缓慢但廉价的</li>
-<li>使用<strong><abbr title="redundancy">冗余</abbr></strong>：提高可靠性；提高速度（同时读，提高磁盘带宽）</li>
-</ul>
-<ol start="2">
-<li><strong>关键技术</strong>：这些技术可以随意组合</li>
-</ol>
-<ul>
-<li><strong>数据镜像</strong> (Data Mirroring)：在多个磁盘上保留相同的数据</li>
-<li>
-<p><strong>数据条带化</strong> (Data Striping)：将数据分散在多个磁盘上以<strong>允许并行读取</strong> </p>
-<p><strong>e.g.</strong> 从 8 个磁盘读取一个字节的各个位</p>
-</li>
-<li>
-<p><strong>纠错码</strong> (ECC)：校验位（保留用于在驱动器故障时重建丢失位的信息）</p>
-</li>
-</ul>
-<ol start="3">
-<li><strong>层级</strong></li>
-</ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RAID 0</label><label for="__tabbed_1_2">RAID 1</label><label for="__tabbed_1_3">RAID 2/3</label><label for="__tabbed_1_4">RAID 4/5/6</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<ol>
-<li>RAID 0：数据条带化分布在多个磁盘上，<strong>没有校验位（无冗余）</strong></li>
-<li>提高性能，但不可靠</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>固定条带大小；5 个不同大小的文件；4 个磁盘</p>
-<p><img alt="alt text" src="../photo/21-6.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-</div>
-<div class="tabbed-block">
-<ol>
-<li>在两个磁盘上保存一组数据的完全副本（或<strong>镜像</strong>）</li>
-<li>使用的<strong>磁盘数量</strong>是 RAID 0 的两倍（浪费）</li>
-<li>除非发生（极不可能的）同时故障，否则<strong>可以保证可靠性</strong></li>
-<li>可以通过从<strong>寻道时间最快</strong>的磁盘读取来提升性能</li>
-</ol>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><img alt="alt text" src="../photo/21-7.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><strong>RAID 2</strong>：</li>
-</ol>
-<ul>
-<li>在<strong>位级</strong> (bit-level) 进行数据条带化</li>
-<li>使用<strong>汉明码</strong> (Hamming code) 进行纠错（已不再使用）</li>
-<li>汉明码（4位数据 + 3位校验）允许使用 7 个磁盘</li>
-</ul>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><img alt="alt text" src="../photo/21-8.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-<ol start="2">
-<li><strong>RAID 3</strong>：使用 4 个数据磁盘和 1 个校验磁盘</li>
-<li>没有被实际应用，因为<strong>粒度太小</strong>，现在无法单独读出来一个比特，<strong>至少应该读出一个字节</strong></li>
-</ol>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><strong>RAID 4</strong>：基本类似于 RAID 3，但改用<strong>条带/块</strong> (strips/blocks) 进行交替（一个（小规模）读取仅涉及一个磁盘）</li>
-<li><strong>RAID 5</strong>：类似于 RAID 4，但<strong>校验信息分散在所有磁盘上</strong>，而不是仅有一个专用的校验磁盘</li>
-<li><strong>RAID 6</strong>：通过增加<strong>一个额外的校验块 Q</strong> 来扩展 RAID 5</li>
-</ol>
-<p><img alt="alt text" src="../photo/21-9.png" style="width:40%;display: block;margin: 20px auto" /></p>
-</div>
-</div>
-</div>
-<hr />
 <div class="admonition info">
-<p class="admonition-title">RAID 与文件系统</p>
+<p class="admonition-title">Info</p>
 <ol>
-<li><strong>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</strong></li>
-<li>像 Solaris ZFS 这样的文件系统增加了额外的检查来检测错误</li>
+<li>CPU 抽象成<strong>进程</strong></li>
+<li>memory 抽象成<strong>地址空间</strong></li>
+<li>storage 抽象成<strong>文件系统</strong></li>
 </ol>
-<ul>
-<li>ZFS 为所有文件系统 (FS) 数据和元数据添加了校验和<ul>
-<li>校验和与指向数据/元数据的指针存放在一起</li>
-<li>可以检测并纠正数据和元数据损坏</li>
-</ul>
-</li>
-<li>ZFS 在存储池中分配磁盘，而不是使用卷或分区<ul>
-<li>存储池中的文件系统共享该池，并从池中分配/释放空间</li>
-</ul>
-</li>
-</ul>
 </div>
+<h3 id="_20">磁盘与文件系统<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../photo/23-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li>磁盘可以细分为 <strong>partitions</strong>（也被称为微型磁盘（minidisks）或切片（slices））</li>
+<li>不同的分区可以有<strong>不同的文件系统</strong><ol>
+<li><strong>volume</strong>：包含文件系统的分区</li>
+<li>每个 volume 通过 volume’s table of contents 追踪文件系统信息</li>
+<li>文件系统可以是通用目的或特殊目的</li>
+</ol>
+</li>
+<li>磁盘或分区也可以裸用（<strong>raw</strong>）（不建立文件系统）
+    <strong>e.g.</strong> 数据库一类的应用程序更倾向于使用裸磁盘（raw disks）</li>
+</ol>
+<h3 id="_21">文件系统挂载<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<ol>
+<li>文件系统在被访问之前必须先进行<strong>挂载</strong> (Mounted)</li>
+<li><strong>挂载</strong>：将一个文件系统连接到整个系统，通常形成一个<strong>单一的命名空间</strong></li>
+<li><strong>挂载点 (Mount Point)</strong>：被挂载的文件系统所在的<strong>位置</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tips</p>
+<ol>
+<li>挂载文件系统后，挂载点原有的旧目录将会<strong>被隐藏（不可见）</strong></li>
+<li><strong><code>mount</code> 命令</strong>：查看已挂载的文件系统</li>
+</ol>
+</div>
+<h3 id="_22">文件系统结构<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>操作系统可以同时支持多种文件系统</strong></li>
+<li>文件系统放在<strong>辅助存储（磁盘）</strong>上<ol>
+<li>磁盘驱动程序提供<strong>读/写磁盘块的接口</strong></li>
+<li>文件系统为用户/程序<strong>提供存储接口</strong>，实现逻辑块到物理块的映射</li>
+</ol>
+</li>
+<li>
+<p>文件系统通常采用<strong>分层结构</strong>来实现和组织</p>
+<ol>
+<li><strong>优点</strong>：有利于降低复杂度和减少冗余</li>
+<li><strong>缺点</strong>：会引入额外的调用开销并可能降低性能</li>
+</ol>
+<p><img alt="alt text" src="../photo/23-11.png" style="width:20%;display: block;margin: 20px auto" /></p>
+</li>
+</ol>
+<h4 id="_23">逻辑文件系统<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>功能</strong>：维护文件系统所需的所有元数据（<strong>meta-data</strong>），即除实际文件内容以外的所有数据</li>
+<li>
+<p><strong>存储内容</strong></p>
+<ol>
+<li><strong>目录结构</strong></li>
+<li>
+<p><strong>文件控制块（FCB）</strong>：由文件相关描述信息构成的存储结构</p>
+<div class="admonition info">
+<p class="admonition-title">FCB 存储内容</p>
+<ol>
+<li>命名、所有权、权限</li>
+<li>引用计数、时间戳、指向其他 FCB 的指针</li>
+<li>指向磁盘上数据块的指针</li>
+</ol>
+<p><img alt="alt text" src="../photo/23-12.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>上层输入</strong>：打开/读取/写入的指定文件路径（filepath）</p>
+</li>
+<li><strong>下层输出</strong>：读取/写入的逻辑块（logical blocks）</li>
+</ol>
+<h4 id="_24">文件组织模块<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>功能</strong>：<ol>
+<li>负责进行<strong>地址转换</strong>（把逻辑块映射到物理块）</li>
+<li>负责管理<strong>空闲空间</strong></li>
+</ol>
+</li>
+<li><strong>上层输入</strong>：逻辑块号</li>
+<li><strong>下层输出</strong>：物理块号</li>
+</ol>
+<h4 id="_25">基本文件系统<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<ol>
+<li>在 <strong>Linux</strong> 中对应“块 I/O 子系统”（block I/O subsystem）</li>
+<li><strong>功能</strong>：分配和维护包含文件系统、目录以及数据块的各种<strong>缓冲区</strong>（充当 Cache，用于提升系统性能）</li>
+<li><strong>输入/输出</strong>：物理块号</li>
+</ol>
+<h4 id="io">I/O 控制<a class="headerlink" href="#io" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>组成</strong>：设备驱动程序（Device drivers）和中断处理程序（Interrupt handlers）</li>
+<li><strong>上层输入</strong>：物理块号</li>
+<li><strong>下层输入</strong>：<ol>
+<li>写入设备控制器的内存中，以触发<strong>实际的磁盘读写操作</strong></li>
+<li>响应并处理相关的<strong>硬件中断</strong></li>
+</ol>
+</li>
+</ol>
+<h3 id="_26">文件系统数据结构<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>On-disk structures</strong>（存储的内容更少）<ol>
+<li>A <strong>Boot Control Block</strong>（可选）：存储操作系统的 volume 的第一块</li>
+<li>A <strong>volume control block</strong></li>
+<li>A <strong>directory</strong></li>
+<li>A per-file File Control Block (<strong>FCB</strong>)</li>
+</ol>
+</li>
+<li><strong>In-memory structures</strong><ol>
+<li>挂载表（<strong>Mount table</strong>）：每个已挂载的 volume 在其中占有一项</li>
+<li>目录缓存（<strong>Directory cache</strong>）：用于加速路径转换（提升性能）</li>
+<li>全局打开文件表（<strong>Global open-file table</strong>）：整个系统公用</li>
+<li>进程打开文件表（<strong>Per-process open-file table</strong>）：针对每个进程独立维护</li>
+<li>各类<strong>缓冲区</strong>：暂存在传输中的磁盘块（提升性能）</li>
+</ol>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>在 UNIX 中，FCB 被称为 <strong><code>inode</code></strong></p>
+<p><img alt="alt text" src="../photo/23-13.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="_27">文件系统操作<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<p>虚拟文件系统（VFS）</p>
+<h4 id="_28">创建文件<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<ol>
+<li>应用程序进程发出创建新文件的请求</li>
+<li><strong>逻辑文件系统</strong>分配一个新的 FCB（<code>inode</code>）</li>
+<li>更新相应的<strong>目录</strong>，将新的文件名称<strong>与对应的 FCB 关联</strong></li>
+</ol>
+<h4 id="_29">打开文件<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../photo/23-14.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ol>
+<li><strong>检查全局打开文件表</strong>，看该文件当前是否正被其他进程使用<ol>
+<li><strong>如果在用</strong>：在该进程的<strong>进程打开文件表</strong>中创建一个新表项，并让其指向<strong>现有的</strong>全局打开文件表项</li>
+<li><strong>如果未在用</strong>：<ol>
+<li>在目录结构中检索该文件名</li>
+<li>找到之后将该文件的 <strong>FCB 从磁盘加载到内存中</strong>，并将其放入<strong>全局打开文件表</strong>中</li>
+<li>在<strong>进程打开文件表</strong>中新建一个表项，包含指向<strong>全局打开文件表</strong>中对应表项的指针</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>递增<strong>全局打开文件表</strong>中的打开计数</li>
+<li>系统向调用者返回一个指向<strong>进程打开文件表项</strong>的指针（所有后续的文件读写操作都通过该指针进行）</li>
+</ol>
+<h4 id="_30">关闭文件<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h4>
+<ol>
+<li>移除对应的<strong>进程打开文件表项</strong>，全局打开<strong>计数递减</strong></li>
+<li><strong>如果所有进程都关闭了该文件</strong>：将内存中的<strong>目录信息</strong>复制写回磁盘，并从内存中销毁该<strong>全局打开文件表项</strong></li>
+</ol>
+<h2 id="_31">磁盘块分配方法<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<p>连续分配、链式分配、索引分配   </p>
+<h2 id="_32">空闲空间管理<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
 
 
 
@@ -5759,7 +6386,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月22日 16:40:17 CST">2026年5月22日 16:40:17</span>
   </span>
 
     
@@ -5769,7 +6396,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月13日 22:15:10 CST">2026年5月13日 22:15:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月22日 16:40:17 CST">2026年5月22日 16:40:17</span>
   </span>
 
     
@@ -5824,7 +6451,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../virtual_memory/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 虚拟内存">
+          <a href="../IO/" class="md-footer__link md-footer__link--prev" aria-label="上一页: I/O 系统">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5834,20 +6461,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                虚拟内存
+                I/O 系统
               </div>
             </div>
           </a>
         
         
           
-          <a href="../IO/" class="md-footer__link md-footer__link--next" aria-label="下一页: I/O 系统">
+          <a href="../../Data_Structure/" class="md-footer__link md-footer__link--next" aria-label="下一页: 数据结构与算法分析">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                I/O 系统
+                数据结构与算法分析
               </div>
             </div>
             <div class="md-footer__button md-icon">

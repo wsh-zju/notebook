@@ -12,13 +12,13 @@
         <meta name="author" content="Lucy Wisteria">
       
       
-        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/main_memory/">
+        <link rel="canonical" href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/storage/">
       
       
-        <link rel="prev" href="../cache/">
+        <link rel="prev" href="../vm/">
       
       
-        <link rel="next" href="../virtual_memory/">
+        <link rel="next" href="../IO/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>主存 - Lucy Wisteria's Notebook</title>
+        <title>大容量存储 - Lucy Wisteria's Notebook</title>
       
     
     
@@ -140,7 +140,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              主存
+              大容量存储
             
           </span>
         </div>
@@ -1502,10 +1502,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1524,11 +1522,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
@@ -1549,7 +1547,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1620,37 +1618,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    主存
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1666,198 +1637,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#partition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        partition
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="partition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        固定分区
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        可变分区
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        segmentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Paging
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Paging">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#page-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Page Table
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        硬件支持
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内存保护
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        页面共享
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        页表结构
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="页表结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        二级页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        哈希页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        倒置页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#swapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Swapping
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1870,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../virtual_memory/" class="md-nav__link">
+      <a href="../vm/" class="md-nav__link">
         
   
   
@@ -1903,8 +1682,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1912,6 +1693,8 @@
       
         
       
+        
+      
     
     
     
@@ -1919,11 +1702,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
@@ -1944,7 +1727,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1959,10 +1742,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../mass_storage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大容量存储
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1978,6 +1788,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘结构
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘调度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="磁盘调度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fcfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FCFS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sstf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSTF
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SCAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C-SCAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookc-look" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOOK/C-LOOK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非易失性存储器
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁带
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘连接
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAID
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1998,6 +1966,34 @@
     
   
     I/O 系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    文件系统
   
 
     
@@ -5265,72 +5261,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#partition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        partition
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="partition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        固定分区
+        磁盘结构
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        可变分区
+        磁盘调度
       
     </span>
   </a>
   
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#segmentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        segmentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#paging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Paging
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Paging">
+    <nav class="md-nav" aria-label="磁盘调度">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#page-table" class="md-nav__link">
+  <a href="#fcfs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Page Table
+        FCFS
       
     </span>
   </a>
@@ -5338,10 +5295,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#sstf" class="md-nav__link">
     <span class="md-ellipsis">
       
-        硬件支持
+        SSTF
       
     </span>
   </a>
@@ -5349,10 +5306,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#scan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        内存保护
+        SCAN
       
     </span>
   </a>
@@ -5360,10 +5317,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#c-scan" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页面共享
+        C-SCAN
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookc-look" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LOOK/C-LOOK
       
     </span>
   </a>
@@ -5372,6 +5340,39 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        非易失性存储器
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁带
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        磁盘管理
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5379,57 +5380,18 @@
   <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        页表结构
+        磁盘连接
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="页表结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        二级页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        哈希页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        倒置页表
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#swapping" class="md-nav__link">
+  <a href="#raid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Swapping
+        RAID
       
     </span>
   </a>
@@ -5457,7 +5419,7 @@
 
 
   
-    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/main_memory.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/wsh-zju/notebook/tree/main/docs/Computer_Science/Computer_System/storage.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5465,381 +5427,346 @@
   
 
 
-<h1 id="_1">主存<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">内存分配策略演进</p>
+<h1 id="_1">大容量存储<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">磁盘结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>批处理系统</strong>：</li>
+<li>磁盘驱动器被寻址为 logical blocks（LBA）的一维数组</li>
+<li>逻辑块是<strong>最小的传输单位</strong>，被顺序映射到磁盘的扇区中</li>
+<li><strong>Positioning time</strong>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong><ol>
+<li><strong>seek time</strong>：将磁头移动到目标柱面的时间</li>
+<li><strong>rotational latency</strong>：目标扇区旋转到磁头下方所需的时间</li>
 </ol>
-<ul>
-<li>物理内存中<strong>仅</strong>加载一个程序</li>
-<li>如果程序大于物理内存，则<strong>分而治之</strong>（类似于编译器的多轮处理）</li>
-</ul>
-<ol start="2">
-<li><strong>多道程序设计</strong></li>
-</ol>
-<ul>
-<li><strong>多个进程</strong>同时存在于物理内存中，允许快速切换到就绪进程</li>
-<li>将物理内存划分为多个区域（<strong>分区</strong>）</li>
-</ul>
-</div>
-<hr />
-<h2 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>要求</strong></li>
-</ol>
-<ul>
-<li><strong>保护</strong>：防止进程间相互干扰（破坏彼此的数据）</li>
-<li><strong>快速执行</strong>：内存访问不能因保护机制而变慢</li>
-<li><strong>快速上下文切换</strong>：设置地址映射不能耗时过长</li>
-</ul>
-<ol start="2">
-<li><strong>进程加载</strong></li>
-</ol>
-<ul>
-<li>相对于分区起始地址<strong>重定位</strong>所有地址</li>
-<li>由操作系统分配<strong>内存保护</strong>，<strong>逐块</strong>映射到物理内存</li>
-<li><strong>进程一旦开始运行，分区在内存中不可移动</strong>（移动之后可能指针会指向错误的地址）</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">存在的问题</p>
-<p><img alt="alt text" src="../photo/19-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<p><strong>当进程 4 出现且所需的空间大于最大的空闲分区时</strong>，无法被加载</p>
-<p><strong>解决方案</strong>：移动进程 3 </p>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">逻辑地址</p>
-<ol>
-<li><strong>逻辑地址</strong>：代替物理地址，在进程<strong>运行时</strong>翻译为物理地址</li>
-<li><strong>定义</strong>：将逻辑地址定义为<strong>分区内的偏移量</strong>（由CPU产生）</li>
-<li><strong>base and limit 寄存器</strong>（硬件加速）：确保一个进程能够且仅能访问其地址空间内的地址</li>
-</ol>
-<ul>
-<li><strong>base</strong>：逻辑地址的起始物理地址，会被加到所有地址上</li>
-<li><strong>limit</strong>：逻辑地址的访问范围，在每次内存访问时进行检查</li>
-<li>在每次上下文切换时由<strong>操作系统</strong>加载，访问他们的指令都是<strong>特权指令</strong></li>
-</ul>
-<p><img alt="alt text" src="../photo/19-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
-<details class="info">
-<summary>检查过程</summary>
-<p><img alt="alt text" src="../photo/19-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
-</details>
-<div class="admonition success">
-<p class="admonition-title">优势</p>
-<ol>
-<li><strong>界限寄存器提供内置保护</strong>，无需针对每个页面或内存块进行物理保护</li>
-<li><strong>快速执行</strong>：在每条指令执行过程中，加法运算和界限检查均以硬件速度完成</li>
-<li><strong>快速上下文切换</strong>：仅需更改基址和界限寄存器</li>
-<li>加载时<strong>无需重定位</strong>程序地址（所有地址均相对于零）</li>
-<li>分区可以<strong>随时挂起并移动</strong>：进程感知不到变化（但是对于大型进程而言开销较大）   </li>
-</ol>
-</div>
-</div>
-<ol start="3">
-<li><strong>分区策略</strong>：Fixed Partition &amp; Variable Partition</li>
-</ol>
-<h3 id="_2">固定分区<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p><strong>固定分区</strong>：将内存划分为<strong>大小相等</strong>的块（操作系统占用部分除外）</p>
 </li>
-<li>
-<p><strong>问题</strong>：<strong>内部碎片</strong>，<strong>分区内</strong>未使用的内存无法提供给其他进程使用（<strong>严重的内存浪费</strong>）</p>
-</li>
+<li><strong>平均访问时间</strong> = 平均寻道时间 + 平均延迟</li>
 </ol>
-<p><img alt="alt text" src="../photo/19-6.png" style="width:30%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>解决方案</strong>：可变分区</li>
-</ol>
-<h3 id="_3">可变分区<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
 <ol>
-<li>
-<p><strong>可变分区</strong>：根据进程需求<strong>动态</strong>划分内存分区</p>
-</li>
-<li>
-<p><strong>更复杂的管理问题</strong>：</p>
-</li>
-</ol>
-<ul>
-<li>需要<strong>数据结构</strong>来跟踪空闲和已用的内存</li>
-<li>为新进程从足够大的 hole 中分配内存</li>
-<li><strong>孔</strong> hole：一块可用的内存，大小各异的孔散布在整个内存中</li>
-</ul>
-<ol start="3">
-<li><strong>分配算法</strong>：</li>
-</ol>
-<ul>
-<li><strong>first-fit</strong>：从<strong>第一个足够大</strong>的内存块中进行分配</li>
-<li><strong>best-fit</strong>：从所有足够大的内存块中<strong>选择最小</strong>的一个进行分配</li>
-<li><strong>worst-fit</strong>：从<strong>最大</strong>的孔洞中进行分配</li>
-</ul>
-<ol start="4">
-<li><strong>问题</strong>：<strong>外部碎片</strong>，<strong>分区之间</strong>未使用的内存太小，无法被任何进程使用</li>
-</ol>
-<p><img alt="alt text" src="../photo/19-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<div class="admonition success">
-<p class="admonition-title">解决方案</p>
-<p>外部碎片可以通过<strong>压缩 compaction</strong>来减少：移动内存内容，将所有空闲内存合并为一个大的块（程序需要在运行时是<strong>可重定位的</strong>）</p>
-<p><strong>性能开销</strong>：执行此操作所需的时间成本</p>
-</div>
-<hr />
-<h2 id="segmentation">segmentation<a class="headerlink" href="#segmentation" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>分段</strong>：</li>
-</ol>
-<ul>
-<li>将程序划分为多个具有逻辑意义的段 <code>text</code>、<code>data</code>、<code>stack</code></li>
-<li>每个段就可以用一个 <code>partition</code> 来代表它</li>
-<li>使用<strong>可变分区</strong>策略（段的长度不固定）</li>
-</ul>
-<ol start="2">
-<li><strong>逻辑地址</strong> <code>&lt;segment-number, offset&gt;</code> （segment-number 表示段号）</li>
-<li><strong>segment table</strong>：</li>
-</ol>
-<ul>
-<li>每个条目包含 <code>base</code> 和 <code>limit</code></li>
-<li>根据 <code>number</code> 在表格中找到对应的 <code>base</code> 和 <code>limit</code>，然后加上 <code>offset</code> 就得到了真正的物理地址</li>
-</ul>
-<p><img alt="alt text" src="../photo/19-7.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<div class="admonition warning">
-<p class="admonition-title">但是并没有解决外部碎片的问题</p>
-</div>
-<div class="admonition abstract">
-<p class="admonition-title">MMU</p>
-<p><strong>MMU</strong>：在运行时将逻辑地址映射到物理地址的硬件设备</p>
-</div>
-<details class="info">
-<summary>地址绑定</summary>
-<p>地址在程序生命周期的不同阶段以不同的方式表示</p>
-<ul>
-<li>源代码中的地址通常是符号化的 <strong>e.g.</strong> 变量名</li>
-<li>编译器将符号绑定到<strong>可重定位地址</strong> <strong>e.g.</strong> 距此模块开头 14 个字节</li>
-<li>链接器（或加载器）将可重定位地址绑定到<strong>绝对地址</strong> <strong>e.g.</strong> 0x0e74014</li>
-</ul>
-</details>
-<hr />
-<h2 id="paging">Paging<a class="headerlink" href="#paging" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>基本思想</strong>：</li>
-</ol>
-<ul>
-<li>进程的物理地址空间可以是<strong>非连续的</strong>（固定分区和可变分区属于<strong>物理连续</strong>分配）</li>
-<li>只要物理内存可用，就可以为进程分配物理内存（一个进程对应一个页表）</li>
-</ul>
-<div class="admonition success">
-<p class="admonition-title">优势</p>
-<ol>
-<li>避免了<strong>外部碎片</strong>的问题</li>
-<li>避免了<strong>内存块大小不一</strong>的问题</li>
+<li>对于最快的磁盘：3ms + 2ms = 5ms</li>
+<li>对于慢速磁盘：9ms + 5.56ms = 14.56ms</li>
 </ol>
 </div>
-<ol start="2">
-<li><strong>基础方法</strong></li>
-</ol>
-<ul>
-<li>将<strong>物理地址</strong>划分为固定大小的块，称为 <strong>frame</strong>（大小一般为 4KB）</li>
-<li>将<strong>逻辑地址</strong>划分为<strong>相同</strong>大小的块，称为 <strong>page</strong></li>
-<li>追踪所有空闲 frame</li>
-<li>若要运行一个大小为 N page 的程序，需要找到 N 个空闲 frame 并加载程序</li>
-<li>建立映射以将逻辑地址翻译为物理地址 (page table)</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title"><strong>有内部碎片的问题</strong>，但是没有外部碎片的问题：只有程序的最后一页才会存在内部碎片的问题</p>
-</div>
-<h3 id="page-table">Page Table<a class="headerlink" href="#page-table" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Page Table</strong>：存储 logical page 到 physical frame 的映射关系（<strong>没有存储 page number</strong>，只存储 frame number）</li>
-<li><strong>Frame Table</strong>：存储 frame 分配的情况 </li>
-</ol>
-<details class="example">
-<summary>Paging</summary>
-<p><img alt="alt text" src="../photo/19-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
-</details>
-<ol start="3">
-<li><strong>逻辑地址</strong>：page number + page offset</li>
-</ol>
-<ul>
-<li><strong>offset</strong>：确定在 page 内的具体<strong>字节</strong>位置</li>
-<li><strong>物理地址</strong>：frame number + offset</li>
-<li><strong>物理地址的转换</strong>：首先把 page number 拿出来，到 page table 里读出 frame number ，随后和 offset 拼接起来就得到了物理地址</li>
-</ul>
-<div class="admonition abstract">
-<p class="admonition-title">32 bits 架构</p>
-<p>一个页表大小 4KB，offset 为 12 位，页号为 20 位</p>
-</div>
-<h3 id="_4">硬件支持<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">页表保存在一组寄存器中</p>
-<ol>
-<li><strong>优点</strong>：非常高效（访问寄存器的速度很快）</li>
-<li><strong>缺点</strong>：寄存器数量有限导致页表容量非常小；上下文切换时需要保存和恢复这些寄存器的值</li>
-</ol>
-</div>
-<ol>
-<li>page table 应该保存在<strong>主存</strong>中</li>
-</ol>
-<ul>
-<li><strong>页表寄存器</strong><ul>
-<li>基址寄存器 <strong><code>PTBR</code></strong>：指向页表的起始地址（RISC-V 上叫 <strong>SATP</strong>，ARM 上叫 TTBR，x86 上叫 CR3）</li>
-<li>长度寄存器 <strong><code>PTLR</code></strong>：表示页表的大小（省略）</li>
-</ul>
-</li>
-<li>每次数据/指令访问都需要两次<strong>内存访问</strong>：一次用于访问页表，一次用于访问数据/指令</li>
-</ul>
-<ol start="2">
-<li><strong>TLB</strong>：在 MMU 中</li>
-</ol>
-<p><img alt="alt text" src="../photo/19-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<ul>
-<li><strong>用途</strong>：用于缓存地址转换结果<ul>
-<li>如果页号在 TLB 中，则无需访问页表</li>
-<li>如果页号不在 TLB 中（<strong>TLB miss</strong>），则需要访问页表并将其加载到 TLB 中</li>
-</ul>
-</li>
-<li><strong>上下文切换</strong>：每个进程都有自己的页表，切换进程需要<strong>切换页表</strong>，TLB 必须与页表保持一致<ul>
-<li>方案 I：在每次上下文切换时<strong>刷新 TLB</strong></li>
-<li>方案 II：用<strong>地址空间标识符</strong> (ASID) 标记 TLB 表项，用以唯一标识一个进程，只刷新对应的表项</li>
-</ul>
-</li>
-<li>某些 TLB 表项可以由进程共享，并在 TLB 中固定</li>
-<li>TLB 通常很小，包含 64 到 1024 个表项</li>
-</ul>
-<details class="info">
-<summary>关联存储器</summary>
-<ol>
-<li>TLB 通常使用一种称为关联存储器 (associative memory) 的快速查找硬件缓存</li>
-<li><strong>关联存储器</strong>：支持并行查找的存储器</li>
-<li>关联存储器不通过地址寻址，而是通过内容寻址：如果页号（page#）存在于关联存储器的键（key）中，则直接返回帧号（frame#，即值）</li>
-</ol>
-</details>
-<div class="admonition question">
-<p class="admonition-title">TLB 有效访问时间</p>
-<p><strong>命中率</strong> (Hit ratio)：在 TLB 中找到页号的次数百分比</p>
-<p>假设访问内存需要 100 ns，命中率 80%</p>
-<ul>
-<li>如果我们在 TLB 中找到了所需的页，那么映射后的内存访问耗时 100 ns</li>
-<li>否则需要两次内存访问，耗时 200 ns：访问页表 + 访问内存</li>
-<li><strong>有效访问时间</strong>：EAT = 0.80 <span class="arithmatex">\(\times\)</span> 100 + 0.20 <span class="arithmatex">\(\times\)</span> 200 = 120 ns（访问时间变慢了 20%）</li>
-</ul>
-</div>
-<h3 id="_5">内存保护<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>页表项</strong> PTE：包含物理帧号以及权限位</li>
-</ol>
-<ul>
-<li><strong>present bit / valid bit</strong>：该页是否具有有效的物理 frame</li>
-<li><strong>protection bit</strong>：kernel/user 访问；该页是否可读、可写、可执行</li>
-</ul>
-<ol start="2">
-<li>任何违反内存保护的行为都会导致向内核发出 <strong>trap</strong></li>
-</ol>
-<h3 id="_6">页面共享<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Paging 允许进程间<strong>共享内存</strong></li>
-<li>共享内存可用于进程间通信</li>
-<li><strong>重入代码</strong>：非自修改代码，在执行期间从不改变</li>
+<ol start="5">
+<li><strong>平均 I/O 时间</strong>：平均访问时间 + (待传输数据 / 传输速率) + 控制器开销</li>
 </ol>
 <div class="admonition example">
-<p class="admonition-title">Paging Sharing</p>
-<p><img alt="alt text" src="../photo/19-10.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
+<p class="admonition-title">Example</p>
+<p>在 7200 RPM 的磁盘上传输一个 4KB 的块，平均寻道时间为 5ms，传输速率为 1gb/sec，控制器开销为 0.1ms：</p>
+<p>5ms + 4.17ms + 4KB / (1gb/sec) + 0.1ms（4.17 为平均延迟）</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>主要慢在寻道时间和旋转延迟（不好提升）</p>
+</div>
+<ol start="6">
+<li>
+<p><strong>性能</strong></p>
+<ol>
+<li><strong>transfer rate</strong>：驱动器与计算机之间数据流动的速率 <ol>
+<li>理论值为 6gb/sec</li>
+<li>实际约为 1gb/sec</li>
+</ol>
+</li>
+<li>seek time 从 3ms 到 12ms（台式机驱动器常见为 9ms）</li>
+<li>基于主轴转速的延迟：1/rpm * 60（平均延迟 = 1/2 延迟）</li>
+</ol>
+</li>
+<li>
+<p><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</p>
+<ol>
+<li>数据：传输的<strong>总字节数</strong></li>
+<li>时间：从发出第一个请求到完成最后一次传输之间的时间</li>
+</ol>
+</li>
+</ol>
+<h2 id="_3">磁盘调度<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>磁盘调度</strong>：选择下一个要服务的待处理磁盘请求</li>
+<li><strong>目标</strong>：减小寻道时间</li>
+<li>过去，<strong>操作系统</strong>负责队列管理和磁盘驱动头调度；现在，已内置在存储设备、控制器的<strong>固件</strong>（fireware）中，仅提供 lba（<strong>逻辑块寻址</strong>）处理请求的排序</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">调度算法的选择</p>
+<ol>
+<li>如果 <strong>I/O 比较少</strong>，FCFS 和 SSTF 即可</li>
+<li>如果 <strong>I/O 较多</strong>，一般使用 LOOK/C-LOOK</li>
+<li>如果是 SSD（<strong>不用 seek</strong>），一般使用 FCFS </li>
+</ol>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>柱面请求队列：98, 183, 37, 122, 14, 124, 65, 67（范围为 [0, 199]）</p>
+<p>初始磁头位置：53</p>
+</div>
+<h3 id="fcfs">FCFS<a class="headerlink" href="#fcfs" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>最简单</strong>的调度算法</li>
+<li><strong>优点</strong>：每个请求的机会公平；不会无限期推迟</li>
+<li><strong>缺点</strong>：不尝试优化寻道时间；可能<strong>无法提供最佳服务</strong></li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>磁头移动总量为 640 个柱面</p>
+<p><img alt="alt text" src="../photo/21-2.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="sstf">SSTF<a class="headerlink" href="#sstf" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>最短寻道时间优先</strong>：</p>
+<ol>
+<li>是 SJF（最短作业优先）调度的一种形式，可能<strong>存在饥饿现象</strong></li>
+<li>与 SJF 不同，SSTF <strong>可能不是最优的</strong></li>
+</ol>
+</li>
+<li>
+<p><strong>优点</strong>：平均响应时间减少；吞吐量增加</p>
+</li>
+<li>
+<p><strong>缺点</strong>：</p>
+<ol>
+<li>需要<strong>预先</strong>计算寻道时间的开销</li>
+<li>如果某个请求的寻道时间比新到达的请求长，可能会导致该请求出现<strong>“饥饿”</strong></li>
+<li>响应时间的<strong>方差较大</strong>，因为 SSTF <strong>仅有利于部分请求</strong></li>
+</ol>
+</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>磁头移动总量为 236 个柱面</p>
+<p><img alt="alt text" src="../photo/21-3.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="scan">SCAN<a class="headerlink" href="#scan" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>elevator algorithm</strong></li>
+<li><strong>优点</strong>：高吞吐量；响应时间方差低；平均响应时间良好</li>
+<li><strong>缺点</strong>：对于磁臂刚刚访问过位置的请求，等待时间较长</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>磁头移动总量为 236 个柱面</p>
+<p><img alt="alt text" src="../photo/21-1.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<h3 id="c-scan">C-SCAN<a class="headerlink" href="#c-scan" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>循环扫描</strong>（Circular-scan）旨在提供更均匀的等待时间</p>
+<ol>
+<li>当磁头到达末端时，立即返回到起始处</li>
+<li><strong>在返回途中不服务任何请求</strong>（本质上将柱面视为一个循环列表）</li>
+</ol>
+</li>
+<li>
+<p><strong>优点</strong>：与 SCAN 相比，提供更均匀的等待时间</p>
+</li>
+</ol>
+<h3 id="lookc-look">LOOK/C-LOOK<a class="headerlink" href="#lookc-look" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>SCAN 和 C-SCAN 会将磁头从一端移动到另一端，<strong>即使中间没有 I/O 请求</strong></p>
+</div>
+<ol>
+<li>LOOK 是 SCAN 的一个变体，C-LOOK 是 C-SCAN 的一个变体</li>
+<li><strong>实现</strong>：磁头在每个方向上<strong>仅移动到最后一个请求所在的位置</strong>（不会移动到 disk 的末尾）</li>
+<li><strong>优点</strong>：防止了由于不必要的磁盘端点遍历而产生的额外延迟</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/21-4.png" style="width:40%;display: block;margin: 20px auto" /></p>
 </div>
 <hr />
-<h2 id="_7">页表结构<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h3 id="_8">二级页表<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title"><strong>一级页表</strong></p>
+<h2 id="_4">非易失性存储器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li>如果只有一级的页表，那么<strong>页表所占用的内存</strong>很大：<strong>4 MB</strong></li>
+<li>如果特性类似磁盘驱动器，则称为<strong>固态硬盘 (SSDs)</strong></li>
 </ol>
-<ul>
-<li><strong>32 bits 地址为 4 GB</strong>，每个页表 4 KB：一共需要 1 M 的页表项（1 K 个 page）</li>
-<li>一个页表项 4 B，占用的内存 1 M <span class="arithmatex">\(\times\)</span> 4 B = 4 MB</li>
-</ul>
-<ol start="2">
-<li>页表一定是<strong>物理连续的</strong>（physically contiguous），否则还需要另一个页表进行映射</li>
-<li><strong>最坏情况下</strong>：如果只访问第一个页和最后一页，那么只用一级页表需要 <strong>1 K 个 page</strong> 用来放页表</li>
-</ol>
-<div class="admonition success">
-<p class="admonition-title">解决方案</p>
-<p>一个 page 可以存放 1 K 个页表项，而存放一个一级页表需要 1 K 个 page，那么可以再用一个 page 存放这 1 K 个 page 的地址</p>
-</div>
-</div>
-<ol>
-<li><strong>多级页表</strong>：将逻辑地址空间分解为多级页表（<strong>非连续存储</strong>）</li>
-</ol>
-<ul>
-<li>一级页表包含指向二级页表的 <strong>frame number</strong></li>
-<li>相当于对页表本身进行 <strong>paging</strong></li>
-</ul>
-<p><img alt="alt text" src="../photo/19-11.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
-<div class="admonition question">
-<p class="admonition-title">Questions</p>
-<ol>
-<li><strong>顶级页表的一个页表项</strong>可以指向 <strong>4 MB</strong> 的连续内存：4 KB <span class="arithmatex">\(\times\)</span> 1K = 4 MB</li>
-<li>一级页表占用 4 KB 内存，<strong>所有二级页表一共占用 4 MB 内存</strong></li>
-</ol>
-<div class="admonition abstract">
-<p class="admonition-title">为什么可以省内存？</p>
-<p><strong>最坏情况</strong>：对于二级页表只需要 3 个页表（1 个一级页表和 2 个二级页表），即 3 个页来放页表（12 KB）</p>
-</div>
-</div>
-<ol start="2">
-<li><strong>逻辑地址</strong>：</li>
-</ol>
-<p><img alt="alt text" src="../photo/19-12.png" style="width:40%;display: block;margin: 20px auto" /></p>
-<ul>
-<li>page directory number (一级页表)</li>
-<li>page table number (二级页表)</li>
-<li>page offset</li>
-</ul>
-<div class="admonition question">
-<p class="admonition-title">逻辑地址位数计算</p>
-<ol>
-<li>32 bits 地址，4 KB page：p1 为 10 bits，p2 为 10 bits，d 为 12 bits</li>
-<li><strong>32 bits 地址，64 KB page</strong></li>
-</ol>
-<ul>
-<li><strong>d</strong> 需要 16 bits：一个 page 有 64 K 个 Bytes</li>
-<li><strong>p2 需要 14 bits</strong>：一个二级页表是一个 page，大小为 64 KB，可以放 16 K 个页表项</li>
-<li><strong>p1 需要 2 bits</strong>：一共 4 GB 的内存，一共 64 K 个 page，需要 4 个二级页表</li>
-</ul>
-</div>
 <div class="admonition quote">
-<p class="admonition-title">64 bits 虚拟地址空间</p>
-<p>64 bits 虚拟地址空间需要更多层次的页表结构</p>
+<p class="admonition-title">Quote</p>
+<p>其他形式包括 USB 驱动器（优盘、闪存盘）、DRAM 磁盘替代品、主板表面贴装存储以及主内存</p>
+</div>
+<ol start="2">
+<li><strong>优点</strong>：可以比 HDD 更可靠；速度快得多（没有移动部件，因此<strong>没有寻道时间或旋转延迟</strong>）</li>
+<li><strong>缺点</strong>：单位 MB 价格更贵；寿命可能较短，需要仔细管理；容量较小；总线可能太慢</li>
+<li><strong>调度算法</strong>：FCFS</li>
+<li>
+<p><strong>特性</strong>：</p>
+<ol>
+<li>以 <strong>page</strong> 为增量进行读写（类似扇区）</li>
+<li>但<strong>无法就地重写</strong>，必须先被擦除，且必须擦除 page 所在的整个 block</li>
+<li>在磨损前<strong>只能擦除有限次数</strong></li>
+<li>寿命通过<strong>每日全盘写入次数</strong> (DWPD) 来衡量</li>
+</ol>
+</li>
+<li>
+<p><strong>NAND 闪存控制器算法</strong></p>
+<ol>
+<li>控制器维护<strong>闪存转换层 (FTL) 表</strong>：<ol>
+<li><strong>原因</strong>：由于无法重写，页面最终会充满有效和无效数据的混合</li>
+<li><strong>目的</strong>：为了追踪哪些逻辑块是有效的</li>
+</ol>
+</li>
+<li>还实现了<strong>垃圾回收</strong>以释放无效页面空间</li>
+<li>分配<strong>预留空间</strong>为垃圾回收提供工作空间</li>
+<li>每个单元都有寿命，因此<strong>需要均衡地写入所有单元</strong></li>
+</ol>
+</li>
+</ol>
+<h2 id="_5">磁带<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>磁带是早期的辅助存储类型，现在<strong>主要用于备份</strong></p>
+</li>
+<li>
+<p><strong>优点</strong>：容量大；存储在磁带上的数据<strong>相对永久</strong></p>
+</li>
+<li><strong>缺点</strong>：访问时间慢，尤其是随机访问（寻道时间远高于磁盘，随机访问需要卷带/倒带）</li>
+</ol>
+<h2 id="_6">磁盘管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>物理格式化</strong>：将磁盘划分成扇区，以便控制器进行读/写</li>
+</ol>
 <ul>
-<li>39 bits：三级页表（4KB / 8B = 512 entries，需要 9 bits 索引，9+9+9+12 = 39）</li>
-<li>48 bits：四级页表</li>
-<li>57 bits：五级页表</li>
+<li><strong>扇区结构</strong>：包含头部信息、数据以及纠错码 ECC</li>
+</ul>
+<ol start="2">
+<li>操作系统在磁盘上<strong>记录其自身的数据结构</strong>，将磁盘分区为若干柱面组，每个组被视为一个<strong>逻辑磁盘</strong></li>
+<li><strong>逻辑格式化</strong>分区以在其上<strong>建立文件系统</strong>（文件 I/O 以<strong>簇</strong>为单位完成）</li>
+<li><strong>根分区</strong>包含 OS，Mounted at boot time</li>
+</ol>
+<ul>
+<li>其他分区可以包含其他操作系统、其他文件系统，或者是原始分区</li>
+<li>其他分区可以<strong>自动或手动挂载</strong></li>
+</ul>
+<ol start="5">
+<li><strong>引导块</strong>：包含足够的代码以了解如何从文件系统中<strong>加载内核</strong></li>
+</ol>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<ol>
+<li>引导块初始化系统</li>
+</ol>
+<ul>
+<li>引导程序存储在 ROM、固件中</li>
+<li>自举加载程序程序存储在引导分区的引导块中</li>
+</ul>
+<ol start="2">
+<li><strong>原始磁盘访问</strong>适用于想要进行自身块管理、让操作系统避开的应用程序（例如数据库）</li>
+<li>使用诸如<strong>扇区备用</strong>之类的方法来处理坏块</li>
+<li>操作系统提供<strong>交换空间管理</strong></li>
+</ol>
+</div>
+<hr />
+<h2 id="_7">磁盘连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>磁盘连接到计算机的方式</strong>：</li>
+</ol>
+<ul>
+<li>主机连接存储 (host-attached storage)</li>
+<li>网络连接存储 (network-attached storage)：通过网络而非本地总线提供的存储</li>
+<li>存储区域网络 (storage area network)：连接服务器和存储单元的私有网络，使用高速互连和高效协议</li>
+</ul>
+<ol start="2">
+<li><strong>主机连接存储</strong></li>
+</ol>
+<ul>
+<li><strong>e.g.</strong>：硬盘、RAID 阵列、CD、DVD、磁带...</li>
+<li>磁盘可以通过 <strong>I/O bus</strong>直接连接到计算机 <strong>e.g.</strong> SCSI, IDE</li>
+</ul>
+<p><img alt="alt text" src="../photo/21-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<h2 id="raid">RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>独立磁盘冗余阵列</strong> (RAID)：操作系统可以通过<strong>多个</strong>总线连接的磁盘来实现</li>
+</ol>
+<ul>
+<li>磁盘是不可靠、缓慢但廉价的</li>
+<li>使用<strong><abbr title="redundancy">冗余</abbr></strong>：提高可靠性；提高速度（同时读，提高磁盘带宽）</li>
+</ul>
+<ol start="2">
+<li><strong>关键技术</strong>：这些技术可以随意组合</li>
+</ol>
+<ul>
+<li><strong>数据镜像</strong> (Data Mirroring)：在多个磁盘上保留相同的数据</li>
+<li>
+<p><strong>数据条带化</strong> (Data Striping)：将数据分散在多个磁盘上以<strong>允许并行读取</strong> </p>
+<p><strong>e.g.</strong> 从 8 个磁盘读取一个字节的各个位</p>
+</li>
+<li>
+<p><strong>纠错码</strong> (ECC)：校验位（保留用于在驱动器故障时重建丢失位的信息）</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>层级</strong></li>
+</ol>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RAID 0</label><label for="__tabbed_1_2">RAID 1</label><label for="__tabbed_1_3">RAID 2/3</label><label for="__tabbed_1_4">RAID 4/5/6</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>RAID 0：数据条带化分布在多个磁盘上，<strong>没有校验位（无冗余）</strong></li>
+<li>提高性能，但不可靠</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>固定条带大小；5 个不同大小的文件；4 个磁盘</p>
+<p><img alt="alt text" src="../photo/21-6.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>在两个磁盘上保存一组数据的完全副本（或<strong>镜像</strong>）</li>
+<li>使用的<strong>磁盘数量</strong>是 RAID 0 的两倍（浪费）</li>
+<li>除非发生（极不可能的）同时故障，否则<strong>可以保证可靠性</strong></li>
+<li>可以通过从<strong>寻道时间最快</strong>的磁盘读取来提升性能</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/21-7.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>RAID 2</strong>：</li>
+</ol>
+<ul>
+<li>在<strong>位级</strong> (bit-level) 进行数据条带化</li>
+<li>使用<strong>汉明码</strong> (Hamming code) 进行纠错（已不再使用）</li>
+<li>汉明码（4位数据 + 3位校验）允许使用 7 个磁盘</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><img alt="alt text" src="../photo/21-8.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+<ol start="2">
+<li><strong>RAID 3</strong>：使用 4 个数据磁盘和 1 个校验磁盘</li>
+<li>没有被实际应用，因为<strong>粒度太小</strong>，现在无法单独读出来一个比特，<strong>至少应该读出一个字节</strong></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>RAID 4</strong>：基本类似于 RAID 3，但改用<strong>条带/块</strong> (strips/blocks) 进行交替（一个（小规模）读取仅涉及一个磁盘）</li>
+<li><strong>RAID 5</strong>：类似于 RAID 4，但<strong>校验信息分散在所有磁盘上</strong>，而不是仅有一个专用的校验磁盘</li>
+<li><strong>RAID 6</strong>：通过增加<strong>一个额外的校验块 Q</strong> 来扩展 RAID 5</li>
+</ol>
+<p><img alt="alt text" src="../photo/21-9.png" style="width:40%;display: block;margin: 20px auto" /></p>
+</div>
+</div>
+</div>
+<hr />
+<div class="admonition info">
+<p class="admonition-title">RAID 与文件系统</p>
+<ol>
+<li><strong>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</strong></li>
+<li>像 Solaris ZFS 这样的文件系统增加了额外的检查来检测错误</li>
+</ol>
+<ul>
+<li>ZFS 为所有文件系统 (FS) 数据和元数据添加了校验和<ul>
+<li>校验和与指向数据/元数据的指针存放在一起</li>
+<li>可以检测并纠正数据和元数据损坏</li>
+</ul>
+</li>
+<li>ZFS 在存储池中分配磁盘，而不是使用卷或分区<ul>
+<li>存储池中的文件系统共享该池，并从池中分配/释放空间</li>
+</ul>
+</li>
 </ul>
 </div>
-<h3 id="_9">哈希页表<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><img alt="alt text" src="../photo/19-13.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol>
-<li>
-<p>在哈希页表中，page number 被哈希成一个 frame number</p>
-</li>
-<li>
-<p>每个元素包含：page#、frame# 和指向下一页的指针（解决冲突）</p>
-</li>
-<li><strong>缺点</strong>：哈希函数计算较慢</li>
-<li><strong>优点</strong>：结构较简单</li>
-</ol>
-<h3 id="_10">倒置页表<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
-<p><img alt="alt text" src="../photo/19-14.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol>
-<li>因为通常<strong>物理地址空间远小于虚拟地址空间</strong>，所以想要从<strong>物理地址</strong>映射到虚拟地址</li>
-<li>只有一个页表，每个 entry 包含<strong>进程 ID</strong> 和 page#</li>
-<li><strong>缺点</strong>：效率太低</li>
-</ol>
-<h2 id="swapping">Swapping<a class="headerlink" href="#swapping" title="Permanent link">&para;</a></h2>
-<p><img alt="alt text" src="../photo/19-15.png" style="width:50%;display: block;margin: 20px auto" /></p>
-<p><strong>交换</strong>利用<strong>后备磁盘</strong>扩展了物理内存</p>
-<ul>
-<li>进程可以被临时从内存交换到后备存储中（后备存储通常是（快速）磁盘）</li>
-<li><strong>不一定交换整个进程</strong></li>
-<li>进程将被重新调入内存以继续执行（不需要物理地址相同）</li>
-</ul>
 
 
 
@@ -5862,7 +5789,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月27日 15:53:57 CST">2026年4月27日 15:53:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
   </span>
 
     
@@ -5872,7 +5799,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月13日 14:30:33 CST">2026年4月13日 14:30:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月13日 22:15:10 CST">2026年5月13日 22:15:10</span>
   </span>
 
     
@@ -5927,7 +5854,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../cache/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 缓存">
+          <a href="../vm/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 虚拟内存">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -5937,20 +5864,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                缓存
+                虚拟内存
               </div>
             </div>
           </a>
         
         
           
-          <a href="../virtual_memory/" class="md-footer__link md-footer__link--next" aria-label="下一页: 虚拟内存">
+          <a href="../IO/" class="md-footer__link md-footer__link--next" aria-label="下一页: I/O 系统">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                虚拟内存
+                I/O 系统
               </div>
             </div>
             <div class="md-footer__button md-icon">
