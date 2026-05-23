@@ -47,8 +47,8 @@
             {% include "home_static.html" %}
         </div>
     {% endif %}
-    
-    {{ super() }} {# 这里是原有的正文内容 #}
+        
+    {{ super() }}
 
     {% if page.meta and page.meta.comment %}
         <script src="https://giscus.app/client.js"

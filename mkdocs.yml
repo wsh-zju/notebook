@@ -15,19 +15,21 @@ theme:
   logo: style/images/logo.png
   favicon: style/images/favicon_io/favicon.ico
   features:
-    - favicon.ico
-    - content.action.edit
-    - content.code.copy
-    - content.code.annotate
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.indexes
-    - navigation.top
-    ##- navigation.expand   #页面默认展开
-    - navigation.footer
-    - search.suggest # 搜索输入一些字母时推荐补全整个单词
-    - search.highlight # 搜索出的文章关键词加入高亮
-    - search.share #搜索分享按钮
+    - content.action.edit     # 显示“编辑此页”按钮
+    - content.code.copy       # 复制代码
+    #- content.code.annotate   # 代码块添加注释
+    - navigation.tracking     # 地址栏锚点跟随
+    - navigation.tabs         # 顶部标签页导航
+    #- navigation.tabs.sticky # 固定顶部标签页
+    - navigation.indexes      # 分类目录直接绑定页面 index.md
+    - navigation.top          # 返回顶部按钮
+    #- navigation.sections    # 导航分组/分块
+    - navigation.path         # 开启面包屑路径导航
+    #- navigation.expand      # 页面默认展开
+    - navigation.footer       # 底部显示“上一页/下一页”翻页页脚
+    - search.suggest          # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight        # 搜索出的文章关键词加入高亮
+    - search.share            # 搜索分享按钮
   font: false
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -42,60 +44,60 @@ theme:
         name: Switch to light mode
   icon:
       admonition:
-      note: octicons/tag-16
-      abstract: octicons/checklist-16
-      info: octicons/info-16
-      tip: octicons/squirrel-16
-      success: octicons/check-16
-      question: octicons/question-16
-      warning: octicons/alert-16
-      failure: octicons/x-circle-16
-      danger: octicons/zap-16
-      bug: octicons/bug-16
-      example: octicons/beaker-16
-      quote: octicons/quote-16
+        note: octicons/tag-16
+        abstract: octicons/checklist-16
+        info: octicons/info-16
+        tip: octicons/list-ordered-16
+        success: octicons/check-16
+        question: octicons/question-16
+        warning: octicons/alert-16
+        failure: octicons/x-circle-16
+        danger: octicons/zap-16
+        bug: octicons/bug-16
+        example: octicons/beaker-16
+        quote: octicons/quote-16
 
 markdown_extensions:
   - toc:
       permalink: true      # 目录标题添加锚点
       toc_depth: 4         # 目录显示到4级标题
-  - abbr                   # 支持缩写
-  - meta
-  - def_list
-  - attr_list
-  - md_in_html
+  - abbr                   # 支持缩写（鼠标悬停气泡）
+  - meta                   # 【元数据支持】允许在 .md 文件的最顶部使用 YAML 语法定义页面属性（如 title, description, tags 等）
+  - def_list               # 支持名词解释
+  - attr_list              # 允许直接给 Markdown 元素（如图片、文字）追加 HTML 属性
+  - md_in_html             # 允在原生 HTML 标签内部直接编写普通的 Markdown 语法
   - sane_lists
   - admonition             # 支持警告/提示块(!!!/???)
   - pymdownx.keys          # 按键
   - pymdownx.mark          # 高亮（==高亮==）
   - pymdownx.tilde         # 支持删除线/下标（~~删除线~~/^^下标^^）
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.tabbed:
+  - pymdownx.critic        # `{--删除--}`、`{++增加++}`、`{==高亮批注==}`
+  - pymdownx.details       # 折叠框
+  - pymdownx.tabbed:       # === "Python"
       alternate_style: true
-  - pymdownx.snippets
-  - pymdownx.magiclink
-  - pymdownx.superfences
-  - pymdownx.snippets:
+  - pymdownx.magiclink     # 自动识别文档中的纯文本 URL 地址
+  - pymdownx.superfences:  # 超级代码块增强
+      custom_fences:
+        - name: mermaid    # ```mermaid 编写流程图
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:     # 在一个 .md 文件中，通过 `--8<-- "filename.md"` 语法把另一个文件的内容原封不动“塞进来”
       base_path: ["docs"]  # 告诉插件在 docs 目录找文件
       check_paths: true    # 找不到文件时会在终端报错
       auto_append:
-        - terms.md
-  - pymdownx.inlinehilite
-  - pymdownx.emoji:
+        - terms.md         # 自动在网站的每一个 .md 页面底部隐式追加 terms.md 文件的内容
+  - pymdownx.inlinehilite  # 行内代码高亮
+  - pymdownx.emoji:        # :smile:、:dog:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true 
-  - pymdownx.tasklist:
+  - pymdownx.tasklist:     # - [ ] 未完成 和 - [x] 已完成
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
       linenums: true      # 显示行号
       auto_title: true    # 显示编程语言
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex:  # 数学公式
       generic: true
-  
 
 validation:
   nav:
@@ -107,15 +109,10 @@ validation:
     absolute_links: ignore
     unrecognized_links: ignore
 
-
 plugins:
-    - mermaid2
     - search
-    #- heti:
-        #extra_skipped_class:
-          #- arithmatex
     - macros
-    - git-revision-date-localized:
+    - git-revision-date-localized:  # Git 页面时间戳管理
         enable_git_follow: true
         enable_creation_date: true  # 开启创建时间
         type: datetime              # 显示格式（包含具体时间）
@@ -129,6 +126,7 @@ plugins:
 hooks:
   - hooks/toc.py
   - hooks/static.py
+  - hooks/wordcount.py
 
 extra_css:
   - https://cdn.tonycrane.cc/utils/katex.min.css
@@ -148,12 +146,10 @@ extra_css:
   - style/css/search.css
   - style/css/weixin.css
 
-
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - style/js/mathjax.js
   
-
 nav:
   - 首页: 
     - index.md
@@ -259,6 +255,7 @@ nav:
       - 多态 : Tools/C++/polymorphism.md
       - 运算符重载 : Tools/C++/overload.md
       - 模板 : Tools/C++/template.md
+      - 异常 : Tools/C++/exception.md
       - PTA : Tools/C++/pta.md
     - Python :
       - Tools/Python/index.md
@@ -272,6 +269,7 @@ nav:
     - mkdocs 配置: 
       - Tools/mkdocs/index.md
       - 主题 : Tools/mkdocs/theme.md
+      - 提示框 : Tools/mkdocs/octicon.md
     - Latex 语法 : Tools/Latex.md
     - 终端常用命令 : Tools/terminal.md
   - 其余课程 :
