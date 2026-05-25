@@ -26,10 +26,11 @@ def on_page_markdown(markdown, page, config, files):
 
     # 4. 核心魔改：利用正则，精准找到 Markdown 正文里的第一个 `# 标题`
     # 在这个标题的正下方，强行插入我们的字数统计 HTML 片段
-    match = re.search(r'^(#\s+.+)$', markdown, re.MULTILINE)
-    if match:
-        h1_line = match.group(1)
-        # 将工具条插在 H1 这一行的后面
-        markdown = markdown.replace(h1_line, f"{h1_line}\n\n{html_snippet}\n")
-
+    markdown = re.sub(
+        r'^(#\s+.+)$', 
+        rf'\1\n{html_snippet}\n', 
+        markdown, 
+        count=1, 
+        flags=re.MULTILINE
+    )
     return markdown
