@@ -236,6 +236,8 @@ nav:
       - 索引与哈希 : Computer_Science/Database_System/index&hash.md
       - 查询处理 : Computer_Science/Database_System/query.md
       - 查询优化 : Computer_Science/Database_System/query_opt.md
+      - 事务 : Computer_Science/Database_System/transaction.md
+      - 并发控制 : Computer_Science/Database_System/concurrency.md
   - 开发工具 :
     - Tools/index.md
     - C :

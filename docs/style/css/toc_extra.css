@@ -18,6 +18,7 @@
     border-radius: 6px; /* 圆角 */
     background: var(--toc-plugin-bg);
     box-shadow: 0 8px 24px rgba(149, 157, 165, 0.1);
+    margin-top: 1rem;
     margin-bottom: 1.8rem;
     overflow: hidden;
 }
