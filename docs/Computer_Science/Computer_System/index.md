@@ -45,9 +45,11 @@ comment: False
     - 指令级并行[note]: ILP/
     - 内存层次结构[note]: memory_index/
     - 缓存[note]: cache/
-    - 主存[note]: main_memory/
-    - 虚拟内存[note]: virtual_memory/
-    - 大容量存储[note]: mass_storage/
+    - 主存[note]: memory/
+    - 虚拟内存[note]: vm/
+    - 大容量存储[note]: storage/
+    - I/O 系统[note]: IO/
+    - 文件系统[note]: file/
 {{ END_TOC }}
 
 

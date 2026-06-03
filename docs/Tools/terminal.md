@@ -135,7 +135,7 @@ cd /Users/lucy/Downloads/vivado-on-silicon-mac-main/scripts
 ./start_container.sh
 ```
 
-2. **下板**
+2. **下板** `xc7a100tcsg324-1`
 
 ```bash
 # mac
@@ -206,6 +206,8 @@ docker compose up -d
 docker exec -it sys2-fa25-zju-os-code-1 fish
 # 成功的话就可以进入终端
 ```
+
+5. **退出 `QEMU`**：++ctrl+A+X++
 
 ### 华为云
 
