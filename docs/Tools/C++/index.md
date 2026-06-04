@@ -33,6 +33,13 @@ int main() {
     - 对象[note]: object/
     - 容器[note]: container/
     - 类[note]: class/
+    - 构造函数[note]: ctor/
+    - 复用[note]: reuse/
+    - 多态[note]: polymorphism/
+    - 运算符重载[note]: overload/
+    - 模板[note]: template/
+    - 异常[note]: exception/
+    - Stream[note]: stream/
 - C++ 课后练习:
     - PTA[exercise]: pta/
 {{ END_TOC }}
