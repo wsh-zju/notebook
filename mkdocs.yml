@@ -258,6 +258,7 @@ nav:
       - 运算符重载 : Tools/C++/overload.md
       - 模板 : Tools/C++/template.md
       - 异常 : Tools/C++/exception.md
+      - Stream : Tools/C++/stream.md
       - PTA : Tools/C++/pta.md
     - Python :
       - Tools/Python/index.md

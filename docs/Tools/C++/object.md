@@ -384,22 +384,22 @@ string str3(str1, 2, 2);                    // "ll"
     ```
 
 --- 
-## File I/O
-
-```cpp
-#include <fstream>
-#include <iostream> 
-using namespace std;
-
-int main(){
-    ofstream File1("file1.txt");     // 打开文件
-    File1 << "Hello World" << endl;  // 写入文件
-    ifstream File2("file1.txt");     // 打开文件
-    string str;
-    File2 >> str;                    // 读取文件
-}
-```
-        
+## Cast 类型转换运算符
+1. **`static_cast`**：
+    1. 基本类型之间的转换
+    2. 类层次结构中，**父类指针/引用和子类指针/引用之间的转换**
+    3. 将 `void` 指针转换为目标类型指针
+2. **`dynamic_cast`**：
+    1. 主要用于**多态类型的转换**
+    2. 可以在运行时**检查类型安全**
+    3. 常用于将父类指针/引用转换为子类指针/引用
+3. **`const_cast`**：
+    1. 用于修改类型的 `const` 或 `volatile` 属性
+    2. 例如，可以去除 `const` 属性，以便修改原本 `const` 的变量
+4. **`reinterpret_cast`**：
+    1. 用于进行低级别、几乎没有类型检查的转换
+    2. 可以**在几乎任何类型之间进行转换**
+    3. 但这种转换非常危险，因为它可能破坏数据的完整性
 ## 对象变量的指针
 
 ```cpp
