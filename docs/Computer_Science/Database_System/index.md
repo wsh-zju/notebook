@@ -15,4 +15,5 @@
     - 查询优化[note]: query_opt/
     - 事务[note]: transaction/
     - 并发控制[note]: concurrency/
+    - 恢复系统[note]: recovery/
 {{ END_TOC }}

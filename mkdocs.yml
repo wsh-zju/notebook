@@ -238,6 +238,7 @@ nav:
       - 查询优化 : Computer_Science/Database_System/query_opt.md
       - 事务 : Computer_Science/Database_System/transaction.md
       - 并发控制 : Computer_Science/Database_System/concurrency.md
+      - 恢复系统 : Computer_Science/Database_System/recovery.md
   - 开发工具 :
     - Tools/index.md
     - C :
