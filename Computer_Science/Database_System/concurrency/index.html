@@ -18,7 +18,7 @@
         <link rel="prev" href="../transaction/">
       
       
-        <link rel="next" href="../../../Tools/">
+        <link rel="next" href="../recovery/">
       
       
         
@@ -2842,6 +2842,8 @@
       
         
       
+        
+      
     
     
     
@@ -3341,16 +3343,33 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="基于锁的协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基于时间戳的协议
+        锁的实现
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于图的 protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3358,7 +3377,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基于验证的协议
+        * 基于时间戳的协议
       
     </span>
   </a>
@@ -3369,18 +3388,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        多粒度机制
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mvcc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        * 多版本方案（MVCC）
+        * 基于验证的协议
       
     </span>
   </a>
@@ -3391,7 +3399,35 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        死锁处理
+        多粒度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多粒度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        意向锁
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * 多版本机制
       
     </span>
   </a>
@@ -3399,7 +3435,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁预防
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测与恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         插入与删除操作
@@ -3410,7 +3485,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         * 索引结构中的并发控制
@@ -3424,6 +3499,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    恢复系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -5367,16 +5470,33 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="基于锁的协议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基于时间戳的协议
+        锁的实现
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于图的 protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5384,7 +5504,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        基于验证的协议
+        * 基于时间戳的协议
       
     </span>
   </a>
@@ -5395,18 +5515,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        多粒度机制
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mvcc" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        * 多版本方案（MVCC）
+        * 基于验证的协议
       
     </span>
   </a>
@@ -5417,7 +5526,35 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        死锁处理
+        多粒度
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="多粒度">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        意向锁
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        * 多版本机制
       
     </span>
   </a>
@@ -5425,7 +5562,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="死锁处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁预防
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        死锁检测与恢复
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         插入与删除操作
@@ -5436,7 +5612,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         * 索引结构中的并发控制
@@ -5529,14 +5705,14 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 838 字</span>
+    <span>约 4079 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 3 分钟</span>
+    <span>预计阅读 14 分钟</span>
 </div>
 
 <div class="admonition success">
@@ -5609,7 +5785,8 @@
 <p><strong>两阶段锁 2PL</strong></p>
 <ol>
 <li><strong>Growing Phase</strong>：事务可以获得锁，不能释放锁</li>
-<li><strong>Shrinking Phase</strong>：事务可以释放锁，不能再获得锁</li>
+<li><strong>Shrinking Phase</strong>：事务可以释放锁，不能<strong>再</strong>获得锁</li>
+<li>每个事务都有一个<strong>锁点</strong>（lock point）：事务获取的最后一个锁的时间点</li>
 <li><strong>优点</strong>：该协议<strong>保证可串行化</strong>，事务能够按照它们的<strong>锁点（Lock Point）</strong>顺序进行串行化</li>
 <li><strong>缺点</strong>：<ol>
 <li>但是<strong>不能保证避免死锁</strong></li>
@@ -5623,14 +5800,14 @@
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">TIPs</p>
-<ol>
+<ol start="3">
 <li>即使采用 2PL，<strong>仍然可能存在某些冲突可串行化调度无法被产生</strong></li>
-<li>然而，在没有额外信息（例如数据访问顺序）的情况下，从以下意义上说，2PL 是实现冲突可串行化所必需的：给定一个不遵循 2PL 的事务 Ti，总可以找到另一个遵循 2PL 的事务 Tj，使得 Ti 和 Tj 的某个调度不是冲突可串行化的</li>
+<li>然而，在没有额外信息（例如数据访问顺序）的情况下，从以下意义上说，<strong>2PL 是实现冲突可串行化所必需的</strong>：给定一个不遵循 2PL 的事务 Ti，总可以找到另一个遵循 2PL 的事务 Tj，使得 Ti 和 Tj 的某个调度不是冲突可串行化的</li>
 </ol>
 </div>
-<div class="admonition info">
-<p class="admonition-title">带锁转换的 2PL</p>
-<ol>
+<details class="info">
+<summary>带锁转换的 2PL</summary>
+<ol start="5">
 <li>第一阶段（增长阶段） <ol>
 <li>可以获得数据项上的 lock-S</li>
 <li>可以获得数据项上的 lock-X</li>
@@ -5643,21 +5820,431 @@
 <li>可以将排他锁（lock-X）转换为共享锁（lock-S）（downgrade）</li>
 </ol>
 </li>
-<li>该协议保证可串行化，但它仍然依赖程序员在程序中插入各种加锁指令</li>
+<li>该协议<strong>保证可串行化</strong>，但它仍然依赖程序员在程序中插入各种加锁指令</li>
+</ol>
+</details>
+</li>
+</ol>
+<h3 id="_3">锁的实现<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>锁管理器</strong><ol>
+<li>可以作为独立进程实现，事务向其发送<strong>加锁和解锁请求</strong></li>
+<li>锁管理器对锁请求的<strong>回复</strong>包括<ol>
+<li>发送锁授予消息</li>
+<li>或者<strong>在发生死锁时，发送要求事务回滚的消息</strong></li>
+</ol>
+</li>
+<li>请求锁的事务等待，直到其请求得到回应</li>
+</ol>
+</li>
+<li>
+<p><strong>锁表</strong>：用于记录已授予的锁和待处理的请求，还记录已授予或请求的锁类型</p>
+<ol>
+<li><strong>锁管理器来维护</strong></li>
+<li>锁表通常实现为<strong>内存中的哈希表</strong>，以被锁数据项的名称作为<strong>索引</strong></li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">锁表结构</p>
+<p><img alt="alt text" src="../photo/10-1.png" style="width:40%;display: block;margin: 20px auto" /></p>
+<p>其中深蓝色矩形表示已授予的锁，浅蓝色矩形表示正在等待的请求</p>
+<ol>
+<li>新请求被添加到该数据项请求队列的末尾，如果与之前所有锁<strong>兼容</strong>，则授予该锁</li>
+<li>解锁请求会导致相应请求被删除，随后检查后续请求是否可以被授予</li>
+<li>如果事务 abort，该事务所有等待或已授予的请求都会被删除（锁管理器可维护<strong>每个事务持有的锁列表</strong>，以实现高效处理）</li>
 </ol>
 </div>
 </li>
 </ol>
-<p>Lock table
-基于图的protocol</p>
+<h3 id="protocol">基于图的 protocol<a class="headerlink" href="#protocol" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>基于图的协议（Graph-based Protocols）</strong>是两阶段锁协议的另一种替代方案</p>
+<div class="admonition note">
+<p class="admonition-title">NOTE</p>
+<p>在所有数据项集合 <span class="arithmatex">\(D={d_1,d_2,\ldots,d_h}\)</span> 上施加一个<strong>偏序关系</strong> <span class="arithmatex">\(\rightarrow\)</span></p>
+<p>如果 <span class="arithmatex">\(d_i \rightarrow d_j\)</span>，那么任何同时访问 <span class="arithmatex">\(d_i\)</span> 和 <span class="arithmatex">\(d_j\)</span> 的事务，都必须先访问 <span class="arithmatex">\(d_i\)</span>，再访问 <span class="arithmatex">\(d_j\)</span></p>
+<p>这意味着数据项集合 <span class="arithmatex">\(D\)</span> 可以被看作一个<strong>有向无环图</strong>，称为<strong>数据库图</strong></p>
+</div>
+</li>
+<li>
+<p><strong>树协议（Tree Protocol）</strong>是一种简单的基于图的协议</p>
+<div class="admonition abstract">
+<p class="admonition-title">树协议</p>
+<p><img alt="alt text" src="../photo/10-2.png" style="width:30%;display: block;margin: 20px auto" /></p>
+<p>图中一共七个数据项</p>
+<ol>
+<li>只允许使用<strong>排他锁</strong>（X 锁）</li>
+<li>事务 Ti 的第一个锁可以加在<strong>任何数据项</strong>上</li>
+<li>后续对数据项 Q <strong>加锁的前提</strong>是：Ti 当前正持有 Q 的父节点的锁</li>
+<li>数据项可以在<strong>任何时候解锁</strong></li>
+<li>如果数据项已被 Ti 加锁并解锁，则 Ti <strong>后续不能再重新对其加锁</strong></li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">优点 &amp; 缺点</p>
+<ol>
+<li><strong>优点</strong>：<ol>
+<li>树协议<strong>保证了冲突可串行化</strong>，并且<strong>避免死锁</strong>，无需回滚</li>
+<li>在树锁协议中，解锁可以比两阶段锁协议更早发生：缩短等待时间，提高并发性</li>
+</ol>
+</li>
+<li><strong>缺点</strong>：<ol>
+<li>协议<strong>不保证可恢复性或无级联回滚</strong>，需要引入提交依赖以确保可恢复性</li>
+<li>事务可能必须锁定自己不访问的数据项：增加锁开销，延长等待时间，并且可能降低并发性</li>
+</ol>
+</li>
+<li>在树协议下可能实现的调度，在两阶段锁下未必可行，反之亦然。</li>
+</ol>
+</div>
+</li>
+</ol>
 <hr />
-<h2 id="_3">基于时间戳的协议<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h2 id="_4">基于验证的协议<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h2 id="_5">多粒度机制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h2 id="mvcc">* 多版本方案（MVCC）<a class="headerlink" href="#mvcc" title="Permanent link">&para;</a></h2>
-<h2 id="_6">死锁处理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h2 id="_7">插入与删除操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<h2 id="_8">* 索引结构中的并发控制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_4">* 基于时间戳的协议<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>每个事务在进入系统时会<strong>被分配一个时间戳</strong>。若旧事务 Ti 的时间戳为 TS(Ti)，新事务 Tj 会被分配时间戳 TS(Tj)，<strong>且 TS(Ti) &lt; TS(Tj)</strong></li>
+<li>
+<p><strong>时间戳排序协议</strong>保证任何发生冲突的读、写操作都按照时间戳顺序执行</p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>为保证此行为，协议为每个数据项 Q 维护两个时间戳值：</p>
+<ol>
+<li><strong>W-timestamp(Q)</strong>：<strong>成功执行</strong> write(Q) 的事务中最大时间戳</li>
+<li><strong>R-timestamp(Q)</strong>：成功执行 read(Q) 的事务中最大时间戳</li>
+</ol>
+</div>
+<ol>
+<li>假设事务 Ti 发出 <strong>read(Q)</strong>：<ol>
+<li>如果 TS(Ti) ≤ W-timestamp(Q)，则 Ti 需要读取的 Q 值<strong>已经被覆盖</strong>，因此拒绝该读操作，并<strong>将 Ti 回滚</strong></li>
+<li>如果 TS(Ti) ≥ W-timestamp(Q)，则执行该读操作，并将 R-timestamp(Q) 设为 max(R-timestamp(Q), TS(Ti))</li>
+</ol>
+</li>
+<li>假设事务 Ti 发出 <strong>write(Q)</strong>：<ol>
+<li>如果 TS(Ti) &lt; R-timestamp(Q)，则 Ti 要产生的 Q 值<strong>之前已经被需要</strong>，而系统假定该值永远不会被产生，因此拒绝该写操作，并<strong>将 Ti 回滚</strong></li>
+<li>如果 TS(Ti) &lt; W-timestamp(Q)，则 Ti 试图<strong>写入一个过时的 Q 值</strong>，因此拒绝该写操作，并<strong>将 Ti 回滚</strong></li>
+<li>否则，执行该写操作，并将 W-timestamp(Q) 设为 TS(Ti)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>正确性</strong>： </p>
+<ol>
+<li>时间戳排序协议保证可串行化，因为优先图中的所有边都<strong>由事务（较小时间戳）指向事务（较大时间戳）</strong>，因此优先图中不会出现环路</li>
+<li>时间戳协议<strong>保证无死锁，因为事务从不等待</strong></li>
+</ol>
+</li>
+<li><strong>问题</strong>：产生的调度可能不是无级联回滚的，甚至可能不是可恢复的</li>
+<li><strong>解决方法</strong>：<ol>
+<li>一个事务的<strong>所有写操作构成一个原子动作</strong>，当某事务正在执行写操作时，不允许其他事务执行</li>
+<li>中止的事务重新启动时，会被<strong>分配一个新的时间戳</strong></li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="_5">* 基于验证的协议<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>基于验证的协议</strong>：事务 Ti 的执行分为三个阶段：</p>
+<ol>
+<li><strong>读与执行阶段</strong>：事务 Ti 只写入临时局部变量</li>
+<li><strong>验证阶段</strong>：事务 Ti 进行验证测试，判断其局部变量是否可以写入数据库而不违反可串行化性</li>
+<li><strong>写入阶段</strong>：如果 Ti 验证通过，更新写入数据库；<strong>否则，事务回滚</strong></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">TIPs</p>
+<ol>
+<li>也称为<strong>乐观并发控制（OOC）</strong></li>
+<li>并发执行的事务的三个阶段可以交错进行，但每个事务必须按顺序经历三个阶段</li>
+</ol>
+</div>
+</li>
+<li>
+<p>每个事务 Ti 有 <strong>3 个时间戳</strong>：</p>
+<ol>
+<li><strong>Start(Ti)</strong>：Ti 开始执行的时间</li>
+<li><strong>Validation(Ti)</strong>：Ti 进入验证阶段的时间</li>
+<li><strong>Finish(Ti)</strong>：Ti 完成写入阶段的时间</li>
+<li>为了提高并发性，可串行化顺序<strong>由验证时赋予的时间戳</strong>决定（因此，TS(Ti) 被赋值为 Validation(Ti)）</li>
+</ol>
+</li>
+<li><strong>优点</strong>：当冲突发生<strong>概率较低</strong>时，该协议非常有用，并且能够提供更高程度的并发性<ol>
+<li>因为可串行化顺序不是预先决定的</li>
+<li>需要回滚的事务相对较少</li>
+</ol>
+</li>
+</ol>
+<hr />
+<h2 id="_6">多粒度<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>多粒度（Multiple Granularity）</strong>：允许根据需求对<strong>不同大小</strong>的数据项进行加锁</li>
+<li>
+<p><strong>数据结构</strong>：</p>
+<ol>
+<li>定义一个数据粒度的层次结构：数据库 → 表 → 页 → 行/记录</li>
+<li>其中较小粒度嵌套在较大粒度内部，并可用<strong>树形结构</strong>表示（不要与树锁协议混淆）</li>
+<li>当事务显式地锁定树中的某个节点时，它会以相同的锁模式<strong>隐式地锁定</strong>该节点的所有后代节点</li>
+</ol>
+<p><img alt="alt text" src="../photo/10-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>锁粒度（即进行加锁的树层级）</strong>：</p>
+<ol>
+<li><strong>细粒度</strong>（Fine Granularity，树的较低层）：高并发性，但高加锁开销</li>
+<li><strong>粗粒度</strong>（Coarse Granularity，树的较高层）：低加锁开销，但低并发性</li>
+</ol>
+</li>
+</ol>
+<h3 id="_7">意向锁<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Intention Locks</strong>：当事务要在某节点加锁时，先在该节点的<strong>所有祖先节点加意向锁</strong></li>
+<li>
+<p><strong>意向锁类型</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>锁类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IS (Intention Shared)</td>
+<td>后代存在 S 锁（共享锁）</td>
+</tr>
+<tr>
+<td>IX (Intention Exclusive)</td>
+<td>后代存在 X 锁（排它锁）</td>
+</tr>
+<tr>
+<td>SIX (Shared + Intention Exclusive)</td>
+<td>当前节点 S 锁 + 后代存在 X 锁</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>兼容矩阵</strong>：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>IS</th>
+<th>IX</th>
+<th>S</th>
+<th>SIX</th>
+<th>X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IS</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td>false</td>
+</tr>
+<tr>
+<td><strong>IX</strong></td>
+<td><strong>true</strong></td>
+<td><strong>true</strong></td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td><strong>true</strong></td>
+<td>false</td>
+<td><strong>true</strong></td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td><strong>SIX</strong></td>
+<td><strong>true</strong></td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+<tr>
+<td><strong>X</strong></td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>作用</strong>：</p>
+<ol>
+<li>当锁高层节点时，无需检查所有子节点是否锁定，<strong>只需查祖先节点的意向锁</strong></li>
+<li>防止与后代锁冲突，提高效率</li>
+</ol>
+</li>
+<li>
+<p><strong>事务 Ti 对节点 Q 加锁规则</strong>：</p>
+<ol>
+<li>必须遵守锁兼容矩阵</li>
+<li>树根必须先加锁，可使用任意模式</li>
+<li>Q 节点可以加 S 或 IS 锁，仅当 Q 的父节点已由 Ti 加锁为 IX 或 IS</li>
+<li>Q 节点可以加 X、SIX 或 IX 锁，仅当 Q 的父节点已由 Ti 加锁为 IX 或 SIX</li>
+<li>Ti 只能加锁<strong>未曾解锁过</strong>的节点（符合两阶段锁协议，2PL）</li>
+<li>Ti 只能<strong>解锁</strong>那些没有子节点被自己锁定的节点</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">TIPs</p>
+<ol>
+<li><strong>加锁顺序</strong>：自顶向下</li>
+<li><strong>解锁顺序</strong>：自下而上</li>
+<li><strong>优点</strong>：增强并发性，降低加锁开销</li>
+</ol>
+</div>
+</li>
+</ol>
+<hr />
+<h2 id="_8">* 多版本机制<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><strong>多版本机制</strong>（Multiversion Schemes） 通过保留数据项的旧版本来提高并发性</p>
+<ol>
+<li>每一次成功的 write 操作都会创建该数据项的一个新版本</li>
+<li><strong>使用时间戳来标识各个版本</strong></li>
+<li>当执行 read(Q) 操作时，<strong>根据事务的时间戳</strong>选择 Q 的合适版本，并返回该版本的值</li>
+<li>读操作永远不需要等待，因为总能立即返回一个合适的版本</li>
+</ol>
+<div class="admonition abstract">
+<p class="admonition-title">多版本时间戳</p>
+<p><strong>每个数据项 Q 都维护一个版本序列</strong>：</p>
+<div class="arithmatex">\[
+\langle Q_1, Q_2, \ldots, Q_m \rangle
+\]</div>
+<p>每个版本 Qk 包含<strong>三个数据字段</strong>：</p>
+<ol>
+<li><strong>Content</strong>：版本 Qk 的值</li>
+<li><strong>W-timestamp(Qk)</strong>：创建（写入）版本 Qk 的事务的时间戳</li>
+<li><strong>R-timestamp(Qk)</strong>：成功读取版本 Qk 的事务中的最大时间戳</li>
+</ol>
+<p>当事务 Ti 创建数据项 Q 的新版本 Qk 时，Qk 的 W-timestamp 和 R-timestamp 都初始化为 <strong>TS(Ti)</strong></p>
+<p>当事务 Tj 读取 Qk 且 <strong>TS(Tj) &gt; R-timestamp(Qk)</strong> 时，更新 Qk 的 R-timestamp</p>
+</div>
+<hr />
+<h2 id="_9">死锁处理<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<ol>
+<li>如果存在这样一个事务集合，集合中的每个事务都在等待集合中的另一个事务，则系统发生了<strong>死锁（Deadlock）</strong></li>
+<li><strong>处理死锁</strong><ol>
+<li>死锁预防（Deadlock Prevention）</li>
+<li>死锁检测与死锁恢复（Deadlock Detection and Deadlock Recovery）</li>
+</ol>
+</li>
+</ol>
+<h3 id="_10">死锁预防<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>死锁预防协议（Deadlock Prevention Protocols）</strong>保证系统永远不会进入死锁状态。</li>
+<li><strong>保守两阶段锁</strong>（Conservative 2PL）：<ol>
+<li>要求每个事务在开始执行之前就锁定其<strong>所需的全部数据项</strong></li>
+<li><strong>缺点</strong>：<strong>并发性差</strong>；很难预先预测事务将访问哪些数据项</li>
+</ol>
+</li>
+<li>
+<p>对所有数据项施加<strong>偏序关系</strong></p>
+<ol>
+<li>要求事务只能按照<strong>规定顺序</strong>对数据项加锁（基于图的协议）</li>
+<li>因此不会形成环路，所以不会发生死锁</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>规定顺序：先锁 A，再锁 B</p>
+<ol>
+<li>T1：先锁 A → 锁 B</li>
+<li>T2：先锁 A → 锁 B</li>
+</ol>
+<p>由于所有事务都按顺序加锁，永远不会形成环路，死锁被避免</p>
+</div>
+</li>
+<li>
+<p><strong>基于时间戳的方案</strong></p>
+<ol>
+<li>
+<p><strong>Wait-die 方案</strong>（非抢占式）：</p>
+<ol>
+<li>老事务可以等待年轻事务释放锁；年轻事务不能等待老事务，否则回滚</li>
+<li><strong>缺点</strong>：事务可能<strong>多次回滚</strong>才能获取锁</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>时间戳：T1 &lt; T2（T1 比 T2 老）</p>
+<ol>
+<li>T1 锁 A，T2 锁 B</li>
+<li><strong>T2 想锁 A：年轻事务不能等待老事务 → T2 回滚</strong></li>
+<li>T1 可以继续锁 B → 完成操作</li>
+<li>回滚 T2 后重新执行，保证不会死锁</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Wound-Wait 方案</strong>（抢占式）</p>
+<ol>
+<li>老事务不会等待年轻事务；老事务“伤害”年轻事务，强制其回滚</li>
+<li>年轻事务可以等待老事务</li>
+<li><strong>优点</strong>：回滚次数可能比 Wait-Die 少</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>时间戳：T1 &lt; T2（T1 比 T2 老）</p>
+<ol>
+<li>T1 锁 A，T2 锁 B</li>
+<li><strong>T1 想锁 B：老事务可以“伤害”年轻事务 → T2 被回滚</strong></li>
+<li>T1 获得 B 锁 → 完成操作</li>
+<li>回滚的 T2 后续再执行，不会死锁</li>
+</ol>
+</div>
+</li>
+</ol>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>在 wait-die 和 wound-wait 两种方案中，被回滚的事务会<strong>使用其原始时间戳重新启动</strong>。因此，较老的事务始终优先于较新的事务，从而<strong>避免饥饿</strong>（Starvation）现象。</p>
+</div>
+</li>
+<li>
+<p><strong>基于超时的方案</strong>（Timeout-Based Schemes）：</p>
+<ol>
+<li>事务对锁的等待时间只允许持续一个指定时长</li>
+<li>超时则<strong>事务被回滚</strong>，因此系统不会无限等待，死锁不可能发生</li>
+<li><strong>优点</strong>：实现简单</li>
+<li><strong>缺点</strong>：可能发生<strong>饥饿</strong>；很难确定一个合适的超时时间</li>
+</ol>
+</li>
+</ol>
+<h3 id="_11">死锁检测与恢复<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li>死锁可以用<strong>等待图</strong>来描述，当且仅当等待图中存在<strong>环</strong>时，系统处于死锁状态</li>
+<li><strong>必须周期性地调用死锁检测算法来查找环路</strong></li>
+<li><strong>当检测到死锁时</strong>：必须回滚某个事务以打破死锁，应选择<strong>代价最小的事务作为牺牲者</strong></li>
+<li>回滚（Rollback）：需要决定事务<strong>回滚到什么程度</strong>：<ol>
+<li><strong>完全回滚</strong>（Total Rollback）：中止（Abort）该事务，然后重新启动</li>
+<li><strong>部分回滚</strong>（Partial Rollback）：<strong>只回滚到足以打破死锁的位置，通常更有效</strong></li>
+</ol>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">WARNING</p>
+<p>如果总是选择<strong>同一个</strong>事务作为牺牲者，就会发生<strong>饥饿</strong>（Starvation）。</p>
+<p>为避免饥饿，应将事务<strong>已经经历的回滚次数</strong>纳入代价因素进行考虑。</p>
+</div>
+<hr />
+<h2 id="_12">插入与删除操作<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>此处具体内容请查看 PPT 或<a href="https://wintermelonc.github.io/WintermelonC_Docs/zju/compulsory_courses/database_system/ch12/#7-insert-and-delete-operations">笔记</a></p>
+</div>
+<h2 id="_13">* 索引结构中的并发控制<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h2>
+<div class="admonition quote">
+<p class="admonition-title">Quote</p>
+<p>此处具体内容请查看 PPT 或<a href="https://wintermelonc.github.io/WintermelonC_Docs/zju/compulsory_courses/database_system/ch12/#-8-concurrency-in-index-structures">笔记</a></p>
+</div>
 
 
 
@@ -5680,7 +6267,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月3日 17:45:07 CST">2026年6月3日 17:45:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月5日 13:51:30 CST">2026年6月5日 13:51:30</span>
   </span>
 
     
@@ -5762,13 +6349,13 @@
         
         
           
-          <a href="../../../Tools/" class="md-footer__link md-footer__link--next" aria-label="下一页: 开发工具 / Development Tools">
+          <a href="../recovery/" class="md-footer__link md-footer__link--next" aria-label="下一页: 恢复系统">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                开发工具 / Development Tools
+                恢复系统
               </div>
             </div>
             <div class="md-footer__button md-icon">
