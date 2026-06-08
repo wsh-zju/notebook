@@ -60,7 +60,7 @@ theme:
 markdown_extensions:
   - toc:
       permalink: true      # 目录标题添加锚点
-      toc_depth: 4         # 目录显示到4级标题
+      toc_depth: 5         # 目录显示到5级标题
   - abbr                   # 支持缩写（鼠标悬停气泡）
   - meta                   # 【元数据支持】允许在 .md 文件的最顶部使用 YAML 语法定义页面属性（如 title, description, tags 等）
   - def_list               # 支持名词解释
@@ -175,6 +175,8 @@ nav:
         - 流水线CPU : Computer_Science/Computer_System/pipeline.md
         - 量化研究方法 : Computer_Science/Computer_System/quant.md
         - 指令级并行 : Computer_Science/Computer_System/ILP.md
+        - 数据级并行 : Computer_Science/Computer_System/DLP.md
+        - 线程级并行 : Computer_Science/Computer_System/TLP.md
       - 操作系统 : 
         - 操作系统 : Computer_Science/Computer_System/OS.md
         - 进程 : Computer_Science/Computer_System/process.md
