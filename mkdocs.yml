@@ -174,9 +174,9 @@ nav:
         - 多周期CPU : Computer_Science/Computer_System/MultiCPU.md
         - 流水线CPU : Computer_Science/Computer_System/pipeline.md
         - 量化研究方法 : Computer_Science/Computer_System/quant.md
-        - 指令级并行 : Computer_Science/Computer_System/ILP.md
-        - 数据级并行 : Computer_Science/Computer_System/DLP.md
-        - 线程级并行 : Computer_Science/Computer_System/TLP.md
+        - ILP : Computer_Science/Computer_System/ILP.md
+        - DLP : Computer_Science/Computer_System/DLP.md
+        - TLP : Computer_Science/Computer_System/TLP.md
       - 操作系统 : 
         - 操作系统 : Computer_Science/Computer_System/OS.md
         - 进程 : Computer_Science/Computer_System/process.md

@@ -42,7 +42,7 @@ comment: False
     - 死锁[note]: deadlock/
 - 计算机系统 III:
     - 量化研究方法[note]: quant/
-    - 指令级并行[note]: ILP/
+    - 指令级并行 ILP[note]: ILP/
     - 内存层次结构[note]: memory_index/
     - 缓存[note]: cache/
     - 主存[note]: memory/
@@ -50,6 +50,8 @@ comment: False
     - 大容量存储[note]: storage/
     - I/O 系统[note]: IO/
     - 文件系统[note]: file/
+    - 数据级并行 DLP[note]: DLP/
+    - 线程级并行 TLP[note]: TLP/
 {{ END_TOC }}
 
 

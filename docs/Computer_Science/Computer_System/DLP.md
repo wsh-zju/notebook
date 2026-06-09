@@ -2,7 +2,7 @@
 comment: true
 ---
 
-# DLP
+# 数据级并行 DLP
 
 ## SIMD: vector processor
 
@@ -19,11 +19,10 @@ comment: true
         首先计算 \(d_1 \leftarrow a_1 \times (b_1 + c_1)\) ，接着计算 \(d_2 \leftarrow a_2 \times (b_2 + c_2)\)，以此类推，循环程序如下：
         
         $$
-        k_i \leftarrow b_i + c_i
-        $$
-
-        $$
-        d_i \leftarrow a_i \times k_i
+        \begin{aligned}
+        k_i &\leftarrow b_i + c_i \\
+        d_i &\leftarrow a_i \times k_i
+        \end{aligned}
         $$
         
         **循环里的两个语句存在数据相关，因此有 N 个数据相关，需要进行 2N 次功能切换（每次计算都切换）。**
@@ -189,7 +188,7 @@ comment: true
 2. **共有 n 个不同的互连函数**：第 i 位取反
 
     \[
-    Cube^i(P_{n-1} \dots P_i \dots P_1 P_0) = P_{n-1} \dots \overline{P_i} \dots P_1 P_0
+    Cube_i(P_{n-1} \dots P_i \dots P_1 P_0) = P_{n-1} \dots \overline{P_i} \dots P_1 P_0
     \]
 
     !!! example  "Example"
