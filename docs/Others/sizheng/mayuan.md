@@ -9,12 +9,12 @@
     这里提供一份淘到的很棒的思维导图
 
     <div class="card file-block" markdown="1">
-    <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+    <div class="file-icon"><img src="../../../style/images/pdf.svg" style="height: 3em;"></div>
     <div class="file-body">
     <div class="file-title">马原思维导图</div>
     <div class="file-meta">2026-1-8 / 1 page</div>
     </div>
-    <a class="down-button" target="_blank" href="../files/马原思维导图.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+    <a class="down-button" target="_blank" href="files/马原思维导图.pdf" markdown="1">:fontawesome-solid-download: Download</a>
     </div>
    
 

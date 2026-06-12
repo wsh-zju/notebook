@@ -1,0 +1,266 @@
+
+/* 定义动画关键帧 */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 基础结构：确保动画属性被正确继承 */
+.hero-header {
+    display: flex;
+    flex-direction: row;      /* 改为横向排列 */
+    justify-content: space-between; /* 两端对齐：左边标题，右边统计 */
+    align-items: center;      /* 垂直居中 */
+    flex-wrap: wrap;          /* 手机端自动换行 */
+    
+    min-height: 100px;
+    padding: 2rem 3rem;       /* 增加左右内边距 */
+    margin: -1.5rem -0.8rem 1.0rem -0.8rem;
+    border-radius: 0 0 2rem 2rem;
+    
+    /* 核心修复：必须确保 background-size 在所有模式下生效 */
+    background-size: 400% 400% !important;
+    animation: gradientMove 15s ease infinite !important;
+    transition: background 0.8s ease, box-shadow 0.5s ease;
+    text-align: center;
+}
+
+/* --- [白天模式] 高级灰色渐变 (Default) --- */
+[data-md-color-scheme="default"] .hero-header {
+    /* 使用 莫兰迪灰/冷灰 组合 */
+    background: linear-gradient(-45deg, #e0eafc, #cfdef3, #eef2f3, #e0eafc);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+[data-md-color-scheme="default"] .hero-header h1 { 
+    color: #444a4d !important; /* 深灰色文字 */
+    text-shadow: none; 
+}
+[data-md-color-scheme="default"] .hero-header p { 
+    color: #6c757d !important; 
+}
+
+/* --- [黑夜模式] 深邃蓝渐变 (Slate) --- */
+[data-md-color-scheme="slate"] .hero-header {
+    /* 使用 深蓝/极夜蓝 组合 */
+    background: linear-gradient(-45deg, #2c3e50, #4ca1af, #2c3e50, #7b4397);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+[data-md-color-scheme="slate"] .hero-header h1 { 
+    color: #ffffff !important; 
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+}
+[data-md-color-scheme="slate"] .hero-header p { 
+    color: rgba(255, 255, 255, 0.7) !important; 
+}
+
+/* 文字通用样式强制修正 */
+.hero-title-group {
+    text-align: left;         /* 确保文字左对齐 */
+    flex: 1;                  /* 占据剩余空间 */
+}
+
+.hero-header h1 {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    display: block !important;
+    text-align: left !important; /* 强制覆盖 */
+    z-index: 10;
+}
+
+
+.hero-header p {
+    font-size: 1.2rem;
+    margin-top: 1rem !important;
+    z-index: 10;
+    text-align: left !important;
+}
+
+
+/* 容器布局 */
+.home-container {
+  display: grid; /* 网格布局 */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* 卡片间距 */
+  margin-top: 1rem; /* 顶部间距 */
+  margin-bottom: 0rem;
+}
+
+/* 卡片基础样式 */
+.home-card {
+  padding: 1.5rem 1.5rem; /* 内边距增加，提升内容呼吸感 */
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 磨砂玻璃效果自适应 */
+[data-md-color-scheme="default"] .home-card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+[data-md-color-scheme="slate"] .home-card {
+  background: rgba(30, 34, 45, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.home-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* 标题与描述 */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.1rem 0; /* 标题与描述间距 */
+}
+
+.card-desc {
+  font-size: 0.7rem;
+  line-height: 1.5; /* 增加行高提升可读性 */
+  opacity: 0.8;
+  margin-bottom: 0.7rem;/* 与按钮保持距离 */
+}
+
+/* 基础按钮样式 */
+.enter-btn {
+  display: block; /* 改为 block 让它撑满底部，更大气 */
+  text-align: center;
+  padding: 10px 16px; 
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: auto; /* 配合 flex 布局确保按钮始终在卡片最底部 */
+  border: 1px solid transparent;
+}
+
+/* --- 白天模式 (Default) --- */
+[data-md-color-scheme="default"] .enter-btn {
+  background-color: #efefef!important; /* 莫兰迪深灰 */
+  color: #000000 !important;
+}
+
+[data-md-color-scheme="default"] .enter-btn:hover {
+  background-color: transparent !important;
+  color: #000000 !important;
+  border-color: #efefef !important; /* 悬浮时变为镂空深灰 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 黑夜模式 (Slate) --- */
+[data-md-color-scheme="slate"] .enter-btn {
+  background-color: #ffffff !important; /* 纯白色 */
+  color: #1a1a2e !important; /* 深蓝色文字（对应你的背景色） */
+}
+
+[data-md-color-scheme="slate"] .enter-btn:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important; /* 悬浮时变为镂空白色 */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* 按钮文字微调：防止加粗导致的边缘模糊 */
+.enter-btn {
+  letter-spacing: 0.5px;
+}
+
+/* 胶囊按钮容器 */
+.hero-nav-pills {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* 胶囊按钮基础样式 */
+.hero-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.15); /* 半透明 */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  color: #fff !important;
+  font-size: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+}
+
+.hero-pill:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.hero-pill .twemoji {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* -------- 统计卡片：隐藏在渐变框内 --------- */
+.hero-stats-card {
+  max-width: 400px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: none; /* 默认隐藏 */
+  animation: fadeInDown 0.4s ease-out;
+}
+
+.hero-stats-card.is-visible {
+  display: block;
+}
+
+/* 网格布局 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.stat-footer {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.8);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 10px;
+  text-align: center;
+}
+
+/* 动画 */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

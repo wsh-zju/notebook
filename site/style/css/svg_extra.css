@@ -1,0 +1,17 @@
+/* SVG 颜色适配深色模式 */
+/* 黑色描边 → 主题前景色 */
+path[stroke="#000"], g[stroke="#000"] {
+  stroke: var(--md-default-fg-color);
+}
+/* 白色描边 → 主题背景色 */
+path[stroke="#fff"], g[stroke="#fff"] {
+  stroke: var(--md-default-bg-color);
+}
+/* 白色填充 → 主题背景色 */
+path[fill="#fff"] {
+  fill: var(--md-default-bg-color);
+}
+/* 无填充 → 主题前景色 */
+path:not([fill]) {
+  fill: var(--md-default-fg-color);
+}

@@ -2,7 +2,7 @@
 comment: true
 ---
 
-# ILP
+# 指令级并行 ILP
 
 ## **指令相关性**
 

@@ -1,0 +1,251 @@
+/* 全局字体设置 */
+:root {
+  --md-text-font: "LXGW WenKai Screen", "JetBrains Mono";  /* 正文字体 */
+  --md-code-font: "JetBrains Mono";  /* 代码字体 */
+}
+
+/* 电脑端字体缩放 */
+@media screen and (min-width: 960px) {
+  /* body {
+    zoom: 1.1;
+  } */
+  html {
+    font-size: 137.5%;
+  }
+}
+
+@media screen and (min-width: 100em) {
+  html {
+    font-size: 137.5%;
+  }
+}
+
+@media screen and (min-width: 125em) {
+  html {
+    font-size: 137.5%;
+  }
+}
+.md-header {
+  /* 1. 增加高度：原高度通常在 2.4rem 左右，拉大到 3.5rem 或更高 */
+  height: 2.6rem !important; 
+}
+/* markdown 字体大小 */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 {
+  font-weight: 600;     /* 粗细 */
+}
+
+.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
+  letter-spacing: 0.05em;    /* 字体间距 */
+  line-height: 1;
+}
+
+/* 正文字体 */
+.md-typeset {
+  font-size: .7rem;     /* 字体大小 */
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+}
+
+/* 行内 code 字号继承正文 */
+.md-typeset code:not(pre code) {
+  font-size: inherit;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* 代码块 */
+.md-typeset .highlighttable{
+  border-radius: 8px;
+  overflow: hidden;
+}
+.md-typeset pre,
+.md-typeset code {
+  line-height: 1.5; /* 代码行间距 */
+  overflow: hidden;
+  letter-spacing: 0;
+}
+
+/* 浅色主题 */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f7f7f7;  /* 背景色 */
+  --md-primary-fg-color: #efefef;  /* 顶栏前景色 */
+  --md-primary-bg-color: #000000;  /* 顶栏背景色 */
+  --md-typeset-a-color: #555555;   /* 链接颜色 */
+  /* 页脚 */
+  --md-footer-fg-color: #000000;   
+  --md-footer-bg-color: #efefef;
+  --md-footer-bg-color--dark: #efefef;
+  --md-footer-fg-color--light: #000000;
+  --md-footer-fg-color--lighter: #000000;
+  --md-code-bg-color: #efefef;     /* 代码块背景色 */
+  --md-code-fg-color: #000000;
+}
+
+/* 深色主题 */
+[data-md-color-scheme="slate"][data-md-color-primary="indigo"] {
+  /* 背景色 */
+  --md-default-bg-color: #161616;
+  --md-default-bg-color--light: #161616;
+  --md-default-bg-color--lighter: #161616;
+  --md-default-bg-color--lightest: #161616;
+  /* 正文字体 */
+  --md-default-fg-color: rgba(255,255,255,0.9);
+  --md-default-fg-color--light: rgba(255,255,255,0.85);
+  --md-default-fg-color--lighter: rgba(255,255,255,0.8);
+  --md-default-fg-color--lightest: rgba(255,255,255,0.6);
+  --md-primary-fg-color: #0d0d0d;  /* 顶栏前景色 */
+  --md-typeset-a-color: #d3d3d3;   /* 链接颜色 */
+  /* 页脚 */
+  --md-footer-fg-color: #fff;
+  --md-footer-bg-color: #0d0d0d;
+  --md-footer-bg-color--dark: #0d0d0d;
+  --md-footer-fg-color--light: #fff;
+  --md-footer-fg-color--lighter: #fff;
+  /* 代码块 */
+  --md-code-bg-color: #0d0d0d;
+  --md-code-fg-color: #fff;
+}
+
+/* 深色模式下内容区按钮颜色 */
+[data-md-color-scheme="slate"] .md-typeset .md-content__button {
+  color: #555555;
+}
+
+/* 页脚版权信息 */
+.md-copyright {
+  font-size: .55rem;
+}
+
+/* 深色模式下图标 */
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .light-mode,
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .system-mode,
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=slate] .md-icon .unknown-mode {
+  display: none;
+}
+/* 浅色模式下图标 */
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .dark-mode,
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .system-mode,
+body:not([data-md-prefers-color-scheme=true])[data-md-color-scheme=default] .md-icon .unknown-mode {
+  display: none;
+}
+/* 其他主题下 */
+body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .dark-mode,
+body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .light-mode,
+body:not([data-md-prefers-color-scheme=true]):not([data-md-color-scheme=default]):not([data-md-color-scheme=slate]) .md-icon .system-mode {
+  display: none;
+}
+body[data-md-prefers-color-scheme=true] .md-icon .dark-mode,
+body[data-md-prefers-color-scheme=true] .md-icon .light-mode,
+body[data-md-prefers-color-scheme=true] .md-icon .unknown-mode {
+  display: none;
+}
+
+/* 移动端导航栏背景色 */
+@media screen and (max-width: 59.9375em) {
+  .md-nav__source {
+    background-color: var(--md-primary-fg-color);
+  }
+}
+@media screen and (max-width: 76.1875em) {
+  .md-nav--primary .md-nav__title {
+    background-color: var(--md-primary-fg-color);
+  }
+}
+
+[data-md-color-scheme="slate"] .md-annotation__index:after {
+  background-color: #4c4c4c;
+}
+
+input#mkdocs-content-password {
+  width: 6rem;
+}
+
+[data-md-color-scheme="slate"] input#mkdocs-content-password {
+  background-color: #161616;
+}
+
+.katex {
+  -webkit-text-stroke-width: 0.3px;
+}
+
+.reference ol {
+  counter-reset: li;
+}
+.reference li {
+  padding-left: 0.7em;
+  counter-increment: li;
+  word-break: break-all;
+}
+.reference li::marker {
+  content: "[" counter(li) "]";
+  font-size: 0.8em;
+}
+
+.md-typeset :is(.emojione,.twemoji,.gemoji) {
+  vertical-align: sub;
+}
+
+.md-source-file__fact {
+  font-size: 90%;
+}
+
+.hr-before-source-file:not(:has(+ aside)) {
+  display: none;
+}
+/*logo圆角*/
+.reveal .slide-logo,
+.md-header__button.md-logo img,
+.md-logo img,
+.md-nav__button.md-logo img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+/* --- 调整页眉上边距与高度 --- */
+  
+/* --- 1. 白天模式：浅灰色半透明 --- */
+[data-md-color-scheme="default"] .md-header {
+  /* 将 #efefef 转换为 rgba，0.7 代表 70% 的不透明度 */
+  background-color: rgba(239, 239, 239, 0.8) !important; 
+  
+  /* 必须配合模糊滤镜才能实现磨砂感 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- 2. 黑夜模式：深黑色半透明 --- */
+[data-md-color-scheme="slate"] .md-header {
+  /* 将 #0d0d0d 转换为 rgba，0.8 代表 80% 的不透明度 */
+  background-color: rgba(13, 13, 13, 0.8) !important; 
+  
+  /* 磨砂效果 */
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 4. 重点：确保内部元素（Logo、搜索框）依然垂直居中 */
+.md-header__inner {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important; /* 垂直居中 */
+}
+
+/* 5. 修正内容区的顶部偏移量，防止内容被加高的页眉遮挡 */
+.md-main__inner {
+  margin-top: 2rem !important; 
+}
+
+/* 如果你使用了标签栏 (Tabs)，也需要同步下移 */
+.md-tabs {
+  top: 3.5rem !important;
+}
+
+/* 非代码块和非 riscv 表格 */
+.md-typeset table:not(.highlighttable):not(.riscv-table) {
+  display: block;        /* 1. 变成块级元素，使 overflow 生效 */
+  overflow-x: auto;      /* 2. 宽度超出时显示滚动条 */
+  white-space: nowrap;   /* 3. 强制文字不换行，由内容决定列宽 */
+  width: fit-content;    /* 4. 使表格宽度刚好包裹内容 */
+  max-width: 100%;       /* 5. 限制最大宽度不超过屏幕 */
+  border-radius: 8px;   /* 6. 圆角 */
+}
+

@@ -128,7 +128,7 @@ comment: true
 3. **崩溃后的恢复规则**
     1. **需要 Undo**：若日志中存在 **&lt;Ti start&gt;** 但不存在 **&lt;Ti commit&gt;**
     2. **需要 Redo**：若日志中同时存在 **&lt;Ti start&gt;** 和 **&lt;Ti commit&gt;**
-    3. **先做 Undo，再做 Redo**
+    3. **<span class="green">先做 Undo，再做 Redo</span>**
 
 !!! abstract "原因"
     对日志中的所有事务执行 redo 和 undo 会**非常慢**，引入检查点
@@ -181,19 +181,19 @@ comment: true
     3. 一个缓冲块中的数据项可能被一个或多个事务更新
     4. 假设采用**严格两阶段锁协议**
 
-**系统崩溃后的恢复**：
+==**系统崩溃后的恢复**==：
 
 1. **第一阶段**
     1. 首先初始化：undo-list = {}、redo-list = {}
-    2. 从日志末尾开始向前扫描，直到找到最近的 **&lt;checkpoint L&gt;**
+    2. 从日志<span class="orange">末尾</span>开始向前扫描，直到找到最近的 **&lt;checkpoint L&gt;**
         1. 遇到 **&lt;Ti commit&gt;** 则 Ti 加入 redo-list
         2. 遇到 **&lt;Ti start&gt;** 若 Ti 不在 redo-list 中，Ti 加入 undo-list
         3. 遇到 **&lt;Ti abort&gt;** 则 Ti 加入 undo-list
         4. 对于 L 中每个事务 Ti，若 Ti 不在 redo-list，Ti 加入 undo-list
 2. **第二阶段**：恢复继续执行：
-    1. **从日志末尾向前扫描**，直到 undo-list 中每个事务的 **&lt;Ti start&gt;** 都被找到
+    1. **从日志<span class="orange">末尾</span>向前扫描**，直到 undo-list 中每个事务的 **&lt;Ti start&gt;** 都被找到
     2. 扫描过程中对于属于 undo-list 的日志记录，执行 undo
-    3. 找到最近的 **&lt;checkpoint L&gt;**，从该检查点开始**向后扫描，直到日志末尾**
+    3. 找到最近的 **&lt;checkpoint L&gt;**，从该检查点开始**<span class="orange">向后</span>扫描，直到日志末尾**
     4. 扫描过程中对于属于 redo-list 的日志记录，执行 redo
 
 !!! example "Example"
@@ -225,26 +225,27 @@ comment: true
     3. 使用生理重做（Physiological Redo）
     4. 使用 **Dirty Page Table** 避免不必要的 Redo
     5. 使用模糊检查点（**Fuzzy Checkpointing**），检查点时不要求把脏页写出
-3. **生理重做**
+3. **生理重做**：指重做事务操作时，页面定位使用物理方式（确定哪一页需要修改），而页内具体操作可以用逻辑方式描述（只记录变更的具体操作，而不是整个页面内容）
+    1. 减少日志存储和 I/O 开销，同时保持恢复操作的幂等性和正确性
 
 ### **数据结构**
-1. **日志序列号（LSN）**用于唯一标识每条日志记录
+1. **日志序列号（<span class="blue">LSN</span>）**用于唯一标识每条日志记录
     1. **要求**：单调递增、顺序编号
     2. 通常 LSN 是日志文件起始位置的偏移量，便于快速定位日志记录，也容易扩展到多个日志文件
-2. **Page LSN**：最近一次**已经反映到该页面**上的日志记录对应的 LSN
+2. **<span class="blue">Page LSN</span>**：最近一次**已经反映到该页面**上的日志记录对应的 LSN
     1. **作用**：恢复时利用 PageLSN 判断某条日志是否已经应用过，从而避免重复 Redo，保证幂等性
 3. **日志记录**
-    1. **PrevLSN**：同一事务上一条日志记录的 LSN
+    1. **<span class="blue">PrevLSN</span>**：同一事务上一条日志记录的 LSN
     2. **日志结构**：`| LSN | TransID | PrevLSN | RedoInfo | UndoInfo |`
     3. ARIES 引入特殊日志：**补偿日志记录（CLR）**
         1. 用于记录恢复过程中执行的 **Undo 操作**
         2. **CLR 本身只需要 Redo，永远不需要 Undo**
-        3. **UndoNextLSN** 表示下一条需要**继续 Undo 的日志记录**
+        3. **<span class="blue">UndoNextLSN</span>** 表示下一条需要**继续 Undo 的日志记录**
         4. **结构**：`| LSN | TransID | UndoNextLSN | RedoInfo |`
 4. **Dirty Page Table**：记录缓冲区中已经修改过的页面
     1. 对于每个脏页保存**两个重要信息**：
         1. **PageLSN**：页面当前的 PageLSN
-        2. **RecLSN**：某个 LSN 之前的所有更新已经反映到磁盘页面
+        2. **<span class="blue">RecLSN</span>**
             1. 当页面**第一次**进入脏页表时：RecLSN 被设置为当前日志末尾位置
             2. RecLSN 会被记录到**检查点**中
             3. **作用**：减少恢复时需要执行的 Redo 工作量
@@ -253,7 +254,7 @@ comment: true
         1. DirtyPageTable
         2. 活动事务列表：
             1. 所有尚未结束的事务
-            2. **LastLSN**：该事务最近一条日志记录的 LSN
+            2. **<span class="blue">LastLSN</span>**：该事务最近一条日志记录的 LSN
         3. 磁盘固定位置保存最近一次完成检查点的 LSN
     2. 与传统检查点不同，ARIES **在检查点时不写出脏页**，脏页由后台持续刷新，因此检查点代价非常低，可以频繁执行检查点
 
@@ -266,7 +267,7 @@ comment: true
     1. **目标**：确定：
         1. **undo-list**：其中所有事务都需要回滚
         2. **DirtyPageTable**：用于减少 Redo 工作量
-        3. **RedoLSN**：Redo 起点
+        3. **<span class="blue">RedoLSN</span>**：Redo 起点
     2. 从最近一次完成的**检查点**日志记录开始
         1. 读取脏页表
         2. 计算 **RedoLSN**：
