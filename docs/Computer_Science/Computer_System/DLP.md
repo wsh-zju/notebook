@@ -4,6 +4,9 @@ comment: true
 
 # 数据级并行 DLP
 
+!!! info "Flynn 分类法"
+    ![alt text](photo/24-13.png)
+
 ## SIMD: vector processor
 
 1. 向量处理器（**vector processor**）：一种流水线处理器，采用向量数据表示方式并配备相应的向量指令
@@ -135,24 +138,27 @@ comment: true
 3. 采用**循环开采技术**（Recycling Mining Technology）/**分段向量技术**（Segmented Vector Technology）：将长向量划分为若干个固定长度的段，采用循环方式处理，每次循环只处理一个向量段
 5. 使用**多处理器系统**，进一步提高性能 
 
-
+---
 ## SIMD: Array Processor
 
 1. 阵列处理器也称为并行处理器
     1. 由 **N 个处理元素（PE₀ ~ PEₙ₋₁）**组成
     2. 处理元素通过特定互连方式形成数组
 2. 根据系统中**存储器的组成方式**，阵列处理器可以分为两种基本结构：
-    1. **分布式存储器**（Distributed Memory）：
+    1. **分布式存储器**（Distributed Memory）：SIMD 阵列处理器的主流
         1. PE 代表处理器，PEM 是其对应的内存，ICN 是一个**内部的互联网络**
         2. 每个处理元素（PE）拥有**独立**的本地存储器
         
         ![alt text](photo/24-8.png){style="width:60%;display: block;margin: 20px auto"}
 
-    2. **集中共享存储器**（Centralized Shared Memory）
+    2. **集中共享存储器**（Centralized Shared Memory）：多个 PE 通过互连网络访问共享存储模块
         
         ![alt text](photo/24-9.png){style="width:60%;display: block;margin: 20px auto"}
 
 ### <span class="red">ICN</span>
+!!! warning "ICN 的重要性"
+    若 n 个处理单元任意两两直连，需要连接数 n(n - 1) / 2，直连成本太高，因此需要通过互连网络实现“有限连接下的高效通信”。
+
 1. **互连网络**是由交换单元按照一定的拓扑结构和控制方式组成的网络，用于实现计算机系统中**多个处理器或多个功能部件**之间的互连
 2. 一般由以下五部分**组成**：CPU、存储器（Memory）、接口（Interface）、链路（Link）、交换节点（Switch Node）
 
@@ -178,12 +184,15 @@ comment: true
 
 3. 互连网络的**分类**
     1. **静态网络**：指节点之间的连接路径固定不变的网络，在程序执行过程中这种连接关系保持不变
-    2. **动态网络**：由交换开关组成，可以根据应用需求动态改变连接状态，例如总线、交叉开关、多级交换网络等
+    2. **动态网络**：由**交换开关**组成，可以根据应用需求动态改变连接状态，例如总线、交叉开关、多级交换网络等
 4. 互连网络的**目标**：通过**有限数量**的连接方式，使任意两个处理单元（PE）能够**在一步或少数几步内**完成信息传输，从而实现特定问题求解算法
     1. **单级互连网络**：在唯一的一层网络中，通过有限数量的连接，实现任意两个处理单元之间的信息传输
     2. **多级互连网络**：由**多个单级网络串联**组成，以实现任意两个处理单元之间的连接
 5. 输入 j 与输出 f(j) 通常采用**二进制编码**，其对应函数规律可以从二进制编码中推导出来，该规律即为**互连函数**
-#### Cube 单级互联网络
+
+#### 静态 ICN
+##### Cube 单级互联网络
+
 1. N 个输入输出采用 n 位二进制编码（$n = \log_2 N$），表示为 $P_{n-1} \dots P_i \dots P_1 P_0$
 2. **共有 n 个不同的互连函数**：第 i 位取反
 
@@ -209,40 +218,204 @@ comment: true
         1. 当维度 n > 3 时，称为**超立方体网络（Hypercube Network）**
         2. 单级 n 维立方体网络的最大距离为 n，因此，任意两个处理单元（PE）之间的数据传输，**最多经过 n 次传递即可完成**
 
-#### PM2I 单级互联网络
-公式
+##### PM2I 单级互联网络
+**PM2I（Plus Minus 2^i）的互连函数**
+
+\[
+PM2_{+i}(j)=(j+2^i)\bmod N
+\]
+
+\[
+PM2_{-i}(j)=(j-2^i)\bmod N
+\]
+
+1. 其中 N 为互连网络中的节点数，j 为节点编号，且 $0 \le j \le N-1$，$0 \le i \le \log_2 N - 1$
+2. 一共有 $2 \log_2 N - 1$ 个不同的互连函数（最后两个一样）
+
 !!! example "Example: N = 8"
     ![alt text](photo/24-10.png){style="width:100%;display: block;margin: 20px auto"}
 
-#### Shuffle exchange network
+    可以通过两步实现互连。（0 可以一步到 1、2、4、6、7，再过一步可以到 3、5）
 
-1. shuffle 公式
+##### Shuffle exchange network
+1. **由两部分组成**：shuffle 和 exchange
+2. **N 维 shuffle 函数**：移位操作
 
-!!! example "Example"
-    ![alt text](photo/24-11.png){style="width:100%;display: block;margin: 20px auto"}
+    \[
+    shuffle(P_{n-1}P_{n-2}...P_1P_0) = P_{n-2}...P_1P_0P_{n-1}
+    \]
 
-    经过 3 次 shuffle 后其他点都回到了原来的位置，但是 000 和 111 并没有与其他点连接，因此我们在此的基础上加上 exchange 的连线
+    其中 \(n = \log_2 N\), \(P_{n-1}P_{n-2}...P_1P_0\) 是输入编号的二进制编码
+
+    !!! example "Example"
+        ![alt text](photo/24-11.png){style="width:60%;display: block;margin: 20px auto"}
+
+        经过 **3 次** shuffle 后其他点都回到了**原来的位置**，但是 000 和 111 并没有与其他点连接（不是连通图），因此我们在此的基础上加上 **exchange 的连线**
+
+3. **exchange 的实现**：通过 Cube 0（红线部分）
+    
+    ![alt text](photo/24-12.png){style="width:60%;display: block;margin: 20px auto"}
+
+!!! success "Shuffle exchange network"
+    上述例子任意两个节点相连最多需要 5 步，3 exchanges + 2 shuffles
+
+    **推广**：数据传输最多需要经过 n** 次 exchange + n−1 次 shuffle**，因此最大距离 = 2n−1
+
+!!! info "单级互联网络的特点"
+    1. 结构简单，成本低
+    2. 连接方式灵活，能够满足不同算法与应用需求
+    3. 传输步骤较少，提高阵列运算速度
+    4. 结构规则性与模块化程度高，有利于提升系统可扩展性
+    5. 便于大规模集成
+
+#### 常见静态拓扑图
+
+![alt text](photo/24-14.png){style="width:100%;display: block;margin: 20px auto"}
+
+!!! info "静态拓扑图"
+    具体图片请查看 PPT
+
+#### 动态 ICN
+1. **特性**：
+    1. 动态网络中的**连接不是固定的**，可以在程序执行过程中按需要改变
+    2. 网络中的**交换单元是主动的**，通过设置**开关状态**可以重构连接路径
+    3. 只有位于**网络边界**的交换单元可以直接与**处理器**相连
+2. 动态网络**主要包括**：总线（bus）、交叉开关（crossbar）、多级互连网络
+3. 为了实现任意 PE 之间的连接，可以使用：
+    1. **循环互连网络**：单级网络可以被重复使用多次进行循环连接
+    2. **多级互连网络**：将多个单级互连网络串联起来使用
+    3. **多级循环互连网络**：在多级互连网络基础上，再进行多次循环复用
+4. **多级互连网络的差异**包括交换单元功能、交换控制方式、拓扑结构
+
+##### 交叉开关
+1. **交换单元**：具有 m 个输入和 m 个输出的交换单元被记为 m×m 的交换单元，其中 m = 2^k
+2. **交换单元的状态**：直通（Straight）、交换（Exchange）、上广播（Upper broadcast）、下广播（Lower broadcast）
+3. 根据交换单元的功能，2×2 交换单元可以分为**两功能和四功能交换单元** 
+
+    ![alt text](photo/24-15.png){style="width:80%;display: block;margin: 20px auto"}
+
+4. **多端交换单元**（Multi-end switching unit）：增加了广播（broadcast）和多播（multicast）模块
+    
+    ![alt text](photo/24-16.png){style="width:50%;display: block;margin: 20px auto"}
+
+5. **拓扑**（Topology）：交换单元各级的**输入/输出端**之间相互连接的一种方式，**常见拓扑结构**：
+    1. Multi-stage cube
+    2. Multi-stage shuffle exchange
+    3. Multi-stage PM2I
+    4. 以上三种的组合结构
+
+##### 多级 Cube ICN
+1. **交换单元**：两功能交换单元
+2. **控制方式**：分级控制、部分分级控制、单元控制
+3. **拓扑结构**：立方体结构
+
+!!! example "Example: 3D Cube ICN"
+    ![alt text](photo/24-17.png){style="width:80%;display: block;margin: 20px auto"}
+
+4. **N 维立方体 ICN**：
+    1. 每一级包含 N/2 个两功能交换单元
+    2. 网络级数 $n = \log_2 N$
+
+!!! question "Question1"
+    该并行处理器有 16 个处理器。**为了实现等效于以下功能**：4 组 4 元素交换、2 组 8 元素交换，以及 1 组 16 元素交换
+
+    ![alt text](photo/24-18.png){style="width:50%;display: block;margin: 20px auto"}
+
+    !!! info "Info"
+        1. cube 0 + cude 1 : 4 组 4 元素交换
+        2. cube 0 + cube 1 + cube 2 : 2 组 8 元素交换
+        3. cube 0 + cube 1 + cube 2 + cube 3 : 1 组 16 元素交换
+
+!!! question "Question2"
+    $$
+    f(P_3 P_2 P_1 P_0) = \overline{P_3}\, P_2\, \overline{P_1}\, \overline{P_0}
+    $$
+    
+    ![alt text](photo/24-19.png){style="width:80%;display: block;margin: 20px auto"}
+
+##### 多级 Shuffle exchange
+1. 也称为 **Omega 网络**，是立方体网络的**逆网络**
+
+    ![alt text](photo/24-20.png){style="width:80%;display: block;margin: 20px auto"}
+
+2. **特点**：
+    1. 交换单元的**功能有四种**
+    2. 网络拓扑结构采用 **Shuffle 连接结构 + 四功能交换单元**的形式
+    3. 控制方式采用单元控制
+
+!!! tip "Omega 网络和 n-cube 网络的区别"
+    1. 级间数据流方向不同
+        1. Omega 网络的数据流级次：n−1，n−2，…，1，0
+        2. n-cube 网络的数据流级次：0，1，…，n−1
+    2. 交换单元功能不同
+        1. Omega 网络使用四功能交换单元
+        2. n-cube 网络使用二功能交换单元
+    3. 广播能力不同
+        1. Omega 网络能够实现**一对多广播**功能
+        2. n-cube 网络无法实现该功能
 
 
-任意两个节点相连最多需要 5 步，3 exchanges + 2 shuffles
-
-![alt text](photo/24-12.png){style="width:100%;display: block;margin: 20px auto"}
-
-!!! success "单级互联网络的特点"
-
-
-#### 静态拓扑网络
-
-|Linear array|Circular array||||||||||||
-
-#### 多级互联网络
-
-四功能交叉开关
-
-
-!!! success "SIMD"
-    **优点**：
+!!! success "SIMD **优点**"
     
     1. SIMD 架构可以在**数据级并行**方面充分利用优势，适用于面向矩阵的科学计算、面向多媒体的图像和音频处理器
-    2. SIMD 比 MIMD 更节能，每个数据操作只需获取一条指令
+    2. SIMD 比 MIMD **更节能**，每个数据操作只需获取一条指令
     3. SIMD 允许程序员继续按顺序思考 
+
+---
+## DLP in GPU
+1. **基本思想**
+    1. 异构执行模型：CPU 是主机（Host）；GPU 是设备（Device）
+    2. 为 GPU 开发一种类似 C 语言的编程语言
+    3. 将各种形式的 GPU 并行统一为 **CUDA 线程**
+    4. 编程模型采用**单指令多线程**
+2. **GPU 本质上就是多线程 SIMD 处理器**
+3. **组织**
+    1. 每个数据元素对应一个**线程**
+    2. 多个线程组织成一个**线程块（Block）**
+    3. 多个线程块组织成一个**网格（Grid）**
+4. 线程管理由 **GPU 硬件**完成，而不是应用程序或操作系统负责
+5. **GPU 存储结构**
+    1. GPU Memory（全局内存）：所有 Grid 共享
+    2. Local Memory（局部/共享内存）：同一个 Thread Block 内的所有线程共享
+    3. Private Memory（私有内存）：每个 CUDA Thread 独享
+
+??? abstract "NVIDIA GPU 与向量机"
+    1. 与向量机的相似之处
+        1. 适合处理**数据级并行**问题
+        2. 支持 Scatter-Gather（分散-聚集） 数据传输
+        3. 使用掩码寄存器
+        4. 拥有大型寄存器文件
+    2. 与向量机的不同之处
+        1. 没有标量处理器
+        2. 使用**多线程**来隐藏内存访问延迟
+        3. 拥有大量功能单元，而向量处理器通常只有少量但深度流水化的功能单元
+ 
+---
+## LLP
+**循环级并行**
+
+```c
+for (i = 0; i < 100; i = i + 1) {
+A[i+1] = A[i] + C[i];      /* S1 */
+B[i+1] = B[i] + A[i+1];   /* S2 */
+}
+```
+
+!!! question "Question"
+    ```c
+    for (i=0; i<100; i=i+1) {
+        A[i] = A[i] + B[i]; /* S1 */
+        B[i+1] = C[i] + D[i]; /* S2 */
+    }
+    ```
+
+    本轮的 S2 会影响下一轮的 S1：交换 S1 S2，随后把第一次和最后一次运算提出去，可以改为下面这样，就可以并行。
+
+    ```c
+    A[0] = A[0] + B[0];
+    for (i=0; i<99; i=i+1) {
+        B[i+1] = C[i] + D[i]; /* S2 */
+        A[i+1] = A[i+1] + B[i+1]; /* S1 */
+    }
+    B[100] = C[99] + D[99];
+    ```

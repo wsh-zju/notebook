@@ -39,6 +39,13 @@
   line-height: 1;
 }
 
+.md-typeset h1 { font-size: 1.3rem;margin: 0 0 0.5rem; }
+.md-typeset h2 { font-size: 1.2rem;margin: 1.6rem 0 0.9rem; }
+.md-typeset h3 { font-size: 1.1rem;margin: 1.2rem 0 0.8rem; }
+.md-typeset h4 { font-size: 1.0rem;margin: 1.0rem 0 0.7rem; }
+.md-typeset h5 { font-size: 0.9rem;margin: 0.7rem 0 0.6rem;text-transform: none; }
+.md-typeset h6 { font-size: 0.8rem;margin: 0.6rem 0 0.5rem;text-transform: none; }
+
 /* 正文字体 */
 .md-typeset {
   font-size: .7rem;     /* 字体大小 */
