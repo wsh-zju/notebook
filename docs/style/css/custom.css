@@ -265,3 +265,12 @@ input#mkdocs-content-password {
 .cyan    { color: #00acc1; font-weight: bold; }       /* 青色 - 示例/例题 */
 .blue    { color: #1e88e5; font-weight: bold; }       /* 蓝色 - 定义 */
 .purple  { color: #8e24aa; font-weight: bold; }       /* 紫色 - 原理/机制 */
+
+
+mark.red { background: #f9b9b9; }
+mark.orange { background: #ffd0419d; }
+mark.yellow { background: #ffe600c0; }
+mark.green { background: #b1ffb5; }
+mark.cyan { background: #b5ffff; }
+mark.blue { background: #a0d4ff; }
+mark.purple { background: #f7c0ff;}

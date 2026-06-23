@@ -7,7 +7,7 @@ comment: true
 !!! info "Background"
     假设需要一个 `X` 列表和一个 `Y` 列表，这些列表会使用相似的代码，区别在于列表中存储的类型不同
 
-    **方案选择**
+    **方案选择**:
 
     1. **共同基类**：可能并不可取
     2. **克隆代码**：保持了类型安全但难以管理
@@ -15,14 +15,14 @@ comment: true
 
 1. **模板**：泛型编程，在类或函数定义中使用**类型**作为参数
 
-!!! tip "Tips"
-    1. 模板必须放在**头文件**中
-    2. 类模板的成员函数实现时，也必须放在**头文件**中
+    !!! tip "Tips"
+        1. <mark class="cyan">模板必须放在**头文件**中</mark>
+        2. 类模板的成员函数实现时，也必须放在**头文件**中
 
 2. **模板实例化**：类型被代入模板，创建新的函数体/类定义（进行**语法错误检查、类型检查**）
 
-!!! tip "Tips"
-    如果在不同的编译单元中实例化了相同类型的模板，则在链接时会**自动合并**
+    !!! tip "Tips"
+        如果在不同的编译单元中实例化了相同类型的模板，则在链接时会**自动合并**
 
 !!! question "Question"
     ```cpp
@@ -44,10 +44,8 @@ comment: true
 ### 函数模板
 !!! success "Tips"
     1. 函数模版**是声明不是定义**
-    
-    - 如果在代码中没有调用该函数，则不会真正生成该函数的定义
-    - 如果在代码中调用了该函数，则生成对应的函数定义
-
+        - 如果在代码中没有调用该函数，则不会真正生成该函数的定义
+        - 如果在代码中调用了该函数，则生成对应的函数定义
     2. **模板函数是函数模板实例化的具体函数**
     3. 模板函数和普通函数可以共存
 
@@ -61,51 +59,49 @@ void swap(T& a, T& b) {
 ```
 
 1. **模板参数**可以代表：
-
-- 函数**参数**的类型
-- 函数**返回值**的类型
-- 函数**内部声明**变量的类型
-
+    - 函数**参数**的类型
+    - 函数**返回值**的类型
+    - 函数**内部声明**变量的类型
 2. 推导 `T` 的类型时，所有关联到 `T` 的实参类型**必须完全一致**，不能进行隐式类型转换
 
-```cpp
-swap(int, int);         // 正确
-swap(double, double);   // 正确
-swap(int, double);      // 错误
-```
+    ```cpp
+    swap(int, int);         // 正确
+    swap(double, double);   // 正确
+    swap(int, double);      // 错误
+    ```
 
-3. 如果模板参数无法通过实参推导（**`T` 仅用于函数内部逻辑或作为返回值类型**）时，必须**通过 `<Type>` 语法显式指定**
+3. 如果模板参数<mark>无法通过实参推导</mark>（**`T` 仅用于函数内部逻辑或作为返回值类型**）时，<mark>必须**通过 `<Type>` 语法显式指定**</mark>
 
-```cpp
-template < typename T >
-void foo(void) { }
-foo<int>();   // 类型 T 是 int
-foo<float>(); // 类型 T 是 float
-```
+    ```cpp
+    template < typename T >
+    void foo(void) { }
+    foo<int>();   // 类型 T 是 int
+    foo<float>(); // 类型 T 是 float
+    ```
 
 ### 类模板
 
 1. **声明**：
 
-```cpp
-template <typename T>
-class Stack {
-public:
-    void push(T item) {}
-    T pop() {}
-private:
-    T* items;
-};
-```
+    ```cpp
+    template <typename T>
+    class Stack {
+    public:
+        void push(T item) {}
+        T pop() {}
+    private:
+        T* items;
+    };
+    ```
 
 2. **成员函数定义**：
 
-```cpp
-template <typename T>
-void Stack<T>::push(T item) {}
-template <typename T>
-T Stack<T>::pop() {}
-```
+    ```cpp
+    template <typename T>
+    void Stack<T>::push(T item) {}
+    template <typename T>
+    T Stack<T>::pop() {}
+    ```
 
 !!! tip "Tips"
     如果类模板的成员函数定义放在类外：
@@ -115,92 +111,90 @@ T Stack<T>::pop() {}
 
 3. **使用**：
 
-```cpp
-Stack<int> int_stack;
-Stack<double> double_stack;
-```
+    ```cpp
+    Stack<int> int_stack;
+    Stack<double> double_stack;
+    ```
 
 ---
 ## 模板参数
 
 1. **多个模板参数**：
 
-```cpp
-template <typename T1, typename T2>
-class Pair {}
-```
+    ```cpp
+    template <typename T1, typename T2>
+    class Pair {}
+    ```
 
 2. 模板可以**嵌套**
+    - 模板本身就是**新的类型**
+    - <mark>**注意 `> >` 之间必须有空格**</mark>
 
-- 模板本身就是**新的类型**
-- **注意 `> >` 之间必须有空格**
-
-```cpp
-Vector< Vector< double * > >    // 注意 >> 之间的空格
-```
+    ```cpp
+    Vector< Vector< double * > >    // 注意 >> 之间的空格
+    ```
 
 3. 类型参数**可以很复杂** **e.g.** 函数指针
 
-实例中是一个返回类型为 `int` 的函数指针，参数类型为 `Vector<double>&` 和 `int`
-
-```cpp
-Vector< int (*)(Vector<double>&, int) >     
-```
-
-4. **非类型参数**（可以有默认值）
-
-- **类模板**
+    实例中是一个返回类型为 `int` 的函数指针，参数类型为 `Vector<double>&` 和 `int`
 
     ```cpp
-    template <typename T, int bounds = 100>
-    class FixedVector {
-    public:
-        FixedVector();
-        // ...
-        T& operator[](int);
-    private:
-        T elements[bounds]; // 固定大小的数组
-    };
+    Vector< int (*)(Vector<double>&, int) >     
     ```
 
-- **成员函数实现**
+4. <mark>**非类型参数**（可以有默认值）</mark>
+    - **类模板**
 
-    ```cpp
-    template <typename T, int bounds>
-    T& FixedVector<T, bounds>::operator[](int i) {}
-    ```
+        ```cpp
+        template <typename T, int bounds = 100>
+        class FixedVector {
+        public:
+            FixedVector();
+            // ...
+            T& operator[](int);
+        private:
+            T elements[bounds]; // 固定大小的数组
+        };
+        ```
 
-- **使用**
+    - **成员函数实现**
 
-    ```cpp
-    FixedVector<int, 50> v1;
-    FixedVector<int, 10*5> v2;
-    FixedVector<int> v3; // 使用默认值
-    ```
+        ```cpp
+        template <typename T, int bounds>
+        T& FixedVector<T, bounds>::operator[](int i) {}
+        ```
 
-!!! tip "Tips"
-    **非类型参数**是模板参数，在实例化时会直接变成字面量 **`T elements[100]`**
+    - **使用**
+
+        ```cpp
+        FixedVector<int, 50> v1;
+        FixedVector<int, 10*5> v2;
+        FixedVector<int> v3; // 使用默认值
+        ```
+
+    !!! tip "Tips"
+        **非类型参数**是模板参数，在实例化时会直接变成字面量 **`T elements[100]`**
 
 ## 模板与继承
 1. **模板可以继承自非模板类**：实例化之后的类是 `Base` 类的子类
 
-```cpp
-template <typename A>
-class Derived : public Base { };
-```
+    ```cpp
+    template <typename A>
+    class Derived : public Base { };
+    ```
 
 2. **模板可以继承自模板类**
 
-```cpp
-template <typename A>
-class Derived : public List<B> { };
-```
+    ```cpp
+    template <typename A>
+    class Derived : public List<B> { };
+    ```
 
 3. **非模板类可以继承自模板**
 
-```cpp
-class SupervisorGroup : public List<Employee*> { };
-```
+    ```cpp
+    class SupervisorGroup : public List<Employee*> { };
+    ```
 
 ## 模板与友元
 
@@ -251,8 +245,8 @@ int main() {
 
 #### 类外实现
 
-1. 需要进行**类模板的前向声明和友元函数的声明**
-2. 友元函数**需要**标注 `<T>`
+1. <mark>需要进行**类模板的前向声明和友元函数的声明**</mark>
+2. 友元函数<mark>类内声明**需要**标注 `<T>`</mark>
 3. **实质**：只是声明函数模板是友元，并没有实例化
 
 ```cpp
@@ -298,7 +292,7 @@ int main() {
 
 ## 模板与 `#!cpp static`
 
-**不同模板参数的实例**都拥有一个**独立的静态成员变量**
+<mark>**不同模板参数的实例**都拥有一个**独立的静态成员变量**</mark>
 
 ```cpp
 template <typename T>

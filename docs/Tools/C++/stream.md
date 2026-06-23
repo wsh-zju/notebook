@@ -19,8 +19,8 @@ comment: true
 2. **预定义流**
     1. `cin`：标准输入
     2. `cout`：标准输出
-    3. `cerr`：无缓冲错误（调试输出）
-    4. `clog`：有缓冲错误（调试输出）
+    3. <mark>`cerr`：无缓冲错误（调试输出）</mark>
+    4. <mark>`clog`：有缓冲错误（调试输出）</mark>
 
     ```cpp
     cerr << "Error: File not found!" << endl; // 立即输出
@@ -60,10 +60,10 @@ comment: true
 
 ## 格式化
 
-1. **使用操纵符（manipulators）进行格式化**
+1. **使用<mark class="cyan">操纵符（manipulators）</mark>进行格式化**
     1. 操纵符可以修改流的状态
     2. 需要包含头文件 `#include <iomanip>`
-    3. 修改通常是**持久的**
+    3. <mark>修改通常是**持久的**</mark>
 
     ```cpp
     cin >> hex >> n;          // 将输入解析为十六进制
@@ -96,7 +96,7 @@ comment: true
     cout << "Hello" << tab << "World!" << endl;
     ```
 
-2. **流标志控制格式**
+2. **<mark class="cyan">流标志</mark>控制格式**
     1. 使用操纵符
         1. `setiosflags(flags)`：设置指定的格式标志
         2. `resetiosflags(flags)`：清除指定的格式标志

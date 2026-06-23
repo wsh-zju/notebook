@@ -2,7 +2,7 @@
 comment: true
 ---
 
-# 恢复系统
+# 故障恢复
 
 ## 故障分类
 1. **事务故障**（Transaction Failure）
@@ -27,7 +27,7 @@ comment: true
 
 ---
 ## \* 存储结构
-1. Stable storage（稳定存储）：一种理论上的存储形式，能抵御所有故障
+1. <mark>Stable storage（稳定存储）：一种理论上的存储形式，能抵御所有故障</mark>
 2. **实现**：可通过在不同非易失性介质上**维护多份副本**来实现近似
 
 !!! warning "WARNING：**数据传输过程中发生故障仍可能导致副本不一致**"
@@ -52,14 +52,14 @@ comment: true
 ### **数据访问**
 ![alt text](photo/11-1.png){style="width:50%;display: block;margin: 20px auto"}
 
-1. **物理块**（Physical Blocks） 是驻留在磁盘上的块
-2. **缓冲块**（Buffer Blocks） 是暂时驻留在主存中的块
-3. **磁盘与主存之间**的块移动通过以下两个操作完成：
+1. **物理块**（Physical Blocks）是驻留在磁盘上的块
+2. **缓冲块**（Buffer Blocks）是暂时驻留在主存中的块
+3. <mark>**磁盘与主存之间**的块移动</mark>通过以下两个操作完成：
     1. **input(B)**：将物理块 B 从磁盘传输到主存
     2. **output(B)**：将缓冲块 B 从主存传输到磁盘，并替换磁盘上对应的物理块
 4. 每个事务 Ti 都有自己的**私有工作区（private work-area）**，其中保存该事务访问和更新的所有数据项的本地副本
     1. 数据项 X 在事务 Ti 中的本地副本称为 xi
-5. **系统缓冲区块与事务私有工作区之间**的数据传输通过以下操作完成：
+5. <mark>**系统缓冲区块与事务私有工作区之间**的数据传输</mark>通过以下操作完成：
     1. **read(X)**：将数据项 X 的值赋给本地变量 xi
     2. **write(X)**：将本地变量 xi 的值写入缓冲区块中的数据项 X
 
@@ -75,8 +75,9 @@ comment: true
     1. 基于日志的恢复机制
     2. 使用较少的替代方法：影子分页
 
+---
 ## 基于日志的恢复
-1. 日志保存在**稳定存储（stable storage）**中，是一系列**日志记录**组成的序列，用于记录数据库上的更新活动
+1. <mark>日志保存在**稳定存储（stable storage）**中</mark>，是一系列**日志记录**组成的序列，用于记录数据库上的更新活动
 2. **日志记录**
     1. 当事务 Ti 开始时，会写入一条日志记录来登记自身：**&lt;Ti start&gt;**
     2. 在 Ti 执行 write(X) 之前，必须先写入一条日志记录：**&lt;Ti, X, V1, V2&gt;**
@@ -88,28 +89,31 @@ comment: true
     2. 立即数据库修改（Immediate Database Modification）
 
 ### 延迟数据库修改
-1. **方案**：将所有修改记录到日志中，但把所有**实际写**数据库的操作**推迟到部分提交之后执行**
+1. <mark>**方案**：将所有修改记录到日志中，但把所有**实际写**数据库的操作**推迟到部分提交之后执行**</mark>
 2. 假设事务**串行执行**
-    1. 执行 write(X) 时，产生如下日志记录：**&lt;Ti, X, V&gt;** **（该方案中不需要记录旧值）**
+    1. 执行 write(X) 时，产生如下日志记录：<mark>**&lt;Ti, X, V&gt;** **（该方案中不需要记录旧值）**</mark>
     2. 此时不会真正修改 X，而是将写操作延迟执行
-    3. 最后**读取日志记录，并根据日志文件执行之前被延迟的写操作**
+    3. 提交后**读取日志记录，并根据日志文件执行之前被延迟的写操作**
+3. **恢复规则**：只需要 redo，不需要 undo
+    1. 没有 &lt;Ti commit&gt;，什么都不做
+    2. <mark>有 &lt;Ti commit&gt;，redo(Ti)</mark>
 
-!!! example "Example"
-    **三个时刻的日志状态：**
+    !!! example "Example"
+        **三个时刻的日志状态：**
 
-    ![alt text](photo/11-2.png){style="width:50%;display: block;margin: 20px auto"}
+        ![alt text](photo/11-2.png){style="width:50%;display: block;margin: 20px auto"}
 
-    (a) 不需要执行任何 redo 操作
+        (a) 不需要执行任何 redo 操作
 
-    (b) 由于存在 **&lt;T0 commit&gt;** 必须执行 redo(T0)
+        (b) 由于存在 **&lt;T0 commit&gt;** 必须执行 redo(T0)
 
-    (c) 由于同时存在 **&lt;T1 commit&gt;** 和 **&lt;T0 commit&gt;**，必须先执行 redo(T0) 再执行 redo(T1)
+        (c) 由于同时存在 **&lt;T1 commit&gt;** 和 **&lt;T0 commit&gt;**，必须先执行 redo(T0) 再执行 redo(T1)
 
 ### 立即数据库修改
 1. **方案**：未提交事务的更新在事务提交之前就写入缓冲区，甚至直接写入磁盘
 
     !!! tip "Tips"
-        1. 更新日志记录必须**先于**数据库项写入
+        1. <mark class="green">更新日志记录必须**先于**数据库项写入</mark>
         2. 更新后的数据块可以**在提交之前或之后**写入稳定存储
         3. 数据块输出顺序不要求与写入顺序一致
 
@@ -117,33 +121,35 @@ comment: true
         ![alt text](photo/11-3.png){style="width:50%;display: block;margin: 20px auto"}
 
 2. **恢复过程需要两种操作**：
-    1. **undo(Ti)**：将 Ti 更新过的所有数据恢复为**旧值**；从 Ti 最后一条日志记录**开始向前**扫描
-    2. **redo(Ti)**：将 Ti 更新过的所有数据设置为**新值**；从 Ti 第一条日志记录**开始向后**扫描
+    1. **undo(Ti)**：将 Ti 更新过的所有数据恢复为**旧值**；<mark>从 Ti 最后一条日志记录**开始向前**扫描</mark>
+    2. **redo(Ti)**：将 Ti 更新过的所有数据设置为**新值**；<mark>从 Ti 第一条日志记录**开始向后**扫描</mark>
 
     !!! success "注意"
-        两种操作都必须满足**幂等（Idempotent）**，即：即使执行多次，效果也与执行一次相同。
+        <mark class="green">两种操作都必须满足**幂等（Idempotent）**</mark>，即：即使执行多次，效果也与执行一次相同。
         
         原因：恢复过程中可能重复执行。
 
 3. **崩溃后的恢复规则**
     1. **需要 Undo**：若日志中存在 **&lt;Ti start&gt;** 但不存在 **&lt;Ti commit&gt;**
     2. **需要 Redo**：若日志中同时存在 **&lt;Ti start&gt;** 和 **&lt;Ti commit&gt;**
-    3. **<span class="green">先做 Undo，再做 Redo</span>**
+    3. <mark>**<span class="green">先做 Undo，再做 Redo</span>**</mark>
 
 !!! abstract "原因"
-    对日志中的所有事务执行 redo 和 undo 会**非常慢**，引入检查点
+    对日志中的所有事务执行 redo 和 undo 会**非常慢**，引入 checkpoint
     
     **原因**：系统运行时间越长，日志越大，处理整个日志非常耗时；很多事务的修改实际上已经写入数据库，再次 redo 是不必要的。
 
 4. **检查点（checkpoint）**：定期执行检查点操作
-    1. **执行步骤**：
+    1. **目的**：缩短恢复时需要扫描的日志范围
+    2. **执行步骤**：
         1. 将**主存**中的所有**日志记录**写入**稳定存储**
         2. 将所有已修改缓冲块写入**磁盘**
-        3. 写入日志记录：**&lt;checkpoint L&gt;**，其中 L 是检查点时仍然活跃的事务集合
+        3. <mark>写入日志记录：**&lt;checkpoint L&gt;**，其中 L 是检查点时仍然活跃的事务集合</mark>
         4. 执行检查点期间**暂停**所有更新操作
-    2. 恢复时只需要考虑：
+    3. <mark>**恢复时只需要考虑**：</mark>
         1. 最近一次检查点之前开始、但尚未结束的事务
         2. 检查点之后开始的事务
+    4. <mark>没有提交则 undo；有提交则 redo </mark>
 
         !!! example "Example"
             T1 忽略；T2 和 T3 Redo；T4 Undo
@@ -151,14 +157,14 @@ comment: true
             ![alt text](photo/11-4.png){style="width:50%;display: block;margin: 20px auto"}
 
 ---
-## \* 影子页
+## \* 影子分页
 1. 影子分页是基于日志恢复的替代方案，适用于**事务串行执行**的场景
 2. **核心思想**：在事务生命周期内维护**两张页表**：
     1. 当前页表
-    2. **影子页表**：保存在非易失性存储中，用于**保存事务执行前**的数据库状态
+    2. <mark>**影子页表**：保存在非易失性存储中，用于**保存事务执行前**的数据库状态</mark>
 3. **提交事务**时：将当前页表写入磁盘，使当前页表成为**新的影子页表**
     1. 磁盘固定位置保存着**影子页表指针**，只需修改该指针，使其指向当前页表
-    2. 当该指针成功写入后，事务**正式提交**
+    2. <mark>当该指针成功写入后，事务**正式提交**</mark>
 4. **系统崩溃后**：
     1. 无需恢复过程，新事务可以立即开始，**直接使用影子页表**
     2. 任何未被当前页表、影子页表引用的页面，都应该被释放（垃圾回收）
@@ -170,7 +176,7 @@ comment: true
     2. **提交**开销仍然很高（刷新所有更新页面/刷新页表）
     3. 数据容易**碎片化**，相关页面可能分散在磁盘不同位置
     4. 每次事务完成后，旧版本页面都需要**垃圾回收**
-    5. **很难扩展到并发事务**（基于日志的恢复机制更容易支持并发）
+    5. <mark>**很难扩展到并发事务**（基于日志的恢复机制更容易支持并发）</mark>
 
 ---
 ## 并发事务恢复
@@ -179,18 +185,17 @@ comment: true
     1. 为了支持多个事务并发执行，需要对前面的日志恢复方案进行修改
     2. 所有事务共享：一个磁盘缓冲区、一个日志文件
     3. 一个缓冲块中的数据项可能被一个或多个事务更新
-    4. 假设采用**严格两阶段锁协议**
+    4. <mark class="cyan">假设采用**严格两阶段锁协议**</mark>
 
 ==**系统崩溃后的恢复**==：
 
-1. **第一阶段**
-    1. 首先初始化：undo-list = {}、redo-list = {}
-    2. 从日志<span class="orange">末尾</span>开始向前扫描，直到找到最近的 **&lt;checkpoint L&gt;**
+1. **第一阶段**：构建 **undo-list = {}、redo-list = {}**
+    1. 从日志<span class="orange">末尾</span>开始向前扫描，直到找到最近的 **&lt;checkpoint L&gt;**
         1. 遇到 **&lt;Ti commit&gt;** 则 Ti 加入 redo-list
         2. 遇到 **&lt;Ti start&gt;** 若 Ti 不在 redo-list 中，Ti 加入 undo-list
         3. 遇到 **&lt;Ti abort&gt;** 则 Ti 加入 undo-list
         4. 对于 L 中每个事务 Ti，若 Ti 不在 redo-list，Ti 加入 undo-list
-2. **第二阶段**：恢复继续执行：
+2. **第二阶段**：恢复
     1. **从日志<span class="orange">末尾</span>向前扫描**，直到 undo-list 中每个事务的 **&lt;Ti start&gt;** 都被找到
     2. 扫描过程中对于属于 undo-list 的日志记录，执行 undo
     3. 找到最近的 **&lt;checkpoint L&gt;**，从该检查点开始**<span class="orange">向后</span>扫描，直到日志末尾**
@@ -208,13 +213,24 @@ comment: true
         
         1. 日志缓冲区中的日志块**已满**
         2. 执行了 **log force 操作**，例如执行检查点（Checkpoint）时
+        3. transaction commit
 
+2. **WAL 规则**：数据块写入磁盘前，相关日志必须先写入 stable storage
+3. **恢复算法同时支持**：
+    1. **No-force**：事务提交时，不要求立即把修改过的数据块写入磁盘
+    2. **Steal**：未提交事务修改过的脏块，也可以被写入磁盘
+4. 输出一个 block 到磁盘时，使用 **Latch** 
+5. 数据库 buffer 可以放在 reserved main memory 或 virtual memory
+    1. 如果放在 virtual memory，可能导致额外 I/O，产生 **Dual Paging Problem**
+    2. OS 和 DBMS 都在管理页面，造成重复分页和额外磁盘 I/O
+
+!!! abstract "非易失性存储丢失时的故障"
+    前面默认磁盘不坏；如果磁盘坏了，需要用 **dump / backup**
 
 !!! info "该部分内容详见 PPT"
-    1. 缓冲区管理的部分内容
-    2. 非易失性存储丢失时的故障（Failure with Loss of Nonvolatile Storage）
-    3. \* 高级恢复技术
-    4. \* 远程备份系统（Remote Backup Systems）
+    1. （Failure with Loss of Nonvolatile Storage）
+    2. \* 高级恢复技术
+    3. \* 远程备份系统（Remote Backup Systems）
 
 ---
 ## \* ARIES 恢复算法
@@ -232,26 +248,26 @@ comment: true
 1. **日志序列号（<span class="blue">LSN</span>）**用于唯一标识每条日志记录
     1. **要求**：单调递增、顺序编号
     2. 通常 LSN 是日志文件起始位置的偏移量，便于快速定位日志记录，也容易扩展到多个日志文件
-2. **<span class="blue">Page LSN</span>**：最近一次**已经反映到该页面**上的日志记录对应的 LSN
+2. <mark>**<span class="blue">Page LSN</span>**：最近一次**已经反映到该页面**上的日志记录对应的 LSN</mark>
     1. **作用**：恢复时利用 PageLSN 判断某条日志是否已经应用过，从而避免重复 Redo，保证幂等性
 3. **日志记录**
     1. **<span class="blue">PrevLSN</span>**：同一事务上一条日志记录的 LSN
     2. **日志结构**：`| LSN | TransID | PrevLSN | RedoInfo | UndoInfo |`
     3. ARIES 引入特殊日志：**补偿日志记录（CLR）**
-        1. 用于记录恢复过程中执行的 **Undo 操作**
+        1. <mark>用于记录恢复过程中执行的 **Undo 操作**</mark>
         2. **CLR 本身只需要 Redo，永远不需要 Undo**
         3. **<span class="blue">UndoNextLSN</span>** 表示下一条需要**继续 Undo 的日志记录**
         4. **结构**：`| LSN | TransID | UndoNextLSN | RedoInfo |`
-4. **Dirty Page Table**：记录缓冲区中已经修改过的页面
+4. <mark>**Dirty Page Table**：记录缓冲区中已经修改过的页面</mark>
     1. 对于每个脏页保存**两个重要信息**：
         1. **PageLSN**：页面当前的 PageLSN
-        2. **<span class="blue">RecLSN</span>**
+        2. <mark>**<span class="blue">RecLSN</span>**：某个 page 第一次变脏时对应的日志 LSN</mark>
             1. 当页面**第一次**进入脏页表时：RecLSN 被设置为当前日志末尾位置
             2. RecLSN 会被记录到**检查点**中
             3. **作用**：减少恢复时需要执行的 Redo 工作量
-5. **检查点日志**
+5. <mark>**检查点日志**</mark>
     1. 检查点日志记录**包含**：
-        1. DirtyPageTable
+        1. Dirty Page Table
         2. 活动事务列表：
             1. 所有尚未结束的事务
             2. **<span class="blue">LastLSN</span>**：该事务最近一条日志记录的 LSN
@@ -271,13 +287,13 @@ comment: true
     2. 从最近一次完成的**检查点**日志记录开始
         1. 读取脏页表
         2. 计算 **RedoLSN**：
-            1. RedoLSN = 所有 RecLSN 中的最小值
+            1. <mark>RedoLSN = 所有 RecLSN 中的最小值</mark>
             2. **如果没有脏页**：RedoLSN = Checkpoint记录的LSN
         3. **初始化 undo-list** 为检查点中记录的活动事务列表
         4. 读取每个活动事务对应的 LastLSN
     3. 继续从检查点**向后扫描**
-        1. 如果发现某事务出现日志记录，但不在 undo-list 中，则加入 undo-list
-        2. 发现更新日志记录，如果该页不在 DirtyPageTable 中，则将其加入脏页表，并设置 RecLSN = 当前更新日志记录的LSN
+        1. **加入新事务**：如果发现某事务出现日志记录，但不在 undo-list 中，则加入 undo-list
+        2. **加入新脏页**：发现更新日志记录，如果该页不在 Dirty Page Table 中，则将其加入脏页表，并设置 RecLSN = 当前更新日志记录的 LSN
         3. 发现事务结束记录，从 undo-list 删除该事务，同时持续维护每个事务的 **LastLSN**
 
 === "**Redo Pass**"
@@ -292,5 +308,5 @@ comment: true
     1. 对 undo-list 中的所有事务进行回滚，**从日志尾部向前扫描**
     2. 当需要对更新日志执行 Undo 时，生成 CLR
     3. 对于每个事务，下一条需要 Undo 的日志设为 **LastLSN**
-    4. 每一次，选择所有待撤销 LSN 中**最大**的一个执行 Undo
+    4. 每一次，<mark>选择所有待撤销 LSN 中**最大**的一个执行 Undo</mark>
 

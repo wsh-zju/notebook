@@ -1,5 +1,5 @@
 ---
-comments : True
+comment : True
 ---
 
 # 基本介绍

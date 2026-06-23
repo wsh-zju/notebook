@@ -1,55 +1,55 @@
+---
+comment: true
+---
+
 # 容器
 
 1. **定义**：能够存储任意数量的其他对象的对象
 2. **STL**：标准模板库，是 ISO 标准 C++ 库的一部分，为 C++ 提供**数据结构和算法**
 3. **C++ 标准库**
-
-- `pair`：存储任意类型的两个数据对象的对象
-- **容器**
-    - `vector`：可扩展的数组（动态数组）
-    - `deque`：双端队列（可以在两头伸缩的数组）
-    - `list`：双向链表
-    - `set` & `map`： 集合（唯一性）和映射（键值对）
-- **基础算法**：`sort`, `search`, etc.
-- 库中**所有的标识符**都在 `std` 命名空间里：`#!cpp using namespace std;`
+    - `pair`：存储任意类型的两个数据对象的对象
+    - **容器**
+        - `vector`：可扩展的数组（动态数组）
+        - `deque`：双端队列（可以在两头伸缩的数组）
+        - `list`：双向链表
+        - `set` & `map`： 集合（唯一性）和映射（键值对）
+    - **基础算法**：`sort`, `search`, etc.
+    - 库中**所有的标识符**都在 `std` 命名空间里：`#!cpp using namespace std;`
 
 ## vector
 
 1. **头文件**：`#!cpp #include <vector>`
 2. **特点**
-
-- 能够根据需要**增加其内部容量**
-- 维护着一个私有的计数器，记录当前存储的元素个数 `size()`
-- 会**保持插入元素的顺序**，稍后可以按相同的顺序找回
-
+    - 能够根据需要**增加其内部容量**
+    - 维护着一个私有的计数器，记录当前存储的元素个数 `size()`
+    - 会**保持插入元素的顺序**，稍后可以按相同的顺序找
 3. **函数**
+    - **构造**
 
-- **构造**
+        ```cpp
+        vector<int> v;
+        vector<int> v1(10);   // 指定 v1 的初始容量为 10
+        vector<int> v1(v2);   // 拷贝 v2 的内容到 v1
+        ```
 
-    ```cpp
-    vector<int> v;
-    vector<int> v1(10);   // 指定 v1 的初始容量为 10
-    vector<int> v1(v2);   // 拷贝 v2 的内容到 v1
-    ```
-
-- **末尾添加元素**：`#!cpp push_back(x)`
-- **移除末尾元素**：`#!cpp pop_back()`（返回被移除的元素的值）
-- **插入元素**：`#!cpp insert(pos, x)`
-- **删除元素**：`#!cpp erase(pos)`
-- **查找元素**：`#!cpp find(last, end, x)`（在指定区间）
-- **计算容量**：`#!cpp capacity()`
-- **交换**：`#!cpp swap(v2)`
-- **清空所有元素**：`#!cpp clear()`
+    - **末尾添加元素**：`#!cpp push_back(x)`
+    - **移除末尾元素**：`#!cpp pop_back()`（返回被移除的元素的值）
+    - **插入元素**：`#!cpp insert(pos, x)`
+    - **删除元素**：`#!cpp erase(pos)`
+    - **查找元素**：`#!cpp find(last, end, x)`（在指定区间）
+    - **计算容量**：`#!cpp capacity()`
+    - **交换**：`#!cpp swap(v2)`
+    - **清空所有元素**：`#!cpp clear()`
   
-!!! Example "其余相关操作"
-    1. `#!cpp v.empty()`：判断容器是否为空（返回 `true` 或 `false`）
-    2. `==, !=, <, >, <=, >=`：比较两个 `vector`
-    3. `#!cpp v.at(i)`：访问第 `i` 个元素（检查越界，安全）
-    4. `#!cpp v[i]`：访问第 `i` 个元素（不检查越界，速度快）
-    5. `#!cpp v.front()`：访问第一个元素
-    6. `#!cpp v.back()`：访问最后一个元素
-    7. `#!cpp v.begin()`：返回指向第一个元素的**迭代器**
-    8. `#!cpp v.end()`：返回指向最后一个元素**之后的位置**的迭代器（形成 `[begin, end)` 区间）
+    !!! Example "其余相关操作"
+        1. `#!cpp v.empty()`：判断容器是否为空（返回 `true` 或 `false`）
+        2. `==, !=, <, >, <=, >=`：比较两个 `vector`
+        3. `#!cpp v.at(i)`：访问第 `i` 个元素（<mark>检查越界，安全</mark>）
+        4. `#!cpp v[i]`：访问第 `i` 个元素（不检查越界，速度快）
+        5. `#!cpp v.front()`：访问第一个元素
+        6. `#!cpp v.back()`：访问最后一个元素
+        7. `#!cpp v.begin()`：返回指向第一个元素的<mark>**迭代器**</mark>
+        8. `#!cpp v.end()`：返回指向最后一个元素**之后的位置**的迭代器（形成 `[begin, end)` 区间）
 
 !!! abstract "泛型类"
     ```cpp
@@ -67,13 +67,12 @@
 
 1. **头文件**：`#!cpp #include <list>`
 2. **函数**（只列出与 `#!cpp vector` 不同的函数）
-
-- **添加头部元素**：`#!cpp push_front(x)`
-- **移除头部元素**：`#!cpp pop_front()`
-- **删除指定区间的元素**：`#!cpp erase(pos1, pos2)`
+    - **添加头部元素**：`#!cpp push_front(x)`
+    - **移除头部元素**：`#!cpp pop_front()`
+    - **删除指定区间的元素**：`#!cpp erase(pos1, pos2)`
 
 !!! warning "Warning"
-    当使用 `a = list.begin()` 和 `b = list.end()` 时，`a` 不一定小于`b`
+    当使用 `a = list.begin()` 和 `b = list.end()` 时，<mark>`a` 不一定小于`b`</mark>
 
     ```cpp
     for ( iterator a = list.begin(); a != list.end(); a++ ){}
@@ -81,10 +80,10 @@
     ```
 
 !!! abstract "容器的选择"
-    1. 除非有特殊原因，否则请优先使用 `vector`
+    1. 除非有特殊原因，否则<mark class="cyan">请优先使用 `vector`</mark>
     2. 如果程序包含**大量小型元素且空间开销比较重要**，请不要使用 `list` 或 `forward_list`
-    3. 如果程序需要对元素进行**随机访问**，请使用 `vector` 或 `deque` （`vector` 是动态分配的数组，而 `deque` 是链接块数组）
-    4. 如果程序需要**在容器中间插入元素**，请使用 `list` 或 `forward_list`
+    3. 如果程序需要对元素进行<mark class="cyan">**随机访问**</mark>，请使用 `vector` 或 `deque` （`vector` 是动态分配的数组，而 `deque` 是链接块数组）
+    4. 如果程序需要**在容器<mark class="cyan">中间</mark>插入元素**，请使用 `list` 或 `forward_list`
     5. 如果程序需要在容器**头部和尾部**（但不在中间）插入元素，请使用 `deque`
 
 ## map
@@ -96,36 +95,44 @@ m["apple"] = 10;
 
 1. **头文件**：`#!cpp #include <map>`
 2. **映射**（map）是一种关联容器，按照**特定顺序**存储由**键值和映射值**组合而成的元素
-    1. 在映射中，键值通常用于对元素进行**排序和唯一标识**，而映射值则存储与该键关联的内容
-    2. 映射中的映射值可以通过对应的键，使用 **`[]`** 直接访问
+    1. 在映射中，键值通常用于对元素进行<mark>**排序和唯一标识**</mark>，而映射值则存储与该键关联的内容
+    2. 映射中的映射值可以通过对应的键，使用 **`[]`** 直接访问，<mark>不存在就创建</mark>
     3. 映射通常实现为**二叉搜索树**
-3. **关联容器的 `insert`**
-    1. `insert().first`：这个元素的位置
+3. **关联容器的 `insert`**：返回 `pair<iter,bool>`
+    1. `insert().first`：这个元素的位置（<mark>迭代器</mark>）
     2. `insert().second`：表示这次插入是否真的成功
+
+    ```c++
+    map<string, int> m;
+    auto r = m.insert({"apple", 10});
+    // r.first 指向 ("apple",10), r.second = true
+    cout << result.second << endl;          // 1 (true)
+    cout << result.first->first << endl;    // apple
+    cout << result.first->second << endl;   // 10
+    ```
 
 ## iterator
 
 1. **声明**：
 
-```cpp
-list<int>::iterator li;  // :: 解析（表示 iterator 是 list 内部的）
-```
-
-2. `begin()` 和 `end()` 函数返回指向容器中第一个和最后一个元素后一个位置的**迭代器**
-
-- **连续内存**
-    
     ```cpp
-    for (p=x.begin(); p<x.end(); p++)
-        cout << *p << " ";
+    list<int>::iterator li;  // :: 解析（表示 iterator 是 list 内部的）
     ```
 
-- **非连续内存**
+2. `begin()` 和 `end()` 函数返回指向容器中第一个和<mark>最后一个元素后一个位置</mark>的**迭代器**
+    1. **连续内存**
+        
+        ```cpp
+        for (p=x.begin(); p<x.end(); p++)
+            cout << *p << " ";
+        ```
 
-    ```cpp
-    for (p=s.begin(); p!=s.end(); p++)
-        cout << *p << " ";
-    ```
+    2. **非连续内存**
+
+        ```cpp
+        for (p=s.begin(); p!=s.end(); p++)
+            cout << *p << " ";
+        ```
 
 3. 可以进行**自增操作** `++li`：将迭代器移动到容器中的下一个元素
 4. 可以找到迭代器**指向的元素** `*li`
@@ -162,7 +169,7 @@ list<int>::iterator li;  // :: 解析（表示 iterator 是 list 内部的）
     - 易于实现
     - 不需要预先初始化迭代器
 
-    **Cons**：
+    <mark>**Cons**：</mark>
 
     - 不能直接访问相应的元素索引
     - 不能**逆序**遍历元素
