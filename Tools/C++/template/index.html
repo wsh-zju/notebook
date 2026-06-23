@@ -3363,7 +3363,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5751,7 +5751,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 1397 字</span>
+    <span>约 1419 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5764,7 +5764,7 @@
 <div class="admonition info">
 <p class="admonition-title">Background</p>
 <p>假设需要一个 <code>X</code> 列表和一个 <code>Y</code> 列表，这些列表会使用相似的代码，区别在于列表中存储的类型不同</p>
-<p><strong>方案选择</strong></p>
+<p><strong>方案选择</strong>:</p>
 <ol>
 <li><strong>共同基类</strong>：可能并不可取</li>
 <li><strong>克隆代码</strong>：保持了类型安全但难以管理</li>
@@ -5772,22 +5772,24 @@
 </ol>
 </div>
 <ol>
-<li><strong>模板</strong>：泛型编程，在类或函数定义中使用<strong>类型</strong>作为参数</li>
-</ol>
+<li>
+<p><strong>模板</strong>：泛型编程，在类或函数定义中使用<strong>类型</strong>作为参数</p>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
 <ol>
-<li>模板必须放在<strong>头文件</strong>中</li>
+<li><mark class="cyan">模板必须放在<strong>头文件</strong>中</mark></li>
 <li>类模板的成员函数实现时，也必须放在<strong>头文件</strong>中</li>
 </ol>
 </div>
-<ol start="2">
-<li><strong>模板实例化</strong>：类型被代入模板，创建新的函数体/类定义（进行<strong>语法错误检查、类型检查</strong>）</li>
-</ol>
+</li>
+<li>
+<p><strong>模板实例化</strong>：类型被代入模板，创建新的函数体/类定义（进行<strong>语法错误检查、类型检查</strong>）</p>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
 <p>如果在不同的编译单元中实例化了相同类型的模板，则在链接时会<strong>自动合并</strong></p>
 </div>
+</li>
+</ol>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -5809,13 +5811,11 @@
 <div class="admonition success">
 <p class="admonition-title">Tips</p>
 <ol>
-<li>函数模版<strong>是声明不是定义</strong></li>
-</ol>
-<ul>
+<li>函数模版<strong>是声明不是定义</strong><ul>
 <li>如果在代码中没有调用该函数，则不会真正生成该函数的定义</li>
 <li>如果在代码中调用了该函数，则生成对应的函数定义</li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>模板函数是函数模板实例化的具体函数</strong></li>
 <li>模板函数和普通函数可以共存</li>
 </ol>
@@ -5833,25 +5833,23 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ol>
-<li><strong>模板参数</strong>可以代表：</li>
-</ol>
-<ul>
+<li><strong>模板参数</strong>可以代表：<ul>
 <li>函数<strong>参数</strong>的类型</li>
 <li>函数<strong>返回值</strong>的类型</li>
 <li>函数<strong>内部声明</strong>变量的类型</li>
 </ul>
-<ol start="2">
-<li>推导 <code>T</code> 的类型时，所有关联到 <code>T</code> 的实参类型<strong>必须完全一致</strong>，不能进行隐式类型转换</li>
-</ol>
+</li>
+<li>
+<p>推导 <code>T</code> 的类型时，所有关联到 <code>T</code> 的实参类型<strong>必须完全一致</strong>，不能进行隐式类型转换</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">swap</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">);</span><span class="w">         </span><span class="c1">// 正确</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">swap</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span><span class="w">   </span><span class="c1">// 正确</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">swap</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span><span class="w">      </span><span class="c1">// 错误</span>
 </code></pre></div></td></tr></table></div>
-<ol start="3">
-<li>如果模板参数无法通过实参推导（<strong><code>T</code> 仅用于函数内部逻辑或作为返回值类型</strong>）时，必须<strong>通过 <code>&lt;Type&gt;</code> 语法显式指定</strong></li>
-</ol>
+</li>
+<li>
+<p>如果模板参数<mark>无法通过实参推导</mark>（<strong><code>T</code> 仅用于函数内部逻辑或作为返回值类型</strong>）时，<mark>必须<strong>通过 <code>&lt;Type&gt;</code> 语法显式指定</strong></mark></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -5860,10 +5858,12 @@
 <a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">foo</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="w">   </span><span class="c1">// 类型 T 是 int</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">foo</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span><span class="w"> </span><span class="c1">// 类型 T 是 float</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <h3 id="_4">类模板<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>声明</strong>：</li>
-</ol>
+<li>
+<p><strong>声明</strong>：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -5880,9 +5880,9 @@
 <a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="n">T</span><span class="o">*</span><span class="w"> </span><span class="n">items</span><span class="p">;</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<ol start="2">
-<li><strong>成员函数定义</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>成员函数定义</strong>：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
@@ -5891,6 +5891,8 @@
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">T</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">pop</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
 <p>如果类模板的成员函数定义放在类外：</p>
@@ -5900,39 +5902,41 @@
 </ol>
 </div>
 <ol start="3">
-<li><strong>使用</strong>：</li>
-</ol>
+<li>
+<p><strong>使用</strong>：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">Stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">int_stack</span><span class="p">;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">Stack</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">double_stack</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <hr />
 <h2 id="_5">模板参数<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>多个模板参数</strong>：</li>
-</ol>
+<li>
+<p><strong>多个模板参数</strong>：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T1</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span><span class="w"> </span><span class="nc">T2</span><span class="o">&gt;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Pair</span><span class="w"> </span><span class="p">{}</span>
 </code></pre></div></td></tr></table></div>
-<ol start="2">
-<li>模板可以<strong>嵌套</strong></li>
-</ol>
+</li>
+<li>
+<p>模板可以<strong>嵌套</strong></p>
 <ul>
 <li>模板本身就是<strong>新的类型</strong></li>
-<li><strong>注意 <code>&gt; &gt;</code> 之间必须有空格</strong></li>
+<li><mark><strong>注意 <code>&gt; &gt;</code> 之间必须有空格</strong></mark></li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">Vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">Vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&gt;</span><span class="w">    </span><span class="c1">// 注意 &gt;&gt; 之间的空格</span>
 </code></pre></div></td></tr></table></div>
-<ol start="3">
-<li>类型参数<strong>可以很复杂</strong> <strong>e.g.</strong> 函数指针</li>
-</ol>
+</li>
+<li>
+<p>类型参数<strong>可以很复杂</strong> <strong>e.g.</strong> 函数指针</p>
 <p>实例中是一个返回类型为 <code>int</code> 的函数指针，参数类型为 <code>Vector&lt;double&gt;&amp;</code> 和 <code>int</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">Vector</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="n">Vector</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&amp;</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w">     </span>
 </code></pre></div></td></tr></table></div>
-<ol start="4">
-<li><strong>非类型参数</strong>（可以有默认值）</li>
-</ol>
+</li>
+<li>
+<p><mark><strong>非类型参数</strong>（可以有默认值）</mark></p>
 <ul>
 <li>
 <p><strong>类模板</strong></p>
@@ -5976,26 +5980,30 @@
 <p class="admonition-title">Tips</p>
 <p><strong>非类型参数</strong>是模板参数，在实例化时会直接变成字面量 <strong><code>T elements[100]</code></strong></p>
 </div>
+</li>
+</ol>
 <h2 id="_6">模板与继承<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>模板可以继承自非模板类</strong>：实例化之后的类是 <code>Base</code> 类的子类</li>
-</ol>
+<li>
+<p><strong>模板可以继承自非模板类</strong>：实例化之后的类是 <code>Base</code> 类的子类</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">A</span><span class="o">&gt;</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Base</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<ol start="2">
-<li><strong>模板可以继承自模板类</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>模板可以继承自模板类</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">A</span><span class="o">&gt;</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Derived</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">B</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
-<ol start="3">
-<li><strong>非模板类可以继承自模板</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>非模板类可以继承自模板</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SupervisorGroup</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Employee</span><span class="o">*&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <h2 id="_7">模板与友元<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="_8"><strong>非模板友元</strong><a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <ol>
@@ -6067,8 +6075,8 @@
 <h3 id="_9"><strong>模板友元</strong><a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <h4 id="_10">类外实现<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <ol>
-<li>需要进行<strong>类模板的前向声明和友元函数的声明</strong></li>
-<li>友元函数<strong>需要</strong>标注 <code>&lt;T&gt;</code></li>
+<li><mark>需要进行<strong>类模板的前向声明和友元函数的声明</strong></mark></li>
+<li>友元函数<mark>类内声明<strong>需要</strong>标注 <code>&lt;T&gt;</code></mark></li>
 <li><strong>实质</strong>：只是声明函数模板是友元，并没有实例化</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -6136,7 +6144,7 @@
 <a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="static">模板与 <code class="highlight"><span class="k">static</span></code><a class="headerlink" href="#static" title="Permanent link">&para;</a></h2>
-<p><strong>不同模板参数的实例</strong>都拥有一个<strong>独立的静态成员变量</strong></p>
+<p><mark><strong>不同模板参数的实例</strong>都拥有一个<strong>独立的静态成员变量</strong></mark></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-20-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-20-3"> 3</a></span>
@@ -6201,7 +6209,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月7日 20:13:28 CST">2026年5月7日 20:13:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

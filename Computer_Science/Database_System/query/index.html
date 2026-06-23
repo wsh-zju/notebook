@@ -3411,15 +3411,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sorting-fold" class="md-nav__link">
+  <a href="#sorting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * Sorting [fold]
+        * Sorting
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* Sorting [fold]">
+    <nav class="md-nav" aria-label="* Sorting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3559,12 +3559,12 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * 表达式的评估
+        * 表达式求值
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* 表达式的评估">
+    <nav class="md-nav" aria-label="* 表达式求值">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3701,7 +3701,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5775,15 +5775,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sorting-fold" class="md-nav__link">
+  <a href="#sorting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * Sorting [fold]
+        * Sorting
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* Sorting [fold]">
+    <nav class="md-nav" aria-label="* Sorting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5923,12 +5923,12 @@
   <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
-        * 表达式的评估
+        * 表达式求值
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="* 表达式的评估">
+    <nav class="md-nav" aria-label="* 表达式求值">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6041,14 +6041,14 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 4787 字</span>
+    <span>约 4959 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 16 分钟</span>
+    <span>预计阅读 17 分钟</span>
 </div>
 
 <div class="admonition quote">
@@ -6062,47 +6062,40 @@
 <h2 id="_2">基本步骤<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><img alt="alt text" src="../photo/8-1.png" style="width:50%;display: block;margin: 20px auto" /></p>
 <ol>
-<li><strong>语法分析与翻译</strong>：得到解析树和关系代数</li>
-</ol>
-<ul>
+<li><strong>语法分析与翻译</strong>：得到解析树和关系代数<ul>
 <li>语法分析器<strong>检查语法</strong>，<strong>验证关系</strong></li>
-<li>将查询翻译成其内部形式——<strong>扩展关系代数</strong></li>
+<li>将查询翻译成其内部形式——<mark><strong>扩展关系代数</strong></mark></li>
 </ul>
-<ol start="2">
-<li><strong>优化</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>优化</strong><ul>
 <li><strong>原因</strong>：<ul>
 <li>对于一个给定的 SQL 查询语句，可能存在很多<strong>等价的关系表达式</strong></li>
 <li>每个关系代数操作都可以使用几种<strong>不同的算法</strong>来执行</li>
 </ul>
 </li>
-<li><strong>目标</strong>：从所有等价的执行计划中选择代价最低的一个，衡量代价时<strong>考虑两个因素</strong>：<ul>
+<li><strong>目标</strong>：<mark>从所有等价的执行计划中选择代价最低的一个</mark>，衡量代价时<strong>考虑两个因素</strong>：<ul>
 <li>执行所使用的算法</li>
 <li>来自数据库目录的统计信息 <strong>e.g.</strong> 每个关系中的元组数量、元组的大小等</li>
 </ul>
 </li>
 </ul>
-<ol start="3">
-<li><strong>执行</strong>（evaluation）：查询执行引擎接收查询<strong>执行计划</strong>，执行该计划，并返回查询的答案</li>
-</ol>
-<ul>
-<li><strong>执行计划</strong>：规定了详细执行策略的带注释表达式<ul>
+</li>
+<li><strong>执行</strong>（evaluation）：查询执行引擎接收查询<strong>执行计划</strong>，执行该计划，并返回查询的答案<ul>
+<li><mark><strong>执行计划</strong></mark>：规定了详细执行策略的带注释表达式<ul>
 <li>精确定义每个操作所使用的<strong>算法</strong></li>
 <li>以及操作执行如何进行协调</li>
 </ul>
 </li>
 </ul>
+</li>
+</ol>
+<hr />
 <h2 id="_3">查询成本的度量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>代价通常衡量为响应查询所需的<strong>总耗时</strong>（total elapsed time）</li>
-<li>
-<p><strong>total elapsed time = disk access + CPU + network communication</strong></p>
-</li>
+<li><strong>total elapsed time = disk access + CPU + network communication</strong></li>
 <li>
 <p><strong>disk access</strong>：主要代价，且相对容易估算</p>
-</li>
-</ol>
 <ul>
 <li>
 <p>衡量<strong>考虑因素</strong>：</p>
@@ -6117,13 +6110,13 @@
 </div>
 </li>
 </ul>
-<ol start="4">
-<li><strong>计算公式</strong>：为简单起见，仅使用<strong>从磁盘传输的块数和寻道次数</strong>作为代价衡量指标</li>
-</ol>
+</li>
+<li>
+<p><strong>计算公式</strong>：为简单起见，仅使用<strong>从磁盘传输的块数和寻道次数</strong>作为代价衡量指标</p>
 <ul>
 <li><span class="arithmatex">\(t_T\)</span>：传输一个块的时间（<span class="arithmatex">\(\approx 0.1ms\)</span>）</li>
 <li><span class="arithmatex">\(t_S\)</span>：一次寻道的时间（<span class="arithmatex">\(\approx 4ms\)</span>）</li>
-<li><strong><span class="arithmatex">\(b\)</span> 次块传输加上 <span class="arithmatex">\(S\)</span> 次寻道的代价</strong>：<span class="arithmatex">\(b * t_T + S * t_S\)</span></li>
+<li><mark class="orange"><strong><span class="arithmatex">\(b\)</span> 次块传输加上 <span class="arithmatex">\(S\)</span> 次寻道的代价</strong>：<span class="arithmatex">\(b * t_T + S * t_S\)</span></mark></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -6132,6 +6125,8 @@
 <li>在代价公式中，不包括<strong>将最终结果写回磁盘</strong>的代价</li>
 </ol>
 </div>
+</li>
+</ol>
 <div class="admonition abstract">
 <p class="admonition-title">代价影响因素：主存中缓冲区的大小</p>
 <ol>
@@ -6150,41 +6145,33 @@
 <div class="tabbed-block">
 <ol>
 <li><strong>线性搜索</strong>：扫描每个文件块并测试所有记录是否满足选择条件</li>
-<li><strong>代价估计</strong> </li>
-</ol>
-<ul>
-<li><span class="arithmatex">\(b_r\)</span> 表示包含关系 <span class="arithmatex">\(r\)</span> 中记录的块数</li>
-<li><strong>非键属性</strong>：代价 = <span class="arithmatex">\(b_r\)</span> 次块传输 + 1 次寻道 </li>
-<li><strong>键属性</strong>：代价 = <span class="arithmatex">\((b_r / 2)\)</span> 次块传输 + 1 次寻道<ul>
-<li>由于使用的<strong>主键具有唯一性</strong>，可以在找到记录后停止）</li>
+<li><strong>代价估计</strong> <ul>
+<li><mark class="cyan"><span class="arithmatex">\(b_r\)</span> 表示包含关系 <span class="arithmatex">\(r\)</span> 中记录的块数</mark></li>
+<li><strong>非键属性</strong>：<mark class="orange">代价</mark> = <span class="arithmatex">\(b_r\)</span> 次块传输 + 1 次寻道 </li>
+<li><strong>键属性</strong>：<mark class="orange">代价</mark> = <span class="arithmatex">\((b_r / 2)\)</span> 次块传输 + 1 次寻道<ul>
+<li>由于使用的<strong>主键具有唯一性</strong>，<mark>可以在找到记录后停止</mark></li>
 <li><span class="arithmatex">\((b_r / 2)\)</span> 是平均代价估算</li>
 </ul>
 </li>
 </ul>
-<ol start="3">
+</li>
 <li><strong>适用条件</strong>：无论选择条件、文件中的记录排序或索引可用性如何，<strong>都可以应用线性搜索</strong></li>
 </ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>适用条件</strong></li>
-</ol>
-<ul>
+<li><strong>适用条件</strong><ul>
 <li>针对<strong>排序</strong>属性的<strong>等值比较</strong> <strong>e.g.</strong> <code>WHERE a = 5</code></li>
 <li>关系的块在磁盘上是<strong>连续存储的</strong></li>
 </ul>
-<ol start="2">
-<li><strong>代价估计</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>键属性</strong>：代价 = <span class="arithmatex">\(\lceil \log_2(b_r) \rceil\)</span> 次块传输 + <span class="arithmatex">\(\lceil \log_2(b_r) \rceil\)</span> 次寻道 </p>
 </li>
+<li><strong>代价估计</strong><ul>
+<li><strong>键属性</strong>：<mark class="orange">代价</mark> = <span class="arithmatex">\(\lceil \log_2(b_r) \rceil\)</span> 次块传输 + <span class="arithmatex">\(\lceil \log_2(b_r) \rceil\)</span> 次寻道 </li>
 <li>
-<p><strong>非键属性</strong>：需要加上包含满足选择条件的记录的<strong>块数</strong></p>
+<p><mark><strong>非键属性</strong>：需要加上包含满足选择条件的记录的<strong>块数</strong></mark></p>
 <ul>
 <li><strong>块传输</strong> = <span class="arithmatex">\(\lceil \log_2(b_r) \rceil + \lceil sc(A, r) / f_r \rceil - 1\)</span></li>
-<li>其中 <span class="arithmatex">\(sc(A, r)\)</span> 是满足选择条件的记录数，<span class="arithmatex">\(f_r\)</span> 是每个块的记录数</li>
+<li>其中 <mark class="cyan"><span class="arithmatex">\(sc(A, r)\)</span> 是满足选择条件的记录数，<span class="arithmatex">\(f_r\)</span> 是每个块的记录数</mark></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">解释</p>
@@ -6196,6 +6183,8 @@
 </div>
 </li>
 </ul>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -6208,46 +6197,40 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li><strong>A3: 键上的等值比较</strong>：检索满足相应等值条件的<strong>单条记录</strong></li>
-</ol>
-<ul>
-<li><strong>代价</strong> = <span class="arithmatex">\((h_i + 1) * (t_T + t_S)\)</span>，其中 <span class="arithmatex">\(h_i\)</span> 为<strong>索引树高</strong>（层数）</li>
+<li><strong>A3: 键上的等值比较</strong>：检索满足相应等值条件的<strong>单条记录</strong><ul>
+<li><mark class="orange"><strong>代价</strong></mark> = <span class="arithmatex">\((h_i + 1) * (t_T + t_S)\)</span>，其中 <span class="arithmatex">\(h_i\)</span> 为<strong>索引树高</strong>（层数）</li>
 <li>遍历索引树的每一层找到指向数据块的指针，读取数据块</li>
 </ul>
-<ol start="2">
-<li><strong>A4: 非键上的等值比较</strong>：检索满足相应等值条件的<strong>多条记录</strong></li>
-</ol>
-<ul>
+</li>
+<li><strong>A4: 非键上的等值比较</strong>：检索满足相应等值条件的<strong>多条记录</strong><ul>
 <li>记录将位于<strong>连续的块</strong>中（主索引存在于<strong>顺序文件</strong>中）</li>
-<li>包含匹配记录的<strong>块数</strong>：<span class="arithmatex">\(b = \lceil sc(A, r) / f_r \rceil\)</span></li>
-<li><strong>代价</strong> = <span class="arithmatex">\(h_i * (t_T + t_S) + t_S + t_T * b\)</span> = <span class="arithmatex">\((h_i + b) * t_T + (h_i + 1) * t_S\)</span></li>
+<li><mark class="cyan">包含匹配记录的<strong>块数</strong>：<span class="arithmatex">\(b = \lceil sc(A, r) / f_r \rceil\)</span></mark></li>
+<li><mark class="orange"><strong>代价</strong></mark> = <span class="arithmatex">\(h_i * (t_T + t_S) + t_S + t_T * b\)</span> = <span class="arithmatex">\((h_i + b) * t_T + (h_i + 1) * t_S\)</span></li>
 </ul>
+</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>搜索码是候选码</strong>：检索单条记录</li>
-</ol>
-<ul>
-<li><strong>代价</strong> = <span class="arithmatex">\((h_i + 1) * (t_T + t_S)\)</span></li>
+<li><strong>搜索码是候选码</strong>：检索单条记录<ul>
+<li><mark class="orange"><strong>代价</strong></mark> = <span class="arithmatex">\((h_i + 1) * (t_T + t_S)\)</span></li>
 </ul>
-<ol start="2">
-<li><strong>搜索码不是候选码</strong>：检索多条记录</li>
-</ol>
-<ul>
+</li>
+<li><strong>搜索码不是候选码</strong>：检索多条记录       <ul>
 <li>遍历索引树，找到对应的辅助索引</li>
 <li>最坏情况下，存储桶中 <span class="arithmatex">\(n\)</span> 条匹配记录中的每一条都可能位于不同的块中，<strong>都需要进行一次块传输和寻道</strong></li>
-<li><strong>代价</strong> = <span class="arithmatex">\((h_i + n) * (t_T + t_S)\)</span></li>
+<li><mark class="orange"><strong>代价</strong></mark> = <span class="arithmatex">\((h_i + n) * (t_T + t_S)\)</span></li>
 <li>代价可能非常高，可能比线性扫描更糟糕</li>
 </ul>
+</li>
+</ol>
 </div>
 </div>
 </div>
 <h3 id="_5">非等值比较<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>比较符：<span class="arithmatex">\(&gt;, &gt;=, &lt;, &lt;=, &lt;&gt;\)</span>，与等值比较的不同之处在于<strong>选择范围大</strong></li>
-<li>形式为 <span class="arithmatex">\(\sigma_{A \le V}(r)\)</span> 或 <span class="arithmatex">\(\sigma_{A \ge V}(r)\)</span> 的选择的<strong>实现方式</strong>：</li>
-</ol>
-<ul>
+<li>形式为 <span class="arithmatex">\(\sigma_{A \le V}(r)\)</span> 或 <span class="arithmatex">\(\sigma_{A \ge V}(r)\)</span> 的选择的<strong>实现方式</strong>：<ol>
 <li>线性文件扫描（A1）</li>
 <li>二分搜索（A2）</li>
 <li>
@@ -6270,32 +6253,30 @@
 </div>
 </div>
 </li>
-</ul>
+</ol>
+</li>
+</ol>
 <h3 id="_6">复杂选择<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">合取</label><label for="__tabbed_4_2">析取</label><label for="__tabbed_4_3">否定</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">AND</label><label for="__tabbed_4_2">OR</label><label for="__tabbed_4_3">NOT</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><span class="arithmatex">\(\sigma_{\theta1 \wedge \theta2 \wedge \dots \wedge \theta n}(r)\)</span></p>
 <ol>
-<li><strong>A8: 使用单个索引</strong></li>
-</ol>
-<ul>
+<li><strong>A8: 使用单个索引</strong><ul>
 <li>从 <span class="arithmatex">\(n\)</span> 个条件 <span class="arithmatex">\(\theta_1 \dots \theta_n\)</span> 中选择<strong>代价最小</strong>的 <span class="arithmatex">\(\theta_i\)</span> 先执行</li>
 <li>返回元组提取到内存缓冲区后，对元组测试其他条件</li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>A9: 使用复合索引</strong>：如果有合适的<strong>复合（多码）索引</strong>可用，则使用它</li>
-<li><strong>A10: 通过标识符交集实现</strong></li>
-</ol>
-<ul>
+<li><strong>A10: 通过标识符交集实现</strong><ul>
 <li><strong>前提</strong>：参与合取的条件<strong>都有带记录指针的索引</strong></li>
 <li>对每个条件使用相应的索引得到满足条件的指针，并<strong>取交集</strong></li>
 <li>再从文件中提取记录</li>
 <li>如果<strong>某些条件没有索引</strong>，则先对有索引的条件取交集并提取记录到内存，再<strong>在内存中测试那些没有索引的条件</strong></li>
 </ul>
+</li>
+</ol>
 </div>
 <div class="tabbed-block">
-<p><span class="arithmatex">\(\sigma_{\theta1 \vee \theta2 \vee \dots \vee \theta n}(r)\)</span></p>
 <p><strong>A10: 通过标识符并集实现</strong>：</p>
 <ul>
 <li><strong>前提</strong>：所有条件<strong>都有可用索引</strong>（否则使用<strong>线性扫描</strong>）</li>
@@ -6303,7 +6284,6 @@
 </ul>
 </div>
 <div class="tabbed-block">
-<p><span class="arithmatex">\(\sigma_{\neg\theta}(r)\)</span></p>
 <ol>
 <li>对文件使用<strong>线性扫描</strong></li>
 <li>如果满足 <span class="arithmatex">\(\neg\theta\)</span> 的<strong>记录非常少</strong>，且<strong>索引</strong>适用于 <span class="arithmatex">\(\theta\)</span>：<strong>使用索引</strong>找到满足条件的记录并从文件中提取</li>
@@ -6311,10 +6291,11 @@
 </div>
 </div>
 </div>
-<h2 id="sorting-fold">* Sorting [fold]<a class="headerlink" href="#sorting-fold" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="sorting">* Sorting<a class="headerlink" href="#sorting" title="Permanent link">&para;</a></h2>
 <ol>
-<li>数据排序的<strong>两种情况</strong>：</li>
-</ol>
+<li>
+<p>数据排序的<strong>两种情况</strong>：</p>
 <ul>
 <li>输出请求 <strong><code>order by</code></strong></li>
 <li>可以<strong>快速实现 <code>join</code></strong> 操作</li>
@@ -6323,30 +6304,32 @@
 <p class="admonition-title">Warning</p>
 <p>我们可以在关系上建立索引，然后使用<strong>该索引按排序顺序</strong>读取关系。但这<strong>只是在逻辑上、而非物理上</strong>对关系进行了排序，并可能导致每个元组<strong>都要进行一次磁盘块访问</strong>。</p>
 </div>
-<ol start="2">
-<li><strong>做法</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>做法</strong></p>
 <ul>
 <li>对于适合放入内存的关系：使用<strong>快速排序</strong>等技术</li>
-<li>对于<strong>无法放入内存</strong>的关系：<strong>外部归并排序</strong></li>
+<li><mark>对于<strong>无法放入内存</strong>的关系：<strong>外部归并排序</strong></mark></li>
 </ul>
+</li>
+</ol>
 <h3 id="_7"><strong>外部归并排序</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
-<li>M 表示内存大小（以页面为单位）</li>
+<li><mark class="cyan">M 表示内存大小（以页面为单位）</mark></li>
 <li>创建<strong>排序好的归并段</strong> runs：令 i 初始为 0，重复执行以下操作直到关系结束（<strong>i 的最终值为 N</strong>）<ol>
 <li>将关系的 M 个块读入内存</li>
 <li>对内存中的<strong>块</strong>进行排序</li>
 <li>将排序后的数据写入归并段 <span class="arithmatex">\(R_i\)</span>；将 i 加 1</li>
 </ol>
 </li>
-<li><strong>归并</strong></li>
-</ol>
+<li>
+<p><strong>归并</strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><span class="arithmatex">\(N &lt; M\)</span></label><label for="__tabbed_5_2"><span class="arithmatex">\(N &gt; M\)</span></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
 <li>使用 <span class="arithmatex">\(N\)</span> 个内存块来<strong>缓冲输入段</strong></li>
-<li>使用 1 个块来<strong>缓冲输出</strong></li>
+<li><mark>使用 1 个块来<strong>缓冲输出</strong></mark></li>
 <li>将每个段的<strong>第一块</strong>读入其对应的缓冲页</li>
 <li><strong>重复</strong>：<ol>
 <li>在所有缓冲页中选择<strong>第一条记录</strong>并按排序顺序</li>
@@ -6362,7 +6345,7 @@
 <div class="tabbed-block">
 <ol>
 <li><strong>需要进行多次归并阶段</strong> passes</li>
-<li>在每个阶段中，<strong>合并 <span class="arithmatex">\(M - 1\)</span> 个连续的归并段组</strong></li>
+<li><mark>在每个阶段中，<strong>合并 <span class="arithmatex">\(M - 1\)</span> 个连续的归并段组</strong></mark></li>
 <li>一个阶段将归并段的数量减少到原来的 <span class="arithmatex">\(1/(M - 1)\)</span>，并产生长度增加相同倍数的归并段</li>
 <li>重复执行多个阶段，直到所有归并段都被合并为一个</li>
 </ol>
@@ -6373,29 +6356,29 @@
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/8-2.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
-<ol start="4">
+</li>
 <li>
 <p><strong>代价分析</strong></p>
 <ol>
 <li><strong>块传输次数</strong><ol>
-<li><strong>构建阶段</strong>：<span class="arithmatex">\(2b_r\)</span>（读入+输出）</li>
+<li><strong>构建 runs 阶段</strong>：<span class="arithmatex">\(2b_r\)</span>（读入+输出）</li>
 <li><strong>归并阶段</strong>：<ol>
 <li><strong>merge passes</strong>：<span class="arithmatex">\(\lceil \log_{M-1}(b_r / M) \rceil\)</span></li>
 <li>每一次  merge passes <strong>块传输次数</strong>均为 <span class="arithmatex">\(2b_r\)</span>（读入+输出）</li>
-<li><strong>注意：</strong>最后一个阶段不计算写入代价（无需写入磁盘）</li>
+<li><mark><strong>注意：</strong>最后一个阶段不计算写入代价（无需写入磁盘）</mark></li>
 </ol>
 </li>
-<li><strong>总块传输次数</strong>：<span class="arithmatex">\(b_r ( 2 \lceil \log_{M-1}(b_r / M) \rceil + 1)\)</span></li>
+<li><mark class="orange"><strong>总块传输次数</strong>：<span class="arithmatex">\(b_r ( 2 \lceil \log_{M-1}(b_r / M) \rceil + 1)\)</span></mark></li>
 </ol>
 </li>
 <li><strong>寻道次数</strong>：<ol>
 <li><strong>构建阶段</strong>：<span class="arithmatex">\(2 \lceil b_r / M \rceil\)</span>（读取和写入每个归并段都需要一次寻道）</li>
 <li><strong>归并阶段</strong>：<ol>
-<li><strong>缓冲区大小</strong>：<span class="arithmatex">\(b_b\)</span>（一次读/写 <span class="arithmatex">\(b_b\)</span> 个块）</li>
+<li><mark class="cyan"><strong>缓冲区大小</strong>：<span class="arithmatex">\(b_b\)</span></mark>（一次读/写 <span class="arithmatex">\(b_b\)</span> 个块）</li>
 <li>每个归并阶段需要 <span class="arithmatex">\(2 \lceil b_r / b_b \rceil\)</span> 次寻道（最后一个阶段除外）</li>
 </ol>
 </li>
-<li><strong>总寻道次数</strong>：<span class="arithmatex">\(2 \lceil b_r / M \rceil + \lceil b_r / b_b \rceil (2 \lceil \log_{M-1}(b_r / M) \rceil - 1)\)</span></li>
+<li><mark class="orange"><strong>总寻道次数</strong>：<span class="arithmatex">\(2 \lceil b_r / M \rceil + \lceil b_r / b_b \rceil (2 \lceil \log_{M-1}(b_r / M) \rceil - 1)\)</span></mark></li>
 </ol>
 </li>
 </ol>
@@ -6409,7 +6392,7 @@
 <p><strong>嵌套循环连接</strong></p>
 <ol>
 <li><strong>外层循环</strong>：遍历外层关系 <span class="arithmatex">\(r\)</span> 的每一条记录</li>
-<li><strong>内层循环</strong>：对于 <span class="arithmatex">\(r\)</span> 的每一条记录，都扫描一遍内层关系 <span class="arithmatex">\(s\)</span>，寻找满足连接条件的记录</li>
+<li><strong>内层循环</strong>：<mark>对于 <span class="arithmatex">\(r\)</span> 的每一条记录，都扫描一遍内层关系 <span class="arithmatex">\(s\)</span></mark>，寻找满足连接条件的记录</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
@@ -6429,9 +6412,9 @@
 </li>
 <li><strong>缺点</strong>：代价高昂（需要检查两个关系中的每一对元组）</li>
 <li>
-<p><strong>代价分析</strong></p>
+<p><mark class="orange"><strong>代价分析</strong></mark></p>
 <ol>
-<li><strong>最坏情况</strong>：内存仅够容纳<strong>每个关系</strong>的一个数据块<ol>
+<li><mark><strong>最坏情况</strong>：内存仅够容纳<strong>每个关系</strong>的一个数据块</mark><ol>
 <li><span class="arithmatex">\(n_r * b_s + b_r\)</span> 次数据块传输</li>
 <li><span class="arithmatex">\(n_r + b_r\)</span> 次磁盘寻道</li>
 </ol>
@@ -6444,10 +6427,8 @@
 </ol>
 <div class="admonition info">
 <p class="admonition-title">变量含义</p>
-<p><span class="arithmatex">\(n_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的行数</p>
-<p><span class="arithmatex">\(b_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的块数</p>
-<p><span class="arithmatex">\(n_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的行数</p>
-<p><span class="arithmatex">\(b_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的块数</p>
+<p><span class="arithmatex">\(n_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的行数      <span class="arithmatex">\(b_r\)</span>：外层关系 <span class="arithmatex">\(r\)</span> 的块数</p>
+<p><span class="arithmatex">\(n_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的行数      <span class="arithmatex">\(b_s\)</span>：内层关系 <span class="arithmatex">\(s\)</span> 的块数</p>
 </div>
 </li>
 <li>
@@ -6457,7 +6438,7 @@
 <h4 id="block-nested-loop-join">Block nested-loop join<a class="headerlink" href="#block-nested-loop-join" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
-<p><strong>块嵌套循环连接</strong>：以数据块为单位处理（内层关系的数据块针对外层关系的每个数据块只读取一次）</p>
+<p><strong>块嵌套循环连接</strong>：以<mark>数据块</mark>为单位处理（内层关系的数据块针对外层关系的每个数据块只读取一次）</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -6482,7 +6463,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p><strong>代价分析</strong></p>
+<p><mark class="orange"><strong>代价分析</strong>（可从下边的普遍公式推导）</mark></p>
 <ol>
 <li><strong>最坏情况</strong>：<span class="arithmatex">\(b_r * b_s + b_r\)</span> 次数据块传输 + <span class="arithmatex">\(2 * b_r\)</span> 次寻道<ol>
 <li><strong>条件</strong>：内存中只有 3 个 block：<span class="arithmatex">\(Br, Bs, Bout\)</span></li>
@@ -6499,8 +6480,8 @@
 <li><strong>优化</strong><ol>
 <li>当 <span class="arithmatex">\(M &gt; 3\)</span>，但 <span class="arithmatex">\(M &lt; b_s\)</span> 且 <span class="arithmatex">\(M &lt; b_r\)</span> 时：（其中 <span class="arithmatex">\(M\)</span> = 以块为单位的内存大小）<ol>
 <li>使用 <span class="arithmatex">\(M - 2\)</span> 个磁盘块作为外层关系的块单位</li>
-<li>使用剩余的两个块来缓冲内层关系和输出</li>
-<li><strong>代价</strong>：<span class="arithmatex">\(\lceil b_r / (M-2) \rceil * b_s + b_r\)</span> 次数据块传输 + <span class="arithmatex">\(2 \lceil b_r / (M-2) \rceil\)</span> 次寻道</li>
+<li><mark>使用剩余的两个块来缓冲内层关系和输出</mark></li>
+<li><mark class="orange"><strong>代价</strong>：<span class="arithmatex">\(\lceil b_r / (M-2) \rceil * b_s + b_r\)</span> 次数据块传输 + <span class="arithmatex">\(2 \lceil b_r / (M-2) \rceil\)</span> 次寻道</mark></li>
 </ol>
 </li>
 <li>如果<strong>等值连接</strong>属性构成了内层关系上的<strong>主键</strong>，则在第一次匹配成功后即可<strong>停止内层循环</strong></li>
@@ -6511,9 +6492,9 @@
 </ol>
 <h4 id="indexed-nested-loop-join">Indexed nested-loop join<a class="headerlink" href="#indexed-nested-loop-join" title="Permanent link">&para;</a></h4>
 <ol>
-<li><strong>索引嵌套循环连接</strong>：对于外层关系 <span class="arithmatex">\(r\)</span> 中的每一个元组 <span class="arithmatex">\(t_r\)</span>，<strong>使用索引去查找内层关系 <span class="arithmatex">\(s\)</span> 中</strong>满足与元组 <span class="arithmatex">\(t_r\)</span> 连接条件的元组</li>
+<li><strong>索引嵌套循环连接</strong>：对于外层关系 <span class="arithmatex">\(r\)</span> 中的每一个元组 <span class="arithmatex">\(t_r\)</span>，<mark><strong>使用索引去查找内层关系 <span class="arithmatex">\(s\)</span> 中</strong></mark>满足与元组 <span class="arithmatex">\(t_r\)</span> 连接条件的元组</li>
 <li><strong>使用条件</strong>：<ol>
-<li>连接是<strong>等值连接或自然连接</strong></li>
+<li><mark>连接是<strong>等值连接或自然连接</strong></mark></li>
 <li>内层关系 <span class="arithmatex">\(s\)</span> 有可用索引</li>
 </ol>
 </li>
@@ -6521,13 +6502,14 @@
 <p><strong>最坏情况</strong>：</p>
 <ol>
 <li>缓冲区只能够容纳关系 <span class="arithmatex">\(r\)</span> 的一个页面（数据块），并且对于 <span class="arithmatex">\(r\)</span> 中的每一个元组，都要对 <span class="arithmatex">\(s\)</span> 执行一次索引查找</li>
-<li><strong>连接成本</strong>：<span class="arithmatex">\(b_r (t_T + t_S) + n_r * c\)</span></li>
+<li><mark class="orange"><strong>连接成本</strong>：<span class="arithmatex">\(b_r (t_T + t_S) + n_r * c\)</span></mark></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title"><span class="arithmatex">\(c\)</span></p>
 <ol>
-<li>指对于外层关系 <span class="arithmatex">\(r\)</span> 的一个元组，遍历索引并获取所有匹配的内层关系 <span class="arithmatex">\(s\)</span> 中元组的成本</li>
+<li><mark>指对于外层关系 <span class="arithmatex">\(r\)</span> 的一个元组，遍历索引并获取所有匹配的内层关系 <span class="arithmatex">\(s\)</span> 中元组的成本</mark></li>
 <li><strong><span class="arithmatex">\(c\)</span> 可以估算为</strong>：使用该连接条件在关系 <span class="arithmatex">\(s\)</span> 上执行单次选择（条件查询）的成本</li>
+<li><mark>可以使用 <strong>SELECT 中的索引查询</strong>来计算 <span class="arithmatex">\(c\)</span></mark></li>
 </ol>
 </div>
 </li>
@@ -6547,9 +6529,9 @@
 </li>
 </ol>
 </li>
-<li><strong>只能用于等值连接和自然连接</strong></li>
+<li><mark><strong>只能用于等值连接和自然连接</strong></mark></li>
 <li><strong>优点</strong>：每个数据块只需要被读取一次（假设连接属性上任意给定值的全部元组都能装入内存）</li>
-<li><strong>成本</strong>：<span class="arithmatex">\((b_r + b_s)\)</span> 次数据块传输 + <span class="arithmatex">\((\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道（如果关系未排序，则还需加上排序的成本）</li>
+<li><mark class="orange"><strong>成本</strong>：<span class="arithmatex">\((b_r + b_s)\)</span> 次数据块传输 + <span class="arithmatex">\((\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道</mark>（如果关系未排序，则还需加上排序的成本）</li>
 </ol>
 <h4 id="hybrid-merge-join">Hybrid merge-join<a class="headerlink" href="#hybrid-merge-join" title="Permanent link">&para;</a></h4>
 <ol>
@@ -6568,9 +6550,9 @@
 <li>
 <p><strong>步骤</strong>：</p>
 <ol>
-<li>使用哈希函数 <span class="arithmatex">\(h\)</span> 对两个关系的元组进行<strong>分区</strong></li>
+<li>使用哈希函数 <span class="arithmatex">\(h\)</span> 对两个关系的元组进行<strong>分区</strong>：<mark>1 个 input buffer + M−1 个 buffer 用来写不同分区</mark></li>
 <li>对于每个 <span class="arithmatex">\(i\)</span>：<ol>
-<li>将 <span class="arithmatex">\(s_i\)</span> 加载到内存中，并使用连接属性在其上构建一个<strong>内存哈希索引</strong></li>
+<li>将 <span class="arithmatex">\(s_i\)</span> 加载到内存中，并使用连接属性在其上构建一个<mark><strong>内存哈希索引</strong></mark></li>
 <li>从磁盘中逐个读取 <span class="arithmatex">\(r_i\)</span> 中的元组，利用内存哈希索引定位 <span class="arithmatex">\(s_i\)</span> 中每个匹配的元组 <span class="arithmatex">\(t_s\)</span></li>
 </ol>
 </li>
@@ -6580,17 +6562,21 @@
 <ol>
 <li><strong><span class="arithmatex">\(r_i\)</span> 中的 <span class="arithmatex">\(r\)</span> 元组只需要与 <span class="arithmatex">\(s_i\)</span> 中的 <span class="arithmatex">\(s\)</span> 元组进行比较，不需要与任何其他分区中的 <span class="arithmatex">\(s\)</span> 元组进行比较</strong></li>
 <li>关系 <span class="arithmatex">\(s\)</span> 被称为构建输入（build input），而 <span class="arithmatex">\(r\)</span> 被称为探测输入（probe input）</li>
-<li>如果分区数 <span class="arithmatex">\(n\)</span> 大于内存的页数 <span class="arithmatex">\(M\)</span>，则需要进行<strong>递归分区</strong></li>
+<li><mark class="green">如果分区数 <span class="arithmatex">\(n_h\)</span> 大于内存的页数 <span class="arithmatex">\(M\)</span>，则需要进行<strong>递归分区</strong></mark></li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>通常将 <span class="arithmatex">\(n_h\)</span> 选择为 <span class="arithmatex">\(\lceil b_s / M \rceil * f\)</span>，其中 <span class="arithmatex">\(f\)</span> 是一个修正因子（fudge factor），通常在 1.2 左右</p>
+</div>
 </div>
 </li>
 <li>
 <p><strong>成本</strong>：</p>
 <ol>
-<li><strong>如果不需要递归分区</strong>：<span class="arithmatex">\(3(b_r + b_s) + 4 * n_h\)</span> 次数据块传输 + <span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道 </li>
+<li><mark class="orange"><strong>如果不需要递归分区</strong>：<span class="arithmatex">\(3(b_r + b_s) + 4 * n_h\)</span> 次数据块传输 + <span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)\)</span> 次寻道 </mark></li>
 <li><strong>如果需要递归分区</strong>：<ol>
 <li>对构建关系 <span class="arithmatex">\(s\)</span> 进行<strong>分区所需的趟数</strong>：<span class="arithmatex">\(\lceil \log_{M-1}(b_s) - 1 \rceil\)</span>（最好选择<strong>较小</strong>的关系作为构建关系）</li>
-<li><strong>总开销估计为</strong>：<ol>
+<li><mark class="orange"><strong>总开销估计为</strong>：</mark><ol>
 <li><span class="arithmatex">\(2(b_r + b_s)\lceil \log_{M-1}(b_s) - 1 \rceil + b_r + b_s\)</span> 次数据块传输</li>
 <li><span class="arithmatex">\(2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil) \lceil \log_{M-1}(b_s) - 1 \rceil\)</span> 次寻道</li>
 </ol>
@@ -6599,10 +6585,6 @@
 </li>
 <li>如果整个构建输入可以全部保存在主内存中，则<strong>不需要进行分区</strong>：<span class="arithmatex">\(b_r + b_s\)</span>（<strong>最佳情况</strong>）</li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>通常将 <span class="arithmatex">\(n_h\)</span> 选择为 <span class="arithmatex">\(\lceil b_s / M \rceil * f\)</span>，其中 <span class="arithmatex">\(f\)</span> 是一个修正因子（fudge factor），通常在 1.2 左右</p>
-</div>
 </li>
 </ol>
 <hr />
@@ -6617,10 +6599,12 @@
 <p class="admonition-title">Quote</p>
 <p>其他具体内容请查看 PPT</p>
 </div>
-<h2 id="_9">* 表达式的评估<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="_9">* 表达式求值<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <h3 id="_10">实例化<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Materialization</strong>：一次只执行一个操作，利用实例化到临时关系中的<strong>中间结果</strong>来执行下一层的操作</li>
+<li><strong>Materialization</strong>：一次只执行一个操作，利用实例化到<mark>临时关系</mark>中的<strong>中间结果</strong>来执行下一层的操作</li>
+<li><strong>代价</strong>：各操作代价 + 临时关系写入磁盘的代价</li>
 <li><strong>（改进）双缓冲</strong>：为每个操作使用两个输出缓冲区<ol>
 <li>当一个缓冲区填满时将其写入磁盘，同时填充另一个缓冲区</li>
 <li>允许磁盘写入与计算重叠（并行），从而减少执行时间</li>
@@ -6629,7 +6613,7 @@
 </ol>
 <h3 id="_11">流水线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>流水线</strong>：在某个操作正在执行时，就将元组传递给其父操作（同时执行多个操作，将一个操作的结果直接传递给下一个操作）</li>
+<li><strong>流水线</strong>：在某个操作正在执行时，就<mark>将元组传递给其父操作</mark>（同时执行多个操作，将一个操作的结果直接传递给下一个操作）</li>
 <li><strong>优点</strong>：比实例化要便宜得多：不需要将临时关系存储到磁盘中</li>
 <li><strong>缺点</strong>：可能并不总是可行（取决于下一个操作的类型，以及输出是否排序等）</li>
 <li><strong>通过两种方式执行</strong>：需求驱动（demand driven）和生产者驱动（producer driven）<ol>
@@ -6668,7 +6652,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 22:01:21 CST">2026年5月19日 22:01:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     
@@ -6692,6 +6676,22 @@
 
                 
 
+    
+        <script src="https://giscus.app/client.js"
+                data-repo="wsh-zju/notebook"
+                data-repo-id="R_kgDOOJR4ig"
+                data-category="General"
+                data-category-id="DIC_kwDOOJR4is4C1eU1"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
     
 
 

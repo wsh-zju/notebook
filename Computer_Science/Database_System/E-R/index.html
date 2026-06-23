@@ -3544,7 +3544,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5727,7 +5727,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 2712 字</span>
+    <span>约 2782 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5739,32 +5739,23 @@
 
 <h2 id="_1">实体集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>实体</strong>：是一个存在且可与其他对象区分的对象</p>
-</li>
-<li>
-<p><strong>实体集</strong>是具有<strong>相同类型且共享相同属性</strong>的实体集合</p>
-</li>
-<li>
-<p>实体具有<strong>属性</strong>，属性是实体集中所有成员共同拥有的<strong>描述性性质</strong></p>
-</li>
-<li>
-<p><strong>域</strong>：每个属性所允许的所有值的集合</p>
-</li>
-<li>
-<p><strong>属性类型</strong>：</p>
-</li>
-</ol>
-<ul>
+<li><strong>实体 entity</strong>：是一个存在且可与其他对象区分的对象</li>
+<li><strong>实体集</strong>是具有<strong>相同类型且共享相同属性</strong>的实体集合</li>
+<li>实体具有<strong>属性</strong>，属性是实体集中所有成员共同拥有的<strong>描述性性质</strong></li>
+<li><strong>域</strong>：每个属性所允许的所有值的集合</li>
+<li><strong>属性类型</strong>：<ul>
 <li>简单和复合属性（性别 和 姓名）</li>
 <li>单值和多值属性（多值：电话号码）</li>
-<li><strong>派生属性</strong>：可以从其他属性计算得出，对应基本属性或存储属性</li>
+<li><mark class="cyan"><strong>派生属性</strong></mark>：可以从其他属性计算得出，对应基本属性或存储属性</li>
 </ul>
+</li>
+</ol>
+<hr />
 <h2 id="_2">联系集<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>联系</strong>：是二个或多个不同类实体之间的关联</li>
-<li><strong>联系集</strong>：具有相同类型的联系的集合</li>
-</ol>
+<li>
+<p><strong>联系集</strong>：具有相同类型的联系的集合</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol>
@@ -5772,20 +5763,18 @@
 <li>一个联系集包含多个同类联系（或联系实例）</li>
 </ol>
 </div>
-<ol start="3">
+</li>
 <li>
 <p><strong>联系集属性</strong>：不属于任何单一实体，而必须由参与联系的多个实体共同决定的描述性特征</p>
 </li>
 <li>
-<p><strong>联系集的度</strong>：指参与到一个联系集中的<strong>实体集的数量</strong></p>
+<p><mark class="cyan"><strong>联系集的度</strong></mark>：指参与到一个联系集中的<strong>实体集的数量</strong></p>
 </li>
 <li>
-<p><strong>映射基数</strong>：表达在一个联系集中，一个实体可以与另一类实体相关联的<strong>实体数量</strong></p>
-</li>
-</ol>
+<p><mark class="cyan"><strong>映射基数</strong></mark>：表达在一个联系集中，一个实体可以与另一类实体相关联的<strong>实体数量</strong></p>
 <div class="admonition abstract">
 <p class="admonition-title">二元联系集</p>
-<p>映射基数必须是以下类型之一：</p>
+<p><mark>映射基数必须是以下类型之一：</mark></p>
 <ul>
 <li>一对一 (1 : 1)，例如：就任总统（总统，国家）</li>
 <li>一对多 (1 : n)，例如：分班情况（班级，学生）</li>
@@ -5794,20 +5783,19 @@
 </ul>
 <p><strong>注意</strong>：两个实体集中的某些元素可能不映射到另一个集中的任何元素</p>
 </div>
+</li>
+</ol>
+<hr />
 <h2 id="_3">码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>实体集</strong></li>
-</ol>
-<ul>
+<li><strong>实体集</strong><ul>
 <li><strong>实体集的超码</strong>是一个或多个属性的集合，其值可以<strong>唯一</strong>地确定每个实体</li>
 <li><strong>实体集的候选码</strong>是一个最小超码（可能有多个候选码，从中选择一个做主码）</li>
 </ul>
-<ol start="2">
-<li><strong>联系集</strong></li>
-</ol>
-<ul>
-<li>参与联系集的各实体集的<strong>主码</strong>的组合构成了该联系集的一个<strong>超码</strong>（这意味着在特定的联系集中，<strong>一对实体最多只能有一个联系</strong>）</li>
-<li><strong>映射基数决定候选码</strong>：<ul>
+</li>
+<li><strong>联系集</strong><ul>
+<li><mark>参与联系集的各实体集的<strong>主码</strong>的组合构成了该联系集的一个<strong>超码</strong></mark>（这意味着在特定的联系集中，<strong>一对实体最多只能有一个联系</strong>）</li>
+<li><mark class="orange"><strong>映射基数决定候选码</strong></mark>：<ul>
 <li>多对多需两端主码组合</li>
 <li>一对多或多对一只需“多”端实体的主码</li>
 <li>一对一则任选一端主码即可</li>
@@ -5815,15 +5803,18 @@
 </li>
 <li>当存在多个候选码时，需要根据联系集的语义来选择主码 <strong>e.g.</strong> 作为码的属性不能为空，值不应经常改变</li>
 </ul>
+</li>
+</ol>
+<hr />
 <h2 id="e-r_1">E-R 图<a class="headerlink" href="#e-r_1" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>图形表示</strong></li>
-</ol>
+<li>
+<p><strong>图形表示</strong></p>
 <ul>
-<li>矩形表示实体集、菱形表示联系集</li>
+<li><mark>矩形</mark>表示实体集、<mark>菱形</mark>表示联系集</li>
 <li>线将<strong>属性</strong>链接到实体集，将实体集链接到联系集</li>
-<li>椭圆表示属性，<strong>双椭圆表示多值属性</strong>（嵌套的椭圆），<strong>虚线椭圆表示派生属性</strong></li>
-<li>下划实线表示<strong>主码属性</strong></li>
+<li><mark>椭圆</mark>表示属性，<strong><mark>双椭圆</mark>表示多值属性</strong>（嵌套的椭圆），<strong><mark>虚线椭圆</mark>表示派生属性</strong></li>
+<li><mark>下划实线</mark>表示<strong>主码属性</strong></li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">自环联系集</p>
@@ -5833,18 +5824,20 @@
 </ol>
 <p><img alt="alt text" src="../photo/4-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="2">
-<li><strong>基数约束</strong>：有向线表示“一”；无向线段表示“多”（图表示一对多联系）</li>
-</ol>
+</li>
+<li>
+<p><strong>基数约束</strong>：<mark>有向线段</mark>表示“一”；<mark>无向线段</mark>表示“多”（下图表示一对多联系）</p>
 <p><img alt="" src="../photo/4-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>实体集在联系集中的参与</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>实体集在联系集中的参与</strong></p>
 <p><img alt="alt text" src="../photo/4-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ul>
-<li><strong>全参与（用双线表示）</strong>：实体集中的每个实体都参与联系集中的至少一个联系</li>
+<li><strong>全参与（用<mark>双线</mark>表示）</strong>：实体集中的每个实体都参与联系集中的至少一个联系</li>
 <li><strong>部分参与</strong>：某些实体可能<strong>不参与</strong>联系集中的任何联系</li>
 </ul>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
 <ol>
@@ -5862,82 +5855,82 @@
 <p><strong>e.g.</strong> 用实体集 E 替换实体集 A、B、C 之间的非二元联系 R，并创建三个新的联系集</p>
 <p><img alt="alt text" src="../photo/4-4.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
+<hr />
 <h2 id="_4">弱实体集<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><strong>弱实体集</strong>：没有主码的实体集（相对于强实体集）</p>
+<p><mark><strong>弱实体集</strong>：没有主码的实体集</mark>（相对于强实体集）</p>
 </li>
 <li>
-<p>弱实体集的生存取决于<strong>标识实体集或属主实体集</strong></p>
+<p>弱实体集的生存取决于<strong>标识实体集或属主实体集</strong>（<mark>依赖于强实体</mark>）</p>
 </li>
 <li>
-<p>弱实体集必须通过从标识实体集到弱实体集的<strong>总参与、一对多的联系集</strong>与标识实体集关联，相关的联系被称为<strong>标识性联系</strong></p>
+<p>弱实体集必须通过<strong>标识性联系</strong>与标识实体集关联，要求<mark class="orange">一对多、弱实体集全参与</mark></p>
 </li>
 <li>
-<p>弱实体集的<strong>分辨符或部分码</strong>：用于区分依赖于<strong>同一个</strong>特定强实体的所有弱实体</p>
+<p><mark class="cyan"><strong>分辨符 Discriminator 或部分码 Partial Key</strong></mark>：用于区分依赖于<strong>同一个</strong>特定强实体的所有弱实体</p>
 </li>
 <li>
-<p>弱实体集的<strong>主码</strong>：由其所依赖的强实体集的<strong>主码</strong>，加上该弱实体集的<strong>分辨符</strong>共同组成</p>
-</li>
-</ol>
+<p><mark>弱实体集的<strong>主码</strong></mark>：由其所依赖的强实体集的<strong>主码</strong>，加上该弱实体集的<strong>分辨符</strong>共同组成</p>
 <div class="admonition note">
 <p class="admonition-title">Notice</p>
 <p>强实体集的主键不会<strong>显式存储</strong>在弱实体集中，因为它隐含在标识性联系中</p>
 </div>
-<ol start="6">
-<li><strong>图示</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>图示</strong></p>
 <ul>
-<li>下划<strong>虚线</strong>表示分辨符或部分码</li>
-<li>双矩形表示弱实体集</li>
-<li>双菱形表示标识性联系</li>
+<li><mark>下划<strong>虚线</strong></mark>表示分辨符或部分码</li>
+<li><mark>双矩形</mark>表示弱实体集</li>
+<li><mark>双菱形</mark>表示标识性联系</li>
 </ul>
 <details class="example">
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/4-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
+</li>
+</ol>
+<hr />
 <h2 id="e-r_2">扩展 E-R 特性<a class="headerlink" href="#e-r_2" title="Permanent link">&para;</a></h2>
 <h3 id="_5"><strong>实体集层级</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>特殊化/具体化</strong>：自顶向下的设计过程</li>
-</ol>
+<li>
+<p><strong>特殊化/具体化</strong>：自顶向下的设计过程</p>
 <ul>
 <li>在一个实体集中定义出与其他实体不同的子分组，这些子分组成为<strong>较低层次的实体集</strong>，它们拥有不适用于高层次实体集的属性或参与的联系</li>
-<li><strong>属性继承</strong> ISA：低层实体集继承其连接的高层实体集的<strong>所有属性和参与的联系</strong></li>
+<li><mark><strong>属性继承</strong> ISA：低层实体集继承其连接的高层实体集的<strong>所有属性和参与的联系</strong></mark></li>
 </ul>
 <details class="example">
 <summary>符号表示</summary>
-<p><img alt="alt text" src="../photo/4-10.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/4-10.png" style="width:40%;display: block;margin: 20px auto" /></p>
 </details>
-<ol start="2">
-<li><strong>泛化/普遍化</strong>：自底向上的设计过程</li>
-</ol>
+</li>
+<li>
+<p><strong>泛化/普遍化</strong>：自底向上的设计过程</p>
 <ul>
 <li>将多个具有相同特征的实体集组合成一个<strong>高层实体集</strong></li>
 <li>特殊化和泛化互为<strong>简单的逆过程</strong>，在 E-R 图中的表示方式相同</li>
 </ul>
+</li>
+</ol>
 <h3 id="_6">设计约束<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>成员资格约束</strong>：关于<strong>哪些</strong>实体可以属于某个较低层次实体集的约束</li>
-</ol>
-<ul>
+<li><strong>成员资格约束</strong>：关于<strong>哪些</strong>实体可以属于某个较低层次实体集的约束<ul>
 <li><strong>条件定义的</strong>：实体是否属于子类由属性值决定</li>
 <li><strong>用户定义的</strong>：由数据库用户手动指定实体所属的子类</li>
 </ul>
-<ol start="2">
-<li><strong>不相交约束</strong>：关于一个实体是否可以属于同一泛化中的<strong>多个</strong>较低层次实体集的约束</li>
-</ol>
-<ul>
-<li><strong>不相交</strong>：一个实体<strong>只能属于一个</strong>较低层次实体集（在 E-R 图中用 disjoint 标注在 ISA 三角形旁）</li>
+</li>
+<li><strong>不相交约束</strong>：关于一个实体是否可以属于同一泛化中的<strong>多个</strong>较低层次实体集的约束<ul>
+<li><strong>不相交</strong>：一个实体<strong>只能属于一个</strong>较低层次实体集（在 E-R 图中用 <mark>disjoint</mark> 标注在 ISA 三角形旁）</li>
 <li><strong>可重叠</strong>：一个实体可以属于多个较低层次实体集</li>
 </ul>
-<ol start="3">
-<li><strong>完全性约束</strong>：指定高层次实体集中的实体是否必须属于该泛化中的至少一个较低层次实体集</li>
-</ol>
-<ul>
+</li>
+<li><strong>完全性约束</strong>：指定高层次实体集中的实体是否必须属于该泛化中的至少一个较低层次实体集<ul>
 <li><strong>完全泛化</strong>：实体必须属于某一个较低层次实体集</li>
 <li><strong>部分泛化</strong>：实体<strong>可以不属于</strong>任何较低层次实体集</li>
 </ul>
+</li>
+</ol>
 <div class="admonition abstract">
 <p class="admonition-title">符号表示</p>
 <p><img alt="alt text" src="../photo/4-11.png" style="width:50%;display: block;margin: 20px auto" /></p>
@@ -5956,7 +5949,7 @@
 </ol>
 <div class="admonition abstract">
 <p class="admonition-title">符号表示</p>
-<p><img alt="alt text" src="../photo/4-12.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<p><img alt="alt text" src="../photo/4-12.png" style="width:50%;display: block;margin: 20px auto" /></p>
 </div>
 <details class="success">
 <summary>summary E-R 符号</summary>
@@ -5964,25 +5957,26 @@
 <p><img alt="alt text" src="../photo/4-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <p><img alt="alt text" src="../photo/4-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
+<hr />
 <h2 id="e-r_3">E-R 数据库模式的设计<a class="headerlink" href="#e-r_3" title="Permanent link">&para;</a></h2>
 <p><strong>设计注意点</strong></p>
 <ol>
-<li><strong>属性 or 实体集 ？</strong></li>
-</ol>
+<li>
+<p><strong>属性 or 实体集 ？</strong></p>
 <ul>
 <li>如果是单值，对象可以作为属性</li>
 <li>如果是多值，对象应该作为实体集（比如电话号可能有多个）</li>
 <li>一个对象<strong>不能同时作为实体和属性</strong></li>
 <li>一个实体集不能与另一实体集的属性相关联，只能实体与实体相联系</li>
 </ul>
-<ol start="2">
-<li><strong>实体集 or 联系集 ？</strong>（映射基数会影响这一决策）</li>
-</ol>
+</li>
+<li>
+<p><strong>实体集 or 联系集 ？</strong>（映射基数会影响这一决策）</p>
 <details class="example">
 <summary>区别</summary>
 <p><img alt="alt text" src="../photo/4-13.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
-<ol start="3">
+</li>
 <li>
 <p><strong>实体 or 联系 ？</strong>（原则：从语义独立性和减少数据冗余角度考虑）</p>
 </li>
@@ -5999,58 +5993,58 @@
 <p>使用聚集：可以将 E-R 图的一部分组合成一个单一的实体集，并将其视为一个整体，而无需关注其内部结构的细节</p>
 </li>
 </ol>
-<h2 id="e-r_4">将 E-R 模式还原为表<a class="headerlink" href="#e-r_4" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="e-r_4"><mark class="red">将 E-R 模式还原为表</mark><a class="headerlink" href="#e-r_4" title="Permanent link">&para;</a></h2>
 <ol>
 <li>对于<strong>每个实体集和联系集</strong>，都有一个对应的唯一表，表名与相应的实体集或联系集同名</li>
+<li><strong>实体集</strong><ol>
 <li><strong>强实体集</strong>：转换为具有相同属性的表</li>
-<li><strong>弱实体集</strong>：转换为一个表，其中<strong>包含</strong>标识强实体集的主键作为一列</li>
-<li>带<strong>复合属性</strong>的实体集：</li>
+<li><mark><strong>弱实体集</strong>：转换为一个表，其中<strong>包含</strong>标识强实体集的主键作为一列</mark></li>
+<li>带<strong>复合属性</strong>的实体集：<mark>为每个分量属性创建一个单独的属性</mark></li>
 </ol>
-<ul>
-<li>复合属性被展平，为每个分量属性创建一个单独的属性</li>
-<li>然后创建一个<strong>单独的新表</strong>来表示</li>
-</ul>
-<ol start="5">
-<li><strong>联系集</strong>：表示为一张表，包含：</li>
-</ol>
-<ul>
-<li>两个参与实体集的<strong>主键列</strong>（这里作为外键）</li>
+</li>
+<li><strong>联系集</strong>：表示为一张表，包含：<ul>
+<li>两个参与实体集的<strong>主键列</strong>（这里作为<mark>外键</mark>）</li>
 <li>联系集本身的任何<strong>描述性属性</strong></li>
-<li><strong>主键</strong><ul>
+<li><strong>联系集的主键</strong><ul>
 <li><strong>多对多</strong>：两个实体集的主键的组合</li>
 <li><strong>一对多或多对一</strong>：多端的实体集的主键</li>
 <li><strong>一对一</strong>：类似一对多</li>
 </ul>
 </li>
 </ul>
-<ol start="6">
-<li><strong>表的冗余处理</strong></li>
-</ol>
-<ul>
+</li>
+<li><mark><strong>表的冗余处理</strong></mark><ul>
 <li>对于一对多<ul>
-<li>如果多端是总参与的，可将联系对应的表<strong>合并到多端实体的表</strong>中</li>
+<li><mark>如果多端是总参与的，可将联系对应的表<strong>合并到多端实体的表</strong>中</mark></li>
 <li>如果多端是部分参与，上述方法可能会导致空值</li>
 </ul>
 </li>
-<li>对于一对一联系集，可以在两个实体集对应的两个表中任选一个添加额外属性</li>
-<li>连接弱实体集及其标识强实体集的联系集对应的表是冗余的（<strong>标识性联系</strong>）</li>
-</ul>
-<ol start="7">
-<li><strong>将特殊化表示为表</strong></li>
-</ol>
-<ul>
-<li><strong>方法1</strong><ul>
-<li>为高层实体集创建一个表</li>
-<li>为每个低层实体集创建一个表，包含<strong>高层实体集的主键和局部属性</strong></li>
-<li><strong>缺点</strong>：获取信息可能需要需要访问两个表</li>
+<li><mark>对于一对一联系集，可以在两个实体集对应的两个表中任选一个合并联系集</mark></li>
+<li><mark><strong>标识性联系</strong>的表是冗余的，不建立</mark></li>
 </ul>
 </li>
-<li><strong>方法2</strong>：为每个实体集创建一个表，包含所有局部属性和继承属性<ul>
+<li><strong>将特殊化/泛化表示为表</strong><ul>
+<li>
+<p><strong>方法1</strong></p>
+<p><img alt="alt text" src="../photo/4-14.png" style="width:50%;display: block;margin: 20px auto" /></p>
+<ul>
+<li>为高层实体集创建一个表</li>
+<li>为每个低层实体集创建一个表，<mark>包含<strong>高层实体集的主键和局部属性</strong></mark></li>
+<li><strong>缺点</strong>：获取信息可能需要需要访问两个表<ul>
+<li><strong>方法2</strong>：为每个实体集创建一个表，<mark>包含所有局部属性和继承属性</mark></li>
+</ul>
+</li>
+</ul>
+<p><img alt="alt text" src="../photo/4-15.png" style="width:60%;display: block;margin: 20px auto" /></p>
+<ul>
 <li>如果特殊化是<strong>完全的</strong>，则高层实体的表不需要存储信息，高层次表可以定义为包含所有特殊化表并集的<strong>视图</strong></li>
 <li><strong>缺点</strong>：对于同时存在于多个低层实体集的实体，<strong>继承属性可能冗余存储</strong></li>
 </ul>
 </li>
 </ul>
+</li>
+</ol>
 
 
 
@@ -6073,7 +6067,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月13日 14:30:33 CST">2026年4月13日 14:30:33</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

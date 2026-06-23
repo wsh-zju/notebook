@@ -3495,7 +3495,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5629,7 +5629,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 1703 字</span>
+    <span>约 1839 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5639,6 +5639,7 @@
     <span>预计阅读 6 分钟</span>
 </div>
 
+<hr />
 <p><strong>基于成本的查询优化（cost-based query optimization）的步骤</strong>：</p>
 <ol>
 <li>使用<strong>等价规则</strong>生成逻辑上等价的表达式</li>
@@ -5650,7 +5651,7 @@
 <p class="admonition-title">Tips</p>
 <ol>
 <li><strong>连接的顺序</strong>对于减少中间结果的大小非常重要</li>
-<li><strong>尽早执行投影和选择</strong>可以减小待连接关系的大小</li>
+<li><mark class="green"><strong>尽早执行投影和选择</strong>可以减小待连接关系的大小</mark></li>
 </ol>
 </div>
 <h3 id="_3"><strong>等价关系</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -5671,7 +5672,7 @@
 \]</div>
 </li>
 <li>
-<p>与<strong>笛卡尔积以及 <span class="arithmatex">\(\theta\)</span> 连接</strong>相结合</p>
+<p><mark>与<strong>笛卡尔积以及 <span class="arithmatex">\(\theta\)</span> 连接</strong>相结合</mark></p>
 <ol>
 <li><span class="arithmatex">\(\sigma_\theta(E_1 \times E_2) = E_1 \bowtie_\theta E_2\)</span></li>
 <li><span class="arithmatex">\(\sigma_{\theta_1}(E_1 \bowtie_{\theta_2} E_2) = E_1 \bowtie_{\theta_1 \wedge \theta_2} E_2\)</span></li>
@@ -5687,7 +5688,7 @@
 \]</div>
 </li>
 <li>
-<p>当 <span class="arithmatex">\(\theta_1\)</span> 仅涉及 <span class="arithmatex">\(E_1\)</span> 的属性，且 <span class="arithmatex">\(\theta_2\)</span> 仅涉及 <span class="arithmatex">\(E_2\)</span> 的属性时</p>
+<p><mark>当 <span class="arithmatex">\(\theta_1\)</span> 仅涉及 <span class="arithmatex">\(E_1\)</span> 的属性，且 <span class="arithmatex">\(\theta_2\)</span> 仅涉及 <span class="arithmatex">\(E_2\)</span> 的属性时</mark></p>
 <div class="arithmatex">\[
 \sigma_{\theta_1 \wedge \theta_2}(E_1 \bowtie_\theta E_2) = (\sigma_{\theta_1}(E_1)) \bowtie_\theta (\sigma_{\theta_2}(E_2))
 \]</div>
@@ -5695,7 +5696,7 @@
 </ol>
 </li>
 <li>
-<p>选择操作<strong>在 <span class="arithmatex">\(\cup\)</span>、<span class="arithmatex">\(\cap\)</span> 和 <span class="arithmatex">\(-\)</span> 上具有分配律</strong></p>
+<p><mark>选择操作<strong>在 <span class="arithmatex">\(\cup\)</span>、<span class="arithmatex">\(\cap\)</span> 和 <span class="arithmatex">\(-\)</span> 上具有分配律</strong></mark></p>
 <ol>
 <li><span class="arithmatex">\(\sigma_\theta (E_1 - E_2) = \sigma_\theta (E_1) - \sigma_\theta(E_2)\)</span>（<strong>对于将 <span class="arithmatex">\(-\)</span> 替换为 <span class="arithmatex">\(\cup\)</span> 和 <span class="arithmatex">\(\cap\)</span> 的情况也类似</strong>）</li>
 <li><span class="arithmatex">\(\sigma_\theta (E_1 - E_2) = \sigma_\theta(E_1) - E_2\)</span>（对于将 <span class="arithmatex">\(-\)</span> 替换为 <span class="arithmatex">\(\cap\)</span> 的情况也类似，但<strong>不适用于 <span class="arithmatex">\(\cup\)</span></strong>）</li>
@@ -5719,12 +5720,12 @@
     \Pi_{L_1 \cup L_2}(E_1 \bowtie_\theta E_2) = (\Pi_{L_1}(E_1)) \bowtie_\theta (\Pi_{L_2}(E_2))
     $$</li>
 <li>
+<p>考虑一个连接 <span class="arithmatex">\(E_1 \bowtie_\theta E_2\)</span></p>
 <ol>
 <li>设 <span class="arithmatex">\(L_1\)</span> 和 <span class="arithmatex">\(L_2\)</span> 分别是来自 <span class="arithmatex">\(E_1\)</span> 和 <span class="arithmatex">\(E_2\)</span> 的属性集</li>
 <li>设 <span class="arithmatex">\(L_3\)</span> 为 <span class="arithmatex">\(E_1\)</span> 中涉及连接条件 <span class="arithmatex">\(\theta\)</span> 但不在 <span class="arithmatex">\(L_1 \cup L_2\)</span> 中的属性</li>
 <li>设 <span class="arithmatex">\(L_4\)</span> 为 <span class="arithmatex">\(E_2\)</span> 中涉及连接条件 <span class="arithmatex">\(\theta\)</span> 但不在 <span class="arithmatex">\(L_1 \cup L_2\)</span> 中的属性</li>
 </ol>
-<p>考虑一个连接 <span class="arithmatex">\(E_1 \bowtie_\theta E_2\)</span></p>
 <div class="arithmatex">\[
 \Pi_{L_1 \cup L_2}(E_1 \bowtie_\theta E_2) = \Pi_{L_1 \cup L_2}((\Pi_{L_1 \cup L_3}(E_1)) \bowtie_\theta (\Pi_{L_2 \cup L_4}(E_2)))
 \]</div>
@@ -5781,9 +5782,9 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 <ol>
 <li><span class="arithmatex">\(n_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 中的元组数量</li>
 <li><span class="arithmatex">\(b_r\)</span>：包含关系 <span class="arithmatex">\(r\)</span> 元组的数据块数量</li>
-<li><span class="arithmatex">\(l_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的一个元组的大小（字节）</li>
-<li><span class="arithmatex">\(f_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的块因子（即一个数据块中所能容纳的关系 <span class="arithmatex">\(r\)</span> 的元组数量）</li>
-<li><span class="arithmatex">\(V(A, r)\)</span>：属性 <span class="arithmatex">\(A\)</span> 在关系 <span class="arithmatex">\(r\)</span> 中出现的非重复值数量（与 <span class="arithmatex">\(\Pi_A(r)\)</span> 大小相同）</li>
+<li><mark><span class="arithmatex">\(l_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的一个元组的大小（字节）</mark></li>
+<li><mark><span class="arithmatex">\(f_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的块因子（即一个数据块中所能容纳的关系 <span class="arithmatex">\(r\)</span> 的元组数量）</mark></li>
+<li><mark><span class="arithmatex">\(V(A, r)\)</span>：属性 <span class="arithmatex">\(A\)</span> 在关系 <span class="arithmatex">\(r\)</span> 中出现的非重复值数量（与 <span class="arithmatex">\(\Pi_A(r)\)</span> 大小相同）</mark></li>
 <li>如果关系 <span class="arithmatex">\(r\)</span> 的元组在物理上紧凑地存储在一个文件中，则：
     $$
     b_r = \left\lceil \frac{n_r}{f_r} \right\rceil
@@ -5791,8 +5792,13 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 </ol>
 <h3 id="selection-size-estimation">Selection Size Estimation<a class="headerlink" href="#selection-size-estimation" title="Permanent link">&para;</a></h3>
 <ol>
+<li><mark class="cyan"><strong>条件 <span class="arithmatex">\(\theta_i\)</span> 的选择度</strong>（selectivity）</mark><ol>
+<li>关系 <span class="arithmatex">\(r\)</span> 中的一个元组满足 <span class="arithmatex">\(\theta_i\)</span> 的概率</li>
+<li>如果 <span class="arithmatex">\(s_i\)</span> 是 <span class="arithmatex">\(r\)</span> 中满足条件的元组数量，则 <strong><span class="arithmatex">\(\theta_i\)</span> 的选择度由 <span class="arithmatex">\(s_i / n_r\)</span> 给出</strong></li>
+</ol>
+</li>
 <li><span class="arithmatex">\(\sigma_{A=v}(r)\)</span><ol>
-<li><span class="arithmatex">\(n_r / V(A, r)\)</span>：将满足该选择条件的记录数量</li>
+<li><mark class="orange"><span class="arithmatex">\(n_r / V(A, r)\)</span></mark>：将满足该选择条件的记录数量</li>
 <li><strong>针对键属性</strong>的等值条件：Size Estimation = 1</li>
 </ol>
 </li>
@@ -5800,15 +5806,10 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 <li>设 <span class="arithmatex">\(c\)</span> 表示满足该条件的估计元组数量</li>
 <li><strong>如果在目录中可以获取 <span class="arithmatex">\(\min(A, r)\)</span> 和 <span class="arithmatex">\(\max(A, r)\)</span> 的值</strong><ol>
 <li>如果 <span class="arithmatex">\(v &lt; \min(A, r)\)</span>，则 <span class="arithmatex">\(c = 0\)</span></li>
-<li>否则，<span class="arithmatex">\(c = n_r \cdot \frac{v - \min(A, r)}{\max(A, r) - \min(A, r)}\)</span></li>
+<li>否则，<mark class="orange"><span class="arithmatex">\(c = n_r \cdot \frac{v - \min(A, r)}{\max(A, r) - \min(A, r)}\)</span></mark></li>
 </ol>
 </li>
-<li><strong>在缺乏统计信息的情况下</strong>，假设 <span class="arithmatex">\(c\)</span> 为 <span class="arithmatex">\(n_r / 2\)</span></li>
-</ol>
-</li>
-<li><strong>条件 <span class="arithmatex">\(\theta_i\)</span> 的选择度</strong>（selectivity）<ol>
-<li>关系 <span class="arithmatex">\(r\)</span> 中的一个元组满足 <span class="arithmatex">\(\theta_i\)</span> 的概率</li>
-<li>如果 <span class="arithmatex">\(s_i\)</span> 是 <span class="arithmatex">\(r\)</span> 中满足条件的元组数量，则 <strong><span class="arithmatex">\(\theta_i\)</span> 的选择度由 <span class="arithmatex">\(s_i / n_r\)</span> 给出</strong></li>
+<li><mark><strong>在缺乏统计信息的情况下</strong>，假设 <span class="arithmatex">\(c\)</span> 为 <span class="arithmatex">\(n_r / 2\)</span></mark></li>
 </ol>
 </li>
 <li>
@@ -5833,37 +5834,62 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 <h3 id="join-size-estimation">Join Size Estimation<a class="headerlink" href="#join-size-estimation" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">相关结论</p>
-<p>笛卡尔积 <span class="arithmatex">\(r \times s\)</span> 包含 <span class="arithmatex">\(n_r \cdot n_s\)</span> 个元组；每个元组占用 <span class="arithmatex">\(s_r + s_s\)</span> 字节</p>
+<p>笛卡尔积 <span class="arithmatex">\(r \times s\)</span> 包含 <span class="arithmatex">\(n_r \cdot n_s\)</span> 个元组；每个元组占用 <span class="arithmatex">\(l_r + l_s\)</span> 字节</p>
 </div>
 <ol>
-<li>如果 <span class="arithmatex">\(R \cap S = \emptyset\)</span>，那么 <span class="arithmatex">\(r \bowtie s\)</span> 与 <span class="arithmatex">\(r \times s\)</span> 相同</li>
-<li>如果 <span class="arithmatex">\(R \cap S\)</span> 是 <span class="arithmatex">\(R\)</span> 的<strong>一个码（键）</strong>，那么 <span class="arithmatex">\(s\)</span> 中的一个元组最多与 <span class="arithmatex">\(r\)</span> 中的一个元组相连接（<strong><span class="arithmatex">\(r \bowtie s\)</span> 中的元组数量不会大于 <span class="arithmatex">\(s\)</span> 中的元组数量</strong>）</li>
-<li>如果 <span class="arithmatex">\(S\)</span> 中的 <span class="arithmatex">\(R \cap S\)</span> 是<strong>引用 <span class="arithmatex">\(R\)</span> 的外码（外键）</strong>，那么 <span class="arithmatex">\(r \bowtie s\)</span> 中的元组数量<strong>与 <span class="arithmatex">\(s\)</span> 中的元组数量完全相同</strong></li>
+<li>如果 <span class="arithmatex">\(R \cap S = \emptyset\)</span>，那么 <span class="arithmatex">\(r \bowtie s\)</span> 与 <span class="arithmatex">\(r \times s\)</span> 相同 <span class="arithmatex">\(∣r⋈s∣=n_r \cdot n_s\)</span></li>
+<li>
+<p>如果 <span class="arithmatex">\(R \cap S\)</span> 是 <span class="arithmatex">\(R\)</span> 的<strong>一个码（键）</strong>，那么 <span class="arithmatex">\(s\)</span> 中的一个元组最多与 <span class="arithmatex">\(r\)</span> 中的一个元组相连接（<strong><span class="arithmatex">\(r \bowtie s\)</span> 中的元组数量不会大于 <span class="arithmatex">\(s\)</span> 中的元组数量</strong>）</p>
+<div class="arithmatex">\[
+∣r⋈s∣≤n_s​
+\]</div>
+</li>
+<li>
+<p>如果 <span class="arithmatex">\(S\)</span> 中的 <span class="arithmatex">\(R \cap S\)</span> 是<strong>引用 <span class="arithmatex">\(R\)</span> 的外码（外键）</strong>，那么 <span class="arithmatex">\(∣r⋈s∣=n_s\)</span>​（外键保证一定能找到一个匹配元组）</p>
+</li>
 <li>如果 <span class="arithmatex">\(R \cap S = \{A\}\)</span> <strong>不是 <span class="arithmatex">\(R\)</span> 或 <span class="arithmatex">\(S\)</span> 的码</strong>：<ol>
-<li>假设 <span class="arithmatex">\(R\)</span> 中的每个元组 <span class="arithmatex">\(t\)</span> 都会在 <span class="arithmatex">\(R \bowtie S\)</span> 中产生元组，则 <span class="arithmatex">\(R \bowtie S\)</span> 的<strong>元组数量估计为</strong> <span class="arithmatex">\(\frac{n_r \cdot n_s}{V(A, s)}\)</span></li>
-<li>假设 <span class="arithmatex">\(S\)</span> 中的每个元组 <span class="arithmatex">\(t\)</span> 都会在 <span class="arithmatex">\(R \bowtie S\)</span> 中产生元组，则 <span class="arithmatex">\(\frac{n_r \cdot n_s}{V(A, r)}\)</span></li>
-<li>通常选择上述估计中<strong>较小的估计</strong></li>
+<li>假设 <span class="arithmatex">\(R\)</span> 中的每个元组 <span class="arithmatex">\(t\)</span> 都会在 <span class="arithmatex">\(R \bowtie S\)</span> 中产生元组，则 <span class="arithmatex">\(∣r⋈s∣=\frac{n_r \cdot n_s}{V(A, s)}\)</span></li>
+<li>假设 <span class="arithmatex">\(S\)</span> 中的每个元组 <span class="arithmatex">\(t\)</span> 都会在 <span class="arithmatex">\(R \bowtie S\)</span> 中产生元组，则 <span class="arithmatex">\(∣r⋈s∣=\frac{n_r \cdot n_s}{V(A, r)}\)</span></li>
+<li>
+<p><mark>通常选择上述估计中<strong>较小的估计</strong></mark></p>
+<div class="arithmatex">\[
+∣r⋈s∣=min(\frac{n_r \cdot n_s}{V(A,r)}​,\frac{n_r \cdot n_s}{V(A,s)}​)
+\]</div>
+</li>
 </ol>
 </li>
 </ol>
-<details class="info">
-<summary>其余操作的大小估计</summary>
+<div class="admonition info">
+<p class="admonition-title">其余操作的大小估计</p>
 <ol>
 <li>投影：<span class="arithmatex">\(\Pi_A(r)\)</span> 的估计大小 = <span class="arithmatex">\(V(A, r)\)</span></li>
 <li>聚集：<span class="arithmatex">\(_A g_F(r)\)</span> 的估计大小 = <span class="arithmatex">\(V(A, r)\)</span></li>
-<li>外连接</li>
-<li>集合运算</li>
+<li>外连接<ol>
+<li>左外连接 <span class="arithmatex">\(≈∣r⋈s∣+∣r∣\)</span></li>
+<li>右外连接 <span class="arithmatex">\(≈∣r⋈s∣+∣s∣\)</span></li>
+<li>全外连接 <span class="arithmatex">\(≈∣r⋈s∣+∣r∣+∣s∣\)</span></li>
 </ol>
-<p>见 PPT</p>
-</details>
+</li>
+<li>集合运算（这些估计可能不准，但可作为大小上界）<ol>
+<li><span class="arithmatex">\(∣r∪s∣≈∣r∣+∣s∣\)</span></li>
+<li><span class="arithmatex">\(∣r∩s∣≈min(∣r∣,∣s∣)\)</span></li>
+<li><span class="arithmatex">\(∣r−s∣≈∣r∣\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">* 用于选择评估计划的动态规划 &amp; 其他优化技术</p>
 <p>具体内容见 PPT，该部分不做要求</p>
+<ol>
+<li>Cost-Based Optimization 目标：对多个 join 的查询选择最低代价 join order</li>
+<li>Dynamic Programming 动态规划优化 Join Order</li>
+</ol>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">物化视图</p>
 <ol>
-<li><strong>物化视图</strong>（materialized view）是指其内容经过计算并存储起来的视图</li>
+<li><strong>物化视图</strong>（materialized view）是指其内容经过计算得到结果并存储起来的视图</li>
 <li>保持物化视图与底层数据同步更新的任务被称为<strong>物化视图维护</strong></li>
 <li><strong>增量视图维护</strong>：利用数据库关系的变化来计算物化视图的变化，然后对其进行更新</li>
 </ol>
@@ -5890,7 +5916,7 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 22:01:21 CST">2026年5月19日 22:01:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

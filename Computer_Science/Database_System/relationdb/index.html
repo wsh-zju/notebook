@@ -3544,7 +3544,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5727,7 +5727,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 3289 字</span>
+    <span>约 3382 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5738,59 +5738,47 @@
 </div>
 
 <h2 id="_2">第一范式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>如果关系模式 <span class="arithmatex">\(R\)</span> 的所有属性域都是<strong>原子的</strong>，则称该关系模式<strong>符合第一范式</strong> (1NF)</p>
-<div class="admonition note">
-<p class="admonition-title">原子性</p>
+<p><mark>如果关系模式 <span class="arithmatex">\(R\)</span> 的所有属性域都是<strong>原子的</strong>，则称该关系模式<strong>符合第一范式</strong> (1NF)</mark></p>
+<details class="note">
+<summary>原子性</summary>
 <ol>
-<li>
-<p>如果域的元素被认为是不可分割的单元，则该域是<strong>原子的</strong></p>
-</li>
-<li>
-<p><strong>非原子域的示例</strong>：复合属性、多值属性、复杂数据类型</p>
-</li>
-<li>
-<p><strong>如何处理</strong>非原子值</p>
-</li>
-</ol>
-<ul>
+<li>如果域的元素被认为是不可分割的单元，则该域是<strong>原子的</strong></li>
+<li><strong>非原子域的示例</strong>：<mark class="blue">复合属性、多值属性</mark>、复杂数据类型</li>
+<li><strong>如何处理</strong>非原子值<ul>
 <li>复合属性：使用多个属性</li>
 <li>多值属性：<strong>使用多个字段，使用一张独立的表</strong>，使用单个字段但通过特殊符号分隔（不推荐）</li>
 </ul>
-<ol start="4">
-<li>
-<p><strong>非原子性的缺点</strong>：存储复杂、查询复杂、数据冗余</p>
 </li>
+<li><strong>非原子性的缺点</strong>：存储复杂、查询复杂、数据冗余</li>
 <li>
 <p>原子性实际上是关于<strong>域元素如何被使用</strong>的属性</p>
 <p><strong>e.g.</strong> 学号 CS0012 如果提取前两个字符来查找系别，那么学号的域就不是原子的</p>
 </li>
 </ol>
-</div>
+</details>
 <h2 id="_3">关系数据库设计陷阱<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <div class="admonition abstract">
 <p>有两种设计方法：自顶向下、自底向上（泛关系 <span class="arithmatex">\(\Rightarrow\)</span> 分解 <span class="arithmatex">\(\Rightarrow\)</span> 好的数据库模式）</p>
 </div>
 <ol>
-<li><strong>缺陷</strong></li>
-</ol>
-<ul>
+<li><strong>缺陷</strong><ul>
 <li><strong><abbr title="redundancy">冗余</abbr></strong>：浪费空间，并可能导致数据不一致</li>
-<li><strong>更新异常</strong>：使更新操作复杂化，引入了不一致的可能性</li>
+<li><strong>更新/插入/删除异常</strong></li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>判断特定关系 <span class="arithmatex">\(R\)</span> 是否处于“好”的形式</strong>：无冗余</li>
-<li>如果关系 <span class="arithmatex">\(R\)</span> 不处于“好”的形式，将其<strong>分解为一组关系</strong>，该分解满足</li>
-</ol>
-<ul>
+<li><mark class="orange">如果关系 <span class="arithmatex">\(R\)</span> 不处于“好”的形式，将其<strong>分解为一组关系</strong>，该分解满足</mark><ul>
 <li><strong>无损连接分解</strong></li>
 <li><strong>保持依赖的</strong>（函数依赖）</li>
 <li>每个关系 <span class="arithmatex">\(R_i\)</span> 都处于“好”的形式：BCNF 或 3NF（无冗余）</li>
 </ul>
+</li>
+</ol>
 <hr />
 <h2 id="fd">函数依赖 FD<a class="headerlink" href="#fd" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>定义</strong>：设 <span class="arithmatex">\(R\)</span> 为一个关系模式，<span class="arithmatex">\(\alpha\)</span> 和 <span class="arithmatex">\(\beta\)</span> 为属性集，即 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span></li>
-</ol>
+<li>
+<p><strong>定义</strong>：设 <span class="arithmatex">\(R\)</span> 为一个关系模式，<span class="arithmatex">\(\alpha\)</span> 和 <span class="arithmatex">\(\beta\)</span> 为属性集，即 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span></p>
 <ul>
 <li>
 <p>当且仅当对于 <span class="arithmatex">\(R\)</span> 的任何合法关系 <span class="arithmatex">\(r(R)\)</span>，<strong>只要 <span class="arithmatex">\(r\)</span> 中的任意两个元组 <span class="arithmatex">\(t_1\)</span> 和 <span class="arithmatex">\(t_2\)</span> 在属性 <span class="arithmatex">\(\alpha\)</span> 上取值相同，它们在属性 <span class="arithmatex">\(\beta\)</span> 上也一定取值相同时</strong>，称函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span> 在 <span class="arithmatex">\(R\)</span> 上成立，即：</p>
@@ -5807,16 +5795,16 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 <p><span class="arithmatex">\(A \to B\)</span> 不成立，<span class="arithmatex">\(B \to A\)</span> 可能成立</p>
 <p><img alt="alt text" src="../photo/5-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="2">
-<li><strong>函数依赖 vs 码</strong> ：函数依赖是码概念的泛化</li>
-</ol>
+</li>
+<li>
+<p><strong>函数依赖 vs 码</strong> ：函数依赖是码概念的泛化</p>
 <ul>
-<li><span class="arithmatex">\(K\)</span> 是关系模式 <span class="arithmatex">\(R\)</span> 的<strong>超码</strong>，当且仅当 <span class="arithmatex">\(K \to R\)</span></li>
+<li><mark><span class="arithmatex">\(K\)</span> 是关系模式 <span class="arithmatex">\(R\)</span> 的<strong>超码</strong>，当且仅当 <span class="arithmatex">\(K \to R\)</span></mark></li>
 <li><span class="arithmatex">\(K\)</span> 是 <span class="arithmatex">\(R\)</span> 的<strong>候选码</strong>，当且仅当：<span class="arithmatex">\(K \to R\)</span>，且不存在 <span class="arithmatex">\(\alpha \subset K\)</span> 使得 <span class="arithmatex">\(\alpha \to R\)</span>（即 <span class="arithmatex">\(K\)</span> 的真子集均不能决定 <span class="arithmatex">\(R\)</span>）</li>
 </ul>
-<ol start="3">
-<li><strong>函数依赖的使用</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>函数依赖的使用</strong></p>
 <ul>
 <li><strong>测试关系</strong>：如果关系 <span class="arithmatex">\(r\)</span> 在函数依赖集 <span class="arithmatex">\(F\)</span> 下是合法的，我们说 <strong><span class="arithmatex">\(r\)</span> 满足 <span class="arithmatex">\(F\)</span></strong></li>
 <li><strong>在合法关系集上指定约束</strong>（模式层面）：如果 <span class="arithmatex">\(R\)</span> 上<strong>所有</strong>合法关系 <span class="arithmatex">\(r\)</span> 都满足函数依赖集 <span class="arithmatex">\(F\)</span>，我们说 <strong><span class="arithmatex">\(F\)</span> 在 <span class="arithmatex">\(R\)</span> 上成立</strong></li>
@@ -5826,8 +5814,10 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 <p>可以说关系 <span class="arithmatex">\(r(R)\)</span> 满足 <span class="arithmatex">\(F\)</span>，但不能仅根据一个 <span class="arithmatex">\(r(R)\)</span> 就说 <span class="arithmatex">\(F\)</span> 在模式 <span class="arithmatex">\(R\)</span> 上成立（关系中的数据可能会变）</p>
 <p>容易判别一个 <span class="arithmatex">\(r\)</span> 是否满足给定的 <span class="arithmatex">\(F\)</span>；<strong>不易判别 <span class="arithmatex">\(F\)</span> 是否在 <span class="arithmatex">\(R\)</span> 上成立</strong>（不能仅由某个 <span class="arithmatex">\(r\)</span> 推断出 <span class="arithmatex">\(F\)</span>）</p>
 </div>
-<ol start="4">
-<li>通常情况下，如果 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>，则 <span class="arithmatex">\(\alpha \to \beta\)</span> 是<strong>平凡的</strong>，否则是非平凡的 </li>
+</li>
+<li>
+<p><mark>通常情况下，如果 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>，则 <span class="arithmatex">\(\alpha \to \beta\)</span> 是<strong>平凡的</strong>，否则是非平凡的 </mark></p>
+</li>
 </ol>
 <h3 id="_4"><strong>函数依赖闭包</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
@@ -5838,19 +5828,19 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 <li>
 <p><strong>定义</strong>：被 <span class="arithmatex">\(F\)</span> 逻辑蕴含的所有函数依赖的集合称为 <strong><span class="arithmatex">\(F\)</span> 的闭包</strong>，记作 <strong><span class="arithmatex">\(F^+\)</span></strong></p>
 </li>
-<li><strong>阿姆斯特朗公理</strong>：提供了寻找 <span class="arithmatex">\(F^+\)</span> 的推理规则</li>
-</ol>
+<li>
+<p><mark class="orange"><strong>阿姆斯特朗公理</strong></mark>：提供了寻找 <span class="arithmatex">\(F^+\)</span> 的推理规则</p>
 <ul>
-<li><strong>自反律</strong>：如果 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>，则 <span class="arithmatex">\(\alpha \to \beta\)</span> （平凡依赖）</li>
-<li><strong>增补律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span>，则 <span class="arithmatex">\(\gamma\alpha \to \gamma\beta\)</span> 或 <span class="arithmatex">\(\gamma\alpha \to \beta\)</span></li>
+<li><mark><strong>自反律</strong>：如果 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>，则 <span class="arithmatex">\(\alpha \to \beta\)</span> （平凡依赖）</mark></li>
+<li><mark><strong>增补律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span>，则 <span class="arithmatex">\(\gamma\alpha \to \gamma\beta\)</span> 或 <span class="arithmatex">\(\gamma\alpha \to \beta\)</span></mark></li>
 <li><strong>传递律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\beta \to \gamma\)</span>，则 <span class="arithmatex">\(\alpha \to \gamma\)</span> </li>
 <li><strong>特点</strong>：可靠的：只生成实际成立的函数依赖；完备的：生成所有成立的函数依赖</li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">附加规则</p>
 <ol>
-<li><strong>合并律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\alpha \to \gamma\)</span> 成立，则 <span class="arithmatex">\(\alpha \to \beta\gamma\)</span> 成立</li>
-<li><strong>分解律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\gamma\)</span> 成立，则 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\alpha \to \gamma\)</span> 成立</li>
+<li><mark class="cyan"><strong>合并律</strong></mark>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\alpha \to \gamma\)</span> 成立，则 <span class="arithmatex">\(\alpha \to \beta\gamma\)</span> 成立</li>
+<li><mark class="cyan"><strong>分解律</strong></mark>：如果 <span class="arithmatex">\(\alpha \to \beta\gamma\)</span> 成立，则 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\alpha \to \gamma\)</span> 成立</li>
 <li><strong>伪传递律</strong>：如果 <span class="arithmatex">\(\alpha \to \beta\)</span> 且 <span class="arithmatex">\(\gamma\beta \to \delta\)</span> 成立，则 <span class="arithmatex">\(\alpha\gamma \to \delta\)</span> 成立</li>
 </ol>
 </div>
@@ -5858,13 +5848,15 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/5-2.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
-<ol start="4">
-<li><strong>计算函数依赖集 <span class="arithmatex">\(F\)</span> 的闭包</strong>：重复执行以下操作（<strong>太复杂</strong>，用属性集闭包代替）</li>
-</ol>
+</li>
+<li>
+<p><strong>计算函数依赖集 <span class="arithmatex">\(F\)</span> 的闭包</strong>：重复执行以下操作（<mark class="orange"><strong>太复杂</strong>，用属性集闭包代替</mark>）</p>
 <ul>
 <li>对每个函数依赖 <span class="arithmatex">\(f\)</span> 应用自反律和增补律，将得到的结果函数依赖添加到 <span class="arithmatex">\(F^+\)</span> 中</li>
 <li>对每对函数依赖 <span class="arithmatex">\(f_1\)</span> 和 <span class="arithmatex">\(f_2\)</span> 使用传递律进行组合，将结果函数依赖添加到 <span class="arithmatex">\(F^+\)</span> 中</li>
 </ul>
+</li>
+</ol>
 <h3 id="_5">属性集闭包<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -5872,17 +5864,17 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 </li>
 <li>
 <p><strong>用途</strong>：</p>
-</li>
-</ol>
 <ul>
 <li><strong>测试 <span class="arithmatex">\(\alpha \to \beta\)</span> 是否在 <span class="arithmatex">\(F^+\)</span> 中</strong>：<span class="arithmatex">\(\beta \subseteq \alpha^+\)</span></li>
-<li><strong>测试 <span class="arithmatex">\(\alpha\)</span> 是否为超码</strong>：<span class="arithmatex">\(\alpha \to R\)</span> 是否在 <span class="arithmatex">\(F^+\)</span> 中，即 <span class="arithmatex">\(R \subseteq \alpha^+\)</span></li>
-<li><strong>计算 <span class="arithmatex">\(F\)</span> 的闭包</strong>：对于每个 <span class="arithmatex">\(S \subseteq \gamma^+\)</span>，函数依赖 <span class="arithmatex">\(\gamma \to S\)</span> 包含在 <span class="arithmatex">\(F^+\)</span> 中</li>
+<li><mark><strong>测试 <span class="arithmatex">\(\alpha\)</span> 是否为超码</strong></mark>：<span class="arithmatex">\(\alpha \to R\)</span> 是否在 <span class="arithmatex">\(F^+\)</span> 中，<mark>即 <span class="arithmatex">\(R \subseteq \alpha^+\)</span></mark></li>
+<li><mark><strong>计算 <span class="arithmatex">\(F\)</span> 的闭包</strong>：对于每个 <span class="arithmatex">\(S \subseteq \gamma^+\)</span>，函数依赖 <span class="arithmatex">\(\gamma \to S\)</span> 包含在 <span class="arithmatex">\(F^+\)</span> 中</mark></li>
 </ul>
-<ol start="3">
-<li><strong>属性集闭包的计算</strong>（避免了找 <span class="arithmatex">\(F^+\)</span>（反复使用公理）的麻烦）</li>
-</ol>
+</li>
+<li>
+<p><mark class="orange"><strong>属性集闭包的计算</strong></mark>（避免了找 <span class="arithmatex">\(F^+\)</span>（反复使用公理）的麻烦）</p>
 <p><img alt="alt text" src="../photo/5-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</li>
+</ol>
 <div class="admonition example">
 <p class="admonition-title">属性集闭包求解</p>
 <p><img alt="alt text" src="../photo/5-5.png" style="width:50%;display: block;margin: 20px auto" /></p>
@@ -5899,8 +5891,6 @@ t_1[\alpha] = t_2[\alpha] \implies t_1[\beta] = t_2[\beta]
 </li>
 <li>
 <p><strong>正则覆盖的计算</strong>：删除无关属性</p>
-</li>
-</ol>
 <ul>
 <li>
 <p>函数依赖集中可能存在可以<strong>从其他依赖推导出来</strong>的冗余依赖</p>
@@ -5920,15 +5910,21 @@ F = \{A \to B, B \to C, AC \to D\} \implies \{A \to B, B \to C, AC \to D, A \to 
 F = \{A \to B, B \to C, A \to CD\} \implies \{A \to B, B \to C, A \to C, A \to D\} \implies \{A \to B, B \to C, A \to D\}
 \]</div>
 </li>
+</ul>
+</li>
 <li>
-<p><strong>正则覆盖算法</strong>：重复执行以下步骤：</p>
+<p><mark><strong>正则覆盖算法</strong></mark>：重复执行以下步骤：</p>
 <ul>
 <li>使用合并律将 <span class="arithmatex">\(F\)</span> 中所有形如 <span class="arithmatex">\(\alpha_1 \to \beta_1\)</span> 和 <span class="arithmatex">\(\alpha_1 \to \beta_2\)</span> 的依赖替换为 <span class="arithmatex">\(\alpha_1 \to \beta_1\beta_2\)</span></li>
-<li>寻找在 <span class="arithmatex">\(\alpha\)</span> 或 <span class="arithmatex">\(\beta\)</span> 中包含无关属性的函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span>，如果找到了无关属性，将其从 <span class="arithmatex">\(\alpha \to \beta\)</span> 中删除</li>
+<li>寻找在 <span class="arithmatex">\(\alpha\)</span> 或 <span class="arithmatex">\(\beta\)</span> 中包含无关属性的函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span>，如果找到了无关属性，将其从 <span class="arithmatex">\(\alpha \to \beta\)</span> 中删除<ul>
+<li><strong>左冗余</strong>：删左边属性，若仍能推出右边，则该属性冗余</li>
+<li><strong>右冗余</strong>：删除右边某属性，<span class="arithmatex">\(α^+\)</span> 仍能推出 Y</li>
+</ul>
+</li>
 <li>直到 <span class="arithmatex">\(F\)</span> 不再发生变化</li>
 </ul>
 </li>
-</ul>
+</ol>
 <details class="example">
 <summary>正则覆盖求解</summary>
 <p><img alt="alt text" src="../photo/5-7.png" style="width:60%;display: block;margin: 20px auto" /></p>
@@ -5948,7 +5944,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 \]</div>
 </li>
 <li>
-<p><strong>判定准则</strong>：<span class="arithmatex">\(F^+\)</span> 中至少包含以下依赖之一（<strong>无损连接分解的条件</strong>：分解后的两个子模式的共同属性必须是 <span class="arithmatex">\(R_1\)</span> 或 <span class="arithmatex">\(R_2\)</span> 的码）</p>
+<p><strong>判定准则</strong>：<span class="arithmatex">\(F^+\)</span> 中至少包含以下依赖之一（<mark><strong>无损连接分解的条件</strong>：分解后的两个子模式的共同属性必须是 <span class="arithmatex">\(R_1\)</span> 或 <span class="arithmatex">\(R_2\)</span> 的码</mark>）</p>
 <div class="arithmatex">\[
 \{R_1 \cap R_2\} \to R_1 或 \{R_1 \cap R_2\} \to R_2
 \]</div>
@@ -5977,13 +5973,14 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/5-8.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
+<hr />
 <h2 id="boyce-codd">Boyce-Codd 范式<a class="headerlink" href="#boyce-codd" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>定义</strong>：关系模式 <span class="arithmatex">\(R\)</span> 对于函数依赖集 <span class="arithmatex">\(F\)</span> 处于 BCNF，当且仅当对于 <span class="arithmatex">\(F^+\)</span> 中所有形如 <span class="arithmatex">\(\alpha \to \beta\)</span> 的函数依赖（其中 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span>），下面条件<strong>至少有一个成立</strong>：</li>
-</ol>
+<li>
+<p><strong>定义</strong>：关系模式 <span class="arithmatex">\(R\)</span> 对于函数依赖集 <span class="arithmatex">\(F\)</span> 处于 BCNF，当且仅当<mark>对于 <span class="arithmatex">\(F^+\)</span> 中所有形如 <span class="arithmatex">\(\alpha \to \beta\)</span> 的函数依赖</mark>（其中 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span>），下面条件<strong>至少有一个成立</strong>：</p>
 <ul>
 <li><span class="arithmatex">\(\alpha \to \beta\)</span> 是<strong>平凡的函数依赖</strong>（即 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>）</li>
-<li><span class="arithmatex">\(\alpha\)</span> 是模式 <span class="arithmatex">\(R\)</span> 的一个<strong>超码</strong></li>
+<li><mark><span class="arithmatex">\(\alpha\)</span> 是模式 <span class="arithmatex">\(R\)</span> 的一个<strong>超码</strong></mark></li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">BCNF 判定</p>
@@ -5992,14 +5989,16 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <li>但是在测试 <strong><span class="arithmatex">\(R\)</span> 分解后的关系</strong> <span class="arithmatex">\(R_i\)</span> 时，仅使用 <span class="arithmatex">\(F\)</span> 进行测试可能是错误的，<strong>需要使用 <span class="arithmatex">\(F^+\)</span></strong></li>
 </ol>
 </div>
-<ol start="2">
-<li><strong>BCNF 分解</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>BCNF 分解</strong>：</p>
 <ul>
 <li>寻找<strong>不符合 BCNF 两个条件</strong>的函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span></li>
 <li>将 <span class="arithmatex">\(R_i\)</span> <strong>分解为两个子模式</strong>：<span class="arithmatex">\(R_{i1} = (\alpha, \beta)\)</span> 和 <span class="arithmatex">\(R_{i2} = (R_i - \beta)\)</span>，<span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(R_{i1}\)</span> 和 <span class="arithmatex">\(R_{i2}\)</span> 的共同属性</li>
-<li>最终，每个子模式<strong>都符合 BCNF，</strong>且该分解是<strong>无损</strong>连接的</li>
+<li>最终，每个子模式<strong>都符合 BCNF，</strong><mark>且该分解是<strong>无损</strong>连接的</mark></li>
 </ul>
+</li>
+</ol>
 <details class="example">
 <summary>Example1</summary>
 <p><img alt="alt text" src="../photo/5-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
@@ -6010,7 +6009,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>不一定能够获得一个既符合 BCNF <strong>又保持依赖</strong>的分解</p>
+<p><mark class="orange">不一定能够获得一个既符合 BCNF <strong>又保持依赖</strong>的分解</mark></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><span class="arithmatex">\(R = (J, K, L)\)</span> 其中 <span class="arithmatex">\(J\)</span> 学生、<span class="arithmatex">\(K\)</span> 课程、<span class="arithmatex">\(L\)</span> 教师</p>
@@ -6021,12 +6020,12 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <li>对 <span class="arithmatex">\(R\)</span> 的任何分解都将无法保持 <span class="arithmatex">\(JK \rightarrow L\)</span> <strong>e.g.</strong> <span class="arithmatex">\(R_1 = (L, K), R_2 = (J, L)\)</span>，属于 BCNF，但不保持依赖</li>
 </ul>
 </div>
-<p><strong>因此，我们无法始终同时满足所有三个设计目标：无损连接、BCNF、保持依赖</strong></p>
+<p><mark class="orange"><strong>因此，我们无法始终同时满足所有三个设计目标：无损连接、BCNF、保持依赖</strong></mark></p>
 </div>
 <h2 id="_8">第三范式<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
 <p class="admonition-title">第三范式</p>
-<p>为了解决分解为 BCNF 不能保持依赖的问题，定义一种较弱的范式，称为第三范式</p>
+<p><mark class="cyan">为了解决分解为 BCNF 不能保持依赖的问题</mark>，定义一种较弱的范式，称为第三范式</p>
 <ul>
 <li>允许一定程度的<strong><abbr title="redundancy">冗余</abbr></strong>（及其产生的问题）</li>
 <li>但函数依赖可以在单个关系上进行检查，而无需计算连接，即保持依赖</li>
@@ -6034,12 +6033,12 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 </ul>
 </div>
 <ol>
-<li><strong>定义</strong>：一个关系模式 <span class="arithmatex">\(R\)</span> 处于 3NF，如果对于 <span class="arithmatex">\(F^+\)</span> 中所有的 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span>，至少满足以下条件之一：</li>
-</ol>
+<li>
+<p><strong>定义</strong>：一个关系模式 <span class="arithmatex">\(R\)</span> 处于 3NF，如果对于 <span class="arithmatex">\(F^+\)</span> 中所有的 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span>，至少满足以下条件之一：</p>
 <ul>
 <li><span class="arithmatex">\(\alpha \rightarrow \beta\)</span> 是平凡的（即 <span class="arithmatex">\(\beta \subseteq \alpha\)</span>）</li>
 <li><span class="arithmatex">\(\alpha\)</span> 是 <span class="arithmatex">\(R\)</span> 的一个超码</li>
-<li><strong><span class="arithmatex">\(\beta - \alpha\)</span> 中的每个属性 <span class="arithmatex">\(A\)</span> 都包含在 <span class="arithmatex">\(R\)</span> 的一个候选码中</strong>（即 <span class="arithmatex">\(A \in \beta - \alpha\)</span> 是主属性；若 <span class="arithmatex">\(\alpha \cap \beta = \emptyset\)</span>，则 <span class="arithmatex">\(A = \beta\)</span> 是主属性）</li>
+<li><mark><strong><span class="arithmatex">\(\beta - \alpha\)</span> 中的每个属性 <span class="arithmatex">\(A\)</span> 都包含在 <span class="arithmatex">\(R\)</span> 的一个候选码中</strong></mark>（即 <span class="arithmatex">\(A \in \beta - \alpha\)</span> 是主属性；若 <span class="arithmatex">\(\alpha \cap \beta = \emptyset\)</span>，则 <span class="arithmatex">\(A = \beta\)</span> 是主属性）</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
@@ -6054,9 +6053,9 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <p><span class="arithmatex">\(F = \{JK \rightarrow L, L \rightarrow K\}\)</span></p>
 <p>该实例处于 3NF，但是会存在一定的冗余（不需要分解，所以可能会存在信息重复的问题）</p>
 </div>
-<ol start="2">
-<li><strong>3NF 测试</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>3NF 测试</strong></p>
 <ul>
 <li>只需检查 <span class="arithmatex">\(F\)</span> 中的函数依赖，无需检查 <span class="arithmatex">\(F^+\)</span> </li>
 <li>使用属性闭包检查每个依赖 <span class="arithmatex">\(\alpha \rightarrow \beta\)</span>，以判断 <span class="arithmatex">\(\alpha\)</span> 是否为超码</li>
@@ -6066,18 +6065,20 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <p class="admonition-title">Warning</p>
 <p>这种测试开销较大，因为它涉及查找所有候选码：<strong>测试 3NF 已被证明是 NP-hard 问题</strong>（但是分解为第三范式可以在多项式时间内完成）</p>
 </div>
-<ol start="3">
-<li><strong>3NF 分解</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>3NF 分解</strong></p>
 <ul>
-<li>求正则覆盖 <span class="arithmatex">\(F_c\)</span></li>
-<li>遍历 <span class="arithmatex">\(F_c\)</span> 中的每一个函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span>，<strong>组合成一个子模式</strong> <span class="arithmatex">\(R_i = (\alpha, \beta)\)</span>（保持以来）</li>
+<li><mark>求正则覆盖 <span class="arithmatex">\(F_c\)</span></mark></li>
+<li>遍历 <span class="arithmatex">\(F_c\)</span> 中的每一个函数依赖 <span class="arithmatex">\(\alpha \to \beta\)</span>，<strong>组合成一个子模式</strong> <span class="arithmatex">\(R_i = (\alpha, \beta)\)</span>（保持依赖）</li>
 <li>如果没有任何子模式包含候选码，则选出 <span class="arithmatex">\(R\)</span> 的<strong>任意一个候选码，创建一个新的子模式</strong></li>
 </ul>
 <details class="example">
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/5-11.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </details>
+</li>
+</ol>
 <hr />
 <h2 id="_9">多值依赖<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
@@ -6112,14 +6113,16 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
 <hr />
 <h2 id="_10">第四范式<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>定义</strong>：一个关系模式 <span class="arithmatex">\(R\)</span> 关于函数依赖和多值依赖集 <span class="arithmatex">\(D\)</span> 属于 4NF，是指对于 <span class="arithmatex">\(D^+\)</span> 中所有形如 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 的多值依赖（其中 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span>），至少满足以下条件之一：</li>
-</ol>
+<li>
+<p><strong>定义</strong>：一个关系模式 <span class="arithmatex">\(R\)</span> 关于函数依赖和多值依赖集 <span class="arithmatex">\(D\)</span> 属于 4NF，是指对于 <span class="arithmatex">\(D^+\)</span> 中所有形如 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 的多值依赖（其中 <span class="arithmatex">\(\alpha \subseteq R\)</span> 且 <span class="arithmatex">\(\beta \subseteq R\)</span>），至少满足以下条件之一：</p>
 <ul>
 <li><span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span> 是平凡的（即 <span class="arithmatex">\(\beta \subseteq \alpha\)</span> 或 <span class="arithmatex">\(\alpha \cup \beta = R\)</span>）</li>
 <li><span class="arithmatex">\(\alpha\)</span> 是模式 <span class="arithmatex">\(R\)</span> 的一个超码</li>
 </ul>
-<ol start="2">
-<li><strong>如果一个关系属于 4NF，则它一定属于 BCNF</strong></li>
+</li>
+<li>
+<p><strong>如果一个关系属于 4NF，则它一定属于 BCNF</strong></p>
+</li>
 <li><strong>分解</strong>：识别并提取不满足 4NF 的多值依赖 <span class="arithmatex">\(\alpha \twoheadrightarrow \beta\)</span>，将原模式分解为包含 <span class="arithmatex">\((\alpha \cup \beta)\)</span> 和 <span class="arithmatex">\((R - \beta)\)</span> 的两个子模式</li>
 </ol>
 
@@ -6144,7 +6147,7 @@ r = \Pi_{R1}(r) \bowtie \Pi_{R2}(r)
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月21日 21:20:40 CST">2026年4月21日 21:20:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

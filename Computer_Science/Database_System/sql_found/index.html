@@ -3529,7 +3529,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5713,16 +5713,17 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 2178 字</span>
+    <span>约 2306 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 7 分钟</span>
+    <span>预计阅读 8 分钟</span>
 </div>
 
+<hr />
 <p><strong>SQL 标准符合度</strong>：入门级、过渡级、中间级、完全级</p>
 <h2 id="ddl">数据定义语言 DDL<a class="headerlink" href="#ddl" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
@@ -5738,14 +5739,8 @@
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <ol>
-<li>
-<p><strong>主要功能</strong>：定义每个关系的模式、属性值的域、完整性约束、物理存储结构、索引以及视图</p>
-</li>
-<li>
-<p><strong>域类型</strong></p>
-</li>
-</ol>
-<ul>
+<li><strong>主要功能</strong>：定义每个关系的模式、属性值的域、完整性约束、物理存储结构、索引以及视图</li>
+<li><mark><strong>域类型</strong></mark><ul>
 <li><code>char(n)</code>：<strong>固定长度</strong>的字符串，长度由用户指定</li>
 <li><code>varchar(n)</code>：<strong>可变长度</strong>字符串，最大长度由用户指定为 <code>n</code></li>
 <li><code>int</code>：整数</li>
@@ -5758,9 +5753,9 @@
 <li><code>time</code>：时间（小时、分钟、秒）</li>
 <li><code>timestamp</code>：日期加上时间</li>
 </ul>
-<ol start="3">
-<li><strong>创建表</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>创建表</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -5787,14 +5782,12 @@
 <li><strong><code>check (P)</code></strong>，其中 <code>P</code> 是一个谓词</li>
 </ol>
 </div>
-<ol start="4">
+</li>
 <li>
 <p><strong>删除表</strong> <code>DROP TABLE table_name;</code></p>
 </li>
 <li>
 <p><strong>修改表</strong></p>
-</li>
-</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -5805,21 +5798,21 @@
 <span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">-- 添加列</span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">-- 添加列A，类型为D</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">ADD</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">D</span><span class="p">;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">-- 删除列</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">DROP</span><span class="w"> </span><span class="n">A</span><span class="p">;</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">-- 修改列</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1">-- 修改列A的数据类型</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="k">MODIFY</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">D</span><span class="p">;</span><span class="w">                 </span><span class="c1">-- MySQL</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">table_name</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="k">TYPE</span><span class="w"> </span><span class="n">D</span><span class="p">;</span><span class="w">      </span><span class="c1">-- PostgreSQL</span>
 </code></pre></div></td></tr></table></div>
-<ol start="6">
-<li><strong>索引</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>索引</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -5836,6 +5829,8 @@
 <a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">-- 删除索引</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">DROP</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">index_name</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <h2 id="_1">基本结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -5844,39 +5839,33 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span><span class="w">                     </span><span class="c1">-- P是一个谓词</span>
 </code></pre></div></td></tr></table></div>
 <ol>
-<li><strong><code>SELECT</code> 子句</strong>：选择属性</li>
-</ol>
-<ul>
+<li><strong><code>SELECT</code> 子句</strong>：选择属性<ul>
 <li><strong><code>select *</code></strong>： 选择所有属性</li>
 <li>可以包含<strong>算术表达式</strong>，以及对<strong>常量或元组属性</strong>的操作</li>
 <li>SQL 名称<strong>不区分大小写</strong></li>
 </ul>
-<ol start="2">
-<li><strong><code>FROM</code> 子句</strong>：选择表</li>
-</ol>
-<ul>
-<li>如果在 <code>FROM</code> 子句中指定了多个关系，对应于关系代数的<strong>笛卡尔积</strong>操作</li>
-<li>加入 <code>WHERE</code> 子句，逻辑上等于<strong>自然连接</strong></li>
+</li>
+<li><strong><code>FROM</code> 子句</strong>：选择表<ul>
+<li><mark>如果在 <code>FROM</code> 子句中指定了多个关系，对应于关系代数的<strong>笛卡尔积</strong>操作</mark></li>
+<li><mark>加入 <code>WHERE</code> 子句，逻辑上等于<strong>自然连接</strong></mark></li>
 </ul>
-<ol start="3">
-<li><strong><code>WHERE</code> 子句</strong>：</li>
-</ol>
-<ul>
+</li>
+<li><strong><code>WHERE</code> 子句</strong>：<ul>
 <li>指定结果<strong>必须满足的条件</strong></li>
 <li>比较结果可以使用<strong>逻辑连接词</strong>组合，包括 <code>AND</code>、<code>OR</code> 和 <code>NOT</code></li>
 </ul>
-<ol start="4">
-<li><strong>重命名操作</strong> <code>AS</code></li>
-</ol>
+</li>
+<li>
+<p><strong>重命名操作</strong> <code>AS</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">new_name</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">t_m</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
 </code></pre></div></td></tr></table></div>
-<ol start="5">
-<li><strong>字符串操作</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>字符串操作</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
@@ -5886,7 +5875,7 @@
 <a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">customer_name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;Main\%&#39;</span>
 </code></pre></div></td></tr></table></div>
 <ul>
-<li>实现<strong>模糊匹配</strong>：放置在 <code>WHERE</code> 子句中，且必须与 <strong><code>LIKE</code> 操作</strong>结合使用</li>
+<li><mark>实现<strong>模糊匹配</strong>：放置在 <code>WHERE</code> 子句中，且必须与 <strong><code>LIKE</code> 操作</strong>结合使用</mark></li>
 <li><code>%</code>：匹配任意子串</li>
 <li><code>_</code>：匹配任意单个字符</li>
 <li>
@@ -5900,32 +5889,33 @@
 <p>函数 <code>lower( )</code> 和 <code>upper ( )</code> 转换大小写</p>
 </li>
 </ul>
-<ol start="6">
-<li><strong>显示元组的排序</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>显示元组的排序</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="w"> </span><span class="k">ASC</span><span class="w">        </span><span class="c1">-- 升序(DESC: 降序)</span>
 </code></pre></div></td></tr></table></div>
-<ol start="7">
-<li><strong>重复元组</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>重复元组</strong></p>
 <ul>
 <li>SQL 允许关系和查询结果中<strong>出现重复</strong></li>
 <li><code>select distinct</code>：强制消除重复</li>
 <li><code>select all</code>：允许重复（默认值）</li>
 </ul>
+</li>
+</ol>
+<hr />
 <h2 id="_2">集合操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>集合操作包括 <code>UNION</code>、<code>INTERSECT</code> 和 <code>EXCEPT</code>，对应于关系代数运算 <span class="arithmatex">\(∪\)</span>、<span class="arithmatex">\(∩\)</span> 和 <span class="arithmatex">\(−\)</span></p>
+<p><mark>集合操作包括 <code>UNION</code>、<code>INTERSECT</code> 和 <code>EXCEPT</code>，对应于关系代数运算 <span class="arithmatex">\(∪\)</span>、<span class="arithmatex">\(∩\)</span> 和 <span class="arithmatex">\(−\)</span></mark></p>
 </li>
 <li>
 <p><strong>操作实例</strong></p>
-</li>
-</ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
@@ -5958,10 +5948,13 @@
 <p class="admonition-title">Tips</p>
 <p>集合操作<strong>默认去重</strong>，需要加入 <code>ALL</code> 保留重复</p>
 </div>
+</li>
+</ol>
+<hr />
 <h2 id="_3">聚合函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong><code>GROUP BY</code> 子句</strong>：将结果分组</li>
-</ol>
+<li>
+<p><strong><code>GROUP BY</code> 子句</strong>：将结果分组</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span>
@@ -5974,9 +5967,9 @@
 <p class="admonition-title">警告</p>
 <p><code>SELECT</code> 子句中<strong>聚合函数之外的属性</strong>必须出现在 <code>GROUP BY</code> 列表中</p>
 </div>
-<ol start="2">
-<li><strong><code>HAVING</code> 子句</strong>：过滤分组结果</li>
-</ol>
+</li>
+<li>
+<p><strong><code>HAVING</code> 子句</strong>：过滤分组结果</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
@@ -5987,45 +5980,47 @@
 <a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">A</span><span class="p">.</span><span class="n">branch_name</span><span class="w"> </span>
 <a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="k">HAVING</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1200</span><span class="w">      </span><span class="c1">-- 分组之后的谓词</span>
 </code></pre></div></td></tr></table></div>
+</li>
+</ol>
 <div class="admonition success">
 <p class="admonition-title">Tips</p>
 <ol>
-<li><strong>SELECT 执行顺序</strong>：FROM → <strong>where → group → having</strong> → select → distinct → order by</li>
-<li><strong>聚合函数不能直接在 <code>where</code> 子句中使用</strong></li>
+<li><mark class="green"><strong>SELECT 执行顺序</strong>：FROM → <strong>where → group → having</strong> → select → distinct → order by</mark></li>
+<li><mark class="orange"><strong>聚合函数不能直接在 <code>where</code> 子句中使用</strong></mark></li>
 <li>除了 <code>count(*)</code> 以外，所有的聚合函数都会忽略 <code>null</code> 值</li>
 <li>如果集合为空，<code>count</code> 返回 0，其他聚合函数返回 <code>null</code></li>
 </ol>
 </div>
+<hr />
 <h2 id="null">NULL<a class="headerlink" href="#null" title="Permanent link">&para;</a></h2>
 <ol>
 <li>涉及 <code>null</code> 的任何算术表达式的结果是 <code>null</code></li>
-<li>与 <code>null</code> 的任何比较返回 <strong><code>unknown</code></strong></li>
-</ol>
+<li>
+<p>与 <code>null</code> 的任何比较返回 <strong><code>unknown</code></strong></p>
 <details class="abstract">
 <summary>unknown 三值逻辑</summary>
 <ol>
-<li><code>OR</code>: </li>
-</ol>
-<ul>
+<li><code>OR</code>: <ul>
 <li>(unknown or true) = true</li>
 <li>(unknown or false) = unknown</li>
 <li>(unknown or unknown) = unknown</li>
 </ul>
-<ol start="2">
-<li><code>AND</code>: </li>
-</ol>
-<ul>
+</li>
+<li><code>AND</code>: <ul>
 <li>(true and unknown) = unknown</li>
 <li>(false and unknown) = false</li>
 <li>(unknown and unknown) = unknown</li>
 </ul>
-<ol start="3">
+</li>
 <li><code>NOT</code>: (not unknown) = unknown</li>
 </ol>
 </details>
-<ol start="3">
-<li>谓词 <code>is null</code>、<code>is not null</code> 可用于<strong>检查空值</strong></li>
+</li>
+<li>
+<p><mark>谓词 <code>is null</code>、<code>is not null</code> 可用于<strong>检查空值</strong></mark></p>
+</li>
 </ol>
+<hr />
 <h2 id="_4">嵌套子查询<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
@@ -6044,14 +6039,10 @@
 <a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">balance</span><span class="p">;</span><span class="w">  </span>
 </code></pre></div></td></tr></table></div>
 <ol>
-<li>
-<p><strong>嵌套查询的用途</strong>：集合比较、测试空关系、测试重复元组的缺失</p>
-</li>
+<li><strong>嵌套查询的用途</strong>：集合比较、测试空关系、测试重复元组的缺失</li>
 <li>
 <p><strong>集合比较</strong></p>
-</li>
-</ol>
-<ul>
+<ol>
 <li>
 <p><strong><code>some</code></strong>：集合中至少有一个元素满足条件</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
@@ -6090,41 +6081,32 @@
 <a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 </li>
-</ul>
+<li>
+<p><strong><code>in</code></strong> &amp; <strong><code>not in</code></strong></p>
+</li>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Tips</p>
-<p>在同一 SQL 语句内，除非外层查询的元组变量引入内层查询，否则层查询只进行一次</p>
-</div>
-<ol start="3">
-<li><strong>测试空关系</strong>：如果作为参数的子查询非空，则 <strong><code>exists</code></strong> 结构返回真值 <code>true</code></li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-15-10">10</a></span>
-<span class="normal"><a href="#__codelineno-15-11">11</a></span>
-<span class="normal"><a href="#__codelineno-15-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">S</span><span class="w"> </span>
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1">-- 条件：不存在一所分行，它既属于 Brooklyn，而客户 S 在那里又没有账户</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">(</span><span class="w"> </span>
-<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span>
-<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span>
-<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">branch_city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Brooklyn</span><span class="err">’</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">    </span><span class="k">EXCEPT</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">branch_name</span><span class="w"> </span>
-<a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">R</span><span class="w"> </span>
-<a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span>
-<a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">customer_name</span><span class="p">))</span><span class="w"> </span>
+<p><mark class="green">在同一 SQL 语句内，除非外层查询的元组变量引入内层查询，否则内层查询只进行一次</mark></p>
+<p><strong>相关子查询</strong>：内层查询引用了外层查询的变量</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">customer</span><span class="w"> </span><span class="k">c</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="n">d</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">customer_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">c</span><span class="p">.</span><span class="n">customer_id</span><span class="w">  </span><span class="c1">-- 外层查询的变量引入内层查询</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
-<ol start="4">
-<li><strong>测试重复元组的缺失</strong>：<strong><code>unique</code></strong> 结构用于测试子查询的结果中是否存在重复元组</li>
-</ol>
+</div>
+</li>
+<li>
+<p><strong>测试空关系</strong>：如果作为参数的子查询非空，则 <mark><strong><code>exists</code></strong> 结构</mark>返回真值 <code>true</code></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
@@ -6134,134 +6116,175 @@
 <span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-16-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="c1">-- 查找在 Perryridge 分行至多拥有一个账户的所有客户</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_name</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">unique</span><span class="w">            </span><span class="c1">-- 查找账户是否唯一</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">customer_name</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">     </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="p">,</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">R</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">     </span><span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
-<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">           </span><span class="k">and</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">account_number</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">           </span><span class="k">and</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">branch_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Perryridge&#39;</span><span class="p">)</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="c1">-- 至少两个账户 not unique</span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">S</span><span class="w"> </span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="c1">-- 条件：不存在一所分行，它既属于 Brooklyn，而客户 S 在那里又没有账户</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">exists</span><span class="w"> </span><span class="p">(</span><span class="w"> </span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="w"> </span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">branch</span><span class="w"> </span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">branch_city</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">‘</span><span class="n">Brooklyn</span><span class="err">’</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">    </span><span class="k">EXCEPT</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">distinct</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">branch_name</span><span class="w"> </span>
+<a id="__codelineno-16-10" name="__codelineno-16-10"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">account</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">R</span><span class="w"> </span>
+<a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span>
+<a id="__codelineno-16-12" name="__codelineno-16-12"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">S</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">customer_name</span><span class="p">))</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>测试重复元组的缺失</strong>：<mark><strong><code>unique</code></strong> 结构</mark>用于测试子查询的结果中是否存在重复元组</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-17-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="c1">-- 查找在 Perryridge 分行至多拥有一个账户的所有客户</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_name</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">T</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">unique</span><span class="w">            </span><span class="c1">-- 查找账户是否唯一</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">    </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">customer_name</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="p">,</span><span class="w"> </span><span class="n">depositor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">R</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">customer_name</span><span class="w"> </span>
+<a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">R</span><span class="p">.</span><span class="n">account_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">account_number</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="w">        </span><span class="k">and</span><span class="w"> </span><span class="n">account</span><span class="p">.</span><span class="n">branch_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Perryridge&#39;</span><span class="p">)</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="c1">-- 至少两个账户 not unique</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<hr />
 <h2 id="_5">视图<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>视图</strong>：提供了一种机制，可以<strong>隐藏某些数据</strong>，使其对某些用户不可见</li>
 <li><strong>好处</strong>：安全性；易于使用，支持逻辑独立性</li>
-<li><strong>创建视图</strong>：</li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span>
-<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">view_name</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">cn</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
-</code></pre></div></td></tr></table></div>
-<ol start="4">
-<li><strong>删除视图</strong>：<code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">view_name</span><span class="p">;</span></code></li>
-</ol>
-<h2 id="_6">派生关系<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<li>
+<p><strong>创建视图</strong>：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
 <span class="normal"><a href="#__codelineno-18-2">2</a></span>
 <span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span>
-<span class="normal"><a href="#__codelineno-18-5">5</a></span>
-<span class="normal"><a href="#__codelineno-18-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_bal</span><span class="w"> </span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="w"> </span>
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">branch_name</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="p">(</span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_bal</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">avg_bal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">view_name</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="p">,</span><span class="w"> </span><span class="n">c2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">cn</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
 </code></pre></div></td></tr></table></div>
-<ol>
-<li><strong>派生关系</strong>：其元组并不直接物理存储在数据库中，而是根据定义的规则从底层表中提取、组合或计算出来的<strong>虚拟表</strong></li>
-<li>派生关系<strong>最常见的形式</strong>：视图或派生表（派生表必须有自己的别名）</li>
-<li><strong><code>WITH</code> 子句</strong>：允许为查询<strong>局部</strong>定义视图，而不是全局定义</li>
+</li>
+<li>
+<p><strong>删除视图</strong>：<code class="highlight"><span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">view_name</span><span class="p">;</span></code></p>
+</li>
 </ol>
+<hr />
+<h2 id="_6">派生关系<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
 <span class="normal"><a href="#__codelineno-19-2">2</a></span>
 <span class="normal"><a href="#__codelineno-19-3">3</a></span>
 <span class="normal"><a href="#__codelineno-19-4">4</a></span>
 <span class="normal"><a href="#__codelineno-19-5">5</a></span>
-<span class="normal"><a href="#__codelineno-19-6">6</a></span>
-<span class="normal"><a href="#__codelineno-19-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">WITH</span><span class="w"> </span><span class="n">derived_table_name</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
-<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">derived_table_name</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">Q</span>
+<span class="normal"><a href="#__codelineno-19-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_bal</span><span class="w"> </span>
+<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="k">avg</span><span class="p">(</span><span class="n">balance</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">account</span><span class="w"> </span>
+<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">    </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">branch_name</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="k">result</span><span class="w"> </span><span class="p">(</span><span class="n">branch_name</span><span class="p">,</span><span class="w"> </span><span class="n">avg_bal</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">avg_bal</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>派生关系</strong>：其元组并不直接物理存储在数据库中，而是根据定义的规则从底层表中提取、组合或计算出来的<mark><strong>虚拟表</strong></mark></li>
+<li>派生关系<strong>最常见的形式</strong>：视图或派生表（派生表必须有自己的别名）</li>
+<li>
+<p><mark><strong><code>WITH</code> 子句</strong>：允许为查询<strong>局部</strong>定义视图，而不是全局定义</mark></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span>
+<span class="normal"><a href="#__codelineno-20-4">4</a></span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">WITH</span><span class="w"> </span><span class="n">derived_table_name</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span>
+<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">rm</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="k">FROM</span><span class="w"> </span><span class="n">derived_table_name</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">Q</span>
+</code></pre></div></td></tr></table></div>
+</li>
+</ol>
+<hr />
 <h2 id="_7">数据库的修改<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>删除</strong></li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
-<span class="normal"><a href="#__codelineno-20-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
-</code></pre></div></td></tr></table></div>
-<ol start="2">
-<li><strong>更新</strong></li>
-</ol>
+<li>
+<p><strong>删除</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span>
-<span class="normal"><a href="#__codelineno-21-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">En</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="k">table_name</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>更新</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
+<span class="normal"><a href="#__codelineno-22-2">2</a></span>
+<span class="normal"><a href="#__codelineno-22-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">En</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">P</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>视图只基于一张表时（行列视图），<strong>视图的更新</strong>会<strong>自动更新</strong>基表</li>
-<li>视图基于多个表时，视图不能进行更新</li>
+<li><mark class="orange">视图基于多个表时，视图不能进行更新</mark></li>
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">用于条件更新的 Case 语句</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
-<span class="normal"><a href="#__codelineno-22-2">2</a></span>
-<span class="normal"><a href="#__codelineno-22-3">3</a></span>
-<span class="normal"><a href="#__codelineno-22-4">4</a></span>
-<span class="normal"><a href="#__codelineno-22-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CASE</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">                </span><span class="k">WHEN</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">95</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">                </span><span class="k">ELSE</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">              </span><span class="k">END</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="k">table_name</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">SET</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CASE</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">                </span><span class="k">WHEN</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="mi">95</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">                </span><span class="k">ELSE</span><span class="w"> </span><span class="n">balance</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="mi">05</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">            </span><span class="k">END</span>
 </code></pre></div></td></tr></table></div>
 </div>
-<ol start="3">
-<li><strong>插入</strong></li>
-</ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
-<span class="normal"><a href="#__codelineno-23-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">)</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">En</span><span class="p">)</span>
+</li>
+<li>
+<p><strong>插入</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="w"> </span><span class="n">A2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">An</span><span class="p">)</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">E1</span><span class="p">,</span><span class="w"> </span><span class="n">E2</span><span class="p">,</span><span class="w"> </span><span class="p">...,</span><span class="w"> </span><span class="n">En</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<ol start="4">
-<li><strong>事务</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>事务</strong></p>
 <ul>
 <li>事务是作为一个单一逻辑单元执行的一系列查询和数据更新语句</li>
 <li><code>COMMIT WORK</code>：使事务的所有更新在数据库中<strong>永久生效</strong>（成功执行则自动提交）</li>
 <li><code>ROLLBACK WORK</code>：<strong>撤消</strong>事务所执行的所有更新</li>
 <li><strong>四个属性</strong>：原子性、隔离性、一致性、持久性</li>
 </ul>
-<h2 id="_8">连接关系<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>连接条件</strong>：定义两个关系中的哪些元组匹配，以及结果中存在哪些属性</li>
+</li>
 </ol>
-<ul>
+<hr />
+<h2 id="_8">连接关系<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">Select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="k">from</span><span class="w"> </span><span class="n">loan</span><span class="w"> </span><span class="k">inner</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">borrower</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">loan</span><span class="p">.</span><span class="n">loan_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">borrower</span><span class="p">.</span><span class="n">loan_number</span>
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>连接条件</strong>：定义两个关系中的哪些元组匹配，以及结果中存在哪些属性<ul>
 <li><strong>自然连接</strong> <code>natural</code>： 两个关系中具有相同属性的行匹配</li>
-<li><strong><code>on</code></strong>：容许<strong>不同名</strong>属性的比较，且结果关系中<strong>不去重</strong></li>
+<li><strong><code>on</code></strong>：容许<strong>不同名</strong>属性的比较，且<mark>结果关系中<strong>不去重</strong></mark></li>
 <li><strong><code>using</code></strong>：类似于 <code>natural</code>连接，但<strong>仅以 <code>using</code> 列出的公共属性</strong>为连接条件 </li>
 </ul>
-<ol start="2">
-<li><strong>连接类型</strong>：</li>
-</ol>
-<ul>
-<li><strong>内连接</strong>：只保留满足连接条件的元组</li>
-<li><strong>左外连接</strong>：保留左侧表的所有行，匹配右侧的表</li>
-<li><strong>右外连接</strong>：保留右侧表的所有行，匹配左侧的表</li>
-<li><strong>全外连接</strong>：保留所有行，匹配的空列用 <code>NULL</code> 填充</li>
+</li>
+<li><strong>连接类型</strong>：<ul>
+<li><strong>内连接 inner join</strong>：<mark>只保留满足连接条件的元组</mark></li>
+<li><strong>左外连接 left outer join</strong>：保留左侧表的所有行，匹配右侧的表</li>
+<li><strong>右外连接 right outer join</strong>：保留右侧表的所有行，匹配左侧的表</li>
+<li><strong>全外连接 full outer join</strong>：保留所有行，匹配的空列用 <code>NULL</code> 填充</li>
 </ul>
+</li>
+</ol>
 <details class="example">
 <summary>连接</summary>
 <p><img alt="alt text" src="../photo/3-1.png" style="width:70%;display: block;margin: 20px auto" /></p>
@@ -6270,11 +6293,11 @@
 <details class="question">
 <summary>问题</summary>
 <p>Example: Find all customers who have either an account or a loan (but not both) at the bank. </p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span>
-<span class="normal"><a href="#__codelineno-24-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_name</span><span class="w"> </span>
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="n">depositor</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">full</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">borrower</span><span class="p">)</span><span class="w"> </span>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">account_number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">loan_number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w"> </span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">customer_name</span><span class="w"> </span>
+<a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="k">FROM</span><span class="w"> </span><span class="p">(</span><span class="n">depositor</span><span class="w"> </span><span class="k">natural</span><span class="w"> </span><span class="k">full</span><span class="w"> </span><span class="k">outer</span><span class="w"> </span><span class="k">join</span><span class="w"> </span><span class="n">borrower</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">account_number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n">loan_number</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">null</span><span class="w"> </span>
 </code></pre></div></td></tr></table></div>
 </details>
 
@@ -6299,7 +6322,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月7日 18:39:39 CST">2026年4月7日 18:39:39</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

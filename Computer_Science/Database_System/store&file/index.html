@@ -3500,7 +3500,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5639,14 +5639,14 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 2502 字</span>
+    <span>约 2670 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 8 分钟</span>
+    <span>预计阅读 9 分钟</span>
 </div>
 
 <div class="admonition info">
@@ -5667,10 +5667,11 @@
 <p><img alt="alt text" src="../photo/6-1.png" style="width:50%;display: block;margin: 20px auto" /></p>
 </details>
 </div>
+<hr />
 <h2 id="_2">物理存储介质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>存储介质可按以下标准分类</strong>：</li>
-</ol>
+<li>
+<p><strong>存储介质可按以下标准分类</strong>：</p>
 <ul>
 <li><strong>速度</strong>：访问数据的快慢<ul>
 <li><strong>由快到慢</strong>：高速缓存、主存储器、快闪存储器、磁盘、光存储、磁带存储</li>
@@ -5683,54 +5684,58 @@
 </ul>
 </li>
 </ul>
-<ol start="2">
-<li><strong>Cache</strong>：最快且最昂贵的存储形式，具有<strong>易失性</strong>，由计算机系统硬件管理</li>
+</li>
+<li>
+<p><strong>Cache</strong>：最快且最昂贵的存储形式，具有<strong>易失性</strong>，由计算机系统硬件管理</p>
+</li>
 <li><strong>Main Memory</strong>：访问快速，容量通常太小（太贵），具有<strong>易失性</strong></li>
-<li><strong>Flash Memory</strong>：具有<strong>非易失性</strong></li>
-</ol>
+<li>
+<p><strong>Flash Memory</strong>：具有<strong>非易失性</strong></p>
 <ul>
 <li>读取速度大致与主存储器一样快，但<strong>写入速度较慢</strong>，擦除速度更慢</li>
 <li>数据<strong>只能在某一位置写入一次</strong>，但该位置可以被擦除并再次写入</li>
 <li><strong>应用</strong>：广泛用于嵌入式设备 <strong>e.g.</strong> 数码相机、手机和 USB 闪存盘</li>
 </ul>
-<ol start="5">
-<li><strong>Magnetic Disks</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>Magnetic Disks</strong>：</p>
 <ul>
 <li><strong>长期存储数据的主要介质</strong>，通常存储整个数据库</li>
 <li>数据必须从磁盘移动到主存储器才能被访问，并在处理后写回磁盘存储，<strong>访问速度比主存储器慢得多</strong></li>
 <li><strong>直接访问</strong>：可以按任意顺序读取磁盘上的数据</li>
 <li><strong>非易失性</strong>：在电源故障和系统崩溃时依然存续</li>
 </ul>
-<ol start="6">
-<li><strong>Optical storage</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>Optical storage</strong></p>
 <ul>
 <li><strong>非易失性</strong>，使用激光从旋转的盘片上光学读取数据</li>
 <li><strong>读写速度比磁盘慢</strong></li>
 </ul>
-<ol start="7">
-<li><strong>Tape storage</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>Tape storage</strong></p>
 <ul>
 <li><strong>非易失性</strong>，主要用于<strong>备份</strong>（用于从磁盘故障中恢复）和归档数据</li>
 <li><strong>顺序访问</strong>：比磁盘慢得多</li>
 <li>极高容量，存储成本比磁盘便宜得多（但是驱动器很贵）</li>
 </ul>
-<ol start="8">
-<li><strong>存储层级</strong></li>
-</ol>
+</li>
+<li>
+<p><mark><strong>存储层级</strong></mark></p>
 <p><img alt="alt text" src="../photo/6-2.png" style="width:50%;display: block;margin: 20px auto" /></p>
 <ul>
 <li><strong>一级存储</strong>：高速缓存、主存储器（速度最快的介质，但具有<strong>易失性</strong>）</li>
 <li><strong>二级存储</strong>（辅助存储/联机存储）：快闪存储器、磁盘（非易失性，具有中等强度的访问速度）</li>
 <li><strong>三级存储</strong>（脱机存储）：磁带、光存储（非易失性，访问速度慢）</li>
 </ul>
+</li>
+</ol>
 <hr />
 <h3 id="_3">磁盘<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>结构</strong></li>
-</ol>
+<li>
+<p><strong>结构</strong></p>
 <p><img alt="alt text" src="../photo/6-3.png" style="width:50%;display: block;margin: 20px auto" /></p>
 <ul>
 <li><strong>读写磁头</strong> (Read-write head)<ul>
@@ -5738,9 +5743,9 @@
 <li>通过电磁方式读取或写入编码信息</li>
 </ul>
 </li>
-<li>盘片表面被划分为<strong>环形磁道</strong> (Tracks)</li>
+<li>盘片（platter）表面被划分为<strong>环形磁道</strong> (Tracks)</li>
 <li>每条磁道被划分为<strong>扇区</strong> (Sectors)<ul>
-<li>扇区是可以读取或写入的<strong>最小数据单位</strong></li>
+<li><mark>扇区是可以读取或写入的<strong>最小数据单位</strong></mark></li>
 <li>扇区大小通常为 512 字节</li>
 </ul>
 </li>
@@ -5752,33 +5757,33 @@
 </ul>
 </li>
 </ul>
-<ol start="2">
-<li><strong>磁盘子系统</strong> (Disk Subsystem)：多个磁盘通过控制器连接到计算机系统</li>
+</li>
+<li>
+<p><strong>磁盘子系统</strong> (Disk Subsystem)：多个磁盘通过控制器连接到计算机系统</p>
+</li>
 <li><strong>磁盘接口标准族</strong>：ATA 标准系列、SATA、SCSI 标准系列、SAS</li>
-<li><strong>磁盘性能测试</strong></li>
-</ol>
-<ul>
-<li><strong>访问时间</strong>：从发出读写请求到数据传输开始所需的时间 = 寻道时间 + 旋转等待时间<ul>
+<li><strong>磁盘性能测试</strong><ul>
+<li><strong>访问时间</strong>：从发出读写请求到数据传输开始所需的时间 <mark class="orange">Access Time = Seek Time + Rotational Latency</mark><ul>
 <li>寻道时间：将磁臂重新定位到正确磁道所需的时间</li>
-<li>旋转等待时间：等待待访问的扇区出现在磁头下方所需的时间</li>
+<li>旋转等待时间：等待待访问的扇区出现在磁头下方所需的时间（<strong>平均旋转等待时间是最坏情况的一半</strong>）</li>
 </ul>
 </li>
-<li><strong>数据转移速率</strong>：从磁盘检索数据或将数据存储到磁盘的速率</li>
+<li><mark><strong>数据转移速率 Data-transfer rate</strong></mark>：从磁盘检索数据或将数据存储到磁盘的速率</li>
 <li><strong>平均故障时间</strong>：磁盘预期能够无故障连续运行的平均时间（MTTF 随磁盘老化而降低）</li>
 </ul>
-<ol start="5">
-<li><strong>磁盘访问优化</strong></li>
-</ol>
-<ul>
-<li><strong>块</strong> (Block)：来自单个磁道的<strong>连续扇区序列</strong>（磁盘和主存之间的数据传输以块为单位）</li>
+</li>
+<li><strong>磁盘访问优化</strong><ul>
+<li><mark><strong>块</strong> (Block)：来自单个磁道的<strong>连续扇区序列</strong>（磁盘和主存之间的数据传输以块为单位）</mark></li>
 <li><strong>磁盘臂调度算法</strong>：对等待访问磁道的请求进行<strong>排序</strong>，使磁盘臂的移动最小化<ul>
-<li><strong>电梯算法</strong>：磁盘臂向一个方向移动，处理该方向上的下一个请求，直到该方向没有更多请求，然后<strong>反转方向</strong>并重复</li>
+<li><mark><strong>电梯算法</strong>：磁盘臂向一个方向移动，处理该方向上的下一个请求，直到该方向没有更多请求，然后<strong>反转方向</strong>并重复</mark></li>
 </ul>
 </li>
 <li><strong>文件组织</strong>：通过组织数据块以对应数据的访问方式，来优化块访问时间（可能会产生<strong>碎片</strong>）</li>
 <li><strong>非易失性写缓冲区</strong>：通过立即将块写入非易失性 RAM 缓冲区来加速磁盘写入，当磁盘没有其他请求或请求已挂起一段时间后，控制器再写入磁盘</li>
 <li><strong>日志磁盘</strong>：专门用于顺序写入块更新日志的磁盘</li>
 </ul>
+</li>
+</ol>
 <h3 id="raid">* RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -5786,25 +5791,23 @@
 </li>
 <li>
 <p><strong>优势</strong></p>
-</li>
-</ol>
 <ul>
-<li>通过<strong>并行</strong>使用多个磁盘实现<strong>高容量和高速度</strong>（通过将数据拆分到多个磁盘来提高传输速率）<ul>
+<li><mark>通过<strong>并行</strong>使用多个磁盘实现<strong>高容量和高速度</strong></mark>（通过将数据拆分到多个磁盘来提高传输速率）<ul>
 <li><strong>比特级拆分</strong>：将每个字节的位拆分到多个磁盘上</li>
 <li><strong>块级拆分</strong>：对于 <span class="arithmatex">\(n\)</span> 块磁盘，文件的第 <span class="arithmatex">\(i\)</span> 块进入第 <span class="arithmatex">\((i \mod n) + 1\)</span> 块磁盘</li>
 </ul>
 </li>
-<li>通过<strong><abbr title="redundancy">冗余</abbr></strong>存储数据实现<strong>高可靠性</strong>，以便在磁盘故障时仍能恢复数据<ul>
+<li><mark>通过<strong><abbr title="redundancy">冗余</abbr></strong>存储数据实现<strong>高可靠性</strong></mark>，以便在磁盘故障时仍能恢复数据<ul>
 <li><strong>e.g.</strong> 镜像：复制每一块磁盘（一个逻辑磁盘由两块物理磁盘组成）</li>
 </ul>
 </li>
 </ul>
-<details class="quote">
-<summary>RAID 级别</summary>
-<ol>
-<li><strong>等级</strong></li>
+</li>
 </ol>
-<ul>
+<div class="admonition quote">
+<p class="admonition-title">RAID 级别</p>
+<ol>
+<li><strong>等级</strong><ul>
 <li>RAID 0 级：块拆分；无冗余</li>
 <li>RAID 1 级：带块拆分的镜像磁盘</li>
 <li>RAID 2 级：带比特拆分的内存风格纠错码 (ECC)</li>
@@ -5813,44 +5816,42 @@
 <li>RAID 5 级：块交错分布式校验</li>
 <li>RAID 6 级：P+Q 冗余方案</li>
 </ul>
-<ol start="2">
-<li><strong>选择</strong>：RAID 0 仅在数据安全不重要时使用，2 级和 4 级从不使用，3 级不再使用，6 级很少使用，因此仅在 1 级和 5 级之间选择</li>
-</ol>
-<ul>
+</li>
+<li><strong>选择</strong>：RAID 0 仅在数据安全不重要时使用，2 级和 4 级从不使用，3 级不再使用，6 级很少使用，因此仅在 1 级和 5 级之间选择<ul>
 <li>1 级提供比 5 级好得多的写入性能；1 级的存储成本高于 5 级</li>
-<li>5 级适用于<strong>更新率低、数据量大</strong>的应用；1 级适用于所有其他应用</li>
+<li><mark class="orange">5 级适用于<strong>更新率低、数据量大</strong>的应用；1 级适用于所有其他应用</mark></li>
 </ul>
-</details>
+</li>
+</ol>
+</div>
 <hr />
 <h2 id="_4">存储访问<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>blocks</strong>：</li>
-</ol>
-<ul>
+<li><strong>blocks</strong>：<ul>
 <li>数据库文件在逻辑上被划分为<strong>固定长度</strong>的存储单位，称为块</li>
 <li>块是数据库系统中存储分配和数据传输的<strong>基本单位</strong></li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>缓冲区</strong> (Buffer)：主存储器中可用于存储磁盘块副本的部分（为了最小化磁盘与内存之间的<strong>块传输次数</strong>）</li>
-<li><strong>缓冲区管理器</strong> (Buffer manager)：负责在主存储器中分配缓冲区空间的子系统</li>
-</ol>
-<ul>
+<li><strong>缓冲区管理器</strong> (Buffer manager)：负责在主存储器中分配缓冲区空间的子系统<ul>
 <li><strong>缓冲区替换策略</strong>：LRU（最近最少使用）、MRU（最近最常使用策略）</li>
-<li><strong>Pinned block</strong>：不允许写回磁盘的内存块</li>
+<li><mark><strong>Pinned block</strong></mark>：不允许写回磁盘的内存块</li>
+<li><strong>Dirty bit</strong>：页面是否被修改</li>
+<li><mark><strong>Pin count</strong></mark>：有多少事务/操作正在使用</li>
 <li><strong>立即丢弃策略</strong>：一旦处理完该块的最后一个元组，立即释放该块占用的空间</li>
 </ul>
+</li>
+</ol>
 <hr />
 <h2 id="_5">文件组织<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li>数据库以<strong>文件集合</strong>的形式存储</li>
-</ol>
-<ul>
+<li>数据库以<strong>文件集合</strong>的形式存储<ul>
 <li>每个文件是一个记录序列，一条记录是一个字段序列</li>
-<li>记录有两种<strong>类型</strong>：定长记录、变长记录</li>
+<li><mark>记录有两种<strong>类型</strong>：定长记录、变长记录</mark></li>
 </ul>
-<ol start="2">
-<li><strong>定长记录</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>定长记录</strong>：</p>
 <ul>
 <li><strong>优点</strong>：方法简单</li>
 <li><strong>删除记录</strong> <span class="arithmatex">\(i\)</span> 备选方案：<ul>
@@ -5864,60 +5865,61 @@
 <summary>Example</summary>
 <p><img alt="alt text" src="../photo/6-5.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </details>
-<ol start="3">
-<li><strong>变长记录</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>变长记录</strong>：</p>
 <p><img alt="alt text" src="../photo/6-4.png" style="width:80%;display: block;margin: 20px auto" /></p>
 <ul>
-<li><strong>存储</strong>：定长属性区 + 变长属性指针 + 实际数据</li>
-<li><strong>分槽页结构</strong> <ul>
-<li>头部包含记录条目数、块内空闲空间的<strong>末尾地址</strong>、每条记录的位置和大小（槽目录）</li>
+<li><mark><strong>存储</strong>：定长属性区 + 变长属性 (offset, length) + 实际数据</mark></li>
+<li><mark><strong>分槽页结构</strong> </mark>：一种页内记录组织方式<ul>
+<li><mark>头部</mark>包含记录条目数、块内空闲空间的<strong>末尾地址</strong>、</li>
+<li><mark>槽目录：(offset, length)</mark></li>
+<li>RID = (page_id, slot_id)</li>
+<li><mark>记录可以在 page 内移动，让记录连续存放，消除页内碎片</mark></li>
 <li><strong>双向增长</strong>：槽目录从页首向后长，记录数据从页尾向前长，中间是空闲空间</li>
 </ul>
 </li>
+<li><strong>表示方式</strong>：<ul>
+<li><strong>Fixed-length Representation</strong>：每条记录都分配最大可能长度</li>
+<li><strong>Pointer Method</strong>：把一个变长记录拆成多个固定长度片段，用指针串起来</li>
 </ul>
+</li>
+</ul>
+</li>
+</ol>
 <hr />
 <h2 id="_6">* 文件中记录的组织<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p><strong>堆文件/流水文件</strong>：记录可以放在文件中任何有空间的地方</p>
-</li>
-<li>
-<p><strong>顺序文件</strong>：根据每条记录的<strong>搜索码</strong>的值，按顺序存储记录</p>
-</li>
-</ol>
-<ul>
-<li>指针链：记录之间通过指针相连</li>
-<li><strong>搜索码</strong>：任何属性或属性组合都可以作为搜索码，不一定是主键，但通常选择最常用于范围查询的属性</li>
+<li><strong>堆文件/流水文件</strong>：记录可以放在文件中任何有空间的地方</li>
+<li><strong>顺序文件</strong>：根据每条记录的<strong>搜索码</strong>的值，按顺序存储记录<ul>
+<li><mark><strong>指针链</strong></mark>：记录之间通过指针相连，维护逻辑顺序</li>
+<li><strong>搜索码</strong>：任何属性或属性组合都可以作为搜索码，<mark>不一定是主键</mark>，但通常选择最常用于范围查询的属性</li>
+<li><strong>定期重组</strong>：因为顺序扫描变慢</li>
 </ul>
-<ol start="3">
-<li>
-<p><strong>散列/哈希文件</strong>：对每条记录的某些属性<strong>计算哈希函数</strong>，结果指定记录应放置在文件的哪个块中</p>
 </li>
+<li><strong>散列/哈希文件</strong>：对每条记录的某些属性<strong>计算哈希函数</strong>，结果指定记录应放置在文件的哪个块中</li>
 <li>
 <p><strong>聚集文件组织</strong>：几个不同关系的记录可以存储在同一个文件中（以减少 I/O）</p>
-</li>
-</ol>
 <ul>
-<li>
-<p><strong>缺点</strong>：不利于单独关系的查询（可以添加指针链来链接特定关系的记录）</p>
+<li><strong>缺点</strong>：不利于单独关系的查询（可以添加指针链来链接特定关系的记录）</li>
+</ul>
 <div class="admonition quote">
 <p class="admonition-title">Example</p>
 <p>将特定的系及其对应的讲师记录物理存储在一起</p>
 <p><img alt="alt text" src="../photo/6-6.png" style="width:50%;display: block;margin: 20px auto" /></p>
 </div>
 </li>
-</ul>
+</ol>
 <hr />
 <h2 id="_7">* 数据字典存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>元数据</strong> (Metadata)：关于数据的数据，存储数据库的结构、约束及运行状态</li>
-<li><strong>物理表示形式</strong></li>
-</ol>
-<ul>
+<li><strong>物理表示形式</strong><ul>
 <li>磁盘表示：采用关系型表结构存储</li>
 <li>内存表示：采用专为高效访问设计的特殊数据结构（如哈希表或树）</li>
 </ul>
+</li>
+</ol>
 
 
 
@@ -5940,7 +5942,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年4月28日 21:24:26 CST">2026年4月28日 21:24:26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     

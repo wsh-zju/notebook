@@ -3483,7 +3483,7 @@
   <span class="md-ellipsis">
     
   
-    恢复系统
+    故障恢复
   
 
     
@@ -5605,14 +5605,14 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 1929 字</span>
+    <span>约 2070 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 6 分钟</span>
+    <span>预计阅读 7 分钟</span>
 </div>
 
 <div class="admonition info">
@@ -5625,7 +5625,7 @@
 </div>
 <ol>
 <li><strong>事务</strong>：程序执行的一个单元，它访问并可能更新多个数据项<ol>
-<li>通常，一个事务<strong>由若干 SQL 语句组成</strong>，并以 <strong>commit 或 rollback</strong> 结束</li>
+<li>通常，<mark>一个事务<strong>由若干 SQL 语句组成</strong>，并以 <strong>commit 或 rollback</strong> 结束</mark></li>
 <li>事务必须看到一致的数据库</li>
 </ol>
 </li>
@@ -5639,25 +5639,27 @@
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="_2">事务状态<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><img alt="alt text" src="../photo/9-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li><strong>Active 活动状态</strong>：初始状态，事务<strong>执行期间</strong>处于该状态</li>
 <li><strong>Partially committed 部分提交状态</strong>：最后一条语句执行后，此时结果数据可能仍在<strong>内存 buffer</strong> 中</li>
 <li><strong>Failed 失败状态</strong>：发现无法继续正常执行后进入</li>
-<li><strong>Aborted 中止状态</strong>：事务回滚后，数据库恢复到事务<strong>开始前</strong>状态，中止后有两种选择：<ol>
+<li><strong>Aborted 中止状态</strong>：事务<mark>回滚</mark>后，数据库恢复到事务<strong>开始前</strong>状态，中止后有两种选择：<ol>
 <li><strong>重启事务</strong>：只有不存在内部逻辑错误时才可以</li>
 <li><strong>杀死事务</strong></li>
 </ol>
 </li>
 <li><strong>Committed 已提交状态</strong>：事务成功完成后进入</li>
 </ol>
+<hr />
 <h2 id="_3">原子性与持久性<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>数据库系统的<strong>恢复管理组件</strong>负责支持原子性和持久性</li>
-<li><strong>影子数据库方案</strong>：简单<ol>
+<li><mark><strong>影子数据库方案</strong></mark>：简单<ol>
 <li>所有更新都在<strong>新创建的数据库副本</strong>上完成</li>
-<li>原始副本（即影子副本）不被修改，由 <strong><code>db_pointer</code></strong> 指向</li>
+<li><mark>原始副本（即影子副本）不被修改，由 <strong><code>db_pointer</code></strong> 指向</mark></li>
 <li><strong>如果中止</strong>：只需删除新副本</li>
 <li><strong>如果提交</strong>：<ol>
 <li>将新副本在内存中的所有页写入磁盘</li>
@@ -5668,14 +5670,15 @@
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="_4">并发执行<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>优点</strong>：<ol>
+<li><mark><strong>优点</strong></mark>：<ol>
 <li>提高处理器和磁盘利用率，从而<strong>提高事务吞吐量</strong>（一个事务使用 CPU 时，另一个事务可以读写磁盘）</li>
 <li><strong>降低事务平均响应时间</strong>：短事务不必等待长事务完成</li>
 </ol>
 </li>
-<li><strong>缺点</strong>：可能破坏一致性</li>
+<li><mark><strong>缺点</strong>：可能破坏一致性</mark></li>
 <li><strong>并发控制机制</strong>：实现隔离性的机制，即控制并发事务之间的交互，<strong>防止破坏数据库一致性（DBMS 的重要工作）</strong></li>
 <li><strong>调度</strong>：表示并发事务中各指令按时间顺序执行的序列<ol>
 <li>一组事务的调度必须包含这些事务的所有指令</li>
@@ -5695,11 +5698,12 @@
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="_5">可串行化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Serializability</p>
 <ol>
 <li><strong>基本假设</strong>：每个事务都保持数据库一致性</li>
-<li>如果一个可能并发的调度等价于某个串行调度，则<strong>该调度是可串行化的</strong></li>
+<li><mark>如果一个可能并发的调度等价于某个串行调度，则<strong>该调度是可串行化的</strong></mark></li>
 <li>
 <p><strong>冲突指令</strong>：事务 Ti 的指令 li 和事务 Tj 的指令 lj 冲突，当且仅当二者访问同一数据项 Q，且<strong>至少有一个指令写 Q</strong></p>
 <div class="admonition success">
@@ -5710,7 +5714,7 @@
 <p><strong>冲突可串行化</strong></p>
 <ol>
 <li>如果调度 S 可以通过一系列<strong>“不冲突指令交换”</strong>转换为调度 S'，则称 S 和 S' 是<strong>冲突等价的</strong></li>
-<li>如果调度 S 与某个<strong>串行调度冲突等价</strong>，则 S 是<strong>冲突可串行化的</strong></li>
+<li><mark>如果调度 S 与某个<strong>串行调度冲突等价</strong>，则 S 是<strong>冲突可串行化的</strong></mark></li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">冲突可串行化</p>
@@ -5730,7 +5734,14 @@
 <div class="admonition info">
 <p class="admonition-title">视图可串行化</p>
 <p>具体内容见 PPT p28-29</p>
+<ol>
+<li><strong>视图可串行化</strong>：首读一致、写读一致、末写一致</li>
+<li>每个冲突可串行化调度一定是视图可串行化，但视图可串行化不一定冲突可串行化</li>
+<li><mark>视图可串行化但不是冲突可串行化的调度，通常含有 <strong>blind write</strong></mark></li>
+<li>Blind write 盲写：事务没有先读数据项，就直接写该数据项</li>
+</ol>
 </div>
+<hr />
 <h2 id="_6">可恢复性<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -5759,10 +5770,10 @@
 </div>
 </li>
 <li>
-<p><strong>无级联调度</strong>：对于任意事务 Ti 和 Tj，如果 Tj 读取了 Ti 之前写入的数据项，则 <strong>Ti 的 commit 操作必须出现在 Tj 的 read 操作之前</strong></p>
+<p><strong>无级联调度</strong>：对于任意事务 Ti 和 Tj，如果 Tj 读取了 Ti 之前写入的数据项，则 <mark><strong>Ti 的 commit 操作必须出现在 Tj 的 read 操作之前</strong></mark></p>
 <ol>
 <li>每个无级联调度也都是<strong>可恢复的</strong></li>
-<li><strong>不会产生级联回滚</strong></li>
+<li><mark><strong>不会产生级联回滚</strong>：已经提交的数据不会再被回滚</mark></li>
 <li><strong>最好将调度限制为无级联调度</strong></li>
 </ol>
 </li>
@@ -5788,12 +5799,12 @@
 <h2 id="_7">可串行化测试<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>优先图/前驱图</strong>：一个有向图，顶点是事务名 </li>
-<li><strong>一个调度是冲突可串行化的，当且仅当它的优先图无环</strong><ol>
+<li><mark><strong>一个调度是冲突可串行化的，当且仅当它的优先图无环</strong></mark><ol>
 <li>存在 <span class="arithmatex">\(O(n²)\)</span> 时间的<strong>环检测算法</strong>，其中 <span class="arithmatex">\(n\)</span> 是图中顶点数</li>
 <li><strong>更好的算法复杂度</strong>为 <span class="arithmatex">\(O(n+e)\)</span>，其中 <span class="arithmatex">\(e\)</span> 是边数</li>
 </ol>
 </li>
-<li>如果优先图无环，可以通过<strong>拓扑排序得到串行化顺序</strong></li>
+<li><mark>如果优先图无环，可以通过<strong>拓扑排序得到串行化顺序</strong></mark></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">INFO</p>
@@ -5856,7 +5867,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月29日 15:21:40 CST">2026年5月29日 15:21:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月23日 11:31:11 CST">2026年6月23日 11:31:11</span>
   </span>
 
     
