@@ -49,10 +49,10 @@
     ```
 
 !!! success "Success"
-    <span class="red">RedoLSN</span>  → 考试重点  
-    <span class="orange">公式 T=n+p-1</span>  → 公式/重要步骤  
-    <span class="yellow">注意旧值和新值</span> → 注意事项  
-    <span class="green">Strict 2PL 保证冲突可串行化</span> → 结论  
-    <span class="cyan">例题：Dirty Page Table</span> → 示例  
-    <span class="blue">冲突可串行化定义</span> → 定义  
-    <span class="purple">ARIES 恢复流程原理</span> → 原理/机制
+    <span class="red">RedoLSN</span>  → <mark class="red">考试重点</mark>  
+    <span class="orange">公式 T=n+p-1</span>  → <mark class="orange">公式/重要步骤</mark>  
+    <span class="yellow">注意旧值和新值</span> → <mark>注意事项</mark>  
+    <span class="green">Strict 2PL 保证冲突可串行化</span> → <mark class="green">结论</mark>  
+    <span class="cyan">例题：Dirty Page Table</span> → <mark class="cyan">示例</mark>  
+    <span class="blue">冲突可串行化定义</span> → <mark class="blue">定义</mark>  
+    <span class="purple">ARIES 恢复流程原理</span> → <mark class="purple">原理/机制</mark>

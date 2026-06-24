@@ -3,36 +3,38 @@ comment: true
 ---
 
 # I/O 系统
-
+---
 1. **I/O 管理**是操作系统设计和运行的核心组成部分
 2. **I/O 设备**是计算机与用户及其他系统进行交互的方式
 
 ![alt text](photo/22-1.png){style="width:60%;display: block;margin: 20px auto"}
 
+---
 ## I/O Hardware
 1. I/O 设备种类繁多 **e.g.** 网卡、鼠标键盘、显示器
-2. **硬件连接**
+2. <mark>**硬件组成**</mark>
     1. 总线 **Bus**：组件（包括 CPU）之间的互连通道
     2. 端口 **Port**：设备的连接点
     3. 控制器 **Controller**：控制设备的组件
         1. 可以集成到**设备中**或位于**独立的电路板**上
         2. 通常包含处理器、微代码、私有内存、总线控制器等
 
+---
 ## I/O Access
 1. 某些 CPU 架构具有**专用的 I/O 指令** 
     
     **e.g.** x86：in, out, ins, outs
 
-!!! info "**设备**通常提供用于**数据和控制设备 I/O** 的寄存器"
-    1. 设备驱动程序将命令和数据（或其指针）放入寄存器
-    2. **寄存器包括**数据输入/数据输出寄存器、状态寄存器、控制（或命令）寄存器
-    3. 通常为 1-4 字节，或先进先出（FIFO）缓冲区
+    !!! info "**设备**通常提供用于**数据和控制设备 I/O** 的寄存器"
+        1. 设备驱动程序将命令和数据（或其指针）放入寄存器
+        2. **寄存器包括**数据输入/数据输出寄存器、状态寄存器、控制（或命令）寄存器
+        3. 通常为 1-4 字节，或先进先出（FIFO）缓冲区
 
 2. **I/O 寻址**：CPU 访问 I/O 设备寄存器的方式
     1. **Direct I/O instructions**：用于访问（绝大多数）寄存器
     2. **Memory-mapped I/O**：数据和命令寄存器被映射到**内存地址空间**，用于访问（**大量的**）片上内存（如显卡）
 
-3. **I/O 访问方式**：轮询（polling）或中断（interrupt）
+3. <mark>**I/O 访问方式**：轮询（polling）或中断（interrupt）</mark>
 
 ### Polling
 
@@ -42,7 +44,7 @@ comment: true
     2. 向设备 controller 发送命令（**命令寄存器**）
     3. 读取状态寄存器，直到其显示命令已执行完毕（期间 busy-wait）
     4. 读取执行状态，并可能**重置设备状态**
-3. **缺点**：需要忙等待
+3. **缺点**：需要<mark>忙等待</mark>
     1. 如果设备速度快，是合理的
     2. 如果设备速度慢，则**CPU 资源使用效率低下**
 
@@ -56,7 +58,7 @@ comment: true
 
     ![alt text](photo/22-3.png){style="width:60%;display: block;margin: 20px auto"}
 
-3. **缺点**：基于中断的 I/O 在开始和结束时需要 **context switch**
+3. **缺点**：基于中断的 I/O 在开始和结束时需要 <mark>**context switch**</mark>
     1. 如果中断频率极高，上下文切换会**浪费 CPU 时间**
     2. **解决方案**：改用轮询
 
@@ -70,7 +72,7 @@ comment: true
     3. software interrupt for system calls
 
 ### DMA
-1. DMA（Direct Memory Access）在 **I/O 设备和内存**之间直接传输数据
+1. <mark>DMA（Direct Memory Access）在 **I/O 设备和内存**之间直接传输数据</mark>
     1. 操作系统**只需要发出命令**，数据传输会绕过 CPU
     2. 不是 programmed I/O（一次一个字节），数据是以 **large blocks** 形式传输的
 2. **DMA controller**：在设备或系统中配备，**操作系统**向 DMA 控制器发出命令
@@ -86,7 +88,7 @@ comment: true
 
 
 ## I/O Devices
-1. **分类维度**：
+1. <mark>**分类维度**：</mark>
     
     | 维度 | 差异 | 示例 |
     | :--- | :--- | :--- |
@@ -103,9 +105,10 @@ comment: true
         2. **寻址方式**：文件系统访问、Raw/Direct I/O、Memory-mapped file
         3. **访问方式**：DMA
     2. **character I/O**（Stream）
-    3. **Network Devices**
+    3. **Memory-mapped file access**
+    4. **Network Devices**
         1. **常用接口**：socket interface（将网络协议与具体的网络操作细节分离）
-    4. **Clocks and Timers**：可以被视为**字符设备**，提供当前时间、流逝的时间以及定时器功能
+    5. **Clocks and Timers**：可以被视为**字符设备**，提供当前时间、流逝的时间以及定时器功能
 
 !!! tip "Tip"
     操作系统通常有一个后门/逃生通道（escape/back door），用于**将任何 I/O 命令从应用程序直接传递给设备**
@@ -151,7 +154,7 @@ comment: true
 
 !!! abstract "I/O 保护"
     1. **操作系统需要保护 I/O 设备**
-    2. 为了保护 I/O 设备，**将所有 I/O 指令定义为特权指令，I/O 必须通过系统调用来执行**
+    2. <mark>为了保护 I/O 设备，**将所有 I/O 指令定义为特权指令，I/O 必须通过系统调用来执行**</mark>
     3. 内存映射 I/O (memory-mapped I/O) 和 I/O 端口也必须受到保护
 
 ## 性能

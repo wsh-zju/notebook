@@ -5,31 +5,26 @@ comment: true
 # 线程级并行 TLP
 
 ---
-1. **TLP**（线程级并行）意味着存在多个程序计数器
-2. TLP 主要通过 来实**MIMD 架构**实现
+1. <mark>**TLP**（线程级并行）意味着存在多个程序计数器</mark>
+2. TLP 主要通过**MIMD 架构**实现
 3. **多处理器系统**可以分为两大类：
-    1. **shared memory**：系统中只有唯一的地址空间，所有进程共享
+    1. **shared memory**（Multiprocessor）：系统中只有唯一的地址空间，所有进程共享
         1. 并不代表只有一个物理上的内存，实际上可以通过一块物理共享的内存实现，也可以通过分布式的内存实现
-    2. **message passing**：每个处理器都有自己的地址空间，通过消息传递来通信、传送数据
+    2. **message passing**（Multicomputer）：每个处理器都有自己的地址空间，通过消息传递来通信、传送数据
 
-
+---
 ## MIMD: Shared Memory
-1. **MIMD 多处理器系统的不同内存访问模型** 
-    1. Uniform Memory Access (**UMA**)：一致性存储访问
-    2. Non Uniform Memory Access (**NUMA**)：非一致性存储访问
-    3. Cache Only Memory Access (**COMA**)：仅缓存存储访问
-2. **MIMD 多计算机系统的进一步分类**
-    1. 大规模并行处理机（Massively Parallel Processors, **MPP**）
-    2. 工作站集群（Cluster of Workstations, **COW**）
-
+1. Uniform Memory Access (**UMA**)：一致性存储访问
+2. Non Uniform Memory Access (**NUMA**)：非一致性存储访问
+3. Cache Only Memory Access (**COMA**)：仅缓存存储访问
 ### UMA
 ![alt text](photo/25-2.png){style="width:40%;display: block;margin: 20px auto"}
 
 1. 也称为对称（共享存储）多处理器系统（SMP）或集中式共享存储多处理器系统
 2. **特点**：
     1. 物理存储器由所有处理器**统一共享**
-    2. **<span class="cyan">一致性：所有处理器访问任意存储单元所需时间相同</span>**
-    3. 每个处理器都可以配置**私有缓存或私有存储器**
+    2. <mark class="blue">**一致性：所有处理器访问任意存储单元所需时间相同**</mark>
+    3. <mark>每个处理器都可以配置**私有缓存或私有存储器**</mark>
 
         ![alt text](photo/25-3.png){style="width:60%;display: block;margin: 20px auto"}
 
@@ -40,7 +35,7 @@ comment: true
 2. **特点**：
     1. 所有 CPU 共享统一地址空间
     2. 使用 LOAD 和 STORE 指令访问远程存储器
-    3. **<span class="cyan">访问远程存储器比访问本地存储器更慢</span>**
+    3. <mark class="blue">**访问远程存储器比访问本地存储器更慢**</mark>
     4. NUMA 系统中的处理器**可以使用缓存**
 3. **分类**
     1. **NC-NUMA**：无缓存
@@ -56,8 +51,13 @@ comment: true
 
 1. COMA 是 NUMA 的一种特殊情况
 2. 在每个处理器节点中没有固定的存储层次结构，所有缓存共同形成一个统一的地址空间
-3. **使用分布式缓存目录来支持远程缓存访问**
-4. 数据在初始时可以任意分配，因为它最终会在运行时被移动到实际使用它的地方
+3. <mark>**使用分布式缓存目录来支持远程缓存访问**</mark>
+4. 数据在初始时可以任意分配，因为它最终会<mark>在运行时被移动到实际使用它的地方</mark>
+
+---
+## MIMD: Message Passing
+1. 大规模并行处理机（Massively Parallel Processors, **MPP**）
+2. 工作站集群（Cluster of Workstations, **COW**）
 
 ### MPP
 ![alt text](photo/25-8.png){style="width:40%;display: block;margin: 20px auto"}
@@ -89,9 +89,9 @@ comment: true
 ---
 
 ## Cache Coherence
-!!! info "**内存一致性**（Memory Consistency）：需要内存一致性模型，写和读的顺序（如果先读再写则破坏）"
+!!! info "**内存一致性**（Memory Consistency）：需要内存一致性模型，关注不同地址之间的读写顺序什么时候可见（如果先读再写则破坏）"
 
-1. **缓存一致性**（Cache Coherence）：需要缓存一致性协议
+1. **缓存一致性**（Cache Coherence）：关注同一个地址的数据是否一致，需要缓存一致性协议
 2. **缓存一致性问题产生的原因**：在现代并行计算机中，处理器通常都配有缓存；内存中的数据可能在整个系统中存在多个副本
 
     !!! warning "Cache 不一致"
@@ -108,11 +108,11 @@ comment: true
 ### 缓存一致性协议
 1. **Cache 一致性协议**：缓存、CPU 和内存共同实现的一组规则，用于防止同一数据的不同版本同时出现在多个缓存中
 2. **常见的缓存一致性协议**：
-    1. **总线监听协议**（Bus Snooping Protocol）：适合 UMA 架构
+    1. <mark>**总线监听协议**（Bus Snooping Protocol）：适合 UMA 架构</mark>
         1. 所有处理器都会监听总线
         2. 当某个处理器修改私有缓存中的数据时，会**通过总线广播失效信息或更新数据**
         3. 其他处理器据此使自己的缓存副本失效或更新
-    2. **基于目录的协议**（Directory-Based Protocol）：适合 NUMA 架构
+    2. <mark>**基于目录的协议**（Directory-Based Protocol）：适合 NUMA 架构</mark>
         1. 使用**<span class="purple">目录</span>**记录哪些处理器缓存中保存了某个内存块
         2. 当某处理器要写某个共享数据块时：通过目录查找所有持有该块副本的处理器，向这些处理器发送**点对点失效消息**
         3. 其他缓存副本被**统一失效**，从而保持一致性
@@ -135,14 +135,13 @@ comment: true
 
 #### 写失效协议
 1. **写失效协议**（Write Invalidate Protocol）：在写操作发生时，使其他缓存中的副本失效
-2. **三种块状态（MSI 协议）**
+2. **三种块状态（<mark>MSI 协议</mark>）**
     1. I（Invalid，无效）：该缓存块无效
     2. S（Shared，共享）：表示该缓存块在私有缓存中可能被多个处理器共享
     3. **M（Modified，已修改）**：表示该缓存块已在私有缓存中被修改，**<span class="purple">该块是独占的（exclusive），与内存中的数据不同步</span>**
 
-    !!! info "write-back 状态转换"
-        ![alt text](photo/25-10.png){style="width:80%;display: block;margin: 20px auto"}
-        
+    ??? info "write-back 状态转换"
+        ![alt text](photo/25-10.png){style="width:80%;display: block;margin: 20px auto"}    
         
     !!! question "Question"
         === "(1)"
@@ -164,3 +163,9 @@ comment: true
     !!! info "状态转换"
         ![alt text](photo/25-14.png){style="width:60%;display: block;margin: 20px auto"}
 
+### 基于目录的协议
+1. **目录记录每个内存块的状态、owner、sharer set**
+2. **三种块状态**
+    1. Uncached：没有 Cache 保存该块
+    2. Shared：一个或多个 Cache 有副本，Memory 最新
+    3. Exclusive/Modified：一个 Cache 独占，Memory 可能旧
