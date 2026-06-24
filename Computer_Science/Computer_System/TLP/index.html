@@ -1365,6 +1365,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mimd-message-passing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIMD: Message Passing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MIMD: Message Passing">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#mpp" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1440,6 +1457,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于目录的协议
+      
+    </span>
+  </a>
   
 </li>
         
@@ -5565,6 +5593,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mimd-message-passing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIMD: Message Passing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MIMD: Message Passing">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#mpp" class="md-nav__link">
     <span class="md-ellipsis">
@@ -5640,6 +5685,17 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基于目录的协议
+      
+    </span>
+  </a>
   
 </li>
         
@@ -5749,7 +5805,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 1993 字</span>
+    <span>约 2070 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5761,30 +5817,23 @@
 
 <hr />
 <ol>
-<li><strong>TLP</strong>（线程级并行）意味着存在多个程序计数器</li>
-<li>TLP 主要通过 来实<strong>MIMD 架构</strong>实现</li>
+<li><mark><strong>TLP</strong>（线程级并行）意味着存在多个程序计数器</mark></li>
+<li>TLP 主要通过<strong>MIMD 架构</strong>实现</li>
 <li><strong>多处理器系统</strong>可以分为两大类：<ol>
-<li><strong>shared memory</strong>：系统中只有唯一的地址空间，所有进程共享<ol>
+<li><strong>shared memory</strong>（Multiprocessor）：系统中只有唯一的地址空间，所有进程共享<ol>
 <li>并不代表只有一个物理上的内存，实际上可以通过一块物理共享的内存实现，也可以通过分布式的内存实现</li>
 </ol>
 </li>
-<li><strong>message passing</strong>：每个处理器都有自己的地址空间，通过消息传递来通信、传送数据</li>
+<li><strong>message passing</strong>（Multicomputer）：每个处理器都有自己的地址空间，通过消息传递来通信、传送数据</li>
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="mimd-shared-memory">MIMD: Shared Memory<a class="headerlink" href="#mimd-shared-memory" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>MIMD 多处理器系统的不同内存访问模型</strong> <ol>
 <li>Uniform Memory Access (<strong>UMA</strong>)：一致性存储访问</li>
 <li>Non Uniform Memory Access (<strong>NUMA</strong>)：非一致性存储访问</li>
 <li>Cache Only Memory Access (<strong>COMA</strong>)：仅缓存存储访问</li>
-</ol>
-</li>
-<li><strong>MIMD 多计算机系统的进一步分类</strong><ol>
-<li>大规模并行处理机（Massively Parallel Processors, <strong>MPP</strong>）</li>
-<li>工作站集群（Cluster of Workstations, <strong>COW</strong>）</li>
-</ol>
-</li>
 </ol>
 <h3 id="uma">UMA<a class="headerlink" href="#uma" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../photo/25-2.png" style="width:40%;display: block;margin: 20px auto" /></p>
@@ -5792,9 +5841,9 @@
 <li>也称为对称（共享存储）多处理器系统（SMP）或集中式共享存储多处理器系统</li>
 <li><strong>特点</strong>：<ol>
 <li>物理存储器由所有处理器<strong>统一共享</strong></li>
-<li><strong><span class="cyan">一致性：所有处理器访问任意存储单元所需时间相同</span></strong></li>
+<li><mark class="blue"><strong>一致性：所有处理器访问任意存储单元所需时间相同</strong></mark></li>
 <li>
-<p>每个处理器都可以配置<strong>私有缓存或私有存储器</strong></p>
+<p><mark>每个处理器都可以配置<strong>私有缓存或私有存储器</strong></mark></p>
 <p><img alt="alt text" src="../photo/25-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </li>
 </ol>
@@ -5807,7 +5856,7 @@
 <li><strong>特点</strong>：<ol>
 <li>所有 CPU 共享统一地址空间</li>
 <li>使用 LOAD 和 STORE 指令访问远程存储器</li>
-<li><strong><span class="cyan">访问远程存储器比访问本地存储器更慢</span></strong></li>
+<li><mark class="blue"><strong>访问远程存储器比访问本地存储器更慢</strong></mark></li>
 <li>NUMA 系统中的处理器<strong>可以使用缓存</strong></li>
 </ol>
 </li>
@@ -5830,8 +5879,14 @@
 <ol>
 <li>COMA 是 NUMA 的一种特殊情况</li>
 <li>在每个处理器节点中没有固定的存储层次结构，所有缓存共同形成一个统一的地址空间</li>
-<li><strong>使用分布式缓存目录来支持远程缓存访问</strong></li>
-<li>数据在初始时可以任意分配，因为它最终会在运行时被移动到实际使用它的地方</li>
+<li><mark><strong>使用分布式缓存目录来支持远程缓存访问</strong></mark></li>
+<li>数据在初始时可以任意分配，因为它最终会<mark>在运行时被移动到实际使用它的地方</mark></li>
+</ol>
+<hr />
+<h2 id="mimd-message-passing">MIMD: Message Passing<a class="headerlink" href="#mimd-message-passing" title="Permanent link">&para;</a></h2>
+<ol>
+<li>大规模并行处理机（Massively Parallel Processors, <strong>MPP</strong>）</li>
+<li>工作站集群（Cluster of Workstations, <strong>COW</strong>）</li>
 </ol>
 <h3 id="mpp">MPP<a class="headerlink" href="#mpp" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../photo/25-8.png" style="width:40%;display: block;margin: 20px auto" /></p>
@@ -5869,10 +5924,10 @@
 <hr />
 <h2 id="cache-coherence">Cache Coherence<a class="headerlink" href="#cache-coherence" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
-<p class="admonition-title"><strong>内存一致性</strong>（Memory Consistency）：需要内存一致性模型，写和读的顺序（如果先读再写则破坏）</p>
+<p class="admonition-title"><strong>内存一致性</strong>（Memory Consistency）：需要内存一致性模型，关注不同地址之间的读写顺序什么时候可见（如果先读再写则破坏）</p>
 </div>
 <ol>
-<li><strong>缓存一致性</strong>（Cache Coherence）：需要缓存一致性协议</li>
+<li><strong>缓存一致性</strong>（Cache Coherence）：关注同一个地址的数据是否一致，需要缓存一致性协议</li>
 <li>
 <p><strong>缓存一致性问题产生的原因</strong>：在现代并行计算机中，处理器通常都配有缓存；内存中的数据可能在整个系统中存在多个副本</p>
 <div class="admonition warning">
@@ -5900,13 +5955,13 @@
 <ol>
 <li><strong>Cache 一致性协议</strong>：缓存、CPU 和内存共同实现的一组规则，用于防止同一数据的不同版本同时出现在多个缓存中</li>
 <li><strong>常见的缓存一致性协议</strong>：<ol>
-<li><strong>总线监听协议</strong>（Bus Snooping Protocol）：适合 UMA 架构<ol>
+<li><mark><strong>总线监听协议</strong>（Bus Snooping Protocol）：适合 UMA 架构</mark><ol>
 <li>所有处理器都会监听总线</li>
 <li>当某个处理器修改私有缓存中的数据时，会<strong>通过总线广播失效信息或更新数据</strong></li>
 <li>其他处理器据此使自己的缓存副本失效或更新</li>
 </ol>
 </li>
-<li><strong>基于目录的协议</strong>（Directory-Based Protocol）：适合 NUMA 架构<ol>
+<li><mark><strong>基于目录的协议</strong>（Directory-Based Protocol）：适合 NUMA 架构</mark><ol>
 <li>使用<strong><span class="purple">目录</span></strong>记录哪些处理器缓存中保存了某个内存块</li>
 <li>当某处理器要写某个共享数据块时：通过目录查找所有持有该块副本的处理器，向这些处理器发送<strong>点对点失效消息</strong></li>
 <li>其他缓存副本被<strong>统一失效</strong>，从而保持一致性</li>
@@ -5964,16 +6019,16 @@
 <ol>
 <li><strong>写失效协议</strong>（Write Invalidate Protocol）：在写操作发生时，使其他缓存中的副本失效</li>
 <li>
-<p><strong>三种块状态（MSI 协议）</strong></p>
+<p><strong>三种块状态（<mark>MSI 协议</mark>）</strong></p>
 <ol>
 <li>I（Invalid，无效）：该缓存块无效</li>
 <li>S（Shared，共享）：表示该缓存块在私有缓存中可能被多个处理器共享</li>
 <li><strong>M（Modified，已修改）</strong>：表示该缓存块已在私有缓存中被修改，<strong><span class="purple">该块是独占的（exclusive），与内存中的数据不同步</span></strong></li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">write-back 状态转换</p>
-<p><img alt="alt text" src="../photo/25-10.png" style="width:80%;display: block;margin: 20px auto" /></p>
-</div>
+<details class="info">
+<summary>write-back 状态转换</summary>
+<p><img alt="alt text" src="../photo/25-10.png" style="width:80%;display: block;margin: 20px auto" />    </p>
+</details>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">(1)</label><label for="__tabbed_1_2">(2)</label><label for="__tabbed_1_3">(3)</label></div>
@@ -6008,6 +6063,16 @@
 </div>
 </li>
 </ol>
+<h3 id="_4">基于目录的协议<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>目录记录每个内存块的状态、owner、sharer set</strong></li>
+<li><strong>三种块状态</strong><ol>
+<li>Uncached：没有 Cache 保存该块</li>
+<li>Shared：一个或多个 Cache 有副本，Memory 最新</li>
+<li>Exclusive/Modified：一个 Cache 独占，Memory 可能旧</li>
+</ol>
+</li>
+</ol>
 
 
 
@@ -6030,7 +6095,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月18日 22:21:47 CST">2026年6月18日 22:21:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     

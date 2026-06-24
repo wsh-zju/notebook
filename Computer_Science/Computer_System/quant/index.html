@@ -1237,6 +1237,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#flynn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flynn 分类法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5415,6 +5426,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#flynn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flynn 分类法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5537,33 +5559,45 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 402 字</span>
+    <span>约 570 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 1 分钟</span>
+    <span>预计阅读 2 分钟</span>
 </div>
 
+<h2 id="flynn">Flynn 分类法<a class="headerlink" href="#flynn" title="Permanent link">&para;</a></h2>
+<p><img alt="alt text" src="../photo/24-13.png" /></p>
+<ol>
+<li><strong>Flynn 分类法</strong>：并行体系结构基础</li>
+<li>SISD：单指令流，单数据流   <strong>e.g.</strong> 传统单处理器</li>
+<li>SIMD：单指令流，多数据流   <strong>e.g.</strong> 向量机、GPU 思想</li>
+<li>MISD：多指令流，单数据流   </li>
+<li>MIMD：多指令流，多数据流   <strong>e.g.</strong> 多核、多处理器</li>
+</ol>
 <h2 id="_2">量化研究方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>CPU 性能公式</strong></li>
-</ol>
+<li>
+<p><strong>CPU 性能公式</strong></p>
 <div class="admonition note">
 <p class="admonition-title">CPU Performance</p>
 <p>见笔记 <a href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/CPU/#performance">CPU</a> &amp; <a href="https://wsh-zju.github.io/notebook/Computer_Science/Computer_System/CPU/#cpi">CPI</a></p>
 </div>
-<ol start="2">
-<li><strong>Amdahl's Law</strong></li>
-</ol>
+</li>
+<li>
+<p><mark><strong>Amdahl's Law</strong></mark></p>
 <div class="arithmatex">\[
 T_{improved} = \frac{T_{affected}}{improvement factor} + T_{unaffected}
 \]</div>
 <ul>
 <li>
-<p>阿姆达尔定律指出，使用某种更快执行模式所能获得的性能提升受限于<strong>该更快模式可被使用的时间比例</strong></p>
+<p>阿姆达尔定律指出：使用某种更快执行模式所能获得的性能提升受限于<strong>该更快模式可被使用的时间比例</strong></p>
+<div class="admonition quote">
+<p class="admonition-title">整体加速受“可优化部分占比”限制，即使某部分加速很多，如果它原本占比小，整体提升也有限</p>
+</div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>乘法操作占 80s/100s，乘法性能需要提升多少才能达到整体5倍加速？</p>
@@ -5578,23 +5612,6 @@ T_{improved} = \frac{T_{affected}}{improvement factor} + T_{unaffected}
 <div class="arithmatex">\[
 Speedup_{overall} = \frac{1}{(1-Fraction_{enhanced})+\frac{Fraction_{enhanced}}{Speedup_{enhanced}}}
 \]</div>
-<div class="admonition abstract">
-<p class="admonition-title">Abstract</p>
-<ol>
-<li><strong>可改进比例</strong>(Fraction_enhanced)</li>
-</ol>
-<ul>
-<li>总是小于或等于1</li>
-<li><strong>e.g.</strong> 整个程序执行时间60s，其中20s的计算可以改进，则可改进比例为20/60</li>
-</ul>
-<ol start="2">
-<li><strong>加速比</strong>(Speedup_enhanced)</li>
-</ol>
-<ul>
-<li>总是大于1</li>
-<li><strong>e.g.</strong> 改进前执行时间5s，改进后2s，则加速比为5/2</li>
-</ul>
-</div>
 </li>
 <li>
 <p><strong>重要推论</strong></p>
@@ -5603,22 +5620,38 @@ Speedup_{overall} &lt; \frac{1}{(1-Fraction_{enhanced})}
 \]</div>
 </li>
 </ul>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<ol>
+<li><strong>可改进比例</strong>(Fraction_enhanced)<ul>
+<li>总是小于或等于1</li>
+<li><strong>e.g.</strong> 整个程序执行时间60s，其中20s的计算可以改进，则可改进比例为20/60</li>
+</ul>
+</li>
+<li><strong>加速比</strong>(Speedup_enhanced)<ul>
+<li>总是大于1</li>
+<li><strong>e.g.</strong> 改进前执行时间5s，改进后2s，则加速比为5/2</li>
+</ul>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+<hr />
 <h2 id="_3">伟大的架构思想<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>为<strong>摩尔定律</strong>设计</li>
-<li>用抽象简化设计：隐藏底层细节，在更高层次提供更简单的模型</li>
-<li>加速常见情况：<strong>最经济有效的改进方法</strong></li>
-<li>通过<strong>并行</strong>提升性能</li>
-<li>通过<strong>流水线</strong>提升性能：常用于提高指令吞吐量</li>
-<li>通过<strong>预测</strong>提升性能</li>
-<li>使用存储层次结构：</li>
-</ol>
-<ul>
+<li>面向<strong>摩尔定律</strong>设计</li>
+<li>用抽象简化设计：隐藏底层细节，在更高层次提供更简单的模型 <strong>e.g.</strong> ISA、模块化、存储层次</li>
+<li>加速常见情况：<strong>最经济有效的改进方法</strong> <strong>e.g.</strong> Cache 优化常用数据访问</li>
+<li>通过<strong>并行</strong>提升性能 <strong>e.g.</strong> ILP / DLP / TLP，多核</li>
+<li>通过<strong>流水线</strong>提升性能：常用于提高指令吞吐量 <strong>e.g.</strong> 流水线 CPU</li>
+<li>通过<strong>预测</strong>提升性能 <strong>e.g.</strong> 分支预测</li>
+<li>使用<strong>存储层次结构</strong>：<ul>
 <li>将最快、最小、每比特最贵的存储器作为第一级访问</li>
 <li>使大多数访问能在第一级命中，同时在最后一级保留大部分信息</li>
 </ul>
-<ol start="8">
-<li>通过冗余提升可靠性</li>
+</li>
+<li>通过<strong><abbr title="redundancy">冗余</abbr></strong>提升可靠性</li>
 </ol>
 
 
@@ -5642,7 +5675,7 @@ Speedup_{overall} &lt; \frac{1}{(1-Fraction_{enhanced})}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月8日 18:00:12 CST">2026年6月8日 18:00:12</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     

@@ -5915,43 +5915,42 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 5134 字</span>
+    <span>约 5317 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
     <span class="twemoji">
         <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7.25-3.25v3.586l2.146 2.147a.75.75 0 0 1-1.06 1.06l-2.5-2.5a.75.75 0 0 1-.22-.53V4.75a.75.75 0 0 1 1.5 0Z"></path></svg>
     </span>
-    <span>预计阅读 17 分钟</span>
+    <span>预计阅读 18 分钟</span>
 </div>
 
+<hr />
 <ol>
-<li><strong>虚拟内存</strong>：将逻辑内存与物理内存分离，通过 paging 实现</li>
-</ol>
+<li>
+<p><strong>虚拟内存</strong>：将逻辑内存与物理内存分离，通过 paging 实现</p>
 <div class="admonition success">
 <p class="admonition-title">Notice</p>
-<p>虚拟内存远大于物理内存，<strong>本质上只是一组地址范围</strong>，并不能真正的存储数据，所有数据都存储在物理内存中！</p>
+<p><mark>虚拟内存远大于物理内存，<strong>本质上只是一组地址范围</strong></mark>，并不能真正的存储数据，所有数据都存储在物理内存中！</p>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">虚拟内存的优点</p>
 <ol>
-<li>执行时仅需将程序的一部分调入内存</li>
-</ol>
-<ul>
+<li>执行时仅需将程序的一部分调入内存<ul>
 <li>逻辑地址空间可以<strong>远大于</strong>物理地址空间</li>
 <li>允许更多程序<strong>并发运行</strong></li>
 <li>加载或交换进程（部分）所需的 <strong>I/O 减少</strong></li>
 </ul>
-<ol start="2">
+</li>
 <li>允许内存（如共享库）被多个进程<strong>共享</strong>，提升 IPC（进程间通信）性能</li>
 <li>实现更高效的 <strong>forking</strong>，采用 <strong>copy-on-write</strong> 技术</li>
 </ol>
 </div>
+</li>
+</ol>
 <p><img src="../photo/11-2.png" align="right" width="25%" style="margin-left: 15px;"></p>
 <ol start="2">
-<li><strong>虚拟地址空间</strong></li>
-</ol>
-<ul>
+<li><strong>虚拟地址空间</strong><ul>
 <li>stack 从最高逻辑地址开始向下增长，而 heap 向上增长<ul>
 <li>使地址空间<strong>利用率最大化</strong></li>
 </ul>
@@ -5961,9 +5960,11 @@
 <li>通过支持包含 hole 的稀疏地址空间，留出空间用于<strong>增长和动态链接库</strong>等</li>
 </ul>
 </li>
-<li>系统库通过<strong>映射到虚拟地址空间实现共享</strong></li>
+<li><mark>系统库通过<strong>映射到虚拟地址空间实现共享</strong></mark></li>
 <li>在执行 <code>fork()</code> 时可以共享页面，从而加快进程创建速度：<strong>copy-on-write</strong></li>
 </ul>
+</li>
+</ol>
 <div style="clear: both;"></div>
 
 <details class="info">
@@ -5974,29 +5975,27 @@
 <div class="admonition info">
 <p class="admonition-title">Background</p>
 <ol>
-<li>代码必须被写入主存才能运行，但是整个程序很少需要同时被使用，存在未使用的代码和未使用的数据</li>
-</ol>
-<ul>
+<li>代码必须被写入主存才能运行，但是整个程序很少需要同时被使用，存在未使用的代码和未使用的数据<ul>
 <li><strong>未使用的代码</strong>：错误处理代码、不常用的例程</li>
 <li><strong>未使用的数据</strong>：大型数据结构</li>
 </ul>
-<ol start="2">
+</li>
 <li>需要执行<strong>部分加载程序</strong>的能力：程序不再受限于物理内存的限制，<strong>程序可以比物理内存更大</strong></li>
 </ol>
 </div>
 <ol>
-<li><strong>Demand Paging</strong>：只有当需要的时候才将一页调入内存</li>
-</ol>
+<li>
+<p><strong>Demand Paging</strong>：只有当需要的时候才将一页调入内存</p>
 <ul>
 <li><strong>优点</strong>：无不必要的 I/O，内存需求减少，支持更多应用</li>
 <li><strong>缺点</strong>：响应速度变慢</li>
 </ul>
-<ol start="2">
-<li><strong>运行流程：当发生访问操作（读/写）</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>运行流程：当发生访问操作（读/写）</strong></p>
 <ul>
-<li>如果页面 invalid <span class="arithmatex">\(\Rightarrow\)</span> 触发 <strong>segmentation fault</strong> <span class="arithmatex">\(\Rightarrow\)</span> 终止操作</li>
-<li>如果页面 valid 但<strong>不在内存中</strong> <span class="arithmatex">\(\Rightarrow\)</span> 触发缺页异常/缺页中断 (<strong>page fault</strong>) <span class="arithmatex">\(\Rightarrow\)</span> 将其调入物理内存</li>
+<li>如果地址不在 vm_area 中（<mark>地址非法</mark>） <span class="arithmatex">\(\Rightarrow\)</span> 触发 <mark><strong>segmentation fault</strong></mark> <span class="arithmatex">\(\Rightarrow\)</span> 终止操作</li>
+<li>如果地址在合法 vm_area 中但<strong>不在内存中</strong>（invalid） <span class="arithmatex">\(\Rightarrow\)</span> 触发缺页异常/缺页中断 (<strong>page fault</strong>) <span class="arithmatex">\(\Rightarrow\)</span> 将其调入物理内存</li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title"><strong>调入方式</strong></p>
@@ -6005,41 +6004,27 @@
 <li>对于新页面，通过映射 (<strong>mapping</strong>) 分配</li>
 </ol>
 </div>
-<ol start="3">
-<li><strong>swapper</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>swapper</strong></p>
 <ul>
 <li><strong>lazy-swapper</strong>：除非页面将被需要，否则绝不将其换入内存<ul>
 <li><strong>优点</strong>：更省内存</li>
-<li>处理页面的交换程序也被称为<strong>调页程序</strong> pager</li>
+<li>处理页面的交换程序也被称为<strong>调页程序</strong> <mark>pager</mark></li>
 </ul>
 </li>
-<li><strong>pre-paging</strong>：在进程引用页面之前，预先调入该进程将需要的全部或部分页面<ul>
+<li><strong>pre-paging</strong>：在进程引用页面之前，<mark>预先调入</mark>该进程将需要的全部或部分页面<ul>
 <li><strong>优点</strong>：可以减少执行期间的缺页异常数量，效率更高</li>
 <li><strong>缺点</strong>：如果预调页的页面未被使用，则会<strong>浪费 I/O 和内存资源</strong>；总的 I/O 次数可能会更高</li>
 </ul>
 </li>
 </ul>
-<ol start="4">
-<li><strong>最坏情况</strong>：pure demand paging（启动进程时内存中没有任何 frame）</li>
+</li>
+<li>
+<p><strong>最坏情况</strong>：pure demand paging（启动进程时内存中没有任何 frame）</p>
+</li>
 <li><strong>硬件支持</strong>：带有有效/无效位的页表项、<strong>后备存储</strong>（通常是磁盘）、指令重启能力</li>
 </ol>
-<div class="admonition abstract">
-<p class="admonition-title">Frames 分配</p>
-<p><strong>进程内存分配的两种主要方案</strong>：</p>
-<ol>
-<li>
-<p><strong>平均分配</strong></p>
-<ul>
-<li><strong>e.g.</strong> 100 个页框和 5 个进程，为每个进程分配 20 个页框</li>
-<li>保留一部分作为空闲页框缓冲池</li>
-</ul>
-</li>
-<li>
-<p><strong>按比例分配</strong>：根据进程的大小进行分配</p>
-</li>
-</ol>
-</div>
 <div class="admonition info">
 <p class="admonition-title">内核内存分配</p>
 <ol>
@@ -6051,16 +6036,16 @@
 <h3 id="_2">性能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>缺页率</strong>：<span class="arithmatex">\(0 \le p \le 1\)</span>（如果 <span class="arithmatex">\(p = 0\)</span>，则没有缺页；如果 <span class="arithmatex">\(p = 1\)</span>，则每一次引用都会产生缺页）</li>
-<li><strong>有效访问时间</strong>：</li>
-</ol>
+<li>
+<p><strong>有效访问时间</strong>：</p>
 <p>EAT = (1-p) <span class="arithmatex">\(\times\)</span> memory access + p <span class="arithmatex">\(\times\)</span> (page fault overhead + swap page out + swap page in + instruction restart overhead)</p>
 <div class="admonition quote">
 <p class="admonition-title">Translate</p>
 <p>(1 - p) <span class="arithmatex">\(\times\)</span> 内存访问时间 + p <span class="arithmatex">\(\times\)</span> ( 缺页中断开销 + 页面换出 + 页面换入 + 指令重启开销 )</p>
 </div>
-<ol start="3">
-<li><strong>优化</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>优化</strong>：</p>
 <ul>
 <li><strong>方法 1：swap space</strong><ul>
 <li>交换空间的 <strong>I/O 比文件系统 I/O 更快</strong>（以更大的块进行分配，所需的管理比文件系统少）</li>
@@ -6076,17 +6061,21 @@
 </ul>
 </li>
 </ul>
+</li>
+</ol>
 <h3 id="copy-on-write">copy-on-write<a class="headerlink" href="#copy-on-write" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../photo/20-5.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
-<li><strong>COW</strong>：允许父进程和子进程在初始阶段<strong>共享内存中的相同页面</strong></li>
-</ol>
+<li>
+<p><strong>COW</strong>：允许父进程和子进程在初始阶段<strong>共享内存中的相同页面</strong></p>
 <ul>
 <li>只要没有进程修改该页面，页面就会一直共享</li>
 <li>只有<strong>当其中一个进程修改共享页面时</strong>，才会复制该页面</li>
 </ul>
-<ol start="2">
-<li><strong>优点</strong>：进程创建更高效（在执行 <code>fork</code> 期间无需复制父进程内存，之后<strong>仅复制发生更改的内存部分</strong>）</li>
+</li>
+<li>
+<p><strong>优点</strong>：<mark>进程创建更高效</mark>（在执行 <code>fork</code> 期间无需复制父进程内存，之后<strong>仅复制发生更改的内存部分</strong>）</p>
+</li>
 </ol>
 <details class="info">
 <summary>vfork</summary>
@@ -6111,30 +6100,32 @@
 </ol>
 </div>
 <ol>
-<li><strong>触发条件</strong>：<strong>用户</strong>空间程序访问了一个地址，且该地址对应的页面当前<strong>未调入物理内存</strong></li>
-</ol>
+<li>
+<p><strong>触发条件</strong>：<strong>用户</strong>空间程序访问了一个地址，且该地址对应的页面当前<strong>未调入物理内存</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>只有 user space 才会产生 page fault，kernel space 不会产生 page fault，因为用户空间有 <strong>lazy allocation</strong></p>
 </div>
-<ol start="2">
-<li><strong>发出 page fault 的硬件</strong>：MMU</li>
-</ol>
+</li>
+<li>
+<p><mark><strong>发出 page fault 的硬件</strong>：MMU</mark></p>
 <ul>
 <li>通过查看页表项的 valid-invalid 位（present bit：操作系统来设置），判断该页是否被映射</li>
 <li>如果 <strong>invalid</strong>，则触发 page fault</li>
 </ul>
-<ol start="3">
-<li><strong>处理 page fault</strong>：操作系统（以 Linux 为例）</li>
-</ol>
+</li>
+<li>
+<p><mark><strong>处理 page fault</strong>：操作系统</mark>（以 Linux 为例）</p>
 <ul>
 <li>首先检查 VMA 以<strong>确定异常类型</strong>（使用<strong>红黑树</strong>组织 VMA 来提高查找的速度）<ul>
 <li>地址位于 <code>vm_area</code> 之内：合法访问，继续处理</li>
-<li>地址超出 <code>vm_area</code> 范围：非法访问，报错并终止（segmentation fault）</li>
+<li>地址超出 <code>vm_area</code> 范围：非法访问，<mark>报错并终止（segmentation fault）</mark></li>
 </ul>
 </li>
 <li>然后获取空闲的 <strong>physical frame</strong> 并映射</li>
 </ul>
+</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">获取空闲页框</p>
 <ol>
@@ -6183,36 +6174,30 @@
 <li><strong>保存</strong>用户寄存器和进程状态到内核栈的 <strong><code>pt_regs</code></strong></li>
 <li><strong>确定中断类型</strong>为缺页异常（检查页面引用是否合法）</li>
 <li><strong>查找</strong>空闲页框</li>
-<li><strong>确定</strong>页面在磁盘上的位置，并向空闲页框<strong>发起磁盘读取</strong>：</li>
-</ol>
-<ul>
+<li><strong>确定</strong>页面在磁盘上的位置，并向空闲页框<strong>发起磁盘读取</strong>：<ul>
 <li>在设备队列中等待，<strong>直到读取请求获得服务</strong></li>
 <li>等待设备的寻道和/或延迟时间</li>
 <li>开始将页面传输到空闲页框</li>
 </ul>
-<ol start="6">
+</li>
 <li>在等待期间，将 CPU <strong>分配给 Process 1</strong></li>
-<li>接收到来自磁盘 I/O 子系统的<strong>中断</strong>（<strong>I/O 已完成</strong>）：</li>
-</ol>
-<ul>
+<li><mark>接收到来自磁盘 I/O 子系统的<strong>中断</strong></mark>（<strong>I/O 已完成</strong>）：<ul>
 <li>确定中断来自磁盘</li>
 <li>将发生缺页异常的进程标记为 <strong>ready 状态</strong></li>
 </ul>
-<ol start="8">
-<li><strong>等待</strong> CPU 再次分配给 Process 0</li>
-</ol>
-<ul>
+</li>
+<li><mark><strong>等待</strong> CPU 再次分配给 Process 0</mark><ul>
 <li>保存 Process 1 的寄存器和进程状态</li>
 <li><strong>上下文切换</strong>回发生缺页异常的 Process 0</li>
 </ul>
-<ol start="9">
+</li>
 <li><strong>修正页表</strong>，映射新的页框</li>
 <li><strong>返回用户态</strong>：恢复用户寄存器、进程状态和新页表，然后<strong>重启</strong>被中断的指令</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">页表切换</p>
 <ol>
-<li><strong>一个进程对应一个页表</strong></li>
+<li><mark><strong>一个进程对应一个页表</strong></mark></li>
 <li>进行系统调用的时候，由用户空间跳到内核空间，页表切换为<strong>内核的页表</strong></li>
 </ol>
 </div>
@@ -6221,23 +6206,21 @@
 <div class="admonition abstract">
 <p class="admonition-title">页面替换类型</p>
 <ol>
-<li><strong>全局置换</strong> (Global replacement)：进程从所有页框的集合中选择一个置换页框（一个进程可以从另一个进程那里夺取页框）</li>
-</ol>
-<ul>
+<li><strong>全局置换</strong> (Global replacement)：进程从所有页框的集合中选择一个置换页框（一个进程可以从另一个进程那里夺取页框）<ul>
 <li><strong>缺点</strong>：进程的执行时间可能会有很大波动（取决于其他进程）</li>
 <li><strong>优点</strong>：<strong>吞吐量更高，更为常见</strong></li>
 </ul>
-<ol start="2">
-<li><strong>局部置换</strong> (Local replacement)：每个进程<strong>仅从其自身分配</strong>的页框集合中进行选择</li>
-</ol>
-<ul>
+</li>
+<li><strong>局部置换</strong> (Local replacement)：每个进程<strong>仅从其自身分配</strong>的页框集合中进行选择<ul>
 <li><strong>优点</strong>：每个进程的性能更加稳定</li>
 <li><strong>缺点</strong>：可能导致内存利用率不足</li>
 </ul>
+</li>
+</ol>
 </div>
 <ol>
 <li><strong>页面替换算法</strong>：FIFO, optimal, LRU, LFU, MFU...</li>
-<li><strong>算法评估</strong>：在特定的内存引用序列上运行该算法，计算该引用串上的<strong>缺页中断次数</strong></li>
+<li><strong>算法评估</strong>：在特定的内存引用序列上运行该算法，计算该引用串上的<mark><strong>缺页中断次数</strong></mark></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">info</p>
@@ -6245,55 +6228,55 @@
 </div>
 <h3 id="fifo">FIFO<a class="headerlink" href="#fifo" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p><strong>FIFO</strong>：先进先出</p>
-</li>
+<li><strong>FIFO</strong>：先进先出</li>
 <li>
 <p><strong>实例</strong>：一共 15 次 page fault（3 个 frames）</p>
-</li>
-</ol>
 <p><img alt="alt text" src="../photo/20-6.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>Belady's Anomaly</strong>：对于 FIFO，<strong>增加更多的页框</strong>反而可能导致更多的缺页中断</li>
-</ol>
+</li>
+<li>
+<p><mark><strong>Belady's Anomaly</strong>：对于 FIFO，<strong>增加更多的页框</strong>反而可能导致更多的缺页中断</mark></p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><img src="../photo/20-8.jpg" align="right" width="45%"></p>
 <p><img src="../photo/20-7.jpg" align="left" width="45%"></p>
 </div>
+</li>
+</ol>
 <h3 id="optimal">Optimal<a class="headerlink" href="#optimal" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Optimal</strong>：替换<strong>未来</strong>最长时间不使用的页面</li>
 <li><strong>缺点</strong>：无法预知未来（不可能实现）</li>
-<li>该算法主要用于<strong>衡量其他算法的性能优劣</strong></li>
-<li><strong>实例</strong>：9 个 page fault</li>
-</ol>
+<li><mark>该算法主要用于<strong>衡量其他算法的性能优劣</strong></mark></li>
+<li>
+<p><strong>实例</strong>：9 个 page fault</p>
 <p><img alt="alt text" src="../photo/20-9.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
+</li>
+</ol>
 <h3 id="lru">LRU<a class="headerlink" href="#lru" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>LRU</strong>：最近最少使用</li>
-</ol>
+<li>
+<p><strong>LRU</strong>：最近最少使用</p>
 <div class="admonition success">
 <p class="admonition-title">LRU 和 OPT 算法不会出现 Belady's Anomaly</p>
 </div>
-<ol start="2">
-<li><strong>实例</strong>：12 个 page fault</li>
-</ol>
+</li>
+<li>
+<p><strong>实例</strong>：12 个 page fault</p>
 <p><img alt="alt text" src="../photo/20-10.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>实现</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>实现</strong>：</p>
 <ul>
 <li><strong>counter-based</strong>：<ul>
 <li>每一个页表项带有一个 counter</li>
 <li>每当页面被引用时，将 <strong>clock</strong> 的值复制到该 counter 中</li>
-<li>当需要置换页面时，搜索 <strong>counter 值最小</strong>的页面（可以用<strong>最小堆</strong>来实现）</li>
+<li><mark>当需要置换页面时，搜索 <strong>counter 值最小</strong>的页面（可以用<strong>最小堆</strong>来实现）</mark></li>
 </ul>
 </li>
 <li>
 <p><strong>stack-based</strong>：</p>
 <ul>
-<li>维护一个<strong>页码栈</strong>（采用<strong>双向链表</strong>结构）</li>
+<li><mark>维护一个<strong>页码栈</strong>（采用<strong>双向链表</strong>结构）</mark></li>
 <li>当一个页面被引用时，将其移动到<strong>栈顶</strong></li>
 <li>每次更新的<strong>开销更高</strong>，但置换时<strong>无需进行搜索</strong></li>
 </ul>
@@ -6303,28 +6286,27 @@
 <div class="admonition warning">
 <p class="admonition-title">基于计数器和基于栈的 LRU 实现具有较高的性能开销</p>
 </div>
-<ol start="4">
-<li><strong>LRU 近似算法</strong>（最常用）</li>
-</ol>
+</li>
+<li>
+<p><strong>LRU 近似算法</strong>（最常用）</p>
 <ul>
-<li><strong>硬件</strong>提供了一个<strong>引用位</strong> (Reference bit)</li>
+<li><strong>硬件</strong>提供了一个<mark><strong>引用位</strong> (Reference bit)</mark></li>
 <li>为每个页面关联一个引用位，初始设置为 0；<strong>当页面被引用</strong>时，将该位设置为 1（由硬件完成）</li>
 <li><strong>置换</strong>任何引用位为 0 的页面（如果存在）</li>
 </ul>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>该算法无法得知这些页面的<strong>引用先后顺序</strong></p>
+<p class="admonition-title">Warning：该算法无法得知这些页面的<strong>引用先后顺序</strong></p>
 </div>
-<ol start="5">
-<li><strong>附加引用位算法</strong>：假设为每个页面分配一个 8 位的字节</li>
-</ol>
+</li>
+<li>
+<p><strong>附加引用位算法</strong>：假设为每个页面分配一个 8 位的字节</p>
 <ul>
 <li>在<strong>每个时间间隔</strong>内，将位右移 1 位，如果页面被使用过，则<strong>将最高位置为 1</strong>，然后舍弃低位</li>
 <li><strong>e.g.</strong> 11000100 vs 01110111，前者最近被使用</li>
 </ul>
-<ol start="6">
-<li><strong>二次机会算法</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>二次机会算法</strong></p>
 <ul>
 <li>待置换的页面<ul>
 <li><strong>引用位 = 0</strong> -&gt; 置换该页面</li>
@@ -6334,16 +6316,18 @@
 <li>按照相同规则置换下一个页面</li>
 </ul>
 <p><img alt="alt text" src="../photo/20-12.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
-<ol start="7">
-<li><strong>增强型二次机会算法</strong>：通过结合使用<strong>引用位和修改位</strong>来改进算法</li>
-</ol>
+</li>
+<li>
+<p><strong>增强型二次机会算法</strong>：通过结合使用<strong>引用位和修改位</strong>来改进算法</p>
 <ul>
 <li>采用<strong>有序对</strong>（引用位，修改位）</li>
 <li><strong>(0, 0)</strong>：最近未被使用也未被修改 -&gt; <strong>最佳置换页面</strong></li>
 </ul>
+</li>
+</ol>
 <h3 id="counting-based">Counting-based<a class="headerlink" href="#counting-based" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>counter</strong> 记录对每个页面的<strong>引用次数</strong></li>
+<li><mark><strong>counter</strong> 记录对每个页面的<strong>引用次数</strong></mark></li>
 <li><strong>最不经常使用算法</strong> (LFU)：置换 counter 值最小的页面（一个页面可能在进程初始化阶段被大量使用，随后便不再使用）</li>
 <li><strong>最经常使用算法</strong> (MFU)：置换 counter 值最大的页面（值最小的页面可能刚被调入内存，尚未被使用）</li>
 <li>LFU 和 MFU <strong>并不常用</strong></li>
@@ -6351,39 +6335,51 @@
 <div class="admonition abstract">
 <p class="admonition-title">应用程序与页面替换</p>
 <ol>
-<li><strong>内存密集型应用程序</strong>可能会导致双重缓冲（一种内存浪费）：</li>
-</ol>
-<ul>
+<li><strong>内存密集型应用程序</strong>可能会导致双重缓冲（一种内存浪费）：<ul>
 <li>操作系统在内存中保留一份页面副本作为 I/O 缓冲区</li>
 <li>应用程序在内存中保留该页面用于自身工作</li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>原始磁盘模式</strong> (Raw disk mode)：授予操作系统对磁盘的直接访问权限，从而不干扰应用程序</li>
 </ol>
 </div>
 <hr />
 <h2 id="_4">页面缓冲算法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>维持一个 frame pool</strong>：</li>
-</ol>
+<li>
+<p><mark><strong>维持一个 frame pool</strong></mark>：</p>
 <ul>
 <li>当需要时立即有可用帧，无需在发生缺页时才去找</li>
 <li>将页面读入空闲帧，无需等待“牺牲页”被写回磁盘：<strong>尽可能快地重启进程</strong></li>
 <li>在方便时再驱逐牺牲页</li>
 </ul>
-<ol start="2">
-<li><strong>维护已修改页面的列表</strong>：</li>
-</ol>
+</li>
+<li>
+<p><strong>维护已修改页面的列表</strong>：</p>
 <ul>
 <li>当磁盘空闲时，将这些页面写入磁盘并设置为“非脏”</li>
 <li>这样该页面就可以在<strong>无需写入后端存储</strong>的情况下<strong>直接</strong>被置换</li>
 </ul>
-<ol start="3">
-<li><strong>帧内容缓存</strong>：保持空闲帧内容完好并记录其中的内容（如果页面在被重用前再次被引用，则无需再次从磁盘加载内容）</li>
+</li>
+<li>
+<p><strong>帧内容缓存</strong>：保持空闲帧内容完好并记录其中的内容（如果页面在被重用前再次被引用，则无需再次从磁盘加载内容）</p>
+</li>
 </ol>
+<div class="admonition abstract">
+<p class="admonition-title">Frames 分配</p>
+<p><strong>进程内存分配的两种主要方案</strong>：</p>
+<ol>
+<li><strong>平均分配</strong><ul>
+<li><strong>e.g.</strong> 100 个页框和 5 个进程，为每个进程分配 20 个页框</li>
+<li>保留一部分作为空闲页框缓冲池</li>
+</ul>
+</li>
+<li><strong>按比例分配</strong>：根据进程的大小进行分配</li>
+</ol>
+</div>
 <div class="admonition success">
 <p class="admonition-title">页面回收</p>
-<p><strong>页面回收</strong>：一种实现全局页面置换策略的方法，<strong>确保始终有足够的空闲内存</strong></p>
+<p><strong>页面回收</strong> Reclaiming Pages：一种实现全局页面置换策略的方法，<strong>确保始终有足够的空闲内存</strong></p>
 <ul>
 <li>所有的内存请求都通过<strong>空闲页框列表</strong>来满足</li>
 <li>在列表降至<strong>特定阈值以下</strong>时触发页面置换（杀死某些进程：根据 OOM 分数进行选择）</li>
@@ -6400,28 +6396,26 @@
 <hr />
 <h2 id="_5">抖动<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Thrashing</strong>：进程忙于频繁地<strong>换入和换出</strong>页面</li>
-</ol>
+<li>
+<p><mark><strong>Thrashing</strong>：进程忙于频繁地<strong>换入和换出</strong>页面（a process is busy swapping pages in and out）</mark></p>
 <ul>
 <li>如果<strong>一个进程没有足够的 frame</strong>，其缺页率可能会很高<ul>
 <li>发生缺页中断以获取页面，并置换掉某些现有的页框</li>
 <li>但很快又需要<strong>被置换掉的那个页框</strong>（刚换出就换入）</li>
 </ul>
 </li>
-<li>导致<strong>低 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 内核认为需要更多的进程以最大化 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 系统中加入更多进程</strong></li>
+<li><mark>导致<strong>低 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 内核认为需要更多的进程以最大化 CPU 利用率 <span class="arithmatex">\(\Rightarrow\)</span> 系统中加入更多进程</strong></mark></li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">CPU 利用率</p>
 <p><img alt="alt text" src="../photo/20-14.jpg" style="width:40%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="2">
+</li>
 <li>
-<p><strong>产生原因</strong>：内存总大小 &lt; 局部区域的总大小，导致有 frame 频繁的换入和换出</p>
+<p><mark><strong>产生原因</strong>：内存总大小 &lt; 局部区域的总大小</mark>，导致有 frame 频繁的换入和换出</p>
 </li>
 <li>
 <p><strong>解决方法</strong>：</p>
-</li>
-</ol>
 <ul>
 <li><strong>局部页面置换</strong>：从<strong>同一个进程</strong>中选择要换出的页面，一个进程开始抖动不会导致其他进程也发生抖动</li>
 <li><strong>工作集模型</strong></li>
@@ -6432,35 +6426,36 @@
 </ul>
 </li>
 </ul>
+</li>
+</ol>
 <div class="admonition info">
-<p class="admonition-title">工作集模型</p>
+<p class="admonition-title"><mark>工作集模型</mark></p>
 <ol>
 <li><strong>工作集窗口</strong> <span class="arithmatex">\(\Delta\)</span>： 一个固定数量的页面引用序列</li>
 <li><strong>进程 <span class="arithmatex">\(p_i\)</span> 的工作集</strong> <span class="arithmatex">\(WSS_i\)</span>： 在最近的 <span class="arithmatex">\(\Delta\)</span> 窗口内引用的<strong>页面总数</strong>（随时间变化）</li>
-<li><strong>总工作集大小</strong>：<span class="arithmatex">\(D = \sum WSS_i\)</span></li>
-</ol>
-<ul>
-<li>如果 <span class="arithmatex">\(D &gt; m\)</span>（总内存页框数） <span class="arithmatex">\(\Rightarrow\)</span> 存在抖动的可能性</li>
+<li><strong>某时刻总工作集大小</strong>：<span class="arithmatex">\(D = \sum WSS_i\)</span><ul>
+<li><mark>如果 <span class="arithmatex">\(D &gt; m\)</span>（总内存页框数） <span class="arithmatex">\(\Rightarrow\)</span> 存在抖动的可能性</mark></li>
 <li><strong>避免抖动</strong>：如果 <span class="arithmatex">\(D &gt; m\)</span>，则挂起或换出某些进程，将其释放的页框分给正在抖动的进程</li>
 </ul>
+</li>
+</ol>
 <div class="admonition example">
-<p class="admonition-title">Example</p>
-<p><span class="arithmatex">\(\Delta\)</span> = 10</p>
+<p class="admonition-title">Example：<span class="arithmatex">\(\Delta\)</span> = 10</p>
 <p><img alt="alt text" src="../photo/20-15.jpg" style="width:60%;display: block;margin: 20px auto" /></p>
 </div>
 </div>
 <hr />
 <h2 id="_6">其他概念<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Prepaging</strong>：在页面被引用之前，预先调入进程需要的所有或部分页面</li>
-</ol>
+<li>
+<p><strong>Prepaging</strong>：在页面被引用之前，预先调入进程需要的所有或部分页面</p>
 <ul>
 <li><strong>目的</strong>：为了减少进程启动时发生的大量缺页中断</li>
 <li><strong>缺点</strong>：但如果预调页的页面未被使用，则会<strong>浪费 I/O 和内存</strong></li>
 </ul>
-<ol start="2">
-<li><strong>Page Size</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>Page Size</strong></p>
 <ul>
 <li><strong>小页面</strong>：<ul>
 <li>减少内部碎片：页面越小，浪费的内存就越少</li>
@@ -6471,22 +6466,22 @@
 <li><strong>大页面</strong>：<ul>
 <li>减小页表大小：页表项数越少，页表占用的内存越少</li>
 <li><strong>降低 I/O 开销</strong>：提高单次传输的吞吐量</li>
-<li><strong>减少缺页中断次数</strong></li>
+<li><mark><strong>减少缺页中断次数</strong></mark></li>
 <li><strong>提升 TLB 大小和有效性</strong>：同样的 TLB 条目能覆盖更大的地址范围，CPU 更有可能在 TLB 中直接找到物理地址，减少了访问内存中多级页表的次数</li>
 </ul>
 </li>
 </ul>
-<ol start="3">
-<li><strong>TLB Reach</strong>：指从 TLB 可访问的<strong>内存总量</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>TLB Reach</strong>：指从 TLB 可访问的<strong>内存总量</strong></p>
 <ul>
-<li><strong>TLB 覆盖范围 = TLB 大小 <span class="arithmatex">\(\times\)</span> 页面大小</strong></li>
+<li><mark><strong>TLB 覆盖范围 = TLB 大小 <span class="arithmatex">\(\times\)</span> 页面大小</strong></mark></li>
 <li><strong>理想情况下</strong>，每个进程的工作集都存储在 TLB 中，否则会出现<strong>大量的 TLB 未命中</strong></li>
 <li>增加页面大小有助于减轻 TLB 压力（可能会增加碎片）</li>
 </ul>
-<ol start="4">
-<li><strong>程序结构</strong>：影响缺页中断</li>
-</ol>
+</li>
+<li>
+<p><strong>程序结构</strong>：影响缺页中断</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
@@ -6515,26 +6510,28 @@
 <li><strong>程序 1</strong>：128 <span class="arithmatex">\(\times\)</span> 128 个缺页中断</li>
 <li><strong>程序 2</strong>：128 个缺页中断（每一行一次）</li>
 </ul>
-<ol start="5">
-<li><strong>I/O interlock</strong>：把页面锁定在内存中，保证不会被换出去</li>
-</ol>
+</li>
+<li>
+<p><strong>I/O interlock</strong>：把页面锁定在内存中，保证不会被换出去</p>
 <p><strong>e.g.</strong> 用于从设备复制文件的页面必须被锁定，以防被页面置换算法选中并移出内存</p>
+</li>
+</ol>
 <hr />
 <h2 id="_7">实例<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <h3 id="windows-xp">Windows XP<a class="headerlink" href="#windows-xp" title="Permanent link">&para;</a></h3>
 <ol>
 <li>使用<strong>带有群集的请求调页</strong>：群集会将发生缺页中断页面周围的页面调入（局部性）</li>
-<li>为进程分配<strong>工作集的最小值和最大值</strong></li>
-</ol>
-<ul>
+<li>为进程分配<strong>工作集的最小值和最大值</strong><ul>
 <li><strong>wsmin</strong>：保证进程拥有的最小页面数量</li>
 <li><strong>wsmax</strong>：一个进程最多可以被分配到其 wsmax 所规定的页面数量</li>
 <li>当系统中空闲内存量低于阈值时，自动进行工作集修整以恢复空闲内存量，从页面数量超过 wsmin 的进程中<strong>移除页面</strong></li>
 </ul>
+</li>
+</ol>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong><code>mm_struct</code></strong></li>
-</ol>
+<li>
+<p><strong><code>mm_struct</code></strong></p>
 <ul>
 <li><strong><code>pgd</code></strong>：页表</li>
 <li><strong><code>mmap</code></strong>：vma</li>
@@ -6546,17 +6543,27 @@
 <li><strong><code>task_struct</code></strong>：一个线程对应一个</li>
 </ol>
 </div>
-<ol start="2">
-<li><strong>Buddy System</strong>：内存以 2 的幂大小为单位进行分配，将单位拆分为两个 Buddy，直到获得大小合适的块</li>
+</li>
+<li>
+<p><mark class="orange"><strong>虚拟地址</strong></mark>：</p>
+<ol>
+<li>User virtual address：每个进程独立映射</li>
+<li>Kernel logical address：<strong>线性映射</strong>物理内存，VA 和 PA 可以简单加减转换</li>
+<li>Kernel virtual address：<strong>虚拟连续，物理可不连续</strong>，需要查页表（vmalloc）</li>
 </ol>
-<ul>
+<p><img alt="alt text" src="../photo/20-18.png" style="width:50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>Buddy System</strong>：Linux 管理物理页框的分配器</p>
+<ol>
+<li>内存以 <strong>2 的幂大小</strong>为单位进行分配，将单位拆分为两个 Buddy，直到获得大小合适的块</li>
 <li><strong>优点</strong>：可以快速将未使用的块合并为更大的块</li>
 <li><strong>缺点</strong>：内部碎片</li>
-</ul>
-<p><img alt="alt text" src="../photo/20-16.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
-<ol start="3">
-<li><strong>Slab 分配器</strong>是对象缓存</li>
 </ol>
+<p><img alt="alt text" src="../photo/20-16.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
+</li>
+<li>
+<p><strong>Slab 分配器</strong>是对象缓存（内核分配小对象时使用）</p>
 <ul>
 <li>Slab 分配器中的缓存由一个或多个 slab 组成</li>
 <li>一个 slab 包含<strong>一个或多个页面</strong>，并被划分为<strong>大小相等</strong>的对象</li>
@@ -6577,6 +6584,8 @@
 <p class="admonition-title">Example</p>
 <p><img alt="alt text" src="../photo/20-17.jpg" style="width:50%;display: block;margin: 20px auto" /></p>
 </div>
+</li>
+</ol>
 
 
 
@@ -6599,7 +6608,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月7日 14:57:50 CST">2026年5月7日 14:57:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     

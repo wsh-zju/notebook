@@ -1338,6 +1338,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1346,11 +1351,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -5672,6 +5672,11 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
@@ -5680,11 +5685,6 @@
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -5961,7 +5961,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 4459 字</span>
+    <span>约 4583 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5997,7 +5997,7 @@ k_i &amp;\leftarrow b_i + c_i \\
 d_i &amp;\leftarrow a_i \times k_i
 \end{aligned}
 \]</div>
-<p><strong>循环里的两个语句存在数据相关，因此有 N 个数据相关，需要进行 2N 次功能切换（每次计算都切换）。</strong></p>
+<p><strong>循环里的两个语句存在数据相关，因此<mark class="purple">有 N 个数据相关，需要进行 2N 次功能切换</mark>（每次计算都切换）。</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">缺点</p>
 <ol>
@@ -6017,7 +6017,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>先计算加法，B+C 得到一个向量 K，再计算乘法，A*K 得到 D</p>
-<p><strong>只有 1 次数据相关，2 次功能切换</strong></p>
+<p><mark class="purple"><strong>只有 1 次数据相关，2 次功能切换</strong></mark></p>
 </div>
 </li>
 <li>
@@ -6029,7 +6029,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <p class="admonition-title">Example</p>
 <p>设 N = S × n + r，其中 N 为向量长度，S 为分组数，n 为每组长度，r 为余数</p>
 <p>如果剩余的 r 个元素也单独作为一组处理，则总共有 <strong>S + 1 组</strong></p>
-<p><strong>总共有数据相关：S+1 次，功能切换：2(S+1) 次</strong></p>
+<p><mark class="purple"><strong>总共有数据相关：S+1 次，功能切换：2(S+1) 次</strong></mark></p>
 </div>
 </li>
 </ol>
@@ -6041,7 +6041,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <p><strong>支持的4类基本向量指令</strong>：</p>
 <ol>
 <li>向量-向量运算、向量-标量运算、Load、Store</li>
-<li>向量加法需要 6 拍；向量乘法需要 7 拍；读写需要 6 拍</li>
+<li><mark>向量加法需要 6 拍；向量乘法需要 7 拍；读写需要 6 拍</mark></li>
 </ol>
 <p><img alt="alt text" src="../photo/24-1.png" style="width:80%;display: block;margin: 20px auto" /></p>
 </li>
@@ -6058,7 +6058,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <h4 id="_2">冲突<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>只要不存在 Vi 冲突和功能部件冲突，那么各个向量寄存器 Vi 与各个功能部件<strong>都可以并行工作，从而大幅提高向量指令的处理速度。</strong></p>
+<p><mark>只要不存在 Vi 冲突和功能部件冲突</mark>，那么各个向量寄存器 Vi 与各个功能部件<strong>都可以并行工作，从而大幅提高向量指令的处理速度。</strong></p>
 </div>
 <ol>
 <li>
@@ -6095,13 +6095,13 @@ d_i &amp;\leftarrow a_i \times k_i
 </div>
 </li>
 </ol>
-<h4 id="_3"><strong>性能提升方法</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h3 id="_3"><strong>性能提升方法</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
 <li>设置多个功能部件并使它们<strong>并行工作</strong></li>
 <li>
-<p>使用<strong><span class="red">向量链接技术</span></strong>（Vector Chaining），加速一串向量指令的执行</p>
+<p><mark>使用<strong><span class="red">向量链接技术</span></strong>（Vector Chaining），加速一串向量指令的执行</mark></p>
 <ol>
-<li>两条相关指令，<strong>先写后读</strong></li>
+<li>两条相关指令，<strong>先写后读</strong>，存在 RAW</li>
 <li>如果<strong>功能部件之间以及源向量之间没有冲突</strong>，可以将功能部件<strong>链接</strong>进行<strong>流水线</strong>处理，从而加快执行速度</li>
 <li><strong>本质</strong>：将流水线思想引入向量执行过程中，使后续向量指令在前一条指令结果产生后即可开始处理，提高并行度和吞吐量</li>
 </ol>
@@ -6123,7 +6123,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <p><strong>加法计算出一个元素之后，可以紧接着执行乘法，输出第一个元素；之后每一拍输出一个元素</strong></p>
 <div class="admonition question">
 <p class="admonition-title">Question</p>
-<p>计算以下三种方法<strong>得到所有结果所需拍数</strong>：</p>
+<p><mark class="green">计算以下三种方法<strong>得到所有结果所需拍数</strong>：</mark></p>
 <ol>
 <li><strong>串行执行</strong>：[(1+6+1)+N-1] + [(1+6+1)+N-1] + [(1+7+1)+N-1] = 3N+22</li>
 <li><strong>在 (1) 和 (2) 并行执行后执行 (3)</strong>：max{[(1+6+1)+N-1], [(1+6+1)+N-1]} + [(1+7+1)+N-1] = 2N+15</li>
@@ -6171,7 +6171,7 @@ d_i &amp;\leftarrow a_i \times k_i
 <ol>
 <li><strong>互连网络</strong>是由交换单元按照一定的拓扑结构和控制方式组成的网络，用于实现计算机系统中<strong>多个处理器或多个功能部件</strong>之间的互连</li>
 <li>
-<p>一般由以下五部分<strong>组成</strong>：CPU、存储器（Memory）、接口（Interface）、链路（Link）、交换节点（Switch Node）</p>
+<p><mark>一般由以下五部分<strong>组成</strong></mark>：CPU、存储器（Memory）、接口（Interface）、链路（Link）、交换节点（Switch Node）</p>
 <details class="abstract">
 <summary>定义</summary>
 <ol>
@@ -6217,14 +6217,14 @@ d_i &amp;\leftarrow a_i \times k_i
 <li><strong>多级互连网络</strong>：由<strong>多个单级网络串联</strong>组成，以实现任意两个处理单元之间的连接</li>
 </ol>
 </li>
-<li>输入 j 与输出 f(j) 通常采用<strong>二进制编码</strong>，其对应函数规律可以从二进制编码中推导出来，该规律即为<strong>互连函数</strong></li>
+<li>输入 j 与输出 f(j) 通常采用<strong>二进制编码</strong>，其对应函数规律可以从二进制编码中推导出来，该规律即为<mark class="blue"><strong>互连函数</strong></mark></li>
 </ol>
 <h4 id="icn_1">静态 ICN<a class="headerlink" href="#icn_1" title="Permanent link">&para;</a></h4>
 <h5 id="cube">Cube 单级互联网络<a class="headerlink" href="#cube" title="Permanent link">&para;</a></h5>
 <ol>
 <li>N 个输入输出采用 n 位二进制编码（<span class="arithmatex">\(n = \log_2 N\)</span>），表示为 <span class="arithmatex">\(P_{n-1} \dots P_i \dots P_1 P_0\)</span></li>
 <li>
-<p><strong>共有 n 个不同的互连函数</strong>：第 i 位取反</p>
+<p><mark><strong>共有 n 个不同的互连函数</strong>：第 i 位取反</mark></p>
 <div class="arithmatex">\[
 Cube_i(P_{n-1} \dots P_i \dots P_1 P_0) = P_{n-1} \dots \overline{P_i} \dots P_1 P_0
 \]</div>
@@ -6258,7 +6258,7 @@ Cube_i(P_{n-1} \dots P_i \dots P_1 P_0) = P_{n-1} \dots \overline{P_i} \dots P_1
 </li>
 </ol>
 <h5 id="pm2i">PM2I 单级互联网络<a class="headerlink" href="#pm2i" title="Permanent link">&para;</a></h5>
-<p><strong>PM2I（Plus Minus 2^i）的互连函数</strong></p>
+<p><mark><strong>PM2I（Plus Minus 2^i）的互连函数</strong></mark></p>
 <div class="arithmatex">\[
 PM2_{+i}(j)=(j+2^i)\bmod N
 \]</div>
@@ -6267,7 +6267,7 @@ PM2_{-i}(j)=(j-2^i)\bmod N
 \]</div>
 <ol>
 <li>其中 N 为互连网络中的节点数，j 为节点编号，且 <span class="arithmatex">\(0 \le j \le N-1\)</span>，<span class="arithmatex">\(0 \le i \le \log_2 N - 1\)</span></li>
-<li>一共有 <span class="arithmatex">\(2 \log_2 N - 1\)</span> 个不同的互连函数（最后两个一样）</li>
+<li><mark>一共有 <span class="arithmatex">\(2 \log_2 N - 1\)</span> 个不同的互连函数（最后两个一样）</mark></li>
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Example: N = 8</p>
@@ -6278,7 +6278,7 @@ PM2_{-i}(j)=(j-2^i)\bmod N
 <ol>
 <li><strong>由两部分组成</strong>：shuffle 和 exchange</li>
 <li>
-<p><strong>N 维 shuffle 函数</strong>：移位操作</p>
+<p><mark><strong>N 维 shuffle 函数</strong>：移位操作</mark></p>
 <div class="arithmatex">\[
 shuffle(P_{n-1}P_{n-2}...P_1P_0) = P_{n-2}...P_1P_0P_{n-1}
 \]</div>
@@ -6290,14 +6290,14 @@ shuffle(P_{n-1}P_{n-2}...P_1P_0) = P_{n-2}...P_1P_0P_{n-1}
 </div>
 </li>
 <li>
-<p><strong>exchange 的实现</strong>：通过 Cube 0（红线部分）</p>
+<p><mark><strong>exchange 的实现</strong>：通过 Cube 0（红线部分）</mark></p>
 <p><img alt="alt text" src="../photo/24-12.png" style="width:60%;display: block;margin: 20px auto" /></p>
 </li>
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Shuffle exchange network</p>
 <p>上述例子任意两个节点相连最多需要 5 步，3 exchanges + 2 shuffles</p>
-<p><strong>推广</strong>：数据传输最多需要经过 n<strong> 次 exchange + n−1 次 shuffle</strong>，因此最大距离 = 2n−1</p>
+<p><mark class="green"><strong>推广</strong>：数据传输最多需要经过 n<strong> 次 exchange + n−1 次 shuffle</strong>，因此最大距离 = 2n−1</mark></p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">单级互联网络的特点</p>
@@ -6323,18 +6323,18 @@ shuffle(P_{n-1}P_{n-2}...P_1P_0) = P_{n-2}...P_1P_0P_{n-1}
 <li>只有位于<strong>网络边界</strong>的交换单元可以直接与<strong>处理器</strong>相连</li>
 </ol>
 </li>
-<li>动态网络<strong>主要包括</strong>：总线（bus）、交叉开关（crossbar）、多级互连网络</li>
+<li><mark>动态网络<strong>主要包括</strong>：总线（bus）、<strong>交叉开关</strong>（crossbar）、多级互连网络</mark></li>
 <li>为了实现任意 PE 之间的连接，可以使用：<ol>
 <li><strong>循环互连网络</strong>：单级网络可以被重复使用多次进行循环连接</li>
 <li><strong>多级互连网络</strong>：将多个单级互连网络串联起来使用</li>
 <li><strong>多级循环互连网络</strong>：在多级互连网络基础上，再进行多次循环复用</li>
 </ol>
 </li>
-<li><strong>多级互连网络的差异</strong>包括交换单元功能、交换控制方式、拓扑结构</li>
+<li><mark><strong>多级互连网络的差异</strong>包括交换单元功能、交换控制方式、拓扑结构</mark></li>
 </ol>
 <h5 id="_5">交叉开关<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h5>
 <ol>
-<li><strong>交换单元</strong>：具有 m 个输入和 m 个输出的交换单元被记为 m×m 的交换单元，其中 m = 2^k</li>
+<li><strong>交换单元</strong>：具有 m 个输入和 m 个输出的交换单元被记为 m×m 的交换单元，其中 m = 2<span class="arithmatex">\(^k\)</span></li>
 <li><strong>交换单元的状态</strong>：直通（Straight）、交换（Exchange）、上广播（Upper broadcast）、下广播（Lower broadcast）</li>
 <li>
 <p>根据交换单元的功能，2×2 交换单元可以分为<strong>两功能和四功能交换单元</strong> </p>
@@ -6379,7 +6379,7 @@ shuffle(P_{n-1}P_{n-2}...P_1P_0) = P_{n-2}...P_1P_0P_{n-1}
 <p class="admonition-title">Info</p>
 <ol>
 <li>cube 0 + cude 1 : 4 组 4 元素交换</li>
-<li>cube 0 + cube 1 + cube 2 : 2 组 8 元素交换</li>
+<li>cube 0 + cube 1 + cube 2 : 2 组 8 元素交换（这是对上一行结果继续操作，不是从原始序列重新开始）</li>
 <li>cube 0 + cube 1 + cube 2 + cube 3 : 1 组 16 元素交换</li>
 </ol>
 </div>
@@ -6401,6 +6401,7 @@ f(P_3 P_2 P_1 P_0) = \overline{P_3}\, P_2\, \overline{P_1}\, \overline{P_0}
 <p><strong>特点</strong>：</p>
 <ol>
 <li>交换单元的<strong>功能有四种</strong></li>
+<li><mark>每一级包含 N/2 个两功能交换单元，级数 <span class="arithmatex">\(n = \log_2 N\)</span></mark></li>
 <li>网络拓扑结构采用 <strong>Shuffle 连接结构 + 四功能交换单元</strong>的形式</li>
 <li>控制方式采用单元控制</li>
 </ol>
@@ -6444,14 +6445,14 @@ f(P_3 P_2 P_1 P_0) = \overline{P_3}\, P_2\, \overline{P_1}\, \overline{P_0}
 <li>编程模型采用<strong>单指令多线程</strong></li>
 </ol>
 </li>
-<li><strong>GPU 本质上就是多线程 SIMD 处理器</strong></li>
+<li><mark><strong>GPU 本质上就是多线程 SIMD 处理器</strong></mark></li>
 <li><strong>组织</strong><ol>
 <li>每个数据元素对应一个<strong>线程</strong></li>
 <li>多个线程组织成一个<strong>线程块（Block）</strong></li>
 <li>多个线程块组织成一个<strong>网格（Grid）</strong></li>
 </ol>
 </li>
-<li>线程管理由 <strong>GPU 硬件</strong>完成，而不是应用程序或操作系统负责</li>
+<li><mark>线程管理由 <strong>GPU 硬件</strong>完成，而不是应用程序或操作系统负责</mark></li>
 <li><strong>GPU 存储结构</strong><ol>
 <li>GPU Memory（全局内存）：所有 Grid 共享</li>
 <li>Local Memory（局部/共享内存）：同一个 Thread Block 内的所有线程共享</li>
@@ -6479,13 +6480,13 @@ f(P_3 P_2 P_1 P_0) = \overline{P_3}\, P_2\, \overline{P_1}\, \overline{P_0}
 </details>
 <hr />
 <h2 id="llp">LLP<a class="headerlink" href="#llp" title="Permanent link">&para;</a></h2>
-<p><strong>循环级并行</strong></p>
+<p><mark><strong>循环级并行判断</strong>：看第 i+1 次循环是否使用了第 i 次循环产生的值。</mark></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
 <span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">      </span><span class="cm">/* S1 */</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w">   </span><span class="cm">/* S2 */</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">      </span><span class="cm">/* S1 */</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span><span class="w">   </span><span class="cm">/* S2 */</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <div class="admonition question">
@@ -6534,7 +6535,7 @@ f(P_3 P_2 P_1 P_0) = \overline{P_3}\, P_2\, \overline{P_1}\, \overline{P_0}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月18日 22:21:47 CST">2026年6月18日 22:21:47</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     

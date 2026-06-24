@@ -5769,7 +5769,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 2630 字</span>
+    <span>约 2681 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -5782,14 +5782,14 @@
 <h2 id="_2">磁盘结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>磁盘驱动器被寻址为 logical blocks（LBA）的一维数组</li>
-<li>逻辑块是<strong>最小的传输单位</strong>，被顺序映射到磁盘的扇区中</li>
-<li><strong>Positioning time</strong>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong><ol>
+<li><mark>逻辑块是<strong>最小的传输单位</strong>，被顺序映射到磁盘的扇区中</mark></li>
+<li><mark><strong>Positioning time</strong></mark>(random-access time)：将磁臂移动到所需扇区的时间，包括<strong>寻道时间和旋转延迟</strong><ol>
 <li><strong>seek time</strong>：将磁头移动到目标柱面的时间</li>
 <li><strong>rotational latency</strong>：目标扇区旋转到磁头下方所需的时间</li>
 </ol>
 </li>
-<li><strong>平均访问时间</strong> = 平均寻道时间 + 平均延迟</li>
-</ol>
+<li>
+<p><strong>平均访问时间</strong> = 平均寻道时间 + 平均延迟</p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <ol>
@@ -5797,19 +5797,18 @@
 <li>对于慢速磁盘：9ms + 5.56ms = 14.56ms</li>
 </ol>
 </div>
-<ol start="5">
-<li><strong>平均 I/O 时间</strong>：平均访问时间 + (待传输数据 / 传输速率) + 控制器开销</li>
-</ol>
+</li>
+<li>
+<p><strong>平均 I/O 时间</strong>：平均访问时间 + (待传输数据 / 传输速率) + 控制器开销</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p>在 7200 RPM 的磁盘上传输一个 4KB 的块，平均寻道时间为 5ms，传输速率为 1gb/sec，控制器开销为 0.1ms：</p>
 <p>5ms + 4.17ms + 4KB / (1gb/sec) + 0.1ms（4.17 为平均延迟）</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>主要慢在寻道时间和旋转延迟（不好提升）</p>
+<p class="admonition-title">Warning：主要慢在寻道时间和旋转延迟（不好提升）</p>
 </div>
-<ol start="6">
+</li>
 <li>
 <p><strong>性能</strong></p>
 <ol>
@@ -5823,7 +5822,7 @@
 </ol>
 </li>
 <li>
-<p><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</p>
+<p><mark><strong>磁盘带宽</strong>：数据传输的速度，即 数据/时间</mark></p>
 <ol>
 <li>数据：传输的<strong>总字节数</strong></li>
 <li>时间：从发出第一个请求到完成最后一次传输之间的时间</li>
@@ -5833,7 +5832,7 @@
 <h2 id="_3">磁盘调度<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>磁盘调度</strong>：选择下一个要服务的待处理磁盘请求</li>
-<li><strong>目标</strong>：减小寻道时间</li>
+<li><mark><strong>目标</strong>：减小寻道时间</mark></li>
 <li>过去，<strong>操作系统</strong>负责队列管理和磁盘驱动头调度；现在，已内置在存储设备、控制器的<strong>固件</strong>（fireware）中，仅提供 lba（<strong>逻辑块寻址</strong>）处理请求的排序</li>
 </ol>
 <div class="admonition info">
@@ -5865,8 +5864,8 @@
 <li>
 <p><strong>最短寻道时间优先</strong>：</p>
 <ol>
-<li>是 SJF（最短作业优先）调度的一种形式，可能<strong>存在饥饿现象</strong></li>
-<li>与 SJF 不同，SSTF <strong>可能不是最优的</strong></li>
+<li>是 SJF（最短作业优先）调度的一种形式，可能<strong>存在<mark>饥饿</mark>现象</strong></li>
+<li>与 SJF 不同，SSTF <strong><mark>可能不是最优的</mark></strong></li>
 </ol>
 </li>
 <li>
@@ -5888,7 +5887,7 @@
 </div>
 <h3 id="scan">SCAN<a class="headerlink" href="#scan" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>elevator algorithm</strong></li>
+<li><mark><strong>elevator algorithm</strong></mark></li>
 <li><strong>优点</strong>：高吞吐量；响应时间方差低；平均响应时间良好</li>
 <li><strong>缺点</strong>：对于磁臂刚刚访问过位置的请求，等待时间较长</li>
 </ol>
@@ -5917,7 +5916,7 @@
 </div>
 <ol>
 <li>LOOK 是 SCAN 的一个变体，C-LOOK 是 C-SCAN 的一个变体</li>
-<li><strong>实现</strong>：磁头在每个方向上<strong>仅移动到最后一个请求所在的位置</strong>（不会移动到 disk 的末尾）</li>
+<li><strong>实现</strong>：磁头在每个方向上<mark><strong>仅移动到最后一个请求所在的位置</strong>（不会移动到 disk 的末尾）</mark></li>
 <li><strong>优点</strong>：防止了由于不必要的磁盘端点遍历而产生的额外延迟</li>
 </ol>
 <div class="admonition example">
@@ -5927,18 +5926,20 @@
 <hr />
 <h2 id="_4">非易失性存储器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ol>
-<li>如果特性类似磁盘驱动器，则称为<strong>固态硬盘 (SSDs)</strong></li>
-</ol>
+<li>
+<p>如果特性类似磁盘驱动器，则称为<mark class="cyan"><strong>固态硬盘 (SSDs)</strong></mark></p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <p>其他形式包括 USB 驱动器（优盘、闪存盘）、DRAM 磁盘替代品、主板表面贴装存储以及主内存</p>
 </div>
-<ol start="2">
-<li><strong>优点</strong>：可以比 HDD 更可靠；速度快得多（没有移动部件，因此<strong>没有寻道时间或旋转延迟</strong>）</li>
-<li><strong>缺点</strong>：单位 MB 价格更贵；寿命可能较短，需要仔细管理；容量较小；总线可能太慢</li>
-<li><strong>调度算法</strong>：FCFS</li>
+</li>
 <li>
-<p><strong>特性</strong>：</p>
+<p><strong>优点</strong>：可以比 HDD 更可靠；速度快得多（<mark>没有移动部件，因此<strong>没有寻道时间或旋转延迟</strong></mark>）</p>
+</li>
+<li><strong>缺点</strong>：单位 MB 价格更贵；寿命可能较短，需要仔细管理；容量较小；总线可能太慢</li>
+<li><mark><strong>调度算法</strong>：FCFS</mark></li>
+<li>
+<p><mark><strong>特性</strong></mark>：</p>
 <ol>
 <li>以 <strong>page</strong> 为增量进行读写（类似扇区）</li>
 <li>但<strong>无法就地重写</strong>，必须先被擦除，且必须擦除 page 所在的整个 block</li>
@@ -5956,49 +5957,45 @@
 </li>
 <li>还实现了<strong>垃圾回收</strong>以释放无效页面空间</li>
 <li>分配<strong>预留空间</strong>为垃圾回收提供工作空间</li>
-<li>每个单元都有寿命，因此<strong>需要均衡地写入所有单元</strong></li>
+<li><mark>每个单元都有寿命，因此<strong>需要均衡地写入所有单元</strong></mark></li>
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="_5">磁带<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>磁带是早期的辅助存储类型，现在<strong>主要用于备份</strong></p>
-</li>
-<li>
-<p><strong>优点</strong>：容量大；存储在磁带上的数据<strong>相对永久</strong></p>
-</li>
-<li><strong>缺点</strong>：访问时间慢，尤其是随机访问（寻道时间远高于磁盘，随机访问需要卷带/倒带）</li>
+<li>磁带是早期的辅助存储类型，现在<strong>主要用于<mark>备份</mark></strong></li>
+<li><strong>优点</strong>：容量大；存储在磁带上的数据<strong>相对永久</strong></li>
+<li><strong>缺点</strong>：访问时间慢，尤其是<mark>随机访问</mark>（寻道时间远高于磁盘，随机访问需要卷带/倒带）</li>
 </ol>
+<hr />
 <h2 id="_6">磁盘管理<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>物理格式化</strong>：将磁盘划分成扇区，以便控制器进行读/写</li>
-</ol>
-<ul>
+<li><mark><strong>物理格式化</strong>：将磁盘划分成扇区，以便控制器进行读/写</mark><ol>
 <li><strong>扇区结构</strong>：包含头部信息、数据以及纠错码 ECC</li>
-</ul>
-<ol start="2">
-<li>操作系统在磁盘上<strong>记录其自身的数据结构</strong>，将磁盘分区为若干柱面组，每个组被视为一个<strong>逻辑磁盘</strong></li>
-<li><strong>逻辑格式化</strong>分区以在其上<strong>建立文件系统</strong>（文件 I/O 以<strong>簇</strong>为单位完成）</li>
-<li><strong>根分区</strong>包含 OS，Mounted at boot time</li>
 </ol>
-<ul>
+</li>
+<li>操作系统在磁盘上<strong>记录其自身的数据结构</strong>，将磁盘分区为若干柱面组，每个组被视为一个<strong>逻辑磁盘</strong></li>
+<li><mark><strong>逻辑格式化</strong>：分区以在其上<strong>建立文件系统</strong>（文件 I/O 以<strong>簇</strong>为单位完成）</mark></li>
+<li>
+<p><strong>根分区</strong>包含 OS，Mounted at boot time</p>
+<ol>
 <li>其他分区可以包含其他操作系统、其他文件系统，或者是原始分区</li>
 <li>其他分区可以<strong>自动或手动挂载</strong></li>
-</ul>
-<ol start="5">
-<li><strong>引导块</strong>：包含足够的代码以了解如何从文件系统中<strong>加载内核</strong></li>
+</ol>
+</li>
+<li>
+<p><strong>引导块 Boot block</strong>：包含足够的代码以了解如何从文件系统中<strong>加载内核</strong></p>
+</li>
 </ol>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <ol>
-<li>引导块初始化系统</li>
-</ol>
-<ul>
+<li>引导块初始化系统<ul>
 <li>引导程序存储在 ROM、固件中</li>
 <li>自举加载程序程序存储在引导分区的引导块中</li>
 </ul>
-<ol start="2">
+</li>
 <li><strong>原始磁盘访问</strong>适用于想要进行自身块管理、让操作系统避开的应用程序（例如数据库）</li>
 <li>使用诸如<strong>扇区备用</strong>之类的方法来处理坏块</li>
 <li>操作系统提供<strong>交换空间管理</strong></li>
@@ -6007,32 +6004,35 @@
 <hr />
 <h2 id="_7">磁盘连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>磁盘连接到计算机的方式</strong>：</li>
-</ol>
+<li>
+<p><strong>磁盘连接到计算机的方式</strong>：</p>
 <ul>
 <li>主机连接存储 (host-attached storage)</li>
 <li>网络连接存储 (network-attached storage)：通过网络而非本地总线提供的存储</li>
 <li>存储区域网络 (storage area network)：连接服务器和存储单元的私有网络，使用高速互连和高效协议</li>
 </ul>
-<ol start="2">
-<li><strong>主机连接存储</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>主机连接存储</strong></p>
 <ul>
 <li><strong>e.g.</strong>：硬盘、RAID 阵列、CD、DVD、磁带...</li>
 <li>磁盘可以通过 <strong>I/O bus</strong>直接连接到计算机 <strong>e.g.</strong> SCSI, IDE</li>
 </ul>
 <p><img alt="alt text" src="../photo/21-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
+</li>
+</ol>
+<hr />
 <h2 id="raid">RAID<a class="headerlink" href="#raid" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>独立磁盘冗余阵列</strong> (RAID)：操作系统可以通过<strong>多个</strong>总线连接的磁盘来实现</li>
-</ol>
+<li>
+<p><strong>独立磁盘冗余阵列</strong> (RAID)：操作系统可以通过<strong>多个</strong>总线连接的磁盘来实现</p>
 <ul>
 <li>磁盘是不可靠、缓慢但廉价的</li>
 <li>使用<strong><abbr title="redundancy">冗余</abbr></strong>：提高可靠性；提高速度（同时读，提高磁盘带宽）</li>
 </ul>
-<ol start="2">
-<li><strong>关键技术</strong>：这些技术可以随意组合</li>
-</ol>
+</li>
+<li>
+<p><strong>关键技术</strong>：这些技术可以随意组合</p>
 <ul>
 <li><strong>数据镜像</strong> (Data Mirroring)：在多个磁盘上保留相同的数据</li>
 <li>
@@ -6043,14 +6043,14 @@
 <p><strong>纠错码</strong> (ECC)：校验位（保留用于在驱动器故障时重建丢失位的信息）</p>
 </li>
 </ul>
-<ol start="3">
-<li><strong>层级</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>层级</strong></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">RAID 0</label><label for="__tabbed_1_2">RAID 1</label><label for="__tabbed_1_3">RAID 2/3</label><label for="__tabbed_1_4">RAID 4/5/6</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li>RAID 0：数据条带化分布在多个磁盘上，<strong>没有校验位（无冗余）</strong></li>
+<li>RAID 0：<mark>数据条带化</mark>分布在多个磁盘上，<strong>没有校验位（<mark>无冗余</mark>）</strong></li>
 <li>提高性能，但不可靠</li>
 </ol>
 <div class="admonition example">
@@ -6061,7 +6061,7 @@
 </div>
 <div class="tabbed-block">
 <ol>
-<li>在两个磁盘上保存一组数据的完全副本（或<strong>镜像</strong>）</li>
+<li><mark>在两个磁盘上保存一组数据的完全副本（或<strong>镜像</strong>）</mark></li>
 <li>使用的<strong>磁盘数量</strong>是 RAID 0 的两倍（浪费）</li>
 <li>除非发生（极不可能的）同时故障，否则<strong>可以保证可靠性</strong></li>
 <li>可以通过从<strong>寻道时间最快</strong>的磁盘读取来提升性能</li>
@@ -6073,19 +6073,21 @@
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>RAID 2</strong>：</li>
-</ol>
+<li>
 <ul>
 <li>在<strong>位级</strong> (bit-level) 进行数据条带化</li>
 <li>使用<strong>汉明码</strong> (Hamming code) 进行纠错（已不再使用）</li>
 <li>汉明码（4位数据 + 3位校验）允许使用 7 个磁盘</li>
 </ul>
+<p><strong>RAID 2</strong>：</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <p><img alt="alt text" src="../photo/21-8.png" style="width:40%;display: block;margin: 20px auto" /></p>
 </div>
-<ol start="2">
-<li><strong>RAID 3</strong>：使用 4 个数据磁盘和 1 个校验磁盘</li>
+</li>
+<li>
+<p><strong>RAID 3</strong>：使用 4 个数据磁盘和 1 个校验磁盘</p>
+</li>
 <li>没有被实际应用，因为<strong>粒度太小</strong>，现在无法单独读出来一个比特，<strong>至少应该读出一个字节</strong></li>
 </ol>
 </div>
@@ -6099,14 +6101,13 @@
 </div>
 </div>
 </div>
-<hr />
+</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">RAID 与文件系统</p>
 <ol>
-<li><strong>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</strong></li>
-<li>像 Solaris ZFS 这样的文件系统增加了额外的检查来检测错误</li>
-</ol>
-<ul>
+<li><mark class="blue"><strong>RAID 只能检测/从磁盘故障中恢复，不能防止或检测数据损坏或其他错误</strong></mark></li>
+<li>像 Solaris ZFS 这样的文件系统增加了额外的检查来检测错误<ul>
 <li>ZFS 为所有文件系统 (FS) 数据和元数据添加了校验和<ul>
 <li>校验和与指向数据/元数据的指针存放在一起</li>
 <li>可以检测并纠正数据和元数据损坏</li>
@@ -6117,6 +6118,8 @@
 </ul>
 </li>
 </ul>
+</li>
+</ol>
 </div>
 
 
@@ -6140,7 +6143,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月19日 10:30:00 CST">2026年5月19日 10:30:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     

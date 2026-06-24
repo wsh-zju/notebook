@@ -6379,7 +6379,7 @@
     <span class="twemoji">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8V2m6.78 1a.69.69 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38-2.5-2.5z"></path></svg>
     </span>
-    <span>约 5899 字</span>
+    <span>约 6070 字</span>
 
     <span style="margin: 0 6px; opacity: 0.3;">/</span>
 
@@ -6389,8 +6389,9 @@
     <span>预计阅读 20 分钟</span>
 </div>
 
+<hr />
 <ol>
-<li><strong>文件系统是 disk 的抽象，文件是磁道/扇区的抽象</strong></li>
+<li><mark><strong>文件系统是 disk 的抽象，文件是磁道/扇区的抽象</strong></mark></li>
 <li>文件系统提供了一组文件的连贯视图</li>
 </ol>
 <div class="admonition info">
@@ -6449,11 +6450,11 @@
 </div>
 <h3 id="_5">打开的文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>管理打开的文件需要若干数据</strong>：<ol>
+<li><strong>管理打开的文件需要<mark>若干数据</mark></strong>：<ol>
 <li><strong>Open-file table</strong>：追踪所有打开的文件</li>
 <li><strong>File pointer</strong>：指向最后一次读/写的位置，<strong>每个打开该文件的进程都各有一个</strong></li>
 <li><strong>File-open count</strong>：文件被打开次数的计数器，以便在最后一个进程关闭它时，将数据从打开文件表中移除</li>
-<li><strong>文件的磁盘位置</strong>：数据访问信息的缓存</li>
+<li><strong>disk location</strong>：缓存文件数据位置信息</li>
 <li>访问权限 (<strong>Access rights</strong>)：<strong>每个</strong>进程的访问模式信息</li>
 </ol>
 </li>
@@ -6473,9 +6474,9 @@
 </ol>
 <h3 id="_6">文件类型<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>文件扩展名</strong>：作为文件名的一部分</li>
+<li><strong>文件扩展名</strong>：作为文件名的一部分 <code>.c</code></li>
 <li>
-<p><strong>magic number</strong>：在文件开始部分放一些 magic number 来表明文件类型</p>
+<p><mark><strong>magic number</strong></mark>：在文件开始部分放一些 magic number 来表明文件类型</p>
 <p><strong>e.g.</strong> 7f45 4c46 是 ASCII 字符，表示 ELF，代表 elf 文件格式</p>
 </li>
 </ol>
@@ -6514,19 +6515,20 @@
 </div>
 </li>
 <li>
-<p><strong>共享文件的方式</strong>：硬链接、软链接</p>
+<p><mark class="orange"><strong>共享文件的方式</strong>：硬链接、软链接</mark></p>
 </li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">软链接 vs 硬链接</p>
 <ol>
-<li><strong>硬链接</strong>：与文件相关联的一个<strong>目录条目</strong>，没有单独创建文件<ol>
+<li><strong>硬链接</strong>：与文件相关联的一个<mark><strong>目录条目</strong></mark>，没有单独创建文件<ol>
 <li>目录中的文件名 <code>.</code> 是指向该目录自身的硬链接</li>
 <li>文件名 <code>..</code> 是指向其父目录的硬链接</li>
 </ol>
 </li>
-<li><strong>软链接/符号链接</strong>：本身是一个特殊<strong>文件</strong>，其数据块中<strong>包含目标文件的路径名</strong>，有自己<strong>独立的 <code>inode</code> 和数据块</strong><ol>
-<li>与硬链接不同，软链接可以指向目录，并且可以跨越文件系统边界</li>
+<li><strong>软链接/符号链接</strong>：本身是一个<mark>特殊<strong>文件</strong></mark>，其数据块中<strong>包含目标文件的路径名</strong>，有自己<strong>独立的 <code>inode</code> 和数据块</strong><ol>
+<li><mark><strong>不增加目标 hard link count</strong></mark></li>
+<li>与硬链接不同，软链接<strong>可以指向目录，并且可以跨越文件系统边界</strong></li>
 <li>如果删除了目标文件，该软链接将会失效</li>
 </ol>
 </li>
@@ -6548,7 +6550,7 @@
 </li>
 </ol>
 <div class="admonition abstract">
-<p class="admonition-title">其他访问方式</p>
+<p class="admonition-title">其他访问方式：索引</p>
 <ol>
 <li>基于直接访问方法，<strong>文件的索引</strong>指向各个块</li>
 <li>要在文件中寻找一条记录，首先检索索引，然后利用<strong>指针</strong>访问对应的物理块</li>
@@ -6558,8 +6560,8 @@
 <hr />
 <h2 id="_10">目录<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>目录</strong>是包含所有文件信息的<strong>节点集合</strong></li>
-<li>目录结构和文件本身都常驻在<strong>磁盘</strong>上</li>
+<li><mark><strong>目录</strong>是包含所有文件信息的<strong>节点集合</strong></mark></li>
+<li><mark>目录结构和文件本身都常驻在<strong>磁盘</strong>上</mark></li>
 </ol>
 <p><img alt="alt text" src="../photo/23-4.png" style="width:40%;display: block;margin: 20px auto" /></p>
 <h3 id="_11">目录操作<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
@@ -6628,7 +6630,7 @@
 <ol>
 <li>将目录组织成<strong>有向无环图</strong></li>
 <li><strong>实现别名</strong>：允许创建指向某个目录条目或文件的链接 (<strong>Links</strong>)</li>
-<li><strong>悬空指针问题 (Dangling Pointer Problem)</strong><ol>
+<li><mark><strong>悬空指针问题 (Dangling Pointer Problem)</strong></mark><ol>
 <li><strong>e.g.</strong> 如果删除了文件 <code>/dict/all</code>，那么 <code>/dict/w/list</code> 和 <code>/spell/words/list</code> 就会变成悬空指针</li>
 <li><strong>解决方法</strong>：<ol>
 <li>反向指针 (<strong>Back Pointers</strong>)：记录所有指向该实体的指针（大小可变）</li>
@@ -6642,7 +6644,7 @@
 <p><img alt="alt text" src="../photo/23-9.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li>允许任意链接可能会在目录结构中<strong>产生环</strong></li>
-<li><strong>问题</strong>：可能会导致无法回收磁盘空间（两个指针互相指向，引用计数一直不归零）</li>
+<li><mark><strong>问题</strong>：可能会导致无法回收磁盘空间</mark>（两个指针互相指向，引用计数一直不归零）</li>
 <li><strong>解决方案</strong>：<ol>
 <li>允许环的存在，但使用<strong>垃圾回收</strong>机制来回收磁盘空间</li>
 <li>每次添加新链接时，运行<strong>环检测算法</strong></li>
@@ -6653,7 +6655,7 @@
 <p><img alt="alt text" src="../photo/23-22.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li>
-<p>目录是一个特殊的的文件（linux），<strong>存储文件名到 <code>inode</code> 的映射</strong></p>
+<p><mark>目录是一个特殊的的文件（linux），<strong>存储文件名到 <code>inode</code> 的映射</strong></mark></p>
 <div class="admonition quote">
 <p class="admonition-title">Quote</p>
 <ol>
@@ -6694,6 +6696,7 @@
 </ol>
 </li>
 </ol>
+<hr />
 <h2 id="protection">Protection<a class="headerlink" href="#protection" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>访问类型</strong>：读、写、追加、执行、删除、列出</li>
@@ -6717,9 +6720,9 @@
 <p><img alt="alt text" src="../photo/23-3.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li>磁盘可以细分为 <strong>partitions</strong>（也被称为微型磁盘（minidisks）或切片（slices））</li>
-<li>不同的分区可以有<strong>不同的文件系统</strong><ol>
+<li><mark>不同的分区可以有<strong>不同的文件系统</strong></mark><ol>
 <li><strong>volume</strong>：包含文件系统的分区</li>
-<li>每个 volume 通过 volume’s table of contents 追踪文件系统信息</li>
+<li>每个 volume 通过 volume's table of contents 追踪文件系统信息</li>
 <li>文件系统可以是通用目的或特殊目的</li>
 </ol>
 </li>
@@ -6730,7 +6733,7 @@
 <h2 id="_20">文件系统挂载<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
 <ol>
 <li>文件系统在被访问之前必须先进行<strong>挂载</strong> (Mounted)</li>
-<li><strong>挂载</strong>：将一个文件系统连接到整个系统，通常形成一个<strong>单一的命名空间</strong></li>
+<li><mark><strong>挂载</strong>：将一个文件系统连接到整个系统，通常形成一个<strong>单一的命名空间</strong></mark></li>
 <li><strong>挂载点 (Mount Point)</strong>：被挂载的文件系统所在的<strong>位置</strong></li>
 </ol>
 <div class="admonition tip">
@@ -6743,14 +6746,14 @@
 <hr />
 <h2 id="_21">文件系统结构<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>操作系统可以同时支持多种文件系统</strong></li>
+<li><mark><strong>操作系统可以同时支持多种文件系统</strong></mark></li>
 <li>文件系统放在<strong>辅助存储（磁盘）</strong>上<ol>
 <li>磁盘驱动程序提供<strong>读/写磁盘块的接口</strong></li>
 <li>文件系统为用户/程序<strong>提供存储接口</strong>，实现逻辑块到物理块的映射</li>
 </ol>
 </li>
 <li>
-<p>文件系统通常采用<strong>分层结构</strong>来实现和组织</p>
+<p>文件系统通常采用<mark class="orange"><strong>分层结构</strong></mark>来实现和组织</p>
 <ol>
 <li><strong>优点</strong>：有利于降低复杂度和减少冗余</li>
 <li><strong>缺点</strong>：会引入额外的调用开销并可能降低性能</li>
@@ -6762,7 +6765,7 @@
 <ol>
 <li><strong>功能</strong>：维护文件系统所需的所有元数据（<strong>meta-data</strong>），即除实际文件内容以外的所有数据</li>
 <li>
-<p><strong>存储内容</strong></p>
+<p><mark><strong>存储内容</strong></mark></p>
 <ol>
 <li><strong>目录结构</strong></li>
 <li>
@@ -6787,7 +6790,7 @@
 <h3 id="_23">文件组织模块<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>功能</strong>：<ol>
-<li>负责进行<strong>地址转换</strong>（把逻辑块映射到物理块）</li>
+<li>负责进行<strong>地址转换</strong>（<mark>把逻辑块映射到物理块</mark>）</li>
 <li>负责管理<strong>空闲空间</strong></li>
 </ol>
 </li>
@@ -6842,7 +6845,7 @@
 <li><strong>逻辑文件系统</strong>分配一个新的 FCB（Linux 中的 <code>inode</code>）</li>
 <li>更新相应的<strong>目录</strong>，将新的文件名称<strong>与对应的 FCB 关联</strong></li>
 </ol>
-<h3 id="_28">打开文件<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<h3 id="_28"><mark>打开文件</mark><a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../photo/23-14.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li><strong>检查全局打开文件表</strong>，看该文件当前是否正被其他进程使用<ol>
@@ -7102,6 +7105,39 @@
 </ol>
 </div>
 </div>
+<div class="admonition success">
+<p class="admonition-title">文件系统实现</p>
+<ol>
+<li>文件有：<ol>
+<li>external name：用户看到的路径名</li>
+<li><strong>internal name：inode number</strong> </li>
+<li><strong>目录作用</strong>：external name → internal name</li>
+</ol>
+</li>
+<li>fd 是 per-process table 的index：不同数值表示 stdin(0)、stdout(1)、stderr(2)</li>
+<li>
+<p><strong>On-disk Layout 示例磁盘布局</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>superblock
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>inode bitmap
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>data bitmap
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>inode table
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>data region
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><mark><strong>Superblock</strong> 保存内容：inode 数量、data block 数量、inode table 起始位置、data region 起始位置、magic number</mark></li>
+<li>Bitmap<ol>
+<li>inode bitmap：管理空闲 inode</li>
+<li>data bitmap：管理空闲 data block</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</div>
 
 
 
@@ -7124,7 +7160,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月25日 18:15:17 CST">2026年5月25日 18:15:17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年6月24日 18:13:30 CST">2026年6月24日 18:13:30</span>
   </span>
 
     
