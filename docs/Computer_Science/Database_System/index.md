@@ -20,6 +20,8 @@
 {{ END_TOC }}
 
 ## QUIZ
+!!! info "Info"
+    2025-2026 学年春夏学期 gyj 班数据库系统课程 quiz（含答案）
 
 <div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
