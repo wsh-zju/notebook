@@ -1,5 +1,6 @@
 # <i class="fa-solid fa-table"></i> 数据库系统 
 
+## 目录
 {{ BEGIN_TOC }}
 - 数据库应用:
     - 基本介绍[note]: introduce/
@@ -17,3 +18,76 @@
     - 并发控制[note]: concurrency/
     - 故障恢复[note]: recovery/
 {{ END_TOC }}
+
+## QUIZ
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">Quiz 1</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     2 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/quiz1.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
+
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">Quiz 2</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     2 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/quiz2.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">Quiz 3</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     2 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/quiz3.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">Quiz 4</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     2 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/quiz4.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">Quiz 5</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     2 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/quiz5.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
