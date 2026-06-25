@@ -19,6 +19,25 @@
     - 故障恢复[note]: recovery/
 {{ END_TOC }}
 
+## 期末复习题
+!!! info "Info"
+    该部分来自最后一节复习课助教讲解的题目
+
+<div class="card file-block" markdown="1">
+<div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
+<div class="file-body">
+<div class="file-title">期末复习题</div>
+<div class="file-meta">
+    <i class="fa-regular fa-clock"></i>
+     2026-6-25 /
+    <i class="fa-regular fa-note-sticky"></i>
+     8 pages
+</div>
+</div>
+<a class="down-button" target="_blank" href="files/Review_exercise.pdf" markdown="1">:fontawesome-solid-download: Download</a>
+</div>
+
+
 ## QUIZ
 !!! info "Info"
     2025-2026 学年春夏学期 gyj 班数据库系统课程 quiz（含答案）

@@ -325,13 +325,15 @@ comment: true
     !!! success "Abstract"
         1. **$r_i$ 中的 $r$ 元组只需要与 $s_i$ 中的 $s$ 元组进行比较，不需要与任何其他分区中的 $s$ 元组进行比较**
         2. 关系 $s$ 被称为构建输入（build input），而 $r$ 被称为探测输入（probe input）
-        3. <mark class="green">如果分区数 $n_h$ 大于内存的页数 $M$，则需要进行**递归分区**</mark>
+        3. **最多 partition 数 $n_h = M - 1$**
+        4. 每个 build partition 大小 **$b_s / n_h$，和 M - 2 比较**，判断是否递归（1 个 input buffer 和 1 个 output buffer）
+        5. <mark class="green">如果分区数 $n_h$ 大于内存的页数 $M$，则需要进行**递归分区**</mark>
     
-        !!! info "Info"
+        !!! info "Info：实际需要分几个区"
             通常将 $n_h$ 选择为 $\lceil b_s / M \rceil * f$，其中 $f$ 是一个修正因子（fudge factor），通常在 1.2 左右
 
 3. **成本**：
-    1. <mark class="orange">**如果不需要递归分区**：$3(b_r + b_s) + 4 * n_h$ 次数据块传输 + $2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil)$ 次寻道 </mark>
+    1. <mark class="orange">**如果不需要递归分区**：$3(b_r + b_s) + 4 * n_h$ 次数据块传输 + $2(\lceil b_r / b_b \rceil + \lceil b_s / b_b \rceil) + 2 * n_h$ 次寻道 </mark>
     2. **如果需要递归分区**：
         1. 对构建关系 $s$ 进行**分区所需的趟数**：$\lceil \log_{M-1}(b_s) - 1 \rceil$（最好选择**较小**的关系作为构建关系）
         2. <mark class="orange">**总开销估计为**：</mark>

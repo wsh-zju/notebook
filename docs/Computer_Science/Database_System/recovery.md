@@ -228,9 +228,8 @@ comment: true
     前面默认磁盘不坏；如果磁盘坏了，需要用 **dump / backup**
 
 !!! info "该部分内容详见 PPT"
-    1. （Failure with Loss of Nonvolatile Storage）
-    2. \* 高级恢复技术
-    3. \* 远程备份系统（Remote Backup Systems）
+    1. \* 高级恢复技术
+    2. \* 远程备份系统（Remote Backup Systems）
 
 ---
 ## \* ARIES 恢复算法
