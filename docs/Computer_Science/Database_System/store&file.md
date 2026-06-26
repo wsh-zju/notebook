@@ -152,12 +152,13 @@ comment: true
     
     ![alt text](photo/6-4.png){style="width:80%;display: block;margin: 20px auto"}
 
-    - <mark>**存储**：定长属性区 + 变长属性 (offset, length) + 实际数据</mark>
+    - <mark>**记录的存储结构**：定长属性区 + 变长属性 (offset, length) + 实际数据</mark>
     - <mark>**分槽页结构** </mark>：一种页内记录组织方式
-        - <mark>头部</mark>包含记录条目数、块内空闲空间的**末尾地址**、<mark>槽目录：(offset, length)</mark>
-        - RID = (page_id, slot_id)
-        - <mark>记录可以在 page 内移动，让记录连续存放，消除页内碎片</mark>
+        - <mark>头部</mark>包含记录条目数、块内空闲空间的**末尾地址**/空闲空间的地址
+        - <mark>槽目录：(offset, length)</mark>
         - **双向增长**：槽目录从页首向后长，记录数据从页尾向前长，中间是空闲空间
+    - RID = (page_id, slot_id)
+    - <mark>记录可以在 page 内移动，让记录连续存放，消除页内碎片</mark>
     - **表示方式**：
         - **Fixed-length Representation**：每条记录都分配最大可能长度
         - **Pointer Method**：把一个变长记录拆成多个固定长度片段，用指针串起来

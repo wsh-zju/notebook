@@ -112,7 +112,7 @@ comment: true
         ```
 
         1. 只有 `circ` 中能放入 `elly` 的部分会被复制（area 被丢弃）
-        2. **`elly` 的 `vptr` 和 `vtable` **不会改变****
+        2. **`elly` 的 `vptr` 和 `vtable` 不会改变**
         3. <mark class="green">**这导致了对象本身不可以多态**</mark>
 
         !!! warning "指针"

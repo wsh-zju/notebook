@@ -77,7 +77,18 @@ comment: true
             class D : public B, public C {}; // D 中有两份 A 的拷贝
             ```
 
-        2. <mark>**解决方案**：使用**虚拟继承**</mark>
+        2. 但是如果指定用的函数，就不会存在二义性问题，可以编译成功
+
+            ```cpp
+            class D : public B, public C {
+            public:
+                int fun() {
+                    return B::fun() + C::fun();
+                }
+            };
+            ```
+            
+        3. <mark>**解决方案**：使用**虚拟继承**</mark>
 
             ```cpp
             class A {};
