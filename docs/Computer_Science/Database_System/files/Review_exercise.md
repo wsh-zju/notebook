@@ -270,6 +270,18 @@ Consider the following relation schemas and then answer the subsequent problems.
 
 > Quiz  [Solution 4 of Database Systems.pdf](test/Solution 4 of Database Systems.pdf) 
 
+4. Assuming the table **r** has **160 blocks,** and buffer memory size is **10 blocks**. In the process of sorting **r** with the **External Merge Sort** algorithm, **2 buffer blocks** are allocated to each input run and to the output run, and t**he sorted result of the final pass is** **written back** **to disk.** The estimated cost for sorting **r** is:
+
+   (A) 800 block transfers + 272 seeks. 
+
+   (B) 800 block transfers +512 seeks. 
+
+   (C) 960 block transfers + 352 seeks. 
+
+   (D) 320 block transfers +2 seeks.
+
+   > C **最后一趟不写回磁盘;** b_b 每个 input/output buffer 的大小=2
+
 ## 7 Optimization
 
 1. Suppose that a table with 30000 records is stored in a file where each file block holds 200 records. A selection operation is performed, where the selection condition specifies an equality comparison on a **candidate key**. What is the estimated size of the result?

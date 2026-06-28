@@ -383,7 +383,7 @@ int main(){
     ```
 
 2. **`dynamic_cast`**：
-    1. 主要用于**多态类型的转换**（<mark>使用前提：基类必须有虚函数</mark>）
+    1. 主要用于**多态类型的转换**（<mark>使用前提：基类必须有虚函数，否则编译失败</mark>）
     2. <mark class="green">可以在运行时**检查类型安全**</mark>
     3. 常用于将父类指针/引用转换为子类指针/引用
 
@@ -397,6 +397,22 @@ int main(){
     Derived* d = dynamic_cast<Derived*>(b);
     if (d) {}   // d != nullptr
     ```
+
+    !!! warning "Warning"
+        ```CPP
+        struct U {
+            virtual void foo() {}
+        };
+        struct V : public U {};
+        struct W : public U {};
+
+        int main() {
+            U* p = new V;
+            W* q = dynamic_cast<W*>(p);
+        }
+        ```
+
+        U 是多态类，可以运行时检查；但实际对象是 V，不是 W；运行时类型检查失败，`q` 为 `nullptr`
 
 3. **`const_cast`**：
     1. 用于修改类型的 `const` 或 `volatile` 属性

@@ -298,10 +298,11 @@ comment: true
 === "**Redo Pass**"
     1. 从 RedoLSN 开始**向后扫描**，重新执行所有尚未反映到磁盘页面上的更新
     2. 当遇到更新日志记录时
-        1. **需要 Redo**：Page LSN < 当前日志记录 LSN
-        2. **不需要 Redo**：
+        1. **不需要 Redo**：（判断顺序如下）
             1. 页面不在 DirtyPageTable 中
             2. 日志记录的 LSN < 该页的 RecLSN
+            3. 否则检查是否 Page LSN >= 当前日志记录 LSN
+        2. **需要 Redo**：Page LSN < 当前日志记录 LSN（上述条件都不满足）
 
 === "**Undo Pass**"
     1. 对 undo-list 中的所有事务进行回滚，**从日志尾部向前扫描**
