@@ -42,4 +42,5 @@ int main() {
     - Stream[note]: stream/
 - C++ 课后练习:
     - PTA[exercise]: pta/
+    - 考前练习[exercise]: exercise/
 {{ END_TOC }}

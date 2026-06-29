@@ -263,6 +263,7 @@ nav:
       - 异常 : Tools/C++/exception.md
       - Stream : Tools/C++/stream.md
       - PTA : Tools/C++/pta.md
+      - 考前练习: Tools/C++/exercise.md
     - Python :
       - Tools/Python/index.md
       - 基础语法 : Tools/Python/foundation.md
