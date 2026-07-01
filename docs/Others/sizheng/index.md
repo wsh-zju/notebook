@@ -6,7 +6,7 @@ comment : true
 
 ## <i class="fa-solid fa-landmark"></i> 毛泽东思想和中国特色社会主义理论体系概论
 
-
+<div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">选择题知识点</div>
@@ -20,7 +20,7 @@ comment : true
 <a class="down-button" target="_blank" href="files/maogai.pdf" markdown="1">:fontawesome-solid-download: Download</a>
 </div>
 
-
+<div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">思维导图</div>
@@ -35,7 +35,7 @@ comment : true
 </div>
 
 
-
+<div class="card file-block" markdown="1">
 <div class="file-icon"><img src="../../style/images/pdf.svg" style="height: 3em;"></div>
 <div class="file-body">
 <div class="file-title">大题划重点</div>
