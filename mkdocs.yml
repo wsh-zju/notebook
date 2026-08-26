@@ -241,6 +241,18 @@ nav:
       - 事务 : Computer_Science/Database_System/transaction.md
       - 并发控制 : Computer_Science/Database_System/concurrency.md
       - 故障恢复 : Computer_Science/Database_System/recovery.md
+    - 计算机网络 : 
+      - Computer_Science/Computer_Network/index.md
+    - 嵌入式系统 : 
+      - Computer_Science/Embedded_System/index.md
+    - 量子计算理论基础与软件系统 : 
+      - Computer_Science/Quantum_Computing/index.md
+    - 大数据分析与应用 : 
+      - Computer_Science/Big_Data/index.md
+    - 理论计算机科学导引 : 
+      - Computer_Science/Theoretical_CS/index.md
+    - 物联网技术基础与应用开发 : 
+      - Computer_Science/IoT/index.md
   - 开发工具 :
     - Tools/index.md
     - C :
