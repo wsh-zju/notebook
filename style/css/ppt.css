@@ -1,107 +1,113 @@
-/* =========================
-   PPT 风格学习卡片
-   ========================= */
+/* =====================================
+   卡片区域
+   ===================================== */
+
+.card-deck {
+    position: relative;
+    width: 100%;
+}
+
+
+/* 卡片 */
 
 .study-card {
     position: relative;
 
-    width: min(100%, 960px);
+    width: min(100%, 920px);
     aspect-ratio: 16 / 9;
 
-    margin: 36px auto;
-    padding: 42px 48px 52px;
+    margin: 30px auto;
+    padding: 40px 48px 55px;
 
     box-sizing: border-box;
 
-    border: 3px solid #d8dee9;
-    border-radius: 18px;
+    border: 3px solid #88909b;
+    border-radius: 22px;
 
     background: var(--md-default-bg-color);
 
     box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.04),
-        0 12px 32px rgba(0, 0, 0, 0.08);
+        0 4px 10px rgba(0,0,0,.05),
+        0 16px 35px rgba(0,0,0,.10),
+        0 35px 70px rgba(0,0,0,.07);
 
     overflow: auto;
 
-    scroll-margin-top: 90px;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    /* 默认隐藏 */
+    display: none;
 }
 
-.study-card:hover {
-    transform: translateY(-2px);
+
+/* 当前显示的卡片 */
+
+.study-card.active-card {
+    display: block;
+}
+
+
+/* 鼠标悬浮 */
+
+.study-card.active-card:hover {
+    transform: translateY(-4px);
 
     box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.05),
-        0 16px 38px rgba(0, 0, 0, 0.12);
+        0 7px 14px rgba(0,0,0,.06),
+        0 22px 45px rgba(0,0,0,.13),
+        0 40px 80px rgba(0,0,0,.09);
 }
 
 
-/* 普通知识卡 */
+/* ===============================
+   卡片边框类型
+   =============================== */
+
 .normal-card {
-    border-color: #7b8794;
+    border-color: #8b949e;
 }
 
-
-/* 必考卡：橙黄色边框 */
 .exam-card {
-    border-color: #e6a700;
+    border-color: #e3a008;
 }
 
-
-/* 易错卡：红色边框 */
 .mistake-card {
-    border-color: #d9485f;
+    border-color: #df5366;
 }
 
-
-/* 理解 / 扩展卡：蓝色 */
 .concept-card {
     border-color: #448aff;
 }
 
 
-/* 实验 / 实践卡：绿色 */
-.practice-card {
-    border-color: #38a169;
-}
-
-
-/* =========================
+/* ===============================
    标题
-   ========================= */
+   =============================== */
 
 .study-card h2 {
     margin-top: 0;
-    margin-bottom: 24px;
-
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.75rem;
 }
 
 
-/* =========================
-   卡片里的重点提示
-   ========================= */
+/* ===============================
+   重点提示
+   =============================== */
 
-.card-tip {
+.card-note {
     margin-top: 24px;
-    padding: 14px 18px;
 
-    border-radius: 10px;
+    padding: 13px 17px;
 
-    background: rgba(127, 127, 127, 0.08);
+    border-radius: 9px;
+
+    background: rgba(128,128,128,.08);
 
     font-weight: 600;
 }
 
 
-/* =========================
+/* ===============================
    PPT 页码
-   ========================= */
+   =============================== */
 
 .card-page {
     position: absolute;
@@ -109,69 +115,284 @@
     right: 28px;
     bottom: 18px;
 
-    font-size: 0.82rem;
+    opacity: .5;
 
-    opacity: 0.5;
+    font-size: .8rem;
 }
 
 
-/* =========================
-   卡片导航按钮
-   ========================= */
+/* =====================================
+   控制按钮
+   ===================================== */
 
-.card-navigation {
+.card-controls {
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     gap: 14px;
 
-    margin: 28px 0;
+    margin-top: 25px;
 }
 
-.card-navigation button {
-    border: 1px solid rgba(127, 127, 127, 0.25);
+
+.card-controls button {
+    width: 42px;
+    height: 38px;
+
+    border: 1px solid rgba(128,128,128,.25);
 
     border-radius: 10px;
-
-    padding: 8px 18px;
 
     background: var(--md-default-bg-color);
     color: var(--md-default-fg-color);
 
     cursor: pointer;
 
-    font-size: 0.9rem;
+    font-size: 1rem;
+
+    transition: .18s;
 }
 
-.card-navigation button:hover {
-    background: rgba(127, 127, 127, 0.1);
+
+.card-controls button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(128,128,128,.08);
 }
 
 
-/* =========================
-   当前卡片强调
-   ========================= */
+#card-counter {
+    min-width: 70px;
 
-.study-card.active-card {
+    text-align: center;
+
+    font-size: .9rem;
+
+    opacity: .65;
+}
+
+
+/* =====================================
+   进度条
+   ===================================== */
+
+.card-progress {
+    width: min(70%, 500px);
+
+    height: 5px;
+
+    margin: 17px auto 35px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background: rgba(128,128,128,.15);
+}
+
+
+.card-progress-bar {
+    width: 0;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: currentColor;
+
+    opacity: .55;
+
+    transition: width .3s ease;
+}
+
+
+/* =====================================
+   翻页动画
+   ===================================== */
+
+/* 下一张 */
+
+.card-enter-next {
+    animation: cardEnterNext .28s ease;
+}
+
+@keyframes cardEnterNext {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(35px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/* 上一张 */
+
+.card-enter-prev {
+    animation: cardEnterPrev .28s ease;
+}
+
+@keyframes cardEnterPrev {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(-35px)
+            scale(.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/* =====================================
+   幻灯片浏览
+   ===================================== */
+
+.card-overview {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0,0,0,.35);
+
+    backdrop-filter: blur(8px);
+}
+
+
+.card-overview.open {
+    display: flex;
+}
+
+
+.card-overview-panel {
+    width: min(800px, 90vw);
+    max-height: 80vh;
+
+    overflow: auto;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: var(--md-default-bg-color);
+
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.08),
-        0 18px 45px rgba(0, 0, 0, 0.12);
+        0 20px 70px rgba(0,0,0,.25);
 }
 
 
-/* =========================
-   手机适配
-   ========================= */
+.card-overview-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+#close-overview {
+    border: none;
+
+    background: transparent;
+    color: inherit;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+
+#card-overview-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(170px, 1fr));
+
+    gap: 14px;
+}
+
+
+.overview-item {
+    padding: 18px;
+
+    border: 1px solid rgba(128,128,128,.18);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: .18s;
+}
+
+
+.overview-item:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.10);
+}
+
+
+.overview-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    opacity: .4;
+
+    font-size: .75rem;
+}
+
+
+/* 当前幻灯片 */
+
+.overview-item.current {
+    border-width: 2px;
+}
+
+
+/* =====================================
+   手机
+   ===================================== */
 
 @media screen and (max-width: 760px) {
 
     .study-card {
         aspect-ratio: auto;
 
-        min-height: 480px;
+        min-height: 470px;
 
-        padding: 28px 24px 48px;
+        padding: 28px 25px 50px;
     }
 
 }
