@@ -100,3 +100,38 @@
     border-color: var(--md-accent-fg-color);
     color: var(--md-accent-bg-color) !important;
 }
+
+
+/* 笔记卡片 */
+.note-card {
+    max-width: 850px;
+    min-height: 420px;
+
+    margin: 32px auto;
+    padding: 36px 42px;
+
+    border-radius: 18px;
+    border: 1px solid #ddd;
+
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+
+    background: var(--md-default-bg-color);
+}
+
+.note-card h3 {
+    margin-top: 0;
+    font-size: 1.7rem;
+}
+
+.note-card li {
+    margin: 12px 0;
+    font-size: 1.05rem;
+}
+
+.page-ref {
+    display: block;
+    margin-top: 30px;
+
+    font-size: 0.85rem;
+    opacity: 0.55;
+}
