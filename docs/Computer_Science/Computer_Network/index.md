@@ -7,7 +7,7 @@ comment: true
 
 <div class="ppt-library">
 
-<a class="ppt-file" href="chapter1/">
+<a class="ppt-file" href="c1/">
   <div class="ppt-icon">
     <span>PPT</span>
   </div>
