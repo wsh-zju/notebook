@@ -147,7 +147,7 @@ extra_css:
   - style/css/riscv.css
   - style/css/search.css
   - style/css/weixin.css
-  - style/css/ppt.js
+  - style/css/ppt.css
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
