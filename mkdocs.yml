@@ -247,6 +247,7 @@ nav:
       - 故障恢复 : Computer_Science/Database_System/recovery.md
     - 计算机网络 : 
       - Computer_Science/Computer_Network/index.md
+      - 网络基础 : Computer_Science/Computer_Network/introduction.md
     - 嵌入式系统 : 
       - Computer_Science/Embedded_System/index.md
     - 量子计算理论基础与软件系统 : 
