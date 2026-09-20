@@ -5,7 +5,29 @@ comment: true
 # <i class="fa-solid fa-network-wired"></i> 计算机网络
 协议、公式、概念
 
+<div class="ppt-library">
 
+<a class="ppt-file" href="chapter1/">
+  <div class="ppt-icon">
+    <span>PPT</span>
+  </div>
+  <div class="ppt-info">
+    <strong>第一章 嵌入式系统概述</strong>
+    <small>24 张知识卡片</small>
+  </div>
+</a>
+
+<a class="ppt-file" href="chapter2/">
+  <div class="ppt-icon">
+    <span>PPT</span>
+  </div>
+  <div class="ppt-info">
+    <strong>第二章 嵌入式处理器</strong>
+    <small>18 张知识卡片</small>
+  </div>
+</a>
+
+</div>
 
 ## 1.1 初识互联网
 

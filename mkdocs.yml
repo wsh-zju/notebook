@@ -23,13 +23,15 @@ theme:
     #- navigation.tabs.sticky # 固定顶部标签页
     - navigation.indexes      # 分类目录直接绑定页面 index.md
     - navigation.top          # 返回顶部按钮
-    #- navigation.sections    # 导航分组/分块
     - navigation.path         # 开启面包屑路径导航
     #- navigation.expand      # 页面默认展开
     - navigation.footer       # 底部显示“上一页/下一页”翻页页脚
     - search.suggest          # 搜索输入一些字母时推荐补全整个单词
     - search.highlight        # 搜索出的文章关键词加入高亮
     - search.share            # 搜索分享按钮
+    - navigation.instant
+    - navigation.sections
+    - toc.follow
   font: false
   palette:
     - media: "(prefers-color-scheme: light)"
