@@ -1,10 +1,77 @@
+let cardPrintLayout;
+function captureCardPrintLayout() {
+    const card = document.querySelector(".study-card.active-card");
+    if (!card) return;
+    const style = getComputedStyle(card);
+    cardPrintLayout = {
+        width: card.getBoundingClientRect().width,
+        rootFont: getComputedStyle(document.documentElement).fontSize,
+        font: style.fontSize,
+        padding: style.padding
+    };
+}
+
+// CSS counters skip display:none slides. Compute numbers in document order instead.
+function numberCardHeadings(root) {
+    const counts = [0, 0, 0, 0, 0];
+    root.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(heading => {
+        const level = Number(heading.tagName.slice(1));
+        if (level === 1) {
+            counts.fill(0);
+            return;
+        }
+        counts[level - 2] += 1;
+        counts.fill(0, level - 1);
+        if (heading.closest(".study-card")) {
+            heading.dataset.cardNumber = counts.slice(0, level - 1).join(".");
+        }
+    });
+}
+
+let cardKeyboardController;
+
 function initCards() {
 
+    const deck =
+        document.querySelector(".card-deck");
+
+    if (deck?.classList.contains("cards-ready")) return;
+
+    cardKeyboardController?.abort();
+
+    if (!deck) return;
+
     const cards = Array.from(
-        document.querySelectorAll(".study-card")
+        deck.querySelectorAll(".study-card")
     );
 
     if (!cards.length) return;
+
+    numberCardHeadings(deck.closest(".md-typeset") || deck);
+    deck.classList.add("cards-ready");
+
+    const exportButton = document.querySelector("#export-cards");
+    exportButton?.addEventListener("click", async () => {
+        exportButton.disabled = true;
+        exportButton.textContent = "准备中…";
+        try {
+            await document.fonts.ready;
+            if (window.MathJax?.startup?.promise) await window.MathJax.startup.promise;
+            if (window.MathJax?.typesetPromise) await window.MathJax.typesetPromise([deck]);
+            await Promise.all(Array.from(deck.querySelectorAll("img"), img => {
+                img.loading = "eager";
+                return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+            }));
+            captureCardPrintLayout();
+            window.print();
+        } catch (error) {
+            console.error("PDF preparation failed", error);
+            window.alert("导出准备失败，请等待页面加载完成后重试。");
+        } finally {
+            exportButton.disabled = false;
+            exportButton.textContent = "导出 PDF";
+        }
+    });
 
 
     const prevButton =
@@ -92,7 +159,7 @@ function initCards() {
          * 页码
          */
 
-        counter.textContent =
+        if (counter) counter.textContent =
             `${currentIndex + 1} / ${cards.length}`;
 
 
@@ -104,7 +171,7 @@ function initCards() {
             ((currentIndex + 1) / cards.length)
             * 100;
 
-        progressBar.style.width =
+        if (progressBar) progressBar.style.width =
             `${progress}%`;
 
 
@@ -127,7 +194,7 @@ function initCards() {
          */
 
         const heading =
-            card.querySelector("h2");
+            card.querySelector("h2, h3, h4, h5, h6");
 
         if (heading && heading.id) {
 
@@ -190,6 +257,8 @@ function initCards() {
        键盘 ← →
        ============================== */
 
+    cardKeyboardController = new AbortController();
+
     document.addEventListener(
         "keydown",
         event => {
@@ -203,7 +272,8 @@ function initCards() {
 
             if (
                 tag === "INPUT" ||
-                tag === "TEXTAREA"
+                tag === "TEXTAREA" ||
+                document.activeElement.isContentEditable
             ) {
                 return;
             }
@@ -226,7 +296,8 @@ function initCards() {
 
             }
 
-        }
+        },
+        { signal: cardKeyboardController.signal }
     );
 
 
@@ -235,6 +306,8 @@ function initCards() {
        ============================== */
 
     function buildOverview() {
+
+        if (!overviewList) return;
 
         overviewList.innerHTML = "";
 
@@ -246,27 +319,30 @@ function initCards() {
                     document.createElement("div");
 
 
-                item.className =
-                    "overview-item";
+                const cardTypes = ["normal", "concept", "exam", "mistake", "example", "summary", "question"];
+                const type = cardTypes.find(type => card.classList.contains(`${type}-card`)) || "normal";
+                item.className = `overview-item ${type}-card`;
 
 
-                const title =
-                    card.dataset.title ||
-                    `卡片 ${index + 1}`;
-
-
-                item.innerHTML = `
-
-                    <span class="overview-number">
-                        ${String(index + 1)
-                            .padStart(2, "0")}
-                    </span>
-
-                    <strong>
-                        ${title}
-                    </strong>
-
-                `;
+                const heading = card.querySelector("h2, h3, h4, h5, h6")?.cloneNode(true);
+                heading?.querySelectorAll(".headerlink").forEach(link => link.remove());
+                const title = card.dataset.title || heading?.textContent.trim() || `卡片 ${index + 1}`;
+                const number = document.createElement("span");
+                number.className = "overview-number";
+                number.textContent = String(index + 1).padStart(2, "0");
+                const typeNames = {
+                    normal: "普通", concept: "概念", exam: "考点", mistake: "易错",
+                    example: "例题", summary: "总结", question: "思考"
+                };
+                const typeLabel = document.createElement("span");
+                typeLabel.className = "overview-type";
+                typeLabel.textContent = typeNames[type];
+                const meta = document.createElement("div");
+                meta.className = "overview-meta";
+                meta.append(number, typeLabel);
+                const label = document.createElement("strong");
+                label.textContent = title;
+                item.append(meta, label);
 
 
                 item.addEventListener(
@@ -376,7 +452,7 @@ function initCards() {
     function syncTOC(card) {
 
         const heading =
-            card.querySelector("h2");
+            card.querySelector("h2, h3, h4, h5, h6");
 
         if (!heading) return;
 
@@ -453,7 +529,7 @@ function initCards() {
                             card => {
 
                                 const heading =
-                                    card.querySelector("h2");
+                                    card.querySelector("h2, h3, h4, h5, h6");
 
                                 return (
                                     heading &&
@@ -508,7 +584,7 @@ function initCards() {
                 card => {
 
                     const heading =
-                        card.querySelector("h2");
+                        card.querySelector("h2, h3, h4, h5, h6");
 
                     return (
                         heading &&
@@ -536,6 +612,7 @@ function initCards() {
         currentIndex,
         "next"
     );
+    captureCardPrintLayout();
 
 }
 
@@ -567,3 +644,36 @@ if (
     );
 
 }
+
+// Print only a clean copy of the deck, excluding navigation and empty draft cards.
+window.addEventListener("beforeprint", () => {
+    const deck = document.querySelector(".card-deck");
+    if (!deck) return;
+    document.getElementById("cards-print-root")?.remove();
+    numberCardHeadings(deck.closest(".md-typeset") || deck);
+    const root = document.createElement("section");
+    root.id = "cards-print-root";
+    root.className = "md-typeset";
+    const layout = cardPrintLayout || { width: 920, rootFont: "20px", font: "14px", padding: "40px 48px 50px" };
+    const printStyle = document.createElement("style");
+    printStyle.id = "cards-print-layout";
+    printStyle.textContent = `
+        @page cards { size: ${layout.width}px ${layout.width * 9 / 16}px; margin: 0; }
+        @media print {
+            html:has(#cards-print-root) { font-size: ${layout.rootFont} !important; }
+            #cards-print-root { font-size: ${layout.font}; }
+            #cards-print-root .study-card { padding: ${layout.padding}; min-height: ${layout.width * 9 / 16}px; }
+        }`;
+    document.getElementById("cards-print-layout")?.remove();
+    document.head.append(printStyle);
+    const copy = deck.cloneNode(true);
+    copy.querySelectorAll(".study-card").forEach(card => {
+        if (!card.textContent.trim() && !card.querySelector("img, svg, canvas, video, iframe")) card.remove();
+    });
+    root.append(copy);
+    document.body.append(root);
+});
+window.addEventListener("afterprint", () => {
+    document.getElementById("cards-print-layout")?.remove();
+    document.getElementById("cards-print-root")?.remove();
+});
