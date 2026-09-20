@@ -30,7 +30,7 @@ theme:
     - search.highlight        # 搜索出的文章关键词加入高亮
     - search.share            # 搜索分享按钮
     - navigation.instant
-    - navigation.sections
+    # - navigation.sections
     - toc.follow
   font: false
   palette:
@@ -126,6 +126,8 @@ plugins:
             - '**/**/index.md'  # 多层目录的index.md不显示修改时间
 
 hooks:
+  - hooks/images.py
+  - hooks/cards.py
   - hooks/toc.py
   - hooks/static.py
   - hooks/wordcount.py
@@ -247,7 +249,7 @@ nav:
       - 故障恢复 : Computer_Science/Database_System/recovery.md
     - 计算机网络 : 
       - Computer_Science/Computer_Network/index.md
-      - 网络基础 : Computer_Science/Computer_Network/introduction.md
+      - 物理层 : Computer_Science/Computer_Network/physical.md
     - 嵌入式系统 : 
       - Computer_Science/Embedded_System/index.md
     - 量子计算理论基础与软件系统 : 
@@ -294,6 +296,7 @@ nav:
       - Tools/mkdocs/index.md
       - 主题 : Tools/mkdocs/theme.md
       - 提示框 : Tools/mkdocs/octicon.md
+      - 卡片与分栏 : Tools/mkdocs/cards.md
     - Latex 语法 : Tools/Latex.md
     - 终端常用命令 : Tools/terminal.md
   - 其余课程 :

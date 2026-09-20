@@ -1,7 +1,18 @@
 /* =====================================
    卡片区域
    ===================================== */
-
+/* | 类型 | 配色 | 写法 |
+|---|---|---|
+| 普通 | 雾蓝 | `::: card` |
+| 概念 | 鼠尾草绿 | `::: card concept` |
+| 考点 | 燕麦金 | `::: card exam` |
+| 易错 | 豆沙红 | `::: card mistake` |
+| 例题 | 陶土橘 | `::: card example` |
+| 总结 | 灰紫 | `::: card summary` |
+| 思考 | 灰青 | `::: card question` | 
+- info 蓝、tip 绿、warning 橙
+- danger 红、example 紫、question 青、summary 金
+标题可以省略。只写 ::: note 会跟随当前卡片颜色*/
 .card-deck {
     position: relative;
     width: 100%;
@@ -16,75 +27,171 @@
     width: min(100%, 920px);
     aspect-ratio: 16 / 9;
 
-    margin: 30px auto;
-    padding: 40px 48px 55px;
+    margin: 1.5rem auto;
+    padding: 2rem 2.4rem 0.5rem; 
+    /* clamp(1.2rem, 3vw, 2rem) */
 
     box-sizing: border-box;
 
-    border: 3px solid #88909b;
-    border-radius: 22px;
+    /* 无边框悬浮卡片：类别颜色用于外侧光晕 */
+    --card-accent: var(--ppt-blue);
+    --card-tint: #afcde545;
+    --card-glow: #afcde559;
 
-    background: var(--md-default-bg-color);
-
+    border: none;
+    border-radius: .8rem;
     box-shadow:
-        0 4px 10px rgba(0,0,0,.05),
-        0 16px 35px rgba(0,0,0,.10),
-        0 35px 70px rgba(0,0,0,.07);
+        0 2px 6px rgba(0, 0, 0, .025),
+        0 16px 40px -14px rgba(0, 0, 0, .14);
+    transition: box-shadow .3s ease;
+
+    background: radial-gradient(ellipse at top right, var(--card-tint), transparent 55%), #fdfcfb;
+    color: var(--md-typeset-color);
+    /* 跟随 .md-typeset 的正文设置，不单独放大卡片文字 */
+    font-size: inherit;
 
     overflow: auto;
 
-    /* 默认隐藏 */
+    display: block;
+}
+.card-deck.cards-ready .study-card {
     display: none;
 }
 
-
-/* 当前显示的卡片 */
-
-.study-card.active-card {
+.card-deck.cards-ready .study-card.active-card {
     display: block;
 }
 
 
-/* 鼠标悬浮 */
+/* 炭灰卡面与柔和阴影适配深色主题 */
 
-.study-card.active-card:hover {
-    transform: translateY(-4px);
+[data-md-color-scheme="slate"] .study-card {
+    background: radial-gradient(ellipse at top right, var(--card-tint), transparent 55%), #1d1e20;
+    box-shadow: 0 16px 44px -14px rgba(0, 0, 0, .5);
+}
 
-    box-shadow:
-        0 7px 14px rgba(0,0,0,.06),
-        0 22px 45px rgba(0,0,0,.13),
-        0 40px 80px rgba(0,0,0,.09);
+/* 控件的深色背景 */
+
+[data-md-color-scheme="slate"] .card-controls button,
+[data-md-color-scheme="slate"] .card-overview-panel {
+    background: #242528;
 }
 
 
 /* ===============================
-   卡片边框类型
+   卡片光晕颜色
    =============================== */
 
-.normal-card {
-    border-color: #8b949e;
+/* 普通 · 雾蓝 */
+:is(.study-card, .overview-item).normal-card {
+    --card-accent: var(--ppt-blue);
+    --card-tint: #afcde545;
+    --card-glow: #afcde559;
 }
 
-.exam-card {
-    border-color: #e3a008;
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).normal-card {
+    --card-accent: var(--ppt-blue);
 }
 
-.mistake-card {
-    border-color: #df5366;
+/* 概念 · 鼠尾草绿 */
+:is(.study-card, .overview-item).concept-card {
+    --card-accent: var(--ppt-green);
+    --card-tint: #bed6af45;
+    --card-glow: #bed6af59;
 }
 
-.concept-card {
-    border-color: #448aff;
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).concept-card {
+    --card-accent: var(--ppt-green);
 }
 
+/* 考点 · 燕麦金 */
+:is(.study-card, .overview-item).exam-card {
+    --card-accent: var(--ppt-yellow);
+    --card-tint: #ead49b45;
+    --card-glow: #ead49b59;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).exam-card {
+    --card-accent: var(--ppt-yellow);
+}
+
+/* 易错 · 豆沙红 */
+:is(.study-card, .overview-item).mistake-card {
+    --card-accent: var(--ppt-red);
+    --card-tint: #e7b8c445;
+    --card-glow: #e7b8c459;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).mistake-card {
+    --card-accent: var(--ppt-red);
+}
+
+/* 例题 · 陶土橘 */
+:is(.study-card, .overview-item).example-card {
+    --card-accent: var(--ppt-orange);
+    --card-tint: #edc3a645;
+    --card-glow: #edc3a659;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).example-card {
+    --card-accent: var(--ppt-orange);
+}
+
+/* 总结 · 灰紫 */
+:is(.study-card, .overview-item).summary-card {
+    --card-accent: var(--ppt-purple);
+    --card-tint: #cec0e745;
+    --card-glow: #cec0e759;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).summary-card {
+    --card-accent: var(--ppt-purple);
+}
+
+/* 思考 · 灰青 */
+:is(.study-card, .overview-item).question-card {
+    --card-accent: var(--ppt-cyan);
+    --card-tint: #addbd045;
+    --card-glow: #addbd059;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item).question-card {
+    --card-accent: var(--ppt-cyan);
+}
 
 /* ===============================
    标题
    =============================== */
 
-.study-card h2 {
-    margin-top: 0;
-    font-size: 1.75rem;
+/* 标题字号沿用 custom.css 的层级，仅调整卡片首标题的留白 */
+.md-typeset .study-card > h2:first-child {
+    margin: 0 0 1.2rem;
+    padding: 0;
+    background: transparent;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: normal;
+}
+
+/* 悬停时浮现少量类别光晕，卡片位置保持稳定 */
+@media (hover: hover) and (pointer: fine) {
+    .study-card.active-card:hover {
+        box-shadow:
+            0 4px 12px rgba(0, 0, 0, .04),
+            0 20px 48px -18px rgba(0, 0, 0, .2),
+            0 8px 40px -16px var(--card-glow);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-deck .study-card {
+        transition: none;
+        animation: none;
+    }
+
+    .study-card.active-card:hover {
+        transform: none;
+    }
 }
 
 
@@ -93,15 +200,38 @@
    =============================== */
 
 .card-note {
-    margin-top: 24px;
+    margin-top: 1em;
 
-    padding: 13px 17px;
+    padding: .5rem .75rem;
 
-    border-radius: 9px;
+    border-radius: .4rem;
 
-    background: rgba(128,128,128,.08);
+    background: rgba(128, 128, 128, .06);
 
     font-weight: 600;
+}
+
+/* 简写提示框：默认跟随卡片，指定类型时使用独立配色 */
+.md-typeset .card-note {
+    --note-accent: var(--card-accent, #587b97);
+    border-left: .18rem solid var(--note-accent);
+    background: color-mix(in srgb, var(--note-accent) 10%, transparent);
+    color: var(--md-typeset-color);
+    font-weight: 400;
+}
+.md-typeset .card-note.note-info { --note-accent: var(--ppt-blue, #587b97); }
+.md-typeset .card-note.note-tip { --note-accent: var(--ppt-green, #607e61); }
+.md-typeset .card-note.note-warning { --note-accent: var(--ppt-orange, #98694d); }
+.md-typeset .card-note.note-danger { --note-accent: var(--ppt-red, #a06776); }
+.md-typeset .card-note.note-example { --note-accent: var(--ppt-purple, #826b9d); }
+.md-typeset .card-note.note-question { --note-accent: var(--ppt-cyan, #507f79); }
+.md-typeset .card-note.note-summary { --note-accent: var(--ppt-yellow, #8b733d); }
+.md-typeset .card-note > :first-child { margin-top: 0; }
+.md-typeset .card-note > :last-child { margin-bottom: 0; }
+.md-typeset .card-note > .card-note-title {
+    margin: 0 0 .4rem;
+    color: var(--note-accent);
+    font-weight: 700;
 }
 
 
@@ -112,12 +242,13 @@
 .card-page {
     position: absolute;
 
-    right: 28px;
-    bottom: 18px;
+    right: 1rem;
+    bottom: .75rem;
 
     opacity: .5;
 
-    font-size: .8rem;
+    font-size: .8em;
+    font-variant-numeric: tabular-nums;
 }
 
 
@@ -131,34 +262,35 @@
     justify-content: center;
     align-items: center;
 
-    gap: 14px;
-
-    margin-top: 25px;
+    gap: .35rem;
+    width: fit-content;
+    margin: .5rem auto 0;
+    padding: .25rem;
+    border-radius: 2rem;
+    background: rgba(128, 128, 128, .06);
 }
 
 
 .card-controls button {
     width: 42px;
-    height: 38px;
+    height: 36px;
 
-    border: 1px solid rgba(128,128,128,.25);
+    border: none;
 
-    border-radius: 10px;
+    border-radius: 50%;
 
-    background: var(--md-default-bg-color);
+    background: transparent;
     color: var(--md-default-fg-color);
 
     cursor: pointer;
 
-    font-size: 1rem;
+    font: inherit;
 
-    transition: .18s;
+    transition: background-color .18s, border-color .18s;
 }
 
 
 .card-controls button:hover {
-    transform: translateY(-2px);
-
     background: rgba(128,128,128,.08);
 }
 
@@ -168,9 +300,10 @@
 
     text-align: center;
 
-    font-size: .9rem;
+    font-size: 1em;
 
-    opacity: .65;
+    opacity: .55;
+    font-variant-numeric: tabular-nums;
 }
 
 
@@ -179,13 +312,13 @@
    ===================================== */
 
 .card-progress {
-    width: min(70%, 500px);
+    width: min(35%, 180px);
 
-    height: 5px;
+    height: 2px;
 
-    margin: 17px auto 35px;
+    margin: .75rem auto 1.5rem;
 
-    border-radius: 10px;
+    border-radius: .25rem;
 
     overflow: hidden;
 
@@ -224,16 +357,14 @@
         opacity: 0;
 
         transform:
-            translateX(35px)
-            scale(.98);
+            translateX(10px);
     }
 
     to {
         opacity: 1;
 
         transform:
-            translateX(0)
-            scale(1);
+            translateX(0);
     }
 }
 
@@ -250,16 +381,14 @@
         opacity: 0;
 
         transform:
-            translateX(-35px)
-            scale(.98);
+            translateX(-10px);
     }
 
     to {
         opacity: 1;
 
         transform:
-            translateX(0)
-            scale(1);
+            translateX(0);
     }
 }
 
@@ -299,14 +428,15 @@
 
     overflow: auto;
 
-    padding: 25px;
+    padding: 1rem;
 
-    border-radius: 18px;
+    border: none;
+    border-radius: .8rem;
 
-    background: var(--md-default-bg-color);
+    background: #fefefe;
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,.25);
+        0 4px 16px rgba(0,0,0,.15);
 }
 
 
@@ -338,16 +468,17 @@
     grid-template-columns:
         repeat(auto-fill, minmax(170px, 1fr));
 
-    gap: 14px;
+    gap: .5rem;
 }
 
 
 .overview-item {
-    padding: 18px;
+    padding: .75rem;
 
-    border: 1px solid rgba(128,128,128,.18);
+    border: none;
+    background: var(--card-tint);
 
-    border-radius: 12px;
+    border-radius: .5rem;
 
     cursor: pointer;
 
@@ -356,28 +487,45 @@
 
 
 .overview-item:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.10);
+    background: var(--card-glow);
+    box-shadow: 0 4px 14px -6px var(--card-glow);
 }
 
+
+.overview-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 8px;
+}
+
+.overview-type {
+    color: var(--card-accent);
+    opacity: .65;
+    font-size: .8em;
+    font-weight: 400;
+}
 
 .overview-number {
     display: block;
 
-    margin-bottom: 8px;
-
     opacity: .4;
 
-    font-size: .75rem;
+    font-size: .85em;
 }
 
 
 /* 当前幻灯片 */
 
 .overview-item.current {
-    border-width: 2px;
+    box-shadow: inset 0 0 0 1px var(--card-accent);
+    background: var(--card-glow);
+}
+
+.overview-item .overview-number {
+    color: var(--card-accent);
+    opacity: 1;
 }
 
 
@@ -392,7 +540,199 @@
 
         min-height: 470px;
 
-        padding: 28px 25px 50px;
+        padding: 1rem 1rem 2.5rem;
     }
 
+}
+
+/* 键盘操作时显示明确的焦点，不影响常态外观 */
+.card-controls button:focus-visible,
+#close-overview:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: 3px;
+}
+
+/* 正文继承站点字号，只整理段落的边缘留白 */
+.md-typeset .study-card > :last-child {
+    margin-bottom: 0;
+}
+
+/* 简写分栏：宽屏并排，小屏按阅读顺序堆叠 */
+.card-columns {
+    display: grid;
+    gap: 1.2rem;
+    align-items: start;
+    margin: 1em 0;
+}
+.card-columns.columns-2 { grid-template-columns: var(--card-column-tracks, repeat(2, minmax(0, 1fr))); }
+.card-columns.columns-3 { grid-template-columns: var(--card-column-tracks, repeat(3, minmax(0, 1fr))); }
+.card-column { min-width: 0; overflow-wrap: anywhere; }
+.md-typeset .card-column > :first-child { margin-top: 0; }
+.md-typeset .card-column > :last-child { margin-bottom: 0; }
+@media screen and (max-width: 760px) {
+    .card-columns.columns-2,
+    .card-columns.columns-3 { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* 编号来自完整文档顺序，不受其他卡片被隐藏影响 */
+.md-typeset .study-card [data-card-number]::before {
+    content: attr(data-card-number);
+    counter-increment: none;
+    color: var(--card-accent);
+    font-variant-numeric: tabular-nums;
+}
+
+/* 三级标题单独成页时，也保留顶部留白与简洁标题样式 */
+.md-typeset .study-card > :is(h3, h4, h5, h6):first-child {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.md-typeset .study-card li::marker {
+    color: var(--card-accent);
+}
+
+.md-typeset .study-card mark {
+    background: var(--card-tint);
+    color: inherit;
+    padding: .08em .2em;
+    border-radius: .15em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+/* 文字和卡片编号共享同一套莫兰迪色值 */
+:is(.study-card, .overview-item) {
+    --ppt-blue: #587b97;
+    --ppt-green: #607e61;
+    --ppt-yellow: #8b733d;
+    --ppt-red: #a06776;
+    --ppt-orange: #98694d;
+    --ppt-purple: #826b9d;
+    --ppt-cyan: #507f79;
+}
+
+[data-md-color-scheme="slate"] :is(.study-card, .overview-item) {
+    --ppt-blue: #afcde5;
+    --ppt-green: #bed6af;
+    --ppt-yellow: #ead49b;
+    --ppt-red: #e7b8c4;
+    --ppt-orange: #edc3a6;
+    --ppt-purple: #cec0e7;
+    --ppt-cyan: #addbd0;
+}
+
+.md-typeset .study-card .blue { color: var(--ppt-blue); }
+.md-typeset .study-card .green { color: var(--ppt-green); }
+.md-typeset .study-card .yellow { color: var(--ppt-yellow); }
+.md-typeset .study-card .red { color: var(--ppt-red); }
+.md-typeset .study-card .orange { color: var(--ppt-orange); }
+.md-typeset .study-card .purple { color: var(--ppt-purple); }
+.md-typeset .study-card .cyan { color: var(--ppt-cyan); }
+
+/* 不指定固定颜色时，随当前卡片类型变化 */
+.md-typeset .study-card .accent {
+    color: var(--card-accent);
+    font-weight: 600;
+}
+
+/* 导出使用浏览器打印，保留当前主题与真实 DOM 排版 */
+.card-controls #export-cards {
+    width: auto;
+    padding: 0 .65rem;
+    border-radius: 1rem;
+    white-space: nowrap;
+}
+.card-controls #export-cards:disabled { opacity: .5; cursor: wait; }
+
+@page cards {
+    size: 243.4167mm 136.9219mm; /* 16:9，导出时按实际卡片宽度覆盖 */
+    margin: 0;
+}
+
+@media print {
+    body:has(.card-deck) {
+        background: var(--md-default-bg-color) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    body:has(.card-deck) .md-header,
+    body:has(.card-deck) .md-tabs,
+    body:has(.card-deck) .md-sidebar,
+    body:has(.card-deck) .md-footer,
+    body:has(.card-deck) .md-top,
+    body:has(.card-deck) .md-dialog,
+    body:has(.card-deck) .md-search,
+    body:has(.card-deck) .card-controls,
+    body:has(.card-deck) .card-progress,
+    body:has(.card-deck) .card-overview,
+    body:has(.card-deck) .md-content__inner > :not(.card-deck),
+    body:has(.card-deck) .headerlink {
+        display: none !important;
+    }
+    body:has(.card-deck) .md-container,
+    body:has(.card-deck) .md-main,
+    body:has(.card-deck) .md-main__inner,
+    body:has(.card-deck) .md-content,
+    body:has(.card-deck) .md-content__inner {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    .card-deck { page: cards; }
+    .card-deck .study-card {
+        display: block !important;
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        aspect-ratio: auto;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 2rem 2.4rem 2.5rem;
+        overflow: visible !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+        break-before: page;
+        break-inside: auto;
+    }
+    .card-deck .study-card:first-child { break-before: auto; }
+    .card-deck .columns-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card-deck .columns-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card-deck .study-card :is(h2, h3, h4, h5, h6) { break-after: avoid; }
+    .card-deck .study-card :is(pre, table, img) { max-width: 100%; }
+    .card-deck .study-card pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+}
+
+/* 独立打印容器消除导航首页；字号与内边距从网页实测值继承 */
+#cards-print-root { display: none; }
+@media print {
+    body:has(#cards-print-root) > :not(#cards-print-root) {
+        display: none !important;
+    }
+    body:has(#cards-print-root) {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #cards-print-root {
+        display: block !important;
+        page: cards;
+        margin: 0;
+        padding: 0;
+        font-size: inherit;
+        line-height: 1.8;
+        letter-spacing: .04em;
+    }
+    #cards-print-root .card-deck { margin: 0; padding: 0; }
+    #cards-print-root .study-card {
+        border: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+
+        font-size: inherit;
+    }
 }
