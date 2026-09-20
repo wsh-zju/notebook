@@ -6,22 +6,6 @@ comment: true
 协议、公式、概念
 
 
-<div class="note-card">
-
-### 01 · Sv39 地址转换
-
-**核心结论**
-
-- 三级页表
-- `VPN[2] → VPN[1] → VPN[0]`
-- 每级 9 bit
-- Offset 12 bit
-
-> ⭐ 必考：为什么每级有 512 项？
-
-<span class="page-ref">PPT P32–34</span>
-
-</div>
 
 ## 1.1 初识互联网
 

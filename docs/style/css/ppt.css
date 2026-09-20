@@ -1,0 +1,177 @@
+/* =========================
+   PPT 风格学习卡片
+   ========================= */
+
+.study-card {
+    position: relative;
+
+    width: min(100%, 960px);
+    aspect-ratio: 16 / 9;
+
+    margin: 36px auto;
+    padding: 42px 48px 52px;
+
+    box-sizing: border-box;
+
+    border: 3px solid #d8dee9;
+    border-radius: 18px;
+
+    background: var(--md-default-bg-color);
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 12px 32px rgba(0, 0, 0, 0.08);
+
+    overflow: auto;
+
+    scroll-margin-top: 90px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.study-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.05),
+        0 16px 38px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 普通知识卡 */
+.normal-card {
+    border-color: #7b8794;
+}
+
+
+/* 必考卡：橙黄色边框 */
+.exam-card {
+    border-color: #e6a700;
+}
+
+
+/* 易错卡：红色边框 */
+.mistake-card {
+    border-color: #d9485f;
+}
+
+
+/* 理解 / 扩展卡：蓝色 */
+.concept-card {
+    border-color: #448aff;
+}
+
+
+/* 实验 / 实践卡：绿色 */
+.practice-card {
+    border-color: #38a169;
+}
+
+
+/* =========================
+   标题
+   ========================= */
+
+.study-card h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
+/* =========================
+   卡片里的重点提示
+   ========================= */
+
+.card-tip {
+    margin-top: 24px;
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    background: rgba(127, 127, 127, 0.08);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PPT 页码
+   ========================= */
+
+.card-page {
+    position: absolute;
+
+    right: 28px;
+    bottom: 18px;
+
+    font-size: 0.82rem;
+
+    opacity: 0.5;
+}
+
+
+/* =========================
+   卡片导航按钮
+   ========================= */
+
+.card-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 28px 0;
+}
+
+.card-navigation button {
+    border: 1px solid rgba(127, 127, 127, 0.25);
+
+    border-radius: 10px;
+
+    padding: 8px 18px;
+
+    background: var(--md-default-bg-color);
+    color: var(--md-default-fg-color);
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+}
+
+.card-navigation button:hover {
+    background: rgba(127, 127, 127, 0.1);
+}
+
+
+/* =========================
+   当前卡片强调
+   ========================= */
+
+.study-card.active-card {
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08),
+        0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   手机适配
+   ========================= */
+
+@media screen and (max-width: 760px) {
+
+    .study-card {
+        aspect-ratio: auto;
+
+        min-height: 480px;
+
+        padding: 28px 24px 48px;
+    }
+
+}

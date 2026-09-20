@@ -145,10 +145,12 @@ extra_css:
   - style/css/riscv.css
   - style/css/search.css
   - style/css/weixin.css
+  - style/css/ppt.js
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - style/js/mathjax.js
+  - style/js/cards.js
   
 nav:
   - 首页: 

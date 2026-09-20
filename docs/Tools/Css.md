@@ -79,3 +79,46 @@ body {background-image:url("images/back40.gif");}
 ```
 
 4. **优先级：**内联样式 > 内部样式表 > 外部样式表 > 浏览器默认样式
+
+
+## 笔记卡片
+
+<div class="study-card exam-card" id="sv39">
+
+## 1. Sv39 地址结构
+
+Sv39 的虚拟地址有效位为 **39 bit**。
+
+- `VPN[2]`：9 bit
+- `VPN[1]`：9 bit
+- `VPN[0]`：9 bit
+- Offset：12 bit
+
+<div class="card-tip">
+⭐ 必考：为什么三级页表每一级都是 512 项？
+</div>
+
+<div class="card-page">
+PPT P32–34
+</div>
+
+</div>
+
+
+<div class="study-card mistake-card" id="pte">
+
+## 2. PTE 页表项
+
+需要重点掌握：
+
+`V R W X U G A D`
+
+<div class="card-tip">
+⚠ 易错：W=1 但 R=0 属于非法组合。
+</div>
+
+<div class="card-page">
+PPT P35–37
+</div>
+
+</div>
