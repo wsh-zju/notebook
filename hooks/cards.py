@@ -40,7 +40,7 @@ def on_page_markdown(markdown, **kwargs):
             kind = card[1] or 'normal'
             output.extend(['', f'<div class="study-card {kind}-card" markdown="1">', ''])
         elif note:
-            if stack and stack[-1][0] == 'note':
+            if any(block[0] == 'note' for block in stack):
                 fail(number, 'notes cannot be nested')
             stack.append(['note', 0, 0])
             title = (note[1] or '').strip()
@@ -55,7 +55,7 @@ def on_page_markdown(markdown, **kwargs):
             if title:
                 output.extend([f'<p class="card-note-title">{escape(title)}</p>', ''])
         elif columns:
-            if stack and stack[-1][0] != 'card':
+            if any(block[0] == 'columns' for block in stack):
                 fail(number, 'columns cannot be nested')
             style = ''
             if columns[2] is not None:

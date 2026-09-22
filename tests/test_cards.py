@@ -38,6 +38,24 @@ class CardSyntaxTests(unittest.TestCase):
         self.assertEqual(html.count('class="card-column"'), 2)
         self.assertEqual(html.count('id="next-card"'), 1)
 
+    def test_columns_in_note(self):
+        source = '::: card\n::: note 比较\n::: columns 2 (4:1)\n**左栏**\n|||\n![图](image.png)\n:::\n:::\n:::\n'
+        html = markdown.markdown(cards.on_page_markdown(source), extensions=['md_in_html'])
+        self.assertIn('<strong>左栏</strong>', html)
+        self.assertIn('src="image.png"', html)
+        self.assertEqual(html.count('class="card-column"'), 2)
+        self.assertLess(html.index('class="card-note"'), html.index('class="card-columns'))
+        self.assertNotIn('|||', html)
+        self.assertNotIn(':::', html)
+
+    def test_indirect_nesting_rejected(self):
+        for source, message in [
+            ('::: columns 2\n::: note\n::: columns 2\n', 'columns cannot be nested'),
+            ('::: note\n::: columns 2\n::: note\n', 'notes cannot be nested'),
+        ]:
+            with self.subTest(source=source), self.assertRaisesRegex(ValueError, message):
+                cards.on_page_markdown(source)
+
     def test_errors(self):
         for source in ['::: card\ntext', '::: columns 3\na\n|||\nb\n:::',
                        '::: card\n::: card\n:::\n:::', '::: columns 4']:

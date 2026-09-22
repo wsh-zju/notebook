@@ -4,6 +4,9 @@ comment: true
 
 # 物理层
 
+::: card summary
+:::
+
 ::: card concept
 ## 物理层基本概念
 <span class="green">**位置：**</span>网络体系结构中的最低层
