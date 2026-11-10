@@ -665,4 +665,4 @@ IPv6 是 IETF 设计的下一代 Internet Protocol，用来替代 IPv4
 
 > **隧道技术**：两个*同构*网络的系统跨越*中间异构*网络进行通信。
 >
-> <img src="photo/image-20261110172141640.png" alt="image-20261110172141640" style="zoom:50%;" />
+> <img src="./photo/image-20261110172141640.png" alt="image-20261110172141640" style="zoom:50%;" />
