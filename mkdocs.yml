@@ -70,7 +70,6 @@ markdown_extensions:
   - md_in_html             # 允在原生 HTML 标签内部直接编写普通的 Markdown 语法
   - sane_lists
   - admonition             # 支持警告/提示块(!!!/???)
-  - nl2br
   - pymdownx.keys          # 按键
   - pymdownx.mark          # 高亮（==高亮==）
   - pymdownx.tilde         # 支持删除线/下标（~~删除线~~/^^下标^^）
@@ -125,9 +124,6 @@ plugins:
             - 'index.md'  # 首页不显示修改时间
             - '**/index.md'  # 各目录的index.md不显示修改时间
             - '**/**/index.md'  # 多层目录的index.md不显示修改时间
-    - callouts:
-        aliases: true
-        breakless_lists: true
 
 hooks:
   - hooks/images.py
