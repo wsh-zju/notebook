@@ -6003,7 +6003,7 @@
 <h2 id="1-sql">1 SQL<a class="headerlink" href="#1-sql" title="Permanent link">&para;</a></h2>
 <p>Consider the following relation schemas and then answer the subsequent problems.</p>
 <blockquote>
-<p>Movie(<u>title</u>, type, director)
+<p>Movie(<u>title</u>, type, director)<br />
 Comment(<u>title</u>, <u>user_name</u>, grade)</p>
 </blockquote>
 <ol>
@@ -6086,10 +6086,10 @@ Comment(<u>title</u>, <u>user_name</u>, grade)</p>
 <li>Write SQL DDL corresponding to the schema in figure.Make any reasonable assumptions about data types, and be sure to declare primary and foreign keys.</li>
 </ol>
 <blockquote>
-<p>person(<u>driver_id,</u> name, address)
-car(<u>license_plate</u>, model, year)
-accident(<u>report_number,</u> year, location)
-owns(<u>driver_id</u>, <u>license_plate</u>)
+<p>person(<u>driver_id,</u> name, address)<br />
+car(<u>license_plate</u>, model, year)<br />
+accident(<u>report_number,</u> year, location)<br />
+owns(<u>driver_id</u>, <u>license_plate</u>)<br />
 participated(<u>report_number</u>, <u>license_plate</u>, driver_id, damage_amount) </p>
 </blockquote>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -6169,24 +6169,24 @@ participated(<u>report_number</u>, <u>license_plate</u>, driver_id, damage_amoun
 <h2 id="2-e-r-model">2 E-R Model<a class="headerlink" href="#2-e-r-model" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>In ER model, which is the most accurate option to describe the relationship between cars and consumers?
-   <img src="/Users/lucy/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_tm8viygpt3gt22_8649/temp/RWTemp/2026-06/7c2c490905330f62b6ab661370d01147/0772f621c3646cb3bcb87f0e0486309f.jpg" alt="0772f621c3646cb3bcb87f0e0486309f" style="zoom:80%;" />
+<p>In ER model, which is the most accurate option to describe the relationship between cars and consumers?<br />
+   <img src="/Users/lucy/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_tm8viygpt3gt22_8649/temp/RWTemp/2026-06/7c2c490905330f62b6ab661370d01147/0772f621c3646cb3bcb87f0e0486309f.jpg" alt="0772f621c3646cb3bcb87f0e0486309f" style="zoom:80%;" /><br />
    Answer: B（一对多）</p>
 </li>
 <li>
-<p>In ER model, which is the most accurate option to describe the relationship between brands and models?
+<p>In ER model, which is the most accurate option to describe the relationship between brands and models?<br />
    <img src="/Users/lucy/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_tm8viygpt3gt22_8649/temp/RWTemp/2026-06/7c2c490905330f62b6ab661370d01147/ee0d186a6aabb28ca538199e9f32fc92.jpg" alt="ee0d186a6aabb28ca538199e9f32fc92" style="zoom:8%;" /></p>
 </li>
 </ol>
 <blockquote>
-<p>⚠️ <strong>判断部分参与与全参与？</strong>
-一个 model 必须属于某个 brand：全参与
+<p>⚠️ <strong>判断部分参与与全参与？</strong><br />
+一个 model 必须属于某个 brand：全参与<br />
 Brand 可以暂时没有 model：部分参与</p>
 </blockquote>
 <ol start="3">
 <li>
-<p>In ER model, which is the most accurate option to describe the relationship between loan and payment(还贷记录)?（其中BCD为双菱形）
-   <img src="/Users/lucy/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_tm8viygpt3gt22_8649/temp/RWTemp/2026-06/7c2c490905330f62b6ab661370d01147/6bdab44ce6451898e594ae4b7a4ff180.jpg" alt="6bdab44ce6451898e594ae4b7a4ff180" style="zoom:30%;" />
+<p>In ER model, which is the most accurate option to describe the relationship between loan and payment(还贷记录)?（其中BCD为双菱形）<br />
+   <img src="/Users/lucy/Library/Containers/com.tencent.xinWeChat/Data/Documents/xwechat_files/wxid_tm8viygpt3gt22_8649/temp/RWTemp/2026-06/7c2c490905330f62b6ab661370d01147/6bdab44ce6451898e594ae4b7a4ff180.jpg" alt="6bdab44ce6451898e594ae4b7a4ff180" style="zoom:30%;" /><br />
    Answer：C（首先是payment全参与，一个loan可以有多条还款记录）</p>
 </li>
 <li>
@@ -6204,22 +6204,22 @@ Brand 可以暂时没有 model：部分参与</p>
 <h2 id="3-relation-formulation">3 Relation Formulation<a class="headerlink" href="#3-relation-formulation" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>For relation schema R(A, B, C, D, E) with functional dependencies set F={A→B, BC→D, C→A}, the <strong>candidate keys</strong> of R is ______.
+<p>For relation schema R(A, B, C, D, E) with functional dependencies set F={A→B, BC→D, C→A}, the <strong>candidate keys</strong> of R is ______.<br />
    Answer: CE</p>
 </li>
 <li>
-<p>For relation schema R(A, B, C, D, E, F) with functional dependencies set F={A→B, A→C, B→C, D→E, D→F, EF→D}, the <strong>candidate keys</strong> of R is ______.
+<p>For relation schema R(A, B, C, D, E, F) with functional dependencies set F={A→B, A→C, B→C, D→E, D→F, EF→D}, the <strong>candidate keys</strong> of R is ______.<br />
    Answer: AD，AEF</p>
 </li>
 <li>
-<p>For the relation and F in 题目2, the <strong>canonical cover Fc</strong> is ______.（正则覆盖）
+<p>For the relation and F in 题目2, the <strong>canonical cover Fc</strong> is ______.（正则覆盖）<br />
    Answer:{A→B, B→C, D→EF, EF→D} </p>
 </li>
 <li>
-<p><strong>Convert the schema in 题目1 into BCNF.（分解）</strong>
-   Answer: 都不符合BCNF
-   （1）R1(A, B) R2(A, C, D, E): 用 <code>A → B</code> 分解
-   （2）R21(A, C) R22(C, D, E): 用 <code>C → A</code> 分解
+<p><strong>Convert the schema in 题目1 into BCNF.（分解）</strong><br />
+   Answer: 都不符合BCNF<br />
+   （1）R1(A, B) R2(A, C, D, E): 用 <code>A → B</code> 分解<br />
+   （2）R21(A, C) R22(C, D, E): 用 <code>C → A</code> 分解<br />
    （3）R221(C, D) R222(C, E): 用 <code>C → D</code> 分解</p>
 </li>
 </ol>
@@ -6231,11 +6231,11 @@ Brand 可以暂时没有 model：部分参与</p>
 <p>How to compute F+? 可以用属性集闭包</p>
 </li>
 <li>
-<p>Decompose R in 3.1 into (A, B, C), (C, D, E) is lossless? Is dependency preserving?
+<p>Decompose R in 3.1 into (A, B, C), (C, D, E) is lossless? Is dependency preserving?<br />
    Answer：交集是C，是(A,B,C)的一个码，所以是无损的；<strong>BC → D  因为 C → D，所以 BC → D，依赖保持</strong></p>
 </li>
 <li>
-<p>(True or False) It is always possible to losslessly decompose a relation into Third Normal Form and the dependence is preserved.
+<p>(True or False) It is always possible to losslessly decompose a relation into Third Normal Form and the dependence is preserved.<br />
    Answer：True</p>
 </li>
 </ol>
@@ -6244,13 +6244,13 @@ Brand 可以暂时没有 model：部分参与</p>
 </blockquote>
 <h2 id="4-storage">4 Storage<a class="headerlink" href="#4-storage" title="Permanent link">&para;</a></h2>
 <ol>
-<li>RAID systems typically allow you to replace failed disks without stopping access to the system. Thus, the data in the failed disk must be rebuilt and written to the replacement disk while the system is in operation. Which of the RAID levels yields the least amount of interference between the rebuild and ongoing disk accesses? Explain your answer.
+<li>RAID systems typically allow you to replace failed disks without stopping access to the system. Thus, the data in the failed disk must be rebuilt and written to the replacement disk while the system is in operation. Which of the RAID levels yields the least amount of interference between the rebuild and ongoing disk accesses? Explain your answer.<br />
    Answer: <strong>RAID level 1</strong>是最能以最小干扰完成失效磁盘重建的级别，重建只需要从失效磁盘对应的<strong>镜像盘</strong>复制数据即可；而在其他 RAID 级别中，重建通常需要读取所有其他磁盘的全部内容，因此会对正在进行的磁盘访问造成更大干扰。</li>
 </ol>
 <blockquote>
-<p>RAID 0：快但不安全
-RAID 1：安全，重建干扰最小
-RAID 5：空间效率高，读多写少常用
+<p>RAID 0：快但不安全<br />
+RAID 1：安全，重建干扰最小<br />
+RAID 5：空间效率高，读多写少常用<br />
 RAID 6：比 RAID 5 更安全</p>
 <table>
 <thead>
@@ -6317,20 +6317,20 @@ RAID 6：比 RAID 5 更安全</p>
 </blockquote>
 <ol start="2">
 <li>
-<p>(True or False) Cache is primary storage and main memory is second storage?
+<p>(True or False) Cache is primary storage and main memory is second storage?<br />
    Answer: False </p>
 </li>
 <li>
-<p>(True or False) A DBMS transfers data between magnetic disk and main memory in units of sectors.
+<p>(True or False) A DBMS transfers data between magnetic disk and main memory in units of sectors.<br />
    Answer: False(block)</p>
 </li>
 <li>
-<p>Within the listed storage below, the primary storage includes ______, the secondary storage includes ______, and the Tertiary storage includes ______.
-   a) Cache; b) Main memory; c) Flash memory; d) Magnetic disks; e) Magnetic tape; f) Optical storage.
+<p>Within the listed storage below, the primary storage includes ______, the secondary storage includes ______, and the Tertiary storage includes ______.<br />
+   a) Cache; b) Main memory; c) Flash memory; d) Magnetic disks; e) Magnetic tape; f) Optical storage.<br />
    Answer: ab;cd;ef</p>
 </li>
 <li>
-<p>Block is a contiguous sequence of ___ from a single track.
+<p>Block is a contiguous sequence of ___ from a single track.<br />
    Answer: sectors</p>
 </li>
 <li>
@@ -6344,15 +6344,15 @@ RAID 6：比 RAID 5 更安全</p>
 <p>Answer: （21，5）；（26，10）；（36，9）</p>
 <ol start="7">
 <li>
-<p>Which of the following is not mandatory for Slotted page header to include
-   A. Number of record entries.
-   B. End of free space in the block.
-   C. Location and size of each record.
-   D. Content of the records.
+<p>Which of the following is not mandatory for Slotted page header to include<br />
+   A. Number of record entries.<br />
+   B. End of free space in the block.<br />
+   C. Location and size of each record.<br />
+   D. Content of the records.<br />
    Answer: D</p>
 </li>
 <li>
-<p>The most commonly used buffer replacement strategies are _____ and _____.
+<p>The most commonly used buffer replacement strategies are _____ and _____.<br />
    Answer：LRU；MRU</p>
 </li>
 </ol>
@@ -6366,19 +6366,19 @@ RAID 6：比 RAID 5 更安全</p>
 </blockquote>
 <ol start="2">
 <li>
-<p><strong>Suppose there is a relation r with 20000 records on which a clustering B+-tree index is constructed on a non-candidate key. Each B+-tree node has a maximum size of 2048 bytes. Each search key occupies 32 bytes, and each pointer occupies 8 bytes. A selection operation is performed by scanning the B+-tree index, where the selection condition specifies an equality comparison on the search key. 5 blocks contain records that match the specified search key. In the worst case, how many seeks and block transfers are required for the selection operation?</strong>
-   <strong>(A) 4 seeks and 8 block transfers.</strong>
-   <strong>(B) 4 seeks and 9 block transfers.</strong>
-   <strong>(C) 5 seeks and 8 block transfers.</strong>
-   <strong>(D) 5 seeks and 9 block transfers.</strong>
+<p><strong>Suppose there is a relation r with 20000 records on which a clustering B+-tree index is constructed on a non-candidate key. Each B+-tree node has a maximum size of 2048 bytes. Each search key occupies 32 bytes, and each pointer occupies 8 bytes. A selection operation is performed by scanning the B+-tree index, where the selection condition specifies an equality comparison on the search key. 5 blocks contain records that match the specified search key. In the worst case, how many seeks and block transfers are required for the selection operation?</strong><br />
+<strong>(A) 4 seeks and 8 block transfers.</strong><br />
+<strong>(B) 4 seeks and 9 block transfers.</strong><br />
+<strong>(C) 5 seeks and 8 block transfers.</strong><br />
+<strong>(D) 5 seeks and 9 block transfers.</strong><br />
    Answer：D（最大子节点数是52，最小是26，最糟糕情况下树高是4）</p>
 </li>
 <li>
-<p>How the secondary index read data?
-   查 secondary index
-   → 找到 search-key 对应的 index entry
-   → index entry 指向 bucket
-   → bucket 中有多个 record pointers / RIDs
+<p>How the secondary index read data?<br />
+   查 secondary index<br />
+   → 找到 search-key 对应的 index entry<br />
+   → index entry 指向 bucket<br />
+   → bucket 中有多个 record pointers / RIDs<br />
    → 根据这些 pointers 去 data file 中取真正记录</p>
 </li>
 <li>
@@ -6423,11 +6423,11 @@ RAID 6：比 RAID 5 更安全</p>
 </blockquote>
 <ol>
 <li>
-<p><strong>The most popular selection operations in database is __ and __ .</strong>
-   <strong>Answer: linear scan, index scan</strong></p>
+<p><strong>The most popular selection operations in database is __ and __ .</strong><br />
+<strong>Answer: linear scan, index scan</strong></p>
 </li>
 <li>
-<p>When performing external merge sort to a relation with 12 blocks, it produces __ block transfers and __ seeks (M=3 and b_b=1).
+<p>When performing external merge sort to a relation with 12 blocks, it produces __ block transfers and __ seeks (M=3 and b_b=1).<br />
    Answer: 60, 44</p>
 </li>
 <li>
@@ -6435,9 +6435,9 @@ RAID 6：比 RAID 5 更安全</p>
 </li>
 </ol>
 <blockquote>
-<p>Number of records of student: n_student = 5000.
-Number of blocks of student: b_student = 100.
-Number of records of takes: n_takes = 10,000.
+<p>Number of records of student: n_student = 5000.<br />
+Number of blocks of student: b_student = 100.<br />
+Number of records of takes: n_takes = 10,000.<br />
 Number of blocks of takes: b_takes = 400.</p>
 </blockquote>
 <p>Answer: 40100, 200; 500, 500</p>
@@ -6457,54 +6457,54 @@ Number of blocks of takes: b_takes = 400.</p>
 <h2 id="7-optimization">7 Optimization<a class="headerlink" href="#7-optimization" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Suppose that a table with 30000 records is stored in a file where each file block holds 200 records. A selection operation is performed, where the selection condition specifies an equality comparison on a <strong>candidate key</strong>. What is the estimated size of the result?
-   (A) 1        (B) 150        (C) 200        (D) 30000
+<p>Suppose that a table with 30000 records is stored in a file where each file block holds 200 records. A selection operation is performed, where the selection condition specifies an equality comparison on a <strong>candidate key</strong>. What is the estimated size of the result?<br />
+   (A) 1        (B) 150        (C) 200        (D) 30000<br />
    Answer: A</p>
 </li>
 <li>
-<p>(True or False) Performing the projection as early as possible can reduce the size of the temporary relation that are generated by joining two relations.
+<p>(True or False) Performing the projection as early as possible can reduce the size of the temporary relation that are generated by joining two relations.<br />
    Answer: True</p>
 </li>
 <li>
-<p>(True or False) <span class="arithmatex">\(σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ E_2\)</span>.
+<p>(True or False) <span class="arithmatex">\(σ_θ(E_1 ∪ E_2) = σ_θ(E_1) ∪ E_2\)</span>.<br />
    Answer: False</p>
 </li>
 <li>
-<p>(True or False) The expression of 
-   $$
-   Π_{name,title}(σ_{dept_name=music}(instructor ⋈ (teaches ⋈ Π_{course_id,title}(course))))
-   $$
-    is equivalent to 
-   $$
-   Π_{name,title}((σ_{dept_name=music}(instructor)) ⋈ (teaches ⋈ Π_{course_id,title}(course))).
-   $$
+<p>(True or False) The expression of <br />
+   $$<br />
+   Π_{name,title}(σ_{dept_name=music}(instructor ⋈ (teaches ⋈ Π_{course_id,title}(course))))<br />
+   $$<br />
+    is equivalent to <br />
+   $$<br />
+   Π_{name,title}((σ_{dept_name=music}(instructor)) ⋈ (teaches ⋈ Π_{course_id,title}(course))).<br />
+   $$<br />
    Answer: True</p>
 </li>
 <li>
-<p>Given a relation r(A, B) with n_r tuples, the estimate of tuples in the result of <span class="arithmatex">\(σ_{A=1∧B&lt;100}(r)\)</span> is?
+<p>Given a relation r(A, B) with n_r tuples, the estimate of tuples in the result of <span class="arithmatex">\(σ_{A=1∧B&lt;100}(r)\)</span> is?<br />
    Answer: <span class="arithmatex">\(\frac{n_r}{V(A,r)}\times\frac{100-\min(B,r)}{\max(B,r)-\min(B,r)}\)</span></p>
 </li>
 </ol>
 <h2 id="8-transaction">8 Transaction 和并发<a class="headerlink" href="#8-transaction" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>(True or False) If a schedule is serializable, it is also conflict serializable.
+<p>(True or False) If a schedule is serializable, it is also conflict serializable.<br />
    Answer：False</p>
 </li>
 <li>
-<p>(True or False) A schedule of r2(A); r1(B); w2(A); r2(B); r3(A); w1(B); w3(A); w2(B) is conflict serializable.
+<p>(True or False) A schedule of r2(A); r1(B); w2(A); r2(B); r3(A); w1(B); w3(A); w2(B) is conflict serializable.<br />
    Answer：False </p>
 </li>
 <li>
 <p>(True or False) The following schedule is cascadeless.</p>
-<p>T1          T2          T3
-   Read(A)
-   Read(B)
-   Write(B)
-               Read(B)
-               Read(A)
-               Write(A)
-                           Read(A)
+<p>T1          T2          T3<br />
+   Read(A)<br />
+   Read(B)<br />
+   Write(B)<br />
+               Read(B)<br />
+               Read(A)<br />
+               Write(A)<br />
+                           Read(A)<br />
    Abort</p>
 </li>
 </ol>
@@ -6514,29 +6514,29 @@ Number of blocks of takes: b_takes = 400.</p>
 </blockquote>
 <ol start="4">
 <li>
-<p>(True or False) Cascading roll-back is possible under two-phase locking, and there can be conflict serializable schedules that cannot be obtained.
+<p>(True or False) Cascading roll-back is possible under two-phase locking, and there can be conflict serializable schedules that cannot be obtained.<br />
    Answer：True（存在 conflict serializable 调度无法由 2PL 产生）</p>
 </li>
 <li>
-<p>(True or False) Schedules, which are impossible under two-phase locking, can be possible under the tree protocol. And the tree protocol can guarantee recoverability and cascade freedom.
+<p>(True or False) Schedules, which are impossible under two-phase locking, can be possible under the tree protocol. And the tree protocol can guarantee recoverability and cascade freedom.<br />
    Answer：False（在树协议下可能实现的调度，在两阶段锁下未必可行，反之亦然；树协议<strong>不保证可恢复性或无级联回滚</strong>）</p>
 </li>
 <li>
 <p>The following table shows some lock requests made by three transactions, T1, T2, and T3. Lock-S and Lock-X stand for “shared lock” and “exclusive lock” respectively. At this time, no granted lock is released.</p>
-<p>T1          T2          T3
-   Lock-X(A)
-               Lock-S(B)
-   Lock-X(B)
-                           Lock-X(C)
-               Lock-S(C)
+<p>T1          T2          T3<br />
+   Lock-X(A)<br />
+               Lock-S(B)<br />
+   Lock-X(B)<br />
+                           Lock-X(C)<br />
+               Lock-S(C)<br />
                            Lock-X(B)</p>
 </li>
 </ol>
 <p><strong>Which of the following statements is correct?</strong></p>
-<p>(A) There is no deadlock.
-   (B) There is deadlock, because T1 is waiting for T3, and T3 is waiting for T1.
-   (C) There is deadlock, because T2 is waiting for T3, and T3 is waiting for T2.
-   (D) There is deadlock, because T1 is waiting for T2, T2 is waiting for T3, and T3 is waiting for T1.
+<p>(A) There is no deadlock.<br />
+   (B) There is deadlock, because T1 is waiting for T3, and T3 is waiting for T1.<br />
+   (C) There is deadlock, because T2 is waiting for T3, and T3 is waiting for T2.<br />
+   (D) There is deadlock, because T1 is waiting for T2, T2 is waiting for T3, and T3 is waiting for T1.<br />
    Answer：C</p>
 <h2 id="9-recovery-system">9 Recovery System<a class="headerlink" href="#9-recovery-system" title="Permanent link">&para;</a></h2>
 <p>quiz <a href="test/Solution 5 of Database Systems.pdf">Solution 5 of Database Systems.pdf</a> </p>

@@ -6595,7 +6595,7 @@
 </ol>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<p>进程 <code>P0</code> 和 <code>P1</code> 正在<strong>同时</strong>使用 <code>fork()</code> 系统调用创建子进程</br>
+<p>进程 <code>P0</code> 和 <code>P1</code> 正在<strong>同时</strong>使用 <code>fork()</code> 系统调用创建子进程</br><br />
 在内核变量 <code>next_available_pid</code>（表示下一个可用的进程标识符 <code>pid</code>）上存在Race Condition</p>
 <p><img alt="alt text" src="../photo/15-1.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <p><strong>Problem</strong>: 除非实现互斥访问，否则<strong>相同</strong>的 <code>pid</code> 可能会被分配给<strong>两个不同的进程</strong>！</p>

@@ -6987,8 +6987,8 @@
 </blockquote>
 <p><strong>MTU</strong> 是该链路允许承载的最大网络层数据包大小。</p>
 <p><strong>路径 MTU</strong> （Path MTU）则是整条路径上最小的链路 MTU。</p>
-<blockquote>
-<p>[!note]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><img alt="image-20261027144832405" src="../photo/image-20261027144832405.png" width="50%" /></p>
 <p><strong>片偏移</strong>：表示该片数据在<mark>原始数据</mark>部分中的起点- </p>
 <ul>
@@ -6996,7 +6996,7 @@
 <li>再次分片时，偏移仍相对于最初的原始数据计算</li>
 <li><strong>偏移的单位是8字节</strong></li>
 </ul>
-</blockquote>
+</div>
 <p><strong>分片</strong>：IPv4 可以由源主机分片，也可以在允许的情况下由途中路由器分片；已经产生的分片还可能再次被分片</p>
 <p><strong>重组</strong>：IPv4 最终重组由<strong>目的主机</strong>完成</p>
 <ul>
@@ -7008,12 +7008,14 @@
 <p><strong>结构</strong>：网络前缀+主机号</p>
 <p><strong>分类</strong>：A、B、C、D、E五类，A类、B类、C类为单播地址</p>
 <p><img alt="image-20261027153914564" src="../photo/image-20261027153914564.png" width="50%" /></p>
-<blockquote>
-<p>[!note]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><code>10.2.1.1</code>：A 类。</p>
 <p><code>128.63.2.100</code>：B 类。</p>
 <p><code>201.222.5.64</code>：C 类。</p>
 <p><code>256.241.201.10</code>：非法，256 超过单字节范围。</p>
+</div>
+<blockquote>
 <p><strong>特殊地址</strong>：</p>
 <table>
 <thead>
@@ -7054,7 +7056,9 @@
 <p>两级IP地址：网络号+主机号 ----&gt; 三级IP地址：网络号+子网号+主机号</p>
 <blockquote>
 <p>子网掩码(subnet mask )：32 bit，置1表示网络位，置0表示主机位</p>
-<p>[!note]</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><strong>Example:</strong> 172.16.2.160，掩码 255.255.255.192</p>
 <p><strong>Answer:</strong> 网络地址 = IP地址 AND 子网掩码，则主机位 6 bits</p>
 <ul>
@@ -7062,40 +7066,40 @@
 <li>主机位全1，广播地址172.16.2.191</li>
 <li>主机数：[ 2^6-2=\boxed{62} ]</li>
 </ul>
-</blockquote>
+</div>
 <h4 id="cidr">CIDR 无类域间路由<a class="headerlink" href="#cidr" title="Permanent link">&para;</a></h4>
 <p>使用可变长度网络前缀描述地址块：<strong>网络地址/前缀长度</strong></p>
-<blockquote>
-<p>[!note]</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p><strong>Example 1</strong>：地址拆分</p>
 <p><img alt="image-20261027152236516" src="../photo/image-20261027152236516.png" width="50%" /></p>
 <p><strong>Example 2</strong>：从 <code>202.101.0.0</code> 开始，依次为 A、B、C、D、E 分配 1024、2000、2000、4096、512 个地址，要求<strong>包含特殊地址</strong>。</p>
-<p>A 202.101.0.0/22  202.101.0.0—202.101.3.255
-B 202.101.8.0/21  202.101.8.0—202.101.15.255
-C 202.101.16.0/21 202.101.16.0—202.101.23.255
-D 202.101.32.0/20 202.101.32.0—202.101.47.255
-E 202.101.4.0/23  202.101.4.0—202.101.5.255</p>
-</blockquote>
+<p>A   202.101.0.0/22  202.101.0.0—202.101.3.255<br />
+B   202.101.8.0/21  202.101.8.0—202.101.15.255<br />
+C   202.101.16.0/21 202.101.16.0—202.101.23.255<br />
+D   202.101.32.0/20 202.101.32.0—202.101.47.255<br />
+E   202.101.4.0/23  202.101.4.0—202.101.5.255</p>
+</div>
 <p><strong>路由聚合</strong>：把多个合适的小地址块，用一个更大的公共前缀表示</p>
 <blockquote>
 <p>192.168.0.0/24、192.168.1.0/24可以聚合为：192.168.0.0/23</p>
 </blockquote>
 <p><strong>最长前缀匹配</strong>：同一目的地址可能同时匹配多条路由，选择其中前缀位数最多的一条</p>
-<blockquote>
-<p>[!note]</p>
-<p>前缀             接口
-2.128.0.0/9   1
-2.192.0.0/10       2
-2.0.0.0/8     3
-2.2.3.0/24      4
-0.0.0.0/0     5</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>前缀           接口<br />
+2.128.0.0/9 1<br />
+2.192.0.0/10       2<br />
+2.0.0.0/8       3<br />
+2.2.3.0/24    4<br />
+0.0.0.0/0       5</p>
 <ul>
 <li>2.5.1.2：匹配 /8，不在更具体的几个范围中 → 接口 3。</li>
 <li>2.200.1.2：匹配 /8、/9、/10，最长是 /10 → 接口 2。</li>
 <li>2.150.1.2：匹配 /8 和 /9，最长是 /9 → 接口 1。</li>
 <li>3.150.1.2：不匹配上述以 2 开头的前缀 → 默认路由 接口 5。</li>
 </ul>
-</blockquote>
+</div>
 <h4 id="dhcp">DHCP 动态主机配置协议<a class="headerlink" href="#dhcp" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>IPv4 地址的获取：</p>
@@ -7389,7 +7393,9 @@ E 202.101.4.0/23  202.101.4.0—202.101.5.255</p>
 <li>自治系统边界路由器(AS Bounder Router, <strong>ASBR</strong>)</li>
 </ul>
 <p><img alt="image-20261110152541458" src="../photo/image-20261110152541458.png" width="50%" /></p>
-<p>[!NOTE] </p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ol>
 <li>
 <p>为什么 OSPF 适合大型网络？ </p>
@@ -7405,7 +7411,7 @@ E 202.101.4.0/23  202.101.4.0—202.101.5.255</p>
 </li>
 </ol>
 <p>不会，链路状态变化后，把这个事实洪泛给大家。</p>
-</blockquote>
+</div>
 <h3 id="rip">RIP 内部网关路由协议<a class="headerlink" href="#rip" title="Permanent link">&para;</a></h3>
 <p>路由选择协议RIP（ Routing Information Protocol ）是<strong>基于距离矢量算法 DV</strong> 的协议</p>
 <p>使用<strong>跳数</strong>衡量到达目的网络的距离：</p>

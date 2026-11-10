@@ -6235,9 +6235,9 @@
 <li>
 <p>投影操作<strong>在 <span class="arithmatex">\(\theta\)</span> 连接操作上具有分配律</strong></p>
 <ol>
-<li>如果 <span class="arithmatex">\(\theta\)</span> 仅涉及来自 <span class="arithmatex">\(L_1 \cup L_2\)</span> 的属性
-    $$
-    \Pi_{L_1 \cup L_2}(E_1 \bowtie_\theta E_2) = (\Pi_{L_1}(E_1)) \bowtie_\theta (\Pi_{L_2}(E_2))
+<li>如果 <span class="arithmatex">\(\theta\)</span> 仅涉及来自 <span class="arithmatex">\(L_1 \cup L_2\)</span> 的属性<br />
+    $$<br />
+    \Pi_{L_1 \cup L_2}(E_1 \bowtie_\theta E_2) = (\Pi_{L_1}(E_1)) \bowtie_\theta (\Pi_{L_2}(E_2))<br />
     $$</li>
 <li>
 <p>考虑一个连接 <span class="arithmatex">\(E_1 \bowtie_\theta E_2\)</span></p>
@@ -6253,9 +6253,9 @@
 </ol>
 </li>
 <li>
-<p>投影操作<strong>在并运算上具有分配律</strong>
-    $$
-    \Pi_L(E_1 \cup E_2) = (\Pi_L(E_1)) \cup (\Pi_L(E_2))
+<p>投影操作<strong>在并运算上具有分配律</strong><br />
+    $$<br />
+    \Pi_L(E_1 \cup E_2) = (\Pi_L(E_1)) \cup (\Pi_L(E_2))<br />
     $$</p>
 </li>
 </ol>
@@ -6269,9 +6269,9 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 \]</div>
 <ol start="2">
 <li><strong>连接操作的结合律</strong>  <ol>
-<li>自然连接操作具有<strong>结合律</strong>
-    $$
-    (E_1 \bowtie E_2) \bowtie E_3 = E_1 \bowtie (E_2 \bowtie E_3)
+<li>自然连接操作具有<strong>结合律</strong><br />
+    $$<br />
+    (E_1 \bowtie E_2) \bowtie E_3 = E_1 \bowtie (E_2 \bowtie E_3)<br />
     $$</li>
 <li>
 <p><span class="arithmatex">\(\theta\)</span> 连接<strong>在以下情况下</strong>具有结合律：</p>
@@ -6305,9 +6305,9 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 <li><mark><span class="arithmatex">\(l_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的一个元组的大小（字节）</mark></li>
 <li><mark><span class="arithmatex">\(f_r\)</span>：关系 <span class="arithmatex">\(r\)</span> 的块因子（即一个数据块中所能容纳的关系 <span class="arithmatex">\(r\)</span> 的元组数量）</mark></li>
 <li><mark><span class="arithmatex">\(V(A, r)\)</span>：属性 <span class="arithmatex">\(A\)</span> 在关系 <span class="arithmatex">\(r\)</span> 中出现的非重复值数量（与 <span class="arithmatex">\(\Pi_A(r)\)</span> 大小相同）</mark></li>
-<li>如果关系 <span class="arithmatex">\(r\)</span> 的元组在物理上紧凑地存储在一个文件中，则：
-    $$
-    b_r = \left\lceil \frac{n_r}{f_r} \right\rceil
+<li>如果关系 <span class="arithmatex">\(r\)</span> 的元组在物理上紧凑地存储在一个文件中，则：<br />
+    $$<br />
+    b_r = \left\lceil \frac{n_r}{f_r} \right\rceil<br />
     $$</li>
 </ol>
 <h3 id="selection-size-estimation">Selection Size Estimation<a class="headerlink" href="#selection-size-estimation" title="Permanent link">&para;</a></h3>
@@ -6333,21 +6333,21 @@ E_1 \bowtie_\theta E_2 = E_2 \bowtie_\theta E_1
 </ol>
 </li>
 <li>
-<p><strong>合取（与）</strong>：<span class="arithmatex">\(\sigma_{\theta_1 \wedge \theta_2 \wedge \dots \wedge \theta_n}(r)\)</span>（假设相互独立）<strong>结果中的元组估计数量</strong>为：
-    $$
-    n_r \cdot \frac{s_1 \cdot s_2 \dots \cdot s_n}{n_r^n}
+<p><strong>合取（与）</strong>：<span class="arithmatex">\(\sigma_{\theta_1 \wedge \theta_2 \wedge \dots \wedge \theta_n}(r)\)</span>（假设相互独立）<strong>结果中的元组估计数量</strong>为：<br />
+    $$<br />
+    n_r \cdot \frac{s_1 \cdot s_2 \dots \cdot s_n}{n_r^n}<br />
     $$</p>
 </li>
 <li>
-<p><strong>析取（或）</strong>：<span class="arithmatex">\(\sigma_{\theta_1 \vee \theta_2 \vee \dots \vee \theta_n}(r)\)</span> 估计的元组数量为：
-    $$
-    n_r \cdot \left( 1 - \left(1 - \frac{s_1}{n_r}\right) \cdot \left(1 - \frac{s_2}{n_r}\right) \dots \cdot \left(1 - \frac{s_n}{n_r}\right) \right)
+<p><strong>析取（或）</strong>：<span class="arithmatex">\(\sigma_{\theta_1 \vee \theta_2 \vee \dots \vee \theta_n}(r)\)</span> 估计的元组数量为：<br />
+    $$<br />
+    n_r \cdot \left( 1 - \left(1 - \frac{s_1}{n_r}\right) \cdot \left(1 - \frac{s_2}{n_r}\right) \dots \cdot \left(1 - \frac{s_n}{n_r}\right) \right)<br />
     $$</p>
 </li>
 <li>
-<p><strong>取反（非）</strong>：<span class="arithmatex">\(\sigma_{\neg\theta}(r)\)</span> 估计的元组数量为：
-    $$
-    n_r - \text{size}(\sigma_\theta(r))
+<p><strong>取反（非）</strong>：<span class="arithmatex">\(\sigma_{\neg\theta}(r)\)</span> 估计的元组数量为：<br />
+    $$<br />
+    n_r - \text{size}(\sigma_\theta(r))<br />
     $$</p>
 </li>
 </ol>
