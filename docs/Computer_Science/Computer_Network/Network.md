@@ -6,7 +6,7 @@ comment: true
 
 ## 网络层服务
 
-<img src="photo/image-20261027103331370.png" alt="image-20261027103331370" style="zoom:30%;" />
+![image-20261027103331370](photo/image-20261027103331370.png){ width="30%" }
 
 1. 网络层实现端系统间**多跳**传输可达
 2. **路由器**：检查数据包首部，转发数据包
@@ -28,7 +28,7 @@ comment: true
 
 **数据报转发策略**：基于分组的目的地址
 
-<img src="photo/image-20261027140148216.png" alt="image-20261027140148216" style="zoom:50%;" />
+![image-20261027140148216](photo/image-20261027140148216.png){ width="50%" }
 
 #### 面向连接的虚电路服务
 
@@ -42,7 +42,7 @@ comment: true
 
 **虚电路的转发策略**：基于分组标签，即虚电路号
 
-> <img src="photo/image-20261027134927777.png" alt="image-20261027134927777" style="zoom:50%;" />
+> ![image-20261027134927777](photo/image-20261027134927777.png){ width="50%" }
 >
 > 意思是：从端口 1 收到标签 L1 的包，就把标签改成 L2，从端口 3 发出。
 
@@ -61,17 +61,17 @@ comment: true
 
 1. 恒定流量：带宽不浪费，刚好满足要求
 
-   <img src="photo/image-20261027140956350.png" alt="image-20261027140956350" style="zoom:30%;" />
+   ![image-20261027140956350](photo/image-20261027140956350.png){ width="30%" }
 
 2. 突发流量：每个数据源的峰值为 70 Mbps，却只能获得 50 Mbps
 
    1. 虚电路（固定份额）<u>若缓冲不足，就会丢包</u>
 
-      <img src="photo/image-20261027141056014.png" alt="image-20261027141056014" style="zoom:30%;" />
+      ![image-20261027141056014](photo/image-20261027141056014.png){ width="30%" }
 
    2. 数据报：（统计复用：用户不总是同时活跃，因此可以共享总容量）
 
-      <img src="photo/image-20261027141356633.png" alt="image-20261027141356633" style="zoom:30%;" />
+      ![image-20261027141356633](photo/image-20261027141356633.png){ width="30%" }
 
 ##### 效率
 
@@ -94,7 +94,7 @@ comment: true
 
 #### 数据报格式：首部+数据
 
-<img src="photo/image-20261027143228878.png" alt="image-20261027143228878" style="zoom:50%;" />
+![image-20261027143228878](photo/image-20261027143228878.png){ width="50%" }
 
 | 字段             | 长度   | 作用                                                         |
 | ---------------- | ------ | ------------------------------------------------------------ |
@@ -122,7 +122,7 @@ comment: true
 
 > [!note]
 >
-> <img src="/Users/lucy/Downloads/计算机网络/note/photo/image-20261027144832405.png" alt="image-20261027144832405" style="zoom:50%;" />
+> ![image-20261027144832405](photo/image-20261027144832405.png){ width="50%" }
 >
 > **片偏移**：表示该片数据在==原始数据==部分中的起点- 
 >
@@ -145,7 +145,7 @@ comment: true
 
 **分类**：A、B、C、D、E五类，A类、B类、C类为单播地址
 
-<img src="photo/image-20261027153914564.png" alt="image-20261027153914564" style="zoom:50%;" />
+![image-20261027153914564](photo/image-20261027153914564.png){ width="50%" }
 
 > [!note]
 >
@@ -192,7 +192,7 @@ comment: true
 >
 > **Example 1**：地址拆分
 >
-> <img src="photo/image-20261027152236516.png" alt="image-20261027152236516" style="zoom:50%;" />
+> ![image-20261027152236516](photo/image-20261027152236516.png){ width="50%" }
 >
 > **Example 2**：从 `202.101.0.0` 开始，依次为 A、B、C、D、E 分配 1024、2000、2000、4096、512 个地址，要求**包含特殊地址**。
 >
@@ -242,7 +242,7 @@ comment: true
 | Request  | DHCPREQUEST  | 客户端表明选择并请求配置 | 广播     | 255.255.255.255 | 0.0.0.0                        |
 | ACK      | DHCPACK      | 服务器确认配置           | 广播     | 255.255.255.255 | DHCP服务器或中继路由器的IP地址 |
 
-<img src="photo/image-20261027154709117.png" alt="image-20261027154709117" style="zoom:50%;" />
+![image-20261027154709117](photo/image-20261027154709117.png){ width="50%" }
 
 > **IP与MAC地址**：最终目的地由 IP 地址表达，当前这一跳交给谁由链路层地址表达
 >
@@ -284,7 +284,7 @@ ICMP 允许主机或路由器<u>报告差错情况和提供有关异常情况的
 
 3. **报文格式**：前 4 个字节包含格式统一的三个字段：<u>类型、代码、检验和</u>；相邻的后四个字节内容与ICMP的报文类型有关
 
-   <img src="photo/image-20261110132407363.png" alt="image-20261110132407363" style="zoom:50%;" />
+   ![image-20261110132407363](photo/image-20261110132407363.png){ width="50%" }
 
 4. **PING** 用来测试两个主机之间的连通性
 
@@ -324,11 +324,11 @@ ICMP 允许主机或路由器<u>报告差错情况和提供有关异常情况的
 
 > **汇集树**(Sink Tree)：所有源节点到一个指定目标节点的最优路径集合，构成一棵以该目标节点为根的树。（**不是唯一的**）
 >
-> <img src="photo/image-20261110134919754.png" alt="image-20261110134919754" style="zoom:40%;" />
+> ![image-20261110134919754](photo/image-20261110134919754.png){ width="40%" }
 
 > **最短路径算法 Dijkstra**
 >
-> <img src="photo/image-20261110135308898.png" alt="image-20261110135308898" style="zoom:40%;" />
+> ![image-20261110135308898](photo/image-20261110135308898.png){ width="40%" }
 
 ### 距离向量路由 DV
 
@@ -430,7 +430,7 @@ ICMP 允许主机或路由器<u>报告差错情况和提供有关异常情况的
 
 > 常用组播地址段：224.0.0.0/24
 >
-> <img src="photo/image-20261110145806765.png" alt="image-20261110145806765" style="zoom:50%;" />
+> ![image-20261110145806765](photo/image-20261110145806765.png){ width="50%" }
 
 ### 选播路由
 
@@ -462,7 +462,7 @@ Open Shortest Path First，开放最短路径优先协议
 > - 区域边界路由器 (Area Bounder Router，**ABR**)
 > - 自治系统边界路由器(AS Bounder Router, **ASBR**)
 >
-> <img src="photo/image-20261110152541458.png" alt="image-20261110152541458" style="zoom:50%;" />
+> ![image-20261110152541458](photo/image-20261110152541458.png){ width="50%" }
 
 > [!NOTE] 
 >
@@ -504,7 +504,7 @@ Border Gateway Protocol，边界网关协议（目前互联网中唯一实际运
 
 BGP 是**路径向量协议**（路径经过哪些AS）
 
-<img src="photo/image-20261110155949745.png" alt="image-20261110155949745" style="zoom:50%;" />
+![image-20261110155949745](photo/image-20261110155949745.png){ width="50%" }
 
 一条路由“route” = prefix（目的网络前缀） + attributes（属性）
 
@@ -542,7 +542,7 @@ MultiProtocol Label Switching
 2. **MPLS Domain**：一组<u>相邻的支持 MPLS</u> 的路由器构成
 3. **标签分配协议 LDP**：用来在LSR之间建立LDP 会话并交换Label/FEC映射信息
 
-<img src="photo/image-20261110160327963.png" alt="image-20261110160327963" style="zoom:50%;" />
+![image-20261110160327963](photo/image-20261110160327963.png){ width="50%" }
 
 **工作过程**：
 
@@ -562,7 +562,7 @@ MultiProtocol Label Switching
 
    3. **生成路由表**：路由管理根据<u>路由优先级</u>，选择最佳路由，形成核心路由表
 
-      <img src="photo/image-20261110162539466.png" alt="image-20261110162539466" style="zoom:40%;" />
+      ![image-20261110162539466](photo/image-20261110162539466.png){ width="40%" }
 
    4. 控制层将核心路由表下发到数据层，形成**转发表（FIB）**
 
@@ -576,7 +576,7 @@ MultiProtocol Label Switching
 >
 > **三种典型的交换结构**
 >
-> <img src="photo/image-20261110163158996.png" alt="image-20261110163158996" style="zoom:50%;" />
+> ![image-20261110163158996](photo/image-20261110163158996.png){ width="50%" }
 
 > 家用路由器与典型网络路由器差异较大
 
@@ -605,7 +605,7 @@ MultiProtocol Label Switching
 > - **Hash**：得到摘要，用于完整性
 > - **加密**：保证机密性
 >
-> <img src="photo/image-20261110165241464.png" alt="image-20261110165241464" style="zoom:80%;" />
+> ![image-20261110165241464](photo/image-20261110165241464.png){ width="80%" }
 
 ## IPv6 协议
 
@@ -632,7 +632,7 @@ IPv6 是 IETF 设计的下一代 Internet Protocol，用来替代 IPv4
 - **下一个首部**：8bit ，IPv6报头后的协议类型，可能是TCP/UDP/ICMP等，也可能是扩展头
 - **跳数限制**：8bit ，类似IPv4的**TTL**，每次转发跳数减1，值为0时包将会被丢弃
 
-<img src="photo/image-20261110170150277.png" alt="image-20261110170150277" style="zoom:50%;" />
+![image-20261110170150277](photo/image-20261110170150277.png){ width="50%" }
 
 > 去除“首部长度”（首部长度固定为40字节）
 >
@@ -665,4 +665,4 @@ IPv6 是 IETF 设计的下一代 Internet Protocol，用来替代 IPv4
 
 > **隧道技术**：两个*同构*网络的系统跨越*中间异构*网络进行通信。
 >
-> <img src="./photo/image-20261110172141640.png" alt="image-20261110172141640" style="zoom:50%;" />
+> ![image-20261110172141640](photo/image-20261110172141640.png){ width="50%" }
