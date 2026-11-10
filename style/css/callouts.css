@@ -1,3 +1,7 @@
+/* Callout 样式 
+ > 引用 [!NOTE]、[!TIP]、[!IMPORTANT]、[!WARNING]、[!CAUTION] 等标记的内容块
+ */
+
 .md-typeset .gfm-callout {
   --gfm-callout-color: #0969da;
   margin: 1.5625em 0;
@@ -59,4 +63,36 @@
 
 [data-md-color-scheme="slate"] .md-typeset .gfm-callout-caution {
   --gfm-callout-color: #f85149;
+}
+
+
+
+/* Callout 与普通引用块共享布局 */
+.md-typeset :is(.gfm-callout, blockquote) {
+  margin: 1.5625em 0;
+  padding: 0.15rem 0 0.15rem 1.15rem;
+  border-left-width: 0.2rem;
+  border-left-style: solid;
+}
+
+/* 普通引用块：降低视觉层级 */
+.md-typeset blockquote {
+  color: var(--md-typeset-color);
+  background: transparent;
+  border-left-color: #8c959f;
+  font-style: normal;
+}
+
+/* 清除首尾多余间距 */
+.md-typeset blockquote > :first-child {
+  margin-top: 0;
+}
+
+.md-typeset blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* 深色模式 */
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  border-left-color: #6e7681;
 }
