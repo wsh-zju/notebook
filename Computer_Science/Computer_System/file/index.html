@@ -7106,8 +7106,8 @@
 <p><img alt="alt text" src="../photo/23-5.png" style="width:60%;display: block;margin: 20px auto" /></p>
 <ol>
 <li>所有用户<strong>共用</strong>一个单一的目录</li>
-<li><strong>缺点</strong>：存在命名问题和分组问题<br />
-<strong>e.g.</strong> 当两个用户想给各自的文件起<strong>相同的名字</strong>时会发生冲突</li>
+<li><strong>缺点</strong>：存在命名问题和分组问题
+    <strong>e.g.</strong> 当两个用户想给各自的文件起<strong>相同的名字</strong>时会发生冲突</li>
 </ol>
 <h4 id="_14">多级目录<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p><img alt="alt text" src="../photo/23-6.png" style="width:60%;display: block;margin: 20px auto" /></p>
@@ -7230,8 +7230,8 @@
 <p class="admonition-title">Unix 访问控制</p>
 <ol>
 <li>三种访问模式：读、写、执行（使用 3 位编码 <code>RWX</code>）</li>
-<li>三类用户：所有者 (Owner)、用户组 (Group) 和 其他用户 (Others)<br />
-<img alt="alt text" src="../photo/23-10.png" style="width:30%;display: block;margin: 20px auto" /></li>
+<li>三类用户：所有者 (Owner)、用户组 (Group) 和 其他用户 (Others)
+    <img alt="alt text" src="../photo/23-10.png" style="width:30%;display: block;margin: 20px auto" /></li>
 <li>若要向用户授予访问权限，可以创建一个组并更改其访问模式（在 Linux 中，使用 <code>chmod</code> 和 <code>chgrp</code> 命令）</li>
 </ol>
 </div>
@@ -7246,8 +7246,8 @@
 <li>文件系统可以是通用目的或特殊目的</li>
 </ol>
 </li>
-<li>磁盘或分区也可以裸用（<strong>raw</strong>）（不建立文件系统）<br />
-<strong>e.g.</strong> 数据库一类的应用程序更倾向于使用裸磁盘（raw disks）</li>
+<li>磁盘或分区也可以裸用（<strong>raw</strong>）（不建立文件系统）
+    <strong>e.g.</strong> 数据库一类的应用程序更倾向于使用裸磁盘（raw disks）</li>
 </ol>
 <hr />
 <h2 id="_20">文件系统挂载<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
@@ -7461,7 +7461,7 @@
 </code></pre></div></td></tr></table></div>
 </li>
 <li>
-<p><strong><code>file-&gt;f_op</code></strong> 是在什么时候设置的？<br />
+<p><strong><code>file-&gt;f_op</code></strong> 是在什么时候设置的？
     在 <code>open</code> 系统调用时，VFS 将 <code>inode-&gt;i_fop</code> 赋值给 <code>file-&gt;f_op</code></p>
 </li>
 </ol>

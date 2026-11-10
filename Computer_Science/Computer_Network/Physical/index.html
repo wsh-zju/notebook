@@ -6410,15 +6410,15 @@ g(t)=c+\sum_{n=1}^{\infty} a_n\sin(2\pi nft)
 <li>实际使用时，可以接入滤波器，限制用户的带宽</li>
 <li>通过信道的谐波次数越多，信号越逼真</li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<blockquote>
+<p>[!note] </p>
 <p>对于比特率为 <span class="arithmatex">\(B\)</span> bps 的信道，发送 8 位所需的时间为 <span class="arithmatex">\(T=\frac{8}{B}\)</span> 秒</p>
 <p>若 8 位作为一个周期 <span class="arithmatex">\(T\)</span>，则一次谐波的频率为 <span class="arithmatex">\(f_1=\frac{1}{T}=\frac{B}{8}\ \text{Hz}\)</span> </p>
 <p><mark>能通过信道的最高次谐波数目</mark>为 <span class="arithmatex">\(N=\frac{f_c}{f_1}\)</span> </p>
 <p>其中 <span class="arithmatex">\(f_c\)</span> 为信道截止频率，<span class="arithmatex">\(f_1\)</span> 为基频，即一次谐波频率</p>
 <p>若音频线路的截止频率为 3000 Hz，则 <span class="arithmatex">\(N=\frac{f_c}{f_1}=\frac{24000}{B}\)</span></p>
 <p><span class="orange"><strong>所以传输速率越高，能够保留下来的谐波越少，信号越难准确恢复。</strong></span></p>
-</div>
+</blockquote>
 <h3 id="_9">信道的最大数据传输速率<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <h4 id="_10"><span class="yellow"><strong>奈奎斯特定理</strong></span><a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
 <p><mark>无噪声</mark>有限带宽信道的最大数据传输速率为  </p>
@@ -6427,7 +6427,7 @@ g(t)=c+\sum_{n=1}^{\infty} a_n\sin(2\pi nft)
 \]</div>
 <p>其中 <span class="arithmatex">\(H\)</span> 为信道带宽，<span class="arithmatex">\(V\)</span> 为信号电平的级数</p>
 <blockquote>
-<p>符号率（Symbol rate / 波特率（Baud rate））与数据率（Data rate）<br />
+<p>符号率（Symbol rate / 波特率（Baud rate））与数据率（Data rate）
 Data rate = Symbol rate × bits per symbol</p>
 </blockquote>
 <h4 id="_11"><span class="yellow"><strong>香农定理</strong></span><a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
@@ -6447,13 +6447,13 @@ H\log_2(1 + S/N) (bps)
 </blockquote>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<blockquote>
+<p>[!note]</p>
 <p><strong>A noiseless channel is 8 MHz wide. How many bits per second can be sent if 8-level digital signals are used?</strong></p>
 <p>A) 16 Mbps  B) 24 Mbps  C) 64 Mbps  D) 48 Mbps</p>
 <p><strong>Answer:</strong> D</p>
 <p><strong>Analysis:</strong> 代入公式即可</p>
-</div>
+</blockquote>
 <h3 id="_12">传输方式<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>单工、半双工和全双工</strong><ol>

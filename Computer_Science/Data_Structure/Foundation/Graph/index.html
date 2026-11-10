@@ -6621,10 +6621,10 @@
 <h4 id="_7">方法一：简单实现<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>时间复杂度</strong>：<span class="arithmatex">\(O(N^2)\)</span></li>
-<li><strong>步骤</strong>：<br />
-  - 找到任意入度为0的顶点<code>v</code><br />
-  - 将<code>v</code>加入排序结果<br />
-  - 移除<code>v</code>的所有出边(邻接顶点入度减1)<br />
+<li><strong>步骤</strong>：
+  - 找到任意入度为0的顶点<code>v</code>
+  - 将<code>v</code>加入排序结果
+  - 移除<code>v</code>的所有出边(邻接顶点入度减1)
   - 重复直到所有顶点排序或<strong>检测到环</strong></li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -6849,7 +6849,7 @@
 <p class="admonition-title">Tips</p>
 <ol>
 <li>被读取邻接点的节点才会被设置为已知</li>
-<li>从邻接点中选择未知并且dist较小的进行下一次处理<br />
+<li>从邻接点中选择未知并且dist较小的进行下一次处理
 e.g. 具体例题见PTA/Homework 9</li>
 </ol>
 </div>

@@ -6075,11 +6075,11 @@
 <p>对单目运算符重载为友元函数时，可以说明一个形参。而重载为成员函数时，不能显式说明形参。  T</p>
 </li>
 <li>
-<p>使用提取符(&lt;&lt;)可以输出各种基本数据类型的变量的值，也可以输出指针值。F<br />
+<p>使用提取符(&lt;&lt;)可以输出各种基本数据类型的变量的值，也可以输出指针值。F
    输出用的是插入符 <code>&lt;&lt;</code>，不是提取符。提取符是 <code>&gt;&gt;</code>。</p>
 </li>
 <li>
-<p><strong>因为静态成员函数不能是虚函数，所以它们不能实现多态。</strong>  T<br />
+<p><strong>因为静态成员函数不能是虚函数，所以它们不能实现多态。</strong>  T
    静态成员函数属于<strong>类本身</strong>，不属于某个具体对象</p>
 </li>
 <li>
@@ -6107,13 +6107,13 @@
 <p><strong>C.要执行的函数的内部结构</strong></p>
 <p>D.函数需要的参数</p>
 <ol start="2">
-<li>在下面类声明中，关于生成对象不正确的是（ ）。<br />
-   ```cpp<br />
-   class point<br />
-   { public:<br />
-            int x;<br />
-            int y;<br />
-            point(int a,int b)   {x=a;y=b;}<br />
+<li>在下面类声明中，关于生成对象不正确的是（ ）。
+   ```cpp
+   class point
+   { public:
+            int x;
+            int y;
+            point(int a,int b)   {x=a;y=b;}
    };</li>
 </ol>
 <p>A.point p(10,2);</p>
@@ -6210,20 +6210,20 @@
 <a id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>A. I'm a Male<br />
-   I'm a Male<br />
-   B. I'm a Male<br />
-   I'm a Mammal<br />
-<strong>C. I'm a Mammal</strong><br />
-<strong>I'm a Male</strong><br />
-   D. I'm a Mammal<br />
+<p>A. I'm a Male
+   I'm a Male
+   B. I'm a Male
+   I'm a Mammal
+   <strong>C. I'm a Mammal</strong>
+   <strong>I'm a Male</strong>
+   D. I'm a Mammal
    I'm a Mammal</p>
 <ol start="7">
 <li>What is the purpose of the this pointer in C++?</li>
 </ol>
-<p><strong>A. To refer to the current object within a member function.</strong><br />
-   B. To access static data members of the class.<br />
-   C. To allocate memory dynamically for an object.<br />
+<p><strong>A. To refer to the current object within a member function.</strong>
+   B. To access static data members of the class.
+   C. To allocate memory dynamically for an object.
    D. To initialize constant data members of the class.</p>
 <ol start="8">
 <li><strong>Which of the following operator cannot be used to overload when that function is declared as friend function?</strong></li>
@@ -6236,7 +6236,7 @@
 <p>=，[],-&gt;(),-&gt;* <strong>必须是成员函数</strong></p>
 </blockquote>
 <ol start="9">
-<li><strong>Which code below fails compilation?</strong>  D<br />
+<li><strong>Which code below fails compilation?</strong>  D
    A.</li>
 </ol>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
@@ -6257,7 +6257,7 @@
 <a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">return</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>B.<br />
+<p>B.
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -6276,7 +6276,7 @@
 <a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">return</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">nullptr</span><span class="p">;</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
-<p>C.<br />
+<p>C.
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -6339,11 +6339,11 @@
 </li>
 <li>
 <p>What is wrong in the following code?</p>
-<p>vector v;<br />
+<p>vector v;
 v[0] = 2.5;</p>
-<p>A. The program has a compile error because there are no elements in the vector.<br />
-B. The program has a compile error because you cannot assign a double value to v[0].<br />
-<strong>C. The program has a runtime error because there are no elements in the vector.</strong><br />
+<p>A. The program has a compile error because there are no elements in the vector.
+B. The program has a compile error because you cannot assign a double value to v[0].
+<strong>C. The program has a runtime error because there are no elements in the vector.</strong>
 D. The program has a runtime error because you cannot assign a double value to v[0].</p>
 </li>
 </ol>
@@ -6803,7 +6803,7 @@ D. The program has a runtime error because you cannot assign a double value to v
 <a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>The output of the program is: (Please write the entire output, including the P1P3 in the end of the</p>
-<p>output.) ________ (2分)(S3P2P1P3)<br />
+<p>output.) ________ (2分)(S3P2P1P3)
    <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span>
