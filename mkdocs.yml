@@ -126,6 +126,7 @@ plugins:
             - '**/**/index.md'  # 多层目录的index.md不显示修改时间
 
 hooks:
+  - hooks/callouts.py
   - hooks/images.py
   - hooks/cards.py
   - hooks/toc.py
@@ -138,6 +139,7 @@ extra_css:
   - https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css     # FontAwesome 
   - style/css/tasklist.css
+  - style/css/callouts.css
   - style/css/home_card.css
   - style/css/custom.css
   - style/css/card.css
