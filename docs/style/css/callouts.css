@@ -9,9 +9,9 @@
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  margin: 0 0 1.1rem;
+  margin: 0 0 0.5rem;
   color: var(--gfm-callout-color);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .md-typeset .gfm-callout-title svg {

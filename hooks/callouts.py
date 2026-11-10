@@ -62,7 +62,13 @@ def on_page_markdown(markdown, **kwargs):
             quoted = QUOTE_LINE.match(lines[index])
             if not quoted or quoted['indent'] != marker['indent']:
                 break
-            body.append(quoted['body'])
+            content = quoted['body']
+            # Typora/GFM accepts three-space nested list indentation, while
+            # Python Markdown requires four. Normalize only that indentation;
+            # ordinary headings and paragraphs must remain flush left.
+            if content.startswith('   ') and not content.startswith('    '):
+                content = ' ' + content
+            body.append(content)
             index += 1
 
         default_title, variant = CALLOUTS[kind]
